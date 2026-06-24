@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Cancelled - Khrua Thai London</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --gold: #D4AF37; --dark-green: #1B3022; --cream: #F9F7F2; --text: #333; }
+        body { font-family: 'Prompt', sans-serif; background-color: var(--cream); color: var(--text); margin: 0; padding: 0; text-align: center; }
+        .container { max-width: 600px; margin: 100px auto; padding: 40px 20px; background: white; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border-top: 5px solid #dc3545; }
+        .cancel-icon { font-size: 60px; color: #dc3545; margin-bottom: 20px; }
+        h1 { color: #dc3545; margin-bottom: 10px; }
+        p { margin-bottom: 30px; line-height: 1.6; }
+        .btn { display: inline-block; background: var(--dark-green); color: var(--gold); text-decoration: none; padding: 12px 30px; border-radius: 30px; font-weight: 600; transition: 0.3s; border: 2px solid var(--gold); }
+        .btn:hover { background: var(--gold); color: white; }
+    </style>
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="light-theme.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B32XK3RT5X"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-B32XK3RT5X');
+    </script>
+</head>
+<body>
+    <div class="container">
+        <i class="fas fa-times-circle cancel-icon"></i>
+        <h1>ยกเลิกการชำระเงิน / Payment Cancelled</h1>
+        <p>คุณได้ยกเลิกขั้นตอนการชำระเงินมัดจำ หากคุณต้องการทำการจองต่อ กรุณากดปุ่มด้านล่างเพื่อกลับไปที่หน้าจองครับ</p>
+        <p>You have cancelled the payment process. If you wish to continue your booking, please click the button below to return to the booking page.</p>
+        <a href="/booking.html" class="btn">กลับไปหน้าสั่งจอง / Back to Booking</a>
+    </div>
+    <script src="mobile-menu.js"></script>
+</body>
+</html>

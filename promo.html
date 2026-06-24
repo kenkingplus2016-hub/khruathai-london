@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khrua Thai London - สร้างโพสต์โปรโมท</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #F5E6B8;
+            --dark-green: #1B3022;
+            --black-green: #0D1F14;
+            --cream: #F9F7F2;
+            --accent: #2E7D4F;
+            --danger: #E74C3C;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Prompt', sans-serif;
+            background: linear-gradient(135deg, #0a1a10 0%, #1B3022 50%, #0D1F14 100%);
+            color: white;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .page-header {
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(212,175,55,0.3);
+            padding: 15px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .header-brand img { height: 40px; filter: drop-shadow(0 0 8px rgba(212,175,55,0.4)); }
+        .header-brand span { font-weight: 700; color: var(--gold); font-size: 1.1rem; letter-spacing: 1px; }
+        .header-title {
+            color: var(--gold-light);
+            font-size: 0.9rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        .back-btn {
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: 0.3s;
+        }
+        .back-btn:hover { color: white; }
+
+        /* Main Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        /* Panel Styles */
+        .panel {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(212,175,55,0.15);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+        }
+        .panel-title {
+            font-size: 1.3rem;
+            color: var(--gold);
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .panel-subtitle {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.8rem;
+            margin-bottom: 25px;
+        }
+
+        /* Tab Navigation */
+        .tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .tab {
+            padding: 8px 18px;
+            border-radius: 25px;
+            border: 1px solid rgba(212,175,55,0.3);
+            background: transparent;
+            color: rgba(255,255,255,0.7);
+            cursor: pointer;
+            font-family: 'Prompt';
+            font-size: 0.8rem;
+            transition: 0.3s;
+        }
+        .tab:hover { border-color: var(--gold); color: var(--gold); }
+        .tab.active {
+            background: var(--gold);
+            color: var(--black-green);
+            border-color: var(--gold);
+            font-weight: 600;
+        }
+
+        /* Menu Items Grid */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 12px;
+            max-height: 500px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+        .menu-grid::-webkit-scrollbar { width: 6px; }
+        .menu-grid::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 3px; }
+        .menu-grid::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+        .menu-item {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 12px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-align: center;
+            position: relative;
+        }
+        .menu-item:hover {
+            border-color: var(--gold);
+            background: rgba(212,175,55,0.08);
+            transform: translateY(-2px);
+        }
+        .menu-item.selected {
+            border-color: var(--gold);
+            background: rgba(212,175,55,0.15);
+            box-shadow: 0 0 20px rgba(212,175,55,0.2);
+        }
+        .menu-item.selected::after {
+            content: '✓';
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: var(--gold);
+            color: var(--black-green);
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+        .menu-item-name {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 3px;
+        }
+        .menu-item-name-en {
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 5px;
+        }
+        .menu-item-price {
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        /* Caption Templates */
+        .template-section { margin-bottom: 20px; }
+        .template-label {
+            font-size: 0.85rem;
+            color: var(--gold-light);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .template-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .template-btn {
+            padding: 10px 14px;
+            border-radius: 10px;
+            border: 1px solid rgba(212,175,55,0.2);
+            background: rgba(255,255,255,0.03);
+            color: rgba(255,255,255,0.8);
+            cursor: pointer;
+            font-family: 'Prompt';
+            font-size: 0.75rem;
+            transition: 0.3s;
+            text-align: left;
+        }
+        .template-btn:hover { border-color: var(--gold); background: rgba(212,175,55,0.1); }
+        .template-btn.active {
+            border-color: var(--gold);
+            background: rgba(212,175,55,0.15);
+            color: var(--gold);
+        }
+        .template-btn i { margin-right: 5px; color: var(--gold); }
+
+        /* Caption Output */
+        .caption-output {
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        .caption-text {
+            width: 100%;
+            min-height: 250px;
+            background: transparent;
+            border: none;
+            color: white;
+            font-family: 'Prompt';
+            font-size: 0.9rem;
+            line-height: 1.8;
+            resize: vertical;
+            outline: none;
+        }
+        .caption-text::placeholder { color: rgba(255,255,255,0.3); }
+
+        /* Action Buttons */
+        .actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 12px 25px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            font-family: 'Prompt';
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-gold {
+            background: linear-gradient(135deg, var(--gold), #c9a030);
+            color: var(--black-green);
+            box-shadow: 0 4px 15px rgba(212,175,55,0.3);
+        }
+        .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(212,175,55,0.4); }
+        
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+        }
+        .btn-outline:hover { background: rgba(212,175,55,0.1); }
+
+        .btn-facebook {
+            background: linear-gradient(135deg, #1877F2, #0d5fc4);
+            color: white;
+            box-shadow: 0 4px 15px rgba(24,119,242,0.3);
+        }
+        .btn-facebook:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(24,119,242,0.4); }
+
+        .btn-green {
+            background: linear-gradient(135deg, var(--accent), #1e6b3a);
+            color: white;
+            box-shadow: 0 4px 15px rgba(46,125,79,0.3);
+        }
+        .btn-green:hover { transform: translateY(-2px); }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--gold);
+            color: var(--black-green);
+            padding: 15px 25px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: 0.4s;
+            z-index: 1000;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+        }
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Selected Items Bar */
+        .selected-bar {
+            background: rgba(212,175,55,0.1);
+            border: 1px solid rgba(212,175,55,0.3);
+            border-radius: 12px;
+            padding: 12px 18px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .selected-count {
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .clear-btn {
+            color: var(--danger);
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: 'Prompt';
+            font-size: 0.8rem;
+            transition: 0.3s;
+        }
+        .clear-btn:hover { text-decoration: underline; }
+
+        /* Hashtag Section */
+        .hashtags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 10px;
+        }
+        .hashtag {
+            background: rgba(212,175,55,0.1);
+            border: 1px solid rgba(212,175,55,0.2);
+            color: var(--gold);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .hashtag:hover { background: rgba(212,175,55,0.2); }
+        .hashtag.selected { background: var(--gold); color: var(--black-green); font-weight: 600; }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Emoji Picker */
+        .emoji-row {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        .emoji-btn {
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.05);
+            cursor: pointer;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s;
+        }
+        .emoji-btn:hover {
+            background: rgba(212,175,55,0.2);
+            border-color: var(--gold);
+            transform: scale(1.15);
+        }
+
+        /* Preview Card */
+        .fb-preview {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .fb-preview-header {
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .fb-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold), var(--dark-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+            font-size: 0.8rem;
+        }
+        .fb-name { font-weight: 700; color: #1c1e21; font-size: 0.9rem; }
+        .fb-time { color: #65676b; font-size: 0.75rem; }
+        .fb-preview-text {
+            padding: 0 16px 12px;
+            color: #1c1e21;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .fb-preview-actions {
+            border-top: 1px solid #e4e6eb;
+            padding: 8px 16px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .fb-action-btn {
+            color: #65676b;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B32XK3RT5X"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-B32XK3RT5X');
+    </script>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="page-header">
+        <div class="header-brand">
+            <img src="logo.png" alt="Logo">
+            <span>KHRUA THAI LONDON</span>
+        </div>
+        <div class="header-title"><i class="fas fa-magic"></i> เครื่องมือสร้างโพสต์โปรโมท</div>
+        <a href="admin.html" class="back-btn"><i class="fas fa-arrow-left"></i> กลับแอดมิน</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- LEFT PANEL: Menu Selection -->
+        <div class="panel">
+            <div class="panel-title"><i class="fas fa-utensils"></i> เลือกเมนูที่จะโปรโมท</div>
+            <div class="panel-subtitle">คลิกเมนูเพื่อเลือก จากนั้นระบบจะสร้างแคปชันให้อัตโนมัติ</div>
+
+            <!-- Tabs -->
+            <div class="tabs" id="menuTabs">
+                <button class="tab active" data-source="royal" data-cat="all">👑 คานาเป้ทั้งหมด</button>
+                <button class="tab" data-source="royal" data-cat="Seafood">🦐 ซีฟู้ด</button>
+                <button class="tab" data-source="royal" data-cat="Meat">🥩 เนื้อสัตว์</button>
+                <button class="tab" data-source="royal" data-cat="Vegetarian">🥬 ผัก</button>
+                <button class="tab" data-source="royal" data-cat="Dessert">🍮 ของหวาน</button>
+                <button class="tab" data-source="menu" data-cat="all">🍜 เซตตำรับไทย</button>
+                <button class="tab" data-source="curry" data-cat="all">🍛 เซตแกงไทย</button>
+            </div>
+
+            <!-- Selected Count -->
+            <div class="selected-bar">
+                <span class="selected-count" id="selectedCount">เลือกแล้ว 0 เมนู</span>
+                <button class="clear-btn" onclick="clearSelection()"><i class="fas fa-times"></i> ล้างทั้งหมด</button>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="menu-grid" id="menuGrid">
+                <!-- Dynamic Content -->
+            </div>
+        </div>
+
+        <!-- RIGHT PANEL: Caption Generator -->
+        <div class="panel">
+            <div class="panel-title"><i class="fas fa-pen-fancy"></i> แคปชันโพสต์</div>
+            <div class="panel-subtitle">เลือกรูปแบบแคปชัน หรือแก้ไขเองได้ตามต้องการ</div>
+
+            <!-- Caption Templates -->
+            <div class="template-section">
+                <div class="template-label">📝 รูปแบบแคปชัน</div>
+                <div class="template-grid">
+                    <button class="template-btn active" data-template="promo">
+                        <i class="fas fa-fire"></i> โปรโมทเมนู
+                    </button>
+                    <button class="template-btn" data-template="event">
+                        <i class="fas fa-calendar-star"></i> อีเวนท์/งานเลี้ยง
+                    </button>
+                    <button class="template-btn" data-template="seasonal">
+                        <i class="fas fa-leaf"></i> เมนูตามฤดูกาล
+                    </button>
+                    <button class="template-btn" data-template="story">
+                        <i class="fas fa-book-open"></i> เล่าเรื่องราว
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quick Emojis -->
+            <div class="template-label">😊 Emoji ยอดนิยม (คลิกเพื่อเพิ่ม)</div>
+            <div class="emoji-row">
+                <button class="emoji-btn" onclick="insertEmoji('🔥')">🔥</button>
+                <button class="emoji-btn" onclick="insertEmoji('✨')">✨</button>
+                <button class="emoji-btn" onclick="insertEmoji('🇹🇭')">🇹🇭</button>
+                <button class="emoji-btn" onclick="insertEmoji('🇬🇧')">🇬🇧</button>
+                <button class="emoji-btn" onclick="insertEmoji('👑')">👑</button>
+                <button class="emoji-btn" onclick="insertEmoji('🍽️')">🍽️</button>
+                <button class="emoji-btn" onclick="insertEmoji('💛')">💛</button>
+                <button class="emoji-btn" onclick="insertEmoji('🌿')">🌿</button>
+                <button class="emoji-btn" onclick="insertEmoji('📍')">📍</button>
+                <button class="emoji-btn" onclick="insertEmoji('📞')">📞</button>
+                <button class="emoji-btn" onclick="insertEmoji('🎉')">🎉</button>
+                <button class="emoji-btn" onclick="insertEmoji('❤️')">❤️</button>
+            </div>
+
+            <!-- Caption Text -->
+            <div class="caption-output">
+                <textarea class="caption-text" id="captionText" placeholder="เลือกเมนูทางซ้ายมือ แล้วแคปชันจะถูกสร้างให้อัตโนมัติ..."></textarea>
+            </div>
+
+            <!-- Hashtags -->
+            <div class="template-label">🏷️ แฮชแท็ก (คลิกเพื่อเพิ่ม/ลบ)</div>
+            <div class="hashtags" id="hashtagList">
+                <span class="hashtag selected" data-tag="#KhruaThaiLondon">#KhruaThaiLondon</span>
+                <span class="hashtag selected" data-tag="#ครัวไทยลอนดอน">#ครัวไทยลอนดอน</span>
+                <span class="hashtag selected" data-tag="#ThaiFood">#ThaiFood</span>
+                <span class="hashtag selected" data-tag="#อาหารไทย">#อาหารไทย</span>
+                <span class="hashtag" data-tag="#ThaiCatering">#ThaiCatering</span>
+                <span class="hashtag" data-tag="#LondonFood">#LondonFood</span>
+                <span class="hashtag" data-tag="#PrivateDining">#PrivateDining</span>
+                <span class="hashtag" data-tag="#ThaiCuisine">#ThaiCuisine</span>
+                <span class="hashtag" data-tag="#Canapés">#Canapés</span>
+                <span class="hashtag" data-tag="#คานาเป้">#คานาเป้</span>
+                <span class="hashtag" data-tag="#งานเลี้ยง">#งานเลี้ยง</span>
+                <span class="hashtag" data-tag="#PartyFood">#PartyFood</span>
+                <span class="hashtag" data-tag="#Halal">#Halal</span>
+                <span class="hashtag" data-tag="#AuthenticThai">#AuthenticThai</span>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="actions" style="margin-top: 20px;">
+                <button class="btn btn-gold" onclick="copyCaption()">
+                    <i class="fas fa-copy"></i> ก๊อปปี้แคปชัน
+                </button>
+                <button class="btn btn-facebook" onclick="openFacebook()">
+                    <i class="fab fa-facebook"></i> เปิด Facebook
+                </button>
+                <button class="btn btn-green" onclick="generateCaption()">
+                    <i class="fas fa-sync-alt"></i> สร้างใหม่
+                </button>
+            </div>
+
+            <!-- Facebook Preview -->
+            <div class="fb-preview">
+                <div class="fb-preview-header">
+                    <div class="fb-avatar">KT</div>
+                    <div>
+                        <div class="fb-name">Khrua Thai London</div>
+                        <div class="fb-time">Just now · <i class="fas fa-globe-americas" style="font-size:0.65rem;"></i></div>
+                    </div>
+                </div>
+                <div class="fb-preview-text" id="fbPreviewText">เลือกเมนูและสร้างแคปชันเพื่อดูตัวอย่าง...</div>
+                <div class="fb-preview-actions">
+                    <span class="fb-action-btn"><i class="far fa-thumbs-up"></i> Like</span>
+                    <span class="fb-action-btn"><i class="far fa-comment"></i> Comment</span>
+                    <span class="fb-action-btn"><i class="far fa-share-square"></i> Share</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMsg">ก๊อปปี้แล้ว!</span>
+    </div>
+
+    <script>
+        let royalMenu = [];
+        let thaiSets = [];
+        let curryMenu = [];
+        let selectedItems = [];
+        let currentTemplate = 'promo';
+
+        // Load all menu data
+        async function loadAllMenus() {
+            try {
+                const [royalRes, menuRes, curryRes] = await Promise.all([
+                    fetch('/api/royal-menu'),
+                    fetch('/api/menu'),
+                    fetch('/api/curry-menu')
+                ]);
+                royalMenu = await royalRes.json();
+                thaiSets = await menuRes.json();
+                curryMenu = await curryRes.json();
+                renderMenuItems('royal', 'all');
+            } catch (err) {
+                console.error('Error loading menus:', err);
+            }
+        }
+
+        // Render menu items in grid
+        function renderMenuItems(source, category) {
+            const grid = document.getElementById('menuGrid');
+            grid.innerHTML = '';
+            let items = [];
+
+            if (source === 'royal') {
+                royalMenu.forEach(cat => {
+                    if (category === 'all' || cat.category === category) {
+                        cat.items.forEach(item => {
+                            items.push({
+                                id: item.id,
+                                th: item.name.th,
+                                en: item.name.en,
+                                price: item.price,
+                                unit: item.unit,
+                                desc_th: item.desc?.th || '',
+                                desc_en: item.desc?.en || '',
+                                source: 'royal'
+                            });
+                        });
+                    }
+                });
+            } else if (source === 'menu') {
+                thaiSets.forEach(set => {
+                    items.push({
+                        id: 'set-' + set.id,
+                        th: set.name.th,
+                        en: set.name.en,
+                        price: set.price,
+                        unit: 'ต่อคน / Per Person',
+                        desc_th: set.desc?.th || '',
+                        desc_en: set.desc?.en || '',
+                        source: 'set',
+                        setItems: set.items
+                    });
+                });
+            } else if (source === 'curry') {
+                curryMenu.forEach(item => {
+                    items.push({
+                        id: item.id || 'curry-' + Math.random(),
+                        th: item.name?.th || item.th || '',
+                        en: item.name?.en || item.en || '',
+                        price: item.price,
+                        unit: item.unit || '',
+                        desc_th: item.desc?.th || '',
+                        desc_en: item.desc?.en || '',
+                        source: 'curry'
+                    });
+                });
+            }
+
+            items.forEach(item => {
+                const isSelected = selectedItems.some(s => s.id === item.id);
+                const div = document.createElement('div');
+                div.className = `menu-item ${isSelected ? 'selected' : ''}`;
+                div.innerHTML = `
+                    <div class="menu-item-name">${item.th}</div>
+                    <div class="menu-item-name-en">${item.en}</div>
+                    ${item.price ? `<div class="menu-item-price">£${item.price}</div>` : ''}
+                `;
+                div.onclick = () => toggleItem(item, div);
+                grid.appendChild(div);
+            });
+        }
+
+        // Toggle item selection
+        function toggleItem(item, element) {
+            const idx = selectedItems.findIndex(s => s.id === item.id);
+            if (idx >= 0) {
+                selectedItems.splice(idx, 1);
+                element.classList.remove('selected');
+            } else {
+                selectedItems.push(item);
+                element.classList.add('selected');
+            }
+            updateSelectedCount();
+            generateCaption();
+        }
+
+        function clearSelection() {
+            selectedItems = [];
+            document.querySelectorAll('.menu-item.selected').forEach(el => el.classList.remove('selected'));
+            updateSelectedCount();
+            document.getElementById('captionText').value = '';
+            document.getElementById('fbPreviewText').textContent = 'เลือกเมนูและสร้างแคปชันเพื่อดูตัวอย่าง...';
+        }
+
+        function updateSelectedCount() {
+            document.getElementById('selectedCount').textContent = `เลือกแล้ว ${selectedItems.length} เมนู`;
+        }
+
+        // Generate caption based on template
+        function generateCaption() {
+            if (selectedItems.length === 0) {
+                document.getElementById('captionText').value = '';
+                document.getElementById('fbPreviewText').textContent = 'เลือกเมนูและสร้างแคปชันเพื่อดูตัวอย่าง...';
+                return;
+            }
+
+            let caption = '';
+            const menuList = selectedItems.map(i => `✦ ${i.th} (${i.en})${i.price ? ' — £' + i.price : ''}`).join('\n');
+            const menuListSimple = selectedItems.map(i => `• ${i.th} / ${i.en}`).join('\n');
+
+            switch (currentTemplate) {
+                case 'promo':
+                    caption = `🔥 เมนูแนะนำจาก Khrua Thai London 🔥\n`;
+                    caption += `✨ รสชาติต้นตำรับไทยแท้ ส่งตรงถึงงานเลี้ยงของคุณ ✨\n\n`;
+                    caption += `${menuList}\n\n`;
+                    caption += `👑 ทุกเมนูปรุงสดใหม่ ใส่ใจในทุกรายละเอียด\n`;
+                    caption += `🇹🇭 สูตรต้นตำรับจากครัวไทยโบราณ\n`;
+                    caption += `🇬🇧 เสิร์ฟพร้อมรักจากลอนดอน\n\n`;
+                    caption += `📍 London, UK\n`;
+                    caption += `📞 สอบถามและจองล่วงหน้า\n`;
+                    caption += `🌐 www.khruathailondon.com`;
+                    break;
+
+                case 'event':
+                    caption = `🎉 จัดงานเลี้ยงสุดพิเศษ กับ Khrua Thai London 🎉\n\n`;
+                    caption += `ไม่ว่าจะเป็นงานวันเกิด งานแต่งงาน งานเลี้ยงบริษัท\n`;
+                    caption += `หรือปาร์ตี้ส่วนตัว เรามีเมนูพิเศษพร้อมเสิร์ฟ!\n\n`;
+                    caption += `🍽️ เมนูแนะนำสำหรับงานของคุณ:\n`;
+                    caption += `${menuList}\n\n`;
+                    caption += `✅ บริการจัดเลี้ยงนอกสถานที่ทั่วลอนดอน\n`;
+                    caption += `✅ ปรุงสดใหม่ที่หน้างาน\n`;
+                    caption += `✅ รองรับแขก 20-200 ท่าน\n\n`;
+                    caption += `📞 ติดต่อจองล่วงหน้า\n`;
+                    caption += `📍 London, UK`;
+                    break;
+
+                case 'seasonal':
+                    caption = `🌿 เมนูพิเศษประจำฤดูกาล 🌿\n`;
+                    caption += `จาก Khrua Thai London\n\n`;
+                    caption += `สัมผัสรสชาติแห่งฤดูกาลที่คัดสรรมาเป็นพิเศษ\n`;
+                    caption += `ด้วยวัตถุดิบชั้นเลิศ สดใหม่ทุกวัน\n\n`;
+                    caption += `${menuList}\n\n`;
+                    caption += `🍃 Fresh ingredients, authentic recipes\n`;
+                    caption += `💛 Made with love from our Thai kitchen\n\n`;
+                    caption += `📍 London, UK\n`;
+                    caption += `🌐 www.khruathailondon.com`;
+                    break;
+
+                case 'story':
+                    const firstItem = selectedItems[0];
+                    caption = `👑 ${firstItem.th} (${firstItem.en})\n\n`;
+                    if (firstItem.desc_th) {
+                        caption += `${firstItem.desc_th}\n\n`;
+                    }
+                    if (firstItem.desc_en) {
+                        caption += `${firstItem.desc_en}\n\n`;
+                    }
+                    if (selectedItems.length > 1) {
+                        caption += `🍽️ เมนูอื่นๆ ที่แนะนำ:\n`;
+                        caption += selectedItems.slice(1).map(i => `• ${i.th} / ${i.en}`).join('\n');
+                        caption += '\n\n';
+                    }
+                    caption += `✨ สูตรต้นตำรับจากครัวไทย ปรุงด้วยหัวใจ\n`;
+                    caption += `📍 Khrua Thai London\n`;
+                    caption += `📞 สอบถามเพิ่มเติม`;
+                    break;
+            }
+
+            // Add hashtags
+            const selectedHashtags = [];
+            document.querySelectorAll('.hashtag.selected').forEach(h => {
+                selectedHashtags.push(h.dataset.tag);
+            });
+            if (selectedHashtags.length > 0) {
+                caption += '\n\n' + selectedHashtags.join(' ');
+            }
+
+            document.getElementById('captionText').value = caption;
+            document.getElementById('fbPreviewText').textContent = caption;
+        }
+
+        // Insert emoji at cursor
+        function insertEmoji(emoji) {
+            const textarea = document.getElementById('captionText');
+            const start = textarea.selectionStart;
+            const end = textarea.selectionEnd;
+            const text = textarea.value;
+            textarea.value = text.substring(0, start) + emoji + text.substring(end);
+            textarea.selectionStart = textarea.selectionEnd = start + emoji.length;
+            textarea.focus();
+            document.getElementById('fbPreviewText').textContent = textarea.value;
+        }
+
+        // Copy caption to clipboard
+        async function copyCaption() {
+            const text = document.getElementById('captionText').value;
+            if (!text) {
+                showToast('⚠️ ยังไม่มีแคปชัน กรุณาเลือกเมนูก่อน!');
+                return;
+            }
+            try {
+                await navigator.clipboard.writeText(text);
+                showToast('✅ ก๊อปปี้แคปชันเรียบร้อยแล้ว! วางลง Facebook ได้เลย');
+            } catch {
+                // Fallback
+                const textarea = document.getElementById('captionText');
+                textarea.select();
+                document.execCommand('copy');
+                showToast('✅ ก๊อปปี้แล้ว!');
+            }
+        }
+
+        // Open Facebook page
+        function openFacebook() {
+            window.open('https://www.facebook.com/profile.php?id=61589177574118', '_blank');
+        }
+
+        // Show toast notification
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMsg').textContent = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
+        // Tab click handlers
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                renderMenuItems(tab.dataset.source, tab.dataset.cat);
+            });
+        });
+
+        // Template click handlers
+        document.querySelectorAll('.template-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.template-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentTemplate = btn.dataset.template;
+                generateCaption();
+            });
+        });
+
+        // Hashtag click handlers
+        document.querySelectorAll('.hashtag').forEach(tag => {
+            tag.addEventListener('click', () => {
+                tag.classList.toggle('selected');
+                generateCaption();
+            });
+        });
+
+        // Live preview update
+        document.getElementById('captionText').addEventListener('input', function() {
+            document.getElementById('fbPreviewText').textContent = this.value;
+        });
+
+        // Init
+        loadAllMenus();
+    </script>
+</body>
+</html>

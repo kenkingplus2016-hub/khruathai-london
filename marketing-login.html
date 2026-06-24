@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing Login - KHRUA THAI LONDON</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-green: #0D1F14;
+            --gold: #D4AF37;
+            --bg-light: #f5f7f5;
+        }
+        body {
+            font-family: 'Prompt', sans-serif;
+            background: linear-gradient(135deg, var(--dark-green), #1a3c28);
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .login-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            width: 100%;
+            max-width: 350px;
+            text-align: center;
+            border-top: 5px solid var(--gold);
+        }
+        .login-card img {
+            width: 80px;
+            margin-bottom: 20px;
+        }
+        .login-card h2 {
+            margin: 0 0 20px 0;
+            color: var(--dark-green);
+        }
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #333;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-family: 'Prompt', sans-serif;
+            box-sizing: border-box;
+        }
+        .btn-login {
+            background: var(--gold);
+            color: var(--dark-green);
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+        .btn-login:hover {
+            background: #bfa133;
+        }
+        .error-msg {
+            color: #d9534f;
+            font-size: 0.85rem;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B32XK3RT5X"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-B32XK3RT5X');
+    </script>
+</head>
+<body>
+
+    <div class="login-card">
+        <img src="logo.png" alt="KHRUA THAI LOGO">
+        <h2>Marketing Portal</h2>
+        <p style="font-size: 0.85rem; color: #666; margin-bottom: 20px;">ระบบจัดการการตลาดและโปรโมชั่น</p>
+        
+        <form id="marketing-login-form">
+            <div class="input-group">
+                <label>Username</label>
+                <input type="text" id="username" required>
+            </div>
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="password" required>
+            </div>
+            <div class="error-msg" id="login-error">ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง หรือคุณไม่มีสิทธิ์เข้าถึงหน้านี้</div>
+            <button type="submit" class="btn-login"><i class="fas fa-sign-in-alt"></i> เข้าสู่ระบบ (Login)</button>
+        </form>
+    </div>
+
+    <script>
+        // Check Auth Status on Load
+        fetch('/api/check-auth')
+            .then(res => res.json())
+            .then(data => {
+                if(data.loggedIn && data.role === 'marketing') {
+                    window.location.href = 'marketing.html';
+                }
+            });
+
+        document.getElementById('marketing-login-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const u = document.getElementById('username').value;
+            const p = document.getElementById('password').value;
+
+            const res = await fetch('/api/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username: u, password: p })
+            });
+            const data = await res.json();
+            
+            if(data.success && data.role === 'marketing') {
+                window.location.href = 'marketing.html';
+            } else {
+                document.getElementById('login-error').style.display = 'block';
+                // Logout if they were accidentally an admin
+                await fetch('/api/logout', { method: 'POST' }); 
+            }
+        });
+    </script>
+</body>
+</html>

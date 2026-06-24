@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking & Payment - Khrua Thai London</title>
+    <!-- เพิ่ม Font Awesome สำหรับไอคอนโซเชียล -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'SarunsManorah';
+            src: url('SarunsManorah.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        :root { --gold: #D4AF37; --dark-green: #1B3022; --cream: #F9F7F2; --text: #333; --line-green: #06C755; --wa-green: #25D366; }
+        body { font-family: 'Prompt', sans-serif; background-color: var(--cream); color: var(--text); margin: 0; padding: 0; }
+        header { background: linear-gradient(180deg, #0d1f14 0%, var(--dark-green) 50%, #0d1f14 100%); color: white; padding: 1.2rem 0 1rem; text-align: center; border-bottom: 4px solid var(--gold); position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+        .brand-logo { height: 130px; width: auto; display: block; margin: 0 auto; filter: drop-shadow(0 4px 15px rgba(212,175,55,0.5)); transition: transform 0.3s ease; }
+        .brand-logo:hover { transform: scale(1.05); }
+        .lang-toggle { display: flex; justify-content: center; gap: 8px; margin-top: 10px; }
+        .lang-btn { cursor: pointer; padding: 5px 18px; background: transparent; border: 1.5px solid var(--gold); color: var(--gold); border-radius: 20px; font-family: 'Prompt', sans-serif; font-size: 0.85rem; font-weight: 600; transition: all 0.3s ease; letter-spacing: 1px; }
+        .lang-btn:hover, .lang-btn.active { background: var(--gold); color: var(--dark-green); }
+        
+        .container { max-width: 800px; margin: 30px auto; padding: 0 20px; }
+        .card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); margin-bottom: 30px; }
+        .section-title { font-family: 'SarunsManorah'; border-bottom: 2px solid var(--gold); padding-bottom: 8px; margin-bottom: 20px; color: var(--dark-green); font-size: 1.8rem; }
+
+        /* Social Buttons */
+        .social-connect { display: flex; justify-content: center; gap: 15px; margin-bottom: 20px; flex-wrap: wrap; }
+        .social-btn { text-decoration: none; color: white; padding: 10px 20px; border-radius: 30px; font-weight: 600; display: flex; align-items: center; gap: 8px; transition: 0.3s; font-size: 0.9rem; }
+        .fb { background: #1877F2; } .wa { background: var(--wa-green); } .ln { background: var(--line-green); } .ig { background: #E4405F; }
+        .social-btn:hover { transform: translateY(-3px); opacity: 0.9; }
+
+        /* Form & Payment */
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px; }
+        input, textarea, select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; font-family: 'Prompt'; }
+        .full-width { grid-column: span 2; }
+        
+        .payment-methods { display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
+        .pay-option { flex: 1; border: 2px solid #eee; padding: 10px; text-align: center; border-radius: 10px; cursor: pointer; transition: 0.3s; min-width: 100px; }
+        .pay-option.active { border-color: var(--gold); background: #fffcf0; }
+        .set-opt.selected { border-color: var(--gold) !important; background: var(--dark-green) !important; color: var(--gold) !important; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .pay-option i { font-size: 1.5rem; display: block; margin-bottom: 5px; color: var(--dark-green); }
+
+        .deposit-alert { background: #fff4e5; border-left: 5px solid var(--gold); padding: 15px; margin: 20px 0; border-radius: 4px; font-size: 0.95rem; }
+        .btn-submit { width: 100%; background: var(--dark-green); color: var(--gold); border: 2px solid var(--gold); padding: 15px; font-size: 1.2rem; font-weight: bold; cursor: pointer; border-radius: 8px; transition: 0.3s; }
+        .btn-submit:hover { background: var(--gold); color: white; }
+
+        @media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; } .full-width { grid-column: span 1; } .brand-logo { height: 70px; } }
+    </style>
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="light-theme.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B32XK3RT5X"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-B32XK3RT5X');
+    </script>
+    
+    <!-- Leaflet Map CSS & JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</head>
+<body>
+
+<header>
+    <img src="logo.png" alt="Khrua Thai London" class="brand-logo">
+    <nav style="display:flex;justify-content:center;gap:10px;margin-top:12px;flex-wrap:wrap;">
+        <a href="index.html" id="nav-home" style="color:var(--gold);text-decoration:none;padding:6px 18px;border:1.5px solid var(--gold);border-radius:20px;font-size:0.85rem;font-weight:600;transition:all 0.3s;letter-spacing:0.5px;">หน้าแรก / Home</a>
+        <a href="menu.html" id="nav-menu" style="color:var(--gold);text-decoration:none;padding:6px 18px;border:1.5px solid var(--gold);border-radius:20px;font-size:0.85rem;font-weight:600;transition:all 0.3s;letter-spacing:0.5px;">เซทตำรับไทย / Authentic Thai Sets</a>
+        <a href="royal.html" id="nav-royal" style="color:var(--gold);text-decoration:none;padding:6px 18px;border:1.5px solid var(--gold);border-radius:20px;font-size:0.85rem;font-weight:600;transition:all 0.3s;letter-spacing:0.5px;">The Royal Siam Gathering</a>
+        <a href="delivery.html" id="nav-delivery" style="color:var(--gold);text-decoration:none;padding:6px 18px;border:1.5px solid var(--gold);border-radius:20px;font-size:0.85rem;font-weight:600;transition:all 0.3s;letter-spacing:0.5px;">ดิลิเวอรีบ็อกซ์เซต / Delivery Box Sets</a>
+        <a href="booking.html" id="nav-booking" style="color:var(--dark-green);background:var(--gold);text-decoration:none;padding:6px 18px;border:1.5px solid var(--gold);border-radius:20px;font-size:0.85rem;font-weight:600;transition:all 0.3s;letter-spacing:0.5px;">จองงาน / Booking</a>
+    </nav>
+    <div class="lang-toggle" style="margin-top:8px;">
+        <button class="lang-btn active" onclick="changeLang('th', this)">TH</button>
+        <button class="lang-btn" onclick="changeLang('en', this)">EN</button>
+    </div>
+</header>
+
+<div class="container">
+    <!-- Connect Section -->
+    <div class="card">
+        <h2 id="t-connect" class="section-title">ติดต่อเรา / Connect With Us</h2>
+        <div class="social-connect">
+            <a href="https://facebook.com/yourpage" target="_blank" class="social-btn fb"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="https://wa.me/441234567890" target="_blank" class="social-btn wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="https://line.me/ti/p/~yourid" target="_blank" class="social-btn ln"><i class="fab fa-line"></i> Line</a>
+            <a href="https://instagram.com/yourprofile" target="_blank" class="social-btn ig"><i class="fab fa-instagram"></i> Instagram</a>
+        </div>
+    </div>
+
+    <!-- Booking Form -->
+    <div class="card">
+        <h2 id="t-booking" class="section-title">ข้อมูลการสั่งจอง / Booking Details</h2>
+        <form id="orderForm">
+            <div class="form-grid">
+                <div class="full-width">
+                    <label id="l-name">ชื่อผู้ติดต่อ / Contact Name</label>
+                    <input type="text" id="custName" required placeholder="John Doe">
+                </div>
+                <div>
+                    <label id="l-phone">เบอร์โทรศัพท์ / Phone</label>
+                    <input type="tel" id="custPhone" required placeholder="+44 xxx xxxx">
+                </div>
+                <div class="full-width">
+                    <label id="l-email">อีเมล / Email Address</label>
+                    <input type="email" id="custEmail" required placeholder="example@email.com">
+                </div>
+                <div>
+                    <label id="l-date">วันที่จัดงาน / Event Date</label>
+                    <input type="date" id="eventDate" required>
+                </div>
+                <div class="full-width">
+                    <label id="l-venue">สถานที่จัดงาน / Venue Name</label>
+                    <input type="text" id="eventPlace" required placeholder="Hotel or House Name">
+                </div>
+                <div class="full-width">
+                    <label id="l-address">ที่อยู่จัดส่ง / Full Address (ระบุรหัสไปรษณีย์ UK Postcode ด้วยครับ)</label>
+                    <div style="display:flex; gap:10px; margin-bottom:10px;">
+                        <textarea id="custAddress" rows="2" required placeholder="เช่น SW8 2LZ, London" style="flex:1;"></textarea>
+                        <button type="button" class="btn" onclick="verifyAddress()" style="width:auto; height:fit-content; padding:15px; background:var(--gold); color:var(--dark-green); font-size:0.9rem; margin:0;"><i class="fas fa-search-location"></i> เช็คโซนจัดส่ง</button>
+                    </div>
+                    
+                    <div id="map-container" style="display:none; margin-top:10px;">
+                        <div id="delivery-status" style="padding:10px; border-radius:8px; margin-bottom:10px; font-weight:600; text-align:center;"></div>
+                        <div id="map" style="height: 250px; width: 100%; border-radius:12px; border:2px solid #ddd; z-index:1;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menu Selection Section (Dynamic Dropdown) -->
+            <h3 id="t-menu-select" style="color:var(--dark-green); margin-top:20px;">เลือกชุดเมนู / Select Menu Set</h3>
+            <select id="menuSetSelect" style="width:100%; padding:14px; border:2px solid var(--gold); border-radius:12px; font-family:'Prompt'; font-size:1rem; font-weight:600; color:var(--dark-green); background:white; cursor:pointer; appearance:auto; margin-bottom:10px;">
+                <option value="" disabled selected>-- กรุณาเลือกเมนู / Please select a menu --</option>
+            </select>
+            <div id="selected-set-info" style="display:none; background:#fffcf0; border:1.5px solid var(--gold); border-radius:12px; padding:15px; margin-bottom:15px;">
+                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+                    <div>
+                        <div id="info-set-name" style="font-weight:700; color:var(--dark-green); font-size:1.1rem;"></div>
+                        <div id="info-set-unit" style="font-size:0.85rem; color:#666;"></div>
+                    </div>
+                    <div style="text-align:right;">
+                        <div id="info-set-price" style="font-size:1.5rem; font-weight:800; color:var(--dark-green);"></div>
+                        <div id="info-set-deposit" style="font-size:0.85rem; color:var(--gold); font-weight:600;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Customization Options (shown when set has options) -->
+            <div id="customization-section" style="display:none; margin-top:15px; background:rgba(27,48,34,0.05); padding:20px; border-radius:15px; border:2px solid var(--dark-green);">
+                <h4 style="color:var(--dark-green); margin:0 0 15px 0; font-size:1rem;">
+                    <i class="fas fa-list-check" style="color:var(--gold);"></i>
+                    <span id="custom-title">เลือกรายการอาหาร / Customize Your Order</span>
+                </h4>
+                <div id="custom-options-container" style="display:grid; gap:12px;"></div>
+            </div>
+
+            <!-- Allergy Section -->
+            <div style="margin-top:20px; background:rgba(212,175,55,0.05); padding:20px; border-radius:15px; border:1px dashed var(--gold);">
+                <label id="l-allergy" style="color:var(--dark-green); font-weight:600; display:block; margin-bottom:10px;">ข้อมูลการแพ้อาหาร / Food Allergy & Dietary Requirements</label>
+                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap:10px; margin-bottom:10px;">
+                    <label style="display:flex; align-items:center; gap:8px; font-size:0.9rem; cursor:pointer;">
+                        <input type="checkbox" name="allergy" value="Peanuts"> <span id="opt-peanuts">ถั่ว (Peanuts)</span>
+                    </label>
+                    <label style="display:flex; align-items:center; gap:8px; font-size:0.9rem; cursor:pointer;">
+                        <input type="checkbox" name="allergy" value="Milk"> <span id="opt-milk">นม (Milk/Dairy)</span>
+                    </label>
+                    <label style="display:flex; align-items:center; gap:8px; font-size:0.9rem; cursor:pointer;">
+                        <input type="checkbox" name="allergy" value="Seafood"> <span id="opt-seafood">อาหารทะเล (Seafood)</span>
+                    </label>
+                    <label style="display:flex; align-items:center; gap:8px; font-size:0.9rem; cursor:pointer;">
+                        <input type="checkbox" name="allergy" value="Eggs"> <span id="opt-eggs">ไข่ (Eggs)</span>
+                    </label>
+                    <label style="display:flex; align-items:center; gap:8px; font-size:0.9rem; cursor:pointer;">
+                        <input type="checkbox" name="allergy" value="MSG"> <span id="opt-msg">ผงชูรส (MSG)</span>
+                    </label>
+                    <label style="display:flex; align-items:center; gap:8px; font-size:0.9rem; cursor:pointer;">
+                        <input type="checkbox" name="allergy" value="Fish Sauce"> <span id="opt-fishsauce">น้ำปลา (Fish Sauce)</span>
+                    </label>
+                    <label style="display:flex; align-items:center; gap:8px; font-size:0.9rem; cursor:pointer;">
+                        <input type="checkbox" name="allergy" value="Knorr"> <span id="opt-knorr">คนอร์ (Knorr / Bouillon)</span>
+                    </label>
+                </div>
+                <textarea id="allergy-detail" rows="1" placeholder="อื่นๆ ระบุ (ถ้ามี) / Others (if any)" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px; font-family:'Prompt'; font-size:0.9rem;"></textarea>
+            </div>
+
+            <!-- Payment Section -->
+            <h3 id="t-payment" style="color:var(--dark-green); margin-top:20px;">วิธีชำระเงินมัดจำ / Payment Method</h3>
+            <div class="payment-methods">
+                <div class="pay-option active" onclick="selectPay(this, 'Transfer')">
+                    <i class="fas fa-university"></i>
+                    <span id="p-transfer">โอนเงิน<br>Bank Transfer</span>
+                </div>
+                <div class="pay-option" onclick="selectPay(this, 'Card')">
+                    <i class="far fa-credit-card"></i>
+                    <span id="p-card">บัตรเครดิต<br>Credit Card</span>
+                </div>
+            </div>
+
+            <div class="deposit-alert">
+                <strong id="d-title">เงื่อนไขการชำระเงิน (Payment Terms):</strong>
+                <p id="d-desc">ชำระมัดจำ 50% สำหรับงานจัดเลี้ยง หรือ ชำระเต็มจำนวนสำหรับเซตดิลิเวอรีบ็อกซ์</p>
+            </div>
+
+            <button type="button" class="btn-submit" onclick="submitBooking()" id="btn-submit">ยืนยันการจอง / Confirm Booking</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    let selectedPaymentMethod = 'Transfer';
+    let currentLang = 'th';
+    let allMenuSets = [];
+    let currentTotalSets = 1;
+    
+    // --- Map & Delivery Zone Variables ---
+    let map = null;
+    let vauxhallMarker = null;
+    let customerMarker = null;
+    let deliveryCircle = null;
+    const VAUXHALL_LAT = 51.4862;
+    const VAUXHALL_LNG = -0.1229;
+    const MAX_DISTANCE_METERS = 16093.4; // 10 miles in meters
+
+    function initMap() {
+        if (map) return; // already initialized
+        document.getElementById('map-container').style.display = 'block';
+        map = L.map('map').setView([VAUXHALL_LAT, VAUXHALL_LNG], 11);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        // Center Marker (Vauxhall)
+        vauxhallMarker = L.marker([VAUXHALL_LAT, VAUXHALL_LNG]).addTo(map)
+            .bindPopup("<b>จุดกระจายสินค้า (Vauxhall)</b>")
+            .openPopup();
+
+        // 10-mile radius circle
+        deliveryCircle = L.circle([VAUXHALL_LAT, VAUXHALL_LNG], {
+            color: '#28a745',
+            fillColor: '#28a745',
+            fillOpacity: 0.1,
+            radius: MAX_DISTANCE_METERS
+        }).addTo(map);
+    }
+
+    async function verifyAddress() {
+        const address = document.getElementById('custAddress').value.trim();
+        const statusBox = document.getElementById('delivery-status');
+        
+        if (!address) {
+            statusBox.style.background = '#ffeeba';
+            statusBox.style.color = '#856404';
+            statusBox.innerHTML = '⚠️ กรุณากรอกที่อยู่ก่อนเช็คโซนจัดส่ง / Please enter address first';
+            return;
+        }
+
+        initMap();
+        statusBox.style.background = '#e2e3e5';
+        statusBox.style.color = '#383d41';
+        statusBox.innerHTML = 'กำลังค้นหาพิกัด... / Locating... <i class="fas fa-spinner fa-spin"></i>';
+
+        try {
+            // Use Nominatim API (Free OpenStreetMap Geocoding)
+            // Note: Added 'UK' to query to restrict search area
+            const res = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(address + ', UK')}`);
+            const data = await res.json();
+
+            if (data.length === 0) {
+                statusBox.style.background = '#f8d7da';
+                statusBox.style.color = '#721c24';
+                statusBox.innerHTML = '❌ ค้นหาที่อยู่ไม่พบ (โปรดระบุ Postcode หรือที่อยู่ให้ชัดเจนขึ้น) / Address not found';
+                return;
+            }
+
+            const custLat = parseFloat(data[0].lat);
+            const custLng = parseFloat(data[0].lon);
+            const latlng = L.latLng(custLat, custLng);
+            const center = L.latLng(VAUXHALL_LAT, VAUXHALL_LNG);
+            const distanceMeters = center.distanceTo(latlng);
+            const distanceMiles = (distanceMeters / 1609.34).toFixed(1);
+
+            if (customerMarker) map.removeLayer(customerMarker);
+            
+            customerMarker = L.marker([custLat, custLng], {
+                icon: L.icon({
+                    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+                    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+                    iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34], shadowSize: [41, 41]
+                })
+            }).addTo(map);
+
+            // Zoom map to fit both points
+            map.fitBounds(L.latLngBounds([center, latlng]).pad(0.2));
+
+            if (distanceMeters <= MAX_DISTANCE_METERS) {
+                statusBox.style.background = '#d4edda';
+                statusBox.style.color = '#155724';
+                statusBox.innerHTML = `✅ อยู่ในโซนจัดส่ง! ระยะทางประมาณ ${distanceMiles} ไมล์ (Within Delivery Zone)`;
+                document.getElementById('btn-submit').disabled = false;
+                document.getElementById('btn-submit').style.opacity = '1';
+            } else {
+                statusBox.style.background = '#f8d7da';
+                statusBox.style.color = '#721c24';
+                statusBox.innerHTML = `⚠️ นอกโซนจัดส่ง (ระยะทาง ${distanceMiles} ไมล์ ซึ่งเกิน 10 ไมล์) กรุณาติดต่อแอดมินก่อนจองครับ`;
+                // Optionally disable submit button
+                // document.getElementById('btn-submit').disabled = true;
+                // document.getElementById('btn-submit').style.opacity = '0.5';
+            }
+
+        } catch (error) {
+            statusBox.innerHTML = '❌ ระบบค้นหาพิกัดขัดข้องชั่วคราว / System Error';
+        }
+    }
+
+    function extendOptionsWithSpiciness(set) {
+        if (!set.options) {
+            set.options = [];
+        }
+        if (set.options.some(o => o.id.includes('spicy'))) {
+            return set.options;
+        }
+
+        const setStr = JSON.stringify(set).toLowerCase();
+        
+        // Curry / แกง
+        const hasCurry = setStr.includes('แกง') || setStr.includes('curry') || setStr.includes('massaman') || setStr.includes('panang');
+        // Basil / กระเพรา / กะเพรา
+        const hasBasil = setStr.includes('กระเพรา') || setStr.includes('กะเพรา') || setStr.includes('basil');
+        // Som Tum / ส้มตำ
+        const hasSomTum = setStr.includes('ส้มตำ') || setStr.includes('som tum') || setStr.includes('somtum') || setStr.includes('papaya salad');
+
+        if (hasCurry) {
+            set.options.push({
+                id: "spicy_curry",
+                label: { "th": "ระดับความเผ็ดแกง", "en": "Spiciness Level - Curry" },
+                choices: [
+                    { "th": "Mild (เผ็ดน้อย)", "en": "Mild (เผ็ดน้อย)" },
+                    { "th": "Medium (เผ็ดกลาง)", "en": "Medium (เผ็ดกลาง)" },
+                    { "th": "Thai Spicy", "en": "Thai Spicy" }
+                ]
+            });
+        }
+
+        if (hasBasil) {
+            set.options.push({
+                id: "spicy_basil",
+                label: { "th": "ระดับความเผ็ดผัดกะเพรา", "en": "Spiciness Level - Basil Stir Fry" },
+                choices: [
+                    { "th": "Mild (เผ็ดน้อย)", "en": "Mild (เผ็ดน้อย)" },
+                    { "th": "Medium (เผ็ดกลาง)", "en": "Medium (เผ็ดกลาง)" },
+                    { "th": "Thai Spicy", "en": "Thai Spicy" }
+                ]
+            });
+        }
+
+        if (hasSomTum) {
+            set.options.push({
+                id: "spicy_somtum",
+                label: { "th": "ระดับความเผ็ดส้มตำ", "en": "Spiciness Level - Som Tum" },
+                choices: [
+                    { "th": "Mild (เผ็ดน้อย)", "en": "Mild (เผ็ดน้อย)" },
+                    { "th": "Medium (เผ็ดกลาง)", "en": "Medium (เผ็ดกลาง)" },
+                    { "th": "Thai Spicy", "en": "Thai Spicy" }
+                ]
+            });
+        }
+
+        return set.options;
+    }
+
+    // Load all menus on page load
+    async function loadAllMenus() {
+        try {
+            const [menuRes, classicRes] = await Promise.all([
+                fetch('/api/menu'),
+                fetch('/api/classic-menu')
+            ]);
+            const menuData = menuRes.ok ? await menuRes.json() : [];
+            const classicData = classicRes.ok ? await classicRes.json() : [];
+
+            const select = document.getElementById('menuSetSelect');
+
+            // Group 1: Authentic Thai Sets
+            if (menuData.length > 0) {
+                const grp1 = document.createElement('optgroup');
+                grp1.label = '🍽️ เซทตำรับไทย / Authentic Thai Sets';
+                menuData.forEach(s => {
+                    extendOptionsWithSpiciness(s);
+                    const opt = document.createElement('option');
+                    const key = `authentic-${s.id}`;
+                    opt.value = key;
+                    opt.textContent = `SET ${s.id} — ${s.name.th} (${s.name.en}) — £${s.price}`;
+                    grp1.appendChild(opt);
+                    allMenuSets.push({ key, name_th: s.name.th, name_en: s.name.en, price: parseFloat(s.price), unit_th: '10 ท่าน', unit_en: '10 Persons', category: 'Authentic', options: s.options || null });
+                });
+                select.appendChild(grp1);
+            }
+
+            // Group 2: Classic / Delivery Sets
+            if (classicData.length > 0) {
+                const grp2 = document.createElement('optgroup');
+                grp2.label = '🥡 เซตถาดไทยสไตล์ / Thai Style Tray Sets';
+                classicData.forEach(s => {
+                    extendOptionsWithSpiciness(s);
+                    const opt = document.createElement('option');
+                    const key = `classic-${s.id}`;
+                    opt.value = key;
+                    opt.textContent = `${s.name.th} (${s.name.en}) — £${s.price} / ${s.unit.th}`;
+                    grp2.appendChild(opt);
+                    allMenuSets.push({ key, name_th: s.name.th, name_en: s.name.en, price: parseFloat(s.price), unit_th: s.unit.th, unit_en: s.unit.en, category: 'Classic', options: s.options || null });
+                });
+                select.appendChild(grp2);
+            }
+
+            // Group 3: Premium Royal Canapes (Custom Selection)
+            const grp3 = document.createElement('optgroup');
+            grp3.label = '🍢 เมนูบริการชาววัง / Premium Royal Gathering Sets';
+            
+            
+
+            const optCanape = document.createElement('option');
+            optCanape.value = 'royal-canapes';
+            optCanape.textContent = 'เดอะ รอยัล สยาม แกเธอริง (เลือกเอง) / The Royal Siam Gathering (Bespoke Cart)';
+            grp3.appendChild(optCanape);
+            
+            select.appendChild(grp3);
+
+
+            allMenuSets.push({
+                key: 'royal-canapes',
+                name_th: 'เดอะ รอยัล สยาม แกเธอริง (เซตสั่งเอง)',
+                name_en: 'The Royal Siam Gathering (Bespoke Selection)',
+                price: 0,
+                unit_th: 'รายการที่เลือก',
+                unit_en: 'Selected Items',
+                category: 'RoyalCanapes',
+                options: null
+            });
+
+            // Auto-select from URL parameter (?set=authentic-1 or ?set=classic-1 or ?set=royal-canapes)
+            const urlParams = new URLSearchParams(window.location.search);
+            const preselect = urlParams.get('set');
+            if (preselect && select.querySelector(`option[value="${preselect}"]`)) {
+                select.value = preselect;
+                onMenuSelectChange();
+                // Scroll to form
+                document.getElementById('orderForm').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        } catch (err) {
+            console.error('Error loading menus:', err);
+        }
+    }
+
+    function onMenuSelectChange() {
+        const key = document.getElementById('menuSetSelect').value;
+        const info = allMenuSets.find(s => s.key === key);
+        const infoBox = document.getElementById('selected-set-info');
+        const customSection = document.getElementById('customization-section');
+        const customContainer = document.getElementById('custom-options-container');
+
+        if (info) {
+            if (key === 'royal-canapes') {
+                const urlParams = new URLSearchParams(window.location.search);
+                const itemsStr = urlParams.get('items') || '';
+                
+                if (!itemsStr) {
+                    document.getElementById('info-set-name').textContent = `${info.name_th} / ${info.name_en}`;
+                    document.getElementById('info-set-unit').innerHTML = `<span style="color:red; font-weight:600;">${currentLang === 'th' ? 'กรุณาเลือกเมนูคำพอดีคำหรือเซตแกงที่หน้าหลักก่อนครับ' : 'Please select Canapé or Curry items from the page first.'}</span>`;
+                    document.getElementById('info-set-price').textContent = `£0`;
+                    document.getElementById('info-set-deposit').textContent = `มัดจำ 50% = £0`;
+                    infoBox.style.display = 'block';
+                    customSection.style.display = 'none';
+                    return;
+                }
+
+                const selections = {};
+                itemsStr.split(',').forEach(pair => {
+                    const [id, qty] = pair.split(':');
+                    if (id && qty) {
+                        selections[id] = parseInt(qty);
+                    }
+                });
+
+                Promise.all([
+                    fetch('/api/royal-menu').then(res => res.json()),
+                    fetch('/api/curry-menu').then(res => res.json())
+                ])
+                .then(([categories, curryItems]) => {
+                    let totalSets = 0;
+                    let totalPrice = 0;
+                    let listHTML = '<ul id="canapes-booking-list" style="margin: 10px 0; padding-left: 20px; text-align: left; list-style-type: disc; font-size: 0.9rem;">';
+
+                    // Parse Canapés
+                    categories.forEach(cat => {
+                        cat.items.forEach(item => {
+                            if (selections[item.id]) {
+                                const qty = selections[item.id];
+                                const subtotal = item.price * qty;
+                                totalSets += qty;
+                                totalPrice += subtotal;
+                                listHTML += `
+                                    <li style="margin-bottom: 5px; color: var(--dark-green); line-height: 1.4;">
+                                        <strong>🍢 ${item.name[currentLang]}</strong> x ${qty} ${currentLang === 'th' ? 'ชุด (32 ชิ้น)' : 'Sets (32 Pcs)'}
+                                        <span style="color: var(--gold); font-weight: 700; margin-left: 8px;">£${subtotal}</span>
+                                    </li>
+                                `;
+                            }
+                        });
+                    });
+
+                    // Parse Curry items
+                    curryItems.forEach(item => {
+                        if (selections[item.id]) {
+                            const qty = selections[item.id];
+                            const subtotal = item.price * qty;
+                            totalSets += qty;
+                            totalPrice += subtotal;
+                            listHTML += `
+                                <li style="margin-bottom: 5px; color: var(--dark-green); line-height: 1.4;">
+                                    <strong>🍛 ${item.name[currentLang]}</strong> x ${qty} ${currentLang === 'th' ? 'ชุด (6 กล่อง)' : 'Sets (6 Meals)'}
+                                    <span style="color: var(--gold); font-weight: 700; margin-left: 8px;">£${subtotal}</span>
+                                </li>
+                            `;
+                        }
+                    });
+
+                    listHTML += '</ul>';
+
+                    document.getElementById('info-set-name').textContent = `${info.name_th} / ${info.name_en}`;
+                    
+                    const unitContainer = document.getElementById('info-set-unit');
+                    unitContainer.innerHTML = `
+                        <div style="font-weight:700; margin-bottom: 5px; color: var(--dark-green);">${currentLang === 'th' ? 'รายการจองชาววังที่เลือกสั่ง:' : 'Selected Royal Items:'}</div>
+                        ${listHTML}
+                        <div style="font-size: 0.8rem; color: #888; margin-top: 8px; font-style: italic;">
+                            ${currentLang === 'th' ? '* จำหน่ายตามเซตคำว่าง (32 ชิ้น) และเซตแกงข้าวกล่อง (6 กล่อง)' : '* Sold in portions of 32-pieces canapés and sets of 6 curry meals'}
+                        </div>
+                    `;
+
+                    document.getElementById('info-set-price').textContent = `£${totalPrice}`;
+                    document.getElementById('info-set-deposit').textContent = `มัดจำ 50% = £${(totalPrice / 2).toFixed(2)}`;
+                    
+                    info.price = totalPrice;
+                    currentTotalSets = totalSets; // Save total sets for submission
+                    infoBox.style.display = 'block';
+                    customSection.style.display = 'none';
+                });
+            } else {
+                currentTotalSets = 1; // Default 1 set for classic/authentic menus
+                document.getElementById('info-set-name').textContent = `${info.name_th} / ${info.name_en}`;
+                document.getElementById('info-set-unit').textContent = `สำหรับ ${info.unit_th} / For ${info.unit_en}`;
+                document.getElementById('info-set-price').textContent = `£${info.price.toFixed(0)}`;
+                if (info.category === 'Classic') {
+                    document.getElementById('info-set-deposit').textContent = `${currentLang === 'th' ? 'ชำระเต็มจำนวน' : 'Full Payment'} = £${info.price.toFixed(2)}`;
+                } else {
+                    document.getElementById('info-set-deposit').textContent = `มัดจำ 50% = £${(info.price / 2).toFixed(2)}`;
+                }
+                infoBox.style.display = 'block';
+
+                // Render customization options if available
+                if (info.options && info.options.length > 0) {
+                    customContainer.innerHTML = '';
+                    const urlParams = new URLSearchParams(window.location.search);
+                    info.options.forEach(opt => {
+                        const preselectedVal = urlParams.get(`custom_${opt.id}`);
+                        const wrapper = document.createElement('div');
+                        wrapper.innerHTML = `
+                            <label style="font-weight:600; color:var(--dark-green); font-size:0.95rem; display:block; margin-bottom:5px;">
+                                <i class="fas fa-chevron-right" style="color:var(--gold); margin-right:5px;"></i>
+                                ${opt.label.th} / ${opt.label.en}
+                            </label>
+                            <select name="custom_${opt.id}" style="width:100%; padding:12px; border:2px solid #ddd; border-radius:10px; font-family:'Prompt'; font-size:0.95rem; color:var(--dark-green); background:white; cursor:pointer;" required>
+                                <option value="" disabled ${!preselectedVal ? 'selected' : ''}>-- เลือก / Choose --</option>
+                                ${opt.choices.map(c => {
+                                    const isSel = (preselectedVal === c.th) ? 'selected' : '';
+                                    return `<option value="${c.th}" ${isSel}>${c.th} / ${c.en}</option>`;
+                                }).join('')}
+                            </select>
+                        `;
+                        customContainer.appendChild(wrapper);
+                    });
+                    customSection.style.display = 'block';
+                } else {
+                    customContainer.innerHTML = '';
+                    customSection.style.display = 'none';
+                }
+            }
+        } else {
+            infoBox.style.display = 'none';
+            customContainer.innerHTML = '';
+            customSection.style.display = 'none';
+        }
+    }
+
+    document.getElementById('menuSetSelect').addEventListener('change', onMenuSelectChange);
+
+    function selectPay(el, method) {
+        document.querySelectorAll('.pay-option').forEach(opt => opt.classList.remove('active'));
+        el.classList.add('active');
+        selectedPaymentMethod = method;
+    }
+
+    async function submitBooking() {
+        const custName = document.getElementById('custName').value;
+        const custPhone = document.getElementById('custPhone').value;
+        const custEmail = document.getElementById('custEmail').value;
+        const eventDate = document.getElementById('eventDate').value;
+        const eventPlace = document.getElementById('eventPlace').value;
+        const custAddress = document.getElementById('custAddress').value;
+
+        const menuSelectVal = document.getElementById('menuSetSelect').value;
+        if (!custName || !custPhone || !custEmail || !eventDate || !eventPlace || !custAddress || !menuSelectVal) {
+            alert("กรุณากรอกข้อมูลให้ครบถ้วน / Please fill in all required fields and select a menu set.");
+            return;
+        }
+
+        const selectedSet = allMenuSets.find(s => s.key === menuSelectVal);
+        const menuSet = selectedSet ? `${selectedSet.name_th} (${selectedSet.name_en})` : menuSelectVal;
+        const totalAmount = selectedSet ? selectedSet.price : 0;
+
+        // Collect customization choices
+        const customSelects = document.querySelectorAll('#custom-options-container select');
+        const customChoices = [];
+        for (const sel of customSelects) {
+            if (sel.offsetParent !== null && !sel.value) {
+                alert('กรุณาเลือกรายการอาหารให้ครบ / Please complete all menu choices.');
+                return;
+            }
+            if (sel.value) customChoices.push(sel.value);
+        }
+
+        if (menuSelectVal === 'royal-canapes') {
+            const listItems = document.querySelectorAll('#canapes-booking-list li');
+            listItems.forEach(li => {
+                customChoices.push(li.innerText.trim().replace(/\s+/g, ' '));
+            });
+        }
+
+        const allergyEls = document.querySelectorAll('input[name="allergy"]:checked');
+        const allergy = Array.from(allergyEls).map(el => el.value);
+        const allergyDetail = document.getElementById('allergy-detail').value;
+
+        const btn = document.getElementById('btn-submit');
+        const originalText = btn.innerText;
+        btn.innerText = "กำลังประมวลผล... / Processing...";
+        btn.disabled = true;
+
+        try {
+            const response = await fetch('/api/create-checkout-session', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    custName, custPhone, custEmail, eventDate, eventPlace, custAddress,
+                    menuSet, allergy, allergyDetail,
+                    customChoices: customChoices.length > 0 ? customChoices : undefined,
+                    paymentMethod: selectedPaymentMethod,
+                    totalAmount,
+                    totalSets: currentTotalSets,
+                    category: selectedSet ? selectedSet.category : 'Unknown'
+                })
+            });
+
+            const result = await response.json();
+
+            if (result.url) {
+                window.location.href = result.url;
+            } else if (result.success) {
+                window.location.href = `/success.html?method=${result.method}&id=${result.bookingId}`;
+            } else {
+                alert('เกิดข้อผิดพลาด / Error: ' + (result.error || 'Unknown error. Please check API keys.'));
+                btn.innerText = originalText;
+                btn.disabled = false;
+            }
+        } catch (error) {
+            console.error('Error submitting booking:', error);
+            alert('เกิดข้อผิดพลาดในการเชื่อมต่อ / Connection error');
+            btn.innerText = originalText;
+            btn.disabled = false;
+        }
+    }
+
+    function changeLang(lang, btn) {
+        document.documentElement.lang = lang;
+        if (btn) { document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); }
+        const t = {
+            th: { 
+                connect: "ติดต่อเรา", booking: "ข้อมูลการสั่งจอง", name: "ชื่อผู้ติดต่อ", phone: "เบอร์โทรศัพท์", date: "วันที่จัดงาน", 
+                venue: "สถานที่จัดงาน", address: "ที่อยู่จัดส่ง", payment: "วิธีชำระเงินมัดจำ", submit: "ยืนยันการจอง",
+                allergy: "ข้อมูลการแพ้อาหาร", peanuts: "ถั่ว", milk: "นม / ผลิตภัณฑ์จากนม", seafood: "อาหารทะเล", eggs: "ไข่", msg: "ผงชูรส (MSG)", fishsauce: "น้ำปลา (Fish Sauce)", knorr: "คนอร์ (Knorr)",
+                other: "อื่นๆ ระบุ (ถ้ามี)",
+                menu_select: "เลือกชุดเมนู (ราคายังไม่รวมภาษีและบริการ)",
+                d_title: "เงื่อนไขการชำระเงิน (Payment Terms):",
+                d_desc: "ชำระมัดจำ 50% สำหรับงานจัดเลี้ยง หรือ ชำระเต็มจำนวนสำหรับเซตดิลิเวอรีบ็อกซ์ (ราคาไม่รวมภาษีและค่าจัดส่ง)"
+            },
+            en: { 
+                connect: "Connect With Us", booking: "Booking Details", name: "Contact Name", phone: "Phone Number", date: "Event Date", 
+                venue: "Venue Name", address: "Full Address", payment: "Payment Method", submit: "Confirm Booking",
+                allergy: "Food Allergy / Dietary Requirements", peanuts: "Peanuts", milk: "Milk / Dairy", seafood: "Seafood", eggs: "Eggs", msg: "MSG", fishsauce: "Fish Sauce", knorr: "Knorr / Bouillon",
+                other: "Others (if any)",
+                menu_select: "Select Menu Set (Excl. Tax & Service)",
+                d_title: "Payment Terms:",
+                d_desc: "50% deposit for catering events, or full payment for delivery box sets. (Excl. Tax & Delivery)"
+            }
+        }[lang];
+        
+        document.getElementById('nav-home').innerText = t.nav_home;
+        document.getElementById('nav-menu').innerText = t.nav_menu;
+        if (document.getElementById('nav-delivery')) document.getElementById('nav-delivery').innerText = t.nav_delivery;
+        document.getElementById('nav-booking').innerText = t.nav_booking;
+        document.getElementById('t-connect').innerText = t.connect;
+        document.getElementById('t-booking').innerText = t.booking;
+        document.getElementById('l-name').innerText = t.name;
+        document.getElementById('l-phone').innerText = t.phone;
+        document.getElementById('l-date').innerText = t.date;
+        document.getElementById('l-venue').innerText = t.venue;
+        document.getElementById('l-address').innerText = t.address;
+        document.getElementById('t-payment').innerText = t.payment;
+        document.getElementById('btn-submit').innerText = t.submit;
+        document.getElementById('d-title').innerText = t.d_title;
+        document.getElementById('d-desc').innerText = t.d_desc;
+        document.getElementById('l-allergy').innerText = t.allergy;
+        document.getElementById('opt-peanuts').innerText = t.peanuts;
+        document.getElementById('opt-milk').innerText = t.milk;
+        document.getElementById('opt-seafood').innerText = t.seafood;
+        document.getElementById('opt-eggs').innerText = t.eggs;
+        if(document.getElementById('opt-msg')) document.getElementById('opt-msg').innerText = t.msg;
+        if(document.getElementById('opt-fishsauce')) document.getElementById('opt-fishsauce').innerText = t.fishsauce;
+        if(document.getElementById('opt-knorr')) document.getElementById('opt-knorr').innerText = t.knorr;
+        document.getElementById('allergy-detail').placeholder = t.other;
+        document.getElementById('t-menu-select').innerText = t.menu_select;
+    }
+
+    // Initialize
+    loadAllMenus();
+</script>
+    <script src="mobile-menu.js"></script>
+</body>
+</html>

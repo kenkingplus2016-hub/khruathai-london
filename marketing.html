@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบหลังบ้าน - ฝ่ายการตลาด (Marketing) - KHRUA THAI LONDON</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="responsive.css">
+    <!-- QR Code Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        :root {
+            --dark-green: #0D1F14;
+            --gold: #D4AF37;
+            --bg-light: #f5f7f5;
+            --white: #ffffff;
+            --text-dark: #333333;
+            --red: #d9534f;
+            --green: #28a745;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+        }
+
+        .header {
+            background-color: var(--dark-green);
+            color: var(--white);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 40px;
+            height: auto;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: var(--gold);
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Prompt', sans-serif;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+        }
+
+        .btn-outline:hover {
+            background: var(--gold);
+            color: var(--dark-green);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        @media (min-width: 992px) {
+            .container {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .card-header h2 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: var(--dark-green);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Tools Banner */
+        .tools-banner {
+            background: linear-gradient(135deg, var(--dark-green), #1a3c28);
+            border-radius: 12px;
+            padding: 30px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .btn-gold {
+            background: var(--gold);
+            color: var(--dark-green);
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            box-shadow: 0 4px 10px rgba(212,175,55,0.3);
+            transition: transform 0.2s;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+        }
+
+        /* AI Prompts */
+        .ai-prompt {
+            background: #f9f9f9;
+            border-left: 4px solid var(--gold);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .ai-prompt h4 {
+            margin: 0 0 10px 0;
+            color: var(--dark-green);
+        }
+
+        .ai-prompt p {
+            margin: 0 0 10px 0;
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .copy-btn {
+            background: #e0e0e0;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+
+        .copy-btn:hover {
+            background: #ccc;
+        }
+
+        /* Menu Grid */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .menu-name {
+            font-weight: 500;
+        }
+
+        .menu-price {
+            color: var(--red);
+            font-weight: 600;
+        }
+
+        .menu-category {
+            font-size: 0.8rem;
+            color: #666;
+            background: #eee;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-top: 5px;
+            display: inline-block;
+        }
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B32XK3RT5X"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-B32XK3RT5X');
+    </script>
+</head>
+<body>
+
+    <div id="app" style="display: none;">
+        <div class="header">
+            <div class="header-left">
+                <img src="logo.png" alt="KHRUA THAI" class="logo">
+                <h1>Marketing Dashboard</h1>
+            </div>
+            <div>
+                <span style="margin-right: 15px; font-size: 0.9rem;">ผู้ใช้งาน: ทีมการตลาด</span>
+                <button class="btn btn-outline" onclick="logout()"><i class="fas fa-sign-out-alt"></i> ออกจากระบบ</button>
+            </div>
+        </div>
+
+        <div style="max-width: 1200px; margin: 30px auto; padding: 0 20px;">
+            <div class="tools-banner">
+                <div>
+                    <h2 style="margin: 0 0 10px 0; color: var(--gold);"><i class="fas fa-paint-brush"></i> สร้างรูปโพสต์สำหรับโซเชียลมีเดีย</h2>
+                    <p style="margin: 0; opacity: 0.9;">เครื่องมือ Post Designer สำหรับออกแบบภาพโปรโมทอาหาร ใส่ข้อความ โลโก้ และส่วนลด</p>
+                </div>
+                <a href="post-designer.html" class="btn-gold"><i class="fas fa-palette"></i> เข้าสู่ Post Designer</a>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="left-col">
+                <div class="card" style="margin-bottom: 30px;">
+                    <div class="card-header">
+                        <h2><i class="fas fa-comments"></i> แชทพูดคุยกับ Admin (Internal Team Chat)</h2>
+                    </div>
+                    <div style="background: #f9f9f9; padding: 15px; border-radius: 8px; border: 1px solid #ddd; margin-bottom: 15px; height: 250px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px;" id="marketing-chat-box">
+                        <!-- Messages will be loaded here -->
+                    </div>
+                    <div style="display: flex; gap: 10px;">
+                        <input type="text" id="marketing-chat-input" placeholder="พิมพ์ข้อความถึง Admin..." style="flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 5px;" onkeypress="if(event.key === 'Enter') sendMarketingChat()">
+                        <button class="btn btn-gold" style="padding: 8px 16px; border-radius: 4px;" onclick="sendMarketingChat()"><i class="fas fa-paper-plane"></i> ส่งข้อความ</button>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-bottom: 30px;">
+                    <div class="card-header">
+                        <h2><i class="fas fa-robot"></i> คลังแคปชั่นโฆษณา (AI Marketing Assistant)</h2>
+                    </div>
+                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 20px;">
+                        คลังข้อความและแคปชั่นที่ AI เตรียมไว้ให้ คุณสามารถคัดลอกไปใช้โพสต์คู่กับรูปภาพได้ทันที หากต้องการแคปชั่นแบบใหม่ๆ คุณสามารถแจ้งความต้องการผ่านช่องแชท AI ในระบบได้เลยครับ!
+                    </p>
+
+                    <div class="ai-prompt">
+                        <h4>📢 โปรโมชั่นดึงดูดลูกค้าใหม่ (New Customer Promo)</h4>
+                        <p id="copy-1">"อยากลองอาหารไทยรสชาติต้นตำรับแท้ๆ ในลอนดอนใช่ไหม? 🇹🇭✨ KHRUA THAI LONDON จัดเซตสุดคุ้ม เสิร์ฟความอร่อยถึงบ้านคุณ! สั่งตอนนี้ รับส่วนลดพิเศษสำหรับลูกค้าใหม่ทันที 10% เมื่อสั่งครบ £50 หิวเมื่อไหร่ ทักมาได้เลยครับ! 🌶️🍲 #KhruaThaiLondon #ThaiFoodUK"</p>
+                        <button class="copy-btn" onclick="copyText('copy-1', this)"><i class="fas fa-copy"></i> คัดลอกแคปชั่น</button>
+                    </div>
+
+                    <div class="ai-prompt">
+                        <h4>🌙 กระตุ้นยอดขายรอบดึก (Late Night Craving)</h4>
+                        <p id="copy-2">"ดึกแล้ว... หิวไหมครับ? 🤤 ให้ KHRUA THAI ดูแลมื้อดึกของคุณสิ! แกงเขียวหวานร้อนๆ หรือผัดไทยเส้นจันท์เหนียวนุ่ม พร้อมเสิร์ฟความฟินถึงหน้าประตูบ้าน สั่งเลยตอนนี้ คุ้มสุดๆ กับเซตจับคู่เมนูโปรด! 🛵💨 #หิวรอบดึก #อาหารไทยในลอนดอน"</p>
+                        <button class="copy-btn" onclick="copyText('copy-2', this)"><i class="fas fa-copy"></i> คัดลอกแคปชั่น</button>
+                    </div>
+
+                    <div class="ai-prompt">
+                        <h4>🍱 โปรโมท Catering / Box Set (Event Promo)</h4>
+                        <p id="copy-3">"จัดงานทั้งที ต้องมีของอร่อย! 🎉 KHRUA THAI รับจัด Catering และ Special Box Set สำหรับงานปาร์ตี้ งานสัมมนา หรืองานเลี้ยงบริษัท เมนูหลากหลาย รสชาติจัดจ้านถูกปากทั้งคนไทยและต่างชาติ สนใจสั่งจองคิวล่วงหน้า ทักแชทสอบถามราคาพิเศษได้เลยครับ! 🍛🍱 #ThaiCateringUK #LunchBoxLondon"</p>
+                        <button class="copy-btn" onclick="copyText('copy-3', this)"><i class="fas fa-copy"></i> คัดลอกแคปชั่น</button>
+                    </div>
+                </div>
+                
+                <!-- QR Code Generator Card -->
+                <div class="card" style="margin-bottom: 30px;">
+                    <div class="card-header">
+                        <h2><i class="fas fa-qrcode"></i> สร้าง QR Code สแกนดูเมนู (QR Menu Generator)</h2>
+                    </div>
+                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 20px;">
+                        สร้าง QR Code สำหรับนำไปปรินต์แปะโต๊ะ แปะกล่องอาหาร หรือทำป้ายโฆษณา เมื่อลูกค้าสแกน ระบบจะพาลูกค้าไปยังหน้าเว็บที่คุณตั้งค่าไว้ทันที
+                    </p>
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <div>
+                            <label style="font-weight: 600; font-size: 0.9rem; margin-bottom: 5px; display: block;">ปลายทางเมื่อลูกค้าสแกน (URL):</label>
+                            <select id="qr-url-select" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-family: 'Prompt'; font-size: 0.9rem;" onchange="generateQRCode()">
+                                <option value="/">หน้าแรกของร้าน (Home Page)</option>
+                                <option value="/menu.html">หน้าเมนูเซตตำรับไทย (Authentic Sets)</option>
+                                <option value="/delivery.html">หน้าเมนูข้าวกล่อง (Delivery Box Sets)</option>
+                                <option value="/royal.html">หน้าเมนูชาววัง (Royal Gathering)</option>
+                                <option value="/booking.html">หน้าสั่งจองอาหาร (Booking Page)</option>
+                            </select>
+                        </div>
+                        <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; border: 1px dashed #ccc; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                            <div id="qrcode-container" style="background: white; padding: 15px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 20px;"></div>
+                            <button class="btn btn-gold" onclick="downloadQRCode()"><i class="fas fa-download"></i> ดาวน์โหลด QR Code ไปใช้งาน</button>
+                            <p style="font-size: 0.8rem; color: #888; margin-top: 10px;">ไฟล์รูปภาพ .png พื้นหลังโปร่งใส นำไปตัดต่อใส่ใบปลิวได้ทันที</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-col">
+                <div class="card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-book-open"></i> แค็ตตาล็อกเมนูอ้างอิง</h2>
+                    </div>
+                    <p style="font-size: 0.85rem; color: #666; margin-bottom: 15px;">ข้อมูลเมนูและราคาล่าสุดของร้าน สำหรับใช้อ้างอิงในการทำโปรโมชั่น (แก้ไขไม่ได้)</p>
+                    
+                    <div id="menu-catalog-container" class="menu-grid">
+                        <div style="text-align: center; color: #999; padding: 20px;">กำลังโหลดข้อมูลเมนู...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="access-denied" style="display: none; text-align: center; padding: 50px;">
+        <h1 style="color: var(--red);"><i class="fas fa-lock"></i> Access Denied</h1>
+        <p>คุณไม่มีสิทธิ์เข้าถึงหน้านี้ หรือยังไม่ได้เข้าสู่ระบบการตลาด</p>
+        <a href="marketing-login.html" style="color: var(--gold); text-decoration: none; font-weight: bold;">กลับไปหน้าเข้าสู่ระบบฝ่ายการตลาด</a>
+    </div>
+
+    <script>
+        // Check Auth and Role
+        async function checkAuth() {
+            try {
+                const res = await fetch('/api/check-auth');
+                const data = await res.json();
+                
+                if(data.loggedIn && (data.role === 'marketing' || data.role === 'admin')) {
+                    document.getElementById('app').style.display = 'block';
+                    loadMenuCatalog();
+                    loadMarketingChat();
+                } else {
+                    document.getElementById('access-denied').style.display = 'block';
+                }
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        async function logout() {
+            await fetch('/api/logout', { method: 'POST' });
+            window.location.href = 'marketing-login.html';
+        }
+
+        function copyText(elementId, btn) {
+            const text = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i> คัดลอกแล้ว!';
+                btn.style.background = '#28a745';
+                btn.style.color = '#fff';
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.style.background = '#e0e0e0';
+                    btn.style.color = '#333';
+                }, 2000);
+            });
+        }
+
+        async function loadMenuCatalog() {
+            const container = document.getElementById('menu-catalog-container');
+            container.innerHTML = '';
+            
+            const categories = [
+                { url: '/api/menu', label: 'ตำรับไทย' },
+                { url: '/api/classic-menu', label: 'คลาสสิก' },
+                { url: '/api/royal-menu', label: 'สยามวิจิตร' },
+                { url: '/api/curry-menu', label: 'แกงไทย' }
+            ];
+
+            for (const cat of categories) {
+                try {
+                    const res = await fetch(cat.url);
+                    if (res.ok) {
+                        const data = await res.json();
+                        data.forEach(item => {
+                            let name = typeof item.name === 'object' ? (item.name.th || item.name.en) : item.name;
+                            let price = item.price || 0;
+                            
+                            const div = document.createElement('div');
+                            div.className = 'menu-item';
+                            div.innerHTML = `
+                                <div>
+                                    <div class="menu-name">${name}</div>
+                                    <div class="menu-category">${cat.label}</div>
+                                </div>
+                                <div class="menu-price">£${price}</div>
+                            `;
+                            container.appendChild(div);
+                        });
+                    }
+                } catch (e) {
+                    console.error("Error loading " + cat.label, e);
+                }
+            }
+            
+            if(container.innerHTML === '') {
+                container.innerHTML = '<div style="color:red; text-align:center;">ไม่พบข้อมูลเมนู</div>';
+            }
+        }
+
+        // --- Chat System ---
+        let chatData = [];
+        
+        async function loadMarketingChat() {
+            try {
+                const res = await fetch('/api/chat');
+                if (res.ok) {
+                    chatData = await res.json();
+                    renderMarketingChat();
+                }
+            } catch (e) {
+                console.error("Error loading chat", e);
+            }
+        }
+
+        function renderMarketingChat() {
+            const box = document.getElementById('marketing-chat-box');
+            box.innerHTML = '';
+            
+            if (chatData.length === 0) {
+                box.innerHTML = '<div style="text-align:center; color:#999; margin-top: 100px;">ยังไม่มีข้อความ</div>';
+                return;
+            }
+
+            chatData.forEach(msg => {
+                const isMe = msg.sender === 'Marketing';
+                const align = isMe ? 'flex-end' : 'flex-start';
+                const bg = isMe ? '#d4af37' : '#e9ecef';
+                const color = isMe ? '#0d1f14' : '#333';
+                const borderRadius = isMe ? '15px 15px 0 15px' : '15px 15px 15px 0';
+
+                box.innerHTML += `
+                    <div style="display:flex; flex-direction:column; align-items:${align}; width:100%;">
+                        <span style="font-size: 0.75rem; color:#666; margin-bottom:2px;">${msg.sender} • ${msg.time}</span>
+                        <div style="background:${bg}; color:${color}; padding:8px 15px; border-radius:${borderRadius}; max-width:80%; word-wrap:break-word;">
+                            ${msg.text}
+                        </div>
+                    </div>
+                `;
+            });
+            box.scrollTop = box.scrollHeight;
+        }
+
+        async function sendMarketingChat() {
+            const input = document.getElementById('marketing-chat-input');
+            const text = input.value.trim();
+            if (!text) return;
+
+            const now = new Date();
+            const timeStr = now.toLocaleTimeString('th-TH', { hour: '2-digit', minute: '2-digit' }) + ' (' + now.toLocaleDateString('th-TH', { day: '2-digit', month: 'short' }) + ')';
+
+            chatData.push({
+                id: Date.now().toString(),
+                sender: 'Marketing',
+                text: text,
+                time: timeStr
+            });
+
+            input.value = '';
+            renderMarketingChat();
+
+            try {
+                await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(chatData)
+                });
+            } catch (e) {
+                console.error("Error saving chat", e);
+            }
+        }
+
+        // --- QR Code Generator ---
+        let qrcode = null;
+
+        function generateQRCode() {
+            const container = document.getElementById('qrcode-container');
+            container.innerHTML = ''; // Clear previous QR
+            
+            const path = document.getElementById('qr-url-select').value;
+            const fullUrl = window.location.origin + path;
+            
+            qrcode = new QRCode(container, {
+                text: fullUrl,
+                width: 200,
+                height: 200,
+                colorDark : "#0d1f14", // Dark green Khrua Thai theme
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        }
+
+        function downloadQRCode() {
+            const container = document.getElementById('qrcode-container');
+            const img = container.querySelector('img');
+            const canvas = container.querySelector('canvas');
+            
+            // Wait for image/canvas to be ready
+            let dataUrl = '';
+            if (img && img.src && img.src.indexOf('data:image') === 0) {
+                dataUrl = img.src;
+            } else if (canvas) {
+                dataUrl = canvas.toDataURL("image/png");
+            } else {
+                alert("กรุณารอระบบสร้างรูปภาพสักครู่");
+                return;
+            }
+            
+            const a = document.createElement('a');
+            a.href = dataUrl;
+            a.download = 'KhruaThai_Menu_QRCode.png';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+
+        checkAuth();
+        // Generate initial QR code
+        setTimeout(generateQRCode, 1000);
+    </script>
+</body>
+</html>

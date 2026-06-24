@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KHRUA THAI LONDON - Celebrations & Private Dining</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'SarunsManorah';
+            src: url('SarunsManorah.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        :root { 
+            --gold: #D4AF37; 
+            --gold-light: #F5E6B8;
+            --dark-green: #1B3022; 
+            --black-green: #0D1F14;
+            --cream: #F9F7F2; 
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Prompt', sans-serif; background-color: var(--black-green); color: white; overflow-x: hidden; }
+
+        /* Full Screen Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            background: linear-gradient(rgba(13, 31, 20, 0.4), rgba(13, 31, 20, 0.7)), 
+                        url('images/cover.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        /* Transparent Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+        }
+        .header-left { display: flex; align-items: center; gap: 15px; }
+        .small-logo { height: 50px; filter: drop-shadow(0 0 10px var(--gold)); }
+        .brand-name { font-family: 'SarunsManorah', 'Playfair Display'; font-weight: 700; color: var(--gold); letter-spacing: 2px; line-height: 1.2; font-size: 1.4rem; }
+
+        nav { display: flex; gap: 30px; }
+        nav a { color: white; text-decoration: none; font-size: 0.9rem; font-weight: 400; transition: 0.3s; letter-spacing: 1px; }
+        nav a:hover { color: var(--gold); }
+
+        .book-now-btn {
+            background: var(--gold);
+            color: var(--black-green);
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(212,175,55,0.4);
+        }
+        .book-now-btn:hover { background: white; transform: scale(1.05); }
+
+        /* Central Content */
+        .main-logo { height: 180px; margin-bottom: 20px; filter: drop-shadow(0 0 20px rgba(212,175,55,0.3)); animation: fadeInDown 1.5s ease-out; }
+        
+        .welcome-text { font-family: 'Prompt'; font-weight: 300; font-size: 1.2rem; color: var(--gold-light); margin-bottom: 5px; letter-spacing: 5px; }
+        .thai-welcome { font-family: 'SarunsManorah', 'Prompt'; font-size: 3.5rem; margin-bottom: 5px; color: var(--gold); opacity: 0.9; }
+        
+        .main-title { 
+            font-family: 'SarunsManorah', 'Playfair Display', serif; 
+            font-size: 6.5rem; 
+            font-weight: 700; 
+            color: var(--gold); 
+            letter-spacing: 4px; 
+            margin-bottom: 5px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+            animation: fadeInUp 1.5s ease-out;
+        }
+        .sub-title { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 2rem; 
+            font-style: italic; 
+            color: var(--gold-light); 
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+        }
+
+        .description {
+            max-width: 700px;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.9);
+            font-weight: 300;
+            margin-bottom: 40px;
+            border-top: 1px solid var(--gold);
+            padding-top: 25px;
+        }
+
+        /* Decoration Elements */
+        .divider { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+        .line { width: 60px; height: 1px; background: var(--gold); }
+        .diamond { transform: rotate(45deg); width: 10px; height: 10px; background: var(--gold); border: 1px solid var(--gold-light); }
+
+        /* Animations */
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+
+        @media (max-width: 768px) {
+            .thai-welcome { font-size: 2.5rem; }
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            background: var(--dark-green);
+            padding: 100px 20px;
+            text-align: center;
+        }
+        .section-tag {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .section-title {
+            font-family: 'SarunsManorah', 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: var(--gold);
+            margin-bottom: 50px;
+        }
+        .reviews-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+        .review-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            text-align: left;
+            transition: 0.4s;
+            position: relative;
+        }
+        .review-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-10px);
+            border-color: var(--gold);
+        }
+        .quote-icon {
+            color: var(--gold);
+            font-size: 2rem;
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+        .stars {
+            color: var(--gold);
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        .review-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+        .customer-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .customer-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--dark-green);
+            font-size: 1.2rem;
+        }
+        .customer-name {
+            font-weight: 600;
+            color: white;
+            font-size: 1.1rem;
+        }
+        .customer-date {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+    </style>
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="light-theme.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B32XK3RT5X"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-B32XK3RT5X');
+    </script>
+</head>
+<body>
+
+    <header>
+        <div class="header-left">
+            <img src="logo.png" alt="KHRUA THAI" class="small-logo">
+            <div class="brand-name">KHRUA THAI LONDON<br><span style="font-size:0.6rem; letter-spacing:1px; font-weight:400; color:white;">Celebrations & Private Dining</span></div>
+        </div>
+        <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+        <nav>
+            <a href="menu.html">Authentic Thai Sets</a>
+            <a href="royal.html">The Royal Siam Gathering</a>
+            <a href="delivery.html">Delivery Box Sets</a>
+            <a href="booking.html">Reserve</a>
+        </nav>
+        <a href="booking.html" class="book-now-btn">Book Now</a>
+    </header>
+
+    <section class="hero">
+        <img src="logo.png" alt="KHRUA THAI" class="main-logo">
+        
+        <div class="thai-welcome">ยินดีต้อนรับสู่ ครัวไทย</div>
+        <div class="welcome-text">WELCOME TO</div>
+        
+        <h1 class="main-title">KHRUA THAI LONDON</h1>
+        <p class="sub-title">Celebrations & Private Dining</p>
+
+        <div class="divider">
+            <div class="line"></div>
+            <div class="diamond"></div>
+            <div class="line"></div>
+        </div>
+
+        <p class="description">
+            An intimate culinary journey through five signature courses — crafted by candlelight for life's most meaningful moments.
+        </p>
+
+        <div style="display:flex; gap:15px; z-index: 10; flex-wrap: wrap; justify-content: center; max-width: 800px; margin: 0 auto;">
+            <a href="menu.html" style="border: 1.5px solid var(--gold); color: var(--gold); padding: 14px 30px; text-decoration: none; border-radius: 35px; font-weight: 600; transition: 0.3s; background: rgba(0,0,0,0.4);">Explore Sets</a>
+            <a href="delivery.html" style="border: 1.5px solid var(--gold); color: var(--gold); padding: 14px 30px; text-decoration: none; border-radius: 35px; font-weight: 600; transition: 0.3s; background: rgba(0,0,0,0.4);">Delivery Box</a>
+            <a href="booking.html" style="background: var(--gold); color: var(--black-green); padding: 14px 30px; text-decoration: none; border-radius: 35px; font-weight: 700; transition: 0.3s;">Reserve Now</a>
+        </div>
+    </section>
+
+    <section class="reviews-section">
+        <span class="section-tag">Testimonials</span>
+        <h2 class="section-title">เสียงตอบรับจากลูกค้า</h2>
+        
+        <div class="reviews-grid" id="reviews-grid">
+            <!-- Dynamic Reviews will load here -->
+        </div>
+    </section>
+
+    <section class="points-section" style="padding: 60px 20px; background: rgba(212,175,55,0.05); text-align: center; border-top: 1px solid rgba(212,175,55,0.1); border-bottom: 1px solid rgba(212,175,55,0.1);">
+        <span class="section-tag" style="display:inline-block; border:1px solid var(--gold); color:var(--gold); padding:5px 15px; border-radius:20px; font-size:0.8rem; letter-spacing:2px; margin-bottom:15px; text-transform:uppercase;">Loyalty Program</span>
+        <h2 class="section-title" style="font-family:'SarunsManorah', serif; color:var(--gold); font-size:2.5rem; margin-bottom:10px;">เช็คแต้มสะสมของคุณ</h2>
+        <p style="color: rgba(255,255,255,0.7); max-width: 600px; margin: 0 auto 30px; font-size: 0.95rem;">
+            สั่งอาหารทุกๆ 1 เซท รับทันที 10 แต้ม<br>
+            🎁 100 แต้ม = ส่วนลด £10 | 🎁 250 แต้ม = รับฟรี 1 เซต
+        </p>
+        
+        <div style="max-width: 500px; margin: 0 auto; background: rgba(0,0,0,0.3); padding: 30px; border-radius: 15px; border: 1px solid rgba(212,175,55,0.2);">
+            <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+                <input type="tel" id="check-phone" placeholder="กรอกเบอร์โทรศัพท์ (Phone Number)" style="flex:1; padding: 12px; border-radius: 8px; border: 1px solid #555; background: #222; color: white; font-family: 'Prompt'; outline:none;">
+                <button onclick="checkPoints()" style="background: var(--gold); color: var(--black-green); border: none; padding: 0 20px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s;"><i class="fas fa-search"></i> เช็คเลย</button>
+            </div>
+            
+            <div id="points-result" style="display:none; text-align: left; background: linear-gradient(135deg, rgba(27,48,34,0.9), rgba(13,31,20,0.9)); padding: 25px; border-radius: 12px; border: 2px solid var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.5); position: relative; overflow: hidden;">
+                <div style="position: absolute; top: -20px; right: -20px; font-size: 8rem; color: rgba(212,175,55,0.05); pointer-events: none;"><i class="fas fa-crown"></i></div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
+                    <div>
+                        <div style="font-size: 0.85rem; color: rgba(212,175,55,0.8); text-transform: uppercase; letter-spacing: 2px;">KHRUA THAI MEMBER</div>
+                        <div id="pt-name" style="color: white; font-weight:700; font-size: 1.2rem; margin-top: 5px;"></div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-size: 2.8rem; font-weight: 700; color: var(--gold); line-height: 1;"><span id="pt-points">0</span></div>
+                        <div style="font-size: 0.8rem; color: rgba(255,255,255,0.6);">แต้มสะสมปัจจุบัน</div>
+                    </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div style="margin-top: 25px; position: relative;">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: rgba(255,255,255,0.7); margin-bottom: 8px;">
+                        <span>0</span>
+                        <span style="color: var(--gold);"><i class="fas fa-gift"></i> 100</span>
+                        <span style="color: var(--gold);"><i class="fas fa-crown"></i> 250</span>
+                    </div>
+                    <div style="width: 100%; height: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; position: relative; overflow: hidden;">
+                        <div id="pt-progress" style="height: 100%; background: linear-gradient(90deg, #d4af37, #f5e6b8); border-radius: 10px; width: 0%; transition: width 1s ease-in-out;"></div>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; font-size: 0.7rem; color: rgba(255,255,255,0.5); margin-top: 8px;">
+                        <span>เริ่มต้น</span>
+                        <span>ส่วนลด £10</span>
+                        <span>ฟรี 1 เซต</span>
+                    </div>
+                </div>
+                
+                <div id="reward-unlocked" style="display:none; margin-top: 20px; background: rgba(212,175,55,0.2); padding: 10px; border-radius: 8px; text-align: center; color: var(--gold-light); font-size: 0.9rem; border: 1px dashed var(--gold);">
+                    <i class="fas fa-star"></i> <strong id="reward-text"></strong>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <footer style="background: var(--black-green); padding: 40px 20px; text-align: center; border-top: 1px solid rgba(212,175,55,0.2);">
+        <img src="logo.png" alt="KHRUA THAI" style="height: 90px; margin-bottom: 20px; opacity: 0.8;">
+        <div style="color: var(--gold-light); font-size: 0.8rem; letter-spacing: 2px;">
+            © 2026 KHRUA THAI LONDON. ALL RIGHTS RESERVED.
+        </div>
+    </footer>
+
+    <script>
+        async function loadReviews() {
+            try {
+                const res = await fetch('/api/reviews');
+                if (res.ok) {
+                    const reviews = await res.json();
+                    const grid = document.getElementById('reviews-grid');
+                    grid.innerHTML = '';
+                    
+                    reviews.forEach(r => {
+                        let starsHtml = '';
+                        for(let i=0; i<5; i++) {
+                            starsHtml += `<i class="${i < r.stars ? 'fas' : 'far'} fa-star"></i> `;
+                        }
+                        
+                        grid.innerHTML += `
+                            <div class="review-card">
+                                <i class="fas fa-quote-left quote-icon"></i>
+                                <div class="stars">${starsHtml}</div>
+                                <p class="review-text">"${r.text}"</p>
+                                <div class="customer-info">
+                                    <div class="customer-avatar">${r.avatar || r.name.charAt(0)}</div>
+                                    <div>
+                                        <div class="customer-name">${r.name}</div>
+                                        <div class="customer-date">${r.type}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    });
+                }
+            } catch (err) {
+                console.error("Error loading reviews:", err);
+            }
+        }
+        async function checkPoints() {
+            const phone = document.getElementById('check-phone').value.trim();
+            const resDiv = document.getElementById('points-result');
+            
+            if(!phone) {
+                alert('กรุณากรอกเบอร์โทรศัพท์');
+                return;
+            }
+            
+            try {
+                // encoding phone to handle + safely
+                const res = await fetch('/api/members/' + encodeURIComponent(phone));
+                if (res.ok) {
+                    const data = await res.json();
+                    
+                    document.getElementById('pt-name').innerText = data.name || 'คุณลูกค้า (Guest)';
+                    const pts = data.points || 0;
+                    document.getElementById('pt-points').innerText = pts;
+                    
+                    // Calculate progress (Max 250)
+                    let pct = (pts / 250) * 100;
+                    if (pct > 100) pct = 100;
+                    setTimeout(() => {
+                        document.getElementById('pt-progress').style.width = pct + '%';
+                    }, 100);
+
+                    // Show unlocked rewards
+                    const rwDiv = document.getElementById('reward-unlocked');
+                    const rwText = document.getElementById('reward-text');
+                    if (pts >= 250) {
+                        rwText.innerText = "ยินดีด้วย! คุณสามารถแลกรับเซตฟรี 1 เซตได้แล้ว!";
+                        rwDiv.style.display = 'block';
+                    } else if (pts >= 100) {
+                        rwText.innerText = "ยินดีด้วย! คุณสามารถแลกส่วนลด £10 ได้แล้ว!";
+                        rwDiv.style.display = 'block';
+                    } else {
+                        rwDiv.style.display = 'none';
+                    }
+
+                    resDiv.style.display = 'block';
+                }
+            } catch(e) {
+                console.error(e);
+            }
+        }
+        
+        loadReviews();
+    </script>
+    <script src="mobile-menu.js"></script>
+    <!-- AI CHATBOT WIDGET -->
+    <div id="ai-chat-widget">
+        <div id="ai-chat-header" onclick="toggleChat()">
+            <i class="fas fa-robot"></i> Chat with Khrua Thai AI
+            <span id="ai-chat-toggle"><i class="fas fa-chevron-up"></i></span>
+        </div>
+        <div id="ai-chat-body">
+            <div id="ai-chat-messages">
+                <div class="ai-msg">สวัสดีค่ะ มีอะไรให้ฉันช่วยไหมคะ? / Hello! How can I help you today?</div>
+            </div>
+            <div id="ai-chat-input-area">
+                <input type="text" id="ai-chat-input" placeholder="พิมพ์คำถาม... / Type a message..." onkeypress="handleChatKeyPress(event)">
+                <button onclick="sendChatMessage()"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        #ai-chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+        #ai-chat-header {
+            background: var(--gold);
+            color: var(--dark-green);
+            padding: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #ai-chat-body {
+            display: none;
+            flex-direction: column;
+            height: 350px;
+        }
+        #ai-chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background: #f9f9f9;
+            font-size: 0.9rem;
+        }
+        .ai-msg {
+            background: #e5e5ea;
+            color: #000;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            max-width: 80%;
+            align-self: flex-start;
+        }
+        .user-msg {
+            background: var(--dark-green);
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            max-width: 80%;
+            align-self: flex-end;
+            margin-left: auto;
+        }
+        #ai-chat-input-area {
+            display: flex;
+            border-top: 1px solid #ccc;
+        }
+        #ai-chat-input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            outline: none;
+        }
+        #ai-chat-input-area button {
+            background: var(--gold);
+            border: none;
+            padding: 0 15px;
+            cursor: pointer;
+            color: var(--dark-green);
+        }
+    </style>
+
+    <script>
+        function toggleChat() {
+            const body = document.getElementById('ai-chat-body');
+            const toggleIcon = document.getElementById('ai-chat-toggle').querySelector('i');
+            if (body.style.display === 'flex') {
+                body.style.display = 'none';
+                toggleIcon.className = 'fas fa-chevron-up';
+            } else {
+                body.style.display = 'flex';
+                toggleIcon.className = 'fas fa-chevron-down';
+            }
+        }
+
+        function handleChatKeyPress(e) {
+            if (e.key === 'Enter') sendChatMessage();
+        }
+
+        async function sendChatMessage() {
+            const input = document.getElementById('ai-chat-input');
+            const message = input.value.trim();
+            if (!message) return;
+
+            const messagesDiv = document.getElementById('ai-chat-messages');
+            
+            // Add user message
+            messagesDiv.innerHTML += `<div class="user-msg">${message}</div>`;
+            input.value = '';
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+            // Show loading
+            const loadingId = 'loading-' + Date.now();
+            messagesDiv.innerHTML += `<div id="${loadingId}" class="ai-msg">...</div>`;
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+            try {
+                const res = await fetch('/api/ai-chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message })
+                });
+                const data = await res.json();
+                
+                // Remove loading
+                document.getElementById(loadingId).remove();
+
+                // Add AI reply
+                if (data.reply) {
+                    messagesDiv.innerHTML += `<div class="ai-msg">${data.reply}</div>`;
+                } else {
+                    messagesDiv.innerHTML += `<div class="ai-msg" style="color:red;">Error processing request.</div>`;
+                }
+            } catch (err) {
+                document.getElementById(loadingId).remove();
+                messagesDiv.innerHTML += `<div class="ai-msg" style="color:red;">Network Error.</div>`;
+            }
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+    </script>
+</body>
+</html>

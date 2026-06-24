@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สร้างรูปโพสต์ — KHRUA THAI LONDON</title>
+    <meta name="description" content="เครื่องมือสร้างรูปโพสต์ Facebook/Instagram สำหรับ Khrua Thai London">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Kanit:wght@300;400;500;700&family=Sarabun:wght@300;400;500;700&family=Mali:wght@400;600&family=Chakra+Petch:wght@400;600&family=Oswald:wght@400;600&family=Caveat:wght@400;600&family=Cinzel:wght@400;600;700&family=Marcellus&family=Cormorant+Garamond:wght@400;600&family=EB+Garamond:wght@400;600&family=Libre+Baskerville:wght@400;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="post-designer.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B32XK3RT5X"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-B32XK3RT5X');
+    </script>
+</head>
+<body class="post-designer-body">
+
+    <!-- ═══ HEADER BAR ═══ -->
+    <header class="pd-header">
+        <div class="pd-header-left">
+            <a href="admin.html" id="pd-back-btn" class="pd-back-link" title="กลับหน้า Admin">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <img src="logo.png" alt="KHRUA THAI" class="pd-header-logo">
+            <div>
+                <div class="pd-header-title">Post Designer</div>
+                <div class="pd-header-subtitle">สร้างรูปโพสต์ Facebook / Instagram</div>
+            </div>
+        </div>
+        <div class="pd-header-actions">
+            <button class="pd-btn pd-btn-ghost" onclick="undoAction()" title="Undo (Ctrl+Z)">
+                <i class="fas fa-undo"></i>
+            </button>
+            <button class="pd-btn pd-btn-ghost" onclick="redoAction()" title="Redo (Ctrl+Y)">
+                <i class="fas fa-redo"></i>
+            </button>
+            <div style="width:1px; height:24px; background:rgba(255,255,255,0.1); margin: 0 4px;"></div>
+            <button class="pd-btn pd-btn-ghost" onclick="clearCanvas()" title="ล้างทั้งหมด">
+                <i class="fas fa-trash-alt"></i> ล้าง
+            </button>
+            <button class="pd-btn pd-btn-outline" onclick="exportImage('png')" title="ดาวน์โหลด PNG">
+                <i class="fas fa-download"></i> PNG
+            </button>
+            <button class="pd-btn pd-btn-primary" onclick="exportImage('jpeg')" title="ดาวน์โหลด JPG">
+                <i class="fas fa-file-image"></i> ส่งออกรูป
+            </button>
+        </div>
+    </header>
+
+    <!-- ═══ MAIN 3-COLUMN LAYOUT ═══ -->
+    <div class="pd-main">
+
+        <!-- ── LEFT SIDEBAR ── -->
+        <aside class="pd-sidebar">
+
+            <!-- Canvas Size -->
+            <div class="pd-panel">
+                <div class="pd-panel-title"><i class="fas fa-expand-arrows-alt"></i> ขนาด Canvas</div>
+                <div class="pd-size-grid">
+                    <button class="pd-size-btn active" onclick="setCanvasPreset('facebook', this)">
+                        <span class="size-icon"><i class="fab fa-facebook"></i></span>
+                        <span class="size-label">Facebook</span>
+                        <span class="size-dims">1200 × 630</span>
+                    </button>
+                    <button class="pd-size-btn" onclick="setCanvasPreset('instagram', this)">
+                        <span class="size-icon"><i class="fab fa-instagram"></i></span>
+                        <span class="size-label">Instagram</span>
+                        <span class="size-dims">1080 × 1080</span>
+                    </button>
+                    <button class="pd-size-btn" onclick="setCanvasPreset('story', this)">
+                        <span class="size-icon"><i class="fas fa-mobile-alt"></i></span>
+                        <span class="size-label">Story</span>
+                        <span class="size-dims">1080 × 1920</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Templates -->
+            <div class="pd-panel">
+                <div class="pd-panel-title"><i class="fas fa-palette"></i> เทมเพลต</div>
+                <div class="pd-template-grid">
+                    <div class="pd-template-card" onclick="applyTemplate('promo', this)">
+                        <span class="pd-template-icon">🔥</span>
+                        <span class="pd-template-name">โปรโมชั่น</span>
+                        <span class="pd-template-desc">ราคา / ส่วนลด</span>
+                    </div>
+                    <div class="pd-template-card" onclick="applyTemplate('menu', this)">
+                        <span class="pd-template-icon">🍛</span>
+                        <span class="pd-template-name">เมนูแนะนำ</span>
+                        <span class="pd-template-desc">แสดงรูปอาหาร</span>
+                    </div>
+                    <div class="pd-template-card" onclick="applyTemplate('event', this)">
+                        <span class="pd-template-icon">🎉</span>
+                        <span class="pd-template-name">อีเวนต์</span>
+                        <span class="pd-template-desc">วันที่ / สถานที่</span>
+                    </div>
+                    <div class="pd-template-card" onclick="applyTemplate('blank', this)">
+                        <span class="pd-template-icon">✨</span>
+                        <span class="pd-template-name">ว่างเปล่า</span>
+                        <span class="pd-template-desc">ออกแบบเอง</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add Elements -->
+            <div class="pd-panel">
+                <div class="pd-panel-title"><i class="fas fa-plus-circle"></i> เพิ่มองค์ประกอบ</div>
+                <div class="pd-tools-grid">
+                    <button class="pd-tool-btn" onclick="addText()">
+                        <i class="fas fa-font"></i> ข้อความ
+                    </button>
+                    <button class="pd-tool-btn" onclick="addHeading()">
+                        <i class="fas fa-heading"></i> หัวข้อ
+                    </button>
+                    <button class="pd-tool-btn" onclick="addLogo()">
+                        <i class="fas fa-crown"></i> โลโก้
+                    </button>
+                    <button class="pd-tool-btn" onclick="addRect()">
+                        <i class="fas fa-square"></i> สี่เหลี่ยม
+                    </button>
+                    <button class="pd-tool-btn" onclick="addCircle()">
+                        <i class="fas fa-circle"></i> วงกลม
+                    </button>
+                    <button class="pd-tool-btn" onclick="addLine()">
+                        <i class="fas fa-minus"></i> เส้น
+                    </button>
+                    <button class="pd-tool-btn" onclick="addOverlayBar()">
+                        <i class="fas fa-bars"></i> แถบข้อความ
+                    </button>
+                    <button class="pd-tool-btn" onclick="document.getElementById('pd-upload-input').click()">
+                        <i class="fas fa-upload"></i> อัปโหลด
+                    </button>
+                    <button class="pd-tool-btn" id="btn-eraser" onclick="toggleEraser()">
+                        <i class="fas fa-eraser"></i> ยางลบ
+                    </button>
+                </div>
+                <div id="pd-eraser-settings">
+                    <div class="pd-prop-row">
+                        <span class="pd-prop-label">ขนาดยางลบ</span>
+                        <input type="range" class="pd-range" id="pd-eraser-width" min="1" max="150" value="30" oninput="updateEraserWidth()">
+                        <span id="pd-eraser-width-val" style="font-size:0.7rem; color:var(--text-secondary); min-width:24px; text-align:right;">30</span>
+                    </div>
+                </div>
+                <input type="file" id="pd-upload-input" accept="image/*" style="display:none" onchange="uploadAndAddImage(this)">
+            </div>
+
+            <!-- Properties (dynamic) -->
+            <div class="pd-panel" id="pd-properties">
+                <div class="pd-panel-title"><i class="fas fa-sliders-h"></i> คุณสมบัติ</div>
+                <div id="pd-props-content">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+
+            <!-- Layer Actions / Panel -->
+            <div class="pd-panel">
+                <div class="pd-panel-title"><i class="fas fa-layer-group"></i> จัดการเลเยอร์</div>
+                <div class="pd-tools-grid" style="margin-bottom:8px;">
+                    <button class="pd-tool-btn" onclick="cloneSelected()">
+                        <i class="fas fa-clone"></i> คัดลอก
+                    </button>
+                    <button class="pd-tool-btn" onclick="deleteSelected()" style="color: var(--danger);">
+                        <i class="fas fa-trash"></i> ลบ
+                    </button>
+                </div>
+                <div class="pd-layer-list" id="pd-layer-list">
+                    <!-- Dynamic Layer Items -->
+                </div>
+            </div>
+
+            <!-- Background Color -->
+            <div class="pd-panel">
+                <div class="pd-panel-title"><i class="fas fa-fill-drip"></i> สีพื้นหลัง</div>
+                <div class="pd-color-row">
+                    <input type="color" class="pd-color-input" id="pd-bg-color" value="#1B3022" onchange="changeBgColor(this.value)">
+                    <input type="text" class="pd-input" id="pd-bg-color-text" value="#1B3022" 
+                           onchange="changeBgColor(this.value); document.getElementById('pd-bg-color').value = this.value;">
+                </div>
+                <div style="display:flex; gap:4px; margin-top:8px; flex-wrap:wrap;">
+                    <button class="pd-btn-icon" style="background:#1B3022;" title="เขียวเข้ม" onclick="changeBgColor('#1B3022')"></button>
+                    <button class="pd-btn-icon" style="background:#0D1F14;" title="เขียวดำ" onclick="changeBgColor('#0D1F14')"></button>
+                    <button class="pd-btn-icon" style="background:#D4AF37;" title="ทอง" onclick="changeBgColor('#D4AF37')"></button>
+                    <button class="pd-btn-icon" style="background:#F9F7F2;" title="ครีม" onclick="changeBgColor('#F9F7F2')"></button>
+                    <button class="pd-btn-icon" style="background:#ffffff;" title="ขาว" onclick="changeBgColor('#ffffff')"></button>
+                    <button class="pd-btn-icon" style="background:#000000; border-color:rgba(255,255,255,0.2);" title="ดำ" onclick="changeBgColor('#000000')"></button>
+                    <button class="pd-btn-icon" style="background:#8B0000;" title="แดงเข้ม" onclick="changeBgColor('#8B0000')"></button>
+                    <button class="pd-btn-icon" style="background:#1a1a2e;" title="น้ำเงินเข้ม" onclick="changeBgColor('#1a1a2e')"></button>
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- ── CENTER CANVAS ── -->
+        <main class="pd-canvas-area">
+            <div class="pd-canvas-wrapper" id="pd-canvas-wrapper">
+                <canvas id="postCanvas"></canvas>
+            </div>
+            <div class="pd-canvas-info">
+                <span><i class="fas fa-ruler-combined"></i> <span id="pd-size-display">1200 × 630</span></span>
+                <span class="pd-zoom-controls">
+                    <button class="pd-zoom-btn" onclick="zoomCanvas(-0.1)"><i class="fas fa-minus"></i></button>
+                    <span id="pd-zoom-display" style="min-width:36px; text-align:center;">100%</span>
+                    <button class="pd-zoom-btn" onclick="zoomCanvas(0.1)"><i class="fas fa-plus"></i></button>
+                    <button class="pd-zoom-btn" onclick="fitCanvasToView()" title="พอดีหน้าจอ"><i class="fas fa-compress-arrows-alt"></i></button>
+                </span>
+            </div>
+        </main>
+
+        <!-- ── RIGHT IMAGE GALLERY ── -->
+        <aside class="pd-gallery">
+            <div class="pd-gallery-header">
+                <div class="pd-panel-title"><i class="fas fa-images"></i> คลังรูปภาพ</div>
+                <input type="text" class="pd-gallery-search" id="pd-gallery-search" placeholder="ค้นหารูปภาพ..." oninput="filterGallery(this.value)">
+            </div>
+            <div class="pd-gallery-grid" id="pd-gallery-grid">
+                <!-- Dynamic image items -->
+                <div style="grid-column:1/-1; text-align:center; padding:30px; color:rgba(255,255,255,0.3);">
+                    <div class="pd-spinner"></div>
+                    <div style="margin-top:8px; font-size:0.72rem;">กำลังโหลดรูปภาพ...</div>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- ═══ SCRIPTS ═══ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script>
+    <script>
+    // ====================================================
+    //  POST DESIGNER — KHRUA THAI LONDON
+    //  Fabric.js v5 Canvas-Based Post Image Designer
+    // ====================================================
+
+    // ── Canvas Initialization ──
+    const PRESETS = {
+        facebook:  { w: 1200, h: 630,  label: 'Facebook Post' },
+        instagram: { w: 1080, h: 1080, label: 'Instagram Post' },
+        story:     { w: 1080, h: 1920, label: 'Instagram Story' }
+    };
+
+    let currentPreset = 'facebook';
+    let canvasOrigW = 1200;
+    let canvasOrigH = 630;
+    let zoomLevel = 1;
+
+    // Undo/Redo stacks
+    let undoStack = [];
+    let redoStack = [];
+    let isRestoring = false;
+
+    const canvas = new fabric.Canvas('postCanvas', {
+        width: canvasOrigW,
+        height: canvasOrigH,
+        backgroundColor: '#1B3022',
+        preserveObjectStacking: true,
+        selection: true
+    });
+
+    // Fit to view on load
+    setTimeout(() => fitCanvasToView(), 100);
+    window.addEventListener('resize', () => fitCanvasToView());
+
+    // ── Auth Check ──
+    fetch('/api/check-auth')
+        .then(r => r.json())
+        .then(data => {
+            if (!data.loggedIn) {
+                window.location.href = 'admin.html';
+            } else {
+                loadGalleryImages();
+            }
+        })
+        .catch(() => { window.location.href = 'admin.html'; });
+
+    // ── Save state for undo/redo ──
+    function saveState() {
+        if (isRestoring) return;
+        const json = JSON.stringify(canvas.toJSON());
+        undoStack.push(json);
+        if (undoStack.length > 40) undoStack.shift();
+        redoStack = [];
+    }
+
+    canvas.on('object:modified', () => { saveState(); syncLayers(); });
+    canvas.on('object:added', () => { saveState(); syncLayers(); });
+    canvas.on('object:removed', () => { saveState(); syncLayers(); });
+
+    // ── Undo / Redo ──
+    function undoAction() {
+        if (undoStack.length <= 1) return;
+        isRestoring = true;
+        redoStack.push(undoStack.pop());
+        const prev = undoStack[undoStack.length - 1];
+        canvas.loadFromJSON(prev, () => {
+            canvas.renderAll();
+            isRestoring = false;
+        });
+    }
+
+    function redoAction() {
+        if (redoStack.length === 0) return;
+        isRestoring = true;
+        const next = redoStack.pop();
+        undoStack.push(next);
+        canvas.loadFromJSON(next, () => {
+            canvas.renderAll();
+            isRestoring = false;
+        });
+    }
+
+    // ── Keyboard Shortcuts & Clipboard ──
+    let _clipboard = null;
+
+    function copySelected() {
+        const activeObject = canvas.getActiveObject();
+        if (activeObject) {
+            activeObject.clone(function(cloned) {
+                _clipboard = cloned;
+                showToast('คัดลอกแล้ว (Ctrl+C)');
+            });
+        }
+    }
+
+    function pasteCopied() {
+        if (!_clipboard) return;
+        _clipboard.clone(function(clonedObj) {
+            canvas.discardActiveObject();
+            clonedObj.set({
+                left: clonedObj.left + 20,
+                top: clonedObj.top + 20,
+                evented: true,
+            });
+            if (clonedObj.type === 'activeSelection') {
+                clonedObj.canvas = canvas;
+                clonedObj.forEachObject(function(obj) {
+                    canvas.add(obj);
+                });
+                clonedObj.setCoords();
+            } else {
+                canvas.add(clonedObj);
+            }
+            _clipboard.top += 20;
+            _clipboard.left += 20;
+            canvas.setActiveObject(clonedObj);
+            canvas.requestRenderAll();
+            syncLayers();
+            showToast('วางแล้ว (Ctrl+V)');
+        });
+    }
+
+    document.addEventListener('keydown', e => {
+        // Allow native behavior if editing text inside a textarea/input
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+        // Check if user is editing a fabric.js Textbox
+        if (canvas.getActiveObject() && canvas.getActiveObject().isEditing) return;
+
+        if (e.key === 'Delete' || e.key === 'Backspace') {
+            deleteSelected();
+            e.preventDefault();
+        }
+        if (e.ctrlKey && e.key.toLowerCase() === 'z') { undoAction(); e.preventDefault(); }
+        if (e.ctrlKey && e.key.toLowerCase() === 'y') { redoAction(); e.preventDefault(); }
+        if (e.ctrlKey && e.key.toLowerCase() === 'd') { cloneSelected(); e.preventDefault(); }
+        if (e.ctrlKey && e.key.toLowerCase() === 'c') { copySelected(); e.preventDefault(); }
+        if (e.ctrlKey && e.key.toLowerCase() === 'v') { pasteCopied(); e.preventDefault(); }
+    });
+
+    // ── Canvas Preset Switching ──
+    function setCanvasPreset(preset, btn) {
+        currentPreset = preset;
+        const p = PRESETS[preset];
+        canvasOrigW = p.w;
+        canvasOrigH = p.h;
+
+        // Update active button
+        document.querySelectorAll('.pd-size-btn').forEach(b => b.classList.remove('active'));
+        if (btn) btn.classList.add('active');
+
+        // Reset zoom and resize
+        canvas.setZoom(1);
+        canvas.setWidth(canvasOrigW);
+        canvas.setHeight(canvasOrigH);
+        canvas.renderAll();
+
+        document.getElementById('pd-size-display').textContent = `${p.w} × ${p.h}`;
+        fitCanvasToView();
+        showToast(`ขนาดเปลี่ยนเป็น ${p.label} (${p.w}×${p.h})`);
+    }
+
+    // ── Zoom & Fit ──
+    function fitCanvasToView() {
+        const area = document.querySelector('.pd-canvas-area');
+        const maxW = area.clientWidth - 60;
+        const maxH = area.clientHeight - 80;
+        const scaleW = maxW / canvasOrigW;
+        const scaleH = maxH / canvasOrigH;
+        zoomLevel = Math.min(scaleW, scaleH, 1);
+
+        canvas.setZoom(zoomLevel);
+        canvas.setWidth(canvasOrigW * zoomLevel);
+        canvas.setHeight(canvasOrigH * zoomLevel);
+        canvas.renderAll();
+
+        document.getElementById('pd-zoom-display').textContent = Math.round(zoomLevel * 100) + '%';
+    }
+
+    function zoomCanvas(delta) {
+        zoomLevel = Math.max(0.1, Math.min(2, zoomLevel + delta));
+        canvas.setZoom(zoomLevel);
+        canvas.setWidth(canvasOrigW * zoomLevel);
+        canvas.setHeight(canvasOrigH * zoomLevel);
+        canvas.renderAll();
+        document.getElementById('pd-zoom-display').textContent = Math.round(zoomLevel * 100) + '%';
+    }
+
+    // ── Background Color ──
+    function changeBgColor(color) {
+        canvas.setBackgroundColor(color, () => canvas.renderAll());
+        document.getElementById('pd-bg-color').value = color;
+        document.getElementById('pd-bg-color-text').value = color;
+    }
+
+    // ── Add Text ──
+    function addText() {
+        const text = new fabric.Textbox('ข้อความของคุณ', {
+            left: canvasOrigW / 2 - 150,
+            top: canvasOrigH / 2 - 20,
+            fontSize: 32,
+            fontFamily: 'Prompt',
+            fill: '#ffffff',
+            textAlign: 'center',
+            width: 300,
+            editable: true,
+            shadow: new fabric.Shadow({ color: 'rgba(0,0,0,0.4)', blur: 4, offsetX: 1, offsetY: 1 })
+        });
+        canvas.add(text);
+        canvas.setActiveObject(text);
+        canvas.renderAll();
+    }
+
+    function addHeading() {
+        const heading = new fabric.Textbox('KHRUA THAI', {
+            left: canvasOrigW / 2 - 200,
+            top: canvasOrigH / 4,
+            fontSize: 64,
+            fontFamily: 'Playfair Display',
+            fill: '#D4AF37',
+            textAlign: 'center',
+            fontWeight: 'bold',
+            width: 400,
+            editable: true,
+            shadow: new fabric.Shadow({ color: 'rgba(0,0,0,0.5)', blur: 6, offsetX: 2, offsetY: 2 })
+        });
+        canvas.add(heading);
+        canvas.setActiveObject(heading);
+        canvas.renderAll();
+    }
+
+    // ── Add Logo ──
+    function addLogo() {
+        fabric.Image.fromURL('logo.png', function(img) {
+            img.scaleToWidth(180);
+            img.set({
+                left: 20,
+                top: 20,
+                shadow: new fabric.Shadow({ color: 'rgba(212,175,55,0.3)', blur: 15 })
+            });
+            canvas.add(img);
+            canvas.setActiveObject(img);
+            canvas.renderAll();
+        }, { crossOrigin: 'anonymous' });
+    }
+
+    // ── Add Shapes ──
+    function addRect() {
+        const rect = new fabric.Rect({
+            left: canvasOrigW / 2 - 100,
+            top: canvasOrigH / 2 - 50,
+            width: 200,
+            height: 100,
+            fill: 'rgba(212, 175, 55, 0.3)',
+            stroke: '#D4AF37',
+            strokeWidth: 2,
+            rx: 8,
+            ry: 8
+        });
+        canvas.add(rect);
+        canvas.setActiveObject(rect);
+        canvas.renderAll();
+    }
+
+    function addCircle() {
+        const circle = new fabric.Circle({
+            left: canvasOrigW / 2 - 50,
+            top: canvasOrigH / 2 - 50,
+            radius: 50,
+            fill: 'rgba(212, 175, 55, 0.3)',
+            stroke: '#D4AF37',
+            strokeWidth: 2
+        });
+        canvas.add(circle);
+        canvas.setActiveObject(circle);
+        canvas.renderAll();
+    }
+
+    function addLine() {
+        const line = new fabric.Line([100, canvasOrigH / 2, canvasOrigW - 100, canvasOrigH / 2], {
+            stroke: '#D4AF37',
+            strokeWidth: 2
+        });
+        canvas.add(line);
+        canvas.setActiveObject(line);
+        canvas.renderAll();
+    }
+
+    function addOverlayBar() {
+        const bar = new fabric.Rect({
+            left: 0,
+            top: canvasOrigH - 160,
+            width: canvasOrigW,
+            height: 160,
+            fill: 'rgba(0, 0, 0, 0.6)',
+            selectable: true
+        });
+        canvas.add(bar);
+        canvas.setActiveObject(bar);
+        canvas.renderAll();
+    }
+
+    // ── Add Image from Gallery ──
+    function addImageFromGallery(filename) {
+        fabric.Image.fromURL('/images/' + encodeURIComponent(filename), function(img) {
+            // Scale to fit within canvas
+            const maxDim = Math.min(canvasOrigW * 0.6, canvasOrigH * 0.6);
+            const scale = Math.min(maxDim / img.width, maxDim / img.height);
+            img.set({
+                scaleX: scale,
+                scaleY: scale,
+                left: (canvasOrigW - img.width * scale) / 2,
+                top: (canvasOrigH - img.height * scale) / 2,
+                shadow: new fabric.Shadow({ color: 'rgba(0,0,0,0.3)', blur: 10, offsetX: 3, offsetY: 3 })
+            });
+            canvas.add(img);
+            canvas.setActiveObject(img);
+            canvas.renderAll();
+            showToast('เพิ่มรูป: ' + filename);
+        }, { crossOrigin: 'anonymous' });
+    }
+
+    // ── Upload & Add Image ──
+    function uploadAndAddImage(input) {
+        const file = input.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            fabric.Image.fromURL(e.target.result, function(img) {
+                const maxDim = Math.min(canvasOrigW * 0.7, canvasOrigH * 0.7);
+                const scale = Math.min(maxDim / img.width, maxDim / img.height);
+                img.set({
+                    scaleX: scale,
+                    scaleY: scale,
+                    left: (canvasOrigW - img.width * scale) / 2,
+                    top: (canvasOrigH - img.height * scale) / 2
+                });
+                canvas.add(img);
+                canvas.setActiveObject(img);
+                canvas.renderAll();
+                showToast('อัปโหลดรูปสำเร็จ');
+            });
+        };
+        reader.readAsDataURL(file);
+        input.value = '';
+    }
+
+    // ── Set Image as Background ──
+    function setImageAsBackground(filename) {
+        fabric.Image.fromURL('/images/' + encodeURIComponent(filename), function(img) {
+            const scaleX = canvasOrigW / img.width;
+            const scaleY = canvasOrigH / img.height;
+            const scale = Math.max(scaleX, scaleY);
+            img.set({
+                scaleX: scale,
+                scaleY: scale,
+                left: 0,
+                top: 0,
+                selectable: false,
+                evented: false,
+                name: '__background_image__'
+            });
+            // Remove old background image if any
+            canvas.getObjects().forEach(obj => {
+                if (obj.name === '__background_image__') canvas.remove(obj);
+            });
+            canvas.insertAt(img, 0);
+            canvas.renderAll();
+            showToast('ตั้งเป็นพื้นหลัง: ' + filename);
+        }, { crossOrigin: 'anonymous' });
+    }
+
+    // ── Layer Management ──
+    function bringForward() {
+        const obj = canvas.getActiveObject();
+        if (obj) { canvas.bringForward(obj); canvas.renderAll(); }
+    }
+
+    function sendBackward() {
+        const obj = canvas.getActiveObject();
+        if (obj) { canvas.sendBackwards(obj); canvas.renderAll(); }
+    }
+
+    function cloneSelected() {
+        const obj = canvas.getActiveObject();
+        if (!obj) return;
+        obj.clone(function(cloned) {
+            cloned.set({ left: obj.left + 20, top: obj.top + 20 });
+            canvas.add(cloned);
+            canvas.setActiveObject(cloned);
+            canvas.renderAll();
+        });
+    }
+
+    function deleteSelected() {
+        const active = canvas.getActiveObjects();
+        if (active.length === 0) return;
+        active.forEach(obj => canvas.remove(obj));
+        canvas.discardActiveObject();
+        canvas.renderAll();
+    }
+
+    function clearCanvas() {
+        if (!confirm('ต้องการล้าง Canvas ทั้งหมดหรือไม่?')) return;
+        canvas.clear();
+        canvas.setBackgroundColor('#1B3022', () => canvas.renderAll());
+        document.getElementById('pd-bg-color').value = '#1B3022';
+        document.getElementById('pd-bg-color-text').value = '#1B3022';
+        showToast('ล้าง Canvas แล้ว');
+    }
+
+    // ── Export ──
+    function exportImage(format) {
+        // Temporarily reset zoom for full-res export
+        const currentZoom = canvas.getZoom();
+        canvas.setZoom(1);
+        canvas.setWidth(canvasOrigW);
+        canvas.setHeight(canvasOrigH);
+
+        // Deselect all to remove selection borders
+        canvas.discardActiveObject();
+        canvas.renderAll();
+
+        const dataURL = canvas.toDataURL({
+            format: format,
+            quality: 1.0,
+            multiplier: 1
+        });
+
+        // Restore zoom
+        canvas.setZoom(currentZoom);
+        canvas.setWidth(canvasOrigW * currentZoom);
+        canvas.setHeight(canvasOrigH * currentZoom);
+        canvas.renderAll();
+
+        // Download
+        const link = document.createElement('a');
+        link.href = dataURL;
+        const timestamp = new Date().toISOString().slice(0,16).replace(/[:\-T]/g, '');
+        link.download = `khrua-thai-post-${currentPreset}-${timestamp}.${format === 'jpeg' ? 'jpg' : 'png'}`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        showToast(`ส่งออกรูป ${format.toUpperCase()} สำเร็จ!`);
+    }
+
+    // ── Load Gallery Images ──
+    let allGalleryImages = [];
+
+    async function loadGalleryImages() {
+        try {
+            const res = await fetch('/api/images');
+            if (!res.ok) throw new Error('Failed');
+            const data = await res.json();
+            allGalleryImages = data.images || [];
+            renderGallery(allGalleryImages);
+        } catch (err) {
+            document.getElementById('pd-gallery-grid').innerHTML = 
+                '<div style="grid-column:1/-1; text-align:center; padding:20px; color:rgba(255,255,255,0.3); font-size:0.75rem;">ไม่สามารถโหลดรูปภาพได้</div>';
+        }
+    }
+
+    function renderGallery(images) {
+        const grid = document.getElementById('pd-gallery-grid');
+        let html = '';
+
+        images.forEach(img => {
+            html += `
+                <div class="pd-gallery-item" ondblclick="setImageAsBackground('${img.replace(/'/g, "\\'")}')" onclick="addImageFromGallery('${img.replace(/'/g, "\\'")}')">
+                    <img src="/images/${encodeURIComponent(img)}" alt="${img}" loading="lazy">
+                    <div class="pd-gallery-item-overlay">${img}</div>
+                </div>
+            `;
+        });
+
+        html += `
+            <div class="pd-gallery-upload" onclick="document.getElementById('pd-upload-input').click()">
+                <i class="fas fa-cloud-upload-alt"></i>
+                อัปโหลดรูปใหม่
+            </div>
+        `;
+
+        grid.innerHTML = html;
+    }
+
+    function filterGallery(query) {
+        const q = query.toLowerCase().trim();
+        if (!q) {
+            renderGallery(allGalleryImages);
+            return;
+        }
+        const filtered = allGalleryImages.filter(img => img.toLowerCase().includes(q));
+        renderGallery(filtered);
+    }
+
+    // ── Properties Panel ──
+    canvas.on('selection:created', () => { updatePropertiesPanel(); syncLayers(); });
+    canvas.on('selection:updated', () => { updatePropertiesPanel(); syncLayers(); });
+    canvas.on('selection:cleared', () => {
+        document.getElementById('pd-properties').classList.remove('visible');
+        syncLayers();
+    });
+
+    function updatePropertiesPanel() {
+        const obj = canvas.getActiveObject();
+        if (!obj) return;
+        
+        const panel = document.getElementById('pd-properties');
+        const content = document.getElementById('pd-props-content');
+        panel.classList.add('visible');
+
+        let html = '';
+
+        // Opacity control (for all objects)
+        const opacity = Math.round((obj.opacity || 1) * 100);
+        html += `
+            <div class="pd-prop-row">
+                <span class="pd-prop-label">ความทึบ</span>
+                <input type="range" class="pd-range" min="0" max="100" value="${opacity}" 
+                       oninput="updateObjProp('opacity', this.value / 100)">
+                <span style="font-size:0.7rem; min-width:30px; text-align:right; color:var(--text-secondary);">${opacity}%</span>
+            </div>
+        `;
+
+        // Text-specific properties
+        if (obj.type === 'textbox' || obj.type === 'text' || obj.type === 'i-text') {
+            const fontSize = Math.round(obj.fontSize || 32);
+            const fontFamily = obj.fontFamily || 'Prompt';
+            const fill = obj.fill || '#ffffff';
+
+            html += `
+                <div class="pd-prop-row">
+                    <span class="pd-prop-label">ฟอนต์</span>
+                    <select class="pd-select" onchange="updateObjProp('fontFamily', this.value)">
+                        <option value="Prompt" ${fontFamily==='Prompt'?'selected':''}>Prompt (ไทย)</option>
+                        <option value="Kanit" ${fontFamily==='Kanit'?'selected':''}>Kanit (ไทย)</option>
+                        <option value="Sarabun" ${fontFamily==='Sarabun'?'selected':''}>Sarabun (ไทย)</option>
+                        <option value="Mali" ${fontFamily==='Mali'?'selected':''}>Mali (ลายมือไทย)</option>
+                        <option value="Chakra Petch" ${fontFamily==='Chakra Petch'?'selected':''}>Chakra Petch (โมเดิร์น)</option>
+                        <option value="Playfair Display" ${fontFamily==='Playfair Display'?'selected':''}>Playfair (หรูหรา)</option>
+                        <option value="Cinzel" ${fontFamily==='Cinzel'?'selected':''}>Cinzel (คลาสสิก/โรมัน)</option>
+                        <option value="Marcellus" ${fontFamily==='Marcellus'?'selected':''}>Marcellus (คลาสสิกบาง)</option>
+                        <option value="Cormorant Garamond" ${fontFamily==='Cormorant Garamond'?'selected':''}>Cormorant (หรูหราดั้งเดิม)</option>
+                        <option value="EB Garamond" ${fontFamily==='EB Garamond'?'selected':''}>EB Garamond</option>
+                        <option value="Libre Baskerville" ${fontFamily==='Libre Baskerville'?'selected':''}>Baskerville</option>
+                        <option value="Lora" ${fontFamily==='Lora'?'selected':''}>Lora</option>
+                        <option value="Oswald" ${fontFamily==='Oswald'?'selected':''}>Oswald (หัวข้ออิ้ง)</option>
+                        <option value="Caveat" ${fontFamily==='Caveat'?'selected':''}>Caveat (ลายมืออิ้ง)</option>
+                        <option value="Times New Roman" ${fontFamily==='Times New Roman'?'selected':''}>Times New Roman</option>
+                        <option value="Palatino Linotype" ${fontFamily==='Palatino Linotype'?'selected':''}>Palatino / Book Antiqua</option>
+                        <option value="Garamond" ${fontFamily==='Garamond'?'selected':''}>Garamond (System)</option>
+                        <option value="Cambria" ${fontFamily==='Cambria'?'selected':''}>Cambria</option>
+                        <option value="Constantia" ${fontFamily==='Constantia'?'selected':''}>Constantia</option>
+                        <option value="Bodoni MT" ${fontFamily==='Bodoni MT'?'selected':''}>Bodoni MT</option>
+                        <option value="Goudy Old Style" ${fontFamily==='Goudy Old Style'?'selected':''}>Goudy Old Style</option>
+                        <option value="Bell MT" ${fontFamily==='Bell MT'?'selected':''}>Bell MT</option>
+                        <option value="Centaur" ${fontFamily==='Centaur'?'selected':''}>Centaur</option>
+                        <option value="Century Schoolbook" ${fontFamily==='Century Schoolbook'?'selected':''}>Century Schoolbook</option>
+                        <option value="Arial" ${fontFamily==='Arial'?'selected':''}>Arial</option>
+                        <option value="Georgia" ${fontFamily==='Georgia'?'selected':''}>Georgia</option>
+                        <option value="Impact" ${fontFamily==='Impact'?'selected':''}>Impact</option>
+                    </select>
+                </div>
+                <div class="pd-prop-row">
+                    <span class="pd-prop-label">ขนาด</span>
+                    <input type="number" class="pd-input" style="width:70px;" value="${fontSize}" min="8" max="200"
+                           onchange="updateObjProp('fontSize', parseInt(this.value))">
+                </div>
+                <div class="pd-prop-row">
+                    <span class="pd-prop-label">สีข้อความ</span>
+                    <div class="pd-color-row">
+                        <input type="color" class="pd-color-input" value="${fill}" 
+                               onchange="updateObjProp('fill', this.value)">
+                        <input type="text" class="pd-input" value="${fill}" style="width:90px;"
+                               onchange="updateObjProp('fill', this.value)">
+                    </div>
+                </div>
+                <div class="pd-prop-row">
+                    <span class="pd-prop-label">สไตล์</span>
+                    <div class="pd-font-styles">
+                        <button class="pd-font-style-btn ${obj.fontWeight==='bold'?'active':''}" 
+                                onclick="toggleFontWeight()"><i class="fas fa-bold"></i></button>
+                        <button class="pd-font-style-btn ${obj.fontStyle==='italic'?'active':''}" 
+                                onclick="toggleFontStyle()"><i class="fas fa-italic"></i></button>
+                        <button class="pd-font-style-btn ${obj.underline?'active':''}" 
+                                onclick="toggleUnderline()"><i class="fas fa-underline"></i></button>
+                    </div>
+                </div>
+                <div class="pd-prop-row">
+                    <span class="pd-prop-label">จัดข้อความ</span>
+                    <div class="pd-font-styles">
+                        <button class="pd-font-style-btn ${obj.textAlign==='left'?'active':''}" 
+                                onclick="updateObjProp('textAlign','left')"><i class="fas fa-align-left"></i></button>
+                        <button class="pd-font-style-btn ${obj.textAlign==='center'?'active':''}" 
+                                onclick="updateObjProp('textAlign','center')"><i class="fas fa-align-center"></i></button>
+                        <button class="pd-font-style-btn ${obj.textAlign==='right'?'active':''}" 
+                                onclick="updateObjProp('textAlign','right')"><i class="fas fa-align-right"></i></button>
+                    </div>
+                </div>
+                <div style="display:flex; gap:3px; flex-wrap:wrap; margin-top:4px;">
+                    <button class="pd-btn-icon" style="background:#D4AF37; width:24px; height:24px;" onclick="updateObjProp('fill','#D4AF37')"></button>
+                    <button class="pd-btn-icon" style="background:#ffffff; width:24px; height:24px;" onclick="updateObjProp('fill','#ffffff')"></button>
+                    <button class="pd-btn-icon" style="background:#000000; width:24px; height:24px; border-color:rgba(255,255,255,0.2);" onclick="updateObjProp('fill','#000000')"></button>
+                    <button class="pd-btn-icon" style="background:#F5E6B8; width:24px; height:24px;" onclick="updateObjProp('fill','#F5E6B8')"></button>
+                    <button class="pd-btn-icon" style="background:#e74c3c; width:24px; height:24px;" onclick="updateObjProp('fill','#e74c3c')"></button>
+                    <button class="pd-btn-icon" style="background:#1B3022; width:24px; height:24px;" onclick="updateObjProp('fill','#1B3022')"></button>
+                </div>
+            `;
+        }
+
+        // Shape-specific (fill/stroke)
+        if (obj.type === 'rect' || obj.type === 'circle' || obj.type === 'line') {
+            const fill = obj.fill || 'transparent';
+            const stroke = obj.stroke || '#D4AF37';
+            const strokeWidth = obj.strokeWidth || 1;
+
+            html += `
+                <div class="pd-prop-row">
+                    <span class="pd-prop-label">สีเติม</span>
+                    <div class="pd-color-row">
+                        <input type="color" class="pd-color-input" value="${fill === 'transparent' ? '#000000' : fill}" 
+                               onchange="updateObjProp('fill', this.value)">
+                    </div>
+                </div>
+                <div class="pd-prop-row">
+                    <span class="pd-prop-label">สีเส้น</span>
+                    <div class="pd-color-row">
+                        <input type="color" class="pd-color-input" value="${stroke}" 
+                               onchange="updateObjProp('stroke', this.value)">
+                    </div>
+                </div>
+                <div class="pd-prop-row">
+                    <span class="pd-prop-label">ความหนาเส้น</span>
+                    <input type="range" class="pd-range" min="0" max="20" value="${strokeWidth}" 
+                           oninput="updateObjProp('strokeWidth', parseInt(this.value))">
+                </div>
+            `;
+        }
+
+        content.innerHTML = html;
+    }
+
+    function updateObjProp(prop, value) {
+        const obj = canvas.getActiveObject();
+        if (!obj) return;
+        obj.set(prop, value);
+        canvas.renderAll();
+        updatePropertiesPanel();
+        syncLayers();
+    }
+    
+    // ── Eraser Tool ──
+    let isEraserMode = false;
+    function toggleEraser() {
+        const btn = document.getElementById('btn-eraser');
+        const settings = document.getElementById('pd-eraser-settings');
+        isEraserMode = !isEraserMode;
+        
+        if (isEraserMode) {
+            btn.classList.add('active');
+            btn.style.color = 'var(--gold)';
+            btn.style.borderColor = 'var(--gold)';
+            settings.classList.add('visible');
+            canvas.isDrawingMode = true;
+            canvas.freeDrawingBrush = new fabric.PencilBrush(canvas);
+            canvas.freeDrawingBrush.color = 'rgba(0,0,0,1)';
+            updateEraserWidth();
+            canvas.discardActiveObject();
+            canvas.renderAll();
+            showToast('โหมดยางลบ: เปิด (ลบแล้วจะโปร่งใสทะลุเลเยอร์ล่าง)');
+        } else {
+            btn.classList.remove('active');
+            btn.style.color = '';
+            btn.style.borderColor = '';
+            settings.classList.remove('visible');
+            canvas.isDrawingMode = false;
+            showToast('โหมดยางลบ: ปิด');
+        }
+    }
+
+    // Apply destination-out to paths created in eraser mode
+    canvas.on('path:created', function(opt) {
+        if (isEraserMode) {
+            opt.path.globalCompositeOperation = 'destination-out';
+            opt.path.name = 'eraser';
+            canvas.renderAll();
+            syncLayers();
+        }
+    });
+
+    function updateEraserWidth() {
+        const val = document.getElementById('pd-eraser-width').value;
+        document.getElementById('pd-eraser-width-val').innerText = val;
+        if (canvas.freeDrawingBrush) {
+            canvas.freeDrawingBrush.width = parseInt(val, 10);
+        }
+    }
+
+    // ── Layer Management ──
+    function syncLayers() {
+        const list = document.getElementById('pd-layer-list');
+        const objects = canvas.getObjects().filter(o => o.name !== '__background_image__' && o.type !== 'eraser');
+        let html = '';
+        
+        // Reverse array so top layers appear first in the UI
+        for (let i = objects.length - 1; i >= 0; i--) {
+            const obj = objects[i];
+            const isActive = canvas.getActiveObjects().includes(obj);
+            let name = 'เลเยอร์ ' + (i + 1);
+            let icon = 'fa-layer-group';
+            
+            if (obj.type === 'image') { name = 'รูปภาพ'; icon = 'fa-image'; }
+            if (obj.type === 'textbox' || obj.type === 'i-text' || obj.type === 'text') { 
+                name = obj.text ? obj.text.substring(0, 15) + (obj.text.length > 15 ? '...' : '') : 'ข้อความ';
+                icon = 'fa-font';
+            }
+            if (obj.type === 'rect') { name = 'สี่เหลี่ยม'; icon = 'fa-square'; }
+            if (obj.type === 'circle') { name = 'วงกลม'; icon = 'fa-circle'; }
+            if (obj.type === 'line') { name = 'เส้น'; icon = 'fa-minus'; }
+            
+            // Generate distinct ID for identifying object in DOM
+            if (!obj.layerId) obj.layerId = 'layer_' + Math.random().toString(36).substr(2, 9);
+            
+            html += `
+                <div class="pd-layer-item ${isActive ? 'active' : ''}" onclick="selectLayer('${obj.layerId}')">
+                    <div class="pd-layer-info">
+                        <i class="fas ${icon} pd-layer-icon"></i>
+                        <span class="pd-layer-name">${name}</span>
+                    </div>
+                    <div class="pd-layer-actions">
+                        <button class="pd-layer-btn" onclick="moveLayerUp('${obj.layerId}', event)" title="ขึ้นหน้า">
+                            <i class="fas fa-arrow-up"></i>
+                        </button>
+                        <button class="pd-layer-btn" onclick="moveLayerDown('${obj.layerId}', event)" title="ลงหลัง">
+                            <i class="fas fa-arrow-down"></i>
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+        
+        if (objects.length === 0) {
+            html = '<div style="text-align:center; padding:10px; color:rgba(255,255,255,0.3); font-size:0.75rem;">ไม่มีเลเยอร์</div>';
+        }
+        
+        list.innerHTML = html;
+    }
+
+    window.selectLayer = function(layerId) {
+        if (isEraserMode) return; // Prevent selection while erasing
+        const obj = canvas.getObjects().find(o => o.layerId === layerId);
+        if (obj) {
+            canvas.setActiveObject(obj);
+            canvas.renderAll();
+        }
+    };
+
+    window.moveLayerUp = function(layerId, event) {
+        event.stopPropagation();
+        const obj = canvas.getObjects().find(o => o.layerId === layerId);
+        if (obj) {
+            canvas.bringForward(obj);
+            canvas.renderAll();
+            syncLayers();
+        }
+    };
+
+    window.moveLayerDown = function(layerId, event) {
+        event.stopPropagation();
+        const obj = canvas.getObjects().find(o => o.layerId === layerId);
+        if (obj) {
+            canvas.sendBackwards(obj);
+            canvas.renderAll();
+            syncLayers();
+        }
+    };
+
+    function toggleFontWeight() {
+        const obj = canvas.getActiveObject();
+        if (!obj) return;
+        obj.set('fontWeight', obj.fontWeight === 'bold' ? 'normal' : 'bold');
+        canvas.renderAll();
+        updatePropertiesPanel();
+    }
+
+    function toggleFontStyle() {
+        const obj = canvas.getActiveObject();
+        if (!obj) return;
+        obj.set('fontStyle', obj.fontStyle === 'italic' ? 'normal' : 'italic');
+        canvas.renderAll();
+        updatePropertiesPanel();
+    }
+
+    function toggleUnderline() {
+        const obj = canvas.getActiveObject();
+        if (!obj) return;
+        obj.set('underline', !obj.underline);
+        canvas.renderAll();
+        updatePropertiesPanel();
+    }
+
+    // ── Templates ──
+    function applyTemplate(type, btn) {
+        if (!confirm('การใช้เทมเพลตจะล้าง Canvas ปัจจุบัน ต้องการดำเนินการต่อหรือไม่?')) return;
+
+        // Update active
+        document.querySelectorAll('.pd-template-card').forEach(c => c.classList.remove('active'));
+        if (btn) btn.classList.add('active');
+
+        canvas.clear();
+
+        switch(type) {
+            case 'promo':
+                applyPromoTemplate();
+                break;
+            case 'menu':
+                applyMenuTemplate();
+                break;
+            case 'event':
+                applyEventTemplate();
+                break;
+            case 'blank':
+                canvas.setBackgroundColor('#1B3022', () => canvas.renderAll());
+                break;
+        }
+
+        showToast('ใช้เทมเพลตสำเร็จ');
+    }
+
+    function applyPromoTemplate() {
+        canvas.setBackgroundColor('#0D1F14', () => {});
+
+        // Gold accent line top
+        canvas.add(new fabric.Rect({
+            left: 0, top: 0, width: canvasOrigW, height: 6,
+            fill: '#D4AF37', selectable: false, evented: false
+        }));
+
+        // Dark overlay bar
+        canvas.add(new fabric.Rect({
+            left: 0, top: canvasOrigH - 200, width: canvasOrigW, height: 200,
+            fill: 'rgba(0, 0, 0, 0.7)'
+        }));
+
+        // Decorative gold line
+        canvas.add(new fabric.Line([60, canvasOrigH - 210, canvasOrigW - 60, canvasOrigH - 210], {
+            stroke: '#D4AF37', strokeWidth: 1, selectable: false
+        }));
+
+        // Title text
+        canvas.add(new fabric.Textbox('🔥 SPECIAL OFFER', {
+            left: canvasOrigW / 2 - 250, top: 60,
+            fontSize: 52, fontFamily: 'Playfair Display', fill: '#D4AF37',
+            fontWeight: 'bold', textAlign: 'center', width: 500,
+            shadow: new fabric.Shadow({ color: 'rgba(0,0,0,0.5)', blur: 6, offsetX: 2, offsetY: 2 })
+        }));
+
+        // Price text
+        canvas.add(new fabric.Textbox('£XX.XX', {
+            left: canvasOrigW / 2 - 150, top: canvasOrigH - 170,
+            fontSize: 72, fontFamily: 'Prompt', fill: '#D4AF37',
+            fontWeight: 'bold', textAlign: 'center', width: 300
+        }));
+
+        // Description
+        canvas.add(new fabric.Textbox('รายละเอียดโปรโมชั่นของคุณ', {
+            left: canvasOrigW / 2 - 200, top: canvasOrigH - 90,
+            fontSize: 22, fontFamily: 'Prompt', fill: '#ffffff',
+            textAlign: 'center', width: 400
+        }));
+
+        // Logo
+        addLogoToTemplate(canvasOrigW - 160, canvasOrigH - 180, 120);
+
+        // Gold bottom line
+        canvas.add(new fabric.Rect({
+            left: 0, top: canvasOrigH - 6, width: canvasOrigW, height: 6,
+            fill: '#D4AF37', selectable: false, evented: false
+        }));
+
+        canvas.renderAll();
+    }
+
+    function applyMenuTemplate() {
+        canvas.setBackgroundColor('#1B3022', () => {});
+
+        // Gold frame border
+        canvas.add(new fabric.Rect({
+            left: 20, top: 20, width: canvasOrigW - 40, height: canvasOrigH - 40,
+            fill: 'transparent', stroke: '#D4AF37', strokeWidth: 1.5,
+            rx: 4, ry: 4, selectable: false, evented: false
+        }));
+
+        // Inner frame
+        canvas.add(new fabric.Rect({
+            left: 30, top: 30, width: canvasOrigW - 60, height: canvasOrigH - 60,
+            fill: 'transparent', stroke: 'rgba(212,175,55,0.3)', strokeWidth: 0.5,
+            rx: 2, ry: 2, selectable: false, evented: false
+        }));
+
+        // Menu name heading
+        canvas.add(new fabric.Textbox('ชื่อเมนู', {
+            left: canvasOrigW / 2 - 200, top: canvasOrigH - 180,
+            fontSize: 44, fontFamily: 'Prompt', fill: '#D4AF37',
+            fontWeight: 'bold', textAlign: 'center', width: 400,
+            shadow: new fabric.Shadow({ color: 'rgba(0,0,0,0.6)', blur: 8 })
+        }));
+
+        // Subtitle
+        canvas.add(new fabric.Textbox('คำอธิบายเมนูอาหาร สดใหม่ทุกวัน', {
+            left: canvasOrigW / 2 - 200, top: canvasOrigH - 120,
+            fontSize: 20, fontFamily: 'Prompt', fill: '#F5E6B8',
+            textAlign: 'center', width: 400
+        }));
+
+        // Decorative diamond
+        canvas.add(new fabric.Rect({
+            left: canvasOrigW / 2 - 8, top: canvasOrigH - 200,
+            width: 16, height: 16, fill: '#D4AF37',
+            angle: 45, selectable: false
+        }));
+
+        // Lines around diamond
+        canvas.add(new fabric.Line([canvasOrigW / 2 - 80, canvasOrigH - 192, canvasOrigW / 2 - 20, canvasOrigH - 192], {
+            stroke: '#D4AF37', strokeWidth: 1, selectable: false
+        }));
+        canvas.add(new fabric.Line([canvasOrigW / 2 + 20, canvasOrigH - 192, canvasOrigW / 2 + 80, canvasOrigH - 192], {
+            stroke: '#D4AF37', strokeWidth: 1, selectable: false
+        }));
+
+        // Logo
+        addLogoToTemplate(canvasOrigW / 2 - 50, 40, 100);
+
+        canvas.renderAll();
+    }
+
+    function applyEventTemplate() {
+        canvas.setBackgroundColor('#0D1F14', () => {});
+
+        // Top gradient overlay
+        canvas.add(new fabric.Rect({
+            left: 0, top: 0, width: canvasOrigW, height: 120,
+            fill: 'rgba(13, 31, 20, 0.9)', selectable: false, evented: false
+        }));
+
+        // Bottom section
+        canvas.add(new fabric.Rect({
+            left: 0, top: canvasOrigH - 240, width: canvasOrigW, height: 240,
+            fill: 'rgba(0, 0, 0, 0.75)'
+        }));
+
+        // Gold accent lines
+        canvas.add(new fabric.Line([0, 120, canvasOrigW, 120], {
+            stroke: '#D4AF37', strokeWidth: 2, selectable: false
+        }));
+        canvas.add(new fabric.Line([0, canvasOrigH - 240, canvasOrigW, canvasOrigH - 240], {
+            stroke: '#D4AF37', strokeWidth: 2, selectable: false
+        }));
+
+        // Event title
+        canvas.add(new fabric.Textbox('KHRUA THAI LONDON', {
+            left: canvasOrigW / 2 - 250, top: 30,
+            fontSize: 36, fontFamily: 'Playfair Display', fill: '#D4AF37',
+            fontWeight: 'bold', textAlign: 'center', width: 500
+        }));
+
+        // Subtitle
+        canvas.add(new fabric.Textbox('Celebrations & Private Dining', {
+            left: canvasOrigW / 2 - 200, top: 75,
+            fontSize: 16, fontFamily: 'Prompt', fill: '#F5E6B8',
+            textAlign: 'center', width: 400, fontStyle: 'italic'
+        }));
+
+        // Event date
+        canvas.add(new fabric.Textbox('📅 วันที่จัดงาน', {
+            left: canvasOrigW / 2 - 200, top: canvasOrigH - 210,
+            fontSize: 28, fontFamily: 'Prompt', fill: '#D4AF37',
+            fontWeight: 'bold', textAlign: 'center', width: 400
+        }));
+
+        // Event place
+        canvas.add(new fabric.Textbox('📍 สถานที่จัดงาน', {
+            left: canvasOrigW / 2 - 200, top: canvasOrigH - 160,
+            fontSize: 22, fontFamily: 'Prompt', fill: '#ffffff',
+            textAlign: 'center', width: 400
+        }));
+
+        // CTA
+        canvas.add(new fabric.Textbox('จองเลยวันนี้ — Book Now', {
+            left: canvasOrigW / 2 - 200, top: canvasOrigH - 100,
+            fontSize: 18, fontFamily: 'Prompt', fill: '#F5E6B8',
+            textAlign: 'center', width: 400, fontStyle: 'italic'
+        }));
+
+        // CTA button-like shape
+        canvas.add(new fabric.Rect({
+            left: canvasOrigW / 2 - 100, top: canvasOrigH - 60,
+            width: 200, height: 40,
+            fill: '#D4AF37', rx: 20, ry: 20
+        }));
+        canvas.add(new fabric.Textbox('RESERVE NOW', {
+            left: canvasOrigW / 2 - 80, top: canvasOrigH - 54,
+            fontSize: 16, fontFamily: 'Prompt', fill: '#0D1F14',
+            fontWeight: 'bold', textAlign: 'center', width: 160
+        }));
+
+        // Logo
+        addLogoToTemplate(20, 20, 80);
+
+        canvas.renderAll();
+    }
+
+    function addLogoToTemplate(x, y, size) {
+        fabric.Image.fromURL('logo.png', function(img) {
+            img.scaleToWidth(size);
+            img.set({
+                left: x, top: y,
+                shadow: new fabric.Shadow({ color: 'rgba(212,175,55,0.3)', blur: 10 })
+            });
+            canvas.add(img);
+            canvas.renderAll();
+        }, { crossOrigin: 'anonymous' });
+    }
+
+    // ── Toast Notification ──
+    function showToast(message) {
+        // Remove existing
+        document.querySelectorAll('.pd-toast').forEach(t => t.remove());
+
+        const toast = document.createElement('div');
+        toast.className = 'pd-toast';
+        toast.innerHTML = `<i class="fas fa-check-circle"></i> ${message}`;
+        document.body.appendChild(toast);
+
+        setTimeout(() => {
+            toast.classList.add('hiding');
+            setTimeout(() => toast.remove(), 300);
+        }, 2500);
+    }
+
+    // ── Initial state save ──
+    setTimeout(() => saveState(), 200);
+
+    </script>
+    <script>
+        // Check Auth Role for Back Button
+        fetch('/api/check-auth')
+            .then(res => res.json())
+            .then(data => {
+                if (data.role === 'marketing') {
+                    const backBtn = document.getElementById('pd-back-btn');
+                    if (backBtn) {
+                        backBtn.href = 'marketing.html';
+                        backBtn.title = 'กลับหน้า Marketing';
+                    }
+                }
+            })
+            .catch(err => console.error(err));
+    </script>
+</body>
+</html>
