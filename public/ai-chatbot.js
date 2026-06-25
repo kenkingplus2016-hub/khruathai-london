@@ -11,12 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="ai-chat-header">
                 <span style="display: flex; align-items: center; gap: 10px;">
                     <img src="images/admin_ravity.png" alt="Admin" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold);"> 
-                    แอดมิน Ravity
+                    Admin Ravity
                 </span>
                 <i class="fas fa-times ai-chat-close" id="ai-chat-close"></i>
             </div>
             <div class="ai-chat-messages" id="ai-chat-messages">
-                <div class="chat-msg ai">สวัสดีค่ะ! ยินดีต้อนรับสู่ Khrua Thai London แอดมิน Ravity ยินดีให้บริการค่ะ / Hello! Welcome to Khrua Thai London. Admin Ravity is here to help!</div>
+                <div class="chat-msg ai">สวัสดีค่ะ! ยินดีต้อนรับสู่ Khrua Thai London Admin Ravity ยินดีให้บริการค่ะ / Hello! Welcome to Khrua Thai London. Admin Ravity is here to help!</div>
             </div>
             <div class="typing-indicator" id="ai-typing">กำลังพิมพ์... / Typing...</div>
             <div class="ai-chat-input-area">

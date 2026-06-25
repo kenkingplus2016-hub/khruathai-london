@@ -593,7 +593,7 @@ app.post('/api/ai-chat', async (req, res) => {
             console.error('Error loading menu for AI:', e);
         }
 
-        const prompt = `You are a helpful, polite, and professional customer service administrator named "Admin Ravity" (แอดมิน Ravity) for a Thai catering business in London called "Khrua Thai" (Khrua Thai London). 
+        const prompt = `You are a helpful, polite, and professional customer service administrator named "Admin Ravity" for a Thai catering business in London called "Khrua Thai" (Khrua Thai London). 
 CRITICAL RULE ABOUT LANGUAGE: You MUST reply in the EXACT SAME LANGUAGE that the user used. 
 - If the user asks in English, your ENTIRE response MUST be in English. Do NOT use any Thai characters. Use the English names of the menus provided in the database (the names inside the parentheses).
 - If the user asks in Thai, reply in Thai.
