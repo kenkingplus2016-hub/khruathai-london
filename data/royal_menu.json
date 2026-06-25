@@ -1,0 +1,1347 @@
+[
+    {
+        "category": "Seafood",
+        "category_th": "ซีฟู้ด / Seafood",
+        "items": [
+            {
+                "id": "r1",
+                "name": {
+                    "th": "เมี่ยงคำซีบาสกระทงทอง",
+                    "en": "Sea Bass Miang Kham Kratong Tong"
+                },
+                "price": 39.99,
+                "unit": "32 ชิ้น / 32 Pcs",
+                "desc": {
+                    "th": "เนื้อปลาซีบาสหั่นเต๋าคัดเกรดทอดกรอบ ผสมเครื่องเคียงเมี่ยงคำรสเด็ด เสิร์ฟในกระทงทองกรุบกรอบสูตรโบราณ",
+                    "en": "Crispy diced sea bass combined with authentic Miang Kham ingredients, served in traditional crispy golden cups."
+                },
+                "img": "Sea Bass Miang Kham.jpg",
+                "main_ingredients": {
+                    "th": [
+                        "เนื้อปลาซีบาสทอด",
+                        "แผ่นเกี๊ยวกระทงทอง",
+                        "สมุนไพรเมี่ยงคำ (มะนาว ขิง หอมแดง พริกขี้หนู)",
+                        "ถั่วลิสงคั่ว กุ้งแห้งทอด มะพร้าวคั่ว",
+                        "ใบชะพลู",
+                        "น้ำจิ้มเมี่ยงคำ (น้ำตาลมะพร้าว กะปิย่าง กุ้งแห้งป่น ข่าคั่ว ขิงคั่ว หอมแดงคั่ว น้ำปลา)"
+                    ],
+                    "en": [
+                        "Crispy Sea Bass",
+                        "Golden Pastry Cups",
+                        "Fresh Herbs (Lime, Ginger, Shallot, Chili)",
+                        "Roasted Peanuts, Dried Shrimp, Toasted Coconut",
+                        "Betel Leaves",
+                        "Miang Kham Sauce (Palm Sugar, Roasted Shrimp Paste, Galangal, Ginger, Shallot, Fish Sauce)"
+                    ]
+                }
+            },
+            {
+                "id": "r2",
+                "name": {
+                    "th": "ยำส้มโอกุ้งสดพอดีคำ",
+                    "en": "Pomelo Salad with Prawns"
+                },
+                "price": 39.99,
+                "unit": "32 ชิ้น / 32 Pcs",
+                "desc": {
+                    "th": "ยำส้มโอคัดเนื้อหวานฉ่ำ เคล้าน้ำยำสูตรพริกเผาโบราณรสกลมกล่อม ท็อปด้วยกุ้งแม่น้ำลวกตัวโตพอดีคำ",
+                    "en": "Sweet pomelo flesh tossed in a mild traditional chili jam dressing, topped with poached premium prawn."
+                },
+                "img": "Pomelo Salad1.jpg",
+                "main_ingredients": {
+                    "th": [
+                        "--- วัตถุดิบหลัก ---",
+                        "เนื้อส้มโอ 2-3 ถ้วย",
+                        "กุ้งสด 6-8 ตัว",
+                        "มะพร้าวขูดคั่ว 1/4 ถ้วย",
+                        "ถั่วลิสงคั่วโขลกหยาบ 1/4 ถ้วย",
+                        "หอมแดงเจียว 2-3 ช้อนโต๊ะ",
+                        "ใบมะกรูดซอยฝอย 2 ช้อนโต๊ะ",
+                        "พริกขี้หนูสวนซอย",
+                        "--- ส่วนผสมน้ำยำโบราณ ---",
+                        "น้ำพริกเผา 1-2 ช้อนโต๊ะ",
+                        "น้ำตาลปี๊บ หรือ น้ำตาลมะพร้าว 2 ช้อนโต๊ะ",
+                        "น้ำปลา 1-2 ช้อนโต๊ะ",
+                        "น้ำมะขามเปียก 1-2 ช้อนโต๊ะ",
+                        "หัวกะทิ 2 ช้อนโต๊ะ"
+                    ],
+                    "en": [
+                        "--- Main Ingredients ---",
+                        "2-3 cups Pomelo segments",
+                        "6-8 Fresh Shrimp",
+                        "1/4 cup Toasted Coconut Flakes",
+                        "1/4 cup Crushed Roasted Peanuts",
+                        "2-3 tbsp Fried Shallots",
+                        "2 tbsp Kaffir Lime Leaves (finely sliced)",
+                        "Bird's Eye Chili (sliced)",
+                        "--- Traditional Dressing ---",
+                        "1-2 tbsp Thai Chili Jam (Nam Prik Pao)",
+                        "2 tbsp Palm Sugar or Coconut Sugar",
+                        "1-2 tbsp Fish Sauce",
+                        "1-2 tbsp Tamarind Paste",
+                        "2 tbsp Coconut Cream"
+                    ]
+                }
+            },
+            {
+                "id": "r4",
+                "name": {
+                    "th": "แซลมอนลุยสวนเกี๊ยวกรอบ",
+                    "en": "Salmon with Herbs salad Crispy Wontons"
+                },
+                "price": 39.99,
+                "unit": "32 ชิ้น / 32 Pcs",
+                "desc": {
+                    "th": "ลาบปลาแซลมอนสดรสจัดจ้านหอมข้าวคั่วและสมุนไพรไทย เสิร์ฟบนเกี๊ยวกรอบสีเหลืองทองกรุบกรอบทานง่าย",
+                    "en": "Zesty salmon larb salad tossed with fresh mint, toasted rice, and lime juice served on crispy golden wonton skin."
+                },
+                "img": "Salmon with Herbs salad Crispy Wontons1.jpg",
+                "main_ingredients": {
+                    "th": [
+                        "ปลาแซลมอนหั่นเต๋า (หมักเกลือและพริกไทย)",
+                        "แผ่นเกี๊ยวทอดกรอบ",
+                        "เครื่องสมุนไพรลุยสวน (ตะไคร้ ใบมะกรูด หอมแดง พริกจินดาแดง ขิง ผักชีฝรั่ง สะระแหน่)",
+                        "น้ำยำลุยสวน (น้ำมะนาวสด น้ำปลา น้ำตาลปี๊บ น้ำพริกเผา)"
+                    ],
+                    "en": [
+                        "Premium Diced Salmon (Salt & Pepper Marinated)",
+                        "Crispy Wonton Skin",
+                        "Fresh Herb Toss (Lemongrass, Kaffir Lime Leaves, Shallot, Chili, Ginger, Culantro, Mint)",
+                        "Zesty Dressing (Fresh Lime, Fish Sauce, Palm Sugar, Chili Jam)"
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "category": "Meat",
+        "category_th": "เนื้อสัตว์ / Meat",
+        "items": [
+            {
+                "id": "r6",
+                "name": {
+                    "th": "คอหมูย่าง",
+                    "en": "Grilled Pork Neck"
+                },
+                "price": 80,
+                "unit": "32 ชิ้น / 32 Pcs",
+                "desc": {
+                    "th": "คอหมูหมักสูตรพิเศษเนื้อนุ่มติดมันเล็กน้อย ย่างจนหอมกรุ่น เสิร์ฟคู่กับน้ำจิ้มแจ่วมะขามเปียกสุดแซ่บพอดีคำ",
+                    "en": "Tender, marinated premium pork neck grilled to perfection, served with sweet-tangy tamarind Jaew dipping sauce."
+                },
+                "img": "Grilled Pork Neck Cocktails.png",
+                "main_ingredients": {
+                    "th": [
+                        "คอหมูย่างแท้พรีเมียม (สันคอแท้แทรกมัน)",
+                        "เครื่องหมัก (สามเกลอ ซอสหอยนางรม ซอสปรุงรส น้ำปลา น้ำตาลปี๊บ)",
+                        "น้ำจิ้มแจ่วอีสาน (น้ำปลา น้ำมะนาว น้ำมะขามเปียก น้ำตาลปี๊บ ข้าวคั่ว พริกป่น หอมแดง ผักชีฝรั่ง ต้นหอม)"
+                    ],
+                    "en": [
+                        "Premium Grilled Pork Neck (Marbled Cut)",
+                        "Thai Marinade (Coriander Root, Garlic, Pepper, Oyster Sauce, Soy Sauce, Fish Sauce, Palm Sugar)",
+                        "Authentic Jaew Sauce (Fish Sauce, Lime, Tamarind, Palm Sugar, Roasted Rice, Chili Flakes, Shallots, Culantro, Spring Onion)"
+                    ]
+                }
+            },
+            {
+                "id": "r7",
+                "name": {
+                    "th": "ลาบไก่กระทงเกียวกรอบ",
+                    "en": "Larb Chicken Kratong Crispy Wonton"
+                },
+                "price": 39.99,
+                "unit": "32 ชิ้น / 32 Pcs",
+                "desc": {
+                    "th": "ลาบไก่สับปรุงรสจัดจ้านเปรี้ยวเค็มเผ็ดหอมข้าวคั่วและผักชีฝรั่ง บรรจุในกระทงทองแป้งบางกรอบสูตรตำรับไทย",
+                    "en": "Zesty minced chicken larb infused with fresh lime, mint, and roasted rice, served inside crisp golden cups."
+                },
+                "img": "Larb Chicken Kratong Crispy Wonton.jpg",
+                "main_ingredients": {
+                    "th": [
+                        "เนื้อไก่สับ (คัดส่วนเนื้อล้วน)",
+                        "แผ่นเกี๊ยวทอดกรอบ (จับจีบรูปกระทงทอง)",
+                        "เครื่องปรุงรสลาบอีสาน (น้ำปลา น้ำมะนาว พริกป่น ข้าวคั่วใหม่)",
+                        "ผักสมุนไพรลาบ (หอมแดง ต้นหอม ผักชีฝรั่ง ใบสะระแหน่ ใบมะกรูด)",
+                        "ผักเคียงสด (กะหล่ำปลี ถั่วฝักยาว โหระพา)"
+                    ],
+                    "en": [
+                        "Premium Minced Chicken",
+                        "Crispy Wonton Cups",
+                        "Isan Larb Seasoning (Fish Sauce, Fresh Lime, Chili Flakes, Freshly Toasted Rice)",
+                        "Fresh Herbs (Shallot, Spring Onion, Culantro, Mint, Kaffir Lime Leaves)",
+                        "Fresh Side Vegetables (Cabbage, Long Beans, Sweet Basil)"
+                    ]
+                }
+            },
+            {
+                "id": "r8",
+                "name": {
+                    "th": "ม้าฮ่อ",
+                    "en": "Ma Hor"
+                },
+                "price": 39.99,
+                "unit": "32 ชิ้น / 32 Pcs",
+                "desc": {
+                    "th": "อาหารว่างไทยโบราณ หมูผัดกับสามเกลอ น้ำตาลมะพร้าว และถั่วลิสงจนเหนียวหนึบกลมกล่อม จัดวางบนชิ้นสับปะรดพอดีคำ",
+                    "en": "A classic Thai appetizer featuring sweet savory caramelized minced pork and peanut paste, atop fresh juicy pineapple slices."
+                },
+                "img": "Ma Hor.png",
+                "main_ingredients": {
+                    "th": [
+                        "เครื่องสามเกลอ: รากผักชี กระเทียม พริกไทย โขลกละเอียด",
+                        "เนื้อสัตว์: หมูสับ, เนื้อกุ้งบด",
+                        "ถั่วลิสงคั่ว",
+                        "เครื่องปรุงรส: น้ำตาลปี๊บ, น้ำปลา",
+                        "ตกแต่ง: พริกชี้ฟ้าแดง, ใบผักชีสด",
+                        "ผลไม้ฐานรอง: สับปะรด หรือ ส้มสด (สำหรับจัดเสิร์ฟ)"
+                    ],
+                    "en": [
+                        "Herb mix: finely pounded coriander root, garlic, and pepper",
+                        "Protein: Minced pork, Minced shrimp",
+                        "Roasted peanuts",
+                        "Seasoning: Palm sugar, Fish sauce",
+                        "Garnish: Red chili, Fresh coriander leaves",
+                        "Base: Pineapple or Fresh Orange slices (for serving)"
+                    ]
+                }
+            },
+            {
+                "id": "r9",
+                "name": {
+                    "th": "หมูปิ้งนมสด",
+                    "en": "Pork Skewers"
+                },
+                "price": 80,
+                "unit": "32 ชิ้น / 32 Pcs",
+                "desc": {
+                    "th": "หมูปิ้งเนื้อนุ่มหมักนมสดและรากผักชีกระเทียมพริกไทย ย่างด้วยไฟปานกลางจนเหลืองทองหอมกรุ่นชุ่มฉ่ำรสหวานเค็ม",
+                    "en": "Sweet and savory marinated pork skewers tenderized with sweet milk and garlic-coriander base, grilled fresh."
+                },
+                "img": "Pork Skewers Cocktails.png",
+                "main_ingredients": {
+                    "th": [
+                        "--- วัตถุดิบหลัก (สูตรต่อหมู 1 กิโลกรัม) ---",
+                        "เนื้อหมู: เลือกใช้ส่วน สันคอ หรือ สันนอก 1 กิโลกรัม (สไลส์เป็นชิ้นบางพอดีคำ)",
+                        "มันหมูแข็ง: 2 ขีดครึ่ง (หั่นชิ้นบาง เอาไว้เสียบสลับกับเนื้อหมูเพิ่มความฉ่ำ)",
+                        "สามเกลอ (เครื่องเทศ): รากผักชี 3 ราก, กระเทียม 10 กลีบ, พริกไทยเม็ด 1.5 ช้อนชา",
+                        "--- ส่วนผสมน้ำหมัก ---",
+                        "นมสดรสจืด หรือ นมข้นจืด 150 มิลลิลิตร",
+                        "น้ำตาลปี๊บ หรือ น้ำตาลมะพร้าว 5 ช้อนโต๊ะ",
+                        "น้ำตาลทราย 5 ช้อนโต๊ะ",
+                        "ซอสหอยนางรม 3 ช้อนโต๊ะ",
+                        "ซอสปรุงรสฝาเขียว 3 ช้อนโต๊ะ",
+                        "ซีอิ๊วขาว 2 ช้อนโต๊ะ",
+                        "ซีอิ๊วดำหวาน 2 ช้อนโต๊ะ",
+                        "แป้งมัน หรือ แป้งข้าวโพด 1 ช้อนโต๊ะ",
+                        "น้ำมันพืช 2 ช้อนโต๊ะ"
+                    ],
+                    "en": [
+                        "Premium Marbled Pork Neck (Skewered with Pork Fat for juiciness)",
+                        "Fresh Milk (For tenderizing)",
+                        "Thai Herb Marinade (Coriander Root, Thai Garlic, Peppercorns)",
+                        "Seasoning (Oyster Sauce, Soy Sauce, Sweet Dark Soy Sauce, Palm Sugar)",
+                        "Authentic Jaew Sauce (Fish Sauce, Lime, Tamarind, Palm Sugar, Roasted Rice, Chili Flakes, Shallots, Culantro, Spring Onion)"
+                    ]
+                }
+            },
+            {
+                "id": "r10",
+                "name": {
+                    "th": "หมูสะเต๊ะ",
+                    "en": "Pork Satay"
+                },
+                "price": 80,
+                "unit": "32 ชิ้น / 32 Pcs",
+                "desc": {
+                    "th": "เนื้อหมูสะเต๊ะหมักขมิ้นและกะทิย่างเหลืองหอมพอดีคำ เสิร์ฟพร้อมน้ำจิ้มถั่วลิสงรสเข้มข้นหวานมันและอาจาดรสเปรี้ยวอมหวาน",
+                    "en": "Turmeric-infused pork satay skewers grilled tender, served with sweet aromatic peanut dip and fresh cucumber relish."
+                },
+                "img": "Pork Satay Cocktails.jpg",
+                "main_ingredients": {
+                    "th": [
+                        "--- ส่วนผสมหมักหมู ---",
+                        "เนื้อสะโพกหรือสันคอหมู 500 กรัม",
+                        "ผงกะหรี่ 1 ช้อนชา",
+                        "ผงขมิ้น 1 ช้อนชา",
+                        "ลูกผักชีคั่วป่น 1.5 ช้อนโต๊ะ",
+                        "ผงยี่หร่า 0.5 ช้อนโต๊ะ",
+                        "ข่าสับ 1 ช้อนชา",
+                        "ตะไคร้ซอย 1.5 ช้อนโต๊ะ",
+                        "หัวกะทิ 0.5 ถ้วยตวง",
+                        "น้ำตาลทราย 1.5 ช้อนโต๊ะ",
+                        "เกลือ 1 ช้อนโต๊ะ",
+                        "พริกไทยป่น 0.5 ช้อนชา",
+                        "กะทิและนมสด อย่างละ 1 ถ้วยตวง (สำหรับพรมตอนย่าง)",
+                        "--- สูตรน้ำจิ้มถั่วลิสง ---",
+                        "กะทิ 300 มิลลิลิตร",
+                        "ถั่วลิสงคั่วป่นละเอียด 200 กรัม",
+                        "พริกแกงมัสมั่น 20 กรัม",
+                        "พริกแกงพะแนง 20 กรัม",
+                        "น้ำตาลปี๊บ 80 กรัม",
+                        "น้ำมะขามเปียก 4 ช้อนโต๊ะ",
+                        "เกลือป่น 0.5 ช้อนชา",
+                        "--- สูตรน้ำจิ้มอาจาด ---",
+                        "น้ำส้มสายชู 0.5 ถ้วยตวง",
+                        "น้ำตาลทราย 0.25 ถ้วยตวง",
+                        "น้ำสะอาด 1/3 ถ้วยตวง",
+                        "เกลือป่น 1 ช้อนชา",
+                        "เครื่องเคียง: แตงกวาหั่นเต๋า, หอมแดงซอย, พริกชี้ฟ้าหั่นเฉียง, ผักชี"
+                    ],
+                    "en": [
+                        "--- Pork Marinade ---",
+                        "500g Pork shoulder or collar",
+                        "1 tsp Curry powder",
+                        "1 tsp Turmeric powder",
+                        "1.5 tbsp Roasted coriander seeds powder",
+                        "0.5 tbsp Cumin powder",
+                        "1 tsp Minced galangal",
+                        "1.5 tbsp Sliced lemongrass",
+                        "0.5 cup Coconut cream",
+                        "1.5 tbsp Sugar",
+                        "1 tbsp Salt",
+                        "0.5 tsp Ground pepper",
+                        "1 cup Coconut milk and 1 cup Evaporated milk (for basting)",
+                        "--- Peanut Sauce ---",
+                        "300ml Coconut milk",
+                        "200g Finely ground roasted peanuts",
+                        "20g Massaman curry paste",
+                        "20g Panang curry paste",
+                        "80g Palm sugar",
+                        "4 tbsp Tamarind paste",
+                        "0.5 tsp Salt",
+                        "--- Ajad Sauce (Cucumber Relish) ---",
+                        "0.5 cup Vinegar",
+                        "0.25 cup Sugar",
+                        "1/3 cup Water",
+                        "1 tsp Salt",
+                        "Garnish: Diced cucumber, sliced shallots, sliced red chilies, coriander"
+                    ]
+                }
+            },
+            {
+                "id": "r14",
+                "name": {
+                    "th": "ขนมช่อม่วงไส้หมู",
+                    "en": "Chor Muang (Royal Pork Dumplings)"
+                },
+                "price": 85,
+                "unit": "32 ชิ้น / 32 Pcs",
+                "desc": {
+                    "th": "สาคูไส้หมูแป้งเหนียวนุ่มหนึบ ไส้หมูสับผัดเครื่องสามเกลอและถั่วลิสงรสกลมกล่อม โรยหน้าด้วยกระเทียมเจียวทองหอมกรุ่น",
+                    "en": "Steamed tapioca balls filled with caramelized minced pork, roasted peanuts, and sweet turnip, topped with crispy golden garlic."
+                },
+                "img": "Tapioca Balls.png",
+                "main_ingredients": {
+                    "th": [
+                        "--- ส่วนผสมตัวแป้ง ---",
+                        "แป้งข้าวเจ้า 180 กรัม",
+                        "แป้งท้าวยายม่อม 160 กรัม",
+                        "กะทิ 240 มิลลิลิตร",
+                        "น้ำสะอาด 240 มิลลิลิตร",
+                        "น้ำดอกอัญชัญ 1 ถ้วยตวง (น้ำเปล่า 1 ถ้วย + ดอกอัญชัญ 15-20 ดอก)",
+                        "น้ำมะนาว 1 ฝา",
+                        "น้ำมันพืช 2+1/2 ช้อนโต๊ะ",
+                        "--- ส่วนผสมไส้หมู ---",
+                        "หมูสับติดมัน 300 กรัม",
+                        "หัวไชโป๊วหวาน(สับละเอียด) 1 ถ้วยตวง",
+                        "ถั่วลิสงคั่ว(โขลกหยาบ) ½ ถ้วยตวง",
+                        "สามเกลอ(โขลกละเอียด) 1 ช้อนโต๊ะ",
+                        "หอมแดง(สับละเอียด) ½ ถ้วยตวง",
+                        "น้ำตาลปี๊บ 150 กรัม",
+                        "น้ำปลา 1 ช้อนโต๊ะ",
+                        "น้ำมันพืช 1 ช้อนโต๊ะ",
+                        "--- วิธีทำ ---",
+                        "1. นำแป้งข้าวเจ้าและแป้งท้าวยายม่อมมาผสมให้เข้ากัน ในกระทะทองเหลือง ใส่น้ำสะอาดลงไปนวดประมาน 5 นาที",
+                        "2. ผสมน้ำอัญชันกับน้ำมะนาว(น้ำมะนาวจะไปทำปฏิกิริยากับน้ำอัญชันทำให้อัญชันเป็นสีม่วง) นำไปใส่ในแป้งตามด้วยกะทิ และน้ำมันพืช คนให้เข้ากัน",
+                        "3. นำไปตั้งไปกลาง กวนจนแป้งเกือบสุก (สังเกตจากแตะที่แป้งแล้วแป้งไม่ติดมือถือว่าใช้ได้) ปิดไฟพักให้เย็น",
+                        "4. ตั้งกระทะไฟกลางใส่น้ำมันจนร้อน ตามด้วยสามเกลอ และหอมแดงลงไปผัดให้หอม ใส่หมูสับผัดให้หมูสุก",
+                        "5. ใส่ไชโป๊วสับ น้ำตาลปี๊บ น้ำปลา ผัดจนน้ำตาลปี๊บละลาย ใส่ถั่วลิสงลงไปผัดให้เข้ากัน ปิดไฟ พักให้เย็น",
+                        "6. เมื่อทิ้งให้ตัวไส้เย็น นำมาปั้นเป็นก้อนกลม นำตัวแป้งมาห่อให้มิดตัวไส้ ใช้ที่หนีบจับเป็นกลีบดอกไม้ให้สวยงาม",
+                        "7. นำช่อม่วงไปนึ่งในน้ำเดือด(ไฟกลาง) นึ่งประมาน 5 นาที (ก่อนนึ่งฉีดน้ำพรมให้ทั่วขนมเพื่อไม่ให้แห้ง)",
+                        "8. เมื่อช่อม่วงสุกแล้วนำไปจัดเรียงใส่จาน โรยกระเทียมเจียว ทานคู่ผักกาดหอม ผักชีและพริกขี้หนูสวน"
+                    ],
+                    "en": [
+                        "Premium Chor Muang Dough (Rice Flour & Arrowroot Flour kneaded with Coconut Milk and Oil)",
+                        "Natural Purple Color (Butterfly Pea Extract & Lime)",
+                        "Savory Pork Filling (Marbled Minced Pork sautéed with Thai Aromatics, Shallots, and Sweet Turnip)",
+                        "Texture Enhancer (Crushed Roasted Peanuts)",
+                        "Authentic Seasoning (Palm Sugar, Fish Sauce)"
+                    ]
+                },
+                "ingredients": {
+                    "th": [
+                        "--- ส่วนผสมตัวแป้ง ---",
+                        "แป้งข้าวเจ้า 180 กรัม",
+                        "แป้งท้าวยายม่อม 160 กรัม",
+                        "กะทิ 240 มิลลิลิตร",
+                        "น้ำสะอาด 240 มิลลิลิตร",
+                        "น้ำดอกอัญชัญ 1 ถ้วยตวง (น้ำเปล่า 1 ถ้วย + ดอกอัญชัญ 15-20 ดอก)",
+                        "น้ำมะนาว 1 ฝา",
+                        "น้ำมันพืช 2+1/2 ช้อนโต๊ะ",
+                        "--- ส่วนผสมไส้หมู ---",
+                        "หมูสับติดมัน 300 กรัม",
+                        "หัวไชโป๊วหวาน(สับละเอียด) 1 ถ้วยตวง",
+                        "ถั่วลิสงคั่ว(โขลกหยาบ) ½ ถ้วยตวง",
+                        "สามเกลอ(โขลกละเอียด) 1 ช้อนโต๊ะ",
+                        "หอมแดง(สับละเอียด) ½ ถ้วยตวง",
+                        "น้ำตาลปี๊บ 150 กรัม",
+                        "น้ำปลา 1 ช้อนโต๊ะ",
+                        "น้ำมันพืช 1 ช้อนโต๊ะ",
+                        "--- วิธีทำ ---",
+                        "1. นำแป้งข้าวเจ้าและแป้งท้าวยายม่อมมาผสมให้เข้ากัน ในกระทะทองเหลือง ใส่น้ำสะอาดลงไปนวดประมาน 5 นาที",
+                        "2. ผสมน้ำอัญชันกับน้ำมะนาว(น้ำมะนาวจะไปทำปฏิกิริยากับน้ำอัญชันทำให้อัญชันเป็นสีม่วง) นำไปใส่ในแป้งตามด้วยกะทิ และน้ำมันพืช คนให้เข้ากัน",
+                        "3. นำไปตั้งไปกลาง กวนจนแป้งเกือบสุก (สังเกตจากแตะที่แป้งแล้วแป้งไม่ติดมือถือว่าใช้ได้) ปิดไฟพักให้เย็น",
+                        "4. ตั้งกระทะไฟกลางใส่น้ำมันจนร้อน ตามด้วยสามเกลอ และหอมแดงลงไปผัดให้หอม ใส่หมูสับผัดให้หมูสุก",
+                        "5. ใส่ไชโป๊วสับ น้ำตาลปี๊บ น้ำปลา ผัดจนน้ำตาลปี๊บละลาย ใส่ถั่วลิสงลงไปผัดให้เข้ากัน ปิดไฟ พักให้เย็น",
+                        "6. เมื่อทิ้งให้ตัวไส้เย็น นำมาปั้นเป็นก้อนกลม นำตัวแป้งมาห่อให้มิดตัวไส้ ใช้ที่หนีบจับเป็นกลีบดอกไม้ให้สวยงาม",
+                        "7. นำช่อม่วงไปนึ่งในน้ำเดือด(ไฟกลาง) นึ่งประมาน 5 นาที (ก่อนนึ่งฉีดน้ำพรมให้ทั่วขนมเพื่อไม่ให้แห้ง)",
+                        "8. เมื่อช่อม่วงสุกแล้วนำไปจัดเรียงใส่จาน โรยกระเทียมเจียว ทานคู่ผักกาดหอม ผักชีและพริกขี้หนูสวน"
+                    ],
+                    "en": [
+                        "(TH) ส่วนผสมตัวแป้ง",
+                        "(TH) ส่วนผสมตัวแป้ง",
+                        "(TH) ส่วนผสมตัวแป้ง",
+                        "(TH) ส่วนผสมตัวแป้ง",
+                        "(TH) ส่วนผสมตัวแป้ง",
+                        "(TH) ส่วนผสมตัวแป้ง",
+                        "(TH) ส่วนผสมตัวแป้ง",
+                        "(TH) ส่วนผสมไส้หมู",
+                        "(TH) ส่วนผสมไส้หมู",
+                        "(TH) ส่วนผสมไส้หมู",
+                        "(TH) ส่วนผสมไส้หมู",
+                        "(TH) ส่วนผสมไส้หมู",
+                        "(TH) ส่วนผสมไส้หมู",
+                        "(TH) ส่วนผสมไส้หมู",
+                        "(TH) ส่วนผสมไส้หมู",
+                        "(TH) วิธีทำ",
+                        "(TH) วิธีทำ",
+                        "(TH) วิธีทำ",
+                        "(TH) วิธีทำ",
+                        "(TH) วิธีทำ",
+                        "(TH) วิธีทำ",
+                        "(TH) วิธีทำ",
+                        "(TH) วิธีทำ"
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "category": "Veg",
+        "category_th": "มังสวิรัติ / Veg",
+        "items": [
+            {
+                "id": "r11",
+                "name": {
+                    "th": "ข้าวเกรียบปากหม้อ",
+                    "en": "Khao Kriap Pak Mor"
+                },
+                "price": 30,
+                "unit": "32 ชิ้น / 32 Pcs",
+                "desc": {
+                    "th": "แป้งปากหม้อเหนียวนุ่มอบไอน้ำสดใหม่ ไส้ผักรวมผัดสามเกลอหอมมัน โรยหน้าด้วยกระเทียมเจียวทองหอมกรุ่น",
+                    "en": "Steamed delicate rice wrappers filled with seasoned sweet turnip, mushrooms, and herbs, topped with crispy garlic."
+                },
+                "img": "Khao Kriap Pak Mor.jpg",
+                "main_ingredients": {
+                    "th": [
+                        "--- ส่วนผสมไส้ ---",
+                        "กระเทียมไทย (สามเกลอ) 1 ช้อนโต๊ะ",
+                        "รากผักชี (สามเกลอ) 3 ราก",
+                        "พริกไทยขาวเม็ด (สามเกลอ) 1 ช้อนชา",
+                        "หอมแดงสับ 50 กรัม",
+                        "ไชโป้วหวานสับ 250 กรัม",
+                        "หมูสับ 150 กรัม",
+                        "น้ำตาลมะพร้าว 250 กรัม",
+                        "ซีอิ๊วขาว 1 ช้อนโต๊ะ",
+                        "ถั่วลิสงคั่วป่น 150 กรัม",
+                        "น้ำมันกระเทียมเจียว 3 ช้อนโต๊ะ",
+                        "--- ส่วนผสมตัวแป้ง (ต่อ 1 สี) ---",
+                        "แป้งข้าวเจ้า 55 กรัม / 1/2 ถ้วยตวง",
+                        "แป้งมัน 2 ช้อนโต๊ะ",
+                        "แป้งท้าว 1 ช้อนโต๊ะ",
+                        "น้ำเปล่า/น้ำใบเตย/น้ำอัญชัญ 200 ml",
+                        "--- ส่วนผสมกะทิราด ---",
+                        "หัวกะทิ 150 กรัม",
+                        "แป้งข้าวเจ้า 1 ช้อนชา",
+                        "เกลือป่น 1/8 ช้อนชา",
+                        "--- เครื่องเคียง ---",
+                        "ผักกาดหอม",
+                        "พริกสด",
+                        "กระเทียมเจียว"
+                    ],
+                    "en": [
+                        "Tri-Color Steamed Rice Wrapper (Pandan & Butterfly Pea infused)",
+                        "Savory Minced Pork Filling (Pork, Sweet Turnip, Roasted Peanuts, Palm Sugar & Thai Aromatics)",
+                        "Savory Coconut Cream Glaze",
+                        "Accompaniments (Lettuce, Fresh Chili, Crispy Garlic)"
+                    ]
+                },
+                "ingredients": {
+                    "th": [
+                        "--- ส่วนผสมไส้ ---",
+                        "กระเทียมไทย (สามเกลอ) 1 ช้อนโต๊ะ",
+                        "รากผักชี (สามเกลอ) 3 ราก",
+                        "พริกไทยขาวเม็ด (สามเกลอ) 1 ช้อนชา",
+                        "หอมแดงสับ 50 กรัม",
+                        "ไชโป้วหวานสับ 250 กรัม",
+                        "หมูสับ 150 กรัม",
+                        "น้ำตาลมะพร้าว 250 กรัม",
+                        "ซีอิ๊วขาว 1 ช้อนโต๊ะ",
+                        "ถั่วลิสงคั่วป่น 150 กรัม",
+                        "น้ำมันกระเทียมเจียว 3 ช้อนโต๊ะ",
+                        "--- ส่วนผสมตัวแป้ง (ต่อ 1 สี) ---",
+                        "แป้งข้าวเจ้า 55 กรัม / 1/2 ถ้วยตวง",
+                        "แป้งมัน 2 ช้อนโต๊ะ",
+                        "แป้งท้าว 1 ช้อนโต๊ะ",
+                        "น้ำเปล่า/น้ำใบเตย/น้ำอัญชัญ 200 ml",
+                        "--- ส่วนผสมกะทิราด ---",
+                        "หัวกะทิ 150 กรัม",
+                        "แป้งข้าวเจ้า 1 ช้อนชา",
+                        "เกลือป่น 1/8 ช้อนชา",
+                        "--- เครื่องเคียง ---",
+                        "ผักกาดหอม",
+                        "พริกสด",
+                        "กระเทียมเจียว"
+                    ],
+                    "en": [
+                        "(TH) ส่วนผสมไส้",
+                        "(TH) ส่วนผสมไส้",
+                        "(TH) ส่วนผสมไส้",
+                        "(TH) ส่วนผสมไส้",
+                        "(TH) ส่วนผสมไส้",
+                        "(TH) ส่วนผสมไส้",
+                        "(TH) ส่วนผสมไส้",
+                        "(TH) ส่วนผสมไส้",
+                        "(TH) ส่วนผสมไส้",
+                        "(TH) ส่วนผสมไส้",
+                        "(TH) ส่วนผสมตัวแป้ง (ต่อ 1 สี)",
+                        "(TH) ส่วนผสมตัวแป้ง (ต่อ 1 สี)",
+                        "(TH) ส่วนผสมตัวแป้ง (ต่อ 1 สี)",
+                        "(TH) ส่วนผสมตัวแป้ง (ต่อ 1 สี)",
+                        "(TH) ส่วนผสมกะทิราด",
+                        "(TH) ส่วนผสมกะทิราด",
+                        "(TH) ส่วนผสมกะทิราด",
+                        "(TH) เครื่องเคียง",
+                        "(TH) เครื่องเคียง",
+                        "(TH) เครื่องเคียง"
+                    ]
+                }
+            },
+            {
+                "id": "r12",
+                "name": {
+                    "th": "ส้มตำไทยกระทงทอง",
+                    "en": "Som Tum Thai Kratong Tong"
+                },
+                "price": "12.95",
+                "unit": "32 ชิ้น / 32 Pcs",
+                "desc": {
+                    "th": "ส้มตำไทยครบรสเปรี้ยวหวานเค็มจัดจ้าน โรยถั่วลิสงและกุ้งแห้งป่น ตักเสิร์ฟในกระทงแป้งทอดสีทองกรุบกรอบน่ารับประทาน",
+                    "en": "Zesty Som Tum papaya salad complete with sweet, sour, and savory notes, presented in crunchy golden pastry cups."
+                },
+                "img": "Som Tum Thai Kratong Tong2.jpg",
+                "main_ingredients": {
+                    "th": [
+                        "--- วัตถุดิบหลัก ---",
+                        "มะละกอดิบสับ",
+                        "ถั่วฝักยาว",
+                        "มะเขือเทศ",
+                        "พริกขี้หนู",
+                        "กระเทียม",
+                        "น้ำปลา",
+                        "น้ำมะนาว",
+                        "น้ำตาลปี๊บ",
+                        "กุ้งแห้ง",
+                        "ถั่วลิสง",
+                        "--- ส่วนผสมกระทงทอง ---",
+                        "แผ่นเกี้ยว",
+                        "น้ำมัน"
+                    ],
+                    "en": [
+                        "Fresh Crisp Shredded Green Papaya",
+                        "Som Tum Thai Essentials (Long Beans, Tomatoes, Chili, Garlic, Dried Shrimp, Peanuts)",
+                        "Authentic Sweet & Sour Dressing (Lime Juice, Fish Sauce, Palm Sugar)",
+                        "Crispy Golden Wonton Cups"
+                    ]
+                },
+                "ingredients": {
+                    "th": [
+                        "--- วัตถุดิบหลัก ---",
+                        "มะละกอดิบสับ",
+                        "ถั่วฝักยาว",
+                        "มะเขือเทศ",
+                        "พริกขี้หนู",
+                        "กระเทียม",
+                        "น้ำปลา",
+                        "น้ำมะนาว",
+                        "น้ำตาลปี๊บ",
+                        "กุ้งแห้ง",
+                        "ถั่วลิสง",
+                        "--- ส่วนผสมกระทงทอง ---",
+                        "แผ่นเกี้ยว",
+                        "น้ำมัน"
+                    ],
+                    "en": [
+                        "(TH) วัตถุดิบหลัก",
+                        "(TH) วัตถุดิบหลัก",
+                        "(TH) วัตถุดิบหลัก",
+                        "(TH) วัตถุดิบหลัก",
+                        "(TH) วัตถุดิบหลัก",
+                        "(TH) วัตถุดิบหลัก",
+                        "(TH) วัตถุดิบหลัก",
+                        "(TH) วัตถุดิบหลัก",
+                        "(TH) วัตถุดิบหลัก",
+                        "(TH) วัตถุดิบหลัก",
+                        "(TH) ส่วนผสมกระทงทอง",
+                        "(TH) ส่วนผสมกระทงทอง"
+                    ]
+                }
+            },
+            {
+                "id": "r13",
+                "name": {
+                    "th": "ส้มตำข้าวโพดกระทงทอง",
+                    "en": "Sweet Corn Som Tum Kratong Tong"
+                },
+                "price": 30,
+                "unit": "32 ชิ้น / 32 Pcs",
+                "desc": {
+                    "th": "ส้มตำข้าวโพดหวานคัดพิเศษ รสเปรี้ยวอมหวานทานง่ายกลมกล่อม เสิร์ฟในกระทงทองแป้งกรอบโบราณพอดีคำ",
+                    "en": "Sweet kernel corn tossed in a sweet-tangy Thai lime-chili dressing, served in crispy golden pastry cups."
+                },
+                "img": "Sweet Corn Som Tum Kratong Tong1.jpg",
+                "main_ingredients": {
+                    "th": [
+                        "--- วัตถุดิบหลัก ---",
+                        "ข้าวโพดหวานสุก",
+                        "ถั่วฝักยาว",
+                        "มะเขือเทศ",
+                        "พริกขี้หนู",
+                        "กระเทียม",
+                        "น้ำปลา",
+                        "น้ำมะนาว",
+                        "น้ำตาลปี๊บ",
+                        "กุ้งแห้ง",
+                        "ถั่วลิสง",
+                        "--- ส่วนผสมกระทงทอง ---",
+                        "แผ่นเกี้ยว",
+                        "น้ำมัน"
+                    ],
+                    "en": [
+                        "Sweet Kernel Corn",
+                        "Som Tum Thai Essentials (Long Beans, Tomatoes, Chili, Garlic, Dried Shrimp, Peanuts)",
+                        "Authentic Sweet & Sour Dressing (Lime Juice, Fish Sauce, Palm Sugar)",
+                        "Crispy Golden Wonton Cups"
+                    ]
+                },
+                "ingredients": {
+                    "th": [
+                        "--- วัตถุดิบหลัก ---",
+                        "ข้าวโพดหวานสุก",
+                        "ถั่วฝักยาว",
+                        "มะเขือเทศ",
+                        "พริกขี้หนู",
+                        "กระเทียม",
+                        "น้ำปลา",
+                        "น้ำมะนาว",
+                        "น้ำตาลปี๊บ",
+                        "กุ้งแห้ง",
+                        "ถั่วลิสง",
+                        "--- ส่วนผสมกระทงทอง ---",
+                        "แผ่นเกี้ยว",
+                        "น้ำมัน"
+                    ],
+                    "en": [
+                        "(TH) วัตถุดิบหลัก",
+                        "(TH) วัตถุดิบหลัก",
+                        "(TH) วัตถุดิบหลัก",
+                        "(TH) วัตถุดิบหลัก",
+                        "(TH) วัตถุดิบหลัก",
+                        "(TH) วัตถุดิบหลัก",
+                        "(TH) วัตถุดิบหลัก",
+                        "(TH) วัตถุดิบหลัก",
+                        "(TH) วัตถุดิบหลัก",
+                        "(TH) วัตถุดิบหลัก",
+                        "(TH) ส่วนผสมกระทงทอง",
+                        "(TH) ส่วนผสมกระทงทอง"
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "category": "Dessert",
+        "category_th": "ของหวาน / Dessert",
+        "items": [
+            {
+                "id": "r15",
+                "name": {
+                    "th": "ขนมครองแครงอัญชันมะพร้าวอ่อน",
+                    "en": "Butterfly Pea Tapioca Shells with Young Coconut"
+                },
+                "price": 30,
+                "unit": "32 ชิ้น / 32 Pcs",
+                "desc": {
+                    "th": "ครองแครงอัญชันแป้งเหนียวนุ่มหนึบในน้ำกะทิอบควันเทียนหอมหวานมันเค็มกำลังดี พร้อมเนื้อมะพร้าวอ่อน โรยงาคั่วหอม",
+                    "en": "Chewy butterfly pea tapioca shells in sweet, warm candle-smoked coconut milk with tender young coconut meat, garnished with toasted sesame seeds."
+                },
+                "img": "Butterfly Pea Tapioca Shells with Young Coconut.jpg",
+                "main_ingredients": {
+                    "th": [
+                        "แป้งครองแครงอัญชัน",
+                        "เนื้อมะพร้าวอ่อน",
+                        "น้ำกะทิอบควันเทียน",
+                        "งาคั่ว"
+                    ],
+                    "en": [
+                        "Butterfly Pea Tapioca Shells",
+                        "Young Coconut Meat",
+                        "Smoked Coconut Milk",
+                        "Toasted Sesame"
+                    ]
+                }
+            },
+            {
+                "id": "r16",
+                "name": {
+                    "th": "บัวลอยสาคู",
+                    "en": "Sago Balls with Coconut Milk"
+                },
+                "price": 30,
+                "unit": "32 ชิ้น / 32 Pcs",
+                "desc": {
+                    "th": "สาคูเม็ดจิ๋วสีสันสวยงามเหนียวนุ่มในกะทิสดหอมอบควันเทียนโบราณรสหวานมันกลมกล่อม",
+                    "en": "Chewy mini sago pearls served in aromatic candle-smoked sweet coconut milk."
+                },
+                "img": "Sago Balls with Coconut Milk.jpg",
+                "main_ingredients": {
+                    "th": [
+                        "เม็ดสาคูสามสี (สีจากน้ำดอกอัญชัน, น้ำใบเตย, น้ำบีทรูท)",
+                        "น้ำกะทิสดอบควันเทียน",
+                        "น้ำตาลมะพร้าว เนื้อมะพร้าวอ่อน, งาคั่ว"
+                    ],
+                    "en": [
+                        "Tri-Color Sago Pearls (Butterfly Pea, Pandan, Beetroot)",
+                        "Smoked Fresh Coconut Milk",
+                        "Palm Sugar, Young Coconut Meat, Toasted Sesame"
+                    ]
+                }
+            },
+            {
+                "id": "r17",
+                "name": {
+                    "th": "บัวลอย 5 สี",
+                    "en": "Five-Color Bua Loy"
+                },
+                "price": 30,
+                "unit": "32 ชิ้น / 32 Pcs",
+                "desc": {
+                    "th": "บัวลอย 5 สีจากธรรมชาติ (อัญชัน ใบเตย ฟักทอง เผือกหอม) นุ่มหนึบในน้ำกะทิสดหอมใบเตยและน้ำมะพร้าวอ่อน",
+                    "en": "Hand-rolled five-color Bua Loy (colored by butterfly pea, pandan, pumpkin, and taro) in aromatic coconut milk and fresh coconut water."
+                },
+                "img": "Sweet Potato & Pumpkin Bua Loy.jpg",
+                "main_ingredients": {
+                    "th": [
+                        "--- ส่วนผสมแป้งอัญชัน ---",
+                        "แป้งข้าวเหนียว 1 ถ้วยตวง",
+                        "แป้งมัน 1 ช้อนโต๊ะพูนๆ",
+                        "น้ำอัญชันเข้มข้น น้ำเปล่า 300 ml.+ดอกอัญชันแห้ง 2 ช้อนโต๊ะ",
+                        "--- ส่วนผสมแป้งใบเตย ---",
+                        "แป้งข้าวเหนียว 1 ถ้วยตวง",
+                        "แป้งมัน 1 ช้อนโต๊ะพูนๆ",
+                        "น้ำใบเตยเข้มข้น น้ำเปล่า 200 ml.+ใบเตย 6 ใบ",
+                        "--- ส่วนผสมแป้งฟักทอง ---",
+                        "แป้งข้าวเหนียว 1/2 ถ้วยตวง",
+                        "แป้งมัน 1 ช้อนโต๊ะพูนๆ",
+                        "ฟักทอง (ก่อนนึ่ง) 100 กรัม",
+                        "--- ส่วนผสมแป้งเผือก ---",
+                        "แป้งข้าวเหนียว 1/2 ถ้วยตวง",
+                        "เผือกหอม (ก่อนนึ่ง) 100 กรัม",
+                        "สีผสมอาหารสีม่วง ตามชอบ",
+                        "น้ำร้อนจัด สำหรับนวดแป้ง",
+                        "--- ส่วนผสมแป้งสีขาว ---",
+                        "แป้งข้าวเหนียว 1 ถ้วยตวง",
+                        "แป้งมัน 1 ช้อนโต๊ะพูนๆ",
+                        "น้ำร้อนจัด สำหรับนวดแป้ง",
+                        "--- ส่วนผสมน้ำกะทิ ---",
+                        "หัวกะทิ 1000 ml.",
+                        "น้ำมะพร้าว 600 ml.",
+                        "น้ำตาลทราย 320 กรัม",
+                        "เกลือป่น 2 ช้อนชา",
+                        "เนื้อมะพร้าวอ่อน 3-4 ลูก",
+                        "ใบเตยมัด"
+                    ],
+                    "en": [
+                        "Five-Color Tapioca Balls (Butterfly Pea, Pandan, Pumpkin, Taro, Classic White)",
+                        "Fresh Coconut Milk Soup (Coconut Cream & Water, infused with Pandan, Sugar, Salt)",
+                        "Toppings (Young Coconut Meat)"
+                    ]
+                },
+                "ingredients": {
+                    "th": [
+                        "--- ส่วนผสมแป้งอัญชัน ---",
+                        "แป้งข้าวเหนียว 1 ถ้วยตวง",
+                        "แป้งมัน 1 ช้อนโต๊ะพูนๆ",
+                        "น้ำอัญชันเข้มข้น น้ำเปล่า 300 ml.+ดอกอัญชันแห้ง 2 ช้อนโต๊ะ",
+                        "--- ส่วนผสมแป้งใบเตย ---",
+                        "แป้งข้าวเหนียว 1 ถ้วยตวง",
+                        "แป้งมัน 1 ช้อนโต๊ะพูนๆ",
+                        "น้ำใบเตยเข้มข้น น้ำเปล่า 200 ml.+ใบเตย 6 ใบ",
+                        "--- ส่วนผสมแป้งฟักทอง ---",
+                        "แป้งข้าวเหนียว 1/2 ถ้วยตวง",
+                        "แป้งมัน 1 ช้อนโต๊ะพูนๆ",
+                        "ฟักทอง (ก่อนนึ่ง) 100 กรัม",
+                        "--- ส่วนผสมแป้งเผือก ---",
+                        "แป้งข้าวเหนียว 1/2 ถ้วยตวง",
+                        "เผือกหอม (ก่อนนึ่ง) 100 กรัม",
+                        "สีผสมอาหารสีม่วง ตามชอบ",
+                        "น้ำร้อนจัด สำหรับนวดแป้ง",
+                        "--- ส่วนผสมแป้งสีขาว ---",
+                        "แป้งข้าวเหนียว 1 ถ้วยตวง",
+                        "แป้งมัน 1 ช้อนโต๊ะพูนๆ",
+                        "น้ำร้อนจัด สำหรับนวดแป้ง",
+                        "--- ส่วนผสมน้ำกะทิ ---",
+                        "หัวกะทิ 1000 ml.",
+                        "น้ำมะพร้าว 600 ml.",
+                        "น้ำตาลทราย 320 กรัม",
+                        "เกลือป่น 2 ช้อนชา",
+                        "เนื้อมะพร้าวอ่อน 3-4 ลูก",
+                        "ใบเตยมัด"
+                    ],
+                    "en": [
+                        "(TH) ส่วนผสมแป้งอัญชัน",
+                        "(TH) ส่วนผสมแป้งอัญชัน",
+                        "(TH) ส่วนผสมแป้งอัญชัน",
+                        "(TH) ส่วนผสมแป้งใบเตย",
+                        "(TH) ส่วนผสมแป้งใบเตย",
+                        "(TH) ส่วนผสมแป้งใบเตย",
+                        "(TH) ส่วนผสมแป้งฟักทอง",
+                        "(TH) ส่วนผสมแป้งฟักทอง",
+                        "(TH) ส่วนผสมแป้งฟักทอง",
+                        "(TH) ส่วนผสมแป้งเผือก",
+                        "(TH) ส่วนผสมแป้งเผือก",
+                        "(TH) ส่วนผสมแป้งเผือก",
+                        "(TH) ส่วนผสมแป้งเผือก",
+                        "(TH) ส่วนผสมแป้งสีขาว",
+                        "(TH) ส่วนผสมแป้งสีขาว",
+                        "(TH) ส่วนผสมแป้งสีขาว",
+                        "(TH) ส่วนผสมน้ำกะทิ",
+                        "(TH) ส่วนผสมน้ำกะทิ",
+                        "(TH) ส่วนผสมน้ำกะทิ",
+                        "(TH) ส่วนผสมน้ำกะทิ",
+                        "(TH) ส่วนผสมน้ำกะทิ",
+                        "(TH) ส่วนผสมน้ำกะทิ"
+                    ]
+                }
+            },
+            {
+                "id": "r19",
+                "name": {
+                    "th": "ลอดช่องอัญชันใบเตย",
+                    "en": "Butterfly Pea Lod Chong"
+                },
+                "price": 30,
+                "unit": "32 ชิ้น / 32 Pcs",
+                "desc": {
+                    "th": "ลอดช่องไทยสองสีสูตรโบราณ สีฟ้าครามจากดอกอัญชันและสีเขียวหอมจากใบเตย กวนด้วยน้ำปูนใสจนเส้นเหนียวนุ่ม ทานคู่กับน้ำกะทิสดหอมหวานน้ำตาลมะพร้าว",
+                    "en": "Authentic dual-color Thai Lod Chong (Butterfly Pea & Pandan) made with traditional limewater dough, served in sweet palm sugar coconut milk."
+                },
+                "img": "Butterfly Pea Pandan Lod Chong1.jpg",
+                "main_ingredients": {
+                    "th": [
+                        "--- ส่วนผสมน้ำกะทิ (ชุดใบเตย) ---",
+                        "น้ำตาลมะพร้าว 200 กรัม",
+                        "เกลือ 1/2 ช้อนชา",
+                        "กะทิ 500 มล.",
+                        "ใบเตย 1 ใบ",
+                        "--- ส่วนผสมน้ำกะทิ (ชุดอัญชัน) ---",
+                        "น้ำตาลมะพร้าว 200 กรัม",
+                        "เกลือ 1/2 ช้อนชา",
+                        "กะทิ 500 มล.",
+                        "ดอกอัญชัญ 50 กรัม",
+                        "--- ส่วนผสมตัวลอดช่อง (ต่อ 1 สี) ---",
+                        "ใบเตย/ดอกอัญชัญ",
+                        "น้ำปูนใส 950 กรัม (น้ำเปล่า 1000 มล. + ปูนแดง 2 ช้อนโต๊ะ)",
+                        "แป้งข้าวเจ้า 120 กรัม",
+                        "แป้งมัน 45 กรัม",
+                        "แป้งถั่วเขียว 45 กรัม",
+                        "--- เครื่องเคียง ---",
+                        "มะพร้าวอ่อน",
+                        "ขนุน"
+                    ],
+                    "en": [
+                        "Authentic Thai Dual-Color Noodles (Rice Flour, Mung Bean, Tapioca & Limewater)",
+                        "Sweet Coconut Milk Syrup (Infused with Palm Sugar & Pandan/Butterfly Pea)",
+                        "Toppings (Young Coconut Meat, Jackfruit)"
+                    ]
+                },
+                "ingredients": {
+                    "th": [
+                        "--- ส่วนผสมน้ำกะทิ (ชุดใบเตย) ---",
+                        "น้ำตาลมะพร้าว 200 กรัม",
+                        "เกลือ 1/2 ช้อนชา",
+                        "กะทิ 500 มล.",
+                        "ใบเตย 1 ใบ",
+                        "--- ส่วนผสมน้ำกะทิ (ชุดอัญชัน) ---",
+                        "น้ำตาลมะพร้าว 200 กรัม",
+                        "เกลือ 1/2 ช้อนชา",
+                        "กะทิ 500 มล.",
+                        "ดอกอัญชัญ 50 กรัม",
+                        "--- ส่วนผสมตัวลอดช่อง (ต่อ 1 สี) ---",
+                        "ใบเตย/ดอกอัญชัญ",
+                        "น้ำปูนใส 950 กรัม (น้ำเปล่า 1000 มล. + ปูนแดง 2 ช้อนโต๊ะ)",
+                        "แป้งข้าวเจ้า 120 กรัม",
+                        "แป้งมัน 45 กรัม",
+                        "แป้งถั่วเขียว 45 กรัม",
+                        "--- เครื่องเคียง ---",
+                        "มะพร้าวอ่อน",
+                        "ขนุน"
+                    ],
+                    "en": [
+                        "(TH) ส่วนผสมน้ำกะทิ (ชุดใบเตย)",
+                        "(TH) ส่วนผสมน้ำกะทิ (ชุดใบเตย)",
+                        "(TH) ส่วนผสมน้ำกะทิ (ชุดใบเตย)",
+                        "(TH) ส่วนผสมน้ำกะทิ (ชุดใบเตย)",
+                        "(TH) ส่วนผสมน้ำกะทิ (ชุดอัญชัน)",
+                        "(TH) ส่วนผสมน้ำกะทิ (ชุดอัญชัน)",
+                        "(TH) ส่วนผสมน้ำกะทิ (ชุดอัญชัน)",
+                        "(TH) ส่วนผสมน้ำกะทิ (ชุดอัญชัน)",
+                        "(TH) ส่วนผสมตัวลอดช่อง (ต่อ 1 สี)",
+                        "(TH) ส่วนผสมตัวลอดช่อง (ต่อ 1 สี)",
+                        "(TH) ส่วนผสมตัวลอดช่อง (ต่อ 1 สี)",
+                        "(TH) ส่วนผสมตัวลอดช่อง (ต่อ 1 สี)",
+                        "(TH) ส่วนผสมตัวลอดช่อง (ต่อ 1 สี)",
+                        "(TH) เครื่องเคียง",
+                        "(TH) เครื่องเคียง"
+                    ]
+                }
+            },
+            {
+                "id": "r20",
+                "name": {
+                    "th": "ทับทิมกรอบ",
+                    "en": "Thapthim krop With Chestnuts milk"
+                },
+                "price": 30,
+                "unit": "32 ชิ้น / 32 Pcs",
+                "desc": {
+                    "th": "แห้วหั่นเต๋าชุบสีน้ำแดงธรรมชาติ คลุกแป้งมันลวกจนเหนียวนุ่มกรุบกรอบ เสิร์ฟในน้ำกะทิอบควันเทียนหอมเย็นชื่นใจ",
+                    "en": "Crispy water chestnuts coated in red syrup and tapioca flour, served in ice-cold candle-smoked sweet coconut milk."
+                },
+                "img": "Thapthim krop With Chestnuts milk.jpg",
+                "main_ingredients": {
+                    "th": [
+                        "--- ส่วนผสมตัวทับทิมกรอบ ---",
+                        "แห้วหั่นเต๋า 300-500 กรัม",
+                        "สีผสมอาหารสีแดง/น้ำหวานเฮลซ์บลูบอย ตามเหมาะสม",
+                        "แป้งมันสำปะหลัง 110 กรัม",
+                        "--- ส่วนผสมน้ำกะทิ ---",
+                        "กะทิ 400 กรัม",
+                        "น้ำตาลทราย 80 กรัม",
+                        "เกลือ 1/2 ช้อนชา (3 กรัม)",
+                        "น้ำ 1/2 ถ้วยตวง (110 กรัม)",
+                        "ใบเตย 3 ใบ (15 กรัม)",
+                        "--- เครื่องเคียง ---",
+                        "ขนุน",
+                        "น้ำแข็งป่น"
+                    ],
+                    "en": [
+                        "Red Rubies (Diced Water Chestnuts coated in Red Syrup and Tapioca Flour)",
+                        "Pandan-Infused Sweet Coconut Milk (Coconut Milk, Sugar, Salt, Pandan)",
+                        "Refreshing Toppings (Jackfruit and Crushed Ice)"
+                    ]
+                },
+                "ingredients": {
+                    "th": [
+                        "--- ส่วนผสมตัวทับทิมกรอบ ---",
+                        "แห้วหั่นเต๋า 300-500 กรัม",
+                        "สีผสมอาหารสีแดง/น้ำหวานเฮลซ์บลูบอย ตามเหมาะสม",
+                        "แป้งมันสำปะหลัง 110 กรัม",
+                        "--- ส่วนผสมน้ำกะทิ ---",
+                        "กะทิ 400 กรัม",
+                        "น้ำตาลทราย 80 กรัม",
+                        "เกลือ 1/2 ช้อนชา (3 กรัม)",
+                        "น้ำ 1/2 ถ้วยตวง (110 กรัม)",
+                        "ใบเตย 3 ใบ (15 กรัม)",
+                        "--- เครื่องเคียง ---",
+                        "ขนุน",
+                        "น้ำแข็งป่น"
+                    ],
+                    "en": [
+                        "(TH) ส่วนผสมตัวทับทิมกรอบ",
+                        "(TH) ส่วนผสมตัวทับทิมกรอบ",
+                        "(TH) ส่วนผสมตัวทับทิมกรอบ",
+                        "(TH) ส่วนผสมน้ำกะทิ",
+                        "(TH) ส่วนผสมน้ำกะทิ",
+                        "(TH) ส่วนผสมน้ำกะทิ",
+                        "(TH) ส่วนผสมน้ำกะทิ",
+                        "(TH) ส่วนผสมน้ำกะทิ",
+                        "(TH) เครื่องเคียง",
+                        "(TH) เครื่องเคียง"
+                    ]
+                }
+            },
+            {
+                "id": "r21",
+                "name": {
+                    "th": "ขนมต้มไทยโบราณ",
+                    "en": "Thai Khanom Tom"
+                },
+                "price": 30,
+                "unit": "32 ชิ้น / 32 Pcs",
+                "desc": {
+                    "th": "ขนมต้มแป้งเหนียวนุ่มสูตรโบราณ สอดไส้มะพร้าวผัดกระฉีกรสหวานมันหอมน้ำตาลมะพร้าว คลุกมะพร้าวขูดฝอยอบไอน้ำ",
+                    "en": "Traditional Thai coconut balls filled with sweet caramelized grated coconut, coated in fresh shredded coconut."
+                },
+                "img": "Thai Khanom Tom.jpg",
+                "main_ingredients": {
+                    "th": [
+                        "--- ส่วนผสมแป้งสีแดง ---",
+                        "แป้งข้าวเหนียว 200 กรัม",
+                        "น้ำ 100 กรัม",
+                        "น้ำแดง 80 กรัม",
+                        "--- ส่วนผสมแป้งสีฟ้า ---",
+                        "แป้งข้าวเหนียว 200 กรัม",
+                        "น้ำอัญชัน 180 กรัม",
+                        "--- ส่วนผสมแป้งสีเขียว ---",
+                        "แป้งข้าวเหนียว 200 กรัม",
+                        "น้ำใบเตย 180 กรัม",
+                        "--- ส่วนผสมไส้ ---",
+                        "น้ำตาลปี๊บ 350 กรัม",
+                        "มะพร้าวขูด 500 กรัม",
+                        "น้ำ 50 กรัม",
+                        "--- ส่วนผสมมะพร้าวคลุก ---",
+                        "มะพร้าวขูด 400 กรัม",
+                        "เกลือ 3/4 ช้อนชา"
+                    ],
+                    "en": [
+                        "Tri-Color Glutinous Rice Flour Dough (Red Syrup, Butterfly Pea, Pandan)",
+                        "Caramelized Coconut Filling (Grated Coconut slowly simmered with Palm Sugar)",
+                        "Savory Coconut Coating (Steamed Shredded Coconut tossed with a pinch of Salt)"
+                    ]
+                },
+                "ingredients": {
+                    "th": [
+                        "--- ส่วนผสมแป้งสีแดง ---",
+                        "แป้งข้าวเหนียว 200 กรัม",
+                        "น้ำ 100 กรัม",
+                        "น้ำแดง 80 กรัม",
+                        "--- ส่วนผสมแป้งสีฟ้า ---",
+                        "แป้งข้าวเหนียว 200 กรัม",
+                        "น้ำอัญชัน 180 กรัม",
+                        "--- ส่วนผสมแป้งสีเขียว ---",
+                        "แป้งข้าวเหนียว 200 กรัม",
+                        "น้ำใบเตย 180 กรัม",
+                        "--- ส่วนผสมไส้ ---",
+                        "น้ำตาลปี๊บ 350 กรัม",
+                        "มะพร้าวขูด 500 กรัม",
+                        "น้ำ 50 กรัม",
+                        "--- ส่วนผสมมะพร้าวคลุก ---",
+                        "มะพร้าวขูด 400 กรัม",
+                        "เกลือ 3/4 ช้อนชา"
+                    ],
+                    "en": [
+                        "(TH) ส่วนผสมแป้งสีแดง",
+                        "(TH) ส่วนผสมแป้งสีแดง",
+                        "(TH) ส่วนผสมแป้งสีแดง",
+                        "(TH) ส่วนผสมแป้งสีฟ้า",
+                        "(TH) ส่วนผสมแป้งสีฟ้า",
+                        "(TH) ส่วนผสมแป้งสีเขียว",
+                        "(TH) ส่วนผสมแป้งสีเขียว",
+                        "(TH) ส่วนผสมไส้",
+                        "(TH) ส่วนผสมไส้",
+                        "(TH) ส่วนผสมไส้",
+                        "(TH) ส่วนผสมมะพร้าวคลุก",
+                        "(TH) ส่วนผสมมะพร้าวคลุก"
+                    ]
+                }
+            },
+            {
+                "id": "r22",
+                "name": {
+                    "th": "ขนมชั้นอัญชัน",
+                    "en": "Butterfly Pea Layer Sweet Cake"
+                },
+                "price": 30,
+                "unit": "32 ชิ้น / 32 Pcs",
+                "desc": {
+                    "th": "ขนมชั้นสูตรโบราณสีฟ้าอัญชัน แป้งเหนียวนุ่มละมุน ลอกได้ทีละชั้น หอมกลิ่นมะลิอบควันเทียนหวานกำลังดี",
+                    "en": "Traditional Thai layered sweet cake with blue butterfly pea infusion, soft, chewy, and aromatic."
+                },
+                "img": "Butterfly Pea Layer Sweet Cake.jpg",
+                "main_ingredients": {
+                    "th": [
+                        "--- ส่วนผสมตัวขนมชั้น ---",
+                        "แป้งมันสำปะหลัง 340 กรัม",
+                        "แป้งข้าวจ้าว 85 กรัม",
+                        "แป้งท้าว 60 กรัม",
+                        "น้ำตาลทราย 400 กรัม",
+                        "เกลือ 1 ช้อนชา (6 กรัม)",
+                        "หัวกะทิ 500 กรัม",
+                        "น้ำอัญชัน 115 กรัม",
+                        "น้ำสะอาด 315 กรัม",
+                        "--- อุปกรณ์และอื่นๆ ---",
+                        "น้ำมันทาพิมพ์ 1 ช้อนโต๊ะ",
+                        "--- เทคนิคการทำ ---",
+                        "ปริมาณแป้งต่อชั้น ตักชั้นละ 3/4 ถ้วยตวง",
+                        "การนึ่ง ฝาหม้อห่อผ้า, นึ่ง 4 นาทีต่อรอบ"
+                    ],
+                    "en": [
+                        "Chewy Flour Blend (Tapioca, Rice, and Arrowroot Flour)",
+                        "Natural Butterfly Pea Extract & Fresh Coconut Cream",
+                        "Sweet & Savory Profile (Sugar and a pinch of Salt)"
+                    ]
+                },
+                "ingredients": {
+                    "th": [
+                        "--- ส่วนผสมตัวขนมชั้น ---",
+                        "แป้งมันสำปะหลัง 340 กรัม",
+                        "แป้งข้าวจ้าว 85 กรัม",
+                        "แป้งท้าว 60 กรัม",
+                        "น้ำตาลทราย 400 กรัม",
+                        "เกลือ 1 ช้อนชา (6 กรัม)",
+                        "หัวกะทิ 500 กรัม",
+                        "น้ำอัญชัน 115 กรัม",
+                        "น้ำสะอาด 315 กรัม",
+                        "--- อุปกรณ์และอื่นๆ ---",
+                        "น้ำมันทาพิมพ์ 1 ช้อนโต๊ะ",
+                        "--- เทคนิคการทำ ---",
+                        "ปริมาณแป้งต่อชั้น ตักชั้นละ 3/4 ถ้วยตวง",
+                        "การนึ่ง ฝาหม้อห่อผ้า, นึ่ง 4 นาทีต่อรอบ"
+                    ],
+                    "en": [
+                        "(TH) ส่วนผสมตัวขนมชั้น",
+                        "(TH) ส่วนผสมตัวขนมชั้น",
+                        "(TH) ส่วนผสมตัวขนมชั้น",
+                        "(TH) ส่วนผสมตัวขนมชั้น",
+                        "(TH) ส่วนผสมตัวขนมชั้น",
+                        "(TH) ส่วนผสมตัวขนมชั้น",
+                        "(TH) ส่วนผสมตัวขนมชั้น",
+                        "(TH) ส่วนผสมตัวขนมชั้น",
+                        "(TH) อุปกรณ์และอื่นๆ",
+                        "(TH) เทคนิคการทำ",
+                        "(TH) เทคนิคการทำ"
+                    ]
+                }
+            },
+            {
+                "id": "r23",
+                "name": {
+                    "th": "ขนมชั้นใบเตย",
+                    "en": "Pandan Layer Sweet Cake"
+                },
+                "price": 30,
+                "unit": "32 ชิ้น / 32 Pcs",
+                "desc": {
+                    "th": "ขนมชั้นแป้งเหนียวนุ่มสีเขียวจากใบเตยคั้นสด กลิ่นหอมฟุ้ง รสหวานกลมกล่อม ลอกทานทีละชั้นได้ง่าย",
+                    "en": "Chewy traditional layered sweet cake infused with fresh aromatic pandan juice."
+                },
+                "img": "Pandan Layer Sweet Cake.jpg",
+                "main_ingredients": {
+                    "th": [
+                        "--- ส่วนผสมตัวขนมชั้น ---",
+                        "แป้งมันสำปะหลัง 340 กรัม",
+                        "แป้งข้าวจ้าว 85 กรัม",
+                        "แป้งท้าว 60 กรัม",
+                        "น้ำตาลทราย 400 กรัม",
+                        "เกลือ 1 ช้อนชา (6 กรัม)",
+                        "หัวกะทิ 500 กรัม",
+                        "น้ำใบเตย 115 กรัม",
+                        "น้ำสะอาด 315 กรัม",
+                        "--- อุปกรณ์และอื่นๆ ---",
+                        "น้ำมันทาพิมพ์ 1 ช้อนโต๊ะ",
+                        "--- เทคนิคการทำ ---",
+                        "ปริมาณแป้งต่อชั้น ตักชั้นละ 3/4 ถ้วยตวง",
+                        "การนึ่ง ฝาหม้อห่อผ้า, นึ่ง 4 นาทีต่อรอบ"
+                    ],
+                    "en": [
+                        "Chewy Flour Blend (Tapioca, Rice, and Arrowroot Flour)",
+                        "Natural Pandan Extract & Fresh Coconut Cream",
+                        "Sweet & Savory Profile (Sugar and a pinch of Salt)"
+                    ]
+                },
+                "ingredients": {
+                    "th": [
+                        "--- ส่วนผสมตัวขนมชั้น ---",
+                        "แป้งมันสำปะหลัง 340 กรัม",
+                        "แป้งข้าวจ้าว 85 กรัม",
+                        "แป้งท้าว 60 กรัม",
+                        "น้ำตาลทราย 400 กรัม",
+                        "เกลือ 1 ช้อนชา (6 กรัม)",
+                        "หัวกะทิ 500 กรัม",
+                        "น้ำใบเตย 115 กรัม",
+                        "น้ำสะอาด 315 กรัม",
+                        "--- อุปกรณ์และอื่นๆ ---",
+                        "น้ำมันทาพิมพ์ 1 ช้อนโต๊ะ",
+                        "--- เทคนิคการทำ ---",
+                        "ปริมาณแป้งต่อชั้น ตักชั้นละ 3/4 ถ้วยตวง",
+                        "การนึ่ง ฝาหม้อห่อผ้า, นึ่ง 4 นาทีต่อรอบ"
+                    ],
+                    "en": [
+                        "(TH) ส่วนผสมตัวขนมชั้น",
+                        "(TH) ส่วนผสมตัวขนมชั้น",
+                        "(TH) ส่วนผสมตัวขนมชั้น",
+                        "(TH) ส่วนผสมตัวขนมชั้น",
+                        "(TH) ส่วนผสมตัวขนมชั้น",
+                        "(TH) ส่วนผสมตัวขนมชั้น",
+                        "(TH) ส่วนผสมตัวขนมชั้น",
+                        "(TH) ส่วนผสมตัวขนมชั้น",
+                        "(TH) อุปกรณ์และอื่นๆ",
+                        "(TH) เทคนิคการทำ",
+                        "(TH) เทคนิคการทำ"
+                    ]
+                }
+            },
+            {
+                "id": "r24",
+                "name": {
+                    "th": "วุ้นกะทิใบเตย",
+                    "en": "Pandan Coconut Jelly"
+                },
+                "price": 30,
+                "unit": "32 ชิ้น / 32 Pcs",
+                "desc": {
+                    "th": "วุ้นสองชั้น ชั้นล่างวุ้นใบเตยหอมใสหวานเย็น ชั้นบนกะทิสดรสหวานเค็มมันตัดกันกลมกล่อมลงตัว",
+                    "en": "Double-layered agar jelly with aromatic sweet pandan at the base and rich savory coconut milk on top."
+                },
+                "img": "Pandan Coconut Jelly.jpg",
+                "main_ingredients": {
+                    "th": [
+                        "--- ส่วนผสมวุ้นใบเตย ---",
+                        "น้ำต้มใบเตย 1000 ml. (น้ำเปล่า 1250 ml. ต้มใบเตย 4-5 ใบ)",
+                        "ผงวุ้น 1 ช้อนโต๊ะ + 1/2 ช้อนโต๊ะ",
+                        "น้ำตาลทรายขาว 300 กรัม",
+                        "น้ำใบเตยเข้มข้น 250 กรัม (ใบเตย 40 กรัม ปั่นน้ำเปล่า 350 ml.)",
+                        "--- ส่วนผสมวุ้นกะทิ ---",
+                        "น้ำเปล่า 250 ml.",
+                        "ผงวุ้น 1 ช้อนโต๊ะ + 1/2 ช้อนโต๊ะ",
+                        "หัวกะทิ 1000 ml.",
+                        "น้ำตาลทรายขาว 300 กรัม",
+                        "เกลือป่น 1 ช้อนชา + 1/2 ช้อนชา",
+                        "--- เทคนิคการทำ ---",
+                        "การแช่ผงวุ้น ต้องแช่ผงวุ้นในน้ำ 10-15 นาที เพื่อให้วุ้นอิ่มน้ำ",
+                        "การเคี่ยววุ้น ต้องเคี่ยวจนวุ้นละลายดี ไม่ติดขอบหม้อ ไม่ติดทัพพี วุ้นจะไม่คายน้ำ",
+                        "การต้มวุ้นกะทิ อย่าใช้ไฟแรงและต้มกะทิแค่พอร้อน เดือดขอบหม้อ",
+                        "การพักวุ้น พักวุ้นไว้ 1-2 ชม.จนวุ้นเซ็ตตัวดี ตัดแบ่งเป็นชิ้น"
+                    ],
+                    "en": [
+                        "Clear Sweet Pandan Jelly (Agar Powder, Boiled Pandan Water, Fresh Pandan Extract)",
+                        "Savory Coconut Cream Jelly (Agar Powder, Coconut Cream, and a pinch of Salt)"
+                    ]
+                },
+                "ingredients": {
+                    "th": [
+                        "--- ส่วนผสมวุ้นใบเตย ---",
+                        "น้ำต้มใบเตย 1000 ml. (น้ำเปล่า 1250 ml. ต้มใบเตย 4-5 ใบ)",
+                        "ผงวุ้น 1 ช้อนโต๊ะ + 1/2 ช้อนโต๊ะ",
+                        "น้ำตาลทรายขาว 300 กรัม",
+                        "น้ำใบเตยเข้มข้น 250 กรัม (ใบเตย 40 กรัม ปั่นน้ำเปล่า 350 ml.)",
+                        "--- ส่วนผสมวุ้นกะทิ ---",
+                        "น้ำเปล่า 250 ml.",
+                        "ผงวุ้น 1 ช้อนโต๊ะ + 1/2 ช้อนโต๊ะ",
+                        "หัวกะทิ 1000 ml.",
+                        "น้ำตาลทรายขาว 300 กรัม",
+                        "เกลือป่น 1 ช้อนชา + 1/2 ช้อนชา",
+                        "--- เทคนิคการทำ ---",
+                        "การแช่ผงวุ้น ต้องแช่ผงวุ้นในน้ำ 10-15 นาที เพื่อให้วุ้นอิ่มน้ำ",
+                        "การเคี่ยววุ้น ต้องเคี่ยวจนวุ้นละลายดี ไม่ติดขอบหม้อ ไม่ติดทัพพี วุ้นจะไม่คายน้ำ",
+                        "การต้มวุ้นกะทิ อย่าใช้ไฟแรงและต้มกะทิแค่พอร้อน เดือดขอบหม้อ",
+                        "การพักวุ้น พักวุ้นไว้ 1-2 ชม.จนวุ้นเซ็ตตัวดี ตัดแบ่งเป็นชิ้น"
+                    ],
+                    "en": [
+                        "(TH) ส่วนผสมวุ้นใบเตย",
+                        "(TH) ส่วนผสมวุ้นใบเตย",
+                        "(TH) ส่วนผสมวุ้นใบเตย",
+                        "(TH) ส่วนผสมวุ้นใบเตย",
+                        "(TH) ส่วนผสมวุ้นกะทิ",
+                        "(TH) ส่วนผสมวุ้นกะทิ",
+                        "(TH) ส่วนผสมวุ้นกะทิ",
+                        "(TH) ส่วนผสมวุ้นกะทิ",
+                        "(TH) ส่วนผสมวุ้นกะทิ",
+                        "(TH) เทคนิคการทำ",
+                        "(TH) เทคนิคการทำ",
+                        "(TH) เทคนิคการทำ",
+                        "(TH) เทคนิคการทำ"
+                    ]
+                }
+            },
+            {
+                "id": "r25",
+                "name": {
+                    "th": "วุ้นกะทิอัญชันมะพร้าวอ่อน",
+                    "en": "Butterfly Pea Coconut Jelly with Young Coconut"
+                },
+                "price": 30,
+                "unit": "32 ชิ้น / 32 Pcs",
+                "desc": {
+                    "th": "วุ้นอัญชันสีฟ้าสดใสผสมเนื้อมะพร้าวอ่อนเคี้ยวเพลิน ท็อปปิ้งด้วยกะทิสดเข้มข้นรสชาติเค็มหวานมันกลมกล่อม",
+                    "en": "Vibrant blue butterfly pea jelly with tender young coconut meat layers, topped with rich coconut cream."
+                },
+                "img": "Butterfly Pea Coconut Jelly with Young Coconut.jpg",
+                "main_ingredients": {
+                    "th": [
+                        "--- ส่วนผสมวุ้นอัญชัน ---",
+                        "น้ำต้มอัญชัน 1000 ml. (น้ำเปล่า 1250 ml. ต้มดอกอัญชัน)",
+                        "ผงวุ้น 1 ช้อนโต๊ะ + 1/2 ช้อนโต๊ะ",
+                        "น้ำตาลทรายขาว 300 กรัม",
+                        "น้ำอัญชันเข้มข้น 250 กรัม (ดอกอัญชันปั่นน้ำเปล่า 350 ml.)",
+                        "เนื้อมะพร้าวอ่อน ตามเหมาะสม",
+                        "--- ส่วนผสมวุ้นกะทิ ---",
+                        "น้ำเปล่า 250 ml.",
+                        "ผงวุ้น 1 ช้อนโต๊ะ + 1/2 ช้อนโต๊ะ",
+                        "หัวกะทิ 1000 ml.",
+                        "น้ำตาลทรายขาว 300 กรัม",
+                        "เกลือป่น 1 ช้อนชา + 1/2 ช้อนชา",
+                        "--- เทคนิคการทำ ---",
+                        "การแช่ผงวุ้น ต้องแช่ผงวุ้นในน้ำ 10-15 นาที เพื่อให้วุ้นอิ่มน้ำ",
+                        "การเคี่ยววุ้น ต้องเคี่ยวจนวุ้นละลายดี ไม่ติดขอบหม้อ ไม่ติดทัพพี วุ้นจะไม่คายน้ำ",
+                        "การต้มวุ้นกะทิ อย่าใช้ไฟแรงและต้มกะทิแค่พอร้อน เดือดขอบหม้อ",
+                        "การพักวุ้น พักวุ้นไว้ 1-2 ชม.จนวุ้นเซ็ตตัวดี ตัดแบ่งเป็นชิ้น"
+                    ],
+                    "en": [
+                        "Clear Sweet Butterfly Pea Jelly (Agar, Boiled Butterfly Pea Water, Extract, Young Coconut Meat)",
+                        "Savory Coconut Cream Jelly (Agar Powder, Coconut Cream, and a pinch of Salt)"
+                    ]
+                },
+                "ingredients": {
+                    "th": [
+                        "--- ส่วนผสมวุ้นอัญชัน ---",
+                        "น้ำต้มอัญชัน 1000 ml. (น้ำเปล่า 1250 ml. ต้มดอกอัญชัน)",
+                        "ผงวุ้น 1 ช้อนโต๊ะ + 1/2 ช้อนโต๊ะ",
+                        "น้ำตาลทรายขาว 300 กรัม",
+                        "น้ำอัญชันเข้มข้น 250 กรัม (ดอกอัญชันปั่นน้ำเปล่า 350 ml.)",
+                        "เนื้อมะพร้าวอ่อน ตามเหมาะสม",
+                        "--- ส่วนผสมวุ้นกะทิ ---",
+                        "น้ำเปล่า 250 ml.",
+                        "ผงวุ้น 1 ช้อนโต๊ะ + 1/2 ช้อนโต๊ะ",
+                        "หัวกะทิ 1000 ml.",
+                        "น้ำตาลทรายขาว 300 กรัม",
+                        "เกลือป่น 1 ช้อนชา + 1/2 ช้อนชา",
+                        "--- เทคนิคการทำ ---",
+                        "การแช่ผงวุ้น ต้องแช่ผงวุ้นในน้ำ 10-15 นาที เพื่อให้วุ้นอิ่มน้ำ",
+                        "การเคี่ยววุ้น ต้องเคี่ยวจนวุ้นละลายดี ไม่ติดขอบหม้อ ไม่ติดทัพพี วุ้นจะไม่คายน้ำ",
+                        "การต้มวุ้นกะทิ อย่าใช้ไฟแรงและต้มกะทิแค่พอร้อน เดือดขอบหม้อ",
+                        "การพักวุ้น พักวุ้นไว้ 1-2 ชม.จนวุ้นเซ็ตตัวดี ตัดแบ่งเป็นชิ้น"
+                    ],
+                    "en": [
+                        "(TH) ส่วนผสมวุ้นอัญชัน",
+                        "(TH) ส่วนผสมวุ้นอัญชัน",
+                        "(TH) ส่วนผสมวุ้นอัญชัน",
+                        "(TH) ส่วนผสมวุ้นอัญชัน",
+                        "(TH) ส่วนผสมวุ้นอัญชัน",
+                        "(TH) ส่วนผสมวุ้นกะทิ",
+                        "(TH) ส่วนผสมวุ้นกะทิ",
+                        "(TH) ส่วนผสมวุ้นกะทิ",
+                        "(TH) ส่วนผสมวุ้นกะทิ",
+                        "(TH) ส่วนผสมวุ้นกะทิ",
+                        "(TH) เทคนิคการทำ",
+                        "(TH) เทคนิคการทำ",
+                        "(TH) เทคนิคการทำ",
+                        "(TH) เทคนิคการทำ"
+                    ]
+                }
+            }
+        ]
+    }
+]

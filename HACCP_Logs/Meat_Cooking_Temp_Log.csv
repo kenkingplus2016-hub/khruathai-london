@@ -1,0 +1,8 @@
+Date,Staff Name,,,,,
+Meat Item,Batch/Supplier,Time Cooked,Core Temp (C) (Must >75C),Probe Sanitised?,Visual Check (No pink juices),Sign
+Chicken Breast,Supplier A,11:00,80,Yes,Yes,
+Beef Roast,Supplier B,12:30,76,Yes,Yes,
+Pork Belly,Supplier A,14:00,82,Yes,Yes,
+,,,,,,
+,,,,,,
+,,,,,,

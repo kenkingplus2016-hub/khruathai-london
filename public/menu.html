@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Khrua Thai London</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#D4AF37',
+                        'dark-green': '#1B3022',
+                        cream: '#F9F7F2',
+                        'gold-light': '#f5e6b8',
+                    },
+                    fontFamily: {
+                        prompt: ['Prompt', 'sans-serif'],
+                        manorah: ['SarunsManorah', 'Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .nav-link {
+                @apply text-gold no-underline px-5 py-1.5 border-[1.5px] border-gold rounded-full text-sm font-semibold transition-colors duration-300 hover:bg-gold hover:text-dark-green;
+            }
+            .nav-link.active {
+                @apply bg-gold text-dark-green;
+            }
+            .lang-btn {
+                @apply cursor-pointer px-4 py-1 bg-transparent text-gold border-[1.2px] border-gold rounded-full font-prompt text-xs transition-colors duration-300;
+            }
+            .lang-btn.active {
+                @apply bg-gold text-dark-green;
+            }
+        }
+
+        @font-face {
+            font-family: 'SarunsManorah';
+            src: url('SarunsManorah.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            @apply font-prompt bg-cream text-gray-800 overflow-x-hidden;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #D4AF37 !important;
+        }
+    </style>
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="light-theme.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B32XK3RT5X"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-B32XK3RT5X');
+    </script>
+</head>
+<body class="font-prompt bg-cream text-gray-800 overflow-x-hidden">
+
+<header class="bg-white py-5 text-center border-b-4 border-gold sticky top-0 z-[1000] shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
+    <img src="logo.png" alt="Khrua Thai London" class="h-[100px] md:h-[220px] w-auto block mx-auto  transition-transform duration-300">
+    <div class="mobile-menu-btn absolute top-6 right-6 md:hidden text-3xl cursor-pointer text-dark-green"><i class="fas fa-bars"></i></div>
+    <nav class="flex justify-center flex-wrap gap-2.5 mt-3 px-4 hidden md:flex" id="main-nav">
+        <a href="index.html" id="nav-home" class="nav-link">หน้าแรก / Home</a>
+        <a href="menu.html" class="nav-link active" id="nav-menu">เซทตำรับไทย / Authentic Thai Sets</a>
+        <a href="royal.html" id="nav-royal" class="nav-link">The Royal Siam Gathering</a>
+        <a href="delivery.html" id="nav-delivery" class="nav-link">ดิลิเวอรีบ็อกซ์เซต / Delivery Box Sets</a>
+        <a href="booking.html" id="nav-booking" class="nav-link">จองงาน / Booking</a>
+    </nav>
+    <div class="flex justify-center gap-2 mt-2.5">
+        <button class="lang-btn active" onclick="changeLang('th', this)">TH</button>
+        <button class="lang-btn" onclick="changeLang('en', this)">EN</button>
+    </div>
+</header>
+
+<section class="bg-white bg-cover bg-center py-[60px] px-5 text-center border-b-2 border-gold">
+    <h1 id="hero-title" class="font-manorah text-gold text-4xl md:text-6xl mb-2.5 tracking-[2px]">Thai Set Menus</h1>
+    <p id="hero-subtitle" class="text-black text-lg md:text-xl max-w-[700px] mx-auto leading-relaxed">Elevate your event with authentic, premium Thai flavors.</p>
+    <p id="hero-desc" class="mt-4 text-sm md:text-base opacity-90 text-black">Premium Standard for 10 Persons (Excluding Tax, Equipment, and Service)</p>
+</section>
+
+<section class="bg-white py-10 px-5 text-center border-b border-gray-200">
+    <h2 class="text-dark-green text-2xl md:text-3xl font-bold mb-4" id="services-title">✨ บริการของเรา (Our Services)</h2>
+    <p class="text-gray-600 max-w-[850px] mx-auto leading-relaxed text-base md:text-lg" id="services-desc">
+        ไม่ว่าจะเป็นงานปาร์ตี้ส่วนตัว งานเลี้ยงบริษัท หรืองานอีเว้นท์สำคัญ ครัวไทย พร้อมเนรมิตสำรับไทยที่จัดจ้านและประณีต ส่งตรงถึงสถานที่ของคุณในลอนดอนและพื้นที่ใกล้เคียง
+    </p>
+</section>
+
+<div class="max-w-[1200px] mx-auto py-12 px-5" id="menu-container">
+    <!-- Menu Sets will be rendered here -->
+</div>
+
+<!-- Modal -->
+<div id="comp-modal" class="fixed inset-0 bg-black/90 z-[2000] hidden items-center justify-center p-5 backdrop-blur-sm">
+    <div class="bg-cream w-full max-w-[600px] rounded-[30px] overflow-hidden relative shadow-[0_25px_60px_rgba(0,0,0,0.5)] border-4 border-gold flex flex-col max-h-[90vh]">
+        <div class="absolute top-5 right-5 text-2xl text-gold cursor-pointer z-10 bg-black/20 w-10 h-10 flex items-center justify-center rounded-full border-2 border-gold transition-colors duration-300 hover:bg-gold hover:text-white" onclick="closeModal()">&times;</div>
+        <div class="h-[250px] relative">
+            <img id="modal-img" class="w-full h-full object-cover" src="" alt="">
+        </div>
+        <div class="p-8 overflow-y-auto">
+            <div class="mb-6 border-b-2 border-gold-light pb-4">
+                <div id="modal-title" class="font-manorah text-dark-green text-3xl font-bold"></div>
+                <div id="modal-en-title" class="text-gold font-serif text-lg mt-1"></div>
+            </div>
+            <div>
+                <h4 class="text-dark-green text-lg mb-3 flex items-center gap-2"><i class="fas fa-utensils text-gold"></i> <span id="lbl-ingredients-text">วัตถุดิบหลัก / Main Ingredients</span></h4>
+                <ul class="list-none p-0" id="modal-ingredients"></ul>
+            </div>
+            <div class="mt-6 bg-[#fffcf0] border border-dashed border-gold p-4 rounded-xl text-xs md:text-sm text-dark-green flex items-start gap-2.5">
+                <i class="fas fa-exclamation-circle text-gold text-base mt-0.5"></i>
+                <div>
+                    <strong class="text-dark-green">ข้อมูลการแพ้อาหาร / Food Allergy & Dietary Requirements:</strong><br>
+                    หากคุณแพ้อาหารประเภทใด หรือต้องการอาหารเจ/มังสวิรัติ กรุณาแจ้งความประสงค์ในขั้นตอนการสั่งจอง<br>
+                    If you have any food allergies or dietary requirements, please specify them in the booking form.
+                </div>
+            </div>
+        </div>
+</div>
+</div>
+
+<!-- 14-Day Advance Booking Popup -->
+<div id="booking-notice-modal" class="fixed inset-0 bg-black/80 z-[3000] flex items-center justify-center p-5 backdrop-blur-sm" style="display:flex;">
+    <div class="bg-cream w-full max-w-[500px] rounded-[25px] overflow-hidden relative shadow-[0_25px_60px_rgba(0,0,0,0.5)] border-4 border-gold flex flex-col" style="animation: popIn 0.4s ease-out;">
+        <div class="bg-gradient-to-r from-dark-green to-[#2a4a35] p-8 text-center">
+            <div class="text-5xl mb-3">📅</div>
+            <h3 class="text-gold text-2xl font-bold font-manorah tracking-wide">กรุณาจองล่วงหน้า</h3>
+            <p class="text-gold-light text-sm mt-1 opacity-80">Advance Booking Required</p>
+        </div>
+        <div class="p-8 text-center">
+            <div class="bg-gold/10 border-2 border-gold/30 rounded-2xl p-6 mb-5">
+                <div class="text-dark-green text-4xl font-extrabold mb-1">14 <span class="text-xl">วัน</span></div>
+                <p class="text-gray-600 text-sm">จองล่วงหน้าอย่างน้อย <strong class="text-dark-green">14 วัน</strong> ก่อนวันงาน</p>
+                <p class="text-gray-500 text-xs mt-1">Minimum <strong>14 days</strong> advance booking required</p>
+            </div>
+            <div class="text-left bg-[#fffcf0] border border-dashed border-gold p-4 rounded-xl text-xs text-dark-green space-y-2 mb-6">
+                <div class="flex items-start gap-2">
+                    <i class="fas fa-check-circle text-gold mt-0.5"></i>
+                    <span>เพื่อการเตรียมวัตถุดิบคุณภาพสูงสุด / For premium ingredient preparation</span>
+                </div>
+                <div class="flex items-start gap-2">
+                    <i class="fas fa-check-circle text-gold mt-0.5"></i>
+                    <span>มาตรฐานสำหรับ 10 ท่านขึ้นไป / Standard for 10+ persons</span>
+                </div>
+                <div class="flex items-start gap-2">
+                    <i class="fas fa-check-circle text-gold mt-0.5"></i>
+                    <span>ราคายังไม่รวมภาษี อุปกรณ์ และบริการ / Excl. Tax, Equipment & Service</span>
+                </div>
+            </div>
+            <button onclick="document.getElementById('booking-notice-modal').style.display='none'" class="w-full bg-dark-green text-gold border-2 border-gold px-8 py-3.5 rounded-full font-bold text-base transition-all duration-300 hover:bg-gold hover:text-dark-green shadow-[0_6px_15px_rgba(0,0,0,0.2)] cursor-pointer">
+                <i class="fas fa-utensils mr-2"></i> เข้าชมเมนู / View Menu
+            </button>
+        </div>
+    </div>
+</div>
+
+<style>
+@keyframes popIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    let menuSets = [];
+    let currentLang = 'th';
+
+    async function loadMenuData() {
+        try {
+            const res = await fetch('/api/menu');
+            if (res.ok) {
+                menuSets = await res.json();
+                // Add unit to all party sets
+                menuSets.forEach(s => s.unit = { th: "10 ท่าน", en: "10 Persons" });
+                renderMenu();
+            } else {
+                console.error("Failed to load menu data");
+            }
+        } catch (err) {
+            console.error("Error loading menu:", err);
+        }
+    }
+
+    function renderMenu() {
+        const container = document.getElementById('menu-container');
+        let html = '';
+
+        menuSets.forEach(set => {
+            const priceLabel = currentLang === 'th' ? 'ราคารวมต่อเซต' : 'Total Price per Set';
+            const paxLabel = currentLang === 'th' ? `สำหรับ ${set.unit[currentLang]}` : `For ${set.unit[currentLang]}`;
+            const excludeLabel = currentLang === 'th' ? '*ไม่รวมภาษี อุปกรณ์ และบริการ' : '*Excl. Tax, Equipment & Service';
+
+            // Build Inner Slider Items
+            let slidesHtml = '';
+            set.items.forEach((item, index) => {
+                const imgSrc = item.img === 'logo.png' ? 'logo.png' : (item.img.startsWith('http') ? item.img : `images/${item.img}`);
+                slidesHtml += `
+                    <div class="swiper-slide h-auto cursor-pointer" onclick="openItemModal(${set.id}, ${index})">
+                        <div class="bg-[#fafafa] rounded-xl overflow-hidden border border-[#eaeaea] transition-all duration-300 hover:-translate-y-1 hover:border-gold hover:shadow-[0_10px_20px_rgba(212,175,55,0.15)] h-full flex flex-col group relative">
+                            <div class="absolute top-3 right-3 bg-white/80 w-8 h-8 rounded-full flex items-center justify-center z-10 text-gold shadow-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                            <div class="overflow-hidden h-[160px] md:h-[200px]">
+                                <img src="${imgSrc}" alt="${item[currentLang]}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null; this.src='logo.png';">
+                            </div>
+                            <div class="p-4 text-center flex-1 flex flex-col justify-center">
+                                <div class="text-xs text-gold font-bold uppercase mb-1 tracking-widest">${item.type[currentLang]}</div>
+                                <div class="text-base text-dark-green font-semibold leading-snug">${item.th}</div>
+                                <div class="text-sm text-gray-500 mt-1">${item.en}</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            html += `
+                <div class="mb-20 bg-white rounded-2xl p-6 md:p-8 shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100">
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between border-b-2 border-gold-light pb-4 mb-6 gap-5">
+                        <div class="flex items-center gap-5">
+                            <div class="bg-gold text-dark-green py-1.5 px-5 rounded font-extrabold text-lg md:text-xl shadow-md">SET ${set.id}</div>
+                            <div>
+                                <h2 class="font-manorah text-dark-green text-3xl md:text-4xl font-bold">${set.name[currentLang].replace(': ', ':<br>').replace(' — ', '<br>').replace(' - ', '<br>')}</h2>
+                                <p class="text-gray-600 text-sm md:text-base leading-relaxed mt-1 max-w-[600px]">${set.desc[currentLang]}</p>
+                            </div>
+                        </div>
+                        <div class="text-left md:text-right mt-2 md:mt-0">
+                            <div class="text-3xl font-extrabold text-dark-green">£${set.price}</div>
+                            <div class="text-sm text-gray-500 font-semibold mt-1">${priceLabel} (${set.unit[currentLang]})</div>
+                            <div class="text-xs text-gold mt-0.5">${excludeLabel}</div>
+                            <a href="booking.html?set=authentic-${set.id}" class="inline-block mt-3 bg-dark-green text-gold border-2 border-gold px-5 py-2 rounded-full font-bold text-sm no-underline transition-all duration-300 hover:bg-gold hover:text-dark-green shadow-md">
+                                <i class="fas fa-calendar-check mr-1"></i> ${currentLang === 'th' ? 'จองเซตนี้' : 'Book This Set'}
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper item-swiper swiper-set-${set.id} w-full pb-10">
+                        <div class="swiper-wrapper">
+                            ${slidesHtml}
+                        </div>
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-next !text-gold scale-75 after:font-extrabold"></div>
+                        <div class="swiper-button-prev !text-gold scale-75 after:font-extrabold"></div>
+                    </div>
+                </div>
+            `;
+        });
+        
+        container.innerHTML = html;
+
+        // Initialize Swipers for each set
+        menuSets.forEach(set => {
+            new Swiper(".swiper-set-" + set.id, {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                breakpoints: {
+                    640: { slidesPerView: 2 },
+                    900: { slidesPerView: 3 },
+                    1100: { slidesPerView: 4 }
+                },
+                pagination: {
+                    el: ".swiper-set-" + set.id + " .swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".swiper-set-" + set.id + " .swiper-button-next",
+                    prevEl: ".swiper-set-" + set.id + " .swiper-button-prev",
+                },
+            });
+        });
+    }
+
+    function changeLang(lang, btn) {
+        currentLang = lang;
+        document.documentElement.lang = lang;
+        
+        // Update Buttons
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Update Static Content
+        const t = {
+            th: {
+                hero_title: "รายการสำรับอาหาร", 
+                hero_subtitle: "ยกระดับงานเลี้ยงของคุณด้วยรสชาติไทยแท้ระดับพรีเมียม",
+                hero_desc: "สูตรพรีเมียมมาตรฐานสำหรับ 10 ท่าน (ราคายังไม่รวมภาษี อุปกรณ์ และบริการ)",
+                services_title: "✨ บริการของเรา",
+                services_desc: "ไม่ว่าจะเป็นงานปาร์ตี้ส่วนตัว งานเลี้ยงบริษัท หรืองานอีเว้นท์สำคัญ ครัวไทย พร้อมเนรมิตสำรับไทยที่จัดจ้านและประณีต ส่งตรงถึงสถานที่ของคุณในลอนดอนและพื้นที่ใกล้เคียง"
+            },
+            en: {
+                hero_title: "Thai Set Menus", 
+                hero_subtitle: "Elevate your event with authentic, premium Thai flavors.",
+                hero_desc: "Premium Standard for 10 Persons (Excluding Tax, Equipment, and Service)",
+                services_title: "✨ Our Services",
+                services_desc: "Whether it's a private party, corporate event, or a special celebration, Khrua Thai London is ready to create exquisite and authentic Thai sets, delivered directly to your venue in London and surrounding areas."
+            }
+        }[lang];
+
+        document.getElementById('nav-home').innerText = t.nav_home;
+        document.getElementById('nav-menu').innerText = t.nav_menu;
+        if (document.getElementById('nav-delivery')) document.getElementById('nav-delivery').innerText = t.nav_delivery;
+        document.getElementById('nav-booking').innerText = t.nav_booking;
+        document.getElementById('hero-title').innerText = t.hero_title;
+        document.getElementById('hero-subtitle').innerText = t.hero_subtitle;
+        document.getElementById('hero-desc').innerText = t.hero_desc;
+        document.getElementById('services-title').innerText = t.services_title;
+        document.getElementById('services-desc').innerText = t.services_desc;
+        const lblIng = document.getElementById('lbl-ingredients-text');
+        if(lblIng) lblIng.innerText = lang === 'th' ? 'วัตถุดิบหลัก / Main Ingredients' : 'Main Ingredients / Details';
+
+        renderMenu();
+    }
+
+    function openItemModal(setId, itemIndex) {
+        const set = menuSets.find(s => s.id == setId);
+        if (!set) return;
+        const item = set.items[itemIndex];
+        if (!item) return;
+
+        const imgSrc = item.img === 'logo.png' ? 'logo.png' : (item.img.startsWith('http') ? item.img : `images/${item.img}`);
+        document.getElementById('modal-img').src = imgSrc;
+        document.getElementById('modal-title').innerText = item.th;
+        document.getElementById('modal-en-title').innerText = item.en;
+        
+        const ingList = document.getElementById('modal-ingredients');
+        
+        const mockIngredients = {
+            th: ['วัตถุดิบหลักคัดพิเศษเกรดพรีเมียม', 'สมุนไพรไทยและเครื่องเทศสดใหม่', 'ปรุงรสด้วยสูตรต้นตำรับเฉพาะของร้าน'],
+            en: ['Premium grade selected ingredients', 'Fresh authentic Thai herbs and spices', 'Seasoned with our secret original recipe']
+        };
+        
+        let ingredientsHTML = '';
+        if (item.ingredients) {
+            const ingData = item.ingredients[currentLang] || [];
+            ingredientsHTML = ingData.map(i => `<li class="mb-2 pl-5 relative text-gray-700 leading-relaxed before:content-['•'] before:text-gold before:font-bold before:absolute before:left-0">${i}</li>`).join('');
+        } else {
+            const placeholder = mockIngredients[currentLang];
+            ingredientsHTML = placeholder.map(i => `<li class="mb-2 pl-5 relative text-gray-700 leading-relaxed before:content-['•'] before:text-gold before:font-bold before:absolute before:left-0">${i}</li>`).join('');
+        }
+        
+        ingList.innerHTML = ingredientsHTML;
+
+        document.getElementById('comp-modal').style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        document.getElementById('comp-modal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    window.onclick = function(event) {
+        if (event.target == document.getElementById('comp-modal')) closeModal();
+    }
+
+    loadMenuData();
+</script>
+    <script src="mobile-menu.js"></script>
+
+    
+    <style>
+        /* Reviews Section */
+        .reviews-section {
+            background: var(--dark-green, #1B3022);
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .section-tag {
+            color: var(--gold, #D4AF37);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .section-title {
+            font-family: 'SarunsManorah', 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--gold, #D4AF37);
+            margin-bottom: 40px;
+            line-height: 1.2;
+        }
+        .section-subtitle {
+            font-family: 'Prompt', sans-serif;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+        }
+        .reviews-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+        .review-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            text-align: left;
+            transition: 0.4s;
+        }
+        .review-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-10px);
+            border-color: var(--gold, #D4AF37);
+        }
+        .quote-icon {
+            color: var(--gold, #D4AF37);
+            font-size: 2rem;
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+        .stars {
+            color: var(--gold, #D4AF37);
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        .review-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+        .customer-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .customer-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gold, #D4AF37);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--dark-green, #1B3022);
+            font-size: 1.2rem;
+        }
+        .customer-name {
+            font-weight: 600;
+            color: white;
+            font-size: 1.1rem;
+        }
+        .customer-date {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+    </style>
+    
+    <section class="reviews-section">
+        <span class="section-tag">Testimonials</span>
+        <h2 class="section-title">เสียงตอบรับจากลูกค้า <br><span style="font-family:'Prompt', sans-serif; font-size:1.5rem; color: #f5e6b8;">Customer Reviews</span></h2>
+        
+        <div class="reviews-grid" id="reviews-grid">
+            <!-- Dynamic Reviews will load here -->
+            <div style="color:white; width: 100%; text-align: center;">Loading reviews...</div>
+        </div>
+    </section>
+
+    <section class="points-section" style="padding: 60px 20px; background: rgba(212,175,55,0.05); text-align: center; border-top: 1px solid rgba(212,175,55,0.1); border-bottom: 1px solid rgba(212,175,55,0.1);">
+        <span class="section-tag" style="display:inline-block; border:1px solid var(--gold, #D4AF37); color:var(--gold, #D4AF37); padding:5px 15px; border-radius:20px; font-size:0.8rem; letter-spacing:2px; margin-bottom:15px; text-transform:uppercase;">Loyalty Program</span>
+        <h2 class="section-title" style="font-family:'SarunsManorah', serif; color:var(--gold, #D4AF37); font-size:2.5rem; margin-bottom:10px;">เช็คแต้มสะสมของคุณ <br><span style="font-family:'Prompt', sans-serif; font-size:1.2rem; color: #555;">Check Your Reward Points</span></h2>
+        <p style="color: rgba(0,0,0,0.7); max-width: 650px; margin: 0 auto 30px; font-size: 0.95rem; line-height: 1.8;">
+            สั่งอาหารทุกๆ 1 เซท รับทันที 10 แต้ม <br><span style="color:#666;">(Get 10 points for every set ordered)</span><br><br>
+            🎁 100 แต้ม = ส่วนลด £10 <span style="color:#666;">(£10 Discount)</span><br>
+            🎁 250 แต้ม = รับฟรี 1 เซต <span style="color:#666;">(Free 1 Set)</span>
+        </p>
+        
+        <div style="max-width: 500px; margin: 0 auto; background: rgba(0,0,0,0.8); padding: 30px; border-radius: 15px; border: 1px solid rgba(212,175,55,0.2);">
+            <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+                <input type="tel" id="check-phone" placeholder="เบอร์โทรศัพท์ (Phone Number)" style="flex:1; padding: 12px; border-radius: 8px; border: 1px solid #555; background: #222; color: white; font-family: 'Prompt'; outline:none;">
+                <button onclick="checkPoints()" style="background: var(--gold, #D4AF37); color: var(--black-green, #0D1F14); border: none; padding: 0 20px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s; white-space: nowrap;"><i class="fas fa-search"></i> เช็คเลย (Check)</button>
+            </div>
+            
+            <div id="points-result" style="display:none; text-align: left; background: linear-gradient(135deg, rgba(27,48,34,0.9), rgba(13,31,20,0.9)); padding: 25px; border-radius: 12px; border: 2px solid var(--gold, #D4AF37); box-shadow: 0 10px 30px rgba(0,0,0,0.5); position: relative; overflow: hidden;">
+                <div style="position: absolute; top: -20px; right: -20px; font-size: 8rem; color: rgba(212,175,55,0.05); pointer-events: none;"><i class="fas fa-crown"></i></div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
+                    <div>
+                        <div style="font-size: 0.85rem; color: rgba(212,175,55,0.8); text-transform: uppercase; letter-spacing: 2px;">KHRUA THAI MEMBER</div>
+                        <div id="pt-name" style="color: white; font-weight:700; font-size: 1.2rem; margin-top: 5px;"></div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-size: 2.8rem; font-weight: 700; color: var(--gold, #D4AF37); line-height: 1;"><span id="pt-points">0</span></div>
+                        <div style="font-size: 0.8rem; color: rgba(255,255,255,0.6);">แต้มสะสมปัจจุบัน (Current Points)</div>
+                    </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div style="margin-top: 25px; position: relative;">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: rgba(255,255,255,0.7); margin-bottom: 8px;">
+                        <span>0</span>
+                        <span style="color: var(--gold, #D4AF37);"><i class="fas fa-gift"></i> 100</span>
+                        <span style="color: var(--gold, #D4AF37);"><i class="fas fa-crown"></i> 250</span>
+                    </div>
+                    <div style="width: 100%; height: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; position: relative; overflow: hidden;">
+                        <div id="pt-progress" style="height: 100%; background: linear-gradient(90deg, #d4af37, #f5e6b8); border-radius: 10px; width: 0%; transition: width 1s ease-in-out;"></div>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; font-size: 0.7rem; color: rgba(255,255,255,0.5); margin-top: 8px;">
+                        <span>เริ่มต้น (Start)</span>
+                        <span>ส่วนลด £10</span>
+                        <span>ฟรี 1 เซต</span>
+                    </div>
+                </div>
+                
+                <div id="reward-unlocked" style="display:none; margin-top: 20px; background: rgba(212,175,55,0.2); padding: 10px; border-radius: 8px; text-align: center; color: var(--gold-light, #f5e6b8); font-size: 0.9rem; border: 1px dashed var(--gold, #D4AF37);">
+                    <i class="fas fa-star"></i> <strong id="reward-text"></strong>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <script>
+        async function loadReviews() {
+            try {
+                const res = await fetch('/api/reviews');
+                if (res.ok) {
+                    const reviews = await res.json();
+                    const grid = document.getElementById('reviews-grid');
+                    if (!grid) return;
+                    grid.innerHTML = '';
+                    
+                    reviews.forEach(r => {
+                        let starsHtml = '';
+                        for(let i=0; i<5; i++) {
+                            starsHtml += `<i class="${i < r.stars ? 'fas' : 'far'} fa-star"></i> `;
+                        }
+                        
+                        grid.innerHTML += `
+                            <div class="review-card">
+                                <i class="fas fa-quote-left quote-icon"></i>
+                                <div class="stars">${starsHtml}</div>
+                                <p class="review-text">"${r.text}"</p>
+                                <div class="customer-info">
+                                    <div class="customer-avatar">${r.avatar || r.name.charAt(0)}</div>
+                                    <div>
+                                        <div class="customer-name">${r.name}</div>
+                                        <div class="customer-date">${r.type}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    });
+                }
+            } catch (err) {
+                console.error("Error loading reviews:", err);
+            }
+        }
+        
+        async function checkPoints() {
+            const phone = document.getElementById('check-phone').value.trim();
+            const resDiv = document.getElementById('points-result');
+            
+            if(!phone) {
+                alert('กรุณากรอกเบอร์โทรศัพท์ / Please enter your phone number');
+                return;
+            }
+            
+            try {
+                const res = await fetch('/api/members/' + encodeURIComponent(phone));
+                if (res.ok) {
+                    const data = await res.json();
+                    
+                    document.getElementById('pt-name').innerText = data.name || 'คุณลูกค้า (Guest)';
+                    const pts = data.points || 0;
+                    document.getElementById('pt-points').innerText = pts;
+                    
+                    // Calculate progress (Max 250)
+                    let pct = (pts / 250) * 100;
+                    if (pct > 100) pct = 100;
+                    setTimeout(() => {
+                        const progressEl = document.getElementById('pt-progress');
+                        if (progressEl) progressEl.style.width = pct + '%';
+                    }, 100);
+
+                    // Show unlocked rewards
+                    const rwDiv = document.getElementById('reward-unlocked');
+                    const rwText = document.getElementById('reward-text');
+                    if (pts >= 250) {
+                        rwText.innerHTML = "ยินดีด้วย! คุณสามารถแลกรับเซตฟรี 1 เซตได้แล้ว!<br>Congratulations! You can claim 1 Free Set!";
+                        rwDiv.style.display = 'block';
+                    } else if (pts >= 100) {
+                        rwText.innerHTML = "ยินดีด้วย! คุณสามารถแลกส่วนลด £10 ได้แล้ว!<br>Congratulations! You can claim a £10 Discount!";
+                        rwDiv.style.display = 'block';
+                    } else {
+                        rwDiv.style.display = 'none';
+                    }
+
+                    resDiv.style.display = 'block';
+                }
+            } catch(e) {
+                console.error(e);
+            }
+        }
+        
+        // Ensure DOM is fully loaded before trying to inject reviews
+        document.addEventListener('DOMContentLoaded', () => {
+            loadReviews();
+        });
+        
+        // Fallback: If it's already loaded, run it now just in case
+        if (document.readyState === 'complete' || document.readyState === 'interactive') {
+            loadReviews();
+        }
+    </script>
+</body>
+</html>

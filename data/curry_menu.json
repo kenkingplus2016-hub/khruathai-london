@@ -1,0 +1,178 @@
+[
+    {
+        "id": "c1",
+        "name": {
+            "th": "แกงมัสมั่นเนื้อพรีเมียม",
+            "en": "Massaman Beef Edition"
+        },
+        "price": 85,
+        "unit": {
+            "th": "เซตอาหารถ้วยเดี่ยว 6 ถ้วย พร้อมข้าวหอมมะลิ",
+            "en": "Set of 6 Individual Meals served with Jasmine Rice"
+        },
+        "desc": {
+            "th": "เนื้อหัวไหล่โคพรีเมียมคัดเกรดเคี่ยวจนนุ่มละลายในปาก ในน้ำแกงมัสมั่นเข้มข้นเหนียวข้นหอมเครื่องเทศรสหวานมันละมุน พร้อมมันเทศนุ่มและถั่วลิสงคั่วใหม่ เสิร์ฟพร้อมข้าวหอมมะลิร้อนๆ 6 จานแยกสำหรับงานเลี้ยง",
+            "en": "Melt-in-the-mouth premium beef shoulder slow-cooked in a rich, mild, and velvety spiced coconut broth with soft potatoes and roasted peanuts. Paired with 6 separate portions of steaming Thai Jasmine Rice."
+        },
+        "allergens": [
+            "Beef",
+            "Peanuts",
+            "Crustaceans"
+        ],
+        "img": "logo.png"
+    },
+    {
+        "id": "c2",
+        "name": {
+            "th": "แกงเขียวหวานไก่พรีเมียม",
+            "en": "Thai Green Curry Chicken Edition"
+        },
+        "price": 76,
+        "unit": {
+            "th": "เซตอาหารถ้วยเดี่ยว 6 ถ้วย พร้อมข้าวหอมมะลิ",
+            "en": "Set of 6 Individual Meals served with Jasmine Rice"
+        },
+        "desc": {
+            "th": "แกงเขียวหวานไก่สูตรซิกเนเจอร์รสชาติจัดจ้านหอมกะทิสด อัดแน่นด้วยเนื้ออกไก่สุกนุ่ม มะเขือเปราะไทยแท้สดใหม่ และใบโหระพาหอมสดชื่นเข้มข้น เสิร์ฟพร้อมข้าวหอมมะลิหุงร้อนๆ 6 จานแยกเพื่อสุขอนามัยในงานเลี้ยง",
+            "en": "Our signature vibrant and creamy green curry. Packed with tender chicken breast slices, authentic Thai eggplants, and heavily infused with fresh sweet basil. Served with 6 separate portions of premium Jasmine Rice."
+        },
+        "allergens": [
+            "Crustaceans",
+            "Fish"
+        ],
+        "img": "logo.png"
+    },
+    {
+        "id": "c3",
+        "name": {
+            "th": "แกงเผ็ดไก่ตำรับหลวง",
+            "en": "Thai Red Curry Chicken Edition"
+        },
+        "price": 76,
+        "unit": {
+            "th": "เซตอาหารถ้วยเดี่ยว 6 ถ้วย พร้อมข้าวหอมมะลิ",
+            "en": "Set of 6 Individual Meals served with Jasmine Rice"
+        },
+        "desc": {
+            "th": "แกงแดงไก่ตำรับไทยแท้ให้ความหอมลึกอบอวล เครื่องแกงเผ็ดคัดสรรปรุงในน้ำกะทิเข้มข้นพร้อมเนื้ออกไก่สไลด์ หน่อไม้สดคัดพิเศษ และใบโหระพาหอมกรุ่น เสิร์ฟพร้อมข้าวหอมมะลิ 6 จานแยกทานสะดวก",
+            "en": "A bold, traditional red chili curry offering beautiful aromatic depth. Features tender chicken, local bamboo shoots, and fresh sweet basil leaves in a luscious coconut cream base. Accompanied by 6 portions of fragrant Jasmine Rice."
+        },
+        "allergens": [
+            "Crustaceans",
+            "Fish"
+        ],
+        "img": "logo.png",
+        "main_ingredients": {
+            "th": [
+                "--- วัตถุดิบหลัก ---",
+                "สะโพกไก่เลาะกระดูก (หั่นชิ้นพอดีคำ) 500 กรัม",
+                "พริกแกงเผ็ด 2-3 ช้อนโต๊ะ",
+                "กะทิ 400 มิลลิลิตร (1 กระป๋อง)",
+                "พริกหวานสีแดง (หั่นเส้น) 1 ลูก",
+                "มะเขือเปราะ 100 กรัม",
+                "ใบมะกรูด (ฉีก) 4-5 ใบ",
+                "ใบโหระพา 1 ถ้วย",
+                "--- เครื่องปรุงรส ---",
+                "น้ำปลา 2 ช้อนโต๊ะ",
+                "น้ำตาลปี๊บ 1 ช้อนโต๊ะ"
+            ],
+            "en": [
+                "--- Main Ingredients ---",
+                "500g Boneless Chicken Thighs (cut into bite-sized pieces)",
+                "2-3 tbsp Thai Red Curry Paste",
+                "400ml Full-Fat Coconut Milk (1 can)",
+                "1 Red Bell Pepper (sliced into strips)",
+                "100g Thai Eggplants (quartered)",
+                "4-5 Kaffir Lime Leaves (torn slightly to release oils)",
+                "1 cup Fresh Thai Basil Leaves",
+                "--- Seasoning ---",
+                "2 tbsp Fish Sauce",
+                "1 tbsp Palm Sugar"
+            ]
+        }
+    },
+    {
+        "id": "c4",
+        "name": {
+            "th": "พะแนงหมูพรีเมียมรสเข้ม",
+            "en": "Panang Pork Edition"
+        },
+        "price": 76,
+        "unit": {
+            "th": "เซตอาหารถ้วยเดี่ยว 6 ถ้วย พร้อมข้าวหอมมะลิ",
+            "en": "Set of 6 Individual Meals served with Jasmine Rice"
+        },
+        "desc": {
+            "th": "แกงพะแนงหมูรสเหนียวข้นหวานมันเค็มกลมกล่อม เนื้อสันนอกหมูหั่นบางเคี่ยวละมุนในน้ำซอสพะแนงเข้มข้นถั่วลิสงบดละเอียด โรยใบมะกรูดซอยสดชื่นคู่ข้าวหอมมะลิ 6 จานแยกสัดส่วนชัดเจน",
+            "en": "A rich, thick, and slightly sweet red curry. Finely sliced tender pork loin simmered in a concentrated Panang sauce, giving it a wonderfully nutty texture, topped with shredded kaffir lime leaves. Delivered with 6 sides of hot Jasmine Rice."
+        },
+        "allergens": [
+            "Pork",
+            "Crustaceans",
+            "Fish"
+        ],
+        "img": "logo.png",
+        "ingredients": {
+            "th": [
+                "เนื้อหมู 500 กรัม",
+                "พริกแกงพะแนง 2-3 ช้อนโต๊ะ",
+                "กะทิ 500 มิลลิลิตร (หัวกะทิและหางกะทิ)",
+                "น้ำตาลปี๊บ 2 ช้อนโต๊ะ",
+                "น้ำปลา 2-3 ช้อนโต๊ะ",
+                "ใบมะกรูด 5 ใบ",
+                "พริกชี้ฟ้าแดง 2 เม็ด"
+            ],
+            "en": [
+                "500g Pork",
+                "2-3 tbsp Panang Curry Paste",
+                "500ml Coconut milk (cream and milk)",
+                "2 tbsp Palm sugar",
+                "2-3 tbsp Fish sauce",
+                "5 Kaffir lime leaves",
+                "2 Red chilies"
+            ]
+        }
+    },
+    {
+        "id": "c5",
+        "name": {
+            "th": "พะแนงไก่ชุ่มน้ำกะทิ",
+            "en": "Panang Chicken Edition"
+        },
+        "price": 76,
+        "unit": {
+            "th": "เซตอาหารถ้วยเดี่ยว 6 ถ้วย พร้อมข้าวหอมมะลิ",
+            "en": "Set of 6 Individual Meals served with Jasmine Rice"
+        },
+        "desc": {
+            "th": "พะแนงไก่เหนียวเหนอะชุ่มกะทิรสชาติเข้มข้นถึงแก่นพะแนง เนื้ออกไก่ชุ่มฉ่ำรสหวานปนเค็มมันหอมกลมกล่อม โรยหน้ามะกรูดสดซอยฝอย เสิร์ฟร้อนพร้อมข้าวหอมมะลินุ่มๆ 6 จานแยกสากล",
+            "en": "A smooth, decadent, and intensely flavorful experience. Succulent chicken pieces beautifully coated in our rich, thick Panang curry paste and coconut cream sauce, garnished with fresh lime leaves. Paired with 6 individual containers of Jasmine Rice."
+        },
+        "allergens": [
+            "Crustaceans",
+            "Fish"
+        ],
+        "img": "logo.png"
+    },
+    {
+        "id": "c6",
+        "name": {
+            "th": "แกงมัสมั่นไก่สูตรวังหลวง",
+            "en": "Massaman Chicken Edition"
+        },
+        "price": 76,
+        "unit": {
+            "th": "เซตอาหารถ้วยเดี่ยว 6 ถ้วย พร้อมข้าวหอมมะลิ",
+            "en": "Set of 6 Individual Meals served with Jasmine Rice"
+        },
+        "desc": {
+            "th": "แกงมัสมั่นไก่รสชาติหวานเค็มกลมกล่อมหอมละมุนสากล เนื้อสะโพกไก่เคี่ยวเนื้อนุ่มเหนียวชุ่มซอสมัสมั่นใส่มันเทศและถั่วลิสงคั่วกรุบกริบ เสิร์ฟพร้อมข้าวหอมมะลิเรียงสวยหอมกรุ่น 6 จานแยกสำหรับปาร์ตี้",
+            "en": "The timeless sweet-and-savory classic made premium. Succulent slices of chicken slow-cooked in our aromatic Massaman spiced curry paste, finished with rich coconut milk, potatoes, and peanuts. Paired with 6 portions of hot Thai Jasmine Rice."
+        },
+        "allergens": [
+            "Peanuts",
+            "Crustaceans"
+        ],
+        "img": "logo.png"
+    }
+]

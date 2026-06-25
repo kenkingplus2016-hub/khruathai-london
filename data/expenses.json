@@ -1,0 +1,29 @@
+[
+    {
+        "id": "exp_1780011828184",
+        "date": "2026-05-29",
+        "item_id": "inv_auto_1780009950854_12",
+        "item_name": "พริกแกงแดง (Red Curry Paste)",
+        "quantity": 1,
+        "unit": "kg",
+        "total_price": 10
+    },
+    {
+        "id": "exp_1780012127252",
+        "date": "2026-05-29",
+        "item_id": "inv_auto_1780009950854_8",
+        "item_name": "น้ำตาลทราย (White Sugar)",
+        "quantity": 2,
+        "unit": "kg",
+        "total_price": 5
+    },
+    {
+        "id": "exp_1780012387592",
+        "date": "2026-05-28",
+        "item_id": "inv_auto_1780009950854_8",
+        "item_name": "น้ำตาลทราย (White Sugar)",
+        "quantity": 2,
+        "unit": "kg",
+        "total_price": 5
+    }
+]

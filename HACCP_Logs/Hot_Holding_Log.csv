@@ -1,0 +1,9 @@
+Date,Staff Name,,,,,,
+Food Item,Time Cooked,Core Temp (C),Time Displayed,Holding Method (Heat / Room Temp),Checked Temp (C),Action Time (Discard/Keep),Sign
+Jasmine Rice,10:00,85,10:15,Heat (Rice Cooker),65,,
+Green Curry,10:30,80,11:00,Heat (Bain-marie),68,,
+Fried Rice,11:00,75,11:30,Room Temp,,13:30 (Discard),
+Pad Thai,11:15,80,11:45,Room Temp,,13:45 (Discard),
+,,,,,,,
+,,,,,,,
+,,,,,,,

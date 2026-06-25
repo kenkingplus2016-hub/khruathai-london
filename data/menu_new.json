@@ -1,0 +1,1126 @@
+[
+    {
+        "id": 1,
+        "name": {
+            "th": "มาตรฐาน",
+            "en": "Standard Signature"
+        },
+        "price": "550",
+        "desc": {
+            "th": "มาตรฐาน สัมผัสรสชาติต้นตำรับไทยแท้กับเซตมาตรฐาน",
+            "en": "Standard Signature. Experience authentic Thai flavors with our standard signature set."
+        },
+        "items": [
+            {
+                "type": {
+                    "th": "ไฮไลท์",
+                    "en": "Highlight"
+                },
+                "th": "เซตมาตรฐาน",
+                "en": "Standard Signature Set",
+                "img": "the-standard-signature.jpg",
+                "ingredients": {
+                    "th": [
+                        "สัมผัสรสชาติต้นตำรับไทยแท้กับเซตมาตรฐาน",
+                        "--- เมนูไฮไลท์ ---",
+                        "เมี่ยงคำปลาซีบาส",
+                        "ส้มตำไทย",
+                        "แกงเขียวหวานไก่",
+                        "ลาบไก่",
+                        "พล่าแซลมอน",
+                        "ผัดผักรวม",
+                        "ข้าวหอมมะลิ",
+                        "ข้าวเหนียวมะม่วง",
+                        "ผลไม้รวม",
+                        "-----------------",
+                        "ความอร่อยมาตรฐานที่ถูกปากทุกคน"
+                    ],
+                    "en": [
+                        "Experience authentic Thai flavors with our standard signature set.",
+                        "--- Menu Highlights ---",
+                        "Miang Kham Sea Bass",
+                        "Som Tum Thai",
+                        "Green Curry Chicken",
+                        "Larb Gai",
+                        "Salmon 'Pla' Salad",
+                        "Stir-fried Mixed Veg",
+                        "Jasmine Rice",
+                        "Mango Sticky Rice",
+                        "Mixed Fruits",
+                        "-----------------------",
+                        "A classic standard of deliciousness."
+                    ]
+                }
+            },
+            {
+                "type": {
+                    "th": "ของว่าง",
+                    "en": "Starter"
+                },
+                "th": "เมี่ยงคำปลาซีบาส",
+                "en": "Miang Kham Sea Bass",
+                "img": "58f1df5c-0f97-44c0-8327-02b4686f8f8b.jpg",
+                "ingredients": {
+                    "th": [
+                        "เนื้อปลาซีบาสทอด (หั่นเต๋า)",
+                        "--- เครื่องเคียงเมี่ยงคำ ---",
+                        "ใบชะพลู",
+                        "มะพร้าวคั่ว",
+                        "ถั่วลิสงคั่ว",
+                        "กุ้งแห้งคั่ว",
+                        "ขิง, มะนาว, หอมแดง",
+                        "พริกขี้หนูหั่น",
+                        "--- ส่วนผสมน้ำจิ้มเมี่ยงคำ ---",
+                        "น้ำตาลมะพร้าว",
+                        "กะปิย่าง",
+                        "มะพร้าวคั่ว",
+                        "ถั่วลิสงคั่ว",
+                        "กุ้งแห้งคั่ว",
+                        "ขิงซอยคั่ว",
+                        "ข่าซอยคั่ว",
+                        "ตะไคร้ซอยคั่ว",
+                        "เกลือ (สำหรับปรุงรสเค็ม)"
+                    ],
+                    "en": [
+                        "Fried Diced Sea Bass",
+                        "--- Miang Kham Accompaniments ---",
+                        "Wild Betel Leaves (Chaplu)",
+                        "Roasted Coconut",
+                        "Roasted Peanuts",
+                        "Roasted Dried Shrimp",
+                        "Ginger, Lime, Shallots",
+                        "Sliced Bird's Eye Chili",
+                        "--- Miang Kham Sauce Ingredients ---",
+                        "Coconut Sugar",
+                        "Grilled Shrimp Paste",
+                        "Roasted Coconut",
+                        "Roasted Peanuts",
+                        "Roasted Dried Shrimp",
+                        "Roasted Sliced Ginger",
+                        "Roasted Sliced Galangal",
+                        "Roasted Sliced Lemongrass",
+                        "Salt (for seasoning)"
+                    ]
+                }
+            },
+            {
+                "type": {
+                    "th": "ของว่าง",
+                    "en": "Starter"
+                },
+                "th": "ส้มตำไทย",
+                "en": "Som Tum Thai",
+                "img": "16e55889-df22-4b4b-8d4b-493784a03d23.jpg",
+                "ingredients": {
+                    "th": [
+                        "มะละกอดิบสับ 100g",
+                        "ถั่วฝักยาว",
+                        "มะเขือเทศ",
+                        "พริกขี้หนู",
+                        "กระเทียม",
+                        "น้ำปลา",
+                        "น้ำมะนาว",
+                        "น้ำตาลปี๊บ",
+                        "กุ้งแห้ง"
+                    ],
+                    "en": [
+                        "Chopped green papaya 100g",
+                        "Long beans",
+                        "Tomatoes",
+                        "Bird's eye chili",
+                        "Garlic",
+                        "Fish sauce",
+                        "Lime juice",
+                        "Palm sugar",
+                        "Dried shrimp"
+                    ]
+                }
+            },
+            {
+                "type": {
+                    "th": "จานหลัก",
+                    "en": "Main"
+                },
+                "th": "แกงเขียวหวานไก่",
+                "en": "Green Curry Chicken",
+                "img": "a763fe7b-c7e7-4b7c-8a93-5da8057971ad.jpg",
+                "ingredients": {
+                    "th": [
+                        "เนื้ออก/สะโพกไก่ 100g",
+                        "มะเขือเปราะ",
+                        "กะทิ",
+                        "ใบโหระพา",
+                        "พริกชี้ฟ้า",
+                        "ใบมะกรูด",
+                        "--- เครื่องแกงเขียวหวาน ---",
+                        "พริกชี้ฟ้าเขียว",
+                        "พริกขี้หนูเขียว",
+                        "ตะไคร้ซอย",
+                        "ข่าแก่สับ",
+                        "ผิวมะกรูด",
+                        "รากผักชี/ต้นผักชี",
+                        "หอมแดง",
+                        "กระเทียม",
+                        "กะปิอย่างดี",
+                        "ลูกผักชี & ยี่หร่าคั่ว",
+                        "เกลือสมุทร"
+                    ],
+                    "en": [
+                        "Chicken breast/thigh 100g",
+                        "Thai eggplant",
+                        "Coconut milk",
+                        "Sweet basil",
+                        "Thai chili",
+                        "Kaffir lime leaves",
+                        "--- Green Curry Paste ---",
+                        "Green spur chili",
+                        "Green bird's eye chili",
+                        "Sliced lemongrass",
+                        "Minced galangal",
+                        "Kaffir lime zest",
+                        "Coriander root/stem",
+                        "Shallots",
+                        "Garlic",
+                        "Fine shrimp paste",
+                        "Coriander & Cumin seeds",
+                        "Sea salt"
+                    ]
+                }
+            },
+            {
+                "type": {
+                    "th": "จานหลัก",
+                    "en": "Main"
+                },
+                "th": "ลาบไก่",
+                "en": "Larb Gai",
+                "img": "ec66c9e5-348b-49d0-b53a-94f58b3b941f.jpg",
+                "ingredients": {
+                    "th": [
+                        "ไก่สับ",
+                        "หอมแดงซอย",
+                        "ผักชีฝรั่ง/ผักชี",
+                        "ใบสะระแหน่",
+                        "ข้าวคั่ว",
+                        "พริกป่น",
+                        "น้ำปลา",
+                        "น้ำมะนาว/น้ำมะขามเปียก",
+                        "หอมเจียว"
+                    ],
+                    "en": [
+                        "Minced chicken",
+                        "Sliced shallots",
+                        "Culantro/Coriander",
+                        "Mint leaves",
+                        "Roasted rice powder",
+                        "Chili flakes",
+                        "Fish sauce",
+                        "Lime juice / Tamarind paste",
+                        "Fried shallots"
+                    ]
+                }
+            },
+            {
+                "type": {
+                    "th": "จานหลัก",
+                    "en": "Main"
+                },
+                "th": "พล่าปลาแซลมอน",
+                "en": "Salmon 'Pla' Salad",
+                "img": "005dbfc3-c862-4aac-a9e7-57ada41bcfa5.jpg",
+                "ingredients": {
+                    "th": [
+                        "เนื้อแซลมอนสด",
+                        "ผักชี",
+                        "กระเทียม",
+                        "ตะไคร้ซอย",
+                        "หอมแดงซอย",
+                        "น้ำพริกเผา",
+                        "น้ำมะนาว",
+                        "น้ำปลา",
+                        "ใบสะระแหน่",
+                        "พริกขี้หนูซอย",
+                        "ใบมะกรูดซอย"
+                    ],
+                    "en": [
+                        "Fresh salmon",
+                        "Coriander",
+                        "Garlic",
+                        "Sliced lemongrass",
+                        "Sliced shallots",
+                        "Chili paste",
+                        "Lime juice",
+                        "Fish sauce",
+                        "Mint leaves",
+                        "Sliced bird's eye chili",
+                        "Sliced kaffir lime leaves"
+                    ]
+                }
+            },
+            {
+                "type": {
+                    "th": "จานหลัก",
+                    "en": "Main"
+                },
+                "th": "ผัดผักรวมน้ำมันหอย",
+                "en": "Stir-fried Mixed Veg",
+                "img": "f7c5f80d-eea3-43ea-b086-42896599d5eb.jpg",
+                "ingredients": {
+                    "th": [
+                        "บรอกโคลี",
+                        "ดอกกะหล่ำ",
+                        "แครอท",
+                        "ข้าวโพดอ่อน",
+                        "ถั่วลันเตา",
+                        "น้ำมันหอย",
+                        "กระเทียมสับ",
+                        "ซีอิ๊วขาว",
+                        "น้ำตาลทราย",
+                        "ผงปรุงรส"
+                    ],
+                    "en": [
+                        "Broccoli",
+                        "Cauliflower",
+                        "Carrots",
+                        "Baby corn",
+                        "Snow peas",
+                        "Oyster sauce",
+                        "Minced garlic",
+                        "Light soy sauce",
+                        "Sugar",
+                        "Seasoning powder"
+                    ]
+                }
+            },
+            {
+                "type": {
+                    "th": "จานหลัก",
+                    "en": "Main"
+                },
+                "th": "ข้าวหอมมะลิ",
+                "en": "Jasmine Rice",
+                "img": "4b00ee9d-26c8-45f9-9f0d-e4014da7e1b2.jpg",
+                "ingredients": {
+                    "th": [
+                        "ข้าวหอมมะลิคัดพิเศษ 100%"
+                    ],
+                    "en": [
+                        "100% Premium Jasmine Rice"
+                    ]
+                }
+            },
+            {
+                "type": {
+                    "th": "ของหวาน",
+                    "en": "Dessert"
+                },
+                "th": "ข้าวเหนียวมะม่วงน้ำดอกไม้",
+                "en": "Mango Sticky Rice (Nam Dok Mai)",
+                "img": "mango sticky rice.jpeg",
+                "ingredients": {
+                    "th": [
+                        "มะม่วงน้ำดอกไม้สุก",
+                        "ข้าวเหนียว",
+                        "น้ำกะทิ",
+                        "น้ำตาล",
+                        "เกลือ",
+                        "ถั่วเขียวคั่ว/งาขาวคั่ว"
+                    ],
+                    "en": [
+                        "Ripe Nam Dok Mai Mango",
+                        "Sticky rice",
+                        "Coconut milk",
+                        "Sugar",
+                        "Salt",
+                        "Roasted mung beans / Roasted white sesame seeds"
+                    ]
+                }
+            },
+            {
+                "type": {
+                    "th": "ของหวาน",
+                    "en": "Dessert"
+                },
+                "th": "ผลไม้รวม",
+                "en": "Mixed Fruits",
+                "img": "31069432-168d-44ec-b0e9-80f828aa322e.jpg",
+                "ingredients": {
+                    "th": [
+                        "ผลไม้ตามฤดูกาลสดใหม่"
+                    ],
+                    "en": [
+                        "Fresh seasonal fruits"
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": {
+            "th": "เซท เอกลักษณ์",
+            "en": "The Signature"
+        },
+        "price": "650",
+        "desc": {
+            "th": "เอกลักษณ์ สุนทรียภาพแห่งรสสัมผัสและความสดชื่น",
+            "en": "The Signature. The aesthetics of taste and freshness."
+        },
+        "items": [
+            {
+                "type": {
+                    "th": "ไฮไลท์",
+                    "en": "Highlight"
+                },
+                "th": "เซทเอกลักษณ์",
+                "en": "The Signature Set",
+                "img": "the-signature.jpg",
+                "ingredients": {
+                    "th": [
+                        "สุนทรียภาพแห่งรสสัมผัสและความสดชื่น",
+                        "--- เมนูไฮไลท์ ---",
+                        "ข้าวเกรียบปากหม้อ",
+                        "ยำส้มโอกุ้งสดพอดีคำ",
+                        "แกงมัสมั่นไก่",
+                        "ยำวุ้นเส้นกุ้งสด",
+                        "ผัดผักรวมเนื้อสับ",
+                        "ข้าวหอมมะลิ",
+                        "ลอดช่องสิงคโปร์",
+                        "ผลไม้รวม",
+                        "-----------------",
+                        "เอกลักษณ์แห่งรสชาติที่ผสมผสานอย่างลงตัว"
+                    ],
+                    "en": [
+                        "The aesthetics of taste and freshness.",
+                        "--- Menu Highlights ---",
+                        "Rice Skin Dumplings",
+                        "Pomelo Salad with Shrimp",
+                        "Massaman Chicken",
+                        "Glass Noodle Salad with Shrimp",
+                        "Stir-fried Beef with Veg",
+                        "Jasmine Rice",
+                        "Lod Chong Singapore",
+                        "Mixed Fruits",
+                        "-----------------------",
+                        "Experience the perfect harmony of authentic flavors."
+                    ]
+                }
+            },
+            {
+                "type": {
+                    "th": "ของว่าง",
+                    "en": "Starter"
+                },
+                "th": "ข้าวเกรียบปากหม้อ",
+                "en": "Rice Skin Dumplings",
+                "img": "58b9011b-b7e8-4704-a7ad-ac8377965b8a.jpg",
+                "ingredients": {
+                    "th": [
+                        "ส่วนผสมไส้",
+                        "ส่วนผสมไส้",
+                        "ส่วนผสมไส้",
+                        "ส่วนผสมไส้",
+                        "ส่วนผสมไส้",
+                        "ส่วนผสมไส้",
+                        "ส่วนผสมไส้",
+                        "ส่วนผสมไส้",
+                        "ส่วนผสมไส้",
+                        "ส่วนผสมไส้",
+                        "ส่วนผสมตัวแป้ง (ต่อ 1 สี)",
+                        "ส่วนผสมตัวแป้ง (ต่อ 1 สี)",
+                        "ส่วนผสมตัวแป้ง (ต่อ 1 สี)",
+                        "ส่วนผสมตัวแป้ง (ต่อ 1 สี)",
+                        "ส่วนผสมกะทิราด",
+                        "ส่วนผสมกะทิราด",
+                        "ส่วนผสมกะทิราด",
+                        "เครื่องเคียง",
+                        "เครื่องเคียง",
+                        "เครื่องเคียง"
+                    ],
+                    "en": [
+                        "Skin: Rice flour, Tapioca starch, Water",
+                        "Filling: Sweet preserved radish, Roasted peanuts, Shallots, Garlic, Coriander root, Pepper, Coconut sugar",
+                        "Sides: Fried garlic, Lettuce, Bird's eye chili, Coriander"
+                    ]
+                }
+            },
+            {
+                "type": {
+                    "th": "ของว่าง",
+                    "en": "Starter"
+                },
+                "th": "ยำส้มโอกุ้งสดพอดีคำ",
+                "en": "Pomelo Salad with Shrimp",
+                "img": "c9dcd15e-891c-455d-ae3c-2c37f74c1b96.jpg",
+                "ingredients": {
+                    "th": [
+                        "ส้มโอ (Pomelo)",
+                        "กุ้งแชบ๊วยหรือกุ้งลายเสือ (King Prawns)",
+                        "เครื่องยำ: มะพร้าวคั่ว, ถั่วลิสงคั่วบด, หอมแดงเจียว, พริกแห้งทอด, ใบมะกรูดซอย",
+                        "น้ำยำ: น้ำพริกเผา, กระเทียมสับ, รากผักชี, น้ำตาลมะพร้าว, น้ำปลา, น้ำมะนาวสด"
+                    ],
+                    "en": [
+                        "Pomelo",
+                        "King Prawns",
+                        "Salad Toppings: Roasted coconut, Roasted peanuts, Fried shallots, Fried dried chili, Sliced kaffir lime leaves",
+                        "Salad Dressing: Chili paste, Minced garlic, Coriander root, Coconut sugar, Fish sauce, Fresh lime juice"
+                    ]
+                }
+            },
+            {
+                "type": {
+                    "th": "จานหลัก",
+                    "en": "Main"
+                },
+                "th": "แกงมัสมันไก่",
+                "en": "Massaman Chicken",
+                "img": "a165f8a8-9de3-432d-8fe2-1760a2f1710b.jpg",
+                "ingredients": {
+                    "th": [
+                        "สะโพกไก่ (Chicken Thigh)",
+                        "มันฝรั่ง",
+                        "หอมใหญ่",
+                        "ถั่วลิสงคั่ว",
+                        "น้ำตาลมะพร้าว",
+                        "น้ำปลา",
+                        "น้ำมะขามเปียก",
+                        "--- เครื่องแกงมัสมัน ---",
+                        "พริกแห้งเม็ดใหญ่",
+                        "หอมแดงเผา, กระเทียมเผา",
+                        "ข่าซอยคั่ว, ตะไคร้ซอยคั่ว",
+                        "รากผักชี, เกลือ, กะปิอย่างดี",
+                        "ลูกผักชี, ยี่หร่า",
+                        "อบเชย, กานพลู, ลูกกระวาน, ใบกระวาน, ลูกจันทน์"
+                    ],
+                    "en": [
+                        "Chicken Thigh",
+                        "Potatoes",
+                        "Onions",
+                        "Roasted peanuts",
+                        "Coconut sugar",
+                        "Fish sauce",
+                        "Tamarind paste",
+                        "--- Massaman Curry Paste ---",
+                        "Large dried chili",
+                        "Roasted shallots, Roasted garlic",
+                        "Roasted galangal, Roasted lemongrass",
+                        "Coriander root, Salt, Fine shrimp paste",
+                        "Coriander seeds, Cumin",
+                        "Cinnamon, Cloves, Cardamom, Bay leaves, Nutmeg"
+                    ]
+                }
+            },
+            {
+                "type": {
+                    "th": "จานหลัก",
+                    "en": "Main"
+                },
+                "th": "ยำวุ้นเส้นกุ้ง",
+                "en": "Glass Noodle Salad with Shrimp",
+                "img": "fd82bc4b-8027-41f2-a6f9-97c217d7297f.jpg",
+                "ingredients": {
+                    "th": [
+                        "วุ้นเส้น",
+                        "กุ้งสด",
+                        "หมูสับหรือไก่สับ",
+                        "หอมแดง",
+                        "ขึ้นฉ่าย",
+                        "มะเขือเทศเชอร์รี่",
+                        "พริกขี้หนูสด",
+                        "ต้นหอมซอย",
+                        "น้ำยำ: กระเทียม, รากผักชี, มะนาว, น้ำปลา, น้ำส้มสายชู, น้ำตาลทราย, ซอสศรีราชา, พริกขี้หนูสด"
+                    ],
+                    "en": [
+                        "Glass Noodle",
+                        "Fresh Prawns",
+                        "Minced pork or chicken",
+                        "Shallots",
+                        "Chinese celery",
+                        "Cherry tomatoes",
+                        "Fresh bird's eye chili",
+                        "Sliced green onion",
+                        "Salad Dressing: Garlic, Coriander root, Lime, Fish sauce, Vinegar, Sugar, Sriracha sauce, Fresh bird's eye chili"
+                    ]
+                }
+            },
+            {
+                "type": {
+                    "th": "จานหลัก",
+                    "en": "Main"
+                },
+                "th": "ผัดเนื้อผักรวมน้ำมันหอย",
+                "en": "Stir-fried Beef with Veg",
+                "img": "74845001-324c-482d-8a79-c1c5d8d0a68f.jpg",
+                "ingredients": {
+                    "th": [
+                        "เนื้อวัวส่วน Sirloin หรือ Ribeye",
+                        "บรอกโคลี, แครอท, ดอกกะหล่ำ, ถั่วลันเตาหวาน, เห็ดหอมสด, ข้าวโพดอ่อน, พริกหวานสีแดง/เหลือง",
+                        "ซอส: น้ำมันหอย, ซีอิ๊วขาว, กระเทียมสับ, พริกไทยดำ, แป้งข้าวโพด, ผงปรุงรส"
+                    ],
+                    "en": [
+                        "Sirloin or Ribeye Beef",
+                        "Broccoli, Carrots, Cauliflower, Snap peas, Fresh shiitake mushrooms, Baby corn, Red/Yellow bell peppers",
+                        "Sauce: Oyster sauce, Light soy sauce, Minced garlic, Black pepper, Corn starch, Seasoning powder"
+                    ]
+                }
+            },
+            {
+                "type": {
+                    "th": "จานหลัก",
+                    "en": "Main"
+                },
+                "th": "ข้าวหอมมะลิ",
+                "en": "Jasmine Rice",
+                "img": "4b00ee9d-26c8-45f9-9f0d-e4014da7e1b2.jpg"
+            },
+            {
+                "type": {
+                    "th": "ของหวาน",
+                    "en": "Dessert"
+                },
+                "th": "ลอดช่องสิงคโปร์",
+                "en": "Lod Chong Singapore",
+                "img": "Lod Chong Singapore.jpg",
+                "ingredients": {
+                    "th": [
+                        "เส้นลอดช่องใบเตย",
+                        "กะทิ",
+                        "น้ำตาลมะพร้าว",
+                        "เกลือ",
+                        "ขนุน",
+                        "มะพร้าวอ่อน"
+                    ],
+                    "en": [
+                        "Pandan Cendol noodles",
+                        "Coconut milk",
+                        "Coconut sugar",
+                        "Salt",
+                        "Jackfruit",
+                        "Young coconut"
+                    ]
+                }
+            },
+            {
+                "type": {
+                    "th": "ของหวาน",
+                    "en": "Dessert"
+                },
+                "th": "ผลไม้รวม",
+                "en": "Mixed Fruits",
+                "img": "31069432-168d-44ec-b0e9-80f828aa322e.jpg"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": {
+            "th": "มรดกไทย",
+            "en": "The Thai Heritage"
+        },
+        "price": "650",
+        "desc": {
+            "th": "มรดกไทย หลอมรสชาติวิจิตร ในหนึ่งคำสัมผัส",
+            "en": "The Thai Heritage. Exquisite flavors in a single touch."
+        },
+        "items": [
+            {
+                "type": {
+                    "th": "ไฮไลท์",
+                    "en": "Highlight"
+                },
+                "th": "เซตมรดกไทย",
+                "en": "The Thai Heritage Set",
+                "img": "the-thai-heritage.jpg",
+                "ingredients": {
+                    "th": [
+                        "หลอมรสชาติวิจิตร ในหนึ่งคำสัมผัส",
+                        "--- เมนูไฮไลท์ ---",
+                        "เมี่ยงคำส้มโอกุ้ง",
+                        "หมูย่างหมักนมสด",
+                        "แกงเผ็ดไก่",
+                        "ยำปลาหมึกยัดไส้",
+                        "ผัดผักรวม",
+                        "ข้าวหอมมะลิ",
+                        "ทับทิมกรอบ",
+                        "ผลไม้รวม",
+                        "-----------------",
+                        "สัมผัสความประณีตแห่งรสชาติที่สืบทอดมาอย่างยาวนาน"
+                    ],
+                    "en": [
+                        "Exquisite flavors in a single touch.",
+                        "--- Menu Highlights ---",
+                        "Pomelo Miang Kham with Shrimp",
+                        "Pork Skewer with Milk",
+                        "Red Curry with Chicken",
+                        "Spicy Stuffed Squid salad",
+                        "Stir-fried Mixed Veg",
+                        "Jasmine Rice",
+                        "Tub Tim Krop",
+                        "Mixed Fruits",
+                        "-----------------------",
+                        "Experience the refined taste of culinary heritage."
+                    ]
+                }
+            },
+            {
+                "type": {
+                    "th": "ของว่าง",
+                    "en": "Starter"
+                },
+                "th": "เมี่ยงคำส้มโอกุ้ง",
+                "en": "Pomelo Miang Kham with Shrimp",
+                "img": "pomeloleaf wrap.jpg",
+                "ingredients": {
+                    "th": [
+                        "กุ้งทอด",
+                        "--- เครื่องเคียงเมี่ยงคำ ---",
+                        "ใบชะพลู และผักสลัดกรอบๆ",
+                        "ส้มโอ (Pomelo)",
+                        "มะพร้าวคั่ว",
+                        "ถั่วลิสงคั่ว",
+                        "ขิง, มะนาว, หอมแดง",
+                        "พริกขี้หนู",
+                        "--- ส่วนผสมน้ำจิ้มเมี่ยงคำ ---",
+                        "น้ำตาลมะพร้าว",
+                        "กะปิย่าง",
+                        "มะพร้าวคั่ว",
+                        "ถั่วลิสงคั่ว",
+                        "กุ้งแห้งคั่ว",
+                        "ขิงซอยคั่ว",
+                        "ข่าซอยคั่ว",
+                        "ตะไคร้ซอยคั่ว"
+                    ],
+                    "en": [
+                        "Fried Shrimp",
+                        "--- Miang Kham Accompaniments ---",
+                        "Wild Betel Leaves & Crispy Salad",
+                        "Pomelo",
+                        "Roasted Coconut",
+                        "Roasted Peanuts",
+                        "Ginger, Lime, Shallots",
+                        "Bird's Eye Chili",
+                        "--- Miang Kham Sauce Ingredients ---",
+                        "Coconut Sugar",
+                        "Grilled Shrimp Paste",
+                        "Roasted Coconut",
+                        "Roasted Peanuts",
+                        "Roasted Dried Shrimp",
+                        "Roasted Sliced Ginger",
+                        "Roasted Sliced Galangal",
+                        "Roasted Sliced Lemongrass"
+                    ]
+                }
+            },
+            {
+                "type": {
+                    "th": "ของว่าง",
+                    "en": "Starter"
+                },
+                "th": "หมูปิ้งนมสด",
+                "en": "Pork Skewer with Milk",
+                "img": "pork skewers.jpg"
+            },
+            {
+                "type": {
+                    "th": "จานหลัก",
+                    "en": "Main"
+                },
+                "th": "แกงแดงไก่",
+                "en": "Red Curry with Chicken",
+                "img": "red curry prok.jpg"
+            },
+            {
+                "type": {
+                    "th": "จานหลัก",
+                    "en": "Main"
+                },
+                "th": "ยำแซ่บปลาหมึกยัดไส้",
+                "en": "Spicy Stuffed Squid",
+                "img": "spicy stuffed squid salad.jpg"
+            },
+            {
+                "type": {
+                    "th": "จานหลัก",
+                    "en": "Main"
+                },
+                "th": "ผัดผักรวมน้ำมันหอย",
+                "en": "Stir-fried Mixed Veg",
+                "img": "f7c5f80d-eea3-43ea-b086-42896599d5eb.jpg"
+            },
+            {
+                "type": {
+                    "th": "จานหลัก",
+                    "en": "Main"
+                },
+                "th": "ข้าวหอมมะลิ",
+                "en": "Jasmine Rice",
+                "img": "4b00ee9d-26c8-45f9-9f0d-e4014da7e1b2.jpg"
+            },
+            {
+                "type": {
+                    "th": "ของหวาน",
+                    "en": "Dessert"
+                },
+                "th": "ทับทิมกรอบ",
+                "en": "Tub Tim Krop",
+                "img": "tub tim krop.jpg",
+                "ingredients": {
+                    "th": [
+                        "ส่วนผสมตัวทับทิมกรอบ",
+                        "ส่วนผสมตัวทับทิมกรอบ",
+                        "ส่วนผสมตัวทับทิมกรอบ",
+                        "ส่วนผสมน้ำกะทิ",
+                        "ส่วนผสมน้ำกะทิ",
+                        "ส่วนผสมน้ำกะทิ",
+                        "ส่วนผสมน้ำกะทิ",
+                        "ส่วนผสมน้ำกะทิ",
+                        "เครื่องเคียง",
+                        "เครื่องเคียง"
+                    ],
+                    "en": [
+                        "(TH) ส่วนผสมตัวทับทิมกรอบ",
+                        "(TH) ส่วนผสมตัวทับทิมกรอบ",
+                        "(TH) ส่วนผสมตัวทับทิมกรอบ",
+                        "(TH) ส่วนผสมน้ำกะทิ",
+                        "(TH) ส่วนผสมน้ำกะทิ",
+                        "(TH) ส่วนผสมน้ำกะทิ",
+                        "(TH) ส่วนผสมน้ำกะทิ",
+                        "(TH) ส่วนผสมน้ำกะทิ",
+                        "(TH) เครื่องเคียง",
+                        "(TH) เครื่องเคียง"
+                    ]
+                }
+            },
+            {
+                "type": {
+                    "th": "ของหวาน",
+                    "en": "Dessert"
+                },
+                "th": "ผลไม้รวม",
+                "en": "Mixed Fruits",
+                "img": "31069432-168d-44ec-b0e9-80f828aa322e.jpg"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": {
+            "th": "วิจิตรศิลป์",
+            "en": "The Royal Artisan"
+        },
+        "price": "650",
+        "desc": {
+            "th": "วิจิตรศิลป์ รสสัมผัสแห่งราชสำรับไทยที่ประณีตและงดงาม",
+            "en": "The Royal Artisan. Experience the exquisite taste of Royal Thai cuisine, meticulously crafted for perfection."
+        },
+        "items": [
+            {
+                "type": {
+                    "th": "ไฮไลท์",
+                    "en": "Highlight"
+                },
+                "th": "เซตวิจิตรศิลป์",
+                "en": "The Royal Artisan Set",
+                "img": "the-royal-artisan.jpg",
+                "ingredients": {
+                    "th": [
+                        "รสสัมผัสแห่งราชสำรับไทยที่ประณีตและงดงาม",
+                        "--- เมนูไฮไลท์ ---",
+                        "ยำส้มโอ",
+                        "ม้าฮ่อ",
+                        "แกงพะแนงหมู",
+                        "ปลาซีบาสลุยสวน",
+                        "ผัดผักรวมกุ้งน้ำมันหอย",
+                        "บวชชีกล้วย",
+                        "ผลไม้รวม",
+                        "-----------------",
+                        "สัมผัสความวิจิตรบรรจงในทุกคำที่ลิ้มลอง",
+                        "ยกระดับมื้อพิเศษของคุณด้วยเสน่ห์แห่งอาหารไทยต้นตำรับ"
+                    ],
+                    "en": [
+                        "Experience the exquisite taste of Royal Thai cuisine.",
+                        "--- Menu Highlights ---",
+                        "Pomelo Salad",
+                        "Ma Hor",
+                        "Panang Curry with Pork",
+                        "Sea Bass Fish Larb",
+                        "Stir-fried Veg with Shrimp",
+                        "Banana in Coconut Milk",
+                        "Mixed Fruits",
+                        "-----------------------",
+                        "Meticulously crafted for perfection.",
+                        "Elevate your special occasion with authentic Thai charm."
+                    ]
+                }
+            },
+            {
+                "type": {
+                    "th": "ของว่าง",
+                    "en": "Starter"
+                },
+                "th": "ยำส้มโอ",
+                "en": "Pomelo Salad",
+                "img": "c9dcd15e-891c-455d-ae3c-2c37f74c1b96.jpg"
+            },
+            {
+                "type": {
+                    "th": "ของว่าง",
+                    "en": "Starter"
+                },
+                "th": "ม้าฮ่อ",
+                "en": "Ma Hor",
+                "img": "ma ho.jpg"
+            },
+            {
+                "type": {
+                    "th": "จานหลัก",
+                    "en": "Main"
+                },
+                "th": "แกงพะแนงหมู",
+                "en": "Panang Curry with Pork",
+                "img": "panang curry.jpg"
+            },
+            {
+                "type": {
+                    "th": "จานหลัก",
+                    "en": "Main"
+                },
+                "th": "ปลาซีบาสลุยสวน",
+                "en": "Sea Bass Fish Larb",
+                "img": "pla seabass lui suan.jpg"
+            },
+            {
+                "type": {
+                    "th": "จานหลัก",
+                    "en": "Main"
+                },
+                "th": "ผัดผักรวมกุ้งน้ำมันหอย",
+                "en": "Stir-fried Veg with Shrimp",
+                "img": "Stir-fried Mixed Vegetables with Shrimp.jpg"
+            },
+            {
+                "type": {
+                    "th": "จานหลัก",
+                    "en": "Main"
+                },
+                "th": "ข้าวหอมมะลิ",
+                "en": "Jasmine Rice",
+                "img": "4b00ee9d-26c8-45f9-9f0d-e4014da7e1b2.jpg"
+            },
+            {
+                "type": {
+                    "th": "ของหวาน",
+                    "en": "Dessert"
+                },
+                "th": "บวชชีกล้วย",
+                "en": "Banana in Coconut Milk",
+                "img": "Banana with Condensed Milk.jpg"
+            },
+            {
+                "type": {
+                    "th": "ของหวาน",
+                    "en": "Dessert"
+                },
+                "th": "ผลไม้รวม",
+                "en": "Mixed Fruits",
+                "img": "31069432-168d-44ec-b0e9-80f828aa322e.jpg"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": {
+            "th": "สุนทรีย์ร่วมสมัย",
+            "en": "The Modernist Aesthetic"
+        },
+        "price": "750",
+        "desc": {
+            "th": "สุนทรีย์ร่วมสมัย การนำเสนอสุดหรูหราพร้อมรสชาติไทยแท้ที่จัดจ้าน",
+            "en": "A sophisticated catering set designed to elevate your event with luxurious presentation and the bold, authentic flavors of Thailand. Perfect for corporate gatherings, weddings, private celebrations, and exclusive events."
+        },
+        "items": [
+            {
+                "type": {
+                    "th": "ไฮไลท์",
+                    "en": "Highlight"
+                },
+                "th": "เซตสุนทรีย์ร่วมสมัย",
+                "en": "The Modernist Aesthetic Set",
+                "img": "the-modernist-aesthetic.jpg",
+                "ingredients": {
+                    "th": [
+                        "สุนทรีย์ร่วมสมัย การนำเสนอสุดหรูหราพร้อมรสชาติไทยแท้ที่จัดจ้าน",
+                        "--- เมนูไฮไลท์ ---",
+                        "ปูผัดผงกะหรี่",
+                        "คอหมูย่าง",
+                        "หมูสะเต๊ะ",
+                        "แซลมอนลุยสวนเกี๊ยวกรอบ",
+                        "แกงหมูเทโพ",
+                        "ข้าวเหนียวมะม่วง",
+                        "ผลไม้รวมตามฤดูกาล",
+                        "-----------------",
+                        "ประสบการณ์แห่งรสชาติไทยร่วมสมัย คัดสรรวัตถุดิบพรีเมียม",
+                        "เหมาะสำหรับงานจัดเลี้ยงองค์กร งานแต่งงาน และงานสังสรรค์ส่วนตัว"
+                    ],
+                    "en": [
+                        "A sophisticated catering set designed to elevate your event with luxurious presentation and the bold, authentic flavors of Thailand.",
+                        "--- Menu Highlights ---",
+                        "Crab Curry Powder Stir-Fry (Pu Pad Pong Karee)",
+                        "Grilled Pork Neck",
+                        "Pork Satay",
+                        "Salmon Larb",
+                        "Tae Po Wonton Pork Curry",
+                        "Mango Sticky Rice",
+                        "Seasonal Mixed Fruits",
+                        "-----------------------",
+                        "Experience Modern Thai Luxury",
+                        "Thoughtfully curated with premium ingredients and elegant presentation.",
+                        "Perfect for corporate gatherings, weddings, private celebrations, and exclusive events."
+                    ]
+                }
+            },
+            {
+                "type": {
+                    "th": "ของว่าง",
+                    "en": "Starter"
+                },
+                "th": "แซลมอนลุยสวนเกี๊ยวกรอบ",
+                "en": "Salmon Lui Suan Wonton",
+                "img": "e0ecdb4e-2584-48ef-ab8e-7292ae447711.jpg",
+                "ingredients": {
+                    "th": [
+                        "เนื้อปลาแซลมอน 150-200 กรัม",
+                        "แป้งทอดกรอบ (สำหรับคลุกบางๆ) 2 ช้อนโต๊ะ",
+                        "เกลือและพริกไทยป่นเล็กน้อย",
+                        "--- เครื่องสมุนไพรลุยสวน ---",
+                        "ตะไคร้ซอยบาง 2 ช้อนโต๊ะ",
+                        "หอมแดงหรือหอมแขกหั่นเต๋า 2-3 ช้อนโต๊ะ",
+                        "ขิงแก่หั่นเต๋าเล็ก 1 ช้อนโต๊ะ",
+                        "พริกขี้หนูสวนซอย (ตามชอบ)",
+                        "ใบมะกรูดซอยฝอย 1 ช้อนโต๊ะ",
+                        "สะระแหน่และผักชีฝรั่งซอย",
+                        "ถั่วลิสงคั่ว หรือเม็ดมะม่วงหิมพานต์ 2 ช้อนโต๊ะ",
+                        "--- น้ำยำลุยสวนรสเด็ด ---",
+                        "น้ำปลา 1 ช้อนโต๊ะ",
+                        "น้ำมะนาวสด 1.5 ช้อนโต๊ะ",
+                        "น้ำตาลปี๊บ 1 ช้อนโต๊ะ",
+                        "น้ำพริกเผา 1/2 ช้อนโต๊ะ"
+                    ],
+                    "en": [
+                        "150-200g Fresh salmon",
+                        "2 Tbsp Crispy flour (for light coating)",
+                        "Pinch of salt and pepper",
+                        "--- Herb Mix ---",
+                        "2 Tbsp Thinly sliced lemongrass",
+                        "2-3 Tbsp Diced shallots",
+                        "1 Tbsp Diced old ginger",
+                        "Sliced bird's eye chili (to taste)",
+                        "1 Tbsp Finely sliced kaffir lime leaves",
+                        "Sliced mint and cilantro",
+                        "2 Tbsp Roasted peanuts or cashew nuts",
+                        "--- Spicy Salad Dressing ---",
+                        "1 Tbsp Fish sauce",
+                        "1.5 Tbsp Fresh lime juice",
+                        "1 Tbsp Palm sugar",
+                        "1/2 Tbsp Roasted chili paste"
+                    ]
+                }
+            },
+            {
+                "type": {
+                    "th": "ของว่าง",
+                    "en": "Starter"
+                },
+                "th": "หมูสะเต๊ะ",
+                "en": "Pork Satay",
+                "img": "90fda180-3c60-4ede-b8f6-d23ece956883.jpg"
+            },
+            {
+                "type": {
+                    "th": "จานหลัก",
+                    "en": "Main"
+                },
+                "th": "แกงหมูเทโพ",
+                "en": "Tae Po Pork Curry",
+                "img": "Gaeng Moo Tae Po.jpg"
+            },
+            {
+                "type": {
+                    "th": "จานหลัก",
+                    "en": "Main"
+                },
+                "th": "คอหมูย่าง",
+                "en": "Grilled Pork Neck",
+                "img": "Grilled Pork Neck.jpg"
+            },
+            {
+                "type": {
+                    "th": "จานหลัก",
+                    "en": "Main"
+                },
+                "th": "ปูผัดผงกะหรี่",
+                "en": "Crab Curry",
+                "img": "de8fafb8-521d-4420-9913-62aafbe3f5e4.jpg",
+                "ingredients": {
+                    "th": [
+                        "ปูสด 1 ตัว (ปูม้า ปูเนื้อ หรือปูไข่ตามชอบ)",
+                        "หอมหัวใหญ่ 1/2 หัว หั่นตามยาว",
+                        "พริกชี้ฟ้าแดง 2 เม็ด หั่นแฉลบ",
+                        "ต้นหอม 3 ต้น หั่นท่อน",
+                        "คึ่นฉ่าย 2 ต้น หั่นท่อน",
+                        "ไข่ไก่ 2 ฟอง",
+                        "นมข้นจืด 1 ถ้วยตวง",
+                        "น้ำมันพืช 3 ช้อนโต๊ะ",
+                        "ซีอิ๊วขาว 1 ช้อนโต๊ะ",
+                        "น้ำตาลทราย 1 ช้อนชา",
+                        "ผงกะหรี่ 4 ช้อนโต๊ะ",
+                        "น้ำพริกเผาและน้ำมันพริกเผา 3 ช้อนโต๊ะ",
+                        "พริกไทยป่น"
+                    ],
+                    "en": [
+                        "1 Fresh Crab (Blue crab, mud crab, or egg crab as preferred)",
+                        "1/2 Onion, sliced lengthwise",
+                        "2 Red chilies, diagonally sliced",
+                        "3 Green onions, cut into pieces",
+                        "2 Chinese celery, cut into pieces",
+                        "2 Eggs",
+                        "1 Cup evaporated milk",
+                        "3 Tbsp vegetable oil",
+                        "1 Tbsp light soy sauce",
+                        "1 tsp sugar",
+                        "4 Tbsp curry powder",
+                        "3 Tbsp roasted chili paste and chili oil",
+                        "Ground pepper"
+                    ]
+                }
+            },
+            {
+                "type": {
+                    "th": "จานหลัก",
+                    "en": "Main"
+                },
+                "th": "ข้าวหอมมะลิ",
+                "en": "Jasmine Rice",
+                "img": "4b00ee9d-26c8-45f9-9f0d-e4014da7e1b2.jpg"
+            },
+            {
+                "type": {
+                    "th": "ของหวาน",
+                    "en": "Dessert"
+                },
+                "th": "ข้าวเหนียวมะม่วง",
+                "en": "Mango Sticky Rice",
+                "img": "mango sticky rice.jpeg"
+            },
+            {
+                "type": {
+                    "th": "ของหวาน",
+                    "en": "Dessert"
+                },
+                "th": "ผลไม้รวม",
+                "en": "Mixed Fruits",
+                "img": "31069432-168d-44ec-b0e9-80f828aa322e.jpg"
+            }
+        ]
+    }
+]

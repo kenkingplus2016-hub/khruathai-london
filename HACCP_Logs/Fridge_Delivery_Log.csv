@@ -1,0 +1,10 @@
+Date,Staff Name,,,,,,
+Time,Check Type (Delivery/Fridge),Item or Fridge No.,Temp (C) (Must <5C),Packaging Intact?,Use By Date Checked?,Action Taken (if fail),Sign
+08:00,Delivery,Raw Chicken,3,Yes,Yes,Accepted,
+08:15,Delivery,Raw Beef,4,Yes,Yes,Accepted,
+10:00,Fridge Check,Fridge 1 (Raw Meat),2,N/A,N/A,,
+10:00,Fridge Check,Fridge 2 (Cooked),3,N/A,N/A,,
+18:00,Fridge Check,Fridge 1 (Raw Meat),3,N/A,N/A,,
+18:00,Fridge Check,Fridge 2 (Cooked),4,N/A,N/A,,
+,,,,,,,
+,,,,,,,

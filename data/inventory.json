@@ -1,0 +1,312 @@
+[
+    {
+        "id": "inv_auto_1780009950852_0",
+        "name": "น้ำปลา (Fish Sauce)",
+        "category": "ของแห้ง (Dry)",
+        "quantity": 1,
+        "unit": "bottle",
+        "min_threshold": 3,
+        "last_updated": "2026-05-28T23:57:24.131Z",
+        "total_purchased": 1
+    },
+    {
+        "id": "inv_auto_1780009950853_1",
+        "name": "ซีอิ๊วขาว (Light Soy Sauce)",
+        "category": "ของแห้ง (Dry)",
+        "quantity": 1,
+        "unit": "bottle",
+        "min_threshold": 2,
+        "last_updated": "2026-05-28T23:57:24.131Z",
+        "total_purchased": 1
+    },
+    {
+        "id": "inv_auto_1780009950853_2",
+        "name": "ซีอิ๊วดำ/ซีอิ๊วหวาน (Dark Soy Sauce)",
+        "category": "ของแห้ง (Dry)",
+        "quantity": 1,
+        "unit": "bottle",
+        "min_threshold": 1,
+        "last_updated": "2026-05-28T23:57:24.131Z",
+        "total_purchased": 1
+    },
+    {
+        "id": "inv_auto_1780009950853_3",
+        "name": "ซอสหอยนางรม (Oyster Sauce)",
+        "category": "ของแห้ง (Dry)",
+        "quantity": 1,
+        "unit": "bottle",
+        "min_threshold": 2,
+        "last_updated": "2026-05-28T23:57:24.131Z",
+        "total_purchased": 1
+    },
+    {
+        "id": "inv_auto_1780009950853_4",
+        "name": "เต้าเจี้ยว (Fermented Soybean Paste)",
+        "category": "ของแห้ง (Dry)",
+        "quantity": 1,
+        "unit": "bottle",
+        "min_threshold": 1,
+        "last_updated": "2026-05-28T23:57:24.131Z",
+        "total_purchased": 1
+    },
+    {
+        "id": "inv_auto_1780009950853_5",
+        "name": "น้ำจิ้มไก่ (Sweet Chili Sauce)",
+        "category": "ของแห้ง (Dry)",
+        "quantity": 1,
+        "unit": "bottle",
+        "min_threshold": 2,
+        "last_updated": "2026-05-28T23:57:24.131Z",
+        "total_purchased": 1
+    },
+    {
+        "id": "inv_auto_1780009950853_6",
+        "name": "ซอสพริกศรีราชา (Sriracha Sauce)",
+        "category": "ของแห้ง (Dry)",
+        "quantity": 1,
+        "unit": "bottle",
+        "min_threshold": 1,
+        "last_updated": "2026-05-28T23:57:24.131Z",
+        "total_purchased": 1
+    },
+    {
+        "id": "inv_auto_1780009950853_7",
+        "name": "ผงปรุงรสไก่/หมู (Bouillon Powder)",
+        "category": "ของแห้ง (Dry)",
+        "quantity": 1,
+        "unit": "kg",
+        "min_threshold": 1,
+        "last_updated": "2026-05-28T23:57:24.131Z",
+        "total_purchased": 1
+    },
+    {
+        "id": "inv_auto_1780009950854_8",
+        "name": "น้ำตาลทราย (White Sugar)",
+        "category": "ของแห้ง (Dry)",
+        "quantity": 0,
+        "unit": "kg",
+        "min_threshold": 2,
+        "last_updated": "2026-05-28T23:57:24.131Z",
+        "total_purchased": 5
+    },
+    {
+        "id": "inv_auto_1780009950854_9",
+        "name": "น้ำตาลปี๊บ (Palm Sugar)",
+        "category": "ของแห้ง (Dry)",
+        "quantity": 1,
+        "unit": "kg",
+        "min_threshold": 2,
+        "last_updated": "2026-05-28T23:57:24.131Z",
+        "total_purchased": 1
+    },
+    {
+        "id": "inv_auto_1780009950854_10",
+        "name": "เกลือ (Salt)",
+        "category": "ของแห้ง (Dry)",
+        "quantity": 1,
+        "unit": "kg",
+        "min_threshold": 1,
+        "last_updated": "2026-05-28T23:57:24.131Z",
+        "total_purchased": 1
+    },
+    {
+        "id": "inv_auto_1780009950854_11",
+        "name": "พริกไทยป่น (Ground White Pepper)",
+        "category": "ของแห้ง (Dry)",
+        "quantity": 1,
+        "unit": "g",
+        "min_threshold": 500,
+        "last_updated": "2026-05-28T23:57:24.131Z",
+        "total_purchased": 1
+    },
+    {
+        "id": "inv_auto_1780009950854_12",
+        "name": "พริกแกงแดง (Red Curry Paste)",
+        "category": "ของแห้ง (Dry)",
+        "quantity": 1,
+        "unit": "kg",
+        "min_threshold": 1,
+        "last_updated": "2026-05-28T23:57:24.131Z",
+        "total_purchased": 1
+    },
+    {
+        "id": "inv_auto_1780009950854_13",
+        "name": "พริกแกงเขียวหวาน (Green Curry Paste)",
+        "category": "ของแห้ง (Dry)",
+        "quantity": 0,
+        "unit": "kg",
+        "min_threshold": 1,
+        "last_updated": "2026-05-28T23:57:24.131Z",
+        "total_purchased": 0
+    },
+    {
+        "id": "inv_auto_1780009950854_14",
+        "name": "พริกแกงพะแนง (Panang Curry Paste)",
+        "category": "ของแห้ง (Dry)",
+        "quantity": 0,
+        "unit": "kg",
+        "min_threshold": 1,
+        "last_updated": "2026-05-28T23:57:24.131Z",
+        "total_purchased": 0
+    },
+    {
+        "id": "inv_auto_1780009950854_15",
+        "name": "พริกแกงมัสมั่น (Massaman Curry Paste)",
+        "category": "ของแห้ง (Dry)",
+        "quantity": 1,
+        "unit": "kg",
+        "min_threshold": 1,
+        "last_updated": "2026-05-28T23:57:24.131Z",
+        "total_purchased": 1
+    },
+    {
+        "id": "inv_auto_1780009950854_16",
+        "name": "พริกป่น (Chili Flakes)",
+        "category": "ของแห้ง (Dry)",
+        "quantity": 0,
+        "unit": "g",
+        "min_threshold": 500,
+        "last_updated": "2026-05-28T23:57:24.131Z",
+        "total_purchased": 0
+    },
+    {
+        "id": "inv_auto_1780009950854_17",
+        "name": "พริกแห้ง (Dried Chilies)",
+        "category": "ของแห้ง (Dry)",
+        "quantity": 0,
+        "unit": "g",
+        "min_threshold": 500,
+        "last_updated": "2026-05-28T23:57:24.131Z",
+        "total_purchased": 0
+    },
+    {
+        "id": "inv_auto_1780009950854_18",
+        "name": "ข้าวเหนียว (Sticky Rice)",
+        "category": "ของแห้ง (Dry)",
+        "quantity": 0,
+        "unit": "kg",
+        "min_threshold": 5,
+        "last_updated": "2026-05-28T23:57:24.131Z",
+        "total_purchased": 0
+    },
+    {
+        "id": "inv_auto_1780009950854_19",
+        "name": "เส้นผัดไทย (Pad Thai Noodles)",
+        "category": "ของแห้ง (Dry)",
+        "quantity": 0,
+        "unit": "kg",
+        "min_threshold": 2,
+        "last_updated": "2026-05-28T23:57:24.131Z",
+        "total_purchased": 0
+    },
+    {
+        "id": "inv_auto_1780009950854_20",
+        "name": "วุ้นเส้น (Glass Noodles)",
+        "category": "ของแห้ง (Dry)",
+        "quantity": 0,
+        "unit": "kg",
+        "min_threshold": 1,
+        "last_updated": "2026-05-28T23:57:24.131Z",
+        "total_purchased": 0
+    },
+    {
+        "id": "inv_auto_1780009950854_21",
+        "name": "กะทิ (Coconut Milk)",
+        "category": "ของแห้ง (Dry)",
+        "quantity": 0,
+        "unit": "box/can",
+        "min_threshold": 10,
+        "last_updated": "2026-05-28T23:57:24.131Z",
+        "total_purchased": 0
+    },
+    {
+        "id": "inv_auto_1780009950854_22",
+        "name": "ถั่วลิสงคั่วบด (Crushed Peanuts)",
+        "category": "ของแห้ง (Dry)",
+        "quantity": 0,
+        "unit": "kg",
+        "min_threshold": 1,
+        "last_updated": "2026-05-28T23:57:24.131Z",
+        "total_purchased": 0
+    },
+    {
+        "id": "inv_auto_1780009950854_23",
+        "name": "น้ำมะขามเปียก (Tamarind Paste)",
+        "category": "ของแห้ง (Dry)",
+        "quantity": 0,
+        "unit": "kg",
+        "min_threshold": 1,
+        "last_updated": "2026-05-28T23:57:24.131Z",
+        "total_purchased": 0
+    },
+    {
+        "id": "inv_auto_1780009950854_24",
+        "name": "กระเทียมเจียว (Fried Garlic)",
+        "category": "ของแห้ง (Dry)",
+        "quantity": 0,
+        "unit": "g",
+        "min_threshold": 500,
+        "last_updated": "2026-05-28T23:57:24.131Z",
+        "total_purchased": 0
+    },
+    {
+        "id": "inv_auto_1780009950854_25",
+        "name": "หอมเจียว (Fried Shallots)",
+        "category": "ของแห้ง (Dry)",
+        "quantity": 0,
+        "unit": "g",
+        "min_threshold": 500,
+        "last_updated": "2026-05-28T23:57:24.131Z",
+        "total_purchased": 0
+    },
+    {
+        "id": "inv_auto_1780009950854_26",
+        "name": "แป้งมัน/ข้าวโพด (Tapioca/Corn Starch)",
+        "category": "ของแห้ง (Dry)",
+        "quantity": 0,
+        "unit": "kg",
+        "min_threshold": 1,
+        "last_updated": "2026-05-28T23:57:24.131Z",
+        "total_purchased": 0
+    },
+    {
+        "id": "inv_auto_1780009950854_27",
+        "name": "แป้งทอดกรอบ (Tempura Batter Mix)",
+        "category": "ของแห้ง (Dry)",
+        "quantity": 0,
+        "unit": "kg",
+        "min_threshold": 1,
+        "last_updated": "2026-05-28T23:57:24.131Z",
+        "total_purchased": 0
+    },
+    {
+        "id": "inv_1780010622720",
+        "name": "น้ำปลา (Fish Sauce)",
+        "category": "ของแห้ง (Dry)",
+        "quantity": 1,
+        "unit": "bottle",
+        "min_threshold": 0,
+        "last_updated": "2026-05-28T23:57:24.131Z",
+        "total_purchased": 1
+    },
+    {
+        "id": "inv_1780010765904",
+        "name": "น้ำปลา",
+        "category": "ของแห้ง (Dry)",
+        "quantity": 1,
+        "unit": "bottle",
+        "min_threshold": 1,
+        "last_updated": "2026-05-28T23:57:24.131Z",
+        "total_purchased": 1
+    },
+    {
+        "id": "inv_1780011936432",
+        "name": "พริกแกงแดง (Red Curry Paste)",
+        "category": "ของแห้ง (Dry)",
+        "quantity": 1,
+        "total_purchased": 1,
+        "unit": "1 kg",
+        "min_threshold": 0,
+        "last_updated": "2026-05-28T23:57:24.131Z"
+    }
+]
