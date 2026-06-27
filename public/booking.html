@@ -781,18 +781,45 @@
     <script src="mobile-menu.js"></script>
 
 
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6a3fb7427e16581d479c0473/1js4e7nkp';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+
+
+<!-- Messenger Floating Button -->
+<a href="https://m.me/61589177574118" target="_blank" class="messenger-float">
+    <i class="fab fa-facebook-messenger"></i>
+</a>
+<style>
+.messenger-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #0084FF;
+    color: #FFF;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 9999;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+.messenger-float:hover {
+    transform: scale(1.1);
+    background-color: #0073E6;
+    color: white;
+}
+@media (max-width: 768px) {
+    .messenger-float {
+        width: 55px;
+        height: 55px;
+        font-size: 30px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+</style>
 </body>
 </html>
