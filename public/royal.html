@@ -838,44 +838,7 @@
 
 
 
-<!-- Messenger Floating Button -->
-<a href="https://m.me/61589177574118" target="_blank" class="messenger-float">
-    <i class="fab fa-facebook-messenger"></i>
-</a>
-<style>
-.messenger-float {
-    position: fixed;
-    bottom: 25px;
-    left: 25px;
-    background-color: #0084FF;
-    color: #FFF;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 35px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    z-index: 9999;
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
-.messenger-float:hover {
-    transform: scale(1.1);
-    background-color: #0073E6;
-    color: white;
-}
-@media (max-width: 768px) {
-    .messenger-float {
-        width: 55px;
-        height: 55px;
-        font-size: 30px;
-        bottom: 20px;
-        left: 20px;
-    }
-}
-</style>
+
 
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
@@ -891,5 +854,55 @@ s0.parentNode.insertBefore(s1,s0);
 </script>
 <!--End of Tawk.to Script-->
 
+
+<!-- Messenger and LINE Floating Buttons -->
+<div style="position: fixed; bottom: 25px; left: 25px; display: flex; flex-direction: column; gap: 15px; z-index: 9999;">
+    <!-- Facebook Messenger -->
+    <a href="https://m.me/61589177574118" target="_blank" class="chat-float fb-float">
+        <i class="fab fa-facebook-messenger"></i>
+    </a>
+    <!-- LINE -->
+    <a href="https://line.me/ti/p/y_Whr-5wc3" target="_blank" class="chat-float line-float">
+        <i class="fab fa-line"></i>
+    </a>
+</div>
+<style>
+.chat-float {
+    color: #FFF;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+.fb-float {
+    background-color: #0084FF;
+}
+.fb-float:hover {
+    background-color: #0073E6;
+    transform: scale(1.1);
+    color: white;
+}
+.line-float {
+    background-color: #00C300;
+}
+.line-float:hover {
+    background-color: #00A000;
+    transform: scale(1.1);
+    color: white;
+}
+@media (max-width: 768px) {
+    .chat-float {
+        width: 55px;
+        height: 55px;
+        font-size: 30px;
+    }
+}
+</style>
 </body>
 </html>
