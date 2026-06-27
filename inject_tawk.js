@@ -26,11 +26,6 @@ const deskPath = "C:\\Users\\KENDEE\\Desktop\\เว็บ\\public";
         const filePath = path.join(dir, file);
         if (fs.existsSync(filePath)) {
             let content = fs.readFileSync(filePath, 'utf8');
-            // Remove previous Tawk.to if exists just in case
-            if (content.includes('Tawk.to Script')) {
-                const regex = /<!--Start of Tawk\.to Script-->[\s\S]*<!--End of Tawk\.to Script-->/g;
-                content = content.replace(regex, '');
-            }
             content = content.replace('</body>', scriptCode);
             fs.writeFileSync(filePath, content, 'utf8');
             console.log("Injected Tawk.to into " + filePath);

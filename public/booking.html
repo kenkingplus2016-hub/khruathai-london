@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking & Payment - Khrua Thai London</title>
-    <!-- à¹€à¸žà¸´à¹ˆà¸¡ Font Awesome à¸ªà¸³à¸«à¸£à¸±à¸šà¹„à¸­à¸„à¸­à¸™à¹‚à¸‹à¹€à¸Šà¸µà¸¢à¸¥ -->
+    <!-- เพิ่ม Font Awesome สำหรับไอคอนโซเชียล -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
@@ -74,11 +74,11 @@
 <header>
     <img src="logo.png" alt="Khrua Thai London" class="brand-logo">
     <nav style="display:flex;justify-content:center;gap:10px;margin-top:12px;flex-wrap:wrap;">
-        <a href="index.html" id="nav-home" style="color:var(--gold);text-decoration:none;padding:6px 18px;border:1.5px solid var(--gold);border-radius:20px;font-size:0.85rem;font-weight:600;transition:all 0.3s;letter-spacing:0.5px;">à¸«à¸™à¹‰à¸²à¹à¸£à¸ / Home</a>
-        <a href="menu.html" id="nav-menu" style="color:var(--gold);text-decoration:none;padding:6px 18px;border:1.5px solid var(--gold);border-radius:20px;font-size:0.85rem;font-weight:600;transition:all 0.3s;letter-spacing:0.5px;">à¹€à¸‹à¸—à¸•à¸³à¸£à¸±à¸šà¹„à¸—à¸¢ / Authentic Thai Sets</a>
+        <a href="index.html" id="nav-home" style="color:var(--gold);text-decoration:none;padding:6px 18px;border:1.5px solid var(--gold);border-radius:20px;font-size:0.85rem;font-weight:600;transition:all 0.3s;letter-spacing:0.5px;">หน้าแรก / Home</a>
+        <a href="menu.html" id="nav-menu" style="color:var(--gold);text-decoration:none;padding:6px 18px;border:1.5px solid var(--gold);border-radius:20px;font-size:0.85rem;font-weight:600;transition:all 0.3s;letter-spacing:0.5px;">เซทตำรับไทย / Authentic Thai Sets</a>
         <a href="royal.html" id="nav-royal" style="color:var(--gold);text-decoration:none;padding:6px 18px;border:1.5px solid var(--gold);border-radius:20px;font-size:0.85rem;font-weight:600;transition:all 0.3s;letter-spacing:0.5px;">The Royal Siam Gathering</a>
-        <a href="delivery.html" id="nav-delivery" style="color:var(--gold);text-decoration:none;padding:6px 18px;border:1.5px solid var(--gold);border-radius:20px;font-size:0.85rem;font-weight:600;transition:all 0.3s;letter-spacing:0.5px;">à¸”à¸´à¸¥à¸´à¹€à¸§à¸­à¸£à¸µà¸šà¹‡à¸­à¸à¸‹à¹Œà¹€à¸‹à¸• / Delivery Box Sets</a>
-        <a href="booking.html" id="nav-booking" style="color:var(--dark-green);background:var(--gold);text-decoration:none;padding:6px 18px;border:1.5px solid var(--gold);border-radius:20px;font-size:0.85rem;font-weight:600;transition:all 0.3s;letter-spacing:0.5px;">à¸ˆà¸­à¸‡à¸‡à¸²à¸™ / Booking</a>
+        <a href="delivery.html" id="nav-delivery" style="color:var(--gold);text-decoration:none;padding:6px 18px;border:1.5px solid var(--gold);border-radius:20px;font-size:0.85rem;font-weight:600;transition:all 0.3s;letter-spacing:0.5px;">ดิลิเวอรีบ็อกซ์เซต / Delivery Box Sets</a>
+        <a href="booking.html" id="nav-booking" style="color:var(--dark-green);background:var(--gold);text-decoration:none;padding:6px 18px;border:1.5px solid var(--gold);border-radius:20px;font-size:0.85rem;font-weight:600;transition:all 0.3s;letter-spacing:0.5px;">จองงาน / Booking</a>
     </nav>
     <div class="lang-toggle" style="margin-top:8px;">
         <button class="lang-btn active" onclick="changeLang('th', this)">TH</button>
@@ -89,7 +89,7 @@
 <div class="container">
     <!-- Connect Section -->
     <div class="card">
-        <h2 id="t-connect" class="section-title">à¸•à¸´à¸”à¸•à¹ˆà¸­à¹€à¸£à¸² / Connect With Us</h2>
+        <h2 id="t-connect" class="section-title">ติดต่อเรา / Connect With Us</h2>
         <div class="social-connect">
             <a href="https://www.facebook.com/profile.php?id=61589177574118" target="_blank" class="social-btn fb"><i class="fab fa-facebook-f"></i> Facebook</a>
             <a href="https://line.me/ti/p/y_Whr-5wc3" target="_blank" class="social-btn ln"><i class="fab fa-line"></i> Line</a>
@@ -99,34 +99,34 @@
 
     <!-- Booking Form -->
     <div class="card">
-        <h2 id="t-booking" class="section-title">à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸à¸²à¸£à¸ªà¸±à¹ˆà¸‡à¸ˆà¸­à¸‡ / Booking Details</h2>
+        <h2 id="t-booking" class="section-title">ข้อมูลการสั่งจอง / Booking Details</h2>
         <form id="orderForm">
             <div class="form-grid">
                 <div class="full-width">
-                    <label id="l-name">à¸Šà¸·à¹ˆà¸­à¸œà¸¹à¹‰à¸•à¸´à¸”à¸•à¹ˆà¸­ / Contact Name</label>
+                    <label id="l-name">ชื่อผู้ติดต่อ / Contact Name</label>
                     <input type="text" id="custName" required placeholder="John Doe">
                 </div>
                 <div>
-                    <label id="l-phone">à¹€à¸šà¸­à¸£à¹Œà¹‚à¸—à¸£à¸¨à¸±à¸žà¸—à¹Œ / Phone</label>
+                    <label id="l-phone">เบอร์โทรศัพท์ / Phone</label>
                     <input type="tel" id="custPhone" required placeholder="+44 xxx xxxx">
                 </div>
                 <div class="full-width">
-                    <label id="l-email">à¸­à¸µà¹€à¸¡à¸¥ / Email Address</label>
+                    <label id="l-email">อีเมล / Email Address</label>
                     <input type="email" id="custEmail" required placeholder="example@email.com">
                 </div>
                 <div>
-                    <label id="l-date">à¸§à¸±à¸™à¸—à¸µà¹ˆà¸ˆà¸±à¸”à¸‡à¸²à¸™ / Event Date</label>
+                    <label id="l-date">วันที่จัดงาน / Event Date</label>
                     <input type="date" id="eventDate" required>
                 </div>
                 <div class="full-width">
-                    <label id="l-venue">à¸ªà¸–à¸²à¸™à¸—à¸µà¹ˆà¸ˆà¸±à¸”à¸‡à¸²à¸™ / Venue Name</label>
+                    <label id="l-venue">สถานที่จัดงาน / Venue Name</label>
                     <input type="text" id="eventPlace" required placeholder="Hotel or House Name">
                 </div>
                 <div class="full-width">
-                    <label id="l-address">à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸ˆà¸±à¸”à¸ªà¹ˆà¸‡ / Full Address (à¸£à¸°à¸šà¸¸à¸£à¸«à¸±à¸ªà¹„à¸›à¸£à¸©à¸“à¸µà¸¢à¹Œ UK Postcode à¸”à¹‰à¸§à¸¢à¸„à¸£à¸±à¸š)</label>
+                    <label id="l-address">ที่อยู่จัดส่ง / Full Address (ระบุรหัสไปรษณีย์ UK Postcode ด้วยครับ)</label>
                     <div style="display:flex; gap:10px; margin-bottom:10px;">
-                        <textarea id="custAddress" rows="2" required placeholder="à¹€à¸Šà¹ˆà¸™ SW8 2LZ, London" style="flex:1;"></textarea>
-                        <button type="button" class="btn" onclick="verifyAddress()" style="width:auto; height:fit-content; padding:15px; background:var(--gold); color:var(--dark-green); font-size:0.9rem; margin:0;"><i class="fas fa-search-location"></i> à¹€à¸Šà¹‡à¸„à¹‚à¸‹à¸™à¸ˆà¸±à¸”à¸ªà¹ˆà¸‡</button>
+                        <textarea id="custAddress" rows="2" required placeholder="เช่น SW8 2LZ, London" style="flex:1;"></textarea>
+                        <button type="button" class="btn" onclick="verifyAddress()" style="width:auto; height:fit-content; padding:15px; background:var(--gold); color:var(--dark-green); font-size:0.9rem; margin:0;"><i class="fas fa-search-location"></i> เช็คโซนจัดส่ง</button>
                     </div>
                     
                     <div id="map-container" style="display:none; margin-top:10px;">
@@ -137,9 +137,9 @@
             </div>
 
             <!-- Menu Selection Section (Dynamic Dropdown) -->
-            <h3 id="t-menu-select" style="color:var(--dark-green); margin-top:20px;">à¹€à¸¥à¸·à¸­à¸à¸Šà¸¸à¸”à¹€à¸¡à¸™à¸¹ / Select Menu Set</h3>
+            <h3 id="t-menu-select" style="color:var(--dark-green); margin-top:20px;">เลือกชุดเมนู / Select Menu Set</h3>
             <select id="menuSetSelect" style="width:100%; padding:14px; border:2px solid var(--gold); border-radius:12px; font-family:'Prompt'; font-size:1rem; font-weight:600; color:var(--dark-green); background:white; cursor:pointer; appearance:auto; margin-bottom:10px;">
-                <option value="" disabled selected>-- à¸à¸£à¸¸à¸“à¸²à¹€à¸¥à¸·à¸­à¸à¹€à¸¡à¸™à¸¹ / Please select a menu --</option>
+                <option value="" disabled selected>-- กรุณาเลือกเมนู / Please select a menu --</option>
             </select>
             <div id="selected-set-info" style="display:none; background:#fffcf0; border:1.5px solid var(--gold); border-radius:12px; padding:15px; margin-bottom:15px;">
                 <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
@@ -158,27 +158,27 @@
             <div id="customization-section" style="display:none; margin-top:15px; background:rgba(27,48,34,0.05); padding:20px; border-radius:15px; border:2px solid var(--dark-green);">
                 <h4 style="color:var(--dark-green); margin:0 0 15px 0; font-size:1rem;">
                     <i class="fas fa-list-check" style="color:var(--gold);"></i>
-                    <span id="custom-title">à¹€à¸¥à¸·à¸­à¸à¸£à¸²à¸¢à¸à¸²à¸£à¸­à¸²à¸«à¸²à¸£ / Customize Your Order</span>
+                    <span id="custom-title">เลือกรายการอาหาร / Customize Your Order</span>
                 </h4>
                 <div id="custom-options-container" style="display:grid; gap:12px;"></div>
             </div>
 
             <!-- Allergy Section -->
             <div style="margin-top:20px; background:rgba(212,175,55,0.05); padding:20px; border-radius:15px; border:1px dashed var(--gold);">
-                <label id="l-allergy" style="color:var(--dark-green); font-weight:600; display:block; margin-bottom:10px;">à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸à¸²à¸£à¹à¸žà¹‰à¸­à¸²à¸«à¸²à¸£ / Food Allergy & Dietary Requirements</label>
+                <label id="l-allergy" style="color:var(--dark-green); font-weight:600; display:block; margin-bottom:10px;">ข้อมูลการแพ้อาหาร / Food Allergy & Dietary Requirements</label>
                 <table style="width:100%; border-collapse:collapse; margin-bottom:10px;">
                     <tr>
                         <td style="width:20px; padding:0 0 15px 0; vertical-align:top;">
                             <input type="checkbox" id="a-peanuts" name="allergy" value="Peanuts" style="width:18px; height:18px; margin:2px 0 0 0;">
                         </td>
                         <td style="width:calc(50% - 20px); padding:0 5px 15px 5px; vertical-align:top; text-align:left;">
-                            <label for="a-peanuts" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;">à¸–à¸±à¹ˆà¸§ (Peanuts)</label>
+                            <label for="a-peanuts" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;">ถั่ว (Peanuts)</label>
                         </td>
                         <td style="width:20px; padding:0 0 15px 5px; vertical-align:top;">
                             <input type="checkbox" id="a-milk" name="allergy" value="Milk" style="width:18px; height:18px; margin:2px 0 0 0;">
                         </td>
                         <td style="width:calc(50% - 25px); padding:0 0 15px 5px; vertical-align:top; text-align:left;">
-                            <label for="a-milk" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;">à¸™à¸¡ (Milk/Dairy)</label>
+                            <label for="a-milk" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;">นม (Milk/Dairy)</label>
                         </td>
                     </tr>
                     <tr>
@@ -186,13 +186,13 @@
                             <input type="checkbox" id="a-seafood" name="allergy" value="Seafood" style="width:18px; height:18px; margin:2px 0 0 0;">
                         </td>
                         <td style="width:calc(50% - 20px); padding:0 5px 15px 5px; vertical-align:top; text-align:left;">
-                            <label for="a-seafood" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;">à¸­à¸²à¸«à¸²à¸£à¸—à¸°à¹€à¸¥ (Seafood)</label>
+                            <label for="a-seafood" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;">อาหารทะเล (Seafood)</label>
                         </td>
                         <td style="width:20px; padding:0 0 15px 5px; vertical-align:top;">
                             <input type="checkbox" id="a-eggs" name="allergy" value="Eggs" style="width:18px; height:18px; margin:2px 0 0 0;">
                         </td>
                         <td style="width:calc(50% - 25px); padding:0 0 15px 5px; vertical-align:top; text-align:left;">
-                            <label for="a-eggs" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;">à¹„à¸‚à¹ˆ (Eggs)</label>
+                            <label for="a-eggs" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;">ไข่ (Eggs)</label>
                         </td>
                     </tr>
                     <tr>
@@ -200,13 +200,13 @@
                             <input type="checkbox" id="a-gluten" name="allergy" value="Gluten" style="width:18px; height:18px; margin:2px 0 0 0;">
                         </td>
                         <td style="width:calc(50% - 20px); padding:0 5px 15px 5px; vertical-align:top; text-align:left;">
-                            <label for="a-gluten" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;">à¸à¸¥à¸¹à¹€à¸•à¸™ (Gluten)</label>
+                            <label for="a-gluten" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;">กลูเตน (Gluten)</label>
                         </td>
                         <td style="width:20px; padding:0 0 15px 5px; vertical-align:top;">
                             <input type="checkbox" id="a-soy" name="allergy" value="Soy" style="width:18px; height:18px; margin:2px 0 0 0;">
                         </td>
                         <td style="width:calc(50% - 25px); padding:0 0 15px 5px; vertical-align:top; text-align:left;">
-                            <label for="a-soy" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;">à¸–à¸±à¹ˆà¸§à¹€à¸«à¸¥à¸·à¸­à¸‡ (Soy)</label>
+                            <label for="a-soy" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;">ถั่วเหลือง (Soy)</label>
                         </td>
                     </tr>
                     <tr>
@@ -214,38 +214,38 @@
                             <input type="checkbox" id="a-msg" name="allergy" value="MSG" style="width:18px; height:18px; margin:2px 0 0 0;">
                         </td>
                         <td style="width:calc(50% - 20px); padding:0 5px 15px 5px; vertical-align:top; text-align:left;">
-                            <label for="a-msg" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;">à¸œà¸‡à¸Šà¸¹à¸£à¸ª (MSG)</label>
+                            <label for="a-msg" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;">ผงชูรส (MSG)</label>
                         </td>
                         <td style="width:20px; padding:0 0 15px 5px; vertical-align:top;">
                             <input type="checkbox" id="a-fishsauce" name="allergy" value="Fish Sauce" style="width:18px; height:18px; margin:2px 0 0 0;">
                         </td>
                         <td style="width:calc(50% - 25px); padding:0 0 15px 5px; vertical-align:top; text-align:left;">
-                            <label for="a-fishsauce" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;">à¸™à¹‰à¸³à¸›à¸¥à¸² (Fish Sauce)</label>
+                            <label for="a-fishsauce" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;">น้ำปลา (Fish Sauce)</label>
                         </td>
                     </tr>
                 </table>
-                <textarea id="allergy-detail" rows="1" placeholder="à¸­à¸·à¹ˆà¸™à¹† à¸£à¸°à¸šà¸¸ (à¸–à¹‰à¸²à¸¡à¸µ) / Others (if any)" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px; font-family:'Prompt'; font-size:0.9rem;"></textarea>
+                <textarea id="allergy-detail" rows="1" placeholder="อื่นๆ ระบุ (ถ้ามี) / Others (if any)" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px; font-family:'Prompt'; font-size:0.9rem;"></textarea>
             </div>
 
             <!-- Payment Section -->
-            <h3 id="t-payment" style="color:var(--dark-green); margin-top:20px;">à¸§à¸´à¸˜à¸µà¸Šà¸³à¸£à¸°à¹€à¸‡à¸´à¸™à¸¡à¸±à¸”à¸ˆà¸³ / Payment Method</h3>
+            <h3 id="t-payment" style="color:var(--dark-green); margin-top:20px;">วิธีชำระเงินมัดจำ / Payment Method</h3>
             <div class="payment-methods">
                 <div class="pay-option active" onclick="selectPay(this, 'Transfer')">
                     <i class="fas fa-university"></i>
-                    <span id="p-transfer">à¹‚à¸­à¸™à¹€à¸‡à¸´à¸™<br>Bank Transfer</span>
+                    <span id="p-transfer">โอนเงิน<br>Bank Transfer</span>
                 </div>
                 <div class="pay-option" onclick="selectPay(this, 'Card')">
                     <i class="far fa-credit-card"></i>
-                    <span id="p-card">à¸šà¸±à¸•à¸£à¹€à¸„à¸£à¸”à¸´à¸•<br>Credit Card</span>
+                    <span id="p-card">บัตรเครดิต<br>Credit Card</span>
                 </div>
             </div>
 
             <div class="deposit-alert">
-                <strong id="d-title">à¹€à¸‡à¸·à¹ˆà¸­à¸™à¹„à¸‚à¸à¸²à¸£à¸Šà¸³à¸£à¸°à¹€à¸‡à¸´à¸™ (Payment Terms):</strong>
-                <p id="d-desc">à¸Šà¸³à¸£à¸°à¸¡à¸±à¸”à¸ˆà¸³ 50% à¸ªà¸³à¸«à¸£à¸±à¸šà¸‡à¸²à¸™à¸ˆà¸±à¸”à¹€à¸¥à¸µà¹‰à¸¢à¸‡ à¸«à¸£à¸·à¸­ à¸Šà¸³à¸£à¸°à¹€à¸•à¹‡à¸¡à¸ˆà¸³à¸™à¸§à¸™à¸ªà¸³à¸«à¸£à¸±à¸šà¹€à¸‹à¸•à¸”à¸´à¸¥à¸´à¹€à¸§à¸­à¸£à¸µà¸šà¹‡à¸­à¸à¸‹à¹Œ</p>
+                <strong id="d-title">เงื่อนไขการชำระเงิน (Payment Terms):</strong>
+                <p id="d-desc">ชำระมัดจำ 50% สำหรับงานจัดเลี้ยง หรือ ชำระเต็มจำนวนสำหรับเซตดิลิเวอรีบ็อกซ์</p>
             </div>
 
-            <button type="button" class="btn-submit" onclick="submitBooking()" id="btn-submit">à¸¢à¸·à¸™à¸¢à¸±à¸™à¸à¸²à¸£à¸ˆà¸­à¸‡ / Confirm Booking</button>
+            <button type="button" class="btn-submit" onclick="submitBooking()" id="btn-submit">ยืนยันการจอง / Confirm Booking</button>
         </form>
     </div>
 </div>
@@ -271,12 +271,12 @@
         map = L.map('map').setView([VAUXHALL_LAT, VAUXHALL_LNG], 11);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
-            attribution: 'Â© OpenStreetMap'
+            attribution: '© OpenStreetMap'
         }).addTo(map);
 
         // Center Marker (Vauxhall)
         vauxhallMarker = L.marker([VAUXHALL_LAT, VAUXHALL_LNG]).addTo(map)
-            .bindPopup("<b>à¸ˆà¸¸à¸”à¸à¸£à¸°à¸ˆà¸²à¸¢à¸ªà¸´à¸™à¸„à¹‰à¸² (Vauxhall)</b>")
+            .bindPopup("<b>จุดกระจายสินค้า (Vauxhall)</b>")
             .openPopup();
 
         // 10-mile radius circle
@@ -295,14 +295,14 @@
         if (!address) {
             statusBox.style.background = '#ffeeba';
             statusBox.style.color = '#856404';
-            statusBox.innerHTML = 'âš ï¸ à¸à¸£à¸¸à¸“à¸²à¸à¸£à¸­à¸à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸à¹ˆà¸­à¸™à¹€à¸Šà¹‡à¸„à¹‚à¸‹à¸™à¸ˆà¸±à¸”à¸ªà¹ˆà¸‡ / Please enter address first';
+            statusBox.innerHTML = '⚠️ กรุณากรอกที่อยู่ก่อนเช็คโซนจัดส่ง / Please enter address first';
             return;
         }
 
         initMap();
         statusBox.style.background = '#e2e3e5';
         statusBox.style.color = '#383d41';
-        statusBox.innerHTML = 'à¸à¸³à¸¥à¸±à¸‡à¸„à¹‰à¸™à¸«à¸²à¸žà¸´à¸à¸±à¸”... / Locating... <i class="fas fa-spinner fa-spin"></i>';
+        statusBox.innerHTML = 'กำลังค้นหาพิกัด... / Locating... <i class="fas fa-spinner fa-spin"></i>';
 
         try {
             // Use Nominatim API (Free OpenStreetMap Geocoding)
@@ -313,7 +313,7 @@
             if (data.length === 0) {
                 statusBox.style.background = '#f8d7da';
                 statusBox.style.color = '#721c24';
-                statusBox.innerHTML = 'âŒ à¸„à¹‰à¸™à¸«à¸²à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¹„à¸¡à¹ˆà¸žà¸š (à¹‚à¸›à¸£à¸”à¸£à¸°à¸šà¸¸ Postcode à¸«à¸£à¸·à¸­à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¹ƒà¸«à¹‰à¸Šà¸±à¸”à¹€à¸ˆà¸™à¸‚à¸¶à¹‰à¸™) / Address not found';
+                statusBox.innerHTML = '❌ ค้นหาที่อยู่ไม่พบ (โปรดระบุ Postcode หรือที่อยู่ให้ชัดเจนขึ้น) / Address not found';
                 return;
             }
 
@@ -340,20 +340,20 @@
             if (distanceMeters <= MAX_DISTANCE_METERS) {
                 statusBox.style.background = '#d4edda';
                 statusBox.style.color = '#155724';
-                statusBox.innerHTML = `âœ… à¸­à¸¢à¸¹à¹ˆà¹ƒà¸™à¹‚à¸‹à¸™à¸ˆà¸±à¸”à¸ªà¹ˆà¸‡! à¸£à¸°à¸¢à¸°à¸—à¸²à¸‡à¸›à¸£à¸°à¸¡à¸²à¸“ ${distanceMiles} à¹„à¸¡à¸¥à¹Œ (Within Delivery Zone)`;
+                statusBox.innerHTML = `✅ อยู่ในโซนจัดส่ง! ระยะทางประมาณ ${distanceMiles} ไมล์ (Within Delivery Zone)`;
                 document.getElementById('btn-submit').disabled = false;
                 document.getElementById('btn-submit').style.opacity = '1';
             } else {
                 statusBox.style.background = '#f8d7da';
                 statusBox.style.color = '#721c24';
-                statusBox.innerHTML = `âš ï¸ à¸™à¸­à¸à¹‚à¸‹à¸™à¸ˆà¸±à¸”à¸ªà¹ˆà¸‡ (à¸£à¸°à¸¢à¸°à¸—à¸²à¸‡ ${distanceMiles} à¹„à¸¡à¸¥à¹Œ à¸‹à¸¶à¹ˆà¸‡à¹€à¸à¸´à¸™ 10 à¹„à¸¡à¸¥à¹Œ) à¸à¸£à¸¸à¸“à¸²à¸•à¸´à¸”à¸•à¹ˆà¸­à¹à¸­à¸”à¸¡à¸´à¸™à¸à¹ˆà¸­à¸™à¸ˆà¸­à¸‡à¸„à¸£à¸±à¸š`;
+                statusBox.innerHTML = `⚠️ นอกโซนจัดส่ง (ระยะทาง ${distanceMiles} ไมล์ ซึ่งเกิน 10 ไมล์) กรุณาติดต่อแอดมินก่อนจองครับ`;
                 // Optionally disable submit button
                 // document.getElementById('btn-submit').disabled = true;
                 // document.getElementById('btn-submit').style.opacity = '0.5';
             }
 
         } catch (error) {
-            statusBox.innerHTML = 'âŒ à¸£à¸°à¸šà¸šà¸„à¹‰à¸™à¸«à¸²à¸žà¸´à¸à¸±à¸”à¸‚à¸±à¸”à¸‚à¹‰à¸­à¸‡à¸Šà¸±à¹ˆà¸§à¸„à¸£à¸²à¸§ / System Error';
+            statusBox.innerHTML = '❌ ระบบค้นหาพิกัดขัดข้องชั่วคราว / System Error';
         }
     }
 
@@ -367,20 +367,20 @@
 
         const setStr = JSON.stringify(set).toLowerCase();
         
-        // Curry / à¹à¸à¸‡
-        const hasCurry = setStr.includes('à¹à¸à¸‡') || setStr.includes('curry') || setStr.includes('massaman') || setStr.includes('panang');
-        // Basil / à¸à¸£à¸°à¹€à¸žà¸£à¸² / à¸à¸°à¹€à¸žà¸£à¸²
-        const hasBasil = setStr.includes('à¸à¸£à¸°à¹€à¸žà¸£à¸²') || setStr.includes('à¸à¸°à¹€à¸žà¸£à¸²') || setStr.includes('basil');
-        // Som Tum / à¸ªà¹‰à¸¡à¸•à¸³
-        const hasSomTum = setStr.includes('à¸ªà¹‰à¸¡à¸•à¸³') || setStr.includes('som tum') || setStr.includes('somtum') || setStr.includes('papaya salad');
+        // Curry / แกง
+        const hasCurry = setStr.includes('แกง') || setStr.includes('curry') || setStr.includes('massaman') || setStr.includes('panang');
+        // Basil / กระเพรา / กะเพรา
+        const hasBasil = setStr.includes('กระเพรา') || setStr.includes('กะเพรา') || setStr.includes('basil');
+        // Som Tum / ส้มตำ
+        const hasSomTum = setStr.includes('ส้มตำ') || setStr.includes('som tum') || setStr.includes('somtum') || setStr.includes('papaya salad');
 
         if (hasCurry) {
             set.options.push({
                 id: "spicy_curry",
-                label: { "th": "à¸£à¸°à¸”à¸±à¸šà¸„à¸§à¸²à¸¡à¹€à¸œà¹‡à¸”à¹à¸à¸‡", "en": "Spiciness Level - Curry" },
+                label: { "th": "ระดับความเผ็ดแกง", "en": "Spiciness Level - Curry" },
                 choices: [
-                    { "th": "Mild (à¹€à¸œà¹‡à¸”à¸™à¹‰à¸­à¸¢)", "en": "Mild (à¹€à¸œà¹‡à¸”à¸™à¹‰à¸­à¸¢)" },
-                    { "th": "Medium (à¹€à¸œà¹‡à¸”à¸à¸¥à¸²à¸‡)", "en": "Medium (à¹€à¸œà¹‡à¸”à¸à¸¥à¸²à¸‡)" },
+                    { "th": "Mild (เผ็ดน้อย)", "en": "Mild (เผ็ดน้อย)" },
+                    { "th": "Medium (เผ็ดกลาง)", "en": "Medium (เผ็ดกลาง)" },
                     { "th": "Thai Spicy", "en": "Thai Spicy" }
                 ]
             });
@@ -389,10 +389,10 @@
         if (hasBasil) {
             set.options.push({
                 id: "spicy_basil",
-                label: { "th": "à¸£à¸°à¸”à¸±à¸šà¸„à¸§à¸²à¸¡à¹€à¸œà¹‡à¸”à¸œà¸±à¸”à¸à¸°à¹€à¸žà¸£à¸²", "en": "Spiciness Level - Basil Stir Fry" },
+                label: { "th": "ระดับความเผ็ดผัดกะเพรา", "en": "Spiciness Level - Basil Stir Fry" },
                 choices: [
-                    { "th": "Mild (à¹€à¸œà¹‡à¸”à¸™à¹‰à¸­à¸¢)", "en": "Mild (à¹€à¸œà¹‡à¸”à¸™à¹‰à¸­à¸¢)" },
-                    { "th": "Medium (à¹€à¸œà¹‡à¸”à¸à¸¥à¸²à¸‡)", "en": "Medium (à¹€à¸œà¹‡à¸”à¸à¸¥à¸²à¸‡)" },
+                    { "th": "Mild (เผ็ดน้อย)", "en": "Mild (เผ็ดน้อย)" },
+                    { "th": "Medium (เผ็ดกลาง)", "en": "Medium (เผ็ดกลาง)" },
                     { "th": "Thai Spicy", "en": "Thai Spicy" }
                 ]
             });
@@ -401,10 +401,10 @@
         if (hasSomTum) {
             set.options.push({
                 id: "spicy_somtum",
-                label: { "th": "à¸£à¸°à¸”à¸±à¸šà¸„à¸§à¸²à¸¡à¹€à¸œà¹‡à¸”à¸ªà¹‰à¸¡à¸•à¸³", "en": "Spiciness Level - Som Tum" },
+                label: { "th": "ระดับความเผ็ดส้มตำ", "en": "Spiciness Level - Som Tum" },
                 choices: [
-                    { "th": "Mild (à¹€à¸œà¹‡à¸”à¸™à¹‰à¸­à¸¢)", "en": "Mild (à¹€à¸œà¹‡à¸”à¸™à¹‰à¸­à¸¢)" },
-                    { "th": "Medium (à¹€à¸œà¹‡à¸”à¸à¸¥à¸²à¸‡)", "en": "Medium (à¹€à¸œà¹‡à¸”à¸à¸¥à¸²à¸‡)" },
+                    { "th": "Mild (เผ็ดน้อย)", "en": "Mild (เผ็ดน้อย)" },
+                    { "th": "Medium (เผ็ดกลาง)", "en": "Medium (เผ็ดกลาง)" },
                     { "th": "Thai Spicy", "en": "Thai Spicy" }
                 ]
             });
@@ -428,15 +428,15 @@
             // Group 1: Authentic Thai Sets
             if (menuData.length > 0) {
                 const grp1 = document.createElement('optgroup');
-                grp1.label = 'ðŸ½ï¸ à¹€à¸‹à¸—à¸•à¸³à¸£à¸±à¸šà¹„à¸—à¸¢ / Authentic Thai Sets';
+                grp1.label = '🍽️ เซทตำรับไทย / Authentic Thai Sets';
                 menuData.forEach(s => {
                     extendOptionsWithSpiciness(s);
                     const opt = document.createElement('option');
                     const key = `authentic-${s.id}`;
                     opt.value = key;
-                    opt.textContent = `SET ${s.id} â€” ${s.name.th} (${s.name.en}) â€” Â£${s.price}`;
+                    opt.textContent = `SET ${s.id} — ${s.name.th} (${s.name.en}) — £${s.price}`;
                     grp1.appendChild(opt);
-                    allMenuSets.push({ key, name_th: s.name.th, name_en: s.name.en, price: parseFloat(s.price), unit_th: '10 à¸—à¹ˆà¸²à¸™', unit_en: '10 Persons', category: 'Authentic', options: s.options || null });
+                    allMenuSets.push({ key, name_th: s.name.th, name_en: s.name.en, price: parseFloat(s.price), unit_th: '10 ท่าน', unit_en: '10 Persons', category: 'Authentic', options: s.options || null });
                 });
                 select.appendChild(grp1);
             }
@@ -444,13 +444,13 @@
             // Group 2: Classic / Delivery Sets
             if (classicData.length > 0) {
                 const grp2 = document.createElement('optgroup');
-                grp2.label = 'ðŸ¥¡ à¹€à¸‹à¸•à¸–à¸²à¸”à¹„à¸—à¸¢à¸ªà¹„à¸•à¸¥à¹Œ / Thai Style Tray Sets';
+                grp2.label = '🥡 เซตถาดไทยสไตล์ / Thai Style Tray Sets';
                 classicData.forEach(s => {
                     extendOptionsWithSpiciness(s);
                     const opt = document.createElement('option');
                     const key = `classic-${s.id}`;
                     opt.value = key;
-                    opt.textContent = `${s.name.th} (${s.name.en}) â€” Â£${s.price} / ${s.unit.th}`;
+                    opt.textContent = `${s.name.th} (${s.name.en}) — £${s.price} / ${s.unit.th}`;
                     grp2.appendChild(opt);
                     allMenuSets.push({ key, name_th: s.name.th, name_en: s.name.en, price: parseFloat(s.price), unit_th: s.unit.th, unit_en: s.unit.en, category: 'Classic', options: s.options || null });
                 });
@@ -459,13 +459,13 @@
 
             // Group 3: Premium Royal Canapes (Custom Selection)
             const grp3 = document.createElement('optgroup');
-            grp3.label = 'ðŸ¢ à¹€à¸¡à¸™à¸¹à¸šà¸£à¸´à¸à¸²à¸£à¸Šà¸²à¸§à¸§à¸±à¸‡ / Premium Royal Gathering Sets';
+            grp3.label = '🍢 เมนูบริการชาววัง / Premium Royal Gathering Sets';
             
             
 
             const optCanape = document.createElement('option');
             optCanape.value = 'royal-canapes';
-            optCanape.textContent = 'à¹€à¸”à¸­à¸° à¸£à¸­à¸¢à¸±à¸¥ à¸ªà¸¢à¸²à¸¡ à¹à¸à¹€à¸˜à¸­à¸£à¸´à¸‡ (à¹€à¸¥à¸·à¸­à¸à¹€à¸­à¸‡) / The Royal Siam Gathering (Bespoke Cart)';
+            optCanape.textContent = 'เดอะ รอยัล สยาม แกเธอริง (เลือกเอง) / The Royal Siam Gathering (Bespoke Cart)';
             grp3.appendChild(optCanape);
             
             select.appendChild(grp3);
@@ -473,10 +473,10 @@
 
             allMenuSets.push({
                 key: 'royal-canapes',
-                name_th: 'à¹€à¸”à¸­à¸° à¸£à¸­à¸¢à¸±à¸¥ à¸ªà¸¢à¸²à¸¡ à¹à¸à¹€à¸˜à¸­à¸£à¸´à¸‡ (à¹€à¸‹à¸•à¸ªà¸±à¹ˆà¸‡à¹€à¸­à¸‡)',
+                name_th: 'เดอะ รอยัล สยาม แกเธอริง (เซตสั่งเอง)',
                 name_en: 'The Royal Siam Gathering (Bespoke Selection)',
                 price: 0,
-                unit_th: 'à¸£à¸²à¸¢à¸à¸²à¸£à¸—à¸µà¹ˆà¹€à¸¥à¸·à¸­à¸',
+                unit_th: 'รายการที่เลือก',
                 unit_en: 'Selected Items',
                 category: 'RoyalCanapes',
                 options: null
@@ -510,9 +510,9 @@
                 
                 if (!itemsStr) {
                     document.getElementById('info-set-name').textContent = `${info.name_th} / ${info.name_en}`;
-                    document.getElementById('info-set-unit').innerHTML = `<span style="color:red; font-weight:600;">${currentLang === 'th' ? 'à¸à¸£à¸¸à¸“à¸²à¹€à¸¥à¸·à¸­à¸à¹€à¸¡à¸™à¸¹à¸„à¸³à¸žà¸­à¸”à¸µà¸„à¸³à¸«à¸£à¸·à¸­à¹€à¸‹à¸•à¹à¸à¸‡à¸—à¸µà¹ˆà¸«à¸™à¹‰à¸²à¸«à¸¥à¸±à¸à¸à¹ˆà¸­à¸™à¸„à¸£à¸±à¸š' : 'Please select CanapÃ© or Curry items from the page first.'}</span>`;
-                    document.getElementById('info-set-price').textContent = `Â£0`;
-                    document.getElementById('info-set-deposit').textContent = `à¸¡à¸±à¸”à¸ˆà¸³ 50% = Â£0`;
+                    document.getElementById('info-set-unit').innerHTML = `<span style="color:red; font-weight:600;">${currentLang === 'th' ? 'กรุณาเลือกเมนูคำพอดีคำหรือเซตแกงที่หน้าหลักก่อนครับ' : 'Please select Canapé or Curry items from the page first.'}</span>`;
+                    document.getElementById('info-set-price').textContent = `£0`;
+                    document.getElementById('info-set-deposit').textContent = `มัดจำ 50% = £0`;
                     infoBox.style.display = 'block';
                     customSection.style.display = 'none';
                     return;
@@ -535,7 +535,7 @@
                     let totalPrice = 0;
                     let listHTML = '<ul id="canapes-booking-list" style="margin: 10px 0; padding-left: 20px; text-align: left; list-style-type: disc; font-size: 0.9rem;">';
 
-                    // Parse CanapÃ©s
+                    // Parse Canapés
                     categories.forEach(cat => {
                         cat.items.forEach(item => {
                             if (selections[item.id]) {
@@ -545,8 +545,8 @@
                                 totalPrice += subtotal;
                                 listHTML += `
                                     <li style="margin-bottom: 5px; color: var(--dark-green); line-height: 1.4;">
-                                        <strong>ðŸ¢ ${item.name[currentLang]}</strong> x ${qty} ${currentLang === 'th' ? 'à¸Šà¸¸à¸” (32 à¸Šà¸´à¹‰à¸™)' : 'Sets (32 Pcs)'}
-                                        <span style="color: var(--gold); font-weight: 700; margin-left: 8px;">Â£${subtotal}</span>
+                                        <strong>🍢 ${item.name[currentLang]}</strong> x ${qty} ${currentLang === 'th' ? 'ชุด (32 ชิ้น)' : 'Sets (32 Pcs)'}
+                                        <span style="color: var(--gold); font-weight: 700; margin-left: 8px;">£${subtotal}</span>
                                     </li>
                                 `;
                             }
@@ -562,8 +562,8 @@
                             totalPrice += subtotal;
                             listHTML += `
                                 <li style="margin-bottom: 5px; color: var(--dark-green); line-height: 1.4;">
-                                    <strong>ðŸ› ${item.name[currentLang]}</strong> x ${qty} ${currentLang === 'th' ? 'à¸Šà¸¸à¸” (6 à¸à¸¥à¹ˆà¸­à¸‡)' : 'Sets (6 Meals)'}
-                                    <span style="color: var(--gold); font-weight: 700; margin-left: 8px;">Â£${subtotal}</span>
+                                    <strong>🍛 ${item.name[currentLang]}</strong> x ${qty} ${currentLang === 'th' ? 'ชุด (6 กล่อง)' : 'Sets (6 Meals)'}
+                                    <span style="color: var(--gold); font-weight: 700; margin-left: 8px;">£${subtotal}</span>
                                 </li>
                             `;
                         }
@@ -575,15 +575,15 @@
                     
                     const unitContainer = document.getElementById('info-set-unit');
                     unitContainer.innerHTML = `
-                        <div style="font-weight:700; margin-bottom: 5px; color: var(--dark-green);">${currentLang === 'th' ? 'à¸£à¸²à¸¢à¸à¸²à¸£à¸ˆà¸­à¸‡à¸Šà¸²à¸§à¸§à¸±à¸‡à¸—à¸µà¹ˆà¹€à¸¥à¸·à¸­à¸à¸ªà¸±à¹ˆà¸‡:' : 'Selected Royal Items:'}</div>
+                        <div style="font-weight:700; margin-bottom: 5px; color: var(--dark-green);">${currentLang === 'th' ? 'รายการจองชาววังที่เลือกสั่ง:' : 'Selected Royal Items:'}</div>
                         ${listHTML}
                         <div style="font-size: 0.8rem; color: #888; margin-top: 8px; font-style: italic;">
-                            ${currentLang === 'th' ? '* à¸ˆà¸³à¸«à¸™à¹ˆà¸²à¸¢à¸•à¸²à¸¡à¹€à¸‹à¸•à¸„à¸³à¸§à¹ˆà¸²à¸‡ (32 à¸Šà¸´à¹‰à¸™) à¹à¸¥à¸°à¹€à¸‹à¸•à¹à¸à¸‡à¸‚à¹‰à¸²à¸§à¸à¸¥à¹ˆà¸­à¸‡ (6 à¸à¸¥à¹ˆà¸­à¸‡)' : '* Sold in portions of 32-pieces canapÃ©s and sets of 6 curry meals'}
+                            ${currentLang === 'th' ? '* จำหน่ายตามเซตคำว่าง (32 ชิ้น) และเซตแกงข้าวกล่อง (6 กล่อง)' : '* Sold in portions of 32-pieces canapés and sets of 6 curry meals'}
                         </div>
                     `;
 
-                    document.getElementById('info-set-price').textContent = `Â£${totalPrice}`;
-                    document.getElementById('info-set-deposit').textContent = `à¸¡à¸±à¸”à¸ˆà¸³ 50% = Â£${(totalPrice / 2).toFixed(2)}`;
+                    document.getElementById('info-set-price').textContent = `£${totalPrice}`;
+                    document.getElementById('info-set-deposit').textContent = `มัดจำ 50% = £${(totalPrice / 2).toFixed(2)}`;
                     
                     info.price = totalPrice;
                     currentTotalSets = totalSets; // Save total sets for submission
@@ -593,12 +593,12 @@
             } else {
                 currentTotalSets = 1; // Default 1 set for classic/authentic menus
                 document.getElementById('info-set-name').textContent = `${info.name_th} / ${info.name_en}`;
-                document.getElementById('info-set-unit').textContent = `à¸ªà¸³à¸«à¸£à¸±à¸š ${info.unit_th} / For ${info.unit_en}`;
-                document.getElementById('info-set-price').textContent = `Â£${info.price.toFixed(0)}`;
+                document.getElementById('info-set-unit').textContent = `สำหรับ ${info.unit_th} / For ${info.unit_en}`;
+                document.getElementById('info-set-price').textContent = `£${info.price.toFixed(0)}`;
                 if (info.category === 'Classic') {
-                    document.getElementById('info-set-deposit').textContent = `${currentLang === 'th' ? 'à¸Šà¸³à¸£à¸°à¹€à¸•à¹‡à¸¡à¸ˆà¸³à¸™à¸§à¸™' : 'Full Payment'} = Â£${info.price.toFixed(2)}`;
+                    document.getElementById('info-set-deposit').textContent = `${currentLang === 'th' ? 'ชำระเต็มจำนวน' : 'Full Payment'} = £${info.price.toFixed(2)}`;
                 } else {
-                    document.getElementById('info-set-deposit').textContent = `à¸¡à¸±à¸”à¸ˆà¸³ 50% = Â£${(info.price / 2).toFixed(2)}`;
+                    document.getElementById('info-set-deposit').textContent = `มัดจำ 50% = £${(info.price / 2).toFixed(2)}`;
                 }
                 infoBox.style.display = 'block';
 
@@ -615,7 +615,7 @@
                                 ${opt.label.th} / ${opt.label.en}
                             </label>
                             <select name="custom_${opt.id}" style="width:100%; padding:12px; border:2px solid #ddd; border-radius:10px; font-family:'Prompt'; font-size:0.95rem; color:var(--dark-green); background:white; cursor:pointer;" required>
-                                <option value="" disabled ${!preselectedVal ? 'selected' : ''}>-- à¹€à¸¥à¸·à¸­à¸ / Choose --</option>
+                                <option value="" disabled ${!preselectedVal ? 'selected' : ''}>-- เลือก / Choose --</option>
                                 ${opt.choices.map(c => {
                                     const isSel = (preselectedVal === c.th) ? 'selected' : '';
                                     return `<option value="${c.th}" ${isSel}>${c.th} / ${c.en}</option>`;
@@ -655,7 +655,7 @@
 
         const menuSelectVal = document.getElementById('menuSetSelect').value;
         if (!custName || !custPhone || !custEmail || !eventDate || !eventPlace || !custAddress || !menuSelectVal) {
-            alert("à¸à¸£à¸¸à¸“à¸²à¸à¸£à¸­à¸à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¹ƒà¸«à¹‰à¸„à¸£à¸šà¸–à¹‰à¸§à¸™ / Please fill in all required fields and select a menu set.");
+            alert("กรุณากรอกข้อมูลให้ครบถ้วน / Please fill in all required fields and select a menu set.");
             return;
         }
 
@@ -668,7 +668,7 @@
         const customChoices = [];
         for (const sel of customSelects) {
             if (sel.offsetParent !== null && !sel.value) {
-                alert('à¸à¸£à¸¸à¸“à¸²à¹€à¸¥à¸·à¸­à¸à¸£à¸²à¸¢à¸à¸²à¸£à¸­à¸²à¸«à¸²à¸£à¹ƒà¸«à¹‰à¸„à¸£à¸š / Please complete all menu choices.');
+                alert('กรุณาเลือกรายการอาหารให้ครบ / Please complete all menu choices.');
                 return;
             }
             if (sel.value) customChoices.push(sel.value);
@@ -687,7 +687,7 @@
 
         const btn = document.getElementById('btn-submit');
         const originalText = btn.innerText;
-        btn.innerText = "à¸à¸³à¸¥à¸±à¸‡à¸›à¸£à¸°à¸¡à¸§à¸¥à¸œà¸¥... / Processing...";
+        btn.innerText = "กำลังประมวลผล... / Processing...";
         btn.disabled = true;
 
         try {
@@ -712,13 +712,13 @@
             } else if (result.success) {
                 window.location.href = `/success.html?method=${result.method}&id=${result.bookingId}`;
             } else {
-                alert('à¹€à¸à¸´à¸”à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸” / Error: ' + (result.error || 'Unknown error. Please check API keys.'));
+                alert('เกิดข้อผิดพลาด / Error: ' + (result.error || 'Unknown error. Please check API keys.'));
                 btn.innerText = originalText;
                 btn.disabled = false;
             }
         } catch (error) {
             console.error('Error submitting booking:', error);
-            alert('à¹€à¸à¸´à¸”à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”à¹ƒà¸™à¸à¸²à¸£à¹€à¸Šà¸·à¹ˆà¸­à¸¡à¸•à¹ˆà¸­ / Connection error');
+            alert('เกิดข้อผิดพลาดในการเชื่อมต่อ / Connection error');
             btn.innerText = originalText;
             btn.disabled = false;
         }
@@ -729,13 +729,13 @@
         if (btn) { document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); }
         const t = {
             th: { 
-                connect: "à¸•à¸´à¸”à¸•à¹ˆà¸­à¹€à¸£à¸²", booking: "à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸à¸²à¸£à¸ªà¸±à¹ˆà¸‡à¸ˆà¸­à¸‡", name: "à¸Šà¸·à¹ˆà¸­à¸œà¸¹à¹‰à¸•à¸´à¸”à¸•à¹ˆà¸­", phone: "à¹€à¸šà¸­à¸£à¹Œà¹‚à¸—à¸£à¸¨à¸±à¸žà¸—à¹Œ", date: "à¸§à¸±à¸™à¸—à¸µà¹ˆà¸ˆà¸±à¸”à¸‡à¸²à¸™", 
-                venue: "à¸ªà¸–à¸²à¸™à¸—à¸µà¹ˆà¸ˆà¸±à¸”à¸‡à¸²à¸™", address: "à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸ˆà¸±à¸”à¸ªà¹ˆà¸‡", payment: "à¸§à¸´à¸˜à¸µà¸Šà¸³à¸£à¸°à¹€à¸‡à¸´à¸™à¸¡à¸±à¸”à¸ˆà¸³", submit: "à¸¢à¸·à¸™à¸¢à¸±à¸™à¸à¸²à¸£à¸ˆà¸­à¸‡",
-                allergy: "à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸à¸²à¸£à¹à¸žà¹‰à¸­à¸²à¸«à¸²à¸£", peanuts: "à¸–à¸±à¹ˆà¸§", milk: "à¸™à¸¡ / à¸œà¸¥à¸´à¸•à¸ à¸±à¸“à¸‘à¹Œà¸ˆà¸²à¸à¸™à¸¡", seafood: "à¸­à¸²à¸«à¸²à¸£à¸—à¸°à¹€à¸¥", eggs: "à¹„à¸‚à¹ˆ", msg: "à¸œà¸‡à¸Šà¸¹à¸£à¸ª (MSG)", fishsauce: "à¸™à¹‰à¸³à¸›à¸¥à¸² (Fish Sauce)", knorr: "à¸„à¸™à¸­à¸£à¹Œ (Knorr)",
-                other: "à¸­à¸·à¹ˆà¸™à¹† à¸£à¸°à¸šà¸¸ (à¸–à¹‰à¸²à¸¡à¸µ)",
-                menu_select: "à¹€à¸¥à¸·à¸­à¸à¸Šà¸¸à¸”à¹€à¸¡à¸™à¸¹ (à¸£à¸²à¸„à¸²à¸¢à¸±à¸‡à¹„à¸¡à¹ˆà¸£à¸§à¸¡à¸ à¸²à¸©à¸µà¹à¸¥à¸°à¸šà¸£à¸´à¸à¸²à¸£)",
-                d_title: "à¹€à¸‡à¸·à¹ˆà¸­à¸™à¹„à¸‚à¸à¸²à¸£à¸Šà¸³à¸£à¸°à¹€à¸‡à¸´à¸™ (Payment Terms):",
-                d_desc: "à¸Šà¸³à¸£à¸°à¸¡à¸±à¸”à¸ˆà¸³ 50% à¸ªà¸³à¸«à¸£à¸±à¸šà¸‡à¸²à¸™à¸ˆà¸±à¸”à¹€à¸¥à¸µà¹‰à¸¢à¸‡ à¸«à¸£à¸·à¸­ à¸Šà¸³à¸£à¸°à¹€à¸•à¹‡à¸¡à¸ˆà¸³à¸™à¸§à¸™à¸ªà¸³à¸«à¸£à¸±à¸šà¹€à¸‹à¸•à¸”à¸´à¸¥à¸´à¹€à¸§à¸­à¸£à¸µà¸šà¹‡à¸­à¸à¸‹à¹Œ (à¸£à¸²à¸„à¸²à¹„à¸¡à¹ˆà¸£à¸§à¸¡à¸ à¸²à¸©à¸µà¹à¸¥à¸°à¸„à¹ˆà¸²à¸ˆà¸±à¸”à¸ªà¹ˆà¸‡)"
+                connect: "ติดต่อเรา", booking: "ข้อมูลการสั่งจอง", name: "ชื่อผู้ติดต่อ", phone: "เบอร์โทรศัพท์", date: "วันที่จัดงาน", 
+                venue: "สถานที่จัดงาน", address: "ที่อยู่จัดส่ง", payment: "วิธีชำระเงินมัดจำ", submit: "ยืนยันการจอง",
+                allergy: "ข้อมูลการแพ้อาหาร", peanuts: "ถั่ว", milk: "นม / ผลิตภัณฑ์จากนม", seafood: "อาหารทะเล", eggs: "ไข่", msg: "ผงชูรส (MSG)", fishsauce: "น้ำปลา (Fish Sauce)", knorr: "คนอร์ (Knorr)",
+                other: "อื่นๆ ระบุ (ถ้ามี)",
+                menu_select: "เลือกชุดเมนู (ราคายังไม่รวมภาษีและบริการ)",
+                d_title: "เงื่อนไขการชำระเงิน (Payment Terms):",
+                d_desc: "ชำระมัดจำ 50% สำหรับงานจัดเลี้ยง หรือ ชำระเต็มจำนวนสำหรับเซตดิลิเวอรีบ็อกซ์ (ราคาไม่รวมภาษีและค่าจัดส่ง)"
             },
             en: { 
                 connect: "Connect With Us", booking: "Booking Details", name: "Contact Name", phone: "Phone Number", date: "Event Date", 
@@ -781,7 +781,6 @@
     <script src="mobile-menu.js"></script>
 
 
-
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -797,4 +796,3 @@ s0.parentNode.insertBefore(s1,s0);
 <!--End of Tawk.to Script-->
 </body>
 </html>
-
