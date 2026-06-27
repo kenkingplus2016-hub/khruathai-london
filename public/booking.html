@@ -67,7 +67,7 @@
     <!-- Leaflet Map CSS & JS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-    <link rel="stylesheet" href="ai-chatbot.css">
+
 </head>
 <body>
 
@@ -166,29 +166,64 @@
             <!-- Allergy Section -->
             <div style="margin-top:20px; background:rgba(212,175,55,0.05); padding:20px; border-radius:15px; border:1px dashed var(--gold);">
                 <label id="l-allergy" style="color:var(--dark-green); font-weight:600; display:block; margin-bottom:10px;">ข้อมูลการแพ้อาหาร / Food Allergy & Dietary Requirements</label>
-                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap:10px; margin-bottom:10px;">
-                    <label style="display:flex; align-items:center; gap:8px; font-size:0.9rem; cursor:pointer;">
-                        <input type="checkbox" name="allergy" value="Peanuts"> <span id="opt-peanuts">ถั่ว (Peanuts)</span>
-                    </label>
-                    <label style="display:flex; align-items:center; gap:8px; font-size:0.9rem; cursor:pointer;">
-                        <input type="checkbox" name="allergy" value="Milk"> <span id="opt-milk">นม (Milk/Dairy)</span>
-                    </label>
-                    <label style="display:flex; align-items:center; gap:8px; font-size:0.9rem; cursor:pointer;">
-                        <input type="checkbox" name="allergy" value="Seafood"> <span id="opt-seafood">อาหารทะเล (Seafood)</span>
-                    </label>
-                    <label style="display:flex; align-items:center; gap:8px; font-size:0.9rem; cursor:pointer;">
-                        <input type="checkbox" name="allergy" value="Eggs"> <span id="opt-eggs">ไข่ (Eggs)</span>
-                    </label>
-                    <label style="display:flex; align-items:center; gap:8px; font-size:0.9rem; cursor:pointer;">
-                        <input type="checkbox" name="allergy" value="MSG"> <span id="opt-msg">ผงชูรส (MSG)</span>
-                    </label>
-                    <label style="display:flex; align-items:center; gap:8px; font-size:0.9rem; cursor:pointer;">
-                        <input type="checkbox" name="allergy" value="Fish Sauce"> <span id="opt-fishsauce">น้ำปลา (Fish Sauce)</span>
-                    </label>
-                    <label style="display:flex; align-items:center; gap:8px; font-size:0.9rem; cursor:pointer;">
-                        <input type="checkbox" name="allergy" value="Knorr"> <span id="opt-knorr">คนอร์ (Knorr / Bouillon)</span>
-                    </label>
-                </div>
+                <table style="width:100%; border-collapse:collapse; margin-bottom:10px;">
+                    <tr>
+                        <td style="width:20px; padding:0 0 15px 0; vertical-align:top;">
+                            <input type="checkbox" id="a-peanuts" name="allergy" value="Peanuts" style="width:18px; height:18px; margin:2px 0 0 0;">
+                        </td>
+                        <td style="width:calc(50% - 20px); padding:0 5px 15px 5px; vertical-align:top; text-align:left;">
+                            <label for="a-peanuts" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;">ถั่ว (Peanuts)</label>
+                        </td>
+                        <td style="width:20px; padding:0 0 15px 5px; vertical-align:top;">
+                            <input type="checkbox" id="a-milk" name="allergy" value="Milk" style="width:18px; height:18px; margin:2px 0 0 0;">
+                        </td>
+                        <td style="width:calc(50% - 25px); padding:0 0 15px 5px; vertical-align:top; text-align:left;">
+                            <label for="a-milk" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;">นม (Milk/Dairy)</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:20px; padding:0 0 15px 0; vertical-align:top;">
+                            <input type="checkbox" id="a-seafood" name="allergy" value="Seafood" style="width:18px; height:18px; margin:2px 0 0 0;">
+                        </td>
+                        <td style="width:calc(50% - 20px); padding:0 5px 15px 5px; vertical-align:top; text-align:left;">
+                            <label for="a-seafood" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;">อาหารทะเล (Seafood)</label>
+                        </td>
+                        <td style="width:20px; padding:0 0 15px 5px; vertical-align:top;">
+                            <input type="checkbox" id="a-eggs" name="allergy" value="Eggs" style="width:18px; height:18px; margin:2px 0 0 0;">
+                        </td>
+                        <td style="width:calc(50% - 25px); padding:0 0 15px 5px; vertical-align:top; text-align:left;">
+                            <label for="a-eggs" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;">ไข่ (Eggs)</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:20px; padding:0 0 15px 0; vertical-align:top;">
+                            <input type="checkbox" id="a-gluten" name="allergy" value="Gluten" style="width:18px; height:18px; margin:2px 0 0 0;">
+                        </td>
+                        <td style="width:calc(50% - 20px); padding:0 5px 15px 5px; vertical-align:top; text-align:left;">
+                            <label for="a-gluten" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;">กลูเตน (Gluten)</label>
+                        </td>
+                        <td style="width:20px; padding:0 0 15px 5px; vertical-align:top;">
+                            <input type="checkbox" id="a-soy" name="allergy" value="Soy" style="width:18px; height:18px; margin:2px 0 0 0;">
+                        </td>
+                        <td style="width:calc(50% - 25px); padding:0 0 15px 5px; vertical-align:top; text-align:left;">
+                            <label for="a-soy" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;">ถั่วเหลือง (Soy)</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:20px; padding:0 0 15px 0; vertical-align:top;">
+                            <input type="checkbox" id="a-msg" name="allergy" value="MSG" style="width:18px; height:18px; margin:2px 0 0 0;">
+                        </td>
+                        <td style="width:calc(50% - 20px); padding:0 5px 15px 5px; vertical-align:top; text-align:left;">
+                            <label for="a-msg" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;">ผงชูรส (MSG)</label>
+                        </td>
+                        <td style="width:20px; padding:0 0 15px 5px; vertical-align:top;">
+                            <input type="checkbox" id="a-fishsauce" name="allergy" value="Fish Sauce" style="width:18px; height:18px; margin:2px 0 0 0;">
+                        </td>
+                        <td style="width:calc(50% - 25px); padding:0 0 15px 5px; vertical-align:top; text-align:left;">
+                            <label for="a-fishsauce" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;">น้ำปลา (Fish Sauce)</label>
+                        </td>
+                    </tr>
+                </table>
                 <textarea id="allergy-detail" rows="1" placeholder="อื่นๆ ระบุ (ถ้ามี) / Others (if any)" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px; font-family:'Prompt'; font-size:0.9rem;"></textarea>
             </div>
 
@@ -744,6 +779,6 @@
     loadAllMenus();
 </script>
     <script src="mobile-menu.js"></script>
-    <script src="ai-chatbot.js"></script>
+
 </body>
 </html>
