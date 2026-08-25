@@ -158,7 +158,7 @@
         if (/signature|box|lunch|crispy pork|mango/.test(q) || raw === 'Signature Box' || raw === 'ซิกเนเจอร์บ็อกซ์') {
             addMessage('<strong>Signature Box</strong> 🍱 No minimum order, 2 days advance booking:', 'bot');
             addCards([
-                { img: 'images/crispy_pork_box.jpg', title: 'Crispy Pork Belly', desc: 'Seafood & Sweet Sauce. S(180g): £16 | M(250g): £19 | L(350g): £25', btnText: 'View Details', link: 'lunch-box.html' },
+                { img: 'images/crispy_pork_box.jpg', title: 'Crispy Pork Belly', desc: 'Seafood & Sweet Sauce. S(300g): £14 | M(400g): £20 | L(500g): £25', btnText: 'View Details', link: 'lunch-box.html' },
                 { img: 'images/mango_sticky_rice_box.jpg', title: 'Mango Sticky Rice', desc: 'Minimum 2 boxes. £8 per Box', btnText: 'View Details', link: 'lunch-box.html' }
             ]);
             return null;
@@ -177,7 +177,7 @@
         if (/package\s*1|siam classic/.test(q) || raw === 'View Package 1') return '<strong>SIAM CLASSIC (Package 1)</strong><br>  For 7-8 guests<br>  £500<br>  Includes: 2 Starters, 2 Mains, 2 Rice/Noodles, 1 Veg<br><br><a class="zs-link" href="catering.html#packages-section">Book Now</a>';
         if (/package\s*2|signature/.test(q) || raw === 'View Package 2') return '<strong>SIGNATURE (Package 2)</strong><br>  For 9-12 guests<br>  £900<br>  Includes: 3 Starters, 3 Mains, 2 Rice/Noodles, 2 Veg, 1 Dessert<br><br><a class="zs-link" href="catering.html#packages-section">Book Now</a>';
         if (/package\s*3|celebration/.test(q) || raw === 'View Package 3') return '<strong>CELEBRATION (Package 3)</strong><br>  For 13-15 guests<br>  £1,050<br>  Includes: 4 Starters, 3 Mains, 3 Rice/Noodles, 2 Veg, 1 Dessert<br><br><a class="zs-link" href="catering.html#packages-section">Book Now</a>';
-        if (/price|cost|how much/.test(q)) return 'Prices:<br>• Catering Packages: £500 - £1,050+<br>• Signature Box: £16 - £25 (Crispy Pork Belly)<br>For exact quotes, please contact us directly.';
+        if (/price|cost|how much/.test(q)) return 'Prices:<br>• Catering Packages: £500 - £1,050+<br>• Signature Box: £14 - £25 (Crispy Pork Belly)<br>For exact quotes, please contact us directly.';
         if (/contact|admin|email/.test(q) || raw === 'Contact Us' || raw === 'ติดต่อเรา') return `You can reach our team at:<br>Email: <a class="zs-link" href="mailto:${C.contactEmail}">${C.contactEmail}</a><br>Or fill out the form on our Contact page.`;
         if (/hello|hi|hey|greetings/.test(q)) return 'Hello! 😊 How can we help make your dining experience special today? Feel free to ask a question or select from the options below.';
         
