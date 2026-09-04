@@ -1,46 +1,72 @@
 const fs = require('fs');
+const path = require('path');
 
-const files = [
-    'C:\\Users\\KENDEE\\Documents\\GitHub\\khruathai-london\\public\\menu.html',
-    'C:\\Users\\KENDEE\\Desktop\\เว็บ\\public\\menu.html'
-];
+const publicDir = 'public';
 
-for (const filePath of files) {
-    if (!fs.existsSync(filePath)) {
-        console.log('SKIP (not found): ' + filePath);
-        continue;
+// Recursive function to get all HTML files
+function getHtmlFiles(dir, fileList = []) {
+    const files = fs.readdirSync(dir);
+    for (const file of files) {
+        const filePath = path.join(dir, file);
+        if (fs.statSync(filePath).isDirectory()) {
+            getHtmlFiles(filePath, fileList);
+        } else if (filePath.endsWith('.html')) {
+            fileList.push(filePath);
+        }
+    }
+    return fileList;
+}
+
+const htmlFiles = getHtmlFiles(publicDir);
+
+for (const file of htmlFiles) {
+    let html = fs.readFileSync(file, 'utf8');
+    let changed = false;
+
+    // 1. Fix the specific sandwich text first in meeting-meals.html
+    const oldSandwichStr = 'Assorted Sandwiches or Thai Sangkhaya Bread (แซนด์วิชทูนา หรือ ขนมปังสังขยาใบเตย)';
+    if (html.includes(oldSandwichStr)) {
+        html = html.split(oldSandwichStr).join('Tuna Sandwiches or Pandan Custard Bread');
+        changed = true;
     }
     
-    let content = fs.readFileSync(filePath, 'utf8');
-    
-    // 1. Remove the language toggle CSS
-    content = content.replace(/<style>\s*html\[lang="th"\].*?<\/style>\s*/s, '');
-    
-    // 2. Remove the language buttons
-    content = content.replace(/<div class="flex justify-center gap-2 mt-2\.5">.*?<\/div>\s*/s, '');
-    
-    // 3. Remove <span class="nav-th">...</span>
-    // This regex attempts to match the span and its contents. It handles some nesting if it's not too complex, but it's better to use a loop or more robust parsing if it fails.
-    // However, looking at the code, it's mostly simple inline content.
-    // We can use a non-greedy match. We have to be careful not to match across multiple spans.
-    let oldContent;
-    do {
-        oldContent = content;
-        content = content.replace(/<span class="nav-th">(?:[^<]|<(?!\/span>))*<\/span>/g, '');
-    } while (content !== oldContent); // In case of nested spans, though unlikely for nav-th
+    // Also check for the previous iteration just in case
+    const oldSandwichStr2 = 'Assorted Sandwiches or Thai Sangkhaya Bread (แซนด์วิช หรือ ขนมปังสังขยา)';
+    if (html.includes(oldSandwichStr2)) {
+        html = html.split(oldSandwichStr2).join('Tuna Sandwiches or Pandan Custard Bread');
+        changed = true;
+    }
 
-    // 4. Unwrap <span class="nav-en">...</span>
-    do {
-        oldContent = content;
-        content = content.replace(/<span class="nav-en">((?:[^<]|<(?!\/span>))*)<\/span>/g, '$1');
-    } while (content !== oldContent);
+    // 2. Remove Thai text blocks and fix up brackets
+    // Regex to find Thai characters
+    const thaiRegex = /[\u0E00-\u0E7F]+/g;
     
-    // 5. Hardcoded Thai title
-    content = content.replace('สำรับไทย อีเว้น/บุฟเฟต์', 'Samrub Thai Event & Buffet');
-    
-    // Clean up empty spaces left by removal
-    content = content.replace(/<span>\s*<\/span>/g, '');
-    
-    fs.writeFileSync(filePath, content, 'utf8');
-    console.log('Processed: ' + filePath);
+    if (thaiRegex.test(html)) {
+        // First, handle specific known cases of full Thai inside brackets
+        // e.g. <small>(สอบถาม/ปรับเปลี่ยนเมนู)</small> -> remove entirely
+        html = html.replace(/<small[^>]*>\s*\([\u0E00-\u0E7F\s\/]+\)\s*<\/small>/g, '');
+        
+        // Remove Thai text inside parentheses that also has English (e.g., "(Tangmo Pla Haeng แตงโมปลาแห้ง)")
+        // We'll strip the Thai characters and trailing spaces
+        html = html.replace(/([A-Za-z\s-]+)\s+[\u0E00-\u0E7F\s\/]+/g, '$1');
+        
+        // Remove standalone Thai words with optional leading/trailing spaces
+        html = html.replace(/\s*[\u0E00-\u0E7F]+\s*/g, ' ');
+        
+        // Clean up empty parentheses that might be left behind: "()" or "( )"
+        html = html.replace(/\(\s*\)/g, '');
+        
+        // Clean up formatting where Thai was removed right before a closing bracket: "(Tangmo Pla Haeng )"
+        html = html.replace(/\s+\)/g, ')');
+        
+        // Clean up double spaces caused by replacements
+        html = html.replace(/  +/g, ' ');
+
+        changed = true;
+    }
+
+    if (changed) {
+        fs.writeFileSync(file, html, 'utf8');
+        console.log(`Removed Thai text from ${file}`);
+    }
 }
