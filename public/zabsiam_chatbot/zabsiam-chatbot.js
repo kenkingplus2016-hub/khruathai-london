@@ -165,19 +165,21 @@
         }
 
         if (/catering|package|party|event/.test(q) || raw === 'Catering Packages' || raw === 'แพ็กเกจจัดเลี้ยง') {
-            addMessage('We offer 3 event catering packages based on your guest count:', 'bot');
+            addMessage('We offer Premium Catering menus tailored to your guest count (20 to 100+ guests):', 'bot');
             addCards([
-                { img: 'images/Special Box Set Premium.jpg', title: 'Package 1: SIAM CLASSIC', desc: 'For 7-8 guests, £500', link: 'catering.html#packages-section', btnText: 'View Package 1' },
-                { img: 'images/the-signature.jpg', title: 'Package 2: SIGNATURE', desc: 'For 9-12 guests, £900', link: 'catering.html#packages-section', btnText: 'View Package 2' },
-                { img: 'images/party_platter.jpg', title: 'Package 3: CELEBRATION', desc: 'For 13-15 guests, £1,050', link: 'catering.html#packages-section', btnText: 'View Package 3' }
+                { img: 'images/Special Box Set Premium.jpg', title: 'Option A: Thai Classic', desc: 'From £16 per guest', link: 'event-catering.html', btnText: 'View Details' },
+                { img: 'images/the-signature.jpg', title: 'Option B: Thai Favourites', desc: 'From £19 per guest', link: 'event-catering.html', btnText: 'View Details' },
+                { img: 'images/party_platter.jpg', title: 'Option C: Premium Thai', desc: 'From £23 per guest', link: 'event-catering.html', btnText: 'View Details' },
+                { img: 'images/event_gallery.jpg', title: 'Option D: Zab Siam Signature', desc: 'From £26 per guest', link: 'event-catering.html', btnText: 'View Details' }
             ]);
             return null;
         }
 
-        if (/package\s*1|siam classic/.test(q) || raw === 'View Package 1') return '<strong>SIAM CLASSIC (Package 1)</strong><br>  For 7-8 guests<br>  £500<br>  Includes: 2 Starters, 2 Mains, 2 Rice/Noodles, 1 Veg<br><br><a class="zs-link" href="catering.html#packages-section">Book Now</a>';
-        if (/package\s*2|signature/.test(q) || raw === 'View Package 2') return '<strong>SIGNATURE (Package 2)</strong><br>  For 9-12 guests<br>  £900<br>  Includes: 3 Starters, 3 Mains, 2 Rice/Noodles, 2 Veg, 1 Dessert<br><br><a class="zs-link" href="catering.html#packages-section">Book Now</a>';
-        if (/package\s*3|celebration/.test(q) || raw === 'View Package 3') return '<strong>CELEBRATION (Package 3)</strong><br>  For 13-15 guests<br>  £1,050<br>  Includes: 4 Starters, 3 Mains, 3 Rice/Noodles, 2 Veg, 1 Dessert<br><br><a class="zs-link" href="catering.html#packages-section">Book Now</a>';
-        if (/price|cost|how much/.test(q)) return 'Prices:<br>• Catering Packages: £500 - £1,050+<br>• Signature Box: £14 - £25 (Crispy Pork Belly)<br>For exact quotes, please contact us directly.';
+        if (/option\s*a|thai classic/.test(q) || raw === 'Option A') return '<strong>Option A: THAI CLASSIC</strong><br>From £16 per guest<br>Features: Chicken Satay, Green Curry, Pad Thai, Mango Sticky Rice and more!<br><br><a class="zs-link" href="event-catering.html">View Full Menu & Prices</a>';
+        if (/option\s*b|thai favourites/.test(q) || raw === 'Option B') return '<strong>Option B: THAI FAVOURITES</strong><br>From £19 per guest<br>Features: Panang Chicken, Crispy Sea Bass, Mango Sticky Rice and more!<br><br><a class="zs-link" href="event-catering.html">View Full Menu & Prices</a>';
+        if (/option\s*c|premium thai/.test(q) || raw === 'Option C') return '<strong>Option C: PREMIUM THAI</strong><br>From £23 per guest<br>Features: Roasted Duck Red Curry, Stir-Fried Beef, Pla Lui Suan and more!<br><br><a class="zs-link" href="event-catering.html">View Full Menu & Prices</a>';
+        if (/option\s*d|zab siam signature/.test(q) || raw === 'Option D') return '<strong>Option D: ZAB SIAM SIGNATURE</strong><br>From £26 per guest<br>Features: Grilled Pork Neck, Panang Beef, Crispy Sea Bass, Pad Thai King Prawn and more!<br><br><a class="zs-link" href="event-catering.html">View Full Menu & Prices</a>';
+        if (/price|cost|how much/.test(q)) return 'Prices:<br>• Event Catering: From £16 to £34 per guest (depending on menu & guest count)<br>• Signature Box: £14 - £25 (Crispy Pork Belly)<br>For exact quotes, please contact us directly.';
         if (/contact|admin|email/.test(q) || raw === 'Contact Us' || raw === 'ติดต่อเรา') return `You can reach our team at:<br>Email: <a class="zs-link" href="mailto:${C.contactEmail}">${C.contactEmail}</a><br>Or fill out the form on our Contact page.`;
         if (/hello|hi|hey|greetings/.test(q)) return 'Hello! 😊 How can we help make your dining experience special today? Feel free to ask a question or select from the options below.';
         
