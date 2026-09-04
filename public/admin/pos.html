@@ -1,524 +1,516 @@
 <!doctype html>
 <html lang="th">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex,nofollow">
-  <title>Zab Siam POS & Stock</title>
-  <style>
-    :root {
-      --bg: #f7f2e8;
-      --ink: #172018;
-      --muted: #667064;
-      --panel: #fffdf8;
-      --line: #ded7c8;
-      --green: #2f6b4f;
-      --green-2: #214d39;
-      --gold: #b47a1f;
-      --red: #b84237;
-      --blue: #315f88;
-      --shadow: 0 16px 38px rgba(23, 32, 24, .11);
-    }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Zab Siam POS & Stock</title>
+<style>
+ :root {
+ --bg: #f7f2e8;
+ --ink: #172018;
+ --muted: #667064;
+ --panel: #fffdf8;
+ --line: #ded7c8;
+ --green: #2f6b4f;
+ --green-2: #214d39;
+ --gold: #b47a1f;
+ --red: #b84237;
+ --blue: #315f88;
+ --shadow: 0 16px 38px rgba(23, 32, 24, .11);
+ }
 
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: linear-gradient(135deg, #fffdf8, var(--bg));
-      color: var(--ink);
-      font-family: "Segoe UI", Tahoma, sans-serif;
-      line-height: 1.45;
-    }
+ * { box-sizing: border-box; }
+ body {
+ margin: 0;
+ background: linear-gradient(135deg, #fffdf8, var(--bg));
+ color: var(--ink);
+ font-family: "Segoe UI", Tahoma, sans-serif;
+ line-height: 1.45;
+ }
 
-    button, input, select, textarea { font: inherit; }
-    button { cursor: pointer; }
-    .app { min-height: 100vh; display: grid; grid-template-columns: 250px minmax(0, 1fr); }
-    aside {
-      background: #14241a;
-      color: #fff;
-      padding: 20px 16px;
-      position: sticky;
-      top: 0;
-      height: 100vh;
-      overflow: auto;
-    }
-    .brand { border-bottom: 1px solid rgba(255,255,255,.16); padding-bottom: 16px; margin-bottom: 14px; }
-    .brand h1 { margin: 0; font-size: 23px; }
-    .brand p { margin: 4px 0 0; color: rgba(255,255,255,.72); }
-    nav { display: grid; gap: 8px; }
-    .tab {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      border: 1px solid rgba(255,255,255,.13);
-      background: rgba(255,255,255,.06);
-      color: #fff;
-      min-height: 45px;
-      border-radius: 8px;
-      padding: 10px 12px;
-      text-align: left;
-      font-weight: 700;
-    }
-    .tab.active, .tab:hover { background: var(--green); }
-    main { padding: 22px; }
-    .topbar {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-bottom: 18px;
-    }
-    h2 { margin: 0; font-size: clamp(26px, 3vw, 38px); }
-    h3 { margin: 0 0 10px; font-size: 18px; }
-    .muted { color: var(--muted); }
-    .actions { display: flex; gap: 8px; flex-wrap: wrap; }
-    .btn {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      min-height: 40px;
-      padding: 9px 13px;
-      color: var(--ink);
-      background: var(--panel);
-      font-weight: 700;
-    }
-    .btn.primary { background: var(--green); color: #fff; border-color: var(--green); }
-    .btn.gold { background: var(--gold); color: #fff; border-color: var(--gold); }
-    .btn.danger { background: var(--red); color: #fff; border-color: var(--red); }
-    .btn.blue { background: var(--blue); color: #fff; border-color: var(--blue); }
-    .btn.block { width: 100%; }
-    .section { display: none; }
-    .section.active { display: block; }
-    .grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 14px; align-items: start; }
-    .card {
-      grid-column: span 12;
-      background: rgba(255,253,248,.92);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      box-shadow: var(--shadow);
-      padding: 16px;
-    }
-    .half { grid-column: span 6; }
-    .third { grid-column: span 4; }
-    .two-third { grid-column: span 8; }
-    .stat { display: grid; gap: 4px; min-height: 82px; }
-    .stat strong { font-size: 28px; }
-    .form-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 10px; }
-    label { display: grid; gap: 5px; font-weight: 700; font-size: 14px; }
-    input, select, textarea {
-      width: 100%;
-      min-height: 40px;
-      border: 1px solid var(--line);
-      background: #fff;
-      color: var(--ink);
-      border-radius: 8px;
-      padding: 8px 10px;
-    }
-    textarea { min-height: 86px; resize: vertical; }
-    .span-2 { grid-column: span 2; }
-    .span-3 { grid-column: span 3; }
-    .span-4 { grid-column: span 4; }
-    .span-5 { grid-column: span 5; }
-    .span-6 { grid-column: span 6; }
-    .span-8 { grid-column: span 8; }
-    .span-12 { grid-column: span 12; }
-    .table-wrap { overflow-x: auto; }
-    table { width: 100%; border-collapse: collapse; min-width: 760px; }
-    th, td { border-bottom: 1px solid var(--line); padding: 9px 8px; text-align: left; vertical-align: top; }
-    th { background: #eef2ec; font-size: 13px; }
-    td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      border-radius: 999px;
-      padding: 3px 8px;
-      font-size: 12px;
-      font-weight: 800;
-      border: 1px solid var(--line);
-      background: #fff;
-    }
-    .pill.low { color: var(--red); border-color: #e3aaa5; background: #fff2f0; }
-    .pill.ok { color: var(--green); border-color: #a9d3bd; background: #eef8f2; }
-    .pos-layout { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(320px, .9fr); gap: 14px; }
-    .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
-    .product-tile {
-      border: 1px solid var(--line);
-      background: #fff;
-      border-radius: 8px;
-      padding: 10px;
-      min-height: 118px;
-      display: grid;
-      gap: 6px;
-      text-align: left;
-    }
-    .product-tile strong { display: block; }
-    .cart-line {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 88px 76px 36px;
-      gap: 8px;
-      align-items: center;
-      padding: 8px 0;
-      border-bottom: 1px solid var(--line);
-    }
-    .total-row { display: flex; justify-content: space-between; gap: 12px; margin: 8px 0; font-size: 17px; }
-    .total-row.grand { font-size: 24px; font-weight: 800; color: var(--green-2); }
-    .scanner {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 40;
-      background: rgba(0,0,0,.72);
-      padding: 18px;
-      align-items: center;
-      justify-content: center;
-    }
-    .scanner.open { display: flex; }
-    .scanner-panel {
-      width: min(720px, 100%);
-      background: var(--panel);
-      border-radius: 8px;
-      padding: 14px;
-      box-shadow: var(--shadow);
-    }
-    video {
-      width: 100%;
-      max-height: 58vh;
-      background: #111;
-      border-radius: 8px;
-      object-fit: cover;
-    }
-    .scanner-line {
-      border: 2px dashed var(--gold);
-      border-radius: 8px;
-      padding: 10px;
-      margin-top: 10px;
-      color: var(--muted);
-    }
-    .receipt {
-      white-space: pre-wrap;
-      font-family: Consolas, "Courier New", monospace;
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 12px;
-      min-height: 180px;
-    }
-    .hidden { display: none !important; }
-    .right { text-align: right; }
-    .notice { border-left: 5px solid var(--gold); background: #fff8e7; padding: 10px 12px; border-radius: 8px; }
-    body.locked .app { display: none; }
-    .auth-screen {
-      min-height: 100vh;
-      display: none;
-      place-items: center;
-      padding: 18px;
-      background: linear-gradient(135deg, #14241a, #2f6b4f);
-    }
-    body.locked .auth-screen { display: grid; }
-    .auth-card {
-      width: min(430px, 100%);
-      background: var(--panel);
-      border: 1px solid rgba(255,255,255,.18);
-      border-radius: 8px;
-      box-shadow: var(--shadow);
-      padding: 20px;
-    }
-    .auth-card h1 { margin: 0 0 6px; font-size: 26px; }
-    .auth-error { color: var(--red); min-height: 22px; font-weight: 700; }
+ button, input, select, textarea { font: inherit; }
+ button { cursor: pointer; }
+ .app { min-height: 100vh; display: grid; grid-template-columns: 250px minmax(0, 1fr); }
+ aside {
+ background: #14241a;
+ color: #fff;
+ padding: 20px 16px;
+ position: sticky;
+ top: 0;
+ height: 100vh;
+ overflow: auto;
+ }
+ .brand { border-bottom: 1px solid rgba(255,255,255,.16); padding-bottom: 16px; margin-bottom: 14px; }
+ .brand h1 { margin: 0; font-size: 23px; }
+ .brand p { margin: 4px 0 0; color: rgba(255,255,255,.72); }
+ nav { display: grid; gap: 8px; }
+ .tab {
+ display: flex;
+ align-items: center;
+ gap: 9px;
+ border: 1px solid rgba(255,255,255,.13);
+ background: rgba(255,255,255,.06);
+ color: #fff;
+ min-height: 45px;
+ border-radius: 8px;
+ padding: 10px 12px;
+ text-align: left;
+ font-weight: 700;
+ }
+ .tab.active, .tab:hover { background: var(--green); }
+ main { padding: 22px; }
+ .topbar {
+ display: flex;
+ align-items: flex-start;
+ justify-content: space-between;
+ gap: 14px;
+ flex-wrap: wrap;
+ margin-bottom: 18px;
+ }
+ h2 { margin: 0; font-size: clamp(26px, 3vw, 38px); }
+ h3 { margin: 0 0 10px; font-size: 18px; }
+ .muted { color: var(--muted); }
+ .actions { display: flex; gap: 8px; flex-wrap: wrap; }
+ .btn {
+ border: 1px solid var(--line);
+ border-radius: 8px;
+ min-height: 40px;
+ padding: 9px 13px;
+ color: var(--ink);
+ background: var(--panel);
+ font-weight: 700;
+ }
+ .btn.primary { background: var(--green); color: #fff; border-color: var(--green); }
+ .btn.gold { background: var(--gold); color: #fff; border-color: var(--gold); }
+ .btn.danger { background: var(--red); color: #fff; border-color: var(--red); }
+ .btn.blue { background: var(--blue); color: #fff; border-color: var(--blue); }
+ .btn.block { width: 100%; }
+ .section { display: none; }
+ .section.active { display: block; }
+ .grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 14px; align-items: start; }
+ .card {
+ grid-column: span 12;
+ background: rgba(255,253,248,.92);
+ border: 1px solid var(--line);
+ border-radius: 8px;
+ box-shadow: var(--shadow);
+ padding: 16px;
+ }
+ .half { grid-column: span 6; }
+ .third { grid-column: span 4; }
+ .two-third { grid-column: span 8; }
+ .stat { display: grid; gap: 4px; min-height: 82px; }
+ .stat strong { font-size: 28px; }
+ .form-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 10px; }
+ label { display: grid; gap: 5px; font-weight: 700; font-size: 14px; }
+ input, select, textarea {
+ width: 100%;
+ min-height: 40px;
+ border: 1px solid var(--line);
+ background: #fff;
+ color: var(--ink);
+ border-radius: 8px;
+ padding: 8px 10px;
+ }
+ textarea { min-height: 86px; resize: vertical; }
+ .span-2 { grid-column: span 2; }
+ .span-3 { grid-column: span 3; }
+ .span-4 { grid-column: span 4; }
+ .span-5 { grid-column: span 5; }
+ .span-6 { grid-column: span 6; }
+ .span-8 { grid-column: span 8; }
+ .span-12 { grid-column: span 12; }
+ .table-wrap { overflow-x: auto; }
+ table { width: 100%; border-collapse: collapse; min-width: 760px; }
+ th, td { border-bottom: 1px solid var(--line); padding: 9px 8px; text-align: left; vertical-align: top; }
+ th { background: #eef2ec; font-size: 13px; }
+ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+ .pill {
+ display: inline-flex;
+ align-items: center;
+ border-radius: 999px;
+ padding: 3px 8px;
+ font-size: 12px;
+ font-weight: 800;
+ border: 1px solid var(--line);
+ background: #fff;
+ }
+ .pill.low { color: var(--red); border-color: #e3aaa5; background: #fff2f0; }
+ .pill.ok { color: var(--green); border-color: #a9d3bd; background: #eef8f2; }
+ .pos-layout { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(320px, .9fr); gap: 14px; }
+ .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+ .product-tile {
+ border: 1px solid var(--line);
+ background: #fff;
+ border-radius: 8px;
+ padding: 10px;
+ min-height: 118px;
+ display: grid;
+ gap: 6px;
+ text-align: left;
+ }
+ .product-tile strong { display: block; }
+ .cart-line {
+ display: grid;
+ grid-template-columns: minmax(0, 1fr) 88px 76px 36px;
+ gap: 8px;
+ align-items: center;
+ padding: 8px 0;
+ border-bottom: 1px solid var(--line);
+ }
+ .total-row { display: flex; justify-content: space-between; gap: 12px; margin: 8px 0; font-size: 17px; }
+ .total-row.grand { font-size: 24px; font-weight: 800; color: var(--green-2); }
+ .scanner {
+ display: none;
+ position: fixed;
+ inset: 0;
+ z-index: 40;
+ background: rgba(0,0,0,.72);
+ padding: 18px;
+ align-items: center;
+ justify-content: center;
+ }
+ .scanner.open { display: flex; }
+ .scanner-panel {
+ width: min(720px, 100%);
+ background: var(--panel);
+ border-radius: 8px;
+ padding: 14px;
+ box-shadow: var(--shadow);
+ }
+ video {
+ width: 100%;
+ max-height: 58vh;
+ background: #111;
+ border-radius: 8px;
+ object-fit: cover;
+ }
+ .scanner-line {
+ border: 2px dashed var(--gold);
+ border-radius: 8px;
+ padding: 10px;
+ margin-top: 10px;
+ color: var(--muted);
+ }
+ .receipt {
+ white-space: pre-wrap;
+ font-family: Consolas, "Courier New", monospace;
+ background: #fff;
+ border: 1px solid var(--line);
+ border-radius: 8px;
+ padding: 12px;
+ min-height: 180px;
+ }
+ .hidden { display: none !important; }
+ .right { text-align: right; }
+ .notice { border-left: 5px solid var(--gold); background: #fff8e7; padding: 10px 12px; border-radius: 8px; }
+ body.locked .app { display: none; }
+ .auth-screen {
+ min-height: 100vh;
+ display: none;
+ place-items: center;
+ padding: 18px;
+ background: linear-gradient(135deg, #14241a, #2f6b4f);
+ }
+ body.locked .auth-screen { display: grid; }
+ .auth-card {
+ width: min(430px, 100%);
+ background: var(--panel);
+ border: 1px solid rgba(255,255,255,.18);
+ border-radius: 8px;
+ box-shadow: var(--shadow);
+ padding: 20px;
+ }
+ .auth-card h1 { margin: 0 0 6px; font-size: 26px; }
+ .auth-error { color: var(--red); min-height: 22px; font-weight: 700; }
 
-    @media print {
-      aside, .topbar, .no-print, .tab { display: none !important; }
-      .app { display: block; }
-      main { padding: 0; }
-      .section { display: none !important; }
-      .section.printing { display: block !important; }
-      .card { box-shadow: none; border: 0; }
-    }
+ @media print {
+ aside, .topbar, .no-print, .tab { display: none !important; }
+ .app { display: block; }
+ main { padding: 0; }
+ .section { display: none !important; }
+ .section.printing { display: block !important; }
+ .card { box-shadow: none; border: 0; }
+ }
 
-    @media (max-width: 900px) {
-      .app { grid-template-columns: 1fr; }
-      aside { position: relative; height: auto; }
-      nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .half, .third, .two-third { grid-column: span 12; }
-      .pos-layout { grid-template-columns: 1fr; }
-    }
+ @media (max-width: 900px) {
+ .app { grid-template-columns: 1fr; }
+ aside { position: relative; height: auto; }
+ nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+ .half, .third, .two-third { grid-column: span 12; }
+ .pos-layout { grid-template-columns: 1fr; }
+ }
 
-    @media (max-width: 620px) {
-      main { padding: 14px; }
-      nav { grid-template-columns: 1fr; }
-      .span-2, .span-3, .span-4, .span-5, .span-6, .span-8 { grid-column: span 12; }
-      .cart-line { grid-template-columns: minmax(0, 1fr) 72px 64px 34px; }
-      table { min-width: 680px; }
-    }
-  </style>
+ @media (max-width: 620px) {
+ main { padding: 14px; }
+ nav { grid-template-columns: 1fr; }
+ .span-2, .span-3, .span-4, .span-5, .span-6, .span-8 { grid-column: span 12; }
+ .cart-line { grid-template-columns: minmax(0, 1fr) 72px 64px 34px; }
+ table { min-width: 680px; }
+ }
+</style>
 </head>
 <body class="locked">
 <section class="auth-screen" aria-label="POS login">
-  <form class="auth-card" id="authForm">
-    <h1>Zab Siam POS</h1>
-    <p class="muted">Staff access only. Please enter the POS password.</p>
-    <label>Password
-      <input id="posPassword" type="password" autocomplete="current-password" required>
-    </label>
-    <p class="auth-error" id="authError"></p>
-    <button class="btn primary block" type="submit">เข้าใช้งาน</button>
-  </form>
+<form class="auth-card" id="authForm">
+ <h1>Zab Siam POS</h1>
+ <p class="muted">Staff access only. Please enter the POS password.</p>
+ <label>Password
+ <input id="posPassword" type="password" autocomplete="current-password" required>
+ </label>
+ <p class="auth-error" id="authError"></p>
+ <button class="btn primary block" type="submit"> </button>
+</form>
 </section>
 <div class="app">
-  <aside>
-    <div class="brand">
-      <h1>Zab Siam</h1>
-      <p>POS & Stock System</p>
-    </div>
-    <nav aria-label="Main sections">
-      <button class="tab active" data-tab="dashboard" type="button">Dashboard</button>
-      <button class="tab" data-tab="pos" type="button">POS ขายหน้าร้าน</button>
-      <button class="tab" data-tab="stock" type="button">คลังสินค้า</button>
-      <button class="tab" data-tab="purchase" type="button">ใบสั่งซื้อ</button>
-      <button class="tab" data-tab="reports" type="button">รายงาน</button>
-      <button class="tab" data-tab="settings" type="button">ตั้งค่า/สำรองข้อมูล</button>
-    </nav>
-  </aside>
+<aside>
+ <div class="brand">
+ <h1>Zab Siam</h1>
+ <p>POS & Stock System</p>
+ </div>
+ <nav aria-label="Main sections">
+ <button class="tab active" data-tab="dashboard" type="button">Dashboard</button>
+ <button class="tab" data-tab="pos" type="button">POS</button>
+ <button class="tab" data-tab="stock" type="button"> </button>
+ <button class="tab" data-tab="purchase" type="button"> </button>
+ <button class="tab" data-tab="reports" type="button"> </button>
+ <button class="tab" data-tab="settings" type="button"> / </button>
+ </nav>
+</aside>
 
-  <main>
-    <section class="topbar">
-      <div>
-        <h2 id="pageTitle">Dashboard</h2>
-        <p class="muted" id="pageSubtitle">ภาพรวมยอดขายและสต็อกที่ต้องสั่งเพิ่ม</p>
-      </div>
-      <div class="actions no-print">
-        <a class="btn gold" href="https://zabsiam.com/ai-control-room.html" target="_blank" rel="noopener">เปิด AI Team</a>
-        <a class="btn" href="/admin/food-safety.html">Food Safety</a>
-        <a class="btn blue" href="/admin/temperature-check.html">Temperature Check</a>
-        <button class="btn primary" type="button" id="scanBtn">สแกนด้วยมือถือ/กล้อง</button>
-        <button class="btn" type="button" id="exportBtn">Export JSON</button>
-      </div>
-    </section>
+<main>
+ <section class="topbar">
+ <div>
+ <h2 id="pageTitle">Dashboard</h2>
+ <p class="muted" id="pageSubtitle"> </p>
+ </div>
+ <div class="actions no-print">
+ <a class="btn gold" href="https://zabsiam.com/ai-control-room.html" target="_blank" rel="noopener"> AI Team</a>
+ <a class="btn" href="/admin/food-safety.html">Food Safety</a>
+ <a class="btn blue" href="/admin/temperature-check.html">Temperature Check</a>
+ <button class="btn primary" type="button" id="scanBtn"> / </button>
+ <button class="btn" type="button" id="exportBtn">Export JSON</button>
+ </div>
+ </section>
 
-    <section id="dashboard" class="section active">
-      <div class="grid">
-        <div class="card third stat"><span class="muted">ยอดขายวันนี้</span><strong id="todaySales">£0.00</strong><span id="todayOrders">0 orders</span></div>
-        <div class="card third stat"><span class="muted">มูลค่าสต็อก</span><strong id="stockValue">£0.00</strong><span>ตามต้นทุนสินค้า</span></div>
-        <div class="card third stat"><span class="muted">สินค้าใกล้หมด</span><strong id="lowCount">0</strong><span>ต่ำกว่า reorder level</span></div>
-        <div class="card two-third">
-          <h3>สินค้าที่ต้องสั่งเพิ่ม</h3>
-          <div class="table-wrap"><table id="lowStockTable"></table></div>
-        </div>
-        <div class="card third">
-          <h3>สแกนเร็ว</h3>
-          <p class="muted">ใช้กล้องสแกนบาร์โค้ด/QR เพื่อค้นสินค้า เพิ่มเข้าตะกร้า หรือรับของเข้าคลัง</p>
-          <button class="btn primary block" type="button" data-scan-target="lookup">เปิดกล้องสแกน</button>
-          <div class="scanner-line" id="lastScan">ยังไม่มีรายการสแกน</div>
-        </div>
-      </div>
-    </section>
+ <section id="dashboard" class="section active">
+ <div class="grid">
+ <div class="card third stat"><span class="muted"> </span><strong id="todaySales">£0.00</strong><span id="todayOrders">0 orders</span></div>
+ <div class="card third stat"><span class="muted"> </span><strong id="stockValue">£0.00</strong><span> </span></div>
+ <div class="card third stat"><span class="muted"> </span><strong id="lowCount">0</strong><span> reorder level</span></div>
+ <div class="card two-third">
+ <h3> </h3>
+ <div class="table-wrap"><table id="lowStockTable"></table></div>
+ </div>
+ <div class="card third">
+ <h3> </h3>
+ <p class="muted"> /QR</p>
+ <button class="btn primary block" type="button" data-scan-target="lookup"> </button>
+ <div class="scanner-line" id="lastScan"> </div>
+ </div>
+ </div>
+ </section>
 
-    <section id="pos" class="section">
-      <div class="pos-layout">
-        <div class="card">
-          <h3>เลือกสินค้า</h3>
-          <div class="form-grid" style="margin-bottom:10px">
-            <label class="span-8">ค้นหาสินค้า / SKU / Barcode
-              <input id="posSearch" placeholder="พิมพ์หรือสแกนรหัสสินค้า">
-            </label>
-            <label class="span-4">หมวด
-              <select id="posCategory"></select>
-            </label>
-          </div>
-          <div class="product-grid" id="productGrid"></div>
-        </div>
-        <div class="card">
-          <h3>ตะกร้าขาย</h3>
-          <div id="cartLines"></div>
-          <div class="total-row"><span>Subtotal</span><strong id="subtotal">£0.00</strong></div>
-          <div class="form-grid">
-            <label class="span-6">Discount
-              <input id="discount" type="number" min="0" step="0.01" value="0">
-            </label>
-            <label class="span-6">Payment
-              <select id="payment">
-                <option>Cash</option>
-                <option>Card</option>
-                <option>Bank Transfer</option>
-                <option>Online</option>
-              </select>
-            </label>
-          </div>
-          <div class="total-row grand"><span>Total</span><strong id="total">£0.00</strong></div>
-          <div class="actions">
-            <button class="btn primary" id="checkoutBtn" type="button">ชำระเงิน / ตัดสต็อก</button>
-            <button class="btn" id="clearCartBtn" type="button">ล้างตะกร้า</button>
-            <button class="btn blue" type="button" data-scan-target="sale">สแกนขาย</button>
-          </div>
-          <h3 style="margin-top:16px">Receipt ล่าสุด</h3>
-          <div class="receipt" id="receiptBox">ยังไม่มีใบเสร็จ</div>
-          <button class="btn block" id="printReceiptBtn" type="button">พิมพ์ใบเสร็จ</button>
-        </div>
-      </div>
-    </section>
+ <section id="pos" class="section">
+ <div class="pos-layout">
+ <div class="card">
+ <h3> </h3>
+ <div class="form-grid" style="margin-bottom:10px">
+ <label class="span-8"> / SKUBarcode
+ <input id="posSearch" placeholder=" ">
+ </label>
+ <label class="span-4"> <select id="posCategory"></select>
+ </label>
+ </div>
+ <div class="product-grid" id="productGrid"></div>
+ </div>
+ <div class="card">
+ <h3> </h3>
+ <div id="cartLines"></div>
+ <div class="total-row"><span>Subtotal</span><strong id="subtotal">£0.00</strong></div>
+ <div class="form-grid">
+ <label class="span-6">Discount
+ <input id="discount" type="number" min="0" step="0.01" value="0">
+ </label>
+ <label class="span-6">Payment
+ <select id="payment">
+ <option>Cash</option>
+ <option>Card</option>
+ <option>Bank Transfer</option>
+ <option>Online</option>
+ </select>
+ </label>
+ </div>
+ <div class="total-row grand"><span>Total</span><strong id="total">£0.00</strong></div>
+ <div class="actions">
+ <button class="btn primary" id="checkoutBtn" type="button"> / </button>
+ <button class="btn" id="clearCartBtn" type="button"> </button>
+ <button class="btn blue" type="button" data-scan-target="sale"> </button>
+ </div>
+ <h3 style="margin-top:16px">Receipt</h3>
+ <div class="receipt" id="receiptBox"> </div>
+ <button class="btn block" id="printReceiptBtn" type="button"> </button>
+ </div>
+ </div>
+ </section>
 
-    <section id="stock" class="section">
-      <div class="grid">
-        <div class="card">
-          <h3>เพิ่ม/แก้ไขสินค้า</h3>
-          <form id="productForm" class="form-grid">
-            <input id="editSku" type="hidden">
-            <label class="span-3">SKU
-              <input id="sku" required placeholder="เช่น ZS-PORKNECK">
-            </label>
-            <label class="span-3">Barcode / QR Code
-              <input id="barcode" placeholder="สแกนหรือกรอก">
-            </label>
-            <label class="span-6">ชื่อสินค้า
-              <input id="name" required placeholder="เช่น Grilled Pork Neck">
-            </label>
-            <label class="span-3">หมวด
-              <input id="category" placeholder="Food / Drink / Packaging">
-            </label>
-            <label class="span-2">Unit
-              <input id="unit" placeholder="pcs / tray / bottle">
-            </label>
-            <label class="span-2">Cost
-              <input id="cost" type="number" min="0" step="0.01">
-            </label>
-            <label class="span-2">Price
-              <input id="price" type="number" min="0" step="0.01">
-            </label>
-            <label class="span-1">Stock
-              <input id="stockQty" type="number" step="1">
-            </label>
-            <label class="span-2">Reorder
-              <input id="reorder" type="number" min="0" step="1">
-            </label>
-            <label class="span-5">Supplier
-              <input id="supplier" placeholder="Supplier name">
-            </label>
-            <label class="span-7">Note
-              <input id="note" placeholder="รายละเอียดเพิ่มเติม">
-            </label>
-            <div class="span-12 actions">
-              <button class="btn primary" type="submit">บันทึกสินค้า</button>
-              <button class="btn" type="button" id="resetProductBtn">เริ่มใหม่</button>
-              <button class="btn blue" type="button" data-scan-target="product">สแกนใส่ช่อง Barcode</button>
-            </div>
-          </form>
-        </div>
-        <div class="card">
-          <h3>รายการสินค้า</h3>
-          <div class="form-grid" style="margin-bottom:10px">
-            <label class="span-8">ค้นหา
-              <input id="stockSearch" placeholder="ชื่อ / SKU / Barcode / Supplier">
-            </label>
-            <label class="span-4">แสดง
-              <select id="stockFilter">
-                <option value="all">ทั้งหมด</option>
-                <option value="low">ใกล้หมด</option>
-              </select>
-            </label>
-          </div>
-          <div class="table-wrap"><table id="stockTable"></table></div>
-        </div>
-      </div>
-    </section>
+ <section id="stock" class="section">
+ <div class="grid">
+ <div class="card">
+ <h3> / </h3>
+ <form id="productForm" class="form-grid">
+ <input id="editSku" type="hidden">
+ <label class="span-3">SKU
+ <input id="sku" required placeholder=" ZS-PORKNECK">
+ </label>
+ <label class="span-3">BarcodeQR Code
+ <input id="barcode" placeholder=" ">
+ </label>
+ <label class="span-6"> <input id="name" required placeholder=" Grilled Pork Neck">
+ </label>
+ <label class="span-3"> <input id="category" placeholder="FoodDrinkPackaging">
+ </label>
+ <label class="span-2">Unit
+ <input id="unit" placeholder="pcstraybottle">
+ </label>
+ <label class="span-2">Cost
+ <input id="cost" type="number" min="0" step="0.01">
+ </label>
+ <label class="span-2">Price
+ <input id="price" type="number" min="0" step="0.01">
+ </label>
+ <label class="span-1">Stock
+ <input id="stockQty" type="number" step="1">
+ </label>
+ <label class="span-2">Reorder
+ <input id="reorder" type="number" min="0" step="1">
+ </label>
+ <label class="span-5">Supplier
+ <input id="supplier" placeholder="Supplier name">
+ </label>
+ <label class="span-7">Note
+ <input id="note" placeholder=" ">
+ </label>
+ <div class="span-12 actions">
+ <button class="btn primary" type="submit"> </button>
+ <button class="btn" type="button" id="resetProductBtn"> </button>
+ <button class="btn blue" type="button" data-scan-target="product"> Barcode</button>
+ </div>
+ </form>
+ </div>
+ <div class="card">
+ <h3> </h3>
+ <div class="form-grid" style="margin-bottom:10px">
+ <label class="span-8"> <input id="stockSearch" placeholder=" / SKUBarcodeSupplier">
+ </label>
+ <label class="span-4"> <select id="stockFilter">
+ <option value="all"> </option>
+ <option value="low"> </option>
+ </select>
+ </label>
+ </div>
+ <div class="table-wrap"><table id="stockTable"></table></div>
+ </div>
+ </div>
+ </section>
 
-    <section id="purchase" class="section">
-      <div class="grid">
-        <div class="card half">
-          <h3>สร้างใบสั่งซื้อ</h3>
-          <form id="poForm" class="form-grid">
-            <label class="span-6">Supplier
-              <input id="poSupplier" required placeholder="ชื่อ supplier">
-            </label>
-            <label class="span-6">Expected date
-              <input id="poDate" type="date">
-            </label>
-            <label class="span-5">สินค้า
-              <select id="poProduct"></select>
-            </label>
-            <label class="span-3">จำนวน
-              <input id="poQty" type="number" min="1" value="1">
-            </label>
-            <label class="span-3">Cost/unit
-              <input id="poCost" type="number" min="0" step="0.01">
-            </label>
-            <div class="span-1" style="display:flex;align-items:end">
-              <button class="btn" type="button" id="addPoLine">+</button>
-            </div>
-            <div class="span-12 table-wrap"><table id="poDraftTable"></table></div>
-            <label class="span-12">Note
-              <textarea id="poNote" placeholder="เงื่อนไขส่งของ / เบอร์โทร / ข้อความถึง supplier"></textarea>
-            </label>
-            <div class="span-12 actions">
-              <button class="btn primary" type="submit">บันทึก PO</button>
-              <button class="btn" type="button" id="clearPoBtn">ล้างใบสั่งซื้อ</button>
-            </div>
-          </form>
-        </div>
-        <div class="card half">
-          <h3>ใบสั่งซื้อทั้งหมด</h3>
-          <div class="table-wrap"><table id="poTable"></table></div>
-        </div>
-      </div>
-    </section>
+ <section id="purchase" class="section">
+ <div class="grid">
+ <div class="card half">
+ <h3> </h3>
+ <form id="poForm" class="form-grid">
+ <label class="span-6">Supplier
+ <input id="poSupplier" required placeholder=" supplier">
+ </label>
+ <label class="span-6">Expected date
+ <input id="poDate" type="date">
+ </label>
+ <label class="span-5"> <select id="poProduct"></select>
+ </label>
+ <label class="span-3"> <input id="poQty" type="number" min="1" value="1">
+ </label>
+ <label class="span-3">Cost/unit
+ <input id="poCost" type="number" min="0" step="0.01">
+ </label>
+ <div class="span-1" style="display:flex;align-items:end">
+ <button class="btn" type="button" id="addPoLine">+</button>
+ </div>
+ <div class="span-12 table-wrap"><table id="poDraftTable"></table></div>
+ <label class="span-12">Note
+ <textarea id="poNote" placeholder=" / / supplier"></textarea>
+ </label>
+ <div class="span-12 actions">
+ <button class="btn primary" type="submit"> PO</button>
+ <button class="btn" type="button" id="clearPoBtn"> </button>
+ </div>
+ </form>
+ </div>
+ <div class="card half">
+ <h3> </h3>
+ <div class="table-wrap"><table id="poTable"></table></div>
+ </div>
+ </div>
+ </section>
 
-    <section id="reports" class="section">
-      <div class="grid">
-        <div class="card half">
-          <h3>ยอดขายล่าสุด</h3>
-          <div class="table-wrap"><table id="salesTable"></table></div>
-        </div>
-        <div class="card half">
-          <h3>Stock Movement</h3>
-          <div class="table-wrap"><table id="movementTable"></table></div>
-        </div>
-      </div>
-    </section>
+ <section id="reports" class="section">
+ <div class="grid">
+ <div class="card half">
+ <h3> </h3>
+ <div class="table-wrap"><table id="salesTable"></table></div>
+ </div>
+ <div class="card half">
+ <h3>Stock Movement</h3>
+ <div class="table-wrap"><table id="movementTable"></table></div>
+ </div>
+ </div>
+ </section>
 
-    <section id="settings" class="section">
-      <div class="grid">
-        <div class="card half">
-          <h3>นำเข้า / ส่งออกข้อมูล</h3>
-          <p class="notice">ข้อมูลเก็บในเครื่องนี้ด้วย localStorage ถ้าเปลี่ยนเครื่องหรือเบราว์เซอร์ควร Export JSON สำรองไว้</p>
-          <div class="actions" style="margin:12px 0">
-            <button class="btn primary" id="exportBtn2" type="button">Export JSON</button>
-            <label class="btn" for="importFile">Import JSON</label>
-            <input class="hidden" id="importFile" type="file" accept="application/json">
-            <button class="btn danger" id="resetAllBtn" type="button">ล้างข้อมูลทั้งหมด</button>
-          </div>
-        </div>
-        <div class="card half">
-          <h3>วิธีใช้สแกนมือถือ</h3>
-          <ol>
-            <li>เอาไฟล์นี้ขึ้นเว็บจริงหรือ HTTPS เช่น zabsiam.com/admin</li>
-            <li>เปิดจากมือถือ แล้วกดปุ่มสแกน</li>
-            <li>อนุญาตกล้อง แล้วเล็งไปที่ Barcode หรือ QR</li>
-            <li>ถ้ากล้องไม่รองรับ ให้กรอกรหัสในช่องค้นหาแทน</li>
-          </ol>
-        </div>
-      </div>
-    </section>
-  </main>
+ <section id="settings" class="section">
+ <div class="grid">
+ <div class="card half">
+ <h3> / </h3>
+ <p class="notice"> localStorageExport JSON</p>
+ <div class="actions" style="margin:12px 0">
+ <button class="btn primary" id="exportBtn2" type="button">Export JSON</button>
+ <label class="btn" for="importFile">Import JSON</label>
+ <input class="hidden" id="importFile" type="file" accept="application/json">
+ <button class="btn danger" id="resetAllBtn" type="button"> </button>
+ </div>
+ </div>
+ <div class="card half">
+ <h3> </h3>
+ <ol>
+ <li> HTTPSzabsiam.com/admin</li>
+ <li> </li>
+ <li> BarcodeQR</li>
+ <li> </li>
+ </ol>
+ </div>
+ </div>
+ </section>
+</main>
 </div>
 
 <div class="scanner" id="scanner">
-  <div class="scanner-panel">
-    <div class="topbar" style="margin-bottom:10px">
-      <div>
-        <h3>สแกน Barcode / QR</h3>
-        <p class="muted" id="scanModeText">กำลังเปิดกล้อง</p>
-      </div>
-      <button class="btn danger" id="closeScanner" type="button">ปิด</button>
-    </div>
-    <video id="video" playsinline></video>
-    <div class="scanner-line" id="scanStatus">ถ้าสแกนไม่ได้ ให้ใช้ช่องกรอกด้านล่าง</div>
-    <div class="form-grid" style="margin-top:10px">
-      <label class="span-8">กรอกรหัสเอง
-        <input id="manualScan" placeholder="Barcode / SKU">
-      </label>
-      <div class="span-4" style="display:flex;align-items:end">
-        <button class="btn primary block" id="useManualScan" type="button">ใช้รหัสนี้</button>
-      </div>
-    </div>
-  </div>
+<div class="scanner-panel">
+ <div class="topbar" style="margin-bottom:10px">
+ <div>
+ <h3> BarcodeQR</h3>
+ <p class="muted" id="scanModeText"> </p>
+ </div>
+ <button class="btn danger" id="closeScanner" type="button"> </button>
+ </div>
+ <video id="video" playsinline></video>
+ <div class="scanner-line" id="scanStatus"> </div>
+ <div class="form-grid" style="margin-top:10px">
+ <label class="span-8"> <input id="manualScan" placeholder="BarcodeSKU">
+ </label>
+ <div class="span-4" style="display:flex;align-items:end">
+ <button class="btn primary block" id="useManualScan" type="button"> </button>
+ </div>
+ </div>
+</div>
 </div>
 
 <script>
@@ -526,7 +518,7 @@ const storeKey = "zabsiam-pos-stock-v1";
 const authKey = "zabsiam-pos-auth-ok";
 const passwordHash = "a74f4f3acc56ff2ab99c7fad470b4c69c6eac2619794d688faaf5e4811cd389d";
 const currency = new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP" });
-const state = loadState();
+const state = loadState;
 let activeTab = "dashboard";
 let cart = [];
 let poDraft = [];
@@ -535,541 +527,540 @@ let scannerStream = null;
 let scanTimer = null;
 
 async function sha256(value) {
-  const data = new TextEncoder().encode(value);
-  const digest = await crypto.subtle.digest("SHA-256", data);
-  return [...new Uint8Array(digest)].map(byte => byte.toString(16).padStart(2, "0")).join("");
+const data = new TextEncoder.encode(value);
+const digest = await crypto.subtle.digest("SHA-256", data);
+return [...new Uint8Array(digest)].map(byte => byte.toString(16).padStart(2, "0")).join("");
 }
 
-function unlockApp() {
-  document.body.classList.remove("locked");
-  sessionStorage.setItem(authKey, "1");
+function unlockApp {
+document.body.classList.remove("locked");
+sessionStorage.setItem(authKey, "1");
 }
 
 if (sessionStorage.getItem(authKey) === "1") {
-  unlockApp();
+unlockApp;
 }
 
-function seedState() {
-  return {
-    products: [
-      { sku: "ZS-PORKNECK", barcode: "885000001001", name: "Grilled Pork Neck", category: "Food", unit: "portion", cost: 4.20, price: 9.95, stock: 24, reorder: 8, supplier: "Kitchen prep", note: "คอหมูย่าง" },
-      { sku: "ZS-NAMTOK", barcode: "885000001002", name: "Nam Tok Pork Neck", category: "Food", unit: "portion", cost: 4.80, price: 10.95, stock: 18, reorder: 8, supplier: "Kitchen prep", note: "น้ำตกคอหมูย่าง" },
-      { sku: "ZS-SALMONPLA", barcode: "885000001003", name: "Salmon Pla", category: "Food", unit: "portion", cost: 5.90, price: 12.95, stock: 12, reorder: 6, supplier: "Fish supplier", note: "พล่าปลาแซลมอน" },
-      { sku: "ZS-DUCKLARB", barcode: "885000001004", name: "Duck Larb", category: "Food", unit: "portion", cost: 5.10, price: 11.95, stock: 15, reorder: 6, supplier: "Kitchen prep", note: "ลาบเป็ด" },
-      { sku: "ZS-MANGO", barcode: "885000001005", name: "Mango Sticky Rice", category: "Dessert", unit: "box", cost: 3.20, price: 7.95, stock: 20, reorder: 8, supplier: "Kitchen prep", note: "ของหวานหลักของ Zab Siam" },
-      { sku: "PKG-BOX", barcode: "885000002001", name: "Takeaway Box", category: "Packaging", unit: "pcs", cost: 0.18, price: 0, stock: 120, reorder: 50, supplier: "Packaging supplier", note: "" }
-    ],
-    sales: [],
-    purchaseOrders: [],
-    movements: []
-  };
+function seedState {
+return {
+ products: [
+ { sku: "ZS-PORKNECK", barcode: "885000001001", name: "Grilled Pork Neck", category: "Food", unit: "portion", cost: 4.20, price: 9.95, stock: 24, reorder: 8, supplier: "Kitchen prep", note: " " },
+ { sku: "ZS-NAMTOK", barcode: "885000001002", name: "Nam Tok Pork Neck", category: "Food", unit: "portion", cost: 4.80, price: 10.95, stock: 18, reorder: 8, supplier: "Kitchen prep", note: " " },
+ { sku: "ZS-SALMONPLA", barcode: "885000001003", name: "Salmon Pla", category: "Food", unit: "portion", cost: 5.90, price: 12.95, stock: 12, reorder: 6, supplier: "Fish supplier", note: " " },
+ { sku: "ZS-DUCKLARB", barcode: "885000001004", name: "Duck Larb", category: "Food", unit: "portion", cost: 5.10, price: 11.95, stock: 15, reorder: 6, supplier: "Kitchen prep", note: " " },
+ { sku: "ZS-MANGO", barcode: "885000001005", name: "Mango Sticky Rice", category: "Dessert", unit: "box", cost: 3.20, price: 7.95, stock: 20, reorder: 8, supplier: "Kitchen prep", note: " Zab Siam" },
+ { sku: "PKG-BOX", barcode: "885000002001", name: "Takeaway Box", category: "Packaging", unit: "pcs", cost: 0.18, price: 0, stock: 120, reorder: 50, supplier: "Packaging supplier", note: "" }
+ ],
+ sales: [],
+ purchaseOrders: [],
+ movements: []
+};
 }
 
-function loadState() {
-  try {
-    const saved = localStorage.getItem(storeKey);
-    if (saved) return JSON.parse(saved);
-  } catch (err) {}
-  return seedState();
+function loadState {
+try {
+ const saved = localStorage.getItem(storeKey);
+ if (saved) return JSON.parse(saved);
+} catch (err) {}
+return seedState;
 }
 
-function saveState() {
-  localStorage.setItem(storeKey, JSON.stringify(state));
+function saveState {
+localStorage.setItem(storeKey, JSON.stringify(state));
 }
 
 function money(value) {
-  return currency.format(Number(value || 0));
+return currency.format(Number(value || 0));
 }
 
-function todayKey(date = new Date()) {
-  return date.toISOString().slice(0, 10);
+function todayKey(date = new Date) {
+return date.toISOString.slice(0, 10);
 }
 
 function uid(prefix) {
-  return `${prefix}-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`.toUpperCase();
+return `${prefix}-${Date.now.toString(36)}-${Math.random.toString(36).slice(2, 7)}`.toUpperCase;
 }
 
 function productByCode(code) {
-  const q = String(code || "").trim().toLowerCase();
-  return state.products.find(p => [p.sku, p.barcode, p.name].some(v => String(v || "").toLowerCase() === q));
+const q = String(code || "").trim.toLowerCase;
+return state.products.find(p => [p.sku, p.barcode, p.name].some(v => String(v || "").toLowerCase === q));
 }
 
-function renderAll() {
-  renderDashboard();
-  renderPOS();
-  renderStock();
-  renderPO();
-  renderReports();
-  saveState();
+function renderAll {
+renderDashboard;
+renderPOS;
+renderStock;
+renderPO;
+renderReports;
+saveState;
 }
 
-function renderDashboard() {
-  const day = todayKey();
-  const salesToday = state.sales.filter(s => s.date.slice(0, 10) === day);
-  const total = salesToday.reduce((sum, s) => sum + s.total, 0);
-  document.getElementById("todaySales").textContent = money(total);
-  document.getElementById("todayOrders").textContent = `${salesToday.length} orders`;
-  document.getElementById("stockValue").textContent = money(state.products.reduce((sum, p) => sum + (Number(p.cost) * Number(p.stock || 0)), 0));
-  const low = state.products.filter(p => Number(p.stock) <= Number(p.reorder || 0));
-  document.getElementById("lowCount").textContent = low.length;
-  document.getElementById("lowStockTable").innerHTML = tableHTML(["SKU", "สินค้า", "Stock", "Reorder", "Supplier"], low.map(p => [
-    p.sku,
-    p.name,
-    `<span class="pill low">${p.stock} ${p.unit || ""}</span>`,
-    p.reorder,
-    p.supplier || "-"
-  ]));
+function renderDashboard {
+const day = todayKey;
+const salesToday = state.sales.filter(s => s.date.slice(0, 10) === day);
+const total = salesToday.reduce((sum, s) => sum + s.total, 0);
+document.getElementById("todaySales").textContent = money(total);
+document.getElementById("todayOrders").textContent = `${salesToday.length} orders`;
+document.getElementById("stockValue").textContent = money(state.products.reduce((sum, p) => sum + (Number(p.cost) * Number(p.stock || 0)), 0));
+const low = state.products.filter(p => Number(p.stock) <= Number(p.reorder || 0));
+document.getElementById("lowCount").textContent = low.length;
+document.getElementById("lowStockTable").innerHTML = tableHTML(["SKU", " ", "Stock", "Reorder", "Supplier"], low.map(p => [
+ p.sku,
+ p.name,
+ `<span class="pill low">${p.stock} ${p.unit || ""}</span>`,
+ p.reorder,
+ p.supplier || "-"
+]));
 }
 
-function renderPOS() {
-  const cats = ["All", ...new Set(state.products.map(p => p.category || "Other"))];
-  const catSelect = document.getElementById("posCategory");
-  const selected = catSelect.value || "All";
-  catSelect.innerHTML = cats.map(c => `<option ${c === selected ? "selected" : ""}>${escapeHTML(c)}</option>`).join("");
-  const q = document.getElementById("posSearch").value.trim().toLowerCase();
-  const cat = catSelect.value || "All";
-  const products = state.products.filter(p => {
-    const matchCat = cat === "All" || (p.category || "Other") === cat;
-    const hay = `${p.sku} ${p.barcode} ${p.name} ${p.note}`.toLowerCase();
-    return matchCat && (!q || hay.includes(q));
-  });
-  document.getElementById("productGrid").innerHTML = products.map(p => `
-    <button class="product-tile" type="button" data-add="${escapeAttr(p.sku)}">
-      <strong>${escapeHTML(p.name)}</strong>
-      <span class="muted">${escapeHTML(p.sku)} · Stock ${p.stock}</span>
-      <span>${money(p.price)}</span>
-      ${Number(p.stock) <= Number(p.reorder || 0) ? `<span class="pill low">Low stock</span>` : `<span class="pill ok">Ready</span>`}
-    </button>
-  `).join("");
-  renderCart();
+function renderPOS {
+const cats = ["All", ...new Set(state.products.map(p => p.category || "Other"))];
+const catSelect = document.getElementById("posCategory");
+const selected = catSelect.value || "All";
+catSelect.innerHTML = cats.map(c => `<option ${c === selected ? "selected" : ""}>${escapeHTML(c)}</option>`).join("");
+const q = document.getElementById("posSearch").value.trim.toLowerCase;
+const cat = catSelect.value || "All";
+const products = state.products.filter(p => {
+ const matchCat = cat === "All" || (p.category || "Other") === cat;
+ const hay = `${p.sku} ${p.barcode} ${p.name} ${p.note}`.toLowerCase;
+ return matchCat && (!q || hay.includes(q));
+});
+document.getElementById("productGrid").innerHTML = products.map(p => `
+ <button class="product-tile" type="button" data-add="${escapeAttr(p.sku)}">
+ <strong>${escapeHTML(p.name)}</strong>
+ <span class="muted">${escapeHTML(p.sku)} · Stock ${p.stock}</span>
+ <span>${money(p.price)}</span>
+ ${Number(p.stock) <= Number(p.reorder || 0) ? `<span class="pill low">Low stock</span>` : `<span class="pill ok">Ready</span>`}
+ </button>
+`).join("");
+renderCart;
 }
 
-function renderCart() {
-  const box = document.getElementById("cartLines");
-  if (!cart.length) {
-    box.innerHTML = `<p class="muted">ยังไม่มีสินค้าในตะกร้า</p>`;
-  } else {
-    box.innerHTML = cart.map((line, index) => `
-      <div class="cart-line">
-        <div><strong>${escapeHTML(line.name)}</strong><br><span class="muted">${escapeHTML(line.sku)}</span></div>
-        <input type="number" min="1" step="1" value="${line.qty}" data-cart-qty="${index}">
-        <div class="right">${money(line.price * line.qty)}</div>
-        <button class="btn danger" type="button" data-cart-remove="${index}">×</button>
-      </div>
-    `).join("");
-  }
-  const subtotal = cart.reduce((sum, line) => sum + line.qty * line.price, 0);
-  const discount = Number(document.getElementById("discount").value || 0);
-  document.getElementById("subtotal").textContent = money(subtotal);
-  document.getElementById("total").textContent = money(Math.max(0, subtotal - discount));
+function renderCart {
+const box = document.getElementById("cartLines");
+if (!cart.length) {
+ box.innerHTML = `<p class="muted"> </p>`;
+} else {
+ box.innerHTML = cart.map((line, index) => `
+ <div class="cart-line">
+ <div><strong>${escapeHTML(line.name)}</strong><br><span class="muted">${escapeHTML(line.sku)}</span></div>
+ <input type="number" min="1" step="1" value="${line.qty}" data-cart-qty="${index}">
+ <div class="right">${money(line.price * line.qty)}</div>
+ <button class="btn danger" type="button" data-cart-remove="${index}">×</button>
+ </div>
+ `).join("");
+}
+const subtotal = cart.reduce((sum, line) => sum + line.qty * line.price, 0);
+const discount = Number(document.getElementById("discount").value || 0);
+document.getElementById("subtotal").textContent = money(subtotal);
+document.getElementById("total").textContent = money(Math.max(0, subtotal - discount));
 }
 
 function addToCart(product, qty = 1) {
-  if (!product) return alert("ไม่พบสินค้า");
-  const line = cart.find(item => item.sku === product.sku);
-  if (line) line.qty += qty;
-  else cart.push({ sku: product.sku, name: product.name, price: Number(product.price || 0), qty });
-  renderCart();
+if (!product) return alert(" ");
+const line = cart.find(item => item.sku === product.sku);
+if (line) line.qty += qty;
+else cart.push({ sku: product.sku, name: product.name, price: Number(product.price || 0), qty });
+renderCart;
 }
 
-function checkout() {
-  if (!cart.length) return alert("ยังไม่มีสินค้าในตะกร้า");
-  const unavailable = cart.find(line => {
-    const p = state.products.find(item => item.sku === line.sku);
-    return !p || Number(p.stock) < Number(line.qty);
-  });
-  if (unavailable) return alert(`สต็อกไม่พอ: ${unavailable.name}`);
-  const subtotal = cart.reduce((sum, line) => sum + line.qty * line.price, 0);
-  const discount = Number(document.getElementById("discount").value || 0);
-  const sale = {
-    id: uid("SALE"),
-    date: new Date().toISOString(),
-    payment: document.getElementById("payment").value,
-    lines: cart.map(x => ({ ...x })),
-    subtotal,
-    discount,
-    total: Math.max(0, subtotal - discount)
-  };
-  sale.lines.forEach(line => {
-    const p = state.products.find(item => item.sku === line.sku);
-    p.stock = Number(p.stock) - Number(line.qty);
-    state.movements.unshift({ id: uid("MOV"), date: sale.date, sku: p.sku, name: p.name, type: "SALE", qty: -line.qty, note: sale.id });
-  });
-  state.sales.unshift(sale);
-  cart = [];
-  document.getElementById("discount").value = 0;
-  document.getElementById("receiptBox").textContent = receiptText(sale);
-  renderAll();
+function checkout {
+if (!cart.length) return alert(" ");
+const unavailable = cart.find(line => {
+ const p = state.products.find(item => item.sku === line.sku);
+ return !p || Number(p.stock) < Number(line.qty);
+});
+if (unavailable) return alert(` : ${unavailable.name}`);
+const subtotal = cart.reduce((sum, line) => sum + line.qty * line.price, 0);
+const discount = Number(document.getElementById("discount").value || 0);
+const sale = {
+ id: uid("SALE"),
+ date: new Date.toISOString,
+ payment: document.getElementById("payment").value,
+ lines: cart.map(x => ({ ...x })),
+ subtotal,
+ discount,
+ total: Math.max(0, subtotal - discount)
+};
+sale.lines.forEach(line => {
+ const p = state.products.find(item => item.sku === line.sku);
+ p.stock = Number(p.stock) - Number(line.qty);
+ state.movements.unshift({ id: uid("MOV"), date: sale.date, sku: p.sku, name: p.name, type: "SALE", qty: -line.qty, note: sale.id });
+});
+state.sales.unshift(sale);
+cart = [];
+document.getElementById("discount").value = 0;
+document.getElementById("receiptBox").textContent = receiptText(sale);
+renderAll;
 }
 
 function receiptText(sale) {
-  const lines = sale.lines.map(l => `${l.name}\n  ${l.qty} x ${money(l.price)} = ${money(l.qty * l.price)}`).join("\n");
-  return `Zab Siam\nReceipt: ${sale.id}\nDate: ${new Date(sale.date).toLocaleString("en-GB")}\nPayment: ${sale.payment}\n\n${lines}\n\nSubtotal: ${money(sale.subtotal)}\nDiscount: ${money(sale.discount)}\nTOTAL: ${money(sale.total)}\n\nThank you`;
+const lines = sale.lines.map(l => `${l.name}\n${l.qty} x ${money(l.price)} = ${money(l.qty * l.price)}`).join("\n");
+return `Zab Siam\nReceipt: ${sale.id}\nDate: ${new Date(sale.date).toLocaleString("en-GB")}\nPayment: ${sale.payment}\n\n${lines}\n\nSubtotal: ${money(sale.subtotal)}\nDiscount: ${money(sale.discount)}\nTOTAL: ${money(sale.total)}\n\nThank you`;
 }
 
-function renderStock() {
-  const q = document.getElementById("stockSearch").value.trim().toLowerCase();
-  const filter = document.getElementById("stockFilter").value;
-  const products = state.products.filter(p => {
-    const hay = `${p.sku} ${p.barcode} ${p.name} ${p.category} ${p.supplier}`.toLowerCase();
-    const lowOk = filter !== "low" || Number(p.stock) <= Number(p.reorder || 0);
-    return lowOk && (!q || hay.includes(q));
-  });
-  document.getElementById("stockTable").innerHTML = tableHTML(["SKU", "Barcode", "สินค้า", "หมวด", "Cost", "Price", "Stock", "Supplier", "Action"], products.map(p => [
-    p.sku,
-    p.barcode || "-",
-    `<strong>${escapeHTML(p.name)}</strong><br><span class="muted">${escapeHTML(p.note || "")}</span>`,
-    p.category || "-",
-    money(p.cost),
-    money(p.price),
-    Number(p.stock) <= Number(p.reorder || 0) ? `<span class="pill low">${p.stock} ${escapeHTML(p.unit || "")}</span>` : `<span class="pill ok">${p.stock} ${escapeHTML(p.unit || "")}</span>`,
-    p.supplier || "-",
-    `<button class="btn" type="button" data-edit="${escapeAttr(p.sku)}">แก้</button> <button class="btn danger" type="button" data-delete="${escapeAttr(p.sku)}">ลบ</button>`
-  ]));
+function renderStock {
+const q = document.getElementById("stockSearch").value.trim.toLowerCase;
+const filter = document.getElementById("stockFilter").value;
+const products = state.products.filter(p => {
+ const hay = `${p.sku} ${p.barcode} ${p.name} ${p.category} ${p.supplier}`.toLowerCase;
+ const lowOk = filter !== "low" || Number(p.stock) <= Number(p.reorder || 0);
+ return lowOk && (!q || hay.includes(q));
+});
+document.getElementById("stockTable").innerHTML = tableHTML(["SKU", "Barcode", " ", " ", "Cost", "Price", "Stock", "Supplier", "Action"], products.map(p => [
+ p.sku,
+ p.barcode || "-",
+ `<strong>${escapeHTML(p.name)}</strong><br><span class="muted">${escapeHTML(p.note || "")}</span>`,
+ p.category || "-",
+ money(p.cost),
+ money(p.price),
+ Number(p.stock) <= Number(p.reorder || 0) ? `<span class="pill low">${p.stock} ${escapeHTML(p.unit || "")}</span>` : `<span class="pill ok">${p.stock} ${escapeHTML(p.unit || "")}</span>`,
+ p.supplier || "-",
+ `<button class="btn" type="button" data-edit="${escapeAttr(p.sku)}"> </button> <button class="btn danger" type="button" data-delete="${escapeAttr(p.sku)}"> </button>`
+]));
 }
 
 function saveProduct(evt) {
-  evt.preventDefault();
-  const editSku = document.getElementById("editSku").value;
-  const sku = document.getElementById("sku").value.trim();
-  if (!sku) return alert("กรุณาใส่ SKU");
-  const duplicate = state.products.find(p => p.sku === sku && p.sku !== editSku);
-  if (duplicate) return alert("SKU นี้มีอยู่แล้ว");
-  const product = {
-    sku,
-    barcode: document.getElementById("barcode").value.trim(),
-    name: document.getElementById("name").value.trim(),
-    category: document.getElementById("category").value.trim() || "Other",
-    unit: document.getElementById("unit").value.trim() || "pcs",
-    cost: Number(document.getElementById("cost").value || 0),
-    price: Number(document.getElementById("price").value || 0),
-    stock: Number(document.getElementById("stockQty").value || 0),
-    reorder: Number(document.getElementById("reorder").value || 0),
-    supplier: document.getElementById("supplier").value.trim(),
-    note: document.getElementById("note").value.trim()
-  };
-  const idx = state.products.findIndex(p => p.sku === editSku);
-  if (idx >= 0) state.products[idx] = product;
-  else state.products.push(product);
-  resetProductForm();
-  renderAll();
+evt.preventDefault;
+const editSku = document.getElementById("editSku").value;
+const sku = document.getElementById("sku").value.trim;
+if (!sku) return alert(" SKU");
+const duplicate = state.products.find(p => p.sku === sku && p.sku !== editSku);
+if (duplicate) return alert("SKU");
+const product = {
+ sku,
+ barcode: document.getElementById("barcode").value.trim,
+ name: document.getElementById("name").value.trim,
+ category: document.getElementById("category").value.trim || "Other",
+ unit: document.getElementById("unit").value.trim || "pcs",
+ cost: Number(document.getElementById("cost").value || 0),
+ price: Number(document.getElementById("price").value || 0),
+ stock: Number(document.getElementById("stockQty").value || 0),
+ reorder: Number(document.getElementById("reorder").value || 0),
+ supplier: document.getElementById("supplier").value.trim,
+ note: document.getElementById("note").value.trim
+};
+const idx = state.products.findIndex(p => p.sku === editSku);
+if (idx >= 0) state.products[idx] = product;
+else state.products.push(product);
+resetProductForm;
+renderAll;
 }
 
 function editProduct(sku) {
-  const p = state.products.find(item => item.sku === sku);
-  if (!p) return;
-  document.getElementById("editSku").value = p.sku;
-  document.getElementById("sku").value = p.sku;
-  document.getElementById("barcode").value = p.barcode || "";
-  document.getElementById("name").value = p.name;
-  document.getElementById("category").value = p.category || "";
-  document.getElementById("unit").value = p.unit || "";
-  document.getElementById("cost").value = p.cost || 0;
-  document.getElementById("price").value = p.price || 0;
-  document.getElementById("stockQty").value = p.stock || 0;
-  document.getElementById("reorder").value = p.reorder || 0;
-  document.getElementById("supplier").value = p.supplier || "";
-  document.getElementById("note").value = p.note || "";
-  showTab("stock");
+const p = state.products.find(item => item.sku === sku);
+if (!p) return;
+document.getElementById("editSku").value = p.sku;
+document.getElementById("sku").value = p.sku;
+document.getElementById("barcode").value = p.barcode || "";
+document.getElementById("name").value = p.name;
+document.getElementById("category").value = p.category || "";
+document.getElementById("unit").value = p.unit || "";
+document.getElementById("cost").value = p.cost || 0;
+document.getElementById("price").value = p.price || 0;
+document.getElementById("stockQty").value = p.stock || 0;
+document.getElementById("reorder").value = p.reorder || 0;
+document.getElementById("supplier").value = p.supplier || "";
+document.getElementById("note").value = p.note || "";
+showTab("stock");
 }
 
-function resetProductForm() {
-  document.getElementById("productForm").reset();
-  document.getElementById("editSku").value = "";
+function resetProductForm {
+document.getElementById("productForm").reset;
+document.getElementById("editSku").value = "";
 }
 
-function renderPO() {
-  const select = document.getElementById("poProduct");
-  const current = select.value;
-  select.innerHTML = state.products.map(p => `<option value="${escapeAttr(p.sku)}" ${p.sku === current ? "selected" : ""}>${escapeHTML(p.name)} (${escapeHTML(p.sku)})</option>`).join("");
-  document.getElementById("poDraftTable").innerHTML = tableHTML(["สินค้า", "Qty", "Cost", "Total", ""], poDraft.map((l, i) => [
-    `${escapeHTML(l.name)}<br><span class="muted">${escapeHTML(l.sku)}</span>`,
-    l.qty,
-    money(l.cost),
-    money(l.qty * l.cost),
-    `<button class="btn danger" type="button" data-po-remove="${i}">×</button>`
-  ]));
-  document.getElementById("poTable").innerHTML = tableHTML(["PO", "Supplier", "Date", "Total", "Status", "Action"], state.purchaseOrders.map(po => [
-    po.id,
-    po.supplier,
-    po.expectedDate || "-",
-    money(po.total),
-    `<span class="pill ${po.status === "Received" ? "ok" : "low"}">${po.status}</span>`,
-    `<button class="btn" type="button" data-po-print="${po.id}">พิมพ์</button> ${po.status !== "Received" ? `<button class="btn primary" type="button" data-po-receive="${po.id}">รับเข้า</button>` : ""}`
-  ]));
+function renderPO {
+const select = document.getElementById("poProduct");
+const current = select.value;
+select.innerHTML = state.products.map(p => `<option value="${escapeAttr(p.sku)}" ${p.sku === current ? "selected" : ""}>${escapeHTML(p.name)} (${escapeHTML(p.sku)})</option>`).join("");
+document.getElementById("poDraftTable").innerHTML = tableHTML([" ", "Qty", "Cost", "Total", ""], poDraft.map((l, i) => [
+ `${escapeHTML(l.name)}<br><span class="muted">${escapeHTML(l.sku)}</span>`,
+ l.qty,
+ money(l.cost),
+ money(l.qty * l.cost),
+ `<button class="btn danger" type="button" data-po-remove="${i}">×</button>`
+]));
+document.getElementById("poTable").innerHTML = tableHTML(["PO", "Supplier", "Date", "Total", "Status", "Action"], state.purchaseOrders.map(po => [
+ po.id,
+ po.supplier,
+ po.expectedDate || "-",
+ money(po.total),
+ `<span class="pill ${po.status === "Received" ? "ok" : "low"}">${po.status}</span>`,
+ `<button class="btn" type="button" data-po-print="${po.id}"> </button> ${po.status !== "Received" ? `<button class="btn primary" type="button" data-po-receive="${po.id}"> </button>` : ""}`
+]));
 }
 
-function addPoLine() {
-  const sku = document.getElementById("poProduct").value;
-  const p = state.products.find(item => item.sku === sku);
-  if (!p) return;
-  const qty = Number(document.getElementById("poQty").value || 1);
-  const cost = Number(document.getElementById("poCost").value || p.cost || 0);
-  poDraft.push({ sku: p.sku, name: p.name, qty, cost });
-  document.getElementById("poCost").value = "";
-  document.getElementById("poQty").value = 1;
-  renderPO();
+function addPoLine {
+const sku = document.getElementById("poProduct").value;
+const p = state.products.find(item => item.sku === sku);
+if (!p) return;
+const qty = Number(document.getElementById("poQty").value || 1);
+const cost = Number(document.getElementById("poCost").value || p.cost || 0);
+poDraft.push({ sku: p.sku, name: p.name, qty, cost });
+document.getElementById("poCost").value = "";
+document.getElementById("poQty").value = 1;
+renderPO;
 }
 
 function savePO(evt) {
-  evt.preventDefault();
-  if (!poDraft.length) return alert("กรุณาเพิ่มสินค้าในใบสั่งซื้อ");
-  const po = {
-    id: uid("PO"),
-    supplier: document.getElementById("poSupplier").value.trim(),
-    expectedDate: document.getElementById("poDate").value,
-    note: document.getElementById("poNote").value.trim(),
-    lines: poDraft.map(x => ({ ...x })),
-    total: poDraft.reduce((sum, l) => sum + l.qty * l.cost, 0),
-    status: "Ordered",
-    createdAt: new Date().toISOString()
-  };
-  state.purchaseOrders.unshift(po);
-  poDraft = [];
-  document.getElementById("poForm").reset();
-  renderAll();
+evt.preventDefault;
+if (!poDraft.length) return alert(" ");
+const po = {
+ id: uid("PO"),
+ supplier: document.getElementById("poSupplier").value.trim,
+ expectedDate: document.getElementById("poDate").value,
+ note: document.getElementById("poNote").value.trim,
+ lines: poDraft.map(x => ({ ...x })),
+ total: poDraft.reduce((sum, l) => sum + l.qty * l.cost, 0),
+ status: "Ordered",
+ createdAt: new Date.toISOString
+};
+state.purchaseOrders.unshift(po);
+poDraft = [];
+document.getElementById("poForm").reset;
+renderAll;
 }
 
 function receivePO(id) {
-  const po = state.purchaseOrders.find(item => item.id === id);
-  if (!po || po.status === "Received") return;
-  po.lines.forEach(line => {
-    const p = state.products.find(item => item.sku === line.sku);
-    if (p) {
-      p.stock = Number(p.stock || 0) + Number(line.qty || 0);
-      p.cost = Number(line.cost || p.cost || 0);
-      state.movements.unshift({ id: uid("MOV"), date: new Date().toISOString(), sku: p.sku, name: p.name, type: "PO RECEIVE", qty: Number(line.qty), note: po.id });
-    }
-  });
-  po.status = "Received";
-  po.receivedAt = new Date().toISOString();
-  renderAll();
+const po = state.purchaseOrders.find(item => item.id === id);
+if (!po || po.status === "Received") return;
+po.lines.forEach(line => {
+ const p = state.products.find(item => item.sku === line.sku);
+ if (p) {
+ p.stock = Number(p.stock || 0) + Number(line.qty || 0);
+ p.cost = Number(line.cost || p.cost || 0);
+ state.movements.unshift({ id: uid("MOV"), date: new Date.toISOString, sku: p.sku, name: p.name, type: "PO RECEIVE", qty: Number(line.qty), note: po.id });
+ }
+});
+po.status = "Received";
+po.receivedAt = new Date.toISOString;
+renderAll;
 }
 
 function printPO(id) {
-  const po = state.purchaseOrders.find(item => item.id === id);
-  if (!po) return;
-  const text = `Zab Siam Purchase Order\n${po.id}\nSupplier: ${po.supplier}\nExpected: ${po.expectedDate || "-"}\n\n${po.lines.map(l => `${l.name} (${l.sku})\n  ${l.qty} x ${money(l.cost)} = ${money(l.qty * l.cost)}`).join("\n")}\n\nTotal: ${money(po.total)}\nNote: ${po.note || "-"}`;
-  document.getElementById("receiptBox").textContent = text;
-  showTab("pos");
-  setTimeout(() => window.print(), 50);
+const po = state.purchaseOrders.find(item => item.id === id);
+if (!po) return;
+const text = `Zab Siam Purchase Order\n${po.id}\nSupplier: ${po.supplier}\nExpected: ${po.expectedDate || "-"}\n\n${po.lines.map(l => `${l.name} (${l.sku})\n${l.qty} x ${money(l.cost)} = ${money(l.qty * l.cost)}`).join("\n")}\n\nTotal: ${money(po.total)}\nNote: ${po.note || "-"}`;
+document.getElementById("receiptBox").textContent = text;
+showTab("pos");
+setTimeout( => window.print, 50);
 }
 
-function renderReports() {
-  document.getElementById("salesTable").innerHTML = tableHTML(["Date", "Receipt", "Items", "Payment", "Total"], state.sales.slice(0, 50).map(s => [
-    new Date(s.date).toLocaleString("en-GB"),
-    s.id,
-    s.lines.reduce((sum, l) => sum + l.qty, 0),
-    s.payment,
-    money(s.total)
-  ]));
-  document.getElementById("movementTable").innerHTML = tableHTML(["Date", "SKU", "สินค้า", "Type", "Qty", "Note"], state.movements.slice(0, 80).map(m => [
-    new Date(m.date).toLocaleString("en-GB"),
-    m.sku,
-    m.name,
-    m.type,
-    m.qty,
-    m.note || "-"
-  ]));
+function renderReports {
+document.getElementById("salesTable").innerHTML = tableHTML(["Date", "Receipt", "Items", "Payment", "Total"], state.sales.slice(0, 50).map(s => [
+ new Date(s.date).toLocaleString("en-GB"),
+ s.id,
+ s.lines.reduce((sum, l) => sum + l.qty, 0),
+ s.payment,
+ money(s.total)
+]));
+document.getElementById("movementTable").innerHTML = tableHTML(["Date", "SKU", " ", "Type", "Qty", "Note"], state.movements.slice(0, 80).map(m => [
+ new Date(m.date).toLocaleString("en-GB"),
+ m.sku,
+ m.name,
+ m.type,
+ m.qty,
+ m.note || "-"
+]));
 }
 
 function tableHTML(headers, rows) {
-  if (!rows.length) return `<thead><tr>${headers.map(h => `<th>${escapeHTML(h)}</th>`).join("")}</tr></thead><tbody><tr><td colspan="${headers.length}" class="muted">ยังไม่มีข้อมูล</td></tr></tbody>`;
-  return `<thead><tr>${headers.map(h => `<th>${escapeHTML(h)}</th>`).join("")}</tr></thead><tbody>${rows.map(row => `<tr>${row.map(cell => `<td>${cell}</td>`).join("")}</tr>`).join("")}</tbody>`;
+if (!rows.length) return `<thead><tr>${headers.map(h => `<th>${escapeHTML(h)}</th>`).join("")}</tr></thead><tbody><tr><td colspan="${headers.length}" class="muted"> </td></tr></tbody>`;
+return `<thead><tr>${headers.map(h => `<th>${escapeHTML(h)}</th>`).join("")}</tr></thead><tbody>${rows.map(row => `<tr>${row.map(cell => `<td>${cell}</td>`).join("")}</tr>`).join("")}</tbody>`;
 }
 
 function showTab(tab) {
-  activeTab = tab;
-  document.querySelectorAll(".tab").forEach(btn => btn.classList.toggle("active", btn.dataset.tab === tab));
-  document.querySelectorAll(".section").forEach(sec => sec.classList.toggle("active", sec.id === tab));
-  const titles = {
-    dashboard: ["Dashboard", "ภาพรวมยอดขายและสต็อกที่ต้องสั่งเพิ่ม"],
-    pos: ["POS ขายหน้าร้าน", "เลือกสินค้า สแกนบาร์โค้ด รับเงิน และตัดสต็อก"],
-    stock: ["คลังสินค้า", "เพิ่มสินค้า แก้ไขสต็อก และตรวจรายการใกล้หมด"],
-    purchase: ["ใบสั่งซื้อ", "สร้าง PO ให้ supplier และรับสินค้าเข้าสต็อก"],
-    reports: ["รายงาน", "ยอดขายและประวัติ Stock Movement"],
-    settings: ["ตั้งค่า/สำรองข้อมูล", "นำเข้า ส่งออก และคำแนะนำการใช้งาน"]
-  };
-  document.getElementById("pageTitle").textContent = titles[tab][0];
-  document.getElementById("pageSubtitle").textContent = titles[tab][1];
+activeTab = tab;
+document.querySelectorAll(".tab").forEach(btn => btn.classList.toggle("active", btn.dataset.tab === tab));
+document.querySelectorAll(".section").forEach(sec => sec.classList.toggle("active", sec.id === tab));
+const titles = {
+ dashboard: ["Dashboard", " "],
+ pos: ["POS", " "],
+ stock: [" ", " "],
+ purchase: [" ", " POsupplier"],
+ reports: [" ", " Stock Movement"],
+ settings: [" / ", " "]
+};
+document.getElementById("pageTitle").textContent = titles[tab][0];
+document.getElementById("pageSubtitle").textContent = titles[tab][1];
 }
 
 async function openScanner(target = "lookup") {
-  scanTarget = target;
-  document.getElementById("scanner").classList.add("open");
-  document.getElementById("scanStatus").textContent = "กำลังเปิดกล้อง...";
-  document.getElementById("scanModeText").textContent = targetLabel(target);
-  if (!("mediaDevices" in navigator) || !("BarcodeDetector" in window)) {
-    document.getElementById("scanStatus").textContent = "เบราว์เซอร์นี้ยังไม่รองรับสแกนกล้อง ให้กรอกรหัสเองด้านล่าง";
-    return;
-  }
-  try {
-    scannerStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } });
-    const video = document.getElementById("video");
-    video.srcObject = scannerStream;
-    await video.play();
-    const detector = new BarcodeDetector({ formats: ["qr_code", "code_128", "ean_13", "ean_8", "upc_a", "upc_e"] });
-    scanTimer = setInterval(async () => {
-      try {
-        const codes = await detector.detect(video);
-        if (codes.length) handleScannedCode(codes[0].rawValue);
-      } catch (err) {}
-    }, 600);
-    document.getElementById("scanStatus").textContent = "เล็งกล้องไปที่ Barcode หรือ QR";
-  } catch (err) {
-    document.getElementById("scanStatus").textContent = "เปิดกล้องไม่ได้ อาจต้องเปิดผ่าน HTTPS หรืออนุญาตกล้องก่อน";
-  }
+scanTarget = target;
+document.getElementById("scanner").classList.add("open");
+document.getElementById("scanStatus").textContent = " ...";
+document.getElementById("scanModeText").textContent = targetLabel(target);
+if (!("mediaDevices" in navigator) || !("BarcodeDetector" in window)) {
+ document.getElementById("scanStatus").textContent = " ";
+ return;
+}
+try {
+ scannerStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } });
+ const video = document.getElementById("video");
+ video.srcObject = scannerStream;
+ await video.play;
+ const detector = new BarcodeDetector({ formats: ["qr_code", "code_128", "ean_13", "ean_8", "upc_a", "upc_e"] });
+ scanTimer = setInterval(async => {
+ try {
+ const codes = await detector.detect(video);
+ if (codes.length) handleScannedCode(codes[0].rawValue);
+ } catch (err) {}
+ }, 600);
+ document.getElementById("scanStatus").textContent = " BarcodeQR";
+} catch (err) {
+ document.getElementById("scanStatus").textContent = " HTTPS";
+}
 }
 
-function closeScanner() {
-  if (scanTimer) clearInterval(scanTimer);
-  scanTimer = null;
-  if (scannerStream) scannerStream.getTracks().forEach(t => t.stop());
-  scannerStream = null;
-  document.getElementById("scanner").classList.remove("open");
+function closeScanner {
+if (scanTimer) clearInterval(scanTimer);
+scanTimer = null;
+if (scannerStream) scannerStream.getTracks.forEach(t => t.stop);
+scannerStream = null;
+document.getElementById("scanner").classList.remove("open");
 }
 
 function handleScannedCode(code) {
-  closeScanner();
-  const clean = String(code || "").trim();
-  document.getElementById("lastScan").textContent = `Last scan: ${clean}`;
-  if (scanTarget === "product") {
-    document.getElementById("barcode").value = clean;
-    showTab("stock");
-    return;
-  }
-  const p = productByCode(clean);
-  if (!p) {
-    alert(`ไม่พบสินค้า: ${clean}`);
-    document.getElementById("stockSearch").value = clean;
-    showTab("stock");
-    renderStock();
-    return;
-  }
-  if (scanTarget === "sale") {
-    addToCart(p);
-    showTab("pos");
-  } else {
-    editProduct(p.sku);
-  }
+closeScanner;
+const clean = String(code || "").trim;
+document.getElementById("lastScan").textContent = `Last scan: ${clean}`;
+if (scanTarget === "product") {
+ document.getElementById("barcode").value = clean;
+ showTab("stock");
+ return;
+}
+const p = productByCode(clean);
+if (!p) {
+ alert(` : ${clean}`);
+ document.getElementById("stockSearch").value = clean;
+ showTab("stock");
+ renderStock;
+ return;
+}
+if (scanTarget === "sale") {
+ addToCart(p);
+ showTab("pos");
+} else {
+ editProduct(p.sku);
+}
 }
 
 function targetLabel(target) {
-  return {
-    lookup: "สแกนเพื่อค้นสินค้า",
-    sale: "สแกนเพื่อเพิ่มเข้าตะกร้าขาย",
-    product: "สแกนเพื่อใส่ Barcode ในฟอร์มสินค้า"
-  }[target] || "สแกน";
+return {
+ lookup: " ",
+ sale: " ",
+ product: " Barcode"
+}[target] || " ";
 }
 
-function exportData() {
-  const blob = new Blob([JSON.stringify(state, null, 2)], { type: "application/json" });
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = `zabsiam-pos-backup-${todayKey()}.json`;
-  a.click();
-  URL.revokeObjectURL(a.href);
+function exportData {
+const blob = new Blob([JSON.stringify(state, null, 2)], { type: "application/json" });
+const a = document.createElement("a");
+a.href = URL.createObjectURL(blob);
+a.download = `zabsiam-pos-backup-${todayKey}.json`;
+a.click;
+URL.revokeObjectURL(a.href);
 }
 
 function importData(file) {
-  const reader = new FileReader();
-  reader.onload = () => {
-    try {
-      const data = JSON.parse(reader.result);
-      if (!Array.isArray(data.products)) throw new Error("invalid");
-      Object.assign(state, data);
-      saveState();
-      renderAll();
-      alert("Import สำเร็จ");
-    } catch (err) {
-      alert("ไฟล์ไม่ถูกต้อง");
-    }
-  };
-  reader.readAsText(file);
+const reader = new FileReader;
+reader.onload = => {
+ try {
+ const data = JSON.parse(reader.result);
+ if (!Array.isArray(data.products)) throw new Error("invalid");
+ Object.assign(state, data);
+ saveState;
+ renderAll;
+ alert("Import");
+ } catch (err) {
+ alert(" ");
+ }
+};
+reader.readAsText(file);
 }
 
 function escapeHTML(value) {
-  return String(value ?? "").replace(/[&<>"']/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;" }[ch]));
+return String(value ?? "").replace(/[&<>"']/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;" }[ch]));
 }
 
 function escapeAttr(value) {
-  return escapeHTML(value).replace(/`/g, "&#096;");
+return escapeHTML(value).replace(/`/g, "&#096;");
 }
 
-document.querySelectorAll(".tab").forEach(btn => btn.addEventListener("click", () => showTab(btn.dataset.tab)));
+document.querySelectorAll(".tab").forEach(btn => btn.addEventListener("click", => showTab(btn.dataset.tab)));
 document.getElementById("authForm").addEventListener("submit", async evt => {
-  evt.preventDefault();
-  const password = document.getElementById("posPassword").value;
-  const hash = await sha256(password);
-  if (hash === passwordHash) {
-    document.getElementById("authError").textContent = "";
-    unlockApp();
-  } else {
-    document.getElementById("authError").textContent = "รหัสผ่านไม่ถูกต้อง";
-  }
+evt.preventDefault;
+const password = document.getElementById("posPassword").value;
+const hash = await sha256(password);
+if (hash === passwordHash) {
+ document.getElementById("authError").textContent = "";
+ unlockApp;
+} else {
+ document.getElementById("authError").textContent = " ";
+}
 });
-document.querySelectorAll("[data-scan-target]").forEach(btn => btn.addEventListener("click", () => openScanner(btn.dataset.scanTarget)));
-document.getElementById("scanBtn").addEventListener("click", () => openScanner(activeTab === "pos" ? "sale" : "lookup"));
+document.querySelectorAll("[data-scan-target]").forEach(btn => btn.addEventListener("click", => openScanner(btn.dataset.scanTarget)));
+document.getElementById("scanBtn").addEventListener("click", => openScanner(activeTab === "pos" ? "sale" : "lookup"));
 document.getElementById("closeScanner").addEventListener("click", closeScanner);
-document.getElementById("useManualScan").addEventListener("click", () => handleScannedCode(document.getElementById("manualScan").value));
+document.getElementById("useManualScan").addEventListener("click", => handleScannedCode(document.getElementById("manualScan").value));
 document.getElementById("posSearch").addEventListener("input", renderPOS);
 document.getElementById("posCategory").addEventListener("change", renderPOS);
 document.getElementById("discount").addEventListener("input", renderCart);
 document.getElementById("checkoutBtn").addEventListener("click", checkout);
-document.getElementById("clearCartBtn").addEventListener("click", () => { cart = []; renderCart(); });
-document.getElementById("printReceiptBtn").addEventListener("click", () => window.print());
+document.getElementById("clearCartBtn").addEventListener("click", => { cart = []; renderCart; });
+document.getElementById("printReceiptBtn").addEventListener("click", => window.print);
 document.getElementById("productForm").addEventListener("submit", saveProduct);
 document.getElementById("resetProductBtn").addEventListener("click", resetProductForm);
 document.getElementById("stockSearch").addEventListener("input", renderStock);
 document.getElementById("stockFilter").addEventListener("change", renderStock);
 document.getElementById("addPoLine").addEventListener("click", addPoLine);
 document.getElementById("poForm").addEventListener("submit", savePO);
-document.getElementById("clearPoBtn").addEventListener("click", () => { poDraft = []; renderPO(); });
+document.getElementById("clearPoBtn").addEventListener("click", => { poDraft = []; renderPO; });
 document.getElementById("exportBtn").addEventListener("click", exportData);
 document.getElementById("exportBtn2").addEventListener("click", exportData);
 document.getElementById("importFile").addEventListener("change", e => e.target.files[0] && importData(e.target.files[0]));
-document.getElementById("resetAllBtn").addEventListener("click", () => {
-  if (confirm("ล้างข้อมูลทั้งหมดและกลับค่าเริ่มต้น?")) {
-    localStorage.removeItem(storeKey);
-    Object.assign(state, seedState());
-    cart = [];
-    poDraft = [];
-    renderAll();
-  }
+document.getElementById("resetAllBtn").addEventListener("click", => {
+if (confirm(" ?")) {
+ localStorage.removeItem(storeKey);
+ Object.assign(state, seedState);
+ cart = [];
+ poDraft = [];
+ renderAll;
+}
 });
 
 document.addEventListener("click", evt => {
-  const add = evt.target.closest("[data-add]");
-  if (add) addToCart(state.products.find(p => p.sku === add.dataset.add));
-  const remove = evt.target.closest("[data-cart-remove]");
-  if (remove) { cart.splice(Number(remove.dataset.cartRemove), 1); renderCart(); }
-  const edit = evt.target.closest("[data-edit]");
-  if (edit) editProduct(edit.dataset.edit);
-  const del = evt.target.closest("[data-delete]");
-  if (del && confirm("ลบสินค้านี้?")) {
-    const idx = state.products.findIndex(p => p.sku === del.dataset.delete);
-    if (idx >= 0) state.products.splice(idx, 1);
-    renderAll();
-  }
-  const poRemove = evt.target.closest("[data-po-remove]");
-  if (poRemove) { poDraft.splice(Number(poRemove.dataset.poRemove), 1); renderPO(); }
-  const poReceive = evt.target.closest("[data-po-receive]");
-  if (poReceive && confirm("รับสินค้าเข้า Stock จาก PO นี้?")) receivePO(poReceive.dataset.poReceive);
-  const poPrint = evt.target.closest("[data-po-print]");
-  if (poPrint) printPO(poPrint.dataset.poPrint);
+const add = evt.target.closest("[data-add]");
+if (add) addToCart(state.products.find(p => p.sku === add.dataset.add));
+const remove = evt.target.closest("[data-cart-remove]");
+if (remove) { cart.splice(Number(remove.dataset.cartRemove), 1); renderCart; }
+const edit = evt.target.closest("[data-edit]");
+if (edit) editProduct(edit.dataset.edit);
+const del = evt.target.closest("[data-delete]");
+if (del && confirm(" ?")) {
+ const idx = state.products.findIndex(p => p.sku === del.dataset.delete);
+ if (idx >= 0) state.products.splice(idx, 1);
+ renderAll;
+}
+const poRemove = evt.target.closest("[data-po-remove]");
+if (poRemove) { poDraft.splice(Number(poRemove.dataset.poRemove), 1); renderPO; }
+const poReceive = evt.target.closest("[data-po-receive]");
+if (poReceive && confirm(" StockPO?")) receivePO(poReceive.dataset.poReceive);
+const poPrint = evt.target.closest("[data-po-print]");
+if (poPrint) printPO(poPrint.dataset.poPrint);
 });
 
 document.addEventListener("input", evt => {
-  const qty = evt.target.closest("[data-cart-qty]");
-  if (qty) {
-    const index = Number(qty.dataset.cartQty);
-    cart[index].qty = Math.max(1, Number(qty.value || 1));
-    renderCart();
-  }
+const qty = evt.target.closest("[data-cart-qty]");
+if (qty) {
+ const index = Number(qty.dataset.cartQty);
+ cart[index].qty = Math.max(1, Number(qty.value || 1));
+ renderCart;
+}
 });
 
-renderAll();
+renderAll;
 </script>
 </body>
 </html>
-

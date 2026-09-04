@@ -1,1109 +1,1102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu - Khrua Thai London</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        gold: '#D4AF37',
-                        'dark-green': '#1B3022',
-                        cream: '#F9F7F2',
-                        'gold-light': '#f5e6b8',
-                    },
-                    fontFamily: {
-                        prompt: ['Prompt', 'sans-serif'],
-                        manorah: ['SarunsManorah', 'Playfair Display', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <style type="text/tailwindcss">
-        @layer utilities {
-            .nav-link {
-                @apply text-gray-700 no-underline px-4 py-2 text-sm font-bold transition-colors duration-300 hover:text-[#5c8b54] hover:bg-gray-50 rounded-md;
-            }
-            .nav-link.active {
-                @apply text-[#5c8b54] bg-[#f0f8ed];
-            }
-            .lang-btn {
-                @apply cursor-pointer px-4 py-1 bg-transparent text-gold border-[1.2px] border-gold rounded-full font-prompt text-xs transition-colors duration-300;
-            }
-            .lang-btn.active {
-                @apply text-[#5c8b54] bg-[#f0f8ed];
-            }
-        }
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Menu - Khrua Thai London</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+ <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+ <script src="https://cdn.tailwindcss.com"></script>
+ <script>
+ tailwind.config = {
+ theme: {
+ extend: {
+ colors: {
+ gold: '#D4AF37',
+ 'dark-green': '#1B3022',
+ cream: '#F9F7F2',
+ 'gold-light': '#f5e6b8',
+ },
+ fontFamily: {
+ prompt: ['Prompt', 'sans-serif'],
+ manorah: ['SarunsManorah', 'Playfair Display', 'serif'],
+ }
+ }
+ }
+ }
+ </script>
+ <style type="text/tailwindcss">
+ @layer utilities {
+ .nav-link {
+ @apply text-gray-700 no-underline px-4 py-2 text-sm font-bold transition-colors duration-300 hover:text-[#5c8b54] hover:bg-gray-50 rounded-md;
+ }
+ .nav-link.active {
+ @apply text-[#5c8b54] bg-[#f0f8ed];
+ }
+ .lang-btn {
+ @apply cursor-pointer px-4 py-1 bg-transparent text-gold border-[1.2px] border-gold rounded-full font-prompt text-xs transition-colors duration-300;
+ }
+ .lang-btn.active {
+ @apply text-[#5c8b54] bg-[#f0f8ed];
+ }
+ }
 
-        @font-face {
-            font-family: 'SarunsManorah';
-            src: url('SarunsManorah.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-        }
+ @font-face {
+ font-family: 'SarunsManorah';
+ src: url('SarunsManorah.ttf') format('truetype');
+ font-weight: normal;
+ font-style: normal;
+ }
 
-        body {
-            @apply font-prompt bg-cream text-gray-800 overflow-x-hidden;
-        }
+ body {
+ @apply font-prompt bg-cream text-gray-800 overflow-x-hidden;
+ }
 
-        .swiper-pagination-bullet-active {
-            background: #D4AF37 !important;
-        }
-    
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        .filter-btn {
-            @apply px-5 py-2 rounded-full text-sm font-semibold border border-gray-300 text-gray-600 hover:border-dark-green hover:text-dark-green transition-colors cursor-pointer bg-white;
-        }
-        .filter-btn.active {
-            @apply bg-dark-green text-white border-dark-green;
-        }
-        </style>
-    <link rel="stylesheet" href="responsive.css">
-    <link rel="stylesheet" href="light-theme.css">
+ .swiper-pagination-bullet-active {
+ background: #D4AF37 !important;
+ }
+ 
+ .hide-scrollbar::-webkit-scrollbar { display: none; }
+ .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+ .filter-btn {
+ @apply px-5 py-2 rounded-full text-sm font-semibold border border-gray-300 text-gray-600 hover:border-dark-green hover:text-dark-green transition-colors cursor-pointer bg-white;
+ }
+ .filter-btn.active {
+ @apply bg-dark-green text-white border-dark-green;
+ }
+ </style>
+ <link rel="stylesheet" href="responsive.css">
+ <link rel="stylesheet" href="light-theme.css">
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B32XK3RT5X"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+ <!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-B32XK3RT5X"></script>
+ <script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag{dataLayer.push(arguments);}
+ gtag('js', new Date);
 
-      gtag('config', 'G-B32XK3RT5X');
-    </script>
-
+ gtag('config', 'G-B32XK3RT5X');
+ </script>
 
 <link href="css/cart.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/megamenu.css">
+ <link rel="stylesheet" href="css/megamenu.css">
 </head>
 <body class="font-prompt bg-cream text-gray-800 overflow-x-hidden">
-
 <header class="mega-header">
-    <div class="mega-nav-container">
-        <a href="index.html" class="mega-logo">
-            <img src="logo.png" alt="KHRUA THAI">
-            KHRUA THAI
-        </a>
-        
-        <div class="mega-nav-links">
-            <!-- Main Meals -->
-            <div class="mega-nav-item">
-                <a href="menu.html" class="mega-nav-link">Main Meals</a>
-                <div class="mega-dropdown">
-                    <div class="mega-dropdown-content">
-                        <div class="mega-columns">
-                            <div class="mega-column">
-                                <div class="mega-column-title">Categories</div>
-                                <a href="menu.html?cat=mains">Meat</a>
-                                <a href="menu.html?cat=vegetables">Vegetables</a>
-                                <a href="menu.html?cat=starters">Starters</a>
-                                <a href="menu.html?cat=box_sets">Meal Boxes</a>
-                            </div>
-                        </div>
-                        <div class="mega-featured">
-                            <a href="menu.html" class="mega-feature-card">
-                                <img src="images/green_curry_pork_bowl.jpg" alt="Green Curry">
-                                <span>Authentic Thai Curries</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Entertaining -->
-            <div class="mega-nav-item">
-                <a href="menu.html" class="mega-nav-link">Entertaining</a>
-                <div class="mega-dropdown">
-                    <div class="mega-dropdown-content">
-                        <div class="mega-columns">
-                            <div class="mega-column">
-                                <div class="mega-column-title">Event Types</div>
-                                <a href="menu.html">Canapés</a>
-                                <a href="menu.html">Dinner Party</a>
-                                <a href="menu.html">Afternoon Tea</a>
-                                <a href="menu.html">Buffet</a>
-                                <a href="menu.html">Birthday Party</a>
-                            </div>
-                        <div class="mega-featured">
-                            <a href="menu.html" class="mega-feature-card">
-                                <img src="images/780f7b8bb98d.jpg" alt="Entertaining">
-                                <span>Premium Event Catering</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+ <div class="mega-nav-container">
+ <a href="index.html" class="mega-logo">
+ <img src="logo.png" alt="KHRUA THAI">
+ KHRUA THAI
+ </a>
+ 
+ <div class="mega-nav-links">
+ <!-- Main Meals -->
+ <div class="mega-nav-item">
+ <a href="menu.html" class="mega-nav-link">Main Meals</a>
+ <div class="mega-dropdown">
+ <div class="mega-dropdown-content">
+ <div class="mega-columns">
+ <div class="mega-column">
+ <div class="mega-column-title">Categories</div>
+ <a href="menu.html?cat=mains">Meat</a>
+ <a href="menu.html?cat=vegetables">Vegetables</a>
+ <a href="menu.html?cat=starters">Starters</a>
+ <a href="menu.html?cat=box_sets">Meal Boxes</a>
+ </div>
+ </div>
+ <div class="mega-featured">
+ <a href="menu.html" class="mega-feature-card">
+ <img src="images/green_curry_pork_bowl.jpg" alt="Green Curry">
+ <span>Authentic Thai Curries</span>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
+ 
+ <!-- Entertaining -->
+ <div class="mega-nav-item">
+ <a href="menu.html" class="mega-nav-link">Entertaining</a>
+ <div class="mega-dropdown">
+ <div class="mega-dropdown-content">
+ <div class="mega-columns">
+ <div class="mega-column">
+ <div class="mega-column-title">Event Types</div>
+ <a href="menu.html">Canapés</a>
+ <a href="menu.html">Dinner Party</a>
+ <a href="menu.html">Afternoon Tea</a>
+ <a href="menu.html">Buffet</a>
+ <a href="menu.html">Birthday Party</a>
+ </div>
+ <div class="mega-featured">
+ <a href="menu.html" class="mega-feature-card">
+ <img src="images/780f7b8bb98d.jpg" alt="Entertaining">
+ <span>Premium Event Catering</span>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
 
-            <!-- Puddings -->
-            <div class="mega-nav-item">
-                <a href="desserts.html" class="mega-nav-link">Puddings</a>
-                <div class="mega-dropdown">
-                    <div class="mega-dropdown-content">
-                        <div class="mega-columns">
-                            <div class="mega-column">
-                                <div class="mega-column-title">Thai Desserts</div>
-                                <a href="desserts.html">Coconut Jelly</a>
-                                <a href="desserts.html">Mango Sticky Rice</a>
-                                <a href="desserts.html">Traditional Sweets</a>
-                            </div>
-                        <div class="mega-featured">
-                            <a href="desserts.html" class="mega-feature-card">
-                                <img src="images/Butterfly Pea Coconut Jelly with Young Coconut.jpg" alt="Puddings">
-                                <span>Delightful Thai Puddings</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+ <!-- Puddings -->
+ <div class="mega-nav-item">
+ <a href="desserts.html" class="mega-nav-link">Puddings</a>
+ <div class="mega-dropdown">
+ <div class="mega-dropdown-content">
+ <div class="mega-columns">
+ <div class="mega-column">
+ <div class="mega-column-title">Thai Desserts</div>
+ <a href="desserts.html">Coconut Jelly</a>
+ <a href="desserts.html">Mango Sticky Rice</a>
+ <a href="desserts.html">Traditional Sweets</a>
+ </div>
+ <div class="mega-featured">
+ <a href="desserts.html" class="mega-feature-card">
+ <img src="images/Butterfly Pea Coconut Jelly with Young Coconut.jpg" alt="Puddings">
+ <span>Delightful Thai Puddings</span>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
 
-            <!-- Meal Boxes -->
-            <div class="mega-nav-item">
-                <a href="delivery.html" class="mega-nav-link">Meal Boxes</a>
-            </div>
+ <!-- Meal Boxes -->
+ <div class="mega-nav-item">
+ <a href="delivery.html" class="mega-nav-link">Meal Boxes</a>
+ </div>
 
-            <!-- Summer Meals -->
-            <div class="mega-nav-item">
-                <a href="menu.html" class="mega-nav-link">Summer Meals</a>
-            </div>
-        </div>
+ <!-- Summer Meals -->
+ <div class="mega-nav-item">
+ <a href="menu.html" class="mega-nav-link">Summer Meals</a>
+ </div>
+ </div>
 
-        <div class="mega-search">
-            <input type="text" placeholder="Search for Meals...">
-            <i class="fas fa-search"></i>
-        </div>
+ <div class="mega-search">
+ <input type="text" placeholder="Search for Meals...">
+ <i class="fas fa-search"></i>
+ </div>
 
-        <div class="mega-icons">
-            <a href="booking.html" class="mega-icon-btn">
-                <i class="fas fa-shopping-cart"></i>
-                <span id="nav-cart-badge-inner" class="mega-cart-badge" style="display:none;">0</span>
-            </a>
-        </div>
-    </div>
+ <div class="mega-icons">
+ <a href="booking.html" class="mega-icon-btn">
+ <i class="fas fa-shopping-cart"></i>
+ <span id="nav-cart-badge-inner" class="mega-cart-badge" style="display:none;">0</span>
+ </a>
+ </div>
+ </div>
 </header>
-    
+ 
 
-    
+ 
 
-    
-    
-    <main class="w-full max-w-[1200px] mx-auto px-5 py-6" id="buffet-container">
-        <!-- Rendered by JS -->
-        <div class="text-center py-10"><i class="fas fa-spinner fa-spin text-3xl text-gold"></i><p class="mt-3 text-gray-500">Loading Menu...</p></div>
-    </main>
+ 
+ 
+ <main class="w-full max-w-[1200px] mx-auto px-5 py-6" id="buffet-container">
+ <!-- Rendered by JS -->
+ <div class="text-center py-10"><i class="fas fa-spinner fa-spin text-3xl text-gold"></i><p class="mt-3 text-gray-500">Loading Menu...</p></div>
+ </main>
 
-    <!-- Package Modal -->
-    <div id="package-modal" class="fixed inset-0 bg-black/80 z-[4000] p-5 backdrop-blur-sm" style="display:none; align-items:center; justify-content:center;">
-        <div class="w-full max-w-[800px] max-h-[90vh] rounded-[20px] overflow-y-auto relative shadow-2xl border-2 border-gold flex flex-col p-6" style="animation: popIn 0.3s ease-out; background-color: var(--dark-green);">
-            <button onclick="document.getElementById('package-modal').style.display='none'" class="absolute top-4 right-5 text-gray-300 hover:text-white text-3xl transition-colors" style="color: white !important;">&times;</button>
-            <h3 id="pkg-modal-title" class="text-white text-2xl font-bold mb-2 border-b-2 border-gold pb-3 font-prompt" style="color: white !important;">Package Name</h3>
-            <p id="pkg-modal-price" class="text-gray-200 font-bold mb-4 text-lg" style="color: #f3f4f6 !important;">£0</p>
-            
-            <p class="mb-4 font-bold text-white text-lg" style="color: white !important;">
-                </span>
-                Please select your dishes: <span id="pkg-modal-item-limit-en" class="text-gold ml-2"></span>
-            </p>
-            
-            <div id="pkg-categories-container" class="flex flex-col gap-4 mb-6">
-                <!-- Dynamically populated -->
-            </div>
-            
-            <button onclick="confirmPackageSelection()" class="w-full bg-gold text-dark-green py-3 rounded-xl font-bold hover:bg-yellow-500 transition-colors shadow-lg text-lg">
-                <i class="fas fa-check-circle mr-2"></i> Confirm Selection
-            </button>
-        </div>
-    </div>
+ <!-- Package Modal -->
+ <div id="package-modal" class="fixed inset-0 bg-black/80 z-[4000] p-5 backdrop-blur-sm" style="display:none; align-items:center; justify-content:center;">
+ <div class="w-full max-w-[800px] max-h-[90vh] rounded-[20px] overflow-y-auto relative shadow-2xl border-2 border-gold flex flex-col p-6" style="animation: popIn 0.3s ease-out; background-color: var(--dark-green);">
+ <button onclick="document.getElementById('package-modal').style.display='none'" class="absolute top-4 right-5 text-gray-300 hover:text-white text-3xl transition-colors" style="color: white !important;">&times;</button>
+ <h3 id="pkg-modal-title" class="text-white text-2xl font-bold mb-2 border-b-2 border-gold pb-3 font-prompt" style="color: white !important;">Package Name</h3>
+ <p id="pkg-modal-price" class="text-gray-200 font-bold mb-4 text-lg" style="color: #f3f4f6 !important;">£0</p>
+ 
+ <p class="mb-4 font-bold text-white text-lg" style="color: white !important;">
+ </span>
+ Please select your dishes: <span id="pkg-modal-item-limit-en" class="text-gold ml-2"></span>
+ </p>
+ 
+ <div id="pkg-categories-container" class="flex flex-col gap-4 mb-6">
+ <!-- Dynamically populated -->
+ </div>
+ 
+ <button onclick="confirmPackageSelection" class="w-full bg-gold text-dark-green py-3 rounded-xl font-bold hover:bg-yellow-500 transition-colors shadow-lg text-lg">
+ <i class="fas fa-check-circle mr-2"></i> Confirm Selection
+ </button>
+ </div>
+ </div>
 
-    <!-- QR Code Modal -->
-    <div id="qr-modal" class="fixed inset-0 bg-black/80 z-[4000] items-center justify-center p-5 hidden backdrop-blur-sm">
-        <div class="bg-white w-full max-w-[350px] rounded-[20px] overflow-hidden relative shadow-2xl border-2 border-gold flex flex-col text-center" style="animation: popIn 0.3s ease-out;">
-            <button onclick="document.getElementById('qr-modal').style.display='none'" class="absolute top-3 right-3 text-gray-400 hover:text-dark-green text-2xl transition-colors">&times;</button>
-            <div class="bg-dark-green p-4 text-gold font-bold text-lg font-prompt">
-                สแกนเพื่อสั่งเมนูนี้
-            </div>
-            <div class="p-6 flex flex-col items-center">
-                <div id="qrcode-container" class="mb-4"></div>
-                <h4 id="qr-item-title" class="text-dark-green font-bold text-lg mb-1"></h4>
-                <p id="qr-item-price" class="text-gold font-bold mb-4"></p>
-                <button onclick="document.getElementById('qr-modal').style.display='none'" class="bg-gold text-dark-green px-6 py-2 rounded-full font-bold w-full hover:bg-dark-green hover:text-gold transition-colors border-2 border-gold">ปิด (Close)</button>
-            </div>
-        </div>
-    </div>
+ <!-- QR Code Modal -->
+ <div id="qr-modal" class="fixed inset-0 bg-black/80 z-[4000] items-center justify-center p-5 hidden backdrop-blur-sm">
+ <div class="bg-white w-full max-w-[350px] rounded-[20px] overflow-hidden relative shadow-2xl border-2 border-gold flex flex-col text-center" style="animation: popIn 0.3s ease-out;">
+ <button onclick="document.getElementById('qr-modal').style.display='none'" class="absolute top-3 right-3 text-gray-400 hover:text-dark-green text-2xl transition-colors">&times;</button>
+ <div class="bg-dark-green p-4 text-gold font-bold text-lg font-prompt">
+ </div>
+ <div class="p-6 flex flex-col items-center">
+ <div id="qrcode-container" class="mb-4"></div>
+ <h4 id="qr-item-title" class="text-dark-green font-bold text-lg mb-1"></h4>
+ <p id="qr-item-price" class="text-gold font-bold mb-4"></p>
+ <button onclick="document.getElementById('qr-modal').style.display='none'" class="bg-gold text-dark-green px-6 py-2 rounded-full font-bold w-full hover:bg-dark-green hover:text-gold transition-colors border-2 border-gold"> (Close)</button>
+ </div>
+ </div>
+ </div>
 
-    
-<!-- Product Detail Modal -->
-<div id="product-modal" class="fixed inset-0 bg-black/60 z-[2000] hidden items-center justify-center p-4 md:p-8 backdrop-blur-sm overflow-y-auto" onclick="closeProductModal()">
-    <div class="bg-white w-full max-w-[1000px] rounded-xl shadow-2xl relative my-auto flex flex-col md:flex-row overflow-hidden" onclick="event.stopPropagation()">
-        <!-- Close Button -->
-        <button onclick="closeProductModal()" class="absolute top-4 right-4 z-10 bg-white/80 rounded-full w-8 h-8 flex items-center justify-center text-gray-600 hover:text-gray-900 shadow-sm border border-gray-200 transition-colors backdrop-blur-sm">
-            <i class="fas fa-times text-lg"></i>
-        </button>
+ <!-- Product Detail Modal -->
+<div id="product-modal" class="fixed inset-0 bg-black/60 z-[2000] hidden items-center justify-center p-4 md:p-8 backdrop-blur-sm overflow-y-auto" onclick="closeProductModal">
+ <div class="bg-white w-full max-w-[1000px] rounded-xl shadow-2xl relative my-auto flex flex-col md:flex-row overflow-hidden" onclick="event.stopPropagation">
+ <!-- Close Button -->
+ <button onclick="closeProductModal" class="absolute top-4 right-4 z-10 bg-white/80 rounded-full w-8 h-8 flex items-center justify-center text-gray-600 hover:text-gray-900 shadow-sm border border-gray-200 transition-colors backdrop-blur-sm">
+ <i class="fas fa-times text-lg"></i>
+ </button>
 
-        <!-- Left: Images -->
-        <div class="w-full md:w-1/2 bg-gray-50 flex flex-col">
-            <div class="relative aspect-[4/3] md:aspect-square overflow-hidden bg-gray-100">
-                <img id="modal-main-img" src="" class="absolute inset-0 w-full h-full object-cover">
-            </div>
-            <!-- Thumbnails -->
-            <div class="flex gap-3 p-5 overflow-x-auto bg-white border-r border-gray-100">
-                <img id="modal-thumb-1" src="" class="w-20 h-20 object-cover border-2 border-[#5c8b54] rounded-md cursor-pointer hover:opacity-90 transition-opacity" onclick="document.getElementById('modal-main-img').src=this.src; document.querySelectorAll('.modal-thumb').forEach(el=>el.classList.replace('border-[#5c8b54]', 'border-transparent')); this.classList.replace('border-transparent', 'border-[#5c8b54]');">
-                <img id="modal-thumb-2" src="" class="w-20 h-20 object-cover border-2 border-transparent rounded-md cursor-pointer opacity-70 hover:opacity-100 transition-opacity hidden modal-thumb" onclick="document.getElementById('modal-main-img').src=this.src; document.querySelectorAll('.modal-thumb').forEach(el=>el.classList.replace('border-[#5c8b54]', 'border-transparent')); this.classList.replace('border-transparent', 'border-[#5c8b54]');">
-                <img id="modal-thumb-3" src="" class="w-20 h-20 object-cover border-2 border-transparent rounded-md cursor-pointer opacity-70 hover:opacity-100 transition-opacity hidden modal-thumb" onclick="document.getElementById('modal-main-img').src=this.src; document.querySelectorAll('.modal-thumb').forEach(el=>el.classList.replace('border-[#5c8b54]', 'border-transparent')); this.classList.replace('border-transparent', 'border-[#5c8b54]');">
-            </div>
-        </div>
+ <!-- Left: Images -->
+ <div class="w-full md:w-1/2 bg-gray-50 flex flex-col">
+ <div class="relative aspect-[4/3] md:aspect-square overflow-hidden bg-gray-100">
+ <img id="modal-main-img" src="" class="absolute inset-0 w-full h-full object-cover">
+ </div>
+ <!-- Thumbnails -->
+ <div class="flex gap-3 p-5 overflow-x-auto bg-white border-r border-gray-100">
+ <img id="modal-thumb-1" src="" class="w-20 h-20 object-cover border-2 border-[#5c8b54] rounded-md cursor-pointer hover:opacity-90 transition-opacity" onclick="document.getElementById('modal-main-img').src=this.src; document.querySelectorAll('.modal-thumb').forEach(el=>el.classList.replace('border-[#5c8b54]', 'border-transparent')); this.classList.replace('border-transparent', 'border-[#5c8b54]');">
+ <img id="modal-thumb-2" src="" class="w-20 h-20 object-cover border-2 border-transparent rounded-md cursor-pointer opacity-70 hover:opacity-100 transition-opacity hidden modal-thumb" onclick="document.getElementById('modal-main-img').src=this.src; document.querySelectorAll('.modal-thumb').forEach(el=>el.classList.replace('border-[#5c8b54]', 'border-transparent')); this.classList.replace('border-transparent', 'border-[#5c8b54]');">
+ <img id="modal-thumb-3" src="" class="w-20 h-20 object-cover border-2 border-transparent rounded-md cursor-pointer opacity-70 hover:opacity-100 transition-opacity hidden modal-thumb" onclick="document.getElementById('modal-main-img').src=this.src; document.querySelectorAll('.modal-thumb').forEach(el=>el.classList.replace('border-[#5c8b54]', 'border-transparent')); this.classList.replace('border-transparent', 'border-[#5c8b54]');">
+ </div>
+ </div>
 
-        <!-- Right: Details -->
-        <div class="w-full md:w-1/2 p-6 md:p-10 flex flex-col md:h-[600px] overflow-y-auto hide-scrollbar bg-white">
-            <h2 id="modal-title" class="text-2xl md:text-[28px] font-bold text-gray-800 mb-3 font-serif leading-tight">Product Title</h2>
-            
-            <!-- Dietary Icons -->
-            <div class="flex gap-2 mb-5 text-gray-500 text-xs font-bold">
-                <span class="border border-gray-300 rounded-full w-7 h-7 flex items-center justify-center" title="Gluten Free">GF</span>
-                <span class="border border-gray-300 rounded-full w-7 h-7 flex items-center justify-center" title="Dairy Free">DF</span>
-                <span class="border border-gray-300 rounded-full w-7 h-7 flex items-center justify-center"><i class="fas fa-pepper-hot text-red-500"></i></span>
-            </div>
+ <!-- Right: Details -->
+ <div class="w-full md:w-1/2 p-6 md:p-10 flex flex-col md:h-[600px] overflow-y-auto hide-scrollbar bg-white">
+ <h2 id="modal-title" class="text-2xl md:text-[28px] font-bold text-gray-800 mb-3 font-serif leading-tight">Product Title</h2>
+ 
+ <!-- Dietary Icons -->
+ <div class="flex gap-2 mb-5 text-gray-500 text-xs font-bold">
+ <span class="border border-gray-300 rounded-full w-7 h-7 flex items-center justify-center" title="Gluten Free">GF</span>
+ <span class="border border-gray-300 rounded-full w-7 h-7 flex items-center justify-center" title="Dairy Free">DF</span>
+ <span class="border border-gray-300 rounded-full w-7 h-7 flex items-center justify-center"><i class="fas fa-pepper-hot text-red-500"></i></span>
+ </div>
 
-            <!-- Description -->
-            <div id="modal-desc" class="text-gray-600 mb-8 text-[15px] leading-relaxed">
-                A classic mild Thai dish made with premium ingredients. Please check the ingredients tab for more details.
-            </div>
+ <!-- Description -->
+ <div id="modal-desc" class="text-gray-600 mb-8 text-[15px] leading-relaxed">
+ A classic mild Thai dish made with premium ingredients. Please check the ingredients tab for more details.
+ </div>
 
-            <!-- Pricing Rows -->
-            <div class="flex flex-col gap-2.5 mb-8">
-                <!-- Serves 1 -->
-                <div class="flex items-center justify-between bg-[#f8f9fa] px-4 py-3 rounded border border-gray-100">
-                    <div class="text-[15px] text-gray-700">Serves 1 <span id="modal-weight-1" class="text-gray-400 text-sm ml-1">(250g)</span></div>
-                    <div class="flex items-center gap-6">
-                        <span id="modal-price-1" class="font-bold text-gray-800 text-lg">£0.00</span>
-                        <button id="modal-add-1" class="bg-[#598c73] text-white px-8 py-2 rounded font-semibold hover:bg-[#46705c] transition-colors">Add</button>
-                    </div>
-                </div>
-                <!-- Serves 2 -->
-                <div class="flex items-center justify-between bg-[#f8f9fa] px-4 py-3 rounded border border-gray-100">
-                    <div class="text-[15px] text-gray-700">Serves 2 <span id="modal-weight-2" class="text-gray-400 text-sm ml-1">(500g)</span></div>
-                    <div class="flex items-center gap-6">
-                        <span id="modal-price-2" class="font-bold text-gray-800 text-lg">£0.00</span>
-                        <button id="modal-add-2" class="bg-[#598c73] text-white px-8 py-2 rounded font-semibold hover:bg-[#46705c] transition-colors">Add</button>
-                    </div>
-                </div>
-                <!-- Serves 4 -->
-                <div class="flex items-center justify-between bg-[#f8f9fa] px-4 py-3 rounded border border-gray-100">
-                    <div class="text-[15px] text-gray-700">Serves 4 <span id="modal-weight-4" class="text-gray-400 text-sm ml-1">(1kg)</span></div>
-                    <div class="flex items-center gap-6">
-                        <span id="modal-price-4" class="font-bold text-gray-800 text-lg">£0.00</span>
-                        <button id="modal-add-4" class="bg-[#598c73] text-white px-8 py-2 rounded font-semibold hover:bg-[#46705c] transition-colors">Add</button>
-                    </div>
-                </div>
-            </div>
+ <!-- Pricing Rows -->
+ <div class="flex flex-col gap-2.5 mb-8">
+ <!-- Serves 1 -->
+ <div class="flex items-center justify-between bg-[#f8f9fa] px-4 py-3 rounded border border-gray-100">
+ <div class="text-[15px] text-gray-700">Serves 1 <span id="modal-weight-1" class="text-gray-400 text-sm ml-1">(250g)</span></div>
+ <div class="flex items-center gap-6">
+ <span id="modal-price-1" class="font-bold text-gray-800 text-lg">£0.00</span>
+ <button id="modal-add-1" class="bg-[#598c73] text-white px-8 py-2 rounded font-semibold hover:bg-[#46705c] transition-colors">Add</button>
+ </div>
+ </div>
+ <!-- Serves 2 -->
+ <div class="flex items-center justify-between bg-[#f8f9fa] px-4 py-3 rounded border border-gray-100">
+ <div class="text-[15px] text-gray-700">Serves 2 <span id="modal-weight-2" class="text-gray-400 text-sm ml-1">(500g)</span></div>
+ <div class="flex items-center gap-6">
+ <span id="modal-price-2" class="font-bold text-gray-800 text-lg">£0.00</span>
+ <button id="modal-add-2" class="bg-[#598c73] text-white px-8 py-2 rounded font-semibold hover:bg-[#46705c] transition-colors">Add</button>
+ </div>
+ </div>
+ <!-- Serves 4 -->
+ <div class="flex items-center justify-between bg-[#f8f9fa] px-4 py-3 rounded border border-gray-100">
+ <div class="text-[15px] text-gray-700">Serves 4 <span id="modal-weight-4" class="text-gray-400 text-sm ml-1">(1kg)</span></div>
+ <div class="flex items-center gap-6">
+ <span id="modal-price-4" class="font-bold text-gray-800 text-lg">£0.00</span>
+ <button id="modal-add-4" class="bg-[#598c73] text-white px-8 py-2 rounded font-semibold hover:bg-[#46705c] transition-colors">Add</button>
+ </div>
+ </div>
+ </div>
 
-            <!-- Accordions -->
-            <div class="flex flex-col border-t border-gray-200 mt-auto">
-                <div class="border-b border-gray-200">
-                    <button onclick="toggleAccordion('acc-nutrition')" class="w-full py-4 flex justify-between items-center text-left text-gray-700 font-semibold hover:text-black transition-colors text-lg">
-                        Nutrition
-                        <i class="fas fa-plus text-gray-400 text-sm transition-transform duration-300" id="acc-nutrition-icon"></i>
-                    </button>
-                    <div id="acc-nutrition" class="hidden pb-5 text-[15px] text-gray-600 leading-relaxed">
-                        Information will be updated soon. Typical values per 100g: Energy 500kJ/120kcal.
-                    </div>
-                </div>
-                <div class="border-b border-gray-200">
-                    <button onclick="toggleAccordion('acc-ingredients')" class="w-full py-4 flex justify-between items-center text-left text-gray-700 font-semibold hover:text-black transition-colors text-lg">
-                        Ingredients
-                        <i class="fas fa-plus text-gray-400 text-sm transition-transform duration-300" id="acc-ingredients-icon"></i>
-                    </button>
-                    <div id="acc-ingredients" class="hidden pb-5 text-[15px] text-gray-600 leading-relaxed">
-                        Authentic Thai ingredients. See packaging for full list.
-                    </div>
-                </div>
-                <div class="border-b border-gray-200">
-                    <button onclick="toggleAccordion('acc-cooking')" class="w-full py-4 flex justify-between items-center text-left text-gray-700 font-semibold hover:text-black transition-colors text-lg">
-                        Cooking/Serving Instructions
-                        <i class="fas fa-plus text-gray-400 text-sm transition-transform duration-300" id="acc-cooking-icon"></i>
-                    </button>
-                    
-                    
-                    <div id="acc-cooking" class="hidden pb-5 text-[14px] text-gray-700 leading-relaxed">
-                        <p class="mb-4 font-medium text-gray-600">
-                            These cooking instructions are only a guide. Your appliance may have a personality of its own (or a different power rating). Please adjust accordingly.
-                        </p>
-                        
-                        <!-- SERVES 1 -->
-                        <div class="bg-gray-100 text-center py-1.5 text-xs font-bold uppercase tracking-widest mb-4 text-gray-500">
-                            serves 1
-                        </div>
-                        <div class="mb-6">
-                            <h4 class="font-bold text-gray-800 mb-1">Microwave:</h4>
-                            <p class="mb-3">Remove sleeve, pierce film lid and place on a microwaveable plate. Cook on full power.</p>
-                            <div class="flex items-center gap-2 mb-2 font-semibold">
-                                <i class="fas fa-wave-square text-lg w-6 text-center text-gray-600"></i> <span>850W</span>
-                            </div>
-                            <div class="flex items-start gap-2 mb-4">
-                                <i class="far fa-clock text-lg w-6 text-center mt-0.5 text-gray-600"></i>
-                                <span>3 mins &gt; stir gently &amp; re-cover &gt; 2 mins<br>Allow to stand for 2 mins and stir well before serving. Ensure piping hot.</span>
-                            </div>
-                            
-                            <h4 class="font-bold text-gray-800 mb-1">Oven:</h4>
-                            <p class="mb-3">Preheat oven. Remove sleeve and pierce film. Place on a baking tray in the centre of the oven.</p>
-                            <h5 class="font-bold text-gray-600 text-xs mb-2">Oven Settings</h5>
-                            <div class="flex items-center gap-2 mb-2 font-semibold">
-                                <i class="fas fa-fire-burner text-lg w-6 text-center text-gray-600"></i> <span>Fan 180&deg;C, Electric 200&deg;C, Gas Mark 6.</span>
-                            </div>
-                            <div class="flex items-start gap-2 mb-4">
-                                <i class="far fa-clock text-lg w-6 text-center mt-0.5 text-gray-600"></i>
-                                <span>40 mins<br>Allow to stand for 2 mins and stir well before serving. Ensure piping hot.</span>
-                            </div>
+ <!-- Accordions -->
+ <div class="flex flex-col border-t border-gray-200 mt-auto">
+ <div class="border-b border-gray-200">
+ <button onclick="toggleAccordion('acc-nutrition')" class="w-full py-4 flex justify-between items-center text-left text-gray-700 font-semibold hover:text-black transition-colors text-lg">
+ Nutrition
+ <i class="fas fa-plus text-gray-400 text-sm transition-transform duration-300" id="acc-nutrition-icon"></i>
+ </button>
+ <div id="acc-nutrition" class="hidden pb-5 text-[15px] text-gray-600 leading-relaxed">
+ Information will be updated soon. Typical values per 100g: Energy 500kJ/120kcal.
+ </div>
+ </div>
+ <div class="border-b border-gray-200">
+ <button onclick="toggleAccordion('acc-ingredients')" class="w-full py-4 flex justify-between items-center text-left text-gray-700 font-semibold hover:text-black transition-colors text-lg">
+ Ingredients
+ <i class="fas fa-plus text-gray-400 text-sm transition-transform duration-300" id="acc-ingredients-icon"></i>
+ </button>
+ <div id="acc-ingredients" class="hidden pb-5 text-[15px] text-gray-600 leading-relaxed">
+ Authentic Thai ingredients. See packaging for full list.
+ </div>
+ </div>
+ <div class="border-b border-gray-200">
+ <button onclick="toggleAccordion('acc-cooking')" class="w-full py-4 flex justify-between items-center text-left text-gray-700 font-semibold hover:text-black transition-colors text-lg">
+ Cooking/Serving Instructions
+ <i class="fas fa-plus text-gray-400 text-sm transition-transform duration-300" id="acc-cooking-icon"></i>
+ </button>
+ 
+ 
+ <div id="acc-cooking" class="hidden pb-5 text-[14px] text-gray-700 leading-relaxed">
+ <p class="mb-4 font-medium text-gray-600">
+ These cooking instructions are only a guide. Your appliance may have a personality of its own (or a different power rating). Please adjust accordingly.
+ </p>
+ 
+ <!-- SERVES 1 -->
+ <div class="bg-gray-100 text-center py-1.5 text-xs font-bold uppercase tracking-widest mb-4 text-gray-500">
+ serves 1
+ </div>
+ <div class="mb-6">
+ <h4 class="font-bold text-gray-800 mb-1">Microwave:</h4>
+ <p class="mb-3">Remove sleeve, pierce film lid and place on a microwaveable plate. Cook on full power.</p>
+ <div class="flex items-center gap-2 mb-2 font-semibold">
+ <i class="fas fa-wave-square text-lg w-6 text-center text-gray-600"></i> <span>850W</span>
+ </div>
+ <div class="flex items-start gap-2 mb-4">
+ <i class="far fa-clock text-lg w-6 text-center mt-0.5 text-gray-600"></i>
+ <span>3 mins &gt; stir gently &amp; re-cover &gt; 2 mins<br>Allow to stand for 2 mins and stir well before serving. Ensure piping hot.</span>
+ </div>
+ 
+ <h4 class="font-bold text-gray-800 mb-1">Oven:</h4>
+ <p class="mb-3">Preheat oven. Remove sleeve and pierce film. Place on a baking tray in the centre of the oven.</p>
+ <h5 class="font-bold text-gray-600 text-xs mb-2">Oven Settings</h5>
+ <div class="flex items-center gap-2 mb-2 font-semibold">
+ <i class="fas fa-fire-burner text-lg w-6 text-center text-gray-600"></i> <span>Fan 180&deg;C, Electric 200&deg;C, Gas Mark 6.</span>
+ </div>
+ <div class="flex items-start gap-2 mb-4">
+ <i class="far fa-clock text-lg w-6 text-center mt-0.5 text-gray-600"></i>
+ <span>40 mins<br>Allow to stand for 2 mins and stir well before serving. Ensure piping hot.</span>
+ </div>
 
-                            <h4 class="font-bold text-gray-800 mb-1">Defrost Instructions:</h4>
-                            <p class="mb-4">Should this product defrost, keep refrigerated and eat within 48 hours. Follow the microwave guidelines but cook for 2 mins - stir well then cook for a further 1 min 30 secs.</p>
+ <h4 class="font-bold text-gray-800 mb-1">Defrost Instructions:</h4>
+ <p class="mb-4">Should this product defrost, keep refrigerated and eat within 48 hours. Follow the microwave guidelines but cook for 2 mins - stir well then cook for a further 1 min 30 secs.</p>
 
-                            <h4 class="font-bold text-gray-800 mb-1">Extra Warnings:</h4>
-                            <p class="mb-2">Although every care has been taken to remove all bones, some may remain. Steam may be released when removing film lid.</p>
-                        </div>
+ <h4 class="font-bold text-gray-800 mb-1">Extra Warnings:</h4>
+ <p class="mb-2">Although every care has been taken to remove all bones, some may remain. Steam may be released when removing film lid.</p>
+ </div>
 
-                        <!-- SERVES 2 -->
-                        <div class="bg-gray-100 text-center py-1.5 text-xs font-bold uppercase tracking-widest mb-4 text-gray-500 mt-8">
-                            serves 2
-                        </div>
-                        <div class="mb-6">
-                            <h4 class="font-bold text-gray-800 mb-1">Microwave:</h4>
-                            <p class="mb-3">Remove sleeve, pierce film lid and place on a microwaveable plate. Cook on full power.</p>
-                            <div class="flex items-center gap-2 mb-2 font-semibold">
-                                <i class="fas fa-wave-square text-lg w-6 text-center text-gray-600"></i> <span>850W</span>
-                            </div>
-                            <div class="flex items-start gap-2 mb-4">
-                                <i class="far fa-clock text-lg w-6 text-center mt-0.5 text-gray-600"></i>
-                                <span>7 mins &gt; stir gently &amp; re-cover &gt; 6 mins<br>Allow to stand for 2 mins and stir well before serving. Ensure piping hot.</span>
-                            </div>
-                            
-                            <h4 class="font-bold text-gray-800 mb-1">Oven:</h4>
-                            <p class="mb-3">Preheat oven. Remove sleeve and pierce film. Place on a baking tray in the centre of the oven.</p>
-                            <h5 class="font-bold text-gray-600 text-xs mb-2">Oven Settings</h5>
-                            <div class="flex items-center gap-2 mb-2 font-semibold">
-                                <i class="fas fa-fire-burner text-lg w-6 text-center text-gray-600"></i> <span>Fan 180&deg;C, Electric 200&deg;C, Gas Mark 6.</span>
-                            </div>
-                            <div class="flex items-start gap-2 mb-4">
-                                <i class="far fa-clock text-lg w-6 text-center mt-0.5 text-gray-600"></i>
-                                <span>45 mins<br>Allow to stand for 2 mins and stir well before serving. Ensure piping hot.</span>
-                            </div>
+ <!-- SERVES 2 -->
+ <div class="bg-gray-100 text-center py-1.5 text-xs font-bold uppercase tracking-widest mb-4 text-gray-500 mt-8">
+ serves 2
+ </div>
+ <div class="mb-6">
+ <h4 class="font-bold text-gray-800 mb-1">Microwave:</h4>
+ <p class="mb-3">Remove sleeve, pierce film lid and place on a microwaveable plate. Cook on full power.</p>
+ <div class="flex items-center gap-2 mb-2 font-semibold">
+ <i class="fas fa-wave-square text-lg w-6 text-center text-gray-600"></i> <span>850W</span>
+ </div>
+ <div class="flex items-start gap-2 mb-4">
+ <i class="far fa-clock text-lg w-6 text-center mt-0.5 text-gray-600"></i>
+ <span>7 mins &gt; stir gently &amp; re-cover &gt; 6 mins<br>Allow to stand for 2 mins and stir well before serving. Ensure piping hot.</span>
+ </div>
+ 
+ <h4 class="font-bold text-gray-800 mb-1">Oven:</h4>
+ <p class="mb-3">Preheat oven. Remove sleeve and pierce film. Place on a baking tray in the centre of the oven.</p>
+ <h5 class="font-bold text-gray-600 text-xs mb-2">Oven Settings</h5>
+ <div class="flex items-center gap-2 mb-2 font-semibold">
+ <i class="fas fa-fire-burner text-lg w-6 text-center text-gray-600"></i> <span>Fan 180&deg;C, Electric 200&deg;C, Gas Mark 6.</span>
+ </div>
+ <div class="flex items-start gap-2 mb-4">
+ <i class="far fa-clock text-lg w-6 text-center mt-0.5 text-gray-600"></i>
+ <span>45 mins<br>Allow to stand for 2 mins and stir well before serving. Ensure piping hot.</span>
+ </div>
 
-                            <h4 class="font-bold text-gray-800 mb-1">Defrost Instructions:</h4>
-                            <p class="mb-4">Should this product defrost, keep refrigerated and eat within 48 hours. Follow the microwave guidelines but cook for 3 mins - stir well - 3 mins.</p>
+ <h4 class="font-bold text-gray-800 mb-1">Defrost Instructions:</h4>
+ <p class="mb-4">Should this product defrost, keep refrigerated and eat within 48 hours. Follow the microwave guidelines but cook for 3 mins - stir well - 3 mins.</p>
 
-                            <h4 class="font-bold text-gray-800 mb-1">Extra Warnings:</h4>
-                            <p class="mb-2">Although every care has been taken to remove all bones, some may remain. Steam may be released when removing film lid.</p>
-                        </div>
+ <h4 class="font-bold text-gray-800 mb-1">Extra Warnings:</h4>
+ <p class="mb-2">Although every care has been taken to remove all bones, some may remain. Steam may be released when removing film lid.</p>
+ </div>
 
-                        <!-- SERVES 4 -->
-                        <div class="bg-gray-100 text-center py-1.5 text-xs font-bold uppercase tracking-widest mb-4 text-gray-500 mt-8">
-                            serves 4
-                        </div>
-                        <div class="mb-2">
-                            <h4 class="font-bold text-gray-800 mb-1">Microwave:</h4>
-                            <p class="mb-3">Remove sleeve, pierce film lid and place on a microwaveable plate. Cook on full power.</p>
-                            <div class="flex items-center gap-2 mb-2 font-semibold">
-                                <i class="fas fa-wave-square text-lg w-6 text-center text-gray-600"></i> <span>850W</span>
-                            </div>
-                            <div class="flex items-start gap-2 mb-4">
-                                <i class="far fa-clock text-lg w-6 text-center mt-0.5 text-gray-600"></i>
-                                <span>10 mins &gt; stir gently &amp; re-cover &gt; 9 mins<br>Allow to stand for 2 mins and stir well before serving. Ensure piping hot.</span>
-                            </div>
-                            
-                            <h4 class="font-bold text-gray-800 mb-1">Oven:</h4>
-                            <p class="mb-3">Preheat oven. Remove sleeve and pierce film. Place on a baking tray in the centre of the oven.</p>
-                            <h5 class="font-bold text-gray-600 text-xs mb-2">Oven Settings</h5>
-                            <div class="flex items-center gap-2 mb-2 font-semibold">
-                                <i class="fas fa-fire-burner text-lg w-6 text-center text-gray-600"></i> <span>Fan 180&deg;C, Electric 200&deg;C, Gas Mark 6.</span>
-                            </div>
-                            <div class="flex items-start gap-2 mb-4">
-                                <i class="far fa-clock text-lg w-6 text-center mt-0.5 text-gray-600"></i>
-                                <span>60 mins<br>Allow to stand for 2 mins and stir well before serving. Ensure piping hot.</span>
-                            </div>
+ <!-- SERVES 4 -->
+ <div class="bg-gray-100 text-center py-1.5 text-xs font-bold uppercase tracking-widest mb-4 text-gray-500 mt-8">
+ serves 4
+ </div>
+ <div class="mb-2">
+ <h4 class="font-bold text-gray-800 mb-1">Microwave:</h4>
+ <p class="mb-3">Remove sleeve, pierce film lid and place on a microwaveable plate. Cook on full power.</p>
+ <div class="flex items-center gap-2 mb-2 font-semibold">
+ <i class="fas fa-wave-square text-lg w-6 text-center text-gray-600"></i> <span>850W</span>
+ </div>
+ <div class="flex items-start gap-2 mb-4">
+ <i class="far fa-clock text-lg w-6 text-center mt-0.5 text-gray-600"></i>
+ <span>10 mins &gt; stir gently &amp; re-cover &gt; 9 mins<br>Allow to stand for 2 mins and stir well before serving. Ensure piping hot.</span>
+ </div>
+ 
+ <h4 class="font-bold text-gray-800 mb-1">Oven:</h4>
+ <p class="mb-3">Preheat oven. Remove sleeve and pierce film. Place on a baking tray in the centre of the oven.</p>
+ <h5 class="font-bold text-gray-600 text-xs mb-2">Oven Settings</h5>
+ <div class="flex items-center gap-2 mb-2 font-semibold">
+ <i class="fas fa-fire-burner text-lg w-6 text-center text-gray-600"></i> <span>Fan 180&deg;C, Electric 200&deg;C, Gas Mark 6.</span>
+ </div>
+ <div class="flex items-start gap-2 mb-4">
+ <i class="far fa-clock text-lg w-6 text-center mt-0.5 text-gray-600"></i>
+ <span>60 mins<br>Allow to stand for 2 mins and stir well before serving. Ensure piping hot.</span>
+ </div>
 
-                            <h4 class="font-bold text-gray-800 mb-1">Defrost Instructions:</h4>
-                            <p class="mb-4">Should this product defrost, keep refrigerated and eat within 48 hours. Follow the microwave guidelines but cook for 5 mins - stir well - 5 mins.</p>
+ <h4 class="font-bold text-gray-800 mb-1">Defrost Instructions:</h4>
+ <p class="mb-4">Should this product defrost, keep refrigerated and eat within 48 hours. Follow the microwave guidelines but cook for 5 mins - stir well - 5 mins.</p>
 
-                            <h4 class="font-bold text-gray-800 mb-1">Extra Warnings:</h4>
-                            <p class="mb-2">Although every care has been taken to remove all bones, some may remain. Steam may be released when removing film lid.</p>
-                        </div>
-                    </div>
+ <h4 class="font-bold text-gray-800 mb-1">Extra Warnings:</h4>
+ <p class="mb-2">Although every care has been taken to remove all bones, some may remain. Steam may be released when removing film lid.</p>
+ </div>
+ </div>
 
 
-                </div>
-            </div>
-            
-        </div>
-    </div>
+ </div>
+ </div>
+ 
+ </div>
+ </div>
 </div>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    <script src="js/cart_v2.js"></script>
-    <script>
-        let buffetData = [];
-        let currentLang = "en";
+ <!-- Scripts -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+ <script src="js/cart_v2.js"></script>
+ <script>
+ let buffetData = [];
+ let currentLang = "en";
 
-        async function loadBuffetMenu() {
-            try {
-                const res = await fetch('/api/buffet?t=' + new Date().getTime());
-                if (res.ok) {
-                    buffetData = await res.json();
-                    renderBuffet();
-                    checkUrlParams();
-                }
-            } catch (err) {
-                console.error("Failed to load buffet menu", err);
-            }
-        }
+ async function loadBuffetMenu {
+ try {
+ const res = await fetch('/api/buffet?t=' + new Date.getTime);
+ if (res.ok) {
+ buffetData = await res.json;
+ renderBuffet;
+ checkUrlParams;
+ }
+ } catch (err) {
+ console.error("Failed to load buffet menu", err);
+ }
+ }
 
-        
-        let currentCategory = 'all';
+ 
+ let currentCategory = 'all';
 
-        function renderBuffet() {
-            renderFilters();
-            renderGrid();
-        }
+ function renderBuffet {
+ renderFilters;
+ renderGrid;
+ }
 
-        function renderFilters() {
-            const filterContainer = document.getElementById('category-filter-bar');
-            if (!filterContainer) return;
-            
-            let html = `<button class="filter-btn ${currentCategory === 'all' ? 'active' : ''}" onclick="filterCategory('all')">All Dishes</button>`;
-            
-            buffetData.forEach(category => {
-                if (category.id === 'services') return;
-                const catTitle = category.title.en || category.title.th || category.title;
-                const isActive = currentCategory === category.id ? 'active' : '';
-                html += `<button class="filter-btn ${isActive}" onclick="filterCategory('${category.id}')">${catTitle}</button>`;
-            });
-            
-            filterContainer.innerHTML = html;
-        }
+ function renderFilters {
+ const filterContainer = document.getElementById('category-filter-bar');
+ if (!filterContainer) return;
+ 
+ let html = `<button class="filter-btn ${currentCategory === 'all' ? 'active' : ''}" onclick="filterCategory('all')">All Dishes</button>`;
+ 
+ buffetData.forEach(category => {
+ if (category.id === 'services') return;
+ const catTitle = category.title.en || category.title.th || category.title;
+ const isActive = currentCategory === category.id ? 'active' : '';
+ html += `<button class="filter-btn ${isActive}" onclick="filterCategory('${category.id}')">${catTitle}</button>`;
+ });
+ 
+ filterContainer.innerHTML = html;
+ }
 
-        window.filterCategory = function(catId) {
-            currentCategory = catId;
-            renderFilters();
-            renderGrid();
-            window.scrollTo({ top: document.getElementById('category-filter-bar').offsetTop - 100, behavior: 'smooth' });
-        };
+ window.filterCategory = function(catId) {
+ currentCategory = catId;
+ renderFilters;
+ renderGrid;
+ window.scrollTo({ top: document.getElementById('category-filter-bar').offsetTop - 100, behavior: 'smooth' });
+ };
 
-        
-        window.searchMenu = function(query) {
-            const searchTerm = query.toLowerCase().trim();
-            // Sync both search bars
-            const desktopSearch = document.getElementById('menu-search');
-            const mobileSearch = document.getElementById('mobile-menu-search');
-            if (desktopSearch && desktopSearch.value !== query) desktopSearch.value = query;
-            if (mobileSearch && mobileSearch.value !== query) mobileSearch.value = query;
-            
-            if (searchTerm !== '') {
-                currentCategory = 'search'; // special state
-            } else if (currentCategory === 'search') {
-                currentCategory = 'all';
-            }
-            renderFilters();
-            renderGrid(searchTerm);
-        };
+ 
+ window.searchMenu = function(query) {
+ const searchTerm = query.toLowerCase.trim;
+ Sync both search bars
+ const desktopSearch = document.getElementById('menu-search');
+ const mobileSearch = document.getElementById('mobile-menu-search');
+ if (desktopSearch && desktopSearch.value !== query) desktopSearch.value = query;
+ if (mobileSearch && mobileSearch.value !== query) mobileSearch.value = query;
+ 
+ if (searchTerm !== '') {
+ currentCategory = 'search'; // special state
+ } else if (currentCategory === 'search') {
+ currentCategory = 'all';
+ }
+ renderFilters;
+ renderGrid(searchTerm);
+ };
 
-        
-        // Modal Logic
-        let activeItemData = null;
-        
-        function generateNutrition(item) {
-    const en = (item.en || '').toLowerCase();
-    const th = (item.th || '').toLowerCase();
-    
-    // Default multiplier (Chicken / Prawn)
-    let mult = 1.0;
-    if (th.includes('เนื้อ') || en.includes('beef') || th.includes('หมู') || en.includes('pork') || th.includes('เป็ด') || en.includes('duck')) {
-        mult = 1.2; // 20% more calories/fat
-    } else if (th.includes('ผัก') || th.includes('เต้าหู้') || en.includes('veg') || en.includes('tofu')) {
-        mult = 0.8; // 20% less calories/fat
-    }
-    
-    // Base values per 100g
-    let base = {
-        kJ: 494 * mult,
-        cal: 118 * mult,
-        protein: 11.1 * mult,
-        carb: 4.8,
-        sugars: 3.1,
-        fat: 6.3 * mult,
-        satFat: 4.27 * mult,
-        fibre: 1.0 * (mult === 0.8 ? 1.5 : 1.0),
-        sodium: 0.34,
-        salt: 0.85
-    };
-    
-    let portion = 2.6; // multiplier for ~260g portion
+ 
+ Modal Logic
+ let activeItemData = null;
+ 
+ function generateNutrition(item) {
+ const en = (item.en || '').toLowerCase;
+ const th = (item.th || '').toLowerCase;
+ 
+ Default multiplier (ChickenPrawn)
+ let mult = 1.0;
+ if (th.includes(' ') || en.includes('beef') || th.includes(' ') || en.includes('pork') || th.includes(' ') || en.includes('duck')) {
+ mult = 1.2; // 20% more calories/fat
+ } else if (th.includes(' ') || th.includes(' ') || en.includes('veg') || en.includes('tofu')) {
+ mult = 0.8; // 20% less calories/fat
+ }
+ 
+ Base values per 100g
+ let base = {
+ kJ: 494 * mult,
+ cal: 118 * mult,
+ protein: 11.1 * mult,
+ carb: 4.8,
+ sugars: 3.1,
+ fat: 6.3 * mult,
+ satFat: 4.27 * mult,
+ fibre: 1.0 * (mult === 0.8 ? 1.5 : 1.0),
+ sodium: 0.34,
+ salt: 0.85
+ };
+ 
+ let portion = 2.6; // multiplier for ~260g portion
 
-    return `
-    <div class="overflow-hidden rounded-lg border border-gray-200">
-        <table class="w-full text-[14px] text-left text-gray-600">
-            <thead class="text-gray-800 bg-gray-50 border-b border-gray-200 text-xs uppercase tracking-wider font-semibold">
-                <tr>
-                    <th class="py-2.5 px-3">Typical Values</th>
-                    <th class="py-2.5 px-3 text-right">Per 100g</th>
-                    <th class="py-2.5 px-3 text-right">Per Portion</th>
-                </tr>
-            </thead>
-            <tbody class="divide-y divide-gray-100">
-                <tr class="hover:bg-gray-50"><td class="py-2 px-3 font-medium text-gray-800">Energy (kJ)</td><td class="py-2 px-3 text-right">${Math.round(base.kJ)}</td><td class="py-2 px-3 text-right">${Math.round(base.kJ * portion)}</td></tr>
-                <tr class="hover:bg-gray-50"><td class="py-2 px-3 font-medium text-gray-800">Energy (cal)</td><td class="py-2 px-3 text-right">${Math.round(base.cal)}</td><td class="py-2 px-3 text-right">${Math.round(base.cal * portion)}</td></tr>
-                <tr class="hover:bg-gray-50"><td class="py-2 px-3">Protein (g)</td><td class="py-2 px-3 text-right">${base.protein.toFixed(1)}</td><td class="py-2 px-3 text-right">${(base.protein * portion).toFixed(1)}</td></tr>
-                <tr class="hover:bg-gray-50"><td class="py-2 px-3">Carbohydrate (g)</td><td class="py-2 px-3 text-right">${base.carb.toFixed(1)}</td><td class="py-2 px-3 text-right">${(base.carb * portion).toFixed(1)}</td></tr>
-                <tr class="hover:bg-gray-50"><td class="py-1 px-3 pl-6 text-gray-500 text-xs">of which: sugars (g)</td><td class="py-1 px-3 text-right text-gray-500">${base.sugars.toFixed(1)}</td><td class="py-1 px-3 text-right text-gray-500">${(base.sugars * portion).toFixed(1)}</td></tr>
-                <tr class="hover:bg-gray-50"><td class="py-2 px-3">Fat (g)</td><td class="py-2 px-3 text-right">${base.fat.toFixed(1)}</td><td class="py-2 px-3 text-right">${(base.fat * portion).toFixed(1)}</td></tr>
-                <tr class="hover:bg-gray-50"><td class="py-1 px-3 pl-6 text-gray-500 text-xs">of which are saturates (g)</td><td class="py-1 px-3 text-right text-gray-500">${base.satFat.toFixed(2)}</td><td class="py-1 px-3 text-right text-gray-500">${(base.satFat * portion).toFixed(2)}</td></tr>
-                <tr class="hover:bg-gray-50"><td class="py-2 px-3">Fibre (g)</td><td class="py-2 px-3 text-right">${base.fibre.toFixed(1)}</td><td class="py-2 px-3 text-right">${(base.fibre * portion).toFixed(1)}</td></tr>
-                <tr class="hover:bg-gray-50"><td class="py-2 px-3">Sodium (g)</td><td class="py-2 px-3 text-right">${base.sodium.toFixed(2)}</td><td class="py-2 px-3 text-right">${(base.sodium * portion).toFixed(2)}</td></tr>
-                <tr class="hover:bg-gray-50"><td class="py-2 px-3">Salt (g)</td><td class="py-2 px-3 text-right">${base.salt.toFixed(2)}</td><td class="py-2 px-3 text-right">${(base.salt * portion).toFixed(2)}</td></tr>
-            </tbody>
-        </table>
-    </div>
-    `;
+ return `
+ <div class="overflow-hidden rounded-lg border border-gray-200">
+ <table class="w-full text-[14px] text-left text-gray-600">
+ <thead class="text-gray-800 bg-gray-50 border-b border-gray-200 text-xs uppercase tracking-wider font-semibold">
+ <tr>
+ <th class="py-2.5 px-3">Typical Values</th>
+ <th class="py-2.5 px-3 text-right">Per 100g</th>
+ <th class="py-2.5 px-3 text-right">Per Portion</th>
+ </tr>
+ </thead>
+ <tbody class="divide-y divide-gray-100">
+ <tr class="hover:bg-gray-50"><td class="py-2 px-3 font-medium text-gray-800">Energy (kJ)</td><td class="py-2 px-3 text-right">${Math.round(base.kJ)}</td><td class="py-2 px-3 text-right">${Math.round(base.kJ * portion)}</td></tr>
+ <tr class="hover:bg-gray-50"><td class="py-2 px-3 font-medium text-gray-800">Energy (cal)</td><td class="py-2 px-3 text-right">${Math.round(base.cal)}</td><td class="py-2 px-3 text-right">${Math.round(base.cal * portion)}</td></tr>
+ <tr class="hover:bg-gray-50"><td class="py-2 px-3">Protein (g)</td><td class="py-2 px-3 text-right">${base.protein.toFixed(1)}</td><td class="py-2 px-3 text-right">${(base.protein * portion).toFixed(1)}</td></tr>
+ <tr class="hover:bg-gray-50"><td class="py-2 px-3">Carbohydrate (g)</td><td class="py-2 px-3 text-right">${base.carb.toFixed(1)}</td><td class="py-2 px-3 text-right">${(base.carb * portion).toFixed(1)}</td></tr>
+ <tr class="hover:bg-gray-50"><td class="py-1 px-3 pl-6 text-gray-500 text-xs">of which: sugars (g)</td><td class="py-1 px-3 text-right text-gray-500">${base.sugars.toFixed(1)}</td><td class="py-1 px-3 text-right text-gray-500">${(base.sugars * portion).toFixed(1)}</td></tr>
+ <tr class="hover:bg-gray-50"><td class="py-2 px-3">Fat (g)</td><td class="py-2 px-3 text-right">${base.fat.toFixed(1)}</td><td class="py-2 px-3 text-right">${(base.fat * portion).toFixed(1)}</td></tr>
+ <tr class="hover:bg-gray-50"><td class="py-1 px-3 pl-6 text-gray-500 text-xs">of which are saturates (g)</td><td class="py-1 px-3 text-right text-gray-500">${base.satFat.toFixed(2)}</td><td class="py-1 px-3 text-right text-gray-500">${(base.satFat * portion).toFixed(2)}</td></tr>
+ <tr class="hover:bg-gray-50"><td class="py-2 px-3">Fibre (g)</td><td class="py-2 px-3 text-right">${base.fibre.toFixed(1)}</td><td class="py-2 px-3 text-right">${(base.fibre * portion).toFixed(1)}</td></tr>
+ <tr class="hover:bg-gray-50"><td class="py-2 px-3">Sodium (g)</td><td class="py-2 px-3 text-right">${base.sodium.toFixed(2)}</td><td class="py-2 px-3 text-right">${(base.sodium * portion).toFixed(2)}</td></tr>
+ <tr class="hover:bg-gray-50"><td class="py-2 px-3">Salt (g)</td><td class="py-2 px-3 text-right">${base.salt.toFixed(2)}</td><td class="py-2 px-3 text-right">${(base.salt * portion).toFixed(2)}</td></tr>
+ </tbody>
+ </table>
+ </div>
+ `;
 }
-
 function generateIngredients(item) {
-    const en = (item.en || '').toLowerCase();
-    const th = (item.th || '').toLowerCase();
-    
-    // Check if it's a curry
-    let isCurry = th.includes('แกง') || th.includes('พะแนง') || th.includes('เทโพ') || 
-                  th.includes('มัสมั่น') || th.includes('เขียวหวาน') || th.includes('ต้มยำ') || 
-                  th.includes('ต้มข่า') || en.includes('curry') || en.includes('tom yum') || 
-                  en.includes('tom kha');
-                  
-    if (!isCurry) {
-        return 'Authentic Thai ingredients. See packaging for full list.';
-    }
-    
-    // Meat detection
-    let meat = 'Chicken';
-    let sauce = 'Thai Fish Sauce';
-    
-    if (th.includes('กุ้ง') || en.includes('prawn') || en.includes('shrimp')) meat = 'Prawns';
-    else if (th.includes('เนื้อ') || en.includes('beef')) meat = 'Beef';
-    else if (th.includes('หมู') || en.includes('pork')) meat = 'Pork';
-    else if (th.includes('ปลา') || en.includes('fish') || en.includes('bass')) meat = 'Sea Bass';
-    else if (th.includes('เป็ด') || en.includes('duck')) meat = 'Roasted Duck';
-    else if (th.includes('ผัก') || th.includes('เต้าหู้') || en.includes('veg') || en.includes('tofu')) {
-        meat = 'Mixed Vegetables & Tofu';
-        sauce = 'Soy Sauce';
-    }
-    
-    // Curry Paste detection
-    let curryType = 'Thai';
-    let pasteIngredients = 'Spices, Chilli, Lemongrass, Salt, Garlic, Onion, Galangal, Kaffir Lime Peel';
-    
-    if (th.includes('เขียวหวาน') || en.includes('green curry')) {
-        curryType = 'Thai Green';
-        pasteIngredients = 'Green Chilli, Lemongrass, Salt, Garlic, Onion, Galangal, Kaffir Lime Peel, Spices';
-    } else if (th.includes('แดง') || th.includes('เผ็ด') || th.includes('เทโพ') || en.includes('red curry')) {
-        curryType = 'Thai Red';
-        pasteIngredients = 'Dried Red Chilli, Lemongrass, Salt, Garlic, Onion, Galangal, Kaffir Lime Peel, Spices';
-    } else if (th.includes('พะแนง') || en.includes('panang')) {
-        curryType = 'Thai Panang';
-        pasteIngredients = 'Dried Red Chilli, Lemongrass, Salt, Garlic, Onion, Galangal, Kaffir Lime Peel, Spices, Peanuts';
-    } else if (th.includes('มัสมั่น') || en.includes('massaman')) {
-        curryType = 'Thai Massaman';
-        pasteIngredients = 'Dried Red Chilli, Lemongrass, Salt, Garlic, Onion, Galangal, Kaffir Lime Peel, Spices, Cardamom, Cinnamon';
-    } else if (th.includes('ต้มยำ') || en.includes('tom yum')) {
-        curryType = 'Tom Yum';
-        pasteIngredients = 'Lemongrass, Galangal, Kaffir Lime Leaves, Chilli, Lime Juice';
-    }
-    
-    const vegetable = curryType === 'Thai Green' ? 'Green Peppers' : 'Mixed Vegetables';
-    
-    return `<b>AT COOK WE USE THE SAME INGREDIENTS YOU WOULD USE AT HOME.</b><br><br>We never put additives or preservatives into our food. We do occasionally use kitchen cupboard ingredients that include some additives in their sub-ingredients (for example some of our curry pastes, which contain Citric Acid).<br><br>${meat} (39%), Coconut Milk (21%) (Water, Coconut Extract), ${vegetable} (15%), Palm Sugar, ${sauce}, Rapeseed Oil, ${curryType} Curry Paste (${pasteIngredients}), Coriander, Ginger Puree, Salt.`;
+ const en = (item.en || '').toLowerCase;
+ const th = (item.th || '').toLowerCase;
+ 
+ Check if it's a curry
+ let isCurry = th.includes(' ') || th.includes(' ') || th.includes(' ') || 
+ th.includes(' ') || th.includes(' ') || th.includes(' ') || 
+ th.includes(' ') || en.includes('curry') || en.includes('tom yum') || 
+ en.includes('tom kha');
+ 
+ if (!isCurry) {
+ return 'Authentic Thai ingredients. See packaging for full list.';
+ }
+ 
+ Meat detection
+ let meat = 'Chicken';
+ let sauce = 'Thai Fish Sauce';
+ 
+ if (th.includes(' ') || en.includes('prawn') || en.includes('shrimp')) meat = 'Prawns';
+ else if (th.includes(' ') || en.includes('beef')) meat = 'Beef';
+ else if (th.includes(' ') || en.includes('pork')) meat = 'Pork';
+ else if (th.includes(' ') || en.includes('fish') || en.includes('bass')) meat = 'Sea Bass';
+ else if (th.includes(' ') || en.includes('duck')) meat = 'Roasted Duck';
+ else if (th.includes(' ') || th.includes(' ') || en.includes('veg') || en.includes('tofu')) {
+ meat = 'Mixed Vegetables & Tofu';
+ sauce = 'Soy Sauce';
+ }
+ 
+ Curry Paste detection
+ let curryType = 'Thai';
+ let pasteIngredients = 'Spices, Chilli, Lemongrass, Salt, Garlic, Onion, Galangal, Kaffir Lime Peel';
+ 
+ if (th.includes(' ') || en.includes('green curry')) {
+ curryType = 'Thai Green';
+ pasteIngredients = 'Green Chilli, Lemongrass, Salt, Garlic, Onion, Galangal, Kaffir Lime Peel, Spices';
+ } else if (th.includes(' ') || th.includes(' ') || th.includes(' ') || en.includes('red curry')) {
+ curryType = 'Thai Red';
+ pasteIngredients = 'Dried Red Chilli, Lemongrass, Salt, Garlic, Onion, Galangal, Kaffir Lime Peel, Spices';
+ } else if (th.includes(' ') || en.includes('panang')) {
+ curryType = 'Thai Panang';
+ pasteIngredients = 'Dried Red Chilli, Lemongrass, Salt, Garlic, Onion, Galangal, Kaffir Lime Peel, Spices, Peanuts';
+ } else if (th.includes(' ') || en.includes('massaman')) {
+ curryType = 'Thai Massaman';
+ pasteIngredients = 'Dried Red Chilli, Lemongrass, Salt, Garlic, Onion, Galangal, Kaffir Lime Peel, Spices, Cardamom, Cinnamon';
+ } else if (th.includes(' ') || en.includes('tom yum')) {
+ curryType = 'Tom Yum';
+ pasteIngredients = 'Lemongrass, Galangal, Kaffir Lime Leaves, Chilli, Lime Juice';
+ }
+ 
+ const vegetable = curryType === 'Thai Green' ? 'Green Peppers' : 'Mixed Vegetables';
+ 
+ return `<b>AT COOK WE USE THE SAME INGREDIENTS YOU WOULD USE AT HOME.</b><br><br>We never put additives or preservatives into our food. We do occasionally use kitchen cupboard ingredients that include some additives in their sub-ingredients (for example some of our curry pastes, which contain Citric Acid).<br><br>${meat} (39%), Coconut Milk (21%) (Water, Coconut Extract), ${vegetable} (15%), Palm Sugar, ${sauce}, Rapeseed Oil, ${curryType} Curry Paste (${pasteIngredients}), Coriander, Ginger Puree, Salt.`;
 }
 
-        window.openProductModal = function(itemId) {
-            // Find item data
-            for (const cat of buffetData) {
-                const item = cat.items.find(i => i.id === itemId);
-                if (item) {
-                    activeItemData = item;
-                    break;
-                }
-            }
-            if (!activeItemData) return;
-            
-            const item = activeItemData;
-            const imgSrc = item.img === 'logo.png' ? 'logo.png' : (item.img.startsWith('http') ? item.img : `images/${item.img}`);
-            
-            // Populate data
-            document.getElementById('modal-title').innerText = item.en;
-            if (item.desc) {
-                document.getElementById('modal-desc').innerHTML = item.desc;
-            } else {
-                document.getElementById('modal-desc').innerHTML = "Experience the authentic taste of Thailand with our signature " + item.en + ". Made fresh to order.";
-            }
-            
-            // Images
-            const mainImg = document.getElementById('modal-main-img');
-            const thumb1 = document.getElementById('modal-thumb-1');
-            const thumb2 = document.getElementById('modal-thumb-2');
-            const thumb3 = document.getElementById('modal-thumb-3');
-            
-            mainImg.src = imgSrc;
-            thumb1.src = imgSrc;
-            thumb1.classList.add('modal-thumb');
-            thumb1.classList.replace('border-transparent', 'border-[#5c8b54]');
-            
-            if (item.img_hover) {
-                const hoverSrc = item.img_hover.startsWith('http') ? item.img_hover : `images/${item.img_hover}`;
-                thumb2.src = hoverSrc;
-                thumb2.classList.remove('hidden');
-                thumb2.classList.add('modal-thumb');
-                thumb2.classList.replace('border-[#5c8b54]', 'border-transparent');
-            } else {
-                thumb2.classList.add('hidden');
-            }
+ window.openProductModal = function(itemId) {
+ Find item data
+ for (const cat of buffetData) {
+ const item = cat.items.find(i => i.id === itemId);
+ if (item) {
+ activeItemData = item;
+ break;
+ }
+ }
+ if (!activeItemData) return;
+ 
+ const item = activeItemData;
+ const imgSrc = item.img === 'logo.png' ? 'logo.png' : (item.img.startsWith('http') ? item.img : `images/${item.img}`);
+ 
+ Populate data
+ document.getElementById('modal-title').innerText = item.en;
+ if (item.desc) {
+ document.getElementById('modal-desc').innerHTML = item.desc;
+ } else {
+ document.getElementById('modal-desc').innerHTML = "Experience the authentic taste of Thailand with our signature " + item.en + ". Made fresh to order.";
+ }
+ 
+ Images
+ const mainImg = document.getElementById('modal-main-img');
+ const thumb1 = document.getElementById('modal-thumb-1');
+ const thumb2 = document.getElementById('modal-thumb-2');
+ const thumb3 = document.getElementById('modal-thumb-3');
+ 
+ mainImg.src = imgSrc;
+ thumb1.src = imgSrc;
+ thumb1.classList.add('modal-thumb');
+ thumb1.classList.replace('border-transparent', 'border-[#5c8b54]');
+ 
+ if (item.img_hover) {
+ const hoverSrc = item.img_hover.startsWith('http') ? item.img_hover : `images/${item.img_hover}`;
+ thumb2.src = hoverSrc;
+ thumb2.classList.remove('hidden');
+ thumb2.classList.add('modal-thumb');
+ thumb2.classList.replace('border-[#5c8b54]', 'border-transparent');
+ } else {
+ thumb2.classList.add('hidden');
+ }
 
-            if (item.img_3) {
-                const img3Src = item.img_3.startsWith('http') ? item.img_3 : `images/${item.img_3}`;
-                thumb3.src = img3Src;
-                thumb3.classList.remove('hidden');
-                thumb3.classList.add('modal-thumb');
-                thumb3.classList.replace('border-[#5c8b54]', 'border-transparent');
-            } else {
-                thumb3.classList.add('hidden');
-            }
-            document.getElementById('acc-ingredients').innerHTML = generateIngredients(item);
-            document.getElementById('acc-nutrition').innerHTML = generateNutrition(item);
-            // Prices & Weights & Add functions
-            const p1 = item.price_s1 || item.price;
-            const p2 = item.price_s2 || (item.price * 1.7);
-            const p4 = item.price_s4 || (item.price * 3.2);
-            
-            const w1 = item.weight_s1 || '250g';
-            const w2 = item.weight_s2 || '500g';
-            const w4 = item.weight_s4 || '1kg';
-            
-            document.getElementById('modal-price-1').innerText = '£' + p1.toFixed(2);
-            document.getElementById('modal-price-2').innerText = '£' + p2.toFixed(2);
-            document.getElementById('modal-price-4').innerText = '£' + p4.toFixed(2);
-            
-            const w1El = document.getElementById('modal-weight-1');
-            const w2El = document.getElementById('modal-weight-2');
-            const w4El = document.getElementById('modal-weight-4');
-            if(w1El) w1El.innerText = '(' + w1 + ')';
-            if(w2El) w2El.innerText = '(' + w2 + ')';
-            if(w4El) w4El.innerText = '(' + w4 + ')';
-            
-            document.getElementById('modal-add-1').onclick = () => { addBuffetItem(item.id + '_s1', item.en + ' (Serves 1)', p1, imgSrc); closeProductModal(); };
-            document.getElementById('modal-add-2').onclick = () => { addBuffetItem(item.id + '_s2', item.en + ' (Serves 2)', p2, imgSrc); closeProductModal(); };
-            document.getElementById('modal-add-4').onclick = () => { addBuffetItem(item.id + '_s4', item.en + ' (Serves 4)', p4, imgSrc); closeProductModal(); };
+ if (item.img_3) {
+ const img3Src = item.img_3.startsWith('http') ? item.img_3 : `images/${item.img_3}`;
+ thumb3.src = img3Src;
+ thumb3.classList.remove('hidden');
+ thumb3.classList.add('modal-thumb');
+ thumb3.classList.replace('border-[#5c8b54]', 'border-transparent');
+ } else {
+ thumb3.classList.add('hidden');
+ }
+ document.getElementById('acc-ingredients').innerHTML = generateIngredients(item);
+ document.getElementById('acc-nutrition').innerHTML = generateNutrition(item);
+ Prices & Weights & Add functions
+ const p1 = item.price_s1 || item.price;
+ const p2 = item.price_s2 || (item.price * 1.7);
+ const p4 = item.price_s4 || (item.price * 3.2);
+ 
+ const w1 = item.weight_s1 || '250g';
+ const w2 = item.weight_s2 || '500g';
+ const w4 = item.weight_s4 || '1kg';
+ 
+ document.getElementById('modal-price-1').innerText = '£' + p1.toFixed(2);
+ document.getElementById('modal-price-2').innerText = '£' + p2.toFixed(2);
+ document.getElementById('modal-price-4').innerText = '£' + p4.toFixed(2);
+ 
+ const w1El = document.getElementById('modal-weight-1');
+ const w2El = document.getElementById('modal-weight-2');
+ const w4El = document.getElementById('modal-weight-4');
+ if(w1El) w1El.innerText = '(' + w1 + ')';
+ if(w2El) w2El.innerText = '(' + w2 + ')';
+ if(w4El) w4El.innerText = '(' + w4 + ')';
+ 
+ document.getElementById('modal-add-1').onclick = => { addBuffetItem(item.id + '_s1', item.en + ' (Serves 1)', p1, imgSrc); closeProductModal; };
+ document.getElementById('modal-add-2').onclick = => { addBuffetItem(item.id + '_s2', item.en + ' (Serves 2)', p2, imgSrc); closeProductModal; };
+ document.getElementById('modal-add-4').onclick = => { addBuffetItem(item.id + '_s4', item.en + ' (Serves 4)', p4, imgSrc); closeProductModal; };
 
-            document.getElementById('modal-add-2').onclick = () => { addBuffetItem(item.id + '_s2', item.en + ' (Serves 2)', item.price * 1.7, imgSrc); closeProductModal(); };
-            document.getElementById('modal-add-4').onclick = () => { addBuffetItem(item.id + '_s4', item.en + ' (Serves 4)', item.price * 3.2, imgSrc); closeProductModal(); };
-            
-            // Show modal
-            document.getElementById('product-modal').style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        };
-        
-        window.closeProductModal = function() {
-            document.getElementById('product-modal').style.display = 'none';
-            document.body.style.overflow = '';
-        };
-        
-        window.toggleAccordion = function(id) {
-            const el = document.getElementById(id);
-            const icon = document.getElementById(id + '-icon');
-            if (el.classList.contains('hidden')) {
-                el.classList.remove('hidden');
-                icon.classList.replace('fa-plus', 'fa-minus');
-                icon.style.transform = 'rotate(180deg)';
-            } else {
-                el.classList.add('hidden');
-                icon.classList.replace('fa-minus', 'fa-plus');
-                icon.style.transform = 'rotate(0deg)';
-            }
-        };
+ document.getElementById('modal-add-2').onclick = => { addBuffetItem(item.id + '_s2', item.en + ' (Serves 2)', item.price * 1.7, imgSrc); closeProductModal; };
+ document.getElementById('modal-add-4').onclick = => { addBuffetItem(item.id + '_s4', item.en + ' (Serves 4)', item.price * 3.2, imgSrc); closeProductModal; };
+ 
+ Show modal
+ document.getElementById('product-modal').style.display = 'flex';
+ document.body.style.overflow = 'hidden';
+ };
+ 
+ window.closeProductModal = function {
+ document.getElementById('product-modal').style.display = 'none';
+ document.body.style.overflow = '';
+ };
+ 
+ window.toggleAccordion = function(id) {
+ const el = document.getElementById(id);
+ const icon = document.getElementById(id + '-icon');
+ if (el.classList.contains('hidden')) {
+ el.classList.remove('hidden');
+ icon.classList.replace('fa-plus', 'fa-minus');
+ icon.style.transform = 'rotate(180deg)';
+ } else {
+ el.classList.add('hidden');
+ icon.classList.replace('fa-minus', 'fa-plus');
+ icon.style.transform = 'rotate(0deg)';
+ }
+ };
 
-        function renderGrid(searchTerm = '') {
-            const container = document.getElementById('buffet-container');
-            let html = '';
-            let hasResults = false;
+ function renderGrid(searchTerm = '') {
+ const container = document.getElementById('buffet-container');
+ let html = '';
+ let hasResults = false;
 
-            buffetData.forEach(category => {
-                if (category.id === 'services') return;
-                if (currentCategory !== 'all' && currentCategory !== 'search' && category.id !== currentCategory) return;
-                
-                // Filter items by search term
-                const filteredItems = category.items.filter(item => {
-                    if (!searchTerm) return true;
-                    return item.en.toLowerCase().includes(searchTerm) || (item.th && item.th.toLowerCase().includes(searchTerm));
-                });
-                
-                if (filteredItems.length === 0) return;
-                hasResults = true;
-                
-                const catTitle = category.title.en || category.title.th || category.title;
-                
-                html += `
-                    <div class="mb-12" id="section-${category.id}">
-                        <div class="flex items-center gap-4 mb-6 pb-2 border-b-2 border-gray-100">
-                            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 font-prompt">${catTitle}</h2>
-                        </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-                `;
+ buffetData.forEach(category => {
+ if (category.id === 'services') return;
+ if (currentCategory !== 'all' && currentCategory !== 'search' && category.id !== currentCategory) return;
+ 
+ Filter items by search term
+ const filteredItems = category.items.filter(item => {
+ if (!searchTerm) return true;
+ return item.en.toLowerCase.includes(searchTerm) || (item.th && item.th.toLowerCase.includes(searchTerm));
+ });
+ 
+ if (filteredItems.length === 0) return;
+ hasResults = true;
+ 
+ const catTitle = category.title.en || category.title.th || category.title;
+ 
+ html += `
+ <div class="mb-12" id="section-${category.id}">
+ <div class="flex items-center gap-4 mb-6 pb-2 border-b-2 border-gray-100">
+ <h2 class="text-2xl md:text-3xl font-bold text-gray-800 font-prompt">${catTitle}</h2>
+ </div>
+ <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+ `;
 
-                filteredItems.forEach(item => {
-                    const imgSrc = item.img === 'logo.png' ? 'logo.png' : (item.img.startsWith('http') ? item.img : `images/${item.img}`);
-                    const unit = item.unit || 'Portion';
-                    // Check if there is a hover image in data, otherwise use the same image but keep the zoom effect
-                    const hasHoverImg = !!item.img_hover;
-                    const hoverImgSrc = hasHoverImg ? (item.img_hover.startsWith('http') ? item.img_hover : `images/${item.img_hover}`) : imgSrc;
-                    
-                    const p1 = item.price_s1 || item.price;
-                    const p2 = item.price_s2 || (item.price * 1.7);
-                    const w1 = item.weight_s1 || '250g';
-                    const w2 = item.weight_s2 || '500g';
-                    
-                    html += `
-                        
-                        <div class="bg-white rounded-lg overflow-hidden flex flex-col relative group border border-gray-100 shadow-sm hover:shadow-md transition-shadow" id="card-${item.id}">
-                            <div class="relative w-full aspect-square overflow-hidden bg-gray-50 rounded-t-lg group/img">
-                                <!-- Primary Image -->
-                                <img src="${imgSrc}" onclick="openProductModal('${item.id}')" class="cursor-pointer absolute inset-0 w-full h-full object-cover transition-all duration-500 ${hasHoverImg ? 'group-hover/img:opacity-0' : 'group-hover/img:scale-105'}" onerror="this.src='logo.png';">
-                                <!-- Secondary Hover Image (Only visible on hover if it exists) -->
-                                ${hasHoverImg ? `<img src="${hoverImgSrc}" onclick="openProductModal('${item.id}')" class="cursor-pointer absolute inset-0 w-full h-full object-cover transition-all duration-500 opacity-0 group-hover/img:opacity-100 group-hover/img:scale-105" onerror="this.src='logo.png';">` : ''}
-                                <!-- Info Icon (Top Right) -->
-                                <button onclick="showQRCode('${item.id}', '${item.en}', ${item.price})" class="absolute top-2 right-2 bg-white/80 backdrop-blur-sm text-gray-500 hover:text-dark-green w-8 h-8 rounded-full flex items-center justify-center shadow-sm transition-colors border border-gray-200">
-                                    <i class="fas fa-info"></i>
-                                </button>
-                            </div>
-                            
-                            <div class="p-4 flex flex-col flex-1">
-                                <h3 onclick="openProductModal('${item.id}')" class="font-bold text-gray-800 text-[16px] mb-2 leading-snug cursor-pointer hover:text-[#598c73] transition-colors">${item.en}</h3>
-                                
-                                <!-- Dietary Icons (Placeholder) -->
-                                <div class="flex gap-1.5 mb-4 text-gray-400 text-xs">
-                                    <span class="border border-gray-300 rounded-full w-5 h-5 flex items-center justify-center" title="Gluten Free">GF</span>
-                                    <span class="border border-gray-300 rounded-full w-5 h-5 flex items-center justify-center" title="Dairy Free">DF</span>
-                                </div>
-                                
-                                <div class="mt-auto">
-                                    <div class="flex justify-between border-t border-gray-100 pt-3 relative">
-                                        <!-- Vertical divider -->
-                                        <div class="absolute left-1/2 top-3 bottom-0 w-px bg-gray-100 -translate-x-1/2"></div>
-                                        
-                                        <!-- Serves 1 Column -->
-                                        <div class="flex flex-col items-center w-1/2 px-1">
-                                            <p class="font-bold text-gray-800 text-lg mb-1">£${p1.toFixed(2)}</p>
-                                            <p class="text-[11px] font-semibold text-gray-800 mb-2">Serves 1 <span class="font-normal text-gray-500">(${w1})</span></p>
-                                            <button onclick="addBuffetItem('${item.id}_s1', '${item.en} (Serves 1)', ${p1}, '${imgSrc}')" class="w-full bg-[#3F7283] text-white py-1.5 rounded text-sm font-bold hover:bg-[#2c5361] transition-colors">
-                                                Add
-                                            </button>
-                                        </div>
-                                        
-                                        <!-- Serves 2 Column -->
-                                        <div class="flex flex-col items-center w-1/2 px-1">
-                                            <p class="font-bold text-gray-800 text-lg mb-1">£${p2.toFixed(2)}</p>
-                                            <p class="text-[11px] font-semibold text-gray-800 mb-2">Serves 2 <span class="font-normal text-gray-500">(${w2})</span></p>
-                                            <button onclick="addBuffetItem('${item.id}_s2', '${item.en} (Serves 2)', ${p2}, '${imgSrc}')" class="w-full bg-[#3F7283] text-white py-1.5 rounded text-sm font-bold hover:bg-[#2c5361] transition-colors">
-                                                Add
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                });
+ filteredItems.forEach(item => {
+ const imgSrc = item.img === 'logo.png' ? 'logo.png' : (item.img.startsWith('http') ? item.img : `images/${item.img}`);
+ const unit = item.unit || 'Portion';
+ Check if there is a hover image in data, otherwise use the same image but keep the zoom effect
+ const hasHoverImg = !!item.img_hover;
+ const hoverImgSrc = hasHoverImg ? (item.img_hover.startsWith('http') ? item.img_hover : `images/${item.img_hover}`) : imgSrc;
+ 
+ const p1 = item.price_s1 || item.price;
+ const p2 = item.price_s2 || (item.price * 1.7);
+ const w1 = item.weight_s1 || '250g';
+ const w2 = item.weight_s2 || '500g';
+ 
+ html += `
+ 
+ <div class="bg-white rounded-lg overflow-hidden flex flex-col relative group border border-gray-100 shadow-sm hover:shadow-md transition-shadow" id="card-${item.id}">
+ <div class="relative w-full aspect-square overflow-hidden bg-gray-50 rounded-t-lg group/img">
+ <!-- Primary Image -->
+ <img src="${imgSrc}" onclick="openProductModal('${item.id}')" class="cursor-pointer absolute inset-0 w-full h-full object-cover transition-all duration-500 ${hasHoverImg ? 'group-hover/img:opacity-0' : 'group-hover/img:scale-105'}" onerror="this.src='logo.png';">
+ <!-- Secondary Hover Image (Only visible on hover if it exists) -->
+ ${hasHoverImg ? `<img src="${hoverImgSrc}" onclick="openProductModal('${item.id}')" class="cursor-pointer absolute inset-0 w-full h-full object-cover transition-all duration-500 opacity-0 group-hover/img:opacity-100 group-hover/img:scale-105" onerror="this.src='logo.png';">` : ''}
+ <!-- Info Icon (Top Right) -->
+ <button onclick="showQRCode('${item.id}', '${item.en}', ${item.price})" class="absolute top-2 right-2 bg-white/80 backdrop-blur-sm text-gray-500 hover:text-dark-green w-8 h-8 rounded-full flex items-center justify-center shadow-sm transition-colors border border-gray-200">
+ <i class="fas fa-info"></i>
+ </button>
+ </div>
+ 
+ <div class="p-4 flex flex-col flex-1">
+ <h3 onclick="openProductModal('${item.id}')" class="font-bold text-gray-800 text-[16px] mb-2 leading-snug cursor-pointer hover:text-[#598c73] transition-colors">${item.en}</h3>
+ 
+ <!-- Dietary Icons (Placeholder) -->
+ <div class="flex gap-1.5 mb-4 text-gray-400 text-xs">
+ <span class="border border-gray-300 rounded-full w-5 h-5 flex items-center justify-center" title="Gluten Free">GF</span>
+ <span class="border border-gray-300 rounded-full w-5 h-5 flex items-center justify-center" title="Dairy Free">DF</span>
+ </div>
+ 
+ <div class="mt-auto">
+ <div class="flex justify-between border-t border-gray-100 pt-3 relative">
+ <!-- Vertical divider -->
+ <div class="absolute left-1/2 top-3 bottom-0 w-px bg-gray-100 -translate-x-1/2"></div>
+ 
+ <!-- Serves 1 Column -->
+ <div class="flex flex-col items-center w-1/2 px-1">
+ <p class="font-bold text-gray-800 text-lg mb-1">£${p1.toFixed(2)}</p>
+ <p class="text-[11px] font-semibold text-gray-800 mb-2">Serves 1 <span class="font-normal text-gray-500">(${w1})</span></p>
+ <button onclick="addBuffetItem('${item.id}_s1', '${item.en} (Serves 1)', ${p1}, '${imgSrc}')" class="w-full bg-[#3F7283] text-white py-1.5 rounded text-sm font-bold hover:bg-[#2c5361] transition-colors">
+ Add
+ </button>
+ </div>
+ 
+ <!-- Serves 2 Column -->
+ <div class="flex flex-col items-center w-1/2 px-1">
+ <p class="font-bold text-gray-800 text-lg mb-1">£${p2.toFixed(2)}</p>
+ <p class="text-[11px] font-semibold text-gray-800 mb-2">Serves 2 <span class="font-normal text-gray-500">(${w2})</span></p>
+ <button onclick="addBuffetItem('${item.id}_s2', '${item.en} (Serves 2)', ${p2}, '${imgSrc}')" class="w-full bg-[#3F7283] text-white py-1.5 rounded text-sm font-bold hover:bg-[#2c5361] transition-colors">
+ Add
+ </button>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ `;
+ });
 
-                html += `</div></div>`;
-            });
+ html += `</div></div>`;
+ });
 
-            if (!hasResults && searchTerm) {
-                html = `<div class="text-center py-12"><i class="fas fa-search text-4xl text-gray-300 mb-4"></i><h3 class="text-xl font-bold text-gray-700">No dishes found for "${searchTerm}"</h3><p class="text-gray-500 mt-2">Try adjusting your search or browsing the categories.</p></div>`;
-            }
+ if (!hasResults && searchTerm) {
+ html = `<div class="text-center py-12"><i class="fas fa-search text-4xl text-gray-300 mb-4"></i><h3 class="text-xl font-bold text-gray-700">No dishes found for "${searchTerm}"</h3><p class="text-gray-500 mt-2">Try adjusting your search or browsing the categories.</p></div>`;
+ }
 
-            container.innerHTML = html;
-        }
-    let currentPackage = null;
-        
-        function openPackageModal(id, thName, enName, price, img, thUnit, enUnit) {
-            currentPackage = { id, name_th: thName, name_en: enName, price, img, unit_th: thUnit, unit_en: enUnit };
-            document.getElementById('pkg-modal-title').textContent = enName;
-            document.getElementById('pkg-modal-price').textContent = '£' + price + ' / ' + (enUnit);
-            
-            const limits = {
-                'pkg_standard': 7,
-                'pkg_premium': 11,
-                'pkg_royal': 14,
-                'pkg_siam': 20,
-                'pkg_bundle_std_m': 9,
-                'pkg_bundle_std_l': 13,
-                'pkg_bundle_prem_m': 13,
-                'pkg_bundle_prem_l': 17,
-                'pkg_party_15': 10,
-                'pkg_party_25': 14,
-                'pkg_party_35': 21,
-                'pkg_party_65': 29
-            };
-            
-            if (limits[id]) {
-                document.getElementById('pkg-modal-item-limit').textContent = `(ตามที่ระบุในเซตรวม ${limits[id]} รายการ)`;
-                document.getElementById('pkg-modal-item-limit-en').textContent = `(Total ${limits[id]} items as specified)`;
-            } else {
-                document.getElementById('pkg-modal-item-limit').textContent = "";
-                document.getElementById('pkg-modal-item-limit-en').textContent = "";
-            }
-            
-            const catLimits = {
-                'pkg_standard': {
-                    'starters': { th: '(ทานเล่น 2 อย่าง)', en: '(2 Starters)' },
-                    'mains': { th: '(แกง 1 อย่าง)', en: '(1 Curry)' },
-                    'vegetables': { th: '(ผัด 1 อย่าง)', en: '(1 Stir-fry)' },
-                    'rice': { th: '(ข้าวหอมมะลิ)', en: '(Jasmine Rice)' },
-                    'desserts': { th: '(หวาน 1, ผลไม้ 1)', en: '(1 Dessert, 1 Mixed Fruit)' }
-                },
-                'pkg_premium': {
-                    'starters': { th: '(ทานเล่น 2 อย่าง)', en: '(2 Starters)' },
-                    'salads': { th: '(ยำ 2 อย่าง)', en: '(2 Salads)' },
-                    'mains': { th: '(แกง 1, ทะเล 1)', en: '(1 Curry, 1 Seafood/Fish)' },
-                    'vegetables': { th: '(ผัด/เส้น 1)', en: '(1 Stir-fry/Noodle)' },
-                    'rice': { th: '(หอมมะลิ/ข้าวเหนียว)', en: '(Jasmine or Sticky Rice)' },
-                    'desserts': { th: '(หวาน 2, ผลไม้ 1)', en: '(2 Desserts, 1 Mixed Fruit)' }
-                },
-                'pkg_royal': {
-                    'starters': { th: '(ทานเล่น 3 หรือ คานาเป้ 2)', en: '(3 Starters or 2 Canapés)' },
-                    'salads': { th: '(ยำ 2 อย่าง)', en: '(2 Salads)' },
-                    'mains': { th: '(ปลา/ทะเล 2, แกง/หม้อไฟ 1)', en: '(2 Seafood/Fish, 1 Curry/Hotpot)' },
-                    'vegetables': { th: '(ผัด/เส้น 1)', en: '(1 Stir-fry/Noodle)' },
-                    'rice': { th: '(หอมมะลิ/เหนียว/ผัด)', en: '(Jasmine/Sticky/Fried Rice)' },
-                    'desserts': { th: '(หวาน 3, ผลไม้ 1)', en: '(3 Desserts, 1 Mixed Fruit)' }
-                },
-                'pkg_siam': {
-                    'starters': { th: '(ทานเล่น/คานาเป้ 4)', en: '(4 Starters/Canapés)' },
-                    'salads': { th: '(ยำ 3 อย่าง)', en: '(3 Salads)' },
-                    'mains': { th: '(ปลา/ทะเล 3, แกง/หม้อไฟ 2)', en: '(3 Seafood/Fish, 2 Curries/Hotpots)' },
-                    'vegetables': { th: '(ผัด/เส้น 2)', en: '(2 Stir-fries/Noodles)' },
-                    'rice': { th: '(หอมมะลิ/เหนียว/ผัด)', en: '(Jasmine/Sticky/Fried Rice)' },
-                    'desserts': { th: '(หวาน 4, ผลไม้ 1)', en: '(4 Desserts, 1 Mixed Fruit)' }
-                },
-                'pkg_bundle_std_m': {
-                    'drinks': { th: '(เครื่องดื่ม 3 อย่าง)', en: '(3 Drinks)' },
-                    'starters': { th: '(2 ถาด)', en: '(2 Trays)' },
-                    'mains': { th: '(2 ถาด)', en: '(2 Trays)' },
-                    'desserts': { th: '(2 ถาด)', en: '(2 Trays)' }
-                },
-                'pkg_bundle_std_l': {
-                    'drinks': { th: '(เครื่องดื่ม 3 อย่าง)', en: '(3 Drinks)' },
-                    'starters': { th: '(3 ถาด)', en: '(3 Trays)' },
-                    'mains': { th: '(3 ถาด)', en: '(3 Trays)' },
-                    'desserts': { th: '(หวาน 3 ถาด, ผลไม้ 1)', en: '(3 Trays, 1 Fruit)' }
-                },
-                'pkg_bundle_prem_m': {
-                    'drinks': { th: '(เครื่องดื่ม 3 อย่าง)', en: '(3 Drinks)' },
-                    'starters': { th: '(3 ถาด)', en: '(3 Trays)' },
-                    'mains': { th: '(3 ถาด)', en: '(3 Trays)' },
-                    'desserts': { th: '(หวาน 3 ถาด, ผลไม้ 1)', en: '(3 Trays, 1 Fruit)' }
-                },
-                'pkg_bundle_prem_l': {
-                    'drinks': { th: '(เครื่องดื่ม 3 อย่าง)', en: '(3 Drinks)' },
-                    'starters': { th: '(4 ถาด)', en: '(4 Trays)' },
-                    'mains': { th: '(4 ถาด)', en: '(4 Trays)' },
-                    'desserts': { th: '(หวาน 4 ถาด, ผลไม้ 1)', en: '(4 Trays, 1 Fruit)' }
-                },
-                'pkg_party_15': {
-                    'starters': { th: '(ทานเล่น 3 อย่าง)', en: '(3 Starters/Canapés)' },
-                    'salads': { th: '(ยำ 1 อย่าง)', en: '(1 Salad)' },
-                    'mains': { th: '(แกง/หม้อไฟ 1 อย่าง)', en: '(1 Curry/Hotpot)' },
-                    'vegetables': { th: '(ผัด/เส้น 1 อย่าง)', en: '(1 Stir-fry/Noodle)' },
-                    'rice': { th: '(ข้าว 1 อย่าง)', en: '(1 Rice Option)' },
-                    'desserts': { th: '(ของหวาน 2 อย่าง, ผลไม้ 1 อย่าง)', en: '(2 Desserts, 1 Mixed Seasonal Fruit)' }
-                },
-                'pkg_party_25': {
-                    'starters': { th: '(ทานเล่น 4 อย่าง)', en: '(4 Starters/Canapés)' },
-                    'salads': { th: '(ยำ 1 อย่าง)', en: '(1 Salad)' },
-                    'mains': { th: '(แกง/หม้อไฟ 2 อย่าง, ทะเล 1 อย่าง)', en: '(2 Curries/Hotpots, 1 Seafood/Fish)' },
-                    'vegetables': { th: '(ผัด/เส้น 1 อย่าง)', en: '(1 Stir-fry/Noodle)' },
-                    'rice': { th: '(ข้าว 2 อย่าง)', en: '(2 Rice Options)' },
-                    'desserts': { th: '(ของหวาน 2 อย่าง, ผลไม้ 1 อย่าง)', en: '(2 Desserts, 1 Mixed Seasonal Fruit)' }
-                },
-                'pkg_party_35': {
-                    'starters': { th: '(ทานเล่น 5 อย่าง)', en: '(5 Starters/Canapés)' },
-                    'salads': { th: '(ยำ 2 อย่าง)', en: '(2 Salads)' },
-                    'mains': { th: '(แกง/หม้อไฟ 2 อย่าง, ทะเล 2 อย่าง)', en: '(2 Curries/Hotpots, 2 Seafood/Fish)' },
-                    'vegetables': { th: '(ผัด/เส้น 2 อย่าง)', en: '(2 Stir-fries/Noodles)' },
-                    'rice': { th: '(ข้าว 2 อย่าง)', en: '(2 Rice Options)' },
-                    'desserts': { th: '(ของหวาน 4 อย่าง, ผลไม้ 2 อย่าง)', en: '(4 Desserts, 2 Mixed Seasonal Fruits)' }
-                },
-                'pkg_party_65': {
-                    'starters': { th: '(ทานเล่น 6 อย่าง)', en: '(6 Starters/Canapés)' },
-                    'salads': { th: '(ยำ 3 อย่าง)', en: '(3 Salads)' },
-                    'mains': { th: '(แกง/หม้อไฟ 3 อย่าง, ทะเล 3 อย่าง)', en: '(3 Curries/Hotpots, 3 Seafood/Fish)' },
-                    'vegetables': { th: '(ผัด/เส้น 3 อย่าง)', en: '(3 Stir-fries/Noodles)' },
-                    'rice': { th: '(ข้าว 3 อย่าง)', en: '(3 Rice Options)' },
-                    'desserts': { th: '(ของหวาน 5 อย่าง, ผลไม้ 3 อย่าง)', en: '(5 Desserts, 3 Mixed Seasonal Fruits)' }
-                }
-            };
-            
-            const container = document.getElementById('pkg-categories-container');
-            let html = '';
-            
-            buffetData.forEach((cat, cIdx) => {
-                if (cat.id === 'services') return;
-                
-                let catTitle = cat.title[currentLang];
-                
-                
-                
-                if (catLimits[id] && catLimits[id][cat.id]) {
-                    catTitle += ` <span class="text-dark-green bg-gold px-2 py-0.5 rounded text-sm font-normal ml-2 inline-block whitespace-nowrap">${catLimits[id][cat.id][currentLang]}</span>`;
-                }
-                
-                html += '<div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100"><h4 class="font-bold text-dark-green mb-3 border-b pb-2 text-lg">' + catTitle + '</h4><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">';
-                cat.items.forEach((item, iIdx) => {
-                    const cbId = 'pkg-item-' + cIdx + '-' + iIdx;
-                    html += '<label class="flex items-start gap-3 p-2 hover:bg-gray-50 rounded cursor-pointer border border-transparent hover:border-gray-200 transition-colors"><input type="checkbox" id="' + cbId + '" class="pkg-item-checkbox mt-1 w-4 h-4 text-dark-green rounded focus:ring-gold" data-thname="' + item.th.replace(/'/g, "\\'") + '" data-enname="' + item.en.replace(/'/g, "\\'") + '"><div class="flex-1"><p class="text-sm font-bold text-gray-800">' + item.th + '</p><p class="text-xs text-gray-500">' + item.en + '</p></div></label>';
-                });
-                html += '</div></div>';
-            });
-            container.innerHTML = html;
-            document.getElementById('package-modal').style.display = 'flex';
-        }
-        
-        function confirmPackageSelection() {
-            if (!currentPackage) return;
-            const checkboxes = document.querySelectorAll('.pkg-item-checkbox:checked');
-            if (checkboxes.length === 0) {
-                alert('Please select at least 1 item.');
-                return;
-            }
-            let selectedOptions = [];
-            checkboxes.forEach(cb => {
-                selectedOptions.push(cb.getAttribute('data-enname'));
-            });
-            addToCart({
-                id: currentPackage.id + '_' + Date.now(),
-                name_th: currentPackage.name_th,
-                name_en: currentPackage.name_en,
-                price: currentPackage.price,
-                unit_th: currentPackage.unit_th,
-                unit_en: currentPackage.unit_en,
-                qty: 1,
-                img: currentPackage.img,
-                category: 'Authentic', // Package items use 50% deposit
-                options: selectedOptions
-            });
-            document.getElementById('package-modal').style.display = 'none';
-            alert('Package added to cart successfully.');
-        }
+ container.innerHTML = html;
+ }
+ let currentPackage = null;
+ 
+ function openPackageModal(id, thName, enName, price, img, thUnit, enUnit) {
+ currentPackage = { id, name_th: thName, name_en: enName, price, img, unit_th: thUnit, unit_en: enUnit };
+ document.getElementById('pkg-modal-title').textContent = enName;
+ document.getElementById('pkg-modal-price').textContent = '£' + price + ' / ' + (enUnit);
+ 
+ const limits = {
+ 'pkg_standard': 7,
+ 'pkg_premium': 11,
+ 'pkg_royal': 14,
+ 'pkg_siam': 20,
+ 'pkg_bundle_std_m': 9,
+ 'pkg_bundle_std_l': 13,
+ 'pkg_bundle_prem_m': 13,
+ 'pkg_bundle_prem_l': 17,
+ 'pkg_party_15': 10,
+ 'pkg_party_25': 14,
+ 'pkg_party_35': 21,
+ 'pkg_party_65': 29
+ };
+ 
+ if (limits[id]) {
+ document.getElementById('pkg-modal-item-limit').textContent = `( ${limits[id]})`;
+ document.getElementById('pkg-modal-item-limit-en').textContent = `(Total ${limits[id]} items as specified)`;
+ } else {
+ document.getElementById('pkg-modal-item-limit').textContent = "";
+ document.getElementById('pkg-modal-item-limit-en').textContent = "";
+ }
+ 
+ const catLimits = {
+ 'pkg_standard': {
+ 'starters': { th: '( 2)', en: '(2 Starters)' },
+ 'mains': { th: '( 1)', en: '(1 Curry)' },
+ 'vegetables': { th: '( 1)', en: '(1 Stir-fry)' },
+ 'rice': { th: '', en: '(Jasmine Rice)' },
+ 'desserts': { th: '( 1, 1)', en: '(1 Dessert, 1 Mixed Fruit)' }
+ },
+ 'pkg_premium': {
+ 'starters': { th: '( 2)', en: '(2 Starters)' },
+ 'salads': { th: '( 2)', en: '(2 Salads)' },
+ 'mains': { th: '( 1, 1)', en: '(1 Curry, 1 Seafood/Fish)' },
+ 'vegetables': { th: '( / 1)', en: '(1 Stir-fry/Noodle)' },
+ 'rice': { th: '( /)', en: '(Jasmine or Sticky Rice)' },
+ 'desserts': { th: '( 2, 1)', en: '(2 Desserts, 1 Mixed Fruit)' }
+ },
+ 'pkg_royal': {
+ 'starters': { th: '( 3 2)', en: '(3 Starters or 2 Canapés)' },
+ 'salads': { th: '( 2)', en: '(2 Salads)' },
+ 'mains': { th: '( / 2, / 1)', en: '(2 Seafood/Fish, 1 Curry/Hotpot)' },
+ 'vegetables': { th: '( / 1)', en: '(1 Stir-fry/Noodle)' },
+ 'rice': { th: '( / /)', en: '(Jasmine/Sticky/Fried Rice)' },
+ 'desserts': { th: '( 3, 1)', en: '(3 Desserts, 1 Mixed Fruit)' }
+ },
+ 'pkg_siam': {
+ 'starters': { th: '( / 4)', en: '(4 Starters/Canapés)' },
+ 'salads': { th: '( 3)', en: '(3 Salads)' },
+ 'mains': { th: '( / 3, / 2)', en: '(3 Seafood/Fish, 2 Curries/Hotpots)' },
+ 'vegetables': { th: '( / 2)', en: '(2 Stir-fries/Noodles)' },
+ 'rice': { th: '( / /)', en: '(Jasmine/Sticky/Fried Rice)' },
+ 'desserts': { th: '( 4, 1)', en: '(4 Desserts, 1 Mixed Fruit)' }
+ },
+ 'pkg_bundle_std_m': {
+ 'drinks': { th: '( 3)', en: '(3 Drinks)' },
+ 'starters': { th: '(2)', en: '(2 Trays)' },
+ 'mains': { th: '(2)', en: '(2 Trays)' },
+ 'desserts': { th: '(2)', en: '(2 Trays)' }
+ },
+ 'pkg_bundle_std_l': {
+ 'drinks': { th: '( 3)', en: '(3 Drinks)' },
+ 'starters': { th: '(3)', en: '(3 Trays)' },
+ 'mains': { th: '(3)', en: '(3 Trays)' },
+ 'desserts': { th: '( 3 , 1)', en: '(3 Trays, 1 Fruit)' }
+ },
+ 'pkg_bundle_prem_m': {
+ 'drinks': { th: '( 3)', en: '(3 Drinks)' },
+ 'starters': { th: '(3)', en: '(3 Trays)' },
+ 'mains': { th: '(3)', en: '(3 Trays)' },
+ 'desserts': { th: '( 3 , 1)', en: '(3 Trays, 1 Fruit)' }
+ },
+ 'pkg_bundle_prem_l': {
+ 'drinks': { th: '( 3)', en: '(3 Drinks)' },
+ 'starters': { th: '(4)', en: '(4 Trays)' },
+ 'mains': { th: '(4)', en: '(4 Trays)' },
+ 'desserts': { th: '( 4 , 1)', en: '(4 Trays, 1 Fruit)' }
+ },
+ 'pkg_party_15': {
+ 'starters': { th: '( 3)', en: '(3 Starters/Canapés)' },
+ 'salads': { th: '( 1)', en: '(1 Salad)' },
+ 'mains': { th: '( / 1)', en: '(1 Curry/Hotpot)' },
+ 'vegetables': { th: '( / 1)', en: '(1 Stir-fry/Noodle)' },
+ 'rice': { th: '( 1)', en: '(1 Rice Option)' },
+ 'desserts': { th: '( 2 , 1)', en: '(2 Desserts, 1 Mixed Seasonal Fruit)' }
+ },
+ 'pkg_party_25': {
+ 'starters': { th: '( 4)', en: '(4 Starters/Canapés)' },
+ 'salads': { th: '( 1)', en: '(1 Salad)' },
+ 'mains': { th: '( / 2 , 1)', en: '(2 Curries/Hotpots, 1 Seafood/Fish)' },
+ 'vegetables': { th: '( / 1)', en: '(1 Stir-fry/Noodle)' },
+ 'rice': { th: '( 2)', en: '(2 Rice Options)' },
+ 'desserts': { th: '( 2 , 1)', en: '(2 Desserts, 1 Mixed Seasonal Fruit)' }
+ },
+ 'pkg_party_35': {
+ 'starters': { th: '( 5)', en: '(5 Starters/Canapés)' },
+ 'salads': { th: '( 2)', en: '(2 Salads)' },
+ 'mains': { th: '( / 2 , 2)', en: '(2 Curries/Hotpots, 2 Seafood/Fish)' },
+ 'vegetables': { th: '( / 2)', en: '(2 Stir-fries/Noodles)' },
+ 'rice': { th: '( 2)', en: '(2 Rice Options)' },
+ 'desserts': { th: '( 4 , 2)', en: '(4 Desserts, 2 Mixed Seasonal Fruits)' }
+ },
+ 'pkg_party_65': {
+ 'starters': { th: '( 6)', en: '(6 Starters/Canapés)' },
+ 'salads': { th: '( 3)', en: '(3 Salads)' },
+ 'mains': { th: '( / 3 , 3)', en: '(3 Curries/Hotpots, 3 Seafood/Fish)' },
+ 'vegetables': { th: '( / 3)', en: '(3 Stir-fries/Noodles)' },
+ 'rice': { th: '( 3)', en: '(3 Rice Options)' },
+ 'desserts': { th: '( 5 , 3)', en: '(5 Desserts, 3 Mixed Seasonal Fruits)' }
+ }
+ };
+ 
+ const container = document.getElementById('pkg-categories-container');
+ let html = '';
+ 
+ buffetData.forEach((cat, cIdx) => {
+ if (cat.id === 'services') return;
+ 
+ let catTitle = cat.title[currentLang];
+ 
+ 
+ 
+ if (catLimits[id] && catLimits[id][cat.id]) {
+ catTitle += ` <span class="text-dark-green bg-gold px-2 py-0.5 rounded text-sm font-normal ml-2 inline-block whitespace-nowrap">${catLimits[id][cat.id][currentLang]}</span>`;
+ }
+ 
+ html += '<div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100"><h4 class="font-bold text-dark-green mb-3 border-b pb-2 text-lg">' + catTitle + '</h4><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">';
+ cat.items.forEach((item, iIdx) => {
+ const cbId = 'pkg-item-' + cIdx + '-' + iIdx;
+ html += '<label class="flex items-start gap-3 p-2 hover:bg-gray-50 rounded cursor-pointer border border-transparent hover:border-gray-200 transition-colors"><input type="checkbox" id="' + cbId + '" class="pkg-item-checkbox mt-1 w-4 h-4 text-dark-green rounded focus:ring-gold" data-thname="' + item.th.replace(/'/g, "\\'") + '" data-enname="' + item.en.replace(/'/g, "\\'") + '"><div class="flex-1"><p class="text-sm font-bold text-gray-800">' + item.th + '</p><p class="text-xs text-gray-500">' + item.en + '</p></div></label>';
+ });
+ html += '</div></div>';
+ });
+ container.innerHTML = html;
+ document.getElementById('package-modal').style.display = 'flex';
+ }
+ 
+ function confirmPackageSelection {
+ if (!currentPackage) return;
+ const checkboxes = document.querySelectorAll('.pkg-item-checkbox:checked');
+ if (checkboxes.length === 0) {
+ alert('Please select at least 1 item.');
+ return;
+ }
+ let selectedOptions = [];
+ checkboxes.forEach(cb => {
+ selectedOptions.push(cb.getAttribute('data-enname'));
+ });
+ addToCart({
+ id: currentPackage.id + '_' + Date.now,
+ name_th: currentPackage.name_th,
+ name_en: currentPackage.name_en,
+ price: currentPackage.price,
+ unit_th: currentPackage.unit_th,
+ unit_en: currentPackage.unit_en,
+ qty: 1,
+ img: currentPackage.img,
+ category: 'Authentic', // Package items use 50% deposit
+ options: selectedOptions
+ });
+ document.getElementById('package-modal').style.display = 'none';
+ alert('Package added to cart successfully.');
+ }
 
-        function showQRCode(itemId, title, price) {
-            const modal = document.getElementById('qr-modal');
-            const container = document.getElementById('qrcode-container');
-            const titleEl = document.getElementById('qr-item-title');
-            const priceEl = document.getElementById('qr-item-price');
+ function showQRCode(itemId, title, price) {
+ const modal = document.getElementById('qr-modal');
+ const container = document.getElementById('qrcode-container');
+ const titleEl = document.getElementById('qr-item-title');
+ const priceEl = document.getElementById('qr-item-price');
 
-            // Clear previous QR
-            container.innerHTML = '';
-            
-            // Generate URL with parameter
-            const url = window.location.origin + window.location.pathname + '?add=' + itemId;
+ Clear previous QR
+ container.innerHTML = '';
+ 
+ Generate URL with parameter
+ const url = window.location.origin + window.location.pathname + '?add=' + itemId;
 
-            // Generate new QR
-            new QRCode(container, {
-                text: url,
-                width: 200,
-                height: 200,
-                colorDark : "#1B3022",
-                colorLight : "#ffffff",
-                correctLevel : QRCode.CorrectLevel.H
-            });
+ Generate new QR
+ new QRCode(container, {
+ text: url,
+ width: 200,
+ height: 200,
+ colorDark : "#1B3022",
+ colorLight : "#ffffff",
+ correctLevel : QRCode.CorrectLevel.H
+ });
 
-            titleEl.textContent = title;
-            priceEl.textContent = "£" + price + " / Portion";
-            
-            modal.style.display = 'flex';
-        }
+ titleEl.textContent = title;
+ priceEl.textContent = "£" + price + " / Portion";
+ 
+ modal.style.display = 'flex';
+ }
 
-        function addBuffetItem(id, name, price, img) {
-            addToCart({
-                id: id,
-                name: { th: name, en: name },
-                price: price,
-                qty: 1,
-                img: img,
-                options: [] // no inner options for buffet dish
-            });
-            
-            // Visual feedback
-            const btn = document.querySelector(`#card-${id} button.bg-dark-green`);
-            if(btn) {
-                const oldHtml = btn.innerHTML;
-                btn.innerHTML = '<i class="fas fa-check"></i> เพิ่มแล้ว';
-                btn.classList.add('bg-gold', 'text-dark-green');
-                setTimeout(() => {
-                    btn.innerHTML = oldHtml;
-                    btn.classList.remove('bg-gold', 'text-dark-green');
-                }, 1500);
-            }
-        }
+ function addBuffetItem(id, name, price, img) {
+ addToCart({
+ id: id,
+ name: { th: name, en: name },
+ price: price,
+ qty: 1,
+ img: img,
+ options: [] // no inner options for buffet dish
+ });
+ 
+ Visual feedback
+ const btn = document.querySelector(`#card-${id} button.bg-dark-green`);
+ if(btn) {
+ const oldHtml = btn.innerHTML;
+ btn.innerHTML = '<i class="fas fa-check"></i> ';
+ btn.classList.add('bg-gold', 'text-dark-green');
+ setTimeout( => {
+ btn.innerHTML = oldHtml;
+ btn.classList.remove('bg-gold', 'text-dark-green');
+ }, 1500);
+ }
+ }
 
-        function checkUrlParams() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const addItemId = urlParams.get('add');
-            const catId = urlParams.get('cat');
-            
-            if (catId && typeof filterCategory === 'function') {
-                filterCategory(catId);
-            }
-            
-            if (addItemId) {
-                // Find item
-                for (let cat of buffetData) {
-                    const item = cat.items.find(i => i.id === addItemId);
-                    if (item) {
-                        const imgSrc = item.img === 'logo.png' ? 'logo.png' : (item.img.startsWith('http') ? item.img : `images/${item.img}`);
-                        addBuffetItem(item.id, item.th, item.price, imgSrc);
-                        
-                        // Scroll to item
-                        setTimeout(() => {
-                            const el = document.getElementById('card-' + addItemId);
-                            if(el) {
-                                el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                                el.style.boxShadow = '0 0 0 4px var(--gold)';
-                                setTimeout(() => el.style.boxShadow = '', 2000);
-                            }
-                        }, 500);
-                        
-                        // Remove param from URL without reload
-                        window.history.replaceState({}, document.title, window.location.pathname);
-                        break;
-                    }
-                }
-            }
-        }
+ function checkUrlParams {
+ const urlParams = new URLSearchParams(window.location.search);
+ const addItemId = urlParams.get('add');
+ const catId = urlParams.get('cat');
+ 
+ if (catId && typeof filterCategory === 'function') {
+ filterCategory(catId);
+ }
+ 
+ if (addItemId) {
+ Find item
+ for (let cat of buffetData) {
+ const item = cat.items.find(i => i.id === addItemId);
+ if (item) {
+ const imgSrc = item.img === 'logo.png' ? 'logo.png' : (item.img.startsWith('http') ? item.img : `images/${item.img}`);
+ addBuffetItem(item.id, item.th, item.price, imgSrc);
+ 
+ Scroll to item
+ setTimeout( => {
+ const el = document.getElementById('card-' + addItemId);
+ if(el) {
+ el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+ el.style.boxShadow = '0 0 0 4px var(--gold)';
+ setTimeout( => el.style.boxShadow = '', 2000);
+ }
+ }, 500);
+ 
+ Remove param from URL without reload
+ window.history.replaceState({}, document.title, window.location.pathname);
+ break;
+ }
+ }
+ }
+ }
 
-        
-        function changeLang(lang, btn) {
-            currentLang = lang;
-            document.documentElement.lang = lang;
-            
-            // Update Buttons
-            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-            if(btn) btn.classList.add('active');
+ 
+ function changeLang(lang, btn) {
+ currentLang = lang;
+ document.documentElement.lang = lang;
+ 
+ Update Buttons
+ document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+ if(btn) btn.classList.add('active');
 
-            // Re-render buffet menu
-            renderBuffet();
-        }
-    
-        document.addEventListener('DOMContentLoaded', loadBuffetMenu);
-    </script>
-
+ Re-render buffet menu
+ renderBuffet;
+ }
+ 
+ document.addEventListener('DOMContentLoaded', loadBuffetMenu);
+ </script>
 </body>
 </html>
-

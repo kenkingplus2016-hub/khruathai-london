@@ -1,585 +1,561 @@
 <!doctype html>
 <html lang="th">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Khrua Thai London Order Hub</title>
-  <style>
-    :root {
-      --ink: #202620;
-      --muted: #69736b;
-      --line: #dce1d7;
-      --paper: #fffdf7;
-      --soft: #f5f2e9;
-      --green: #2f6b4f;
-      --green-dark: #1d4734;
-      --red: #ad392f;
-      --gold: #bb8730;
-      --blue: #315f83;
-      --white: #ffffff;
-      --shadow: 0 16px 44px rgba(29, 44, 32, 0.13);
-    }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Khrua Thai London Order Hub</title>
+<style>
+ :root {
+ --ink: #202620;
+ --muted: #69736b;
+ --line: #dce1d7;
+ --paper: #fffdf7;
+ --soft: #f5f2e9;
+ --green: #2f6b4f;
+ --green-dark: #1d4734;
+ --red: #ad392f;
+ --gold: #bb8730;
+ --blue: #315f83;
+ --white: #ffffff;
+ --shadow: 0 16px 44px rgba(29, 44, 32, 0.13);
+ }
 
-    * {
-      box-sizing: border-box;
-    }
+ * {
+ box-sizing: border-box;
+ }
 
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: linear-gradient(135deg, #fffdf7 0%, #f5f1e6 46%, #edf4f7 100%);
-      font-family: "Segoe UI", Tahoma, sans-serif;
-      line-height: 1.5;
-    }
+ body {
+ margin: 0;
+ color: var(--ink);
+ background: linear-gradient(135deg, #fffdf7 0%, #f5f1e6 46%, #edf4f7 100%);
+ font-family: "Segoe UI", Tahoma, sans-serif;
+ line-height: 1.5;
+ }
 
-    button, input, textarea, select {
-      font: inherit;
-    }
+ button, input, textarea, select {
+ font: inherit;
+ }
 
-    header {
-      background: #17251d;
-      color: var(--white);
-      padding: 22px clamp(18px, 4vw, 42px);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
+ header {
+ background: #17251d;
+ color: var(--white);
+ padding: 22px clamp(18px, 4vw, 42px);
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ gap: 16px;
+ flex-wrap: wrap;
+ }
 
-    header h1 {
-      margin: 0;
-      font-size: clamp(24px, 3vw, 34px);
-      letter-spacing: 0;
-    }
+ header h1 {
+ margin: 0;
+ font-size: clamp(24px, 3vw, 34px);
+ letter-spacing: 0;
+ }
 
-    header p {
-      margin: 4px 0 0;
-      color: rgba(255, 255, 255, 0.75);
-    }
+ header p {
+ margin: 4px 0 0;
+ color: rgba(255, 255, 255, 0.75);
+ }
 
-    .header-link {
-      color: var(--white);
-      border: 1px solid rgba(255, 255, 255, 0.28);
-      text-decoration: none;
-      padding: 10px 14px;
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.08);
-      font-weight: 650;
-    }
+ .header-link {
+ color: var(--white);
+ border: 1px solid rgba(255, 255, 255, 0.28);
+ text-decoration: none;
+ padding: 10px 14px;
+ border-radius: 8px;
+ background: rgba(255, 255, 255, 0.08);
+ font-weight: 650;
+ }
 
-    main {
-      padding: 24px clamp(16px, 4vw, 42px) 40px;
-    }
+ main {
+ padding: 24px clamp(16px, 4vw, 42px) 40px;
+ }
 
-    .layout {
-      display: grid;
-      grid-template-columns: minmax(320px, 0.95fr) minmax(360px, 1.05fr);
-      gap: 20px;
-      align-items: start;
-    }
+ .layout {
+ display: grid;
+ grid-template-columns: minmax(320px, 0.95fr) minmax(360px, 1.05fr);
+ gap: 20px;
+ align-items: start;
+ }
 
-    .panel {
-      background: rgba(255, 255, 255, 0.86);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
+ .panel {
+ background: rgba(255, 255, 255, 0.86);
+ border: 1px solid var(--line);
+ border-radius: 8px;
+ box-shadow: var(--shadow);
+ overflow: hidden;
+ }
 
-    .panel-head {
-      padding: 14px 16px;
-      background: var(--paper);
-      border-bottom: 1px solid var(--line);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-    }
+ .panel-head {
+ padding: 14px 16px;
+ background: var(--paper);
+ border-bottom: 1px solid var(--line);
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ gap: 12px;
+ }
 
-    .panel-head h2,
-    .panel-head h3 {
-      margin: 0;
-      font-size: 18px;
-    }
+ .panel-head h2,
+ .panel-head h3 {
+ margin: 0;
+ font-size: 18px;
+ }
 
-    .panel-body {
-      padding: 16px;
-    }
+ .panel-body {
+ padding: 16px;
+ }
 
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-    }
+ .form-grid {
+ display: grid;
+ grid-template-columns: repeat(2, minmax(0, 1fr));
+ gap: 12px;
+ }
 
-    .field {
-      display: grid;
-      gap: 6px;
-    }
+ .field {
+ display: grid;
+ gap: 6px;
+ }
 
-    .field.full {
-      grid-column: 1 / -1;
-    }
+ .field.full {
+ grid-column: 1 / -1;
+ }
 
-    label {
-      font-size: 13px;
-      color: var(--green-dark);
-      font-weight: 700;
-    }
+ label {
+ font-size: 13px;
+ color: var(--green-dark);
+ font-weight: 700;
+ }
 
-    input, select, textarea {
-      width: 100%;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      min-height: 42px;
-      padding: 10px 11px;
-      color: var(--ink);
-      background: var(--white);
-      outline: 0;
-    }
+ input, select, textarea {
+ width: 100%;
+ border: 1px solid var(--line);
+ border-radius: 8px;
+ min-height: 42px;
+ padding: 10px 11px;
+ color: var(--ink);
+ background: var(--white);
+ outline: 0;
+ }
 
-    input:focus, select:focus, textarea:focus {
-      border-color: var(--green);
-      box-shadow: 0 0 0 3px rgba(47, 107, 79, 0.12);
-    }
+ input:focus, select:focus, textarea:focus {
+ border-color: var(--green);
+ box-shadow: 0 0 0 3px rgba(47, 107, 79, 0.12);
+ }
 
-    textarea {
-      resize: vertical;
-      min-height: 92px;
-    }
+ textarea {
+ resize: vertical;
+ min-height: 92px;
+ }
 
-    .stack {
-      display: grid;
-      gap: 16px;
-    }
+ .stack {
+ display: grid;
+ gap: 16px;
+ }
 
-    .actions {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 14px;
-    }
+ .actions {
+ display: flex;
+ gap: 10px;
+ flex-wrap: wrap;
+ margin-top: 14px;
+ }
 
-    .button {
-      border: 0;
-      border-radius: 8px;
-      min-height: 42px;
-      padding: 10px 14px;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      color: var(--white);
-      background: var(--green);
-      font-weight: 700;
-      text-decoration: none;
-    }
+ .button {
+ border: 0;
+ border-radius: 8px;
+ min-height: 42px;
+ padding: 10px 14px;
+ cursor: pointer;
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ gap: 8px;
+ color: var(--white);
+ background: var(--green);
+ font-weight: 700;
+ text-decoration: none;
+ }
 
-    .button.secondary {
-      color: var(--green-dark);
-      background: var(--white);
-      border: 1px solid var(--line);
-    }
+ .button.secondary {
+ color: var(--green-dark);
+ background: var(--white);
+ border: 1px solid var(--line);
+ }
 
-    .button.gold {
-      background: var(--gold);
-    }
+ .button.gold {
+ background: var(--gold);
+ }
 
-    .button.blue {
-      background: var(--blue);
-    }
+ .button.blue {
+ background: var(--blue);
+ }
 
-    .button:hover {
-      filter: brightness(0.95);
-    }
+ .button:hover {
+ filter: brightness(0.95);
+ }
 
-    .output {
-      width: 100%;
-      min-height: 170px;
-      border: 0;
-      border-top: 1px solid var(--line);
-      border-radius: 0;
-      background: #fffefb;
-      font-family: Consolas, "Courier New", monospace;
-      font-size: 13px;
-      line-height: 1.5;
-    }
+ .output {
+ width: 100%;
+ min-height: 170px;
+ border: 0;
+ border-top: 1px solid var(--line);
+ border-radius: 0;
+ background: #fffefb;
+ font-family: Consolas, "Courier New", monospace;
+ font-size: 13px;
+ line-height: 1.5;
+ }
 
-    .mini {
-      color: var(--muted);
-      font-size: 13px;
-      margin: 8px 0 0;
-    }
+ .mini {
+ color: var(--muted);
+ font-size: 13px;
+ margin: 8px 0 0;
+ }
 
-    .status {
-      color: var(--green-dark);
-      min-height: 20px;
-      font-size: 14px;
-      font-weight: 700;
-    }
+ .status {
+ color: var(--green-dark);
+ min-height: 20px;
+ font-size: 14px;
+ font-weight: 700;
+ }
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      margin-bottom: 20px;
-    }
+ .cards {
+ display: grid;
+ grid-template-columns: repeat(2, minmax(0, 1fr));
+ gap: 12px;
+ margin-bottom: 20px;
+ }
 
-    .card {
-      background: rgba(255, 255, 255, 0.78);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 14px;
-    }
+ .card {
+ background: rgba(255, 255, 255, 0.78);
+ border: 1px solid var(--line);
+ border-radius: 8px;
+ padding: 14px;
+ }
 
-    .card strong {
-      display: block;
-      color: var(--green-dark);
-      margin-bottom: 3px;
-    }
+ .card strong {
+ display: block;
+ color: var(--green-dark);
+ margin-bottom: 3px;
+ }
 
-    .card span {
-      color: var(--muted);
-      font-size: 13px;
-    }
+ .card span {
+ color: var(--muted);
+ font-size: 13px;
+ }
 
-    @media (max-width: 940px) {
-      .layout,
-      .cards {
-        grid-template-columns: 1fr;
-      }
-    }
+ @media (max-width: 940px) {
+ .layout,
+ .cards {
+ grid-template-columns: 1fr;
+ }
+ }
 
-    @media (max-width: 560px) {
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
+ @media (max-width: 560px) {
+ .form-grid {
+ grid-template-columns: 1fr;
+ }
 
-      .button,
-      .header-link {
-        width: 100%;
-      }
-    }
-  </style>
-    <link rel="stylesheet" href="css/megamenu.css">
+ .button,
+ .header-link {
+ width: 100%;
+ }
+ }
+</style>
+ <link rel="stylesheet" href="css/megamenu.css">
 </head>
 <body>
-  <header class="mega-header">
-    <div class="mega-nav-container">
-        <a href="index.html" class="mega-logo">
-            <img src="logo.png" alt="KHRUA THAI">
-            KHRUA THAI
-        </a>
-        
-        <div class="mega-nav-links">
-            <!-- Main Meals -->
-            <div class="mega-nav-item">
-                <a href="menu.html" class="mega-nav-link">Main Meals</a>
-                <div class="mega-dropdown">
-                    <div class="mega-dropdown-content">
-                        <div class="mega-columns">
-                            <div class="mega-column">
-                                <div class="mega-column-title">Categories</div>
-                                <a href="menu.html?cat=mains">Meat</a>
-                                <a href="menu.html?cat=vegetables">Vegetables</a>
-                                <a href="menu.html?cat=starters">Starters</a>
-                                <a href="menu.html?cat=box_sets">Meal Boxes</a>
-                            </div>
-                        </div>
-                        <div class="mega-featured">
-                            <a href="menu.html" class="mega-feature-card">
-                                <img src="images/green_curry_pork_bowl.jpg" alt="Green Curry">
-                                <span>Authentic Thai Curries</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Entertaining -->
-            <div class="mega-nav-item">
-                <a href="menu.html" class="mega-nav-link">Entertaining</a>
-                <div class="mega-dropdown">
-                    <div class="mega-dropdown-content">
-                        <div class="mega-columns">
-                            <div class="mega-column">
-                                <div class="mega-column-title">Event Types</div>
-                                <a href="menu.html">Canapés</a>
-                                <a href="menu.html">Dinner Party</a>
-                                <a href="menu.html">Afternoon Tea</a>
-                                <a href="menu.html">Buffet</a>
-                                <a href="menu.html">Birthday Party</a>
-                            </div>
-                        <div class="mega-featured">
-                            <a href="menu.html" class="mega-feature-card">
-                                <img src="images/780f7b8bb98d.jpg" alt="Entertaining">
-                                <span>Premium Event Catering</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<header class="mega-header">
+ <div class="mega-nav-container">
+ <a href="index.html" class="mega-logo">
+ <img src="logo.png" alt="KHRUA THAI">
+ KHRUA THAI
+ </a>
+ 
+ <div class="mega-nav-links">
+ <!-- Main Meals -->
+ <div class="mega-nav-item">
+ <a href="menu.html" class="mega-nav-link">Main Meals</a>
+ <div class="mega-dropdown">
+ <div class="mega-dropdown-content">
+ <div class="mega-columns">
+ <div class="mega-column">
+ <div class="mega-column-title">Categories</div>
+ <a href="menu.html?cat=mains">Meat</a>
+ <a href="menu.html?cat=vegetables">Vegetables</a>
+ <a href="menu.html?cat=starters">Starters</a>
+ <a href="menu.html?cat=box_sets">Meal Boxes</a>
+ </div>
+ </div>
+ <div class="mega-featured">
+ <a href="menu.html" class="mega-feature-card">
+ <img src="images/green_curry_pork_bowl.jpg" alt="Green Curry">
+ <span>Authentic Thai Curries</span>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
+ 
+ <!-- Entertaining -->
+ <div class="mega-nav-item">
+ <a href="menu.html" class="mega-nav-link">Entertaining</a>
+ <div class="mega-dropdown">
+ <div class="mega-dropdown-content">
+ <div class="mega-columns">
+ <div class="mega-column">
+ <div class="mega-column-title">Event Types</div>
+ <a href="menu.html">Canapés</a>
+ <a href="menu.html">Dinner Party</a>
+ <a href="menu.html">Afternoon Tea</a>
+ <a href="menu.html">Buffet</a>
+ <a href="menu.html">Birthday Party</a>
+ </div>
+ <div class="mega-featured">
+ <a href="menu.html" class="mega-feature-card">
+ <img src="images/780f7b8bb98d.jpg" alt="Entertaining">
+ <span>Premium Event Catering</span>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
 
-            <!-- Puddings -->
-            <div class="mega-nav-item">
-                <a href="desserts.html" class="mega-nav-link">Puddings</a>
-                <div class="mega-dropdown">
-                    <div class="mega-dropdown-content">
-                        <div class="mega-columns">
-                            <div class="mega-column">
-                                <div class="mega-column-title">Thai Desserts</div>
-                                <a href="desserts.html">Coconut Jelly</a>
-                                <a href="desserts.html">Mango Sticky Rice</a>
-                                <a href="desserts.html">Traditional Sweets</a>
-                            </div>
-                        <div class="mega-featured">
-                            <a href="desserts.html" class="mega-feature-card">
-                                <img src="images/Butterfly Pea Coconut Jelly with Young Coconut.jpg" alt="Puddings">
-                                <span>Delightful Thai Puddings</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+ <!-- Puddings -->
+ <div class="mega-nav-item">
+ <a href="desserts.html" class="mega-nav-link">Puddings</a>
+ <div class="mega-dropdown">
+ <div class="mega-dropdown-content">
+ <div class="mega-columns">
+ <div class="mega-column">
+ <div class="mega-column-title">Thai Desserts</div>
+ <a href="desserts.html">Coconut Jelly</a>
+ <a href="desserts.html">Mango Sticky Rice</a>
+ <a href="desserts.html">Traditional Sweets</a>
+ </div>
+ <div class="mega-featured">
+ <a href="desserts.html" class="mega-feature-card">
+ <img src="images/Butterfly Pea Coconut Jelly with Young Coconut.jpg" alt="Puddings">
+ <span>Delightful Thai Puddings</span>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
 
-            <!-- Meal Boxes -->
-            <div class="mega-nav-item">
-                <a href="delivery.html" class="mega-nav-link">Meal Boxes</a>
-            </div>
+ <!-- Meal Boxes -->
+ <div class="mega-nav-item">
+ <a href="delivery.html" class="mega-nav-link">Meal Boxes</a>
+ </div>
 
-            <!-- Summer Meals -->
-            <div class="mega-nav-item">
-                <a href="menu.html" class="mega-nav-link">Summer Meals</a>
-            </div>
-        </div>
+ <!-- Summer Meals -->
+ <div class="mega-nav-item">
+ <a href="menu.html" class="mega-nav-link">Summer Meals</a>
+ </div>
+ </div>
 
-        <div class="mega-search">
-            <input type="text" placeholder="Search for Meals...">
-            <i class="fas fa-search"></i>
-        </div>
+ <div class="mega-search">
+ <input type="text" placeholder="Search for Meals...">
+ <i class="fas fa-search"></i>
+ </div>
 
-        <div class="mega-icons">
-            <a href="booking.html" class="mega-icon-btn">
-                <i class="fas fa-shopping-cart"></i>
-                <span id="nav-cart-badge-inner" class="mega-cart-badge" style="display:none;">0</span>
-            </a>
-        </div>
-    </div>
+ <div class="mega-icons">
+ <a href="booking.html" class="mega-icon-btn">
+ <i class="fas fa-shopping-cart"></i>
+ <span id="nav-cart-badge-inner" class="mega-cart-badge" style="display:none;">0</span>
+ </a>
+ </div>
+ </div>
 </header>
 
-  <main>
-    <section class="cards" aria-label="connection summary">
-      <div class="card"><strong>เว็บไซต์ร้าน</strong><span>พร้อมใช้กับ khruathailondon.co.uk สำหรับรับออเดอร์หรือขอใบเสนอราคา</span></div>
-      <div class="card"><strong>Social inbox</strong><span>สร้างข้อความพร้อมส่งกลับลูกค้าทาง WhatsApp, LINE, Facebook หรือ Instagram</span></div>
-      <div class="card"><strong>Google Sheets</strong><span>สร้างแถวข้อมูลแบบ CSV สำหรับวางในชีตออเดอร์ สต็อก และรายรับรายจ่าย</span></div>
-      <div class="card"><strong>Invoice & Calendar</strong><span>ทำสรุปใบเสนอราคาเบื้องต้น และดาวน์โหลดไฟล์นัดหมายสำหรับงาน catering</span></div>
-    </section>
+<main>
+ <section class="cards" aria-label="connection summary">
+ <div class="card"><strong> </strong><span> khruathailondon.co.uk</span></div>
+ <div class="card"><strong>Social inbox</strong><span> WhatsApp, LINE, FacebookInstagram</span></div>
+ <div class="card"><strong>Google Sheets</strong><span> CSV</span></div>
+ <div class="card"><strong>Invoice & Calendar</strong><span> catering</span></div>
+ </section>
 
-    <section class="layout">
-      <div class="panel">
-        <div class="panel-head">
-          <h2>ข้อมูลลูกค้าและออเดอร์</h2>
-          <div class="status" id="status"></div>
-        </div>
-        <div class="panel-body">
-          <div class="form-grid">
-            <div class="field">
-              <label for="customerName">ชื่อลูกค้า</label>
-              <input id="customerName" placeholder="เช่น Sarah / คุณแอน">
-            </div>
-            <div class="field">
-              <label for="contact">เบอร์ติดต่อ / อีเมล</label>
-              <input id="contact" placeholder="เบอร์, WhatsApp, email">
-            </div>
-            <div class="field">
-              <label for="channel">ช่องทางที่ลูกค้าทักมา</label>
-              <select id="channel">
-                <option>Website</option>
-                <option>WhatsApp</option>
-                <option>LINE</option>
-                <option>Facebook</option>
-                <option>Instagram</option>
-                <option>Phone</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="orderType">ประเภทงาน</label>
-              <select id="orderType">
-                <option>Food boxes</option>
-                <option>Pre-order</option>
-                <option>Catering</option>
-                <option>Event buffet</option>
-                <option>Private party</option>
-                <option>Corporate lunch</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="guestCount">จำนวนคน / จำนวนกล่อง</label>
-              <input id="guestCount" type="number" min="1" placeholder="เช่น 30">
-            </div>
-            <div class="field">
-              <label for="budget">งบประมาณ</label>
-              <input id="budget" placeholder="เช่น £10 ต่อกล่อง หรือ £600 รวม">
-            </div>
-            <div class="field">
-              <label for="date">วันที่ต้องการ</label>
-              <input id="date" type="date">
-            </div>
-            <div class="field">
-              <label for="time">เวลาที่ต้องการ</label>
-              <input id="time" type="time">
-            </div>
-            <div class="field full">
-              <label for="address">สถานที่จัดส่ง / สถานที่จัดงาน</label>
-              <input id="address" placeholder="เช่น London Bridge, SW1A, office address">
-            </div>
-            <div class="field full">
-              <label for="menu">เมนูที่สนใจ</label>
-              <textarea id="menu" placeholder="เช่น กะเพราไก่, ผัดไทยกุ้ง, แกงเขียวหวาน, spring rolls"></textarea>
-            </div>
-            <div class="field full">
-              <label for="diet">แพ้อาหาร / ข้อจำกัดอาหาร</label>
-              <textarea id="diet" placeholder="เช่น vegetarian 3 คน, no nuts, mild spicy, halal request"></textarea>
-            </div>
-            <div class="field full">
-              <label for="notes">หมายเหตุเพิ่มเติม</label>
-              <textarea id="notes" placeholder="เช่น ต้องการใบเสนอราคา, ต้องการ delivery, มี lift/parking, ต้อง setup buffet"></textarea>
-            </div>
-          </div>
+ <section class="layout">
+ <div class="panel">
+ <div class="panel-head">
+ <h2> </h2>
+ <div class="status" id="status"></div>
+ </div>
+ <div class="panel-body">
+ <div class="form-grid">
+ <div class="field">
+ <label for="customerName"> </label>
+ <input id="customerName" placeholder=" Sarah">
+ </div>
+ <div class="field">
+ <label for="contact"> / </label>
+ <input id="contact" placeholder=" , WhatsApp, email">
+ </div>
+ <div class="field">
+ <label for="channel"> </label>
+ <select id="channel">
+ <option>Website</option>
+ <option>WhatsApp</option>
+ <option>LINE</option>
+ <option>Facebook</option>
+ <option>Instagram</option>
+ <option>Phone</option>
+ </select>
+ </div>
+ <div class="field">
+ <label for="orderType"> </label>
+ <select id="orderType">
+ <option>Food boxes</option>
+ <option>Pre-order</option>
+ <option>Catering</option>
+ <option>Event buffet</option>
+ <option>Private party</option>
+ <option>Corporate lunch</option>
+ </select>
+ </div>
+ <div class="field">
+ <label for="guestCount"> / </label>
+ <input id="guestCount" type="number" min="1" placeholder=" 30">
+ </div>
+ <div class="field">
+ <label for="budget"> </label>
+ <input id="budget" placeholder=" £10 £600 ">
+ </div>
+ <div class="field">
+ <label for="date"> </label>
+ <input id="date" type="date">
+ </div>
+ <div class="field">
+ <label for="time"> </label>
+ <input id="time" type="time">
+ </div>
+ <div class="field full">
+ <label for="address"> / </label>
+ <input id="address" placeholder=" London Bridge, SW1A, office address">
+ </div>
+ <div class="field full">
+ <label for="menu"> </label>
+ <textarea id="menu" placeholder=" , , , spring rolls"></textarea>
+ </div>
+ <div class="field full">
+ <label for="diet"> / </label>
+ <textarea id="diet" placeholder=" vegetarian 3 , no nuts, mild spicy, halal request"></textarea>
+ </div>
+ <div class="field full">
+ <label for="notes"> </label>
+ <textarea id="notes" placeholder=" , delivery, lift/parking, setup buffet"></textarea>
+ </div>
+ </div>
 
-          <div class="actions">
-            <button class="button" type="button" id="buildBtn">สร้างข้อมูลทั้งหมด</button>
-            <button class="button secondary" type="button" id="clearBtn">ล้างฟอร์ม</button>
-          </div>
-          <p class="mini">ขั้นตอนใช้งานจริง: กรอกข้อมูลลูกค้า กดสร้างข้อมูล แล้วคัดลอกส่วนที่ต้องการไปใช้กับ Sales AI, Google Sheets หรือ Calendar</p>
-        </div>
-      </div>
+ <div class="actions">
+ <button class="button" type="button" id="buildBtn"> </button>
+ <button class="button secondary" type="button" id="clearBtn"> </button>
+ </div>
+ <p class="mini"> : Sales AI, Google SheetsCalendar</p>
+ </div>
+ </div>
 
-      <div class="stack">
-        <div class="panel">
-          <div class="panel-head">
-            <h3>ส่งเข้า Sales AI</h3>
-            <button class="button secondary" type="button" data-copy="salesPrompt">คัดลอก</button>
-          </div>
-          <textarea class="output" id="salesPrompt" spellcheck="false"></textarea>
-        </div>
+ <div class="stack">
+ <div class="panel">
+ <div class="panel-head">
+ <h3> Sales AI</h3>
+ <button class="button secondary" type="button" data-copy="salesPrompt"> </button>
+ </div>
+ <textarea class="output" id="salesPrompt" spellcheck="false"></textarea>
+ </div>
 
-        <div class="panel">
-          <div class="panel-head">
-            <h3>ข้อความตอบลูกค้า</h3>
-            <button class="button secondary" type="button" data-copy="customerReply">คัดลอก</button>
-          </div>
-          <textarea class="output" id="customerReply" spellcheck="false"></textarea>
-          <div class="panel-body">
-            <a class="button gold" id="whatsappLink" href="#" target="_blank" rel="noopener">เปิด WhatsApp พร้อมข้อความ</a>
-          </div>
-        </div>
+ <div class="panel">
+ <div class="panel-head">
+ <h3> </h3>
+ <button class="button secondary" type="button" data-copy="customerReply"> </button>
+ </div>
+ <textarea class="output" id="customerReply" spellcheck="false"></textarea>
+ <div class="panel-body">
+ <a class="button gold" id="whatsappLink" href="#" target="_blank" rel="noopener"> WhatsApp</a>
+ </div>
+ </div>
 
-        <div class="panel">
-          <div class="panel-head">
-            <h3>แถวสำหรับ Google Sheets</h3>
-            <button class="button secondary" type="button" data-copy="sheetRow">คัดลอก</button>
-          </div>
-          <textarea class="output" id="sheetRow" spellcheck="false"></textarea>
-        </div>
+ <div class="panel">
+ <div class="panel-head">
+ <h3> Google Sheets</h3>
+ <button class="button secondary" type="button" data-copy="sheetRow"> </button>
+ </div>
+ <textarea class="output" id="sheetRow" spellcheck="false"></textarea>
+ </div>
 
-        <div class="panel">
-          <div class="panel-head">
-            <h3>ใบเสนอราคาเบื้องต้น</h3>
-            <button class="button secondary" type="button" data-copy="quoteText">คัดลอก</button>
-          </div>
-          <textarea class="output" id="quoteText" spellcheck="false"></textarea>
-          <div class="panel-body">
-            <button class="button blue" type="button" id="calendarBtn">ดาวน์โหลด Calendar (.ics)</button>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+ <div class="panel">
+ <div class="panel-head">
+ <h3> </h3>
+ <button class="button secondary" type="button" data-copy="quoteText"> </button>
+ </div>
+ <textarea class="output" id="quoteText" spellcheck="false"></textarea>
+ <div class="panel-body">
+ <button class="button blue" type="button" id="calendarBtn"> Calendar (.ics)</button>
+ </div>
+ </div>
+ </div>
+ </section>
+</main>
 
-  <script>
-    const fields = ["customerName", "contact", "channel", "orderType", "guestCount", "budget", "date", "time", "address", "menu", "diet", "notes"];
-    const status = document.getElementById("status");
+<script>
+ const fields = ["customerName", "contact", "channel", "orderType", "guestCount", "budget", "date", "time", "address", "menu", "diet", "notes"];
+ const status = document.getElementById("status");
 
-    function value(id) {
-      return document.getElementById(id).value.trim();
-    }
+ function value(id) {
+ return document.getElementById(id).value.trim;
+ }
 
-    function csvCell(text) {
-      return `"${String(text || "").replaceAll('"', '""')}"`;
-    }
+ function csvCell(text) {
+ return `"${String(text || "").replaceAll('"', '""')}"`;
+ }
 
-    function showStatus(text) {
-      status.textContent = text;
-      window.setTimeout(() => status.textContent = "", 1800);
-    }
+ function showStatus(text) {
+ status.textContent = text;
+ window.setTimeout( => status.textContent = "", 1800);
+ }
 
-    function collect() {
-      return {
-        customerName: value("customerName") || "ยังไม่ระบุ",
-        contact: value("contact") || "ยังไม่ระบุ",
-        channel: value("channel"),
-        orderType: value("orderType"),
-        guestCount: value("guestCount") || "ยังไม่ระบุ",
-        budget: value("budget") || "ยังไม่ระบุ",
-        date: value("date") || "ยังไม่ระบุ",
-        time: value("time") || "ยังไม่ระบุ",
-        address: value("address") || "ยังไม่ระบุ",
-        menu: value("menu") || "ยังไม่ระบุ",
-        diet: value("diet") || "ไม่มีข้อมูล",
-        notes: value("notes") || "ไม่มี"
-      };
-    }
+ function collect {
+ return {
+ customerName: value("customerName") || " ",
+ contact: value("contact") || " ",
+ channel: value("channel"),
+ orderType: value("orderType"),
+ guestCount: value("guestCount") || " ",
+ budget: value("budget") || " ",
+ date: value("date") || " ",
+ time: value("time") || " ",
+ address: value("address") || " ",
+ menu: value("menu") || " ",
+ diet: value("diet") || " ",
+ notes: value("notes") || " "
+ };
+ }
 
-    function buildOutputs() {
-      const d = collect();
-      const now = new Date().toLocaleString("en-GB");
-      const salesPrompt = `นี่คือ lead/order ใหม่ของ Khrua Thai London
+ function buildOutputs {
+ const d = collect;
+ const now = new Date.toLocaleString("en-GB");
+ const salesPrompt = ` lead/orderKhrua Thai London
+: ${d.customerName}: ${d.channel}: ${d.contact}: ${d.orderType}: ${d.guestCount}: ${d.date}: ${d.time}: ${d.address}: ${d.budget}: ${d.menu}: ${d.diet}: ${d.notes}
+4 :
+1. 2. 3. 4. Operations AI, Stock AIFinance/Admin AI`;
 
-ชื่อลูกค้า: ${d.customerName}
-ช่องทาง: ${d.channel}
-ติดต่อ: ${d.contact}
-ประเภทงาน: ${d.orderType}
-จำนวนคน/กล่อง: ${d.guestCount}
-วันที่: ${d.date}
-เวลา: ${d.time}
-สถานที่: ${d.address}
-งบประมาณ: ${d.budget}
-เมนูที่สนใจ: ${d.menu}
-แพ้อาหาร/ข้อจำกัดอาหาร: ${d.diet}
-หมายเหตุ: ${d.notes}
+ const customerReply = ` Khrua Thai London:
+-: ${d.orderType}
+-: ${d.guestCount}
+-: ${d.date} ${d.time}
+-: ${d.address}
+-: ${d.budget}
+-: ${d.menu}
+:
+1. 2. 3. , set menubuffet`;
 
-ช่วยทำ 4 อย่าง:
-1. สรุปข้อมูลลูกค้าแบบสั้น
-2. บอกข้อมูลที่ยังต้องถามเพิ่ม
-3. ร่างข้อความตอบลูกค้าเพื่อปิดการขายอย่างสุภาพ
-4. แนะนำว่าควรส่งต่อ Operations AI, Stock AI หรือ Finance/Admin AI อย่างไร`;
+ const sheetHeaders = ["Created", "Customer", "Contact", "Channel", "Order Type", "Guests/Boxes", "Date", "Time", "Address", "Budget", "Menu", "Diet", "Notes", "Status"];
+ const sheetValues = [now, d.customerName, d.contact, d.channel, d.orderType, d.guestCount, d.date, d.time, d.address, d.budget, d.menu, d.diet, d.notes, "New lead"];
+ const sheetRow = `${sheetHeaders.join(",")}\n${sheetValues.map(csvCell).join(",")}`;
 
-      const customerReply = `สวัสดีค่ะ ขอบคุณที่สนใจ Khrua Thai London นะคะ
-
-ทางร้านได้รับรายละเอียดเบื้องต้นแล้วค่ะ:
-- ประเภทงาน: ${d.orderType}
-- จำนวน: ${d.guestCount}
-- วันที่/เวลา: ${d.date} ${d.time}
-- สถานที่: ${d.address}
-- งบประมาณ: ${d.budget}
-- เมนูที่สนใจ: ${d.menu}
-
-ขอเช็กข้อมูลเพิ่มเติมนิดนึงค่ะ:
-1. ต้องการรับเองหรือให้จัดส่งคะ
-2. มีคนแพ้อาหารหรือมีข้อจำกัดอาหารเพิ่มเติมไหมคะ
-3. ต้องการอาหารแบบกล่อง, set menu หรือ buffet คะ
-
-เดี๋ยวทางร้านช่วยแนะนำเมนูและทำราคาให้เหมาะกับงานค่ะ`;
-
-      const sheetHeaders = ["Created", "Customer", "Contact", "Channel", "Order Type", "Guests/Boxes", "Date", "Time", "Address", "Budget", "Menu", "Diet", "Notes", "Status"];
-      const sheetValues = [now, d.customerName, d.contact, d.channel, d.orderType, d.guestCount, d.date, d.time, d.address, d.budget, d.menu, d.diet, d.notes, "New lead"];
-      const sheetRow = `${sheetHeaders.join(",")}\n${sheetValues.map(csvCell).join(",")}`;
-
-      const quoteText = `Khrua Thai London - Quote Draft
-
+ const quoteText = `Khrua Thai London - Quote Draft
 Customer: ${d.customerName}
 Contact: ${d.contact}
 Order type: ${d.orderType}
@@ -587,92 +563,84 @@ Date/time: ${d.date} ${d.time}
 Location: ${d.address}
 Guests/boxes: ${d.guestCount}
 Budget: ${d.budget}
-
 Menu requested:
 ${d.menu}
-
 Dietary notes:
 ${d.diet}
-
 Additional notes:
 ${d.notes}
-
 Next steps:
-- Confirm final menu
-- Confirm delivery/setup requirement
-- Calculate food, packaging, delivery, and service cost
-- Send final quote/invoice to customer`;
+- Confirm final menu- Confirm delivery/setup requirement- Calculate food, packaging, delivery, and service cost- Send final quote/invoice to customer`;
 
-      document.getElementById("salesPrompt").value = salesPrompt;
-      document.getElementById("customerReply").value = customerReply;
-      document.getElementById("sheetRow").value = sheetRow;
-      document.getElementById("quoteText").value = quoteText;
-      document.getElementById("whatsappLink").href = `https://wa.me/?text=${encodeURIComponent(customerReply)}`;
-      showStatus("สร้างข้อมูลแล้ว");
-    }
+ document.getElementById("salesPrompt").value = salesPrompt;
+ document.getElementById("customerReply").value = customerReply;
+ document.getElementById("sheetRow").value = sheetRow;
+ document.getElementById("quoteText").value = quoteText;
+ document.getElementById("whatsappLink").href = `https://wa.me/?text=${encodeURIComponent(customerReply)}`;
+ showStatus(" ");
+ }
 
-    function copyBox(id) {
-      const text = document.getElementById(id).value;
-      navigator.clipboard.writeText(text).then(() => showStatus("คัดลอกแล้ว")).catch(() => showStatus("คัดลอกไม่สำเร็จ"));
-    }
+ function copyBox(id) {
+ const text = document.getElementById(id).value;
+ navigator.clipboard.writeText(text).then( => showStatus(" ")).catch( => showStatus(" "));
+ }
 
-    function formatIcsDate(date, time) {
-      if (!date || date === "ยังไม่ระบุ") return "";
-      const cleanTime = time && time !== "ยังไม่ระบุ" ? time : "09:00";
-      return `${date.replaceAll("-", "")}T${cleanTime.replace(":", "")}00`;
-    }
+ function formatIcsDate(date, time) {
+ if (!date || date === " ") return "";
+ const cleanTime = time && time !== " " ? time : "09:00";
+ return `${date.replaceAll("-", "")}T${cleanTime.replace(":", "")}00`;
+ }
 
-    function downloadCalendar() {
-      const d = collect();
-      const start = formatIcsDate(d.date, d.time);
-      if (!start) {
-        showStatus("กรุณาใส่วันที่ก่อน");
-        return;
-      }
-      const title = `Khrua Thai London - ${d.orderType} - ${d.customerName}`;
-      const description = `Customer: ${d.customerName}\\nContact: ${d.contact}\\nGuests/boxes: ${d.guestCount}\\nBudget: ${d.budget}\\nMenu: ${d.menu}\\nDiet: ${d.diet}\\nNotes: ${d.notes}`;
-      const ics = [
-        "BEGIN:VCALENDAR",
-        "VERSION:2.0",
-        "PRODID:-//Khrua Thai London//Order Hub//EN",
-        "BEGIN:VEVENT",
-        `UID:${Date.now()}@khruathailondon`,
-        `DTSTAMP:${new Date().toISOString().replace(/[-:]/g, "").split(".")[0]}Z`,
-        `DTSTART:${start}`,
-        `SUMMARY:${title}`,
-        `LOCATION:${d.address}`,
-        `DESCRIPTION:${description}`,
-        "END:VEVENT",
-        "END:VCALENDAR"
-      ].join("\r\n");
-      const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
-      const link = document.createElement("a");
-      link.href = URL.createObjectURL(blob);
-      link.download = `khrua-thai-${d.customerName.replace(/[^a-z0-9ก-๙]+/gi, "-") || "event"}.ics`;
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-      showStatus("ดาวน์โหลด Calendar แล้ว");
-    }
+ function downloadCalendar {
+ const d = collect;
+ const start = formatIcsDate(d.date, d.time);
+ if (!start) {
+ showStatus(" ");
+ return;
+ }
+ const title = `Khrua Thai London - ${d.orderType} - ${d.customerName}`;
+ const description = `Customer: ${d.customerName}\\nContact: ${d.contact}\\nGuests/boxes: ${d.guestCount}\\nBudget: ${d.budget}\\nMenu: ${d.menu}\\nDiet: ${d.diet}\\nNotes: ${d.notes}`;
+ const ics = [
+ "BEGIN:VCALENDAR",
+ "VERSION:2.0",
+ "PRODID:-//Khrua Thai London//Order Hub//EN",
+ "BEGIN:VEVENT",
+ `UID:${Date.now}@khruathailondon`,
+ `DTSTAMP:${new Date.toISOString.replace(/[-:]/g, "").split(".")[0]}Z`,
+ `DTSTART:${start}`,
+ `SUMMARY:${title}`,
+ `LOCATION:${d.address}`,
+ `DESCRIPTION:${description}`,
+ "END:VEVENT",
+ "END:VCALENDAR"
+ ].join("\r\n");
+ const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
+ const link = document.createElement("a");
+ link.href = URL.createObjectURL(blob);
+ link.download = `khrua-thai-${d.customerName.replace(/[^a-z0-9 - ]+/gi, "-") || "event"}.ics`;
+ document.body.appendChild(link);
+ link.click;
+ link.remove;
+ showStatus(" Calendar");
+ }
 
-    document.getElementById("buildBtn").addEventListener("click", buildOutputs);
-    document.getElementById("clearBtn").addEventListener("click", () => {
-      fields.forEach((id) => {
-        const el = document.getElementById(id);
-        if (el.tagName === "SELECT") el.selectedIndex = 0;
-        else el.value = "";
-      });
-      ["salesPrompt", "customerReply", "sheetRow", "quoteText"].forEach((id) => document.getElementById(id).value = "");
-      showStatus("ล้างฟอร์มแล้ว");
-    });
-    document.getElementById("calendarBtn").addEventListener("click", downloadCalendar);
-    document.querySelectorAll("[data-copy]").forEach((button) => {
-      button.addEventListener("click", () => copyBox(button.dataset.copy));
-    });
+ document.getElementById("buildBtn").addEventListener("click", buildOutputs);
+ document.getElementById("clearBtn").addEventListener("click", => {
+ fields.forEach((id) => {
+ const el = document.getElementById(id);
+ if (el.tagName === "SELECT") el.selectedIndex = 0;
+ else el.value = "";
+ });
+ ["salesPrompt", "customerReply", "sheetRow", "quoteText"].forEach((id) => document.getElementById(id).value = "");
+ showStatus(" ");
+ });
+ document.getElementById("calendarBtn").addEventListener("click", downloadCalendar);
+ document.querySelectorAll("[data-copy]").forEach((button) => {
+ button.addEventListener("click", => copyBox(button.dataset.copy));
+ });
 
-    buildOutputs();
-  </script>
+ buildOutputs;
+</script>
 </body>
 </html>
-
 

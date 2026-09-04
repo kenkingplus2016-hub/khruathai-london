@@ -1,638 +1,633 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking & Payment - Khrua Thai London</title>
-    <!-- เพิ่ม Font Awesome สำหรับไอคอนโซเชียล -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <style>
-        @font-face {
-            font-family: 'SarunsManorah';
-            src: url('SarunsManorah.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-        }
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Booking & Payment - Khrua Thai London</title>
+ <!--Font Awesome-->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+ <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+ <style>
+ @font-face {
+ font-family: 'SarunsManorah';
+ src: url('SarunsManorah.ttf') format('truetype');
+ font-weight: normal;
+ font-style: normal;
+ }
 
-        :root { --gold: #D4AF37; --dark-green: #1B3022; --cream: #F9F7F2; --text: #333; --line-green: #06C755; --wa-green: #25D366; }
-        body { font-family: 'Prompt', sans-serif; background-color: var(--cream); color: var(--text); margin: 0; padding: 0; }
-        header { background: linear-gradient(180deg, #0d1f14 0%, var(--dark-green) 50%, #0d1f14 100%); color: white; padding: 1.2rem 0 1rem; text-align: center; border-bottom: 4px solid var(--gold); position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
-        .brand-logo { height: 130px; width: auto; display: block; margin: 0 auto; filter: drop-shadow(0 4px 15px rgba(212,175,55,0.5)); transition: transform 0.3s ease; }
-        .brand-logo:hover { transform: scale(1.05); }
-        .lang-toggle { display: flex; justify-content: center; gap: 8px; margin-top: 10px; }
-        .lang-btn { cursor: pointer; padding: 5px 18px; background: transparent; border: 1.5px solid var(--gold); color: var(--gold); border-radius: 20px; font-family: 'Prompt', sans-serif; font-size: 0.85rem; font-weight: 600; transition: all 0.3s ease; letter-spacing: 1px; }
-        .lang-btn:hover, .lang-btn.active { background: var(--gold); color: var(--dark-green); }
-        
-        .container { max-width: 800px; margin: 30px auto; padding: 0 20px; }
-        .card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); margin-bottom: 30px; }
-        .section-title { font-family: 'SarunsManorah'; border-bottom: 2px solid var(--gold); padding-bottom: 8px; margin-bottom: 20px; color: var(--dark-green); font-size: 1.8rem; }
+ :root { --gold: #D4AF37; --dark-green: #1B3022; --cream: #F9F7F2; --text: #333; --line-green: #06C755; --wa-green: #25D366; }
+ body { font-family: 'Prompt', sans-serif; background-color: var(--cream); color: var(--text); margin: 0; padding: 0; }
+ header { background: linear-gradient(180deg, #0d1f14 0%, var(--dark-green) 50%, #0d1f14 100%); color: white; padding: 1.2rem 0 1rem; text-align: center; border-bottom: 4px solid var(--gold); position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+ .brand-logo { height: 130px; width: auto; display: block; margin: 0 auto; filter: drop-shadow(0 4px 15px rgba(212,175,55,0.5)); transition: transform 0.3s ease; }
+ .brand-logo:hover { transform: scale(1.05); }
+ .lang-toggle { display: flex; justify-content: center; gap: 8px; margin-top: 10px; }
+ .lang-btn { cursor: pointer; padding: 5px 18px; background: transparent; border: 1.5px solid var(--gold); color: var(--gold); border-radius: 20px; font-family: 'Prompt', sans-serif; font-size: 0.85rem; font-weight: 600; transition: all 0.3s ease; letter-spacing: 1px; }
+ .lang-btn:hover, .lang-btn.active { background: var(--gold); color: var(--dark-green); }
+ 
+ .container { max-width: 800px; margin: 30px auto; padding: 0 20px; }
+ .card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); margin-bottom: 30px; }
+ .section-title { font-family: 'SarunsManorah'; border-bottom: 2px solid var(--gold); padding-bottom: 8px; margin-bottom: 20px; color: var(--dark-green); font-size: 1.8rem; }
 
-        /* Social Buttons */
-        .social-connect { display: flex; justify-content: center; gap: 15px; margin-bottom: 20px; flex-wrap: wrap; }
-        .social-btn { text-decoration: none; color: white; padding: 10px 20px; border-radius: 30px; font-weight: 600; display: flex; align-items: center; gap: 8px; transition: 0.3s; font-size: 0.9rem; }
-        .fb { background: #1877F2; } .wa { background: var(--wa-green); } .ln { background: var(--line-green); } .ig { background: #E4405F; }
-        .social-btn:hover { transform: translateY(-3px); opacity: 0.9; }
+ * Social Buttons */
+ .social-connect { display: flex; justify-content: center; gap: 15px; margin-bottom: 20px; flex-wrap: wrap; }
+ .social-btn { text-decoration: none; color: white; padding: 10px 20px; border-radius: 30px; font-weight: 600; display: flex; align-items: center; gap: 8px; transition: 0.3s; font-size: 0.9rem; }
+ .fb { background: #1877F2; } .wa { background: var(--wa-green); } .ln { background: var(--line-green); } .ig { background: #E4405F; }
+ .social-btn:hover { transform: translateY(-3px); opacity: 0.9; }
 
-        /* Form & Payment */
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px; }
-        input, textarea, select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; font-family: 'Prompt'; }
-        .full-width { grid-column: span 2; }
-        
-        .payment-methods { display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
-        .pay-option { flex: 1; border: 2px solid #eee; padding: 10px; text-align: center; border-radius: 10px; cursor: pointer; transition: 0.3s; min-width: 100px; }
-        .pay-option.active { border-color: var(--gold); background: #fffcf0; }
-        .set-opt.selected { border-color: var(--gold) !important; background: var(--dark-green) !important; color: var(--gold) !important; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
-        .pay-option i { font-size: 1.5rem; display: block; margin-bottom: 5px; color: var(--dark-green); }
+ * Form & Payment */
+ .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px; }
+ input, textarea, select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; font-family: 'Prompt'; }
+ .full-width { grid-column: span 2; }
+ 
+ .payment-methods { display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
+ .pay-option { flex: 1; border: 2px solid #eee; padding: 10px; text-align: center; border-radius: 10px; cursor: pointer; transition: 0.3s; min-width: 100px; }
+ .pay-option.active { border-color: var(--gold); background: #fffcf0; }
+ .set-opt.selected { border-color: var(--gold) !important; background: var(--dark-green) !important; color: var(--gold) !important; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+ .pay-option i { font-size: 1.5rem; display: block; margin-bottom: 5px; color: var(--dark-green); }
 
-        .deposit-alert { background: #fff4e5; border-left: 5px solid var(--gold); padding: 15px; margin: 20px 0; border-radius: 4px; font-size: 0.95rem; }
-        .btn-submit { width: 100%; background: var(--dark-green); color: var(--gold); border: 2px solid var(--gold); padding: 15px; font-size: 1.2rem; font-weight: bold; cursor: pointer; border-radius: 8px; transition: 0.3s; }
-        .btn-submit:hover { background: var(--gold); color: white; }
+ .deposit-alert { background: #fff4e5; border-left: 5px solid var(--gold); padding: 15px; margin: 20px 0; border-radius: 4px; font-size: 0.95rem; }
+ .btn-submit { width: 100%; background: var(--dark-green); color: var(--gold); border: 2px solid var(--gold); padding: 15px; font-size: 1.2rem; font-weight: bold; cursor: pointer; border-radius: 8px; transition: 0.3s; }
+ .btn-submit:hover { background: var(--gold); color: white; }
 
-        @media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; } .full-width { grid-column: span 1; } .brand-logo { height: 70px; } }
-    </style>
-    <link rel="stylesheet" href="responsive.css">
-    <link rel="stylesheet" href="light-theme.css">
+ @media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; } .full-width { grid-column: span 1; } .brand-logo { height: 70px; } }
+ </style>
+ <link rel="stylesheet" href="responsive.css">
+ <link rel="stylesheet" href="light-theme.css">
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B32XK3RT5X"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+ <!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-B32XK3RT5X"></script>
+ <script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag{dataLayer.push(arguments);}
+ gtag('js', new Date);
 
-      gtag('config', 'G-B32XK3RT5X');
-    </script>
-    
-    <!-- Leaflet Map CSS & JS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-
+ gtag('config', 'G-B32XK3RT5X');
+ </script>
+ 
+ <!-- Leaflet Map CSS & JS -->
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+ <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
 <link rel="stylesheet" href="css/cart.css">
-    <link rel="stylesheet" href="css/megamenu.css">
+ <link rel="stylesheet" href="css/megamenu.css">
 </head>
 <body>
-
 <header class="mega-header">
-    <div class="mega-nav-container">
-        <a href="index.html" class="mega-logo">
-            <img src="logo.png" alt="KHRUA THAI">
-            KHRUA THAI
-        </a>
-        
-        <div class="mega-nav-links">
-            <!-- Main Meals -->
-            <div class="mega-nav-item">
-                <a href="menu.html" class="mega-nav-link">Main Meals</a>
-                <div class="mega-dropdown">
-                    <div class="mega-dropdown-content">
-                        <div class="mega-columns">
-                            <div class="mega-column">
-                                <div class="mega-column-title">Categories</div>
-                                <a href="menu.html?cat=mains">Meat</a>
-                                <a href="menu.html?cat=vegetables">Vegetables</a>
-                                <a href="menu.html?cat=starters">Starters</a>
-                                <a href="menu.html?cat=box_sets">Meal Boxes</a>
-                            </div>
-                        </div>
-                        <div class="mega-featured">
-                            <a href="menu.html" class="mega-feature-card">
-                                <img src="images/green_curry_pork_bowl.jpg" alt="Green Curry">
-                                <span>Authentic Thai Curries</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Entertaining -->
-            <div class="mega-nav-item">
-                <a href="menu.html" class="mega-nav-link">Entertaining</a>
-                <div class="mega-dropdown">
-                    <div class="mega-dropdown-content">
-                        <div class="mega-columns">
-                            <div class="mega-column">
-                                <div class="mega-column-title">Event Types</div>
-                                <a href="menu.html">Canapés</a>
-                                <a href="menu.html">Dinner Party</a>
-                                <a href="menu.html">Afternoon Tea</a>
-                                <a href="menu.html">Buffet</a>
-                                <a href="menu.html">Birthday Party</a>
-                            </div>
-                        <div class="mega-featured">
-                            <a href="menu.html" class="mega-feature-card">
-                                <img src="images/780f7b8bb98d.jpg" alt="Entertaining">
-                                <span>Premium Event Catering</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+ <div class="mega-nav-container">
+ <a href="index.html" class="mega-logo">
+ <img src="logo.png" alt="KHRUA THAI">
+ KHRUA THAI
+ </a>
+ 
+ <div class="mega-nav-links">
+ <!-- Main Meals -->
+ <div class="mega-nav-item">
+ <a href="menu.html" class="mega-nav-link">Main Meals</a>
+ <div class="mega-dropdown">
+ <div class="mega-dropdown-content">
+ <div class="mega-columns">
+ <div class="mega-column">
+ <div class="mega-column-title">Categories</div>
+ <a href="menu.html?cat=mains">Meat</a>
+ <a href="menu.html?cat=vegetables">Vegetables</a>
+ <a href="menu.html?cat=starters">Starters</a>
+ <a href="menu.html?cat=box_sets">Meal Boxes</a>
+ </div>
+ </div>
+ <div class="mega-featured">
+ <a href="menu.html" class="mega-feature-card">
+ <img src="images/green_curry_pork_bowl.jpg" alt="Green Curry">
+ <span>Authentic Thai Curries</span>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
+ 
+ <!-- Entertaining -->
+ <div class="mega-nav-item">
+ <a href="menu.html" class="mega-nav-link">Entertaining</a>
+ <div class="mega-dropdown">
+ <div class="mega-dropdown-content">
+ <div class="mega-columns">
+ <div class="mega-column">
+ <div class="mega-column-title">Event Types</div>
+ <a href="menu.html">Canapés</a>
+ <a href="menu.html">Dinner Party</a>
+ <a href="menu.html">Afternoon Tea</a>
+ <a href="menu.html">Buffet</a>
+ <a href="menu.html">Birthday Party</a>
+ </div>
+ <div class="mega-featured">
+ <a href="menu.html" class="mega-feature-card">
+ <img src="images/780f7b8bb98d.jpg" alt="Entertaining">
+ <span>Premium Event Catering</span>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
 
-            <!-- Puddings -->
-            <div class="mega-nav-item">
-                <a href="desserts.html" class="mega-nav-link">Puddings</a>
-                <div class="mega-dropdown">
-                    <div class="mega-dropdown-content">
-                        <div class="mega-columns">
-                            <div class="mega-column">
-                                <div class="mega-column-title">Thai Desserts</div>
-                                <a href="desserts.html">Coconut Jelly</a>
-                                <a href="desserts.html">Mango Sticky Rice</a>
-                                <a href="desserts.html">Traditional Sweets</a>
-                            </div>
-                        <div class="mega-featured">
-                            <a href="desserts.html" class="mega-feature-card">
-                                <img src="images/Butterfly Pea Coconut Jelly with Young Coconut.jpg" alt="Puddings">
-                                <span>Delightful Thai Puddings</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+ <!-- Puddings -->
+ <div class="mega-nav-item">
+ <a href="desserts.html" class="mega-nav-link">Puddings</a>
+ <div class="mega-dropdown">
+ <div class="mega-dropdown-content">
+ <div class="mega-columns">
+ <div class="mega-column">
+ <div class="mega-column-title">Thai Desserts</div>
+ <a href="desserts.html">Coconut Jelly</a>
+ <a href="desserts.html">Mango Sticky Rice</a>
+ <a href="desserts.html">Traditional Sweets</a>
+ </div>
+ <div class="mega-featured">
+ <a href="desserts.html" class="mega-feature-card">
+ <img src="images/Butterfly Pea Coconut Jelly with Young Coconut.jpg" alt="Puddings">
+ <span>Delightful Thai Puddings</span>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
 
-            <!-- Meal Boxes -->
-            <div class="mega-nav-item">
-                <a href="delivery.html" class="mega-nav-link">Meal Boxes</a>
-            </div>
+ <!-- Meal Boxes -->
+ <div class="mega-nav-item">
+ <a href="delivery.html" class="mega-nav-link">Meal Boxes</a>
+ </div>
 
-            <!-- Summer Meals -->
-            <div class="mega-nav-item">
-                <a href="menu.html" class="mega-nav-link">Summer Meals</a>
-            </div>
-        </div>
+ <!-- Summer Meals -->
+ <div class="mega-nav-item">
+ <a href="menu.html" class="mega-nav-link">Summer Meals</a>
+ </div>
+ </div>
 
-        <div class="mega-search">
-            <input type="text" placeholder="Search for Meals...">
-            <i class="fas fa-search"></i>
-        </div>
+ <div class="mega-search">
+ <input type="text" placeholder="Search for Meals...">
+ <i class="fas fa-search"></i>
+ </div>
 
-        <div class="mega-icons">
-            <a href="booking.html" class="mega-icon-btn">
-                <i class="fas fa-shopping-cart"></i>
-                <span id="nav-cart-badge-inner" class="mega-cart-badge" style="display:none;">0</span>
-            </a>
-        </div>
-    </div>
+ <div class="mega-icons">
+ <a href="booking.html" class="mega-icon-btn">
+ <i class="fas fa-shopping-cart"></i>
+ <span id="nav-cart-badge-inner" class="mega-cart-badge" style="display:none;">0</span>
+ </a>
+ </div>
+ </div>
 </header>
-
 <div class="container">
-    <!-- Connect Section -->
-    <div class="card">
-        <h2 id="t-connect" class="section-title">ติดต่อเรา / Connect With Us</h2>
-        <div class="social-connect">
-            <a href="https://www.facebook.com/profile.php?id=61589177574118" target="_blank" class="social-btn fb"><i class="fab fa-facebook-f"></i> Facebook</a>
-            <a href="https://line.me/ti/p/y_Whr-5wc3" target="_blank" class="social-btn ln"><i class="fab fa-line"></i> Line</a>
-            <a href="https://www.instagram.com/khruathailondon/" target="_blank" class="social-btn ig"><i class="fab fa-instagram"></i> Instagram</a>
-        </div>
-    </div>
+ <!-- Connect Section -->
+ <div class="card">
+ <h2 id="t-connect" class="section-title"> / Connect With Us</h2>
+ <div class="social-connect">
+ <a href="https://www.facebook.com/profile.php?id=61589177574118" target="_blank" class="social-btn fb"><i class="fab fa-facebook-f"></i> Facebook</a>
+ <a href="https://line.me/ti/p/y_Whr-5wc3" target="_blank" class="social-btn ln"><i class="fab fa-line"></i> Line</a>
+ <a href="https://www.instagram.com/khruathailondon/" target="_blank" class="social-btn ig"><i class="fab fa-instagram"></i> Instagram</a>
+ </div>
+ </div>
 
-    <!-- Booking Form -->
-    <div class="card">
-        <h2 id="t-booking" class="section-title">ข้อมูลการสั่งจอง / Booking Details</h2>
-        <form id="orderForm">
-            <div class="form-grid">
-                <div class="full-width">
-                    <label id="l-name">ชื่อผู้ติดต่อ / Contact Name</label>
-                    <input type="text" id="custName" required placeholder="John Doe">
-                </div>
-                <div>
-                    <label id="l-phone">เบอร์โทรศัพท์ / Phone</label>
-                    <input type="tel" id="custPhone" required placeholder="+44 xxx xxxx">
-                </div>
-                <div class="full-width">
-                    <label id="l-email">อีเมล / Email Address</label>
-                    <input type="email" id="custEmail" required placeholder="example@email.com">
-                </div>
-                <div style="display: flex; gap: 10px; align-items: flex-end;">
-                    <div style="flex: 1; display: flex; flex-direction: column; gap: 5px;">
-                        <label id="l-date" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 0.85rem;">วันที่จัดส่ง / Delivery Date</label>
-                        <input type="date" id="eventDate" required style="width:100%;">
-                    </div>
-                    <div style="flex: 1; display: flex; flex-direction: column; gap: 5px;">
-                        <label id="l-time" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 0.85rem;">เวลาจัดส่ง / Delivery Time</label>
-                        <input type="time" id="eventTime" required style="width:100%;">
-                    </div>
-                </div>
-                <div class="full-width">
-                    <label id="l-venue">สถานที่จัดงาน / Venue Name</label>
-                    <input type="text" id="eventPlace" required placeholder="Hotel or House Name">
-                </div>
-                <div class="full-width">
-                    <label id="l-address">ที่อยู่จัดส่ง / Full Address (ระบุรหัสไปรษณีย์ UK Postcode ด้วยครับ)</label>
-                    <div style="display:flex; gap:10px; margin-bottom:10px;">
-                        <textarea id="custAddress" rows="2" required placeholder="เช่น SW8 2LZ, London" style="flex:1;"></textarea>
-                        <button type="button" class="btn" onclick="verifyAddress()" style="width:auto; height:fit-content; padding:15px; background:var(--gold); color:var(--dark-green); font-size:0.9rem; margin:0;"><i class="fas fa-search-location"></i> เช็คโซนจัดส่ง</button>
-                    </div>
-                    
-                    <div id="map-container" style="display:none; margin-top:10px;">
-                        <div id="delivery-status" style="padding:10px; border-radius:8px; margin-bottom:10px; font-weight:600; text-align:center;"></div>
-                        <div id="map" style="height: 250px; width: 100%; border-radius:12px; border:2px solid #ddd; z-index:1;"></div>
-                    </div>
-                </div>
-            </div>
+ <!-- Booking Form -->
+ <div class="card">
+ <h2 id="t-booking" class="section-title"> / Booking Details</h2>
+ <form id="orderForm">
+ <div class="form-grid">
+ <div class="full-width">
+ <label id="l-name"> / Contact Name</label>
+ <input type="text" id="custName" required placeholder="John Doe">
+ </div>
+ <div>
+ <label id="l-phone"> / Phone</label>
+ <input type="tel" id="custPhone" required placeholder="+44 xxx xxxx">
+ </div>
+ <div class="full-width">
+ <label id="l-email"> / Email Address</label>
+ <input type="email" id="custEmail" required placeholder="example@email.com">
+ </div>
+ <div style="display: flex; gap: 10px; align-items: flex-end;">
+ <div style="flex: 1; display: flex; flex-direction: column; gap: 5px;">
+ <label id="l-date" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 0.85rem;"> / Delivery Date</label>
+ <input type="date" id="eventDate" required style="width:100%;">
+ </div>
+ <div style="flex: 1; display: flex; flex-direction: column; gap: 5px;">
+ <label id="l-time" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 0.85rem;"> / Delivery Time</label>
+ <input type="time" id="eventTime" required style="width:100%;">
+ </div>
+ </div>
+ <div class="full-width">
+ <label id="l-venue"> / Venue Name</label>
+ <input type="text" id="eventPlace" required placeholder="Hotel or House Name">
+ </div>
+ <div class="full-width">
+ <label id="l-address"> / Full Address ( UK Postcode)</label>
+ <div style="display:flex; gap:10px; margin-bottom:10px;">
+ <textarea id="custAddress" rows="2" required placeholder=" SW8 2LZ, London" style="flex:1;"></textarea>
+ <button type="button" class="btn" onclick="verifyAddress" style="width:auto; height:fit-content; padding:15px; background:var(--gold); color:var(--dark-green); font-size:0.9rem; margin:0;"><i class="fas fa-search-location"></i> </button>
+ </div>
+ 
+ <div id="map-container" style="display:none; margin-top:10px;">
+ <div id="delivery-status" style="padding:10px; border-radius:8px; margin-bottom:10px; font-weight:600; text-align:center;"></div>
+ <div id="map" style="height: 250px; width: 100%; border-radius:12px; border:2px solid #ddd; z-index:1;"></div>
+ </div>
+ </div>
+ </div>
 
-            <!-- Menu Selection Section (Cart) -->
-            <div id="cart-summary-container" style="background:#fff; border:1.5px solid var(--gold); border-radius:12px; padding:20px; margin-bottom:20px; margin-top:20px;">
-                <h3 style="color:var(--dark-green); font-weight:bold; font-size:1.2rem; margin-bottom:15px; border-bottom:1px solid #eee; padding-bottom:10px;">
-                    <i class="fas fa-shopping-cart" style="color:var(--gold); margin-right:8px;"></i> 
-                    <span id="lbl-cart-title">ตะกร้าสินค้า / Your Cart</span>
-                </h3>
-                <div id="cart-items-list">
-                    <!-- Cart items will be rendered here -->
-                </div>
-                
-                <div style="margin-top:20px; padding-top:15px; border-top:2px dashed var(--gold);">
-                    <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
-                        <span id="lbl-total-classic" style="color:#666;">ยอดเต็มจำนวน (กล่อง/ของหวาน):</span>
-                        <span style="font-weight:bold;">£<span id="cart-classic-price">0.00</span></span>
-                    </div>
-                    <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
-                        <span id="lbl-total-catering-full" style="color:#666;">ยอดเต็ม 100% (จัดเลี้ยง):</span>
-                        <span style="font-weight:bold;">£<span id="cart-catering-full">0.00</span></span>
-                    </div>
-                    <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
-                        <span id="lbl-total-catering" style="color:#666;">ยอดมัดจำ 50% (จัดเลี้ยง):</span>
-                        <span style="font-weight:bold; color:var(--dark-green);">£<span id="cart-catering-deposit">0.00</span></span>
-                    </div>
-                    <div style="display:flex; justify-content:space-between; margin-top:10px; padding-top:10px; border-top:1px solid #eee;">
-                        <span id="lbl-amount-to-pay" style="color:var(--dark-green); font-weight:bold; font-size:1.1rem;">ยอดชำระเบื้องต้น / Amount to Pay Now:</span>
-                        <span style="color:red; font-weight:bold; font-size:1.3rem;">£<span id="cart-total-to-pay">0.00</span></span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Allergy Section -->
-            <div style="margin-top:20px; background:rgba(212,175,55,0.05); padding:20px; border-radius:15px; border:1px dashed var(--gold);">
-                <label id="l-allergy" style="color:var(--dark-green); font-weight:600; display:block; margin-bottom:10px;">ข้อมูลการแพ้อาหาร / Food Allergy & Dietary Requirements</label>
-                <table style="width:100%; border-collapse:collapse; margin-bottom:10px;">
-                    <tr>
-                        <td style="width:20px; padding:0 0 15px 0; vertical-align:top;">
-                            <input type="checkbox" id="a-peanuts" name="allergy" value="Peanuts" style="width:18px; height:18px; margin:2px 0 0 0;">
-                        </td>
-                        <td style="width:calc(50% - 20px); padding:0 5px 15px 5px; vertical-align:top; text-align:left;">
-                            <label for="a-peanuts" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;">ถั่ว (Peanuts)</label>
-                        </td>
-                        <td style="width:20px; padding:0 0 15px 5px; vertical-align:top;">
-                            <input type="checkbox" id="a-milk" name="allergy" value="Milk" style="width:18px; height:18px; margin:2px 0 0 0;">
-                        </td>
-                        <td style="width:calc(50% - 25px); padding:0 0 15px 5px; vertical-align:top; text-align:left;">
-                            <label for="a-milk" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;">นม (Milk/Dairy)</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="width:20px; padding:0 0 15px 0; vertical-align:top;">
-                            <input type="checkbox" id="a-seafood" name="allergy" value="Seafood" style="width:18px; height:18px; margin:2px 0 0 0;">
-                        </td>
-                        <td style="width:calc(50% - 20px); padding:0 5px 15px 5px; vertical-align:top; text-align:left;">
-                            <label for="a-seafood" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;">อาหารทะเล (Seafood)</label>
-                        </td>
-                        <td style="width:20px; padding:0 0 15px 5px; vertical-align:top;">
-                            <input type="checkbox" id="a-eggs" name="allergy" value="Eggs" style="width:18px; height:18px; margin:2px 0 0 0;">
-                        </td>
-                        <td style="width:calc(50% - 25px); padding:0 0 15px 5px; vertical-align:top; text-align:left;">
-                            <label for="a-eggs" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;">ไข่ (Eggs)</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="width:20px; padding:0 0 15px 0; vertical-align:top;">
-                            <input type="checkbox" id="a-gluten" name="allergy" value="Gluten" style="width:18px; height:18px; margin:2px 0 0 0;">
-                        </td>
-                        <td style="width:calc(50% - 20px); padding:0 5px 15px 5px; vertical-align:top; text-align:left;">
-                            <label for="a-gluten" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;">กลูเตน (Gluten)</label>
-                        </td>
-                        <td style="width:20px; padding:0 0 15px 5px; vertical-align:top;">
-                            <input type="checkbox" id="a-soy" name="allergy" value="Soy" style="width:18px; height:18px; margin:2px 0 0 0;">
-                        </td>
-                        <td style="width:calc(50% - 25px); padding:0 0 15px 5px; vertical-align:top; text-align:left;">
-                            <label for="a-soy" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;">ถั่วเหลือง (Soy)</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="width:20px; padding:0 0 15px 0; vertical-align:top;">
-                            <input type="checkbox" id="a-msg" name="allergy" value="MSG" style="width:18px; height:18px; margin:2px 0 0 0;">
-                        </td>
-                        <td style="width:calc(50% - 20px); padding:0 5px 15px 5px; vertical-align:top; text-align:left;">
-                            <label for="a-msg" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;">ผงชูรส (MSG)</label>
-                        </td>
-                        <td style="width:20px; padding:0 0 15px 5px; vertical-align:top;">
-                            <input type="checkbox" id="a-fishsauce" name="allergy" value="Fish Sauce" style="width:18px; height:18px; margin:2px 0 0 0;">
-                        </td>
-                        <td style="width:calc(50% - 25px); padding:0 0 15px 5px; vertical-align:top; text-align:left;">
-                            <label for="a-fishsauce" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;">น้ำปลา (Fish Sauce)</label>
-                        </td>
-                    </tr>
-                </table>
-                <textarea id="allergy-detail" rows="1" placeholder="อื่นๆ ระบุ (ถ้ามี) / Others (if any)" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px; font-family:'Prompt'; font-size:0.9rem;"></textarea>
-            </div>
+ <!-- Menu Selection Section (Cart) -->
+ <div id="cart-summary-container" style="background:#fff; border:1.5px solid var(--gold); border-radius:12px; padding:20px; margin-bottom:20px; margin-top:20px;">
+ <h3 style="color:var(--dark-green); font-weight:bold; font-size:1.2rem; margin-bottom:15px; border-bottom:1px solid #eee; padding-bottom:10px;">
+ <i class="fas fa-shopping-cart" style="color:var(--gold); margin-right:8px;"></i> 
+ <span id="lbl-cart-title"> / Your Cart</span>
+ </h3>
+ <div id="cart-items-list">
+ <!-- Cart items will be rendered here -->
+ </div>
+ 
+ <div style="margin-top:20px; padding-top:15px; border-top:2px dashed var(--gold);">
+ <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+ <span id="lbl-total-classic" style="color:#666;"> ( /):</span>
+ <span style="font-weight:bold;">£<span id="cart-classic-price">0.00</span></span>
+ </div>
+ <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+ <span id="lbl-total-catering-full" style="color:#666;"> 100% :</span>
+ <span style="font-weight:bold;">£<span id="cart-catering-full">0.00</span></span>
+ </div>
+ <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+ <span id="lbl-total-catering" style="color:#666;"> 50% :</span>
+ <span style="font-weight:bold; color:var(--dark-green);">£<span id="cart-catering-deposit">0.00</span></span>
+ </div>
+ <div style="display:flex; justify-content:space-between; margin-top:10px; padding-top:10px; border-top:1px solid #eee;">
+ <span id="lbl-amount-to-pay" style="color:var(--dark-green); font-weight:bold; font-size:1.1rem;"> / Amount to Pay Now:</span>
+ <span style="color:red; font-weight:bold; font-size:1.3rem;">£<span id="cart-total-to-pay">0.00</span></span>
+ </div>
+ </div>
+ </div>
+ 
+ <!-- Allergy Section -->
+ <div style="margin-top:20px; background:rgba(212,175,55,0.05); padding:20px; border-radius:15px; border:1px dashed var(--gold);">
+ <label id="l-allergy" style="color:var(--dark-green); font-weight:600; display:block; margin-bottom:10px;"> / Food Allergy & Dietary Requirements</label>
+ <table style="width:100%; border-collapse:collapse; margin-bottom:10px;">
+ <tr>
+ <td style="width:20px; padding:0 0 15px 0; vertical-align:top;">
+ <input type="checkbox" id="a-peanuts" name="allergy" value="Peanuts" style="width:18px; height:18px; margin:2px 0 0 0;">
+ </td>
+ <td style="width:calc(50% - 20px); padding:0 5px 15px 5px; vertical-align:top; text-align:left;">
+ <label for="a-peanuts" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;"> (Peanuts)</label>
+ </td>
+ <td style="width:20px; padding:0 0 15px 5px; vertical-align:top;">
+ <input type="checkbox" id="a-milk" name="allergy" value="Milk" style="width:18px; height:18px; margin:2px 0 0 0;">
+ </td>
+ <td style="width:calc(50% - 25px); padding:0 0 15px 5px; vertical-align:top; text-align:left;">
+ <label for="a-milk" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;"> (Milk/Dairy)</label>
+ </td>
+ </tr>
+ <tr>
+ <td style="width:20px; padding:0 0 15px 0; vertical-align:top;">
+ <input type="checkbox" id="a-seafood" name="allergy" value="Seafood" style="width:18px; height:18px; margin:2px 0 0 0;">
+ </td>
+ <td style="width:calc(50% - 20px); padding:0 5px 15px 5px; vertical-align:top; text-align:left;">
+ <label for="a-seafood" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;"> (Seafood)</label>
+ </td>
+ <td style="width:20px; padding:0 0 15px 5px; vertical-align:top;">
+ <input type="checkbox" id="a-eggs" name="allergy" value="Eggs" style="width:18px; height:18px; margin:2px 0 0 0;">
+ </td>
+ <td style="width:calc(50% - 25px); padding:0 0 15px 5px; vertical-align:top; text-align:left;">
+ <label for="a-eggs" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;"> (Eggs)</label>
+ </td>
+ </tr>
+ <tr>
+ <td style="width:20px; padding:0 0 15px 0; vertical-align:top;">
+ <input type="checkbox" id="a-gluten" name="allergy" value="Gluten" style="width:18px; height:18px; margin:2px 0 0 0;">
+ </td>
+ <td style="width:calc(50% - 20px); padding:0 5px 15px 5px; vertical-align:top; text-align:left;">
+ <label for="a-gluten" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;"> (Gluten)</label>
+ </td>
+ <td style="width:20px; padding:0 0 15px 5px; vertical-align:top;">
+ <input type="checkbox" id="a-soy" name="allergy" value="Soy" style="width:18px; height:18px; margin:2px 0 0 0;">
+ </td>
+ <td style="width:calc(50% - 25px); padding:0 0 15px 5px; vertical-align:top; text-align:left;">
+ <label for="a-soy" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;"> (Soy)</label>
+ </td>
+ </tr>
+ <tr>
+ <td style="width:20px; padding:0 0 15px 0; vertical-align:top;">
+ <input type="checkbox" id="a-msg" name="allergy" value="MSG" style="width:18px; height:18px; margin:2px 0 0 0;">
+ </td>
+ <td style="width:calc(50% - 20px); padding:0 5px 15px 5px; vertical-align:top; text-align:left;">
+ <label for="a-msg" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;"> (MSG)</label>
+ </td>
+ <td style="width:20px; padding:0 0 15px 5px; vertical-align:top;">
+ <input type="checkbox" id="a-fishsauce" name="allergy" value="Fish Sauce" style="width:18px; height:18px; margin:2px 0 0 0;">
+ </td>
+ <td style="width:calc(50% - 25px); padding:0 0 15px 5px; vertical-align:top; text-align:left;">
+ <label for="a-fishsauce" style="font-size:0.9rem; line-height:1.2; cursor:pointer; margin:0; display:inline-block; word-break:break-word;"> (Fish Sauce)</label>
+ </td>
+ </tr>
+ </table>
+ <textarea id="allergy-detail" rows="1" placeholder=" / Others (if any)" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px; font-family:'Prompt'; font-size:0.9rem;"></textarea>
+ </div>
 
-            <!-- Payment Section -->
-            <h3 id="t-payment" style="color:var(--dark-green); margin-top:20px;">วิธีชำระเงินมัดจำ / Payment Method</h3>
-            <div class="payment-methods">
-                <div class="pay-option active" style="cursor: default; width: 100%;">
-                    <i class="far fa-credit-card"></i>
-                    <span id="p-card">บัตรเครดิต<br>Credit Card</span>
-                </div>
-            </div>
+ <!-- Payment Section -->
+ <h3 id="t-payment" style="color:var(--dark-green); margin-top:20px;"> / Payment Method</h3>
+ <div class="payment-methods">
+ <div class="pay-option active" style="cursor: default; width: 100%;">
+ <i class="far fa-credit-card"></i>
+ <span id="p-card"> <br>Credit Card</span>
+ </div>
+ </div>
 
-            <div id="catering-payment-options" style="display:none; margin-top:20px; padding:15px; border:1px solid #d4af37; border-radius:8px; background-color:#fffdf5;">
-                <h4 style="color:var(--dark-green); margin-top:0; margin-bottom:10px; font-size:1rem;" id="t-catering-pay">เลือกรูปแบบการชำระเงิน (จัดเลี้ยง) / Catering Payment Option</h4>
-                
-                <label style="display:flex; align-items:center; cursor:pointer; margin-bottom:10px;">
-                    <input type="radio" name="cateringPayType" value="deposit" checked onchange="toggleCateringPayment(false)" style="margin-right:10px; width:18px; height:18px; accent-color:var(--gold);">
-                    <span id="opt-deposit-text" style="font-size:0.95rem;">ชำระมัดจำ 50% / Pay 50% Deposit</span>
-                </label>
-                
-                <label style="display:flex; align-items:center; cursor:pointer;">
-                    <input type="radio" name="cateringPayType" value="full" onchange="toggleCateringPayment(true)" style="margin-right:10px; width:18px; height:18px; accent-color:var(--gold);">
-                    <span id="opt-full-text" style="font-size:0.95rem;">ชำระเต็มจำนวน 100% / Pay 100% Full Amount</span>
-                </label>
-            </div>
+ <div id="catering-payment-options" style="display:none; margin-top:20px; padding:15px; border:1px solid #d4af37; border-radius:8px; background-color:#fffdf5;">
+ <h4 style="color:var(--dark-green); margin-top:0; margin-bottom:10px; font-size:1rem;" id="t-catering-pay"> / Catering Payment Option</h4>
+ 
+ <label style="display:flex; align-items:center; cursor:pointer; margin-bottom:10px;">
+ <input type="radio" name="cateringPayType" value="deposit" checked onchange="toggleCateringPayment(false)" style="margin-right:10px; width:18px; height:18px; accent-color:var(--gold);">
+ <span id="opt-deposit-text" style="font-size:0.95rem;"> 50% / Pay 50% Deposit</span>
+ </label>
+ 
+ <label style="display:flex; align-items:center; cursor:pointer;">
+ <input type="radio" name="cateringPayType" value="full" onchange="toggleCateringPayment(true)" style="margin-right:10px; width:18px; height:18px; accent-color:var(--gold);">
+ <span id="opt-full-text" style="font-size:0.95rem;"> 100% / Pay 100% Full Amount</span>
+ </label>
+ </div>
 
-            <div class="deposit-alert">
-                <strong id="d-title">เงื่อนไขการชำระเงิน (Payment Terms):</strong>
-                <p id="d-desc">ชำระมัดจำ 50% สำหรับงานจัดเลี้ยง หรือ ชำระเต็มจำนวนสำหรับเซตดิลิเวอรีบ็อกซ์</p>
-            </div>
+ <div class="deposit-alert">
+ <strong id="d-title"> (Payment Terms):</strong>
+ <p id="d-desc"> 50% </p>
+ </div>
 
-            <button type="button" class="btn-submit" onclick="submitBooking()" id="btn-submit">ยืนยันการจอง / Confirm Booking</button>
-        </form>
-    </div>
+ <button type="button" class="btn-submit" onclick="submitBooking" id="btn-submit"> / Confirm Booking</button>
+ </form>
+ </div>
 </div>
-
 <script>
-    let currentLang = "en";
-    let selectedPaymentMethod = 'Card';
-    let finalAmountToPay = 0;
-    let totalItemsCount = 0;
-    let isFullPayment = false;
-    
-    function renderCartSummary() {
-        const cart = getCart();
-        const container = document.getElementById('cart-items-list');
-        
-        if (cart.length === 0) {
-            container.innerHTML = `<div style="text-align:center; padding:30px; color:#999;">
-                <i class="fas fa-box-open" style="font-size:3rem; margin-bottom:15px; color:var(--gold);"></i><br>
-                ${currentLang === 'th' ? 'ไม่มีสินค้าในตะกร้า' : 'Your cart is empty'}
-            </div>`;
-            document.getElementById('cart-classic-price').innerText = "0.00";
-            document.getElementById('cart-catering-deposit').innerText = "0.00";
-            document.getElementById('cart-total-to-pay').innerText = "0.00";
-            document.getElementById('btn-submit').disabled = true;
-            return;
-        }
-        
-        document.getElementById('btn-submit').disabled = false;
-        
-        let html = '';
-        let classicTotal = 0;
-        let cateringTotal = 0;
-        totalItemsCount = 0;
-        
-        cart.forEach((item, index) => {
-            const isCatering = item.category === 'Authentic';
-            const itemTotal = item.price * item.qty;
-            
-            if (isCatering) {
-                cateringTotal += itemTotal;
-            } else {
-                classicTotal += itemTotal;
-            }
-            
-            totalItemsCount += item.qty;
-            
-            let optionsHtml = '';
-            if (item.options && item.options.length > 0) {
-                optionsHtml = `<div style="font-size:0.85rem; color:#666; margin-top:4px;">
-                    <i class="fas fa-utensils" style="color:var(--gold); font-size:0.75rem;"></i> ${item.options.join(', ')}
-                </div>`;
-            }
-            
-            html += `
-                <div style="display:flex; justify-content:space-between; align-items:flex-start; padding:12px 0; border-bottom:1px solid #f0f0f0;">
-                    <div style="flex:1; padding-right:10px;">
-                        <div style="font-weight:bold; color:var(--dark-green); font-size:1.05rem;">
-                            ${currentLang === 'th' ? item.name_th : item.name_en}
-                        </div>
-                        <div style="font-size:0.85rem; color:#888;">
-                            £${item.price.toFixed(2)} / ${currentLang === 'th' ? item.unit_th : item.unit_en}
-                            <span style="display:inline-block; margin-left:8px; padding:2px 6px; background:${(isCatering && !isFullPayment) ? 'rgba(212,175,55,0.2)' : '#e8f5e9'}; color:${(isCatering && !isFullPayment) ? '#b08d00' : '#2e7d32'}; border-radius:10px; font-size:0.75rem; font-weight:bold;">
-                                ${isCatering ? (isFullPayment ? (currentLang === 'th' ? 'ชำระเต็มจำนวน' : 'Full Payment') : (currentLang === 'th' ? 'มัดจำ 50%' : '50% Deposit')) : (currentLang === 'th' ? 'ชำระเต็มจำนวน' : 'Full Payment')}
-                            </span>
-                        </div>
-                        ${optionsHtml}
-                        
-                        <div style="display:flex; align-items:center; margin-top:8px; border:1.5px solid #eee; border-radius:8px; width:fit-content; background:#fafafa;">
-                            <button type="button" onclick="changeQty(${index}, -1)" style="border:none; background:transparent; width:30px; height:30px; font-weight:bold; color:var(--dark-green); cursor:pointer;">-</button>
-                            <span style="font-weight:bold; width:30px; text-align:center; font-size:0.95rem;">${item.qty}</span>
-                            <button type="button" onclick="changeQty(${index}, 1)" style="border:none; background:transparent; width:30px; height:30px; font-weight:bold; color:var(--dark-green); cursor:pointer;">+</button>
-                        </div>
-                    </div>
-                    
-                    <div style="text-align:right; display:flex; flex-direction:column; justify-content:space-between; height:100%;">
-                        <div style="font-weight:bold; color:var(--dark-green); font-size:1.1rem; margin-bottom:15px;">
-                            £${itemTotal.toFixed(2)}
-                        </div>
-                        <button type="button" onclick="removeItem(${index})" style="border:none; background:transparent; color:#ff3b30; cursor:pointer; font-size:0.85rem; text-decoration:underline; text-align:right;">
-                            ${currentLang === 'th' ? 'ลบรายการ' : 'Remove'}
-                        </button>
-                    </div>
-                </div>
-            `;
-        });
-        
-        container.innerHTML = html;
-        
-        if (document.getElementById('catering-payment-options')) {
-            document.getElementById('catering-payment-options').style.display = cateringTotal > 0 ? 'block' : 'none';
-        }
-        
-        const cateringDeposit = isFullPayment ? cateringTotal : (cateringTotal / 2);
-        finalAmountToPay = classicTotal + cateringDeposit;
-        
-        document.getElementById('lbl-total-catering').innerText = isFullPayment 
-            ? (currentLang === 'th' ? "ยอดจัดเลี้ยง (ชำระเต็ม):" : "Catering (Full):")
-            : (currentLang === 'th' ? "ยอดมัดจำ 50% (จัดเลี้ยง):" : "50% Deposit (Catering):");
-        
-        document.getElementById('lbl-total-catering-full').innerText = currentLang === 'th' ? "ยอดเต็ม 100% (จัดเลี้ยง):" : "100% Full Amount (Catering):";
-            
-        document.getElementById('cart-classic-price').innerText = classicTotal.toFixed(2);
-        document.getElementById('cart-catering-full').innerText = cateringTotal.toFixed(2);
-        document.getElementById('cart-catering-deposit').innerText = cateringDeposit.toFixed(2);
-        document.getElementById('cart-total-to-pay').innerText = finalAmountToPay.toFixed(2);
-    }
-    window.toggleCateringPayment = function(isFull) {
-        isFullPayment = isFull;
-        renderCartSummary();
-    };
-    
-    window.changeQty = function(index, delta) {
-        let cart = getCart();
-        if (cart[index]) {
-            let newQty = cart[index].qty + delta;
-            if (newQty < 1) newQty = 1;
-            updateCartQty(index, newQty);
-            renderCartSummary();
-        }
-    };
-    
-    window.removeItem = function(index) {
-        removeFromCart(index);
-        renderCartSummary();
-    };
+ let currentLang = "en";
+ let selectedPaymentMethod = 'Card';
+ let finalAmountToPay = 0;
+ let totalItemsCount = 0;
+ let isFullPayment = false;
+ 
+ function renderCartSummary {
+ const cart = getCart;
+ const container = document.getElementById('cart-items-list');
+ 
+ if (cart.length === 0) {
+ container.innerHTML = `<div style="text-align:center; padding:30px; color:#999;">
+ <i class="fas fa-box-open" style="font-size:3rem; margin-bottom:15px; color:var(--gold);"></i><br>
+ ${currentLang === 'th' ? ' ' : 'Your cart is empty'}
+ </div>`;
+ document.getElementById('cart-classic-price').innerText = "0.00";
+ document.getElementById('cart-catering-deposit').innerText = "0.00";
+ document.getElementById('cart-total-to-pay').innerText = "0.00";
+ document.getElementById('btn-submit').disabled = true;
+ return;
+ }
+ 
+ document.getElementById('btn-submit').disabled = false;
+ 
+ let html = '';
+ let classicTotal = 0;
+ let cateringTotal = 0;
+ totalItemsCount = 0;
+ 
+ cart.forEach((item, index) => {
+ const isCatering = item.category === 'Authentic';
+ const itemTotal = item.price * item.qty;
+ 
+ if (isCatering) {
+ cateringTotal += itemTotal;
+ } else {
+ classicTotal += itemTotal;
+ }
+ 
+ totalItemsCount += item.qty;
+ 
+ let optionsHtml = '';
+ if (item.options && item.options.length > 0) {
+ optionsHtml = `<div style="font-size:0.85rem; color:#666; margin-top:4px;">
+ <i class="fas fa-utensils" style="color:var(--gold); font-size:0.75rem;"></i> ${item.options.join(', ')}
+ </div>`;
+ }
+ 
+ html += `
+ <div style="display:flex; justify-content:space-between; align-items:flex-start; padding:12px 0; border-bottom:1px solid #f0f0f0;">
+ <div style="flex:1; padding-right:10px;">
+ <div style="font-weight:bold; color:var(--dark-green); font-size:1.05rem;">
+ ${currentLang === 'th' ? item.name_th : item.name_en}
+ </div>
+ <div style="font-size:0.85rem; color:#888;">
+ £${item.price.toFixed(2)} / ${currentLang === 'th' ? item.unit_th : item.unit_en}
+ <span style="display:inline-block; margin-left:8px; padding:2px 6px; background:${(isCatering && !isFullPayment) ? 'rgba(212,175,55,0.2)' : '#e8f5e9'}; color:${(isCatering && !isFullPayment) ? '#b08d00' : '#2e7d32'}; border-radius:10px; font-size:0.75rem; font-weight:bold;">
+ ${isCatering ? (isFullPayment ? (currentLang === 'th' ? ' ' : 'Full Payment') : (currentLang === 'th' ? ' 50%' : '50% Deposit')) : (currentLang === 'th' ? ' ' : 'Full Payment')}
+ </span>
+ </div>
+ ${optionsHtml}
+ 
+ <div style="display:flex; align-items:center; margin-top:8px; border:1.5px solid #eee; border-radius:8px; width:fit-content; background:#fafafa;">
+ <button type="button" onclick="changeQty(${index}, -1)" style="border:none; background:transparent; width:30px; height:30px; font-weight:bold; color:var(--dark-green); cursor:pointer;">-</button>
+ <span style="font-weight:bold; width:30px; text-align:center; font-size:0.95rem;">${item.qty}</span>
+ <button type="button" onclick="changeQty(${index}, 1)" style="border:none; background:transparent; width:30px; height:30px; font-weight:bold; color:var(--dark-green); cursor:pointer;">+</button>
+ </div>
+ </div>
+ 
+ <div style="text-align:right; display:flex; flex-direction:column; justify-content:space-between; height:100%;">
+ <div style="font-weight:bold; color:var(--dark-green); font-size:1.1rem; margin-bottom:15px;">
+ £${itemTotal.toFixed(2)}
+ </div>
+ <button type="button" onclick="removeItem(${index})" style="border:none; background:transparent; color:#ff3b30; cursor:pointer; font-size:0.85rem; text-decoration:underline; text-align:right;">
+ ${currentLang === 'th' ? ' ' : 'Remove'}
+ </button>
+ </div>
+ </div>
+ `;
+ });
+ 
+ container.innerHTML = html;
+ 
+ if (document.getElementById('catering-payment-options')) {
+ document.getElementById('catering-payment-options').style.display = cateringTotal > 0 ? 'block' : 'none';
+ }
+ 
+ const cateringDeposit = isFullPayment ? cateringTotal : (cateringTotal2);
+ finalAmountToPay = classicTotal + cateringDeposit;
+ 
+ document.getElementById('lbl-total-catering').innerText = isFullPayment 
+ ? (currentLang === 'th' ? " :" : "Catering (Full):")
+ : (currentLang === 'th' ? " 50% :" : "50% Deposit (Catering):");
+ 
+ document.getElementById('lbl-total-catering-full').innerText = currentLang === 'th' ? " 100% :" : "100% Full Amount (Catering):";
+ 
+ document.getElementById('cart-classic-price').innerText = classicTotal.toFixed(2);
+ document.getElementById('cart-catering-full').innerText = cateringTotal.toFixed(2);
+ document.getElementById('cart-catering-deposit').innerText = cateringDeposit.toFixed(2);
+ document.getElementById('cart-total-to-pay').innerText = finalAmountToPay.toFixed(2);
+ }
+ window.toggleCateringPayment = function(isFull) {
+ isFullPayment = isFull;
+ renderCartSummary;
+ };
+ 
+ window.changeQty = function(index, delta) {
+ let cart = getCart;
+ if (cart[index]) {
+ let newQty = cart[index].qty + delta;
+ if (newQty < 1) newQty = 1;
+ updateCartQty(index, newQty);
+ renderCartSummary;
+ }
+ };
+ 
+ window.removeItem = function(index) {
+ removeFromCart(index);
+ renderCartSummary;
+ };
 
-    function selectPay(el, method) {
-        document.querySelectorAll('.pay-option').forEach(opt => opt.classList.remove('active'));
-        el.classList.add('active');
-        selectedPaymentMethod = method;
-    }
+ function selectPay(el, method) {
+ document.querySelectorAll('.pay-option').forEach(opt => opt.classList.remove('active'));
+ el.classList.add('active');
+ selectedPaymentMethod = method;
+ }
 
-    async function submitBooking() {
-        const cart = getCart();
-        if (cart.length === 0) return;
-        
-        const custName = document.getElementById('custName').value;
-        const custPhone = document.getElementById('custPhone').value;
-        const custEmail = document.getElementById('custEmail').value;
-        const eventDate = document.getElementById('eventDate').value;
-        const eventTime = document.getElementById('eventTime').value;
-        const eventPlace = document.getElementById('eventPlace').value;
-        const custAddress = document.getElementById('custAddress').value;
+ async function submitBooking {
+ const cart = getCart;
+ if (cart.length === 0) return;
+ 
+ const custName = document.getElementById('custName').value;
+ const custPhone = document.getElementById('custPhone').value;
+ const custEmail = document.getElementById('custEmail').value;
+ const eventDate = document.getElementById('eventDate').value;
+ const eventTime = document.getElementById('eventTime').value;
+ const eventPlace = document.getElementById('eventPlace').value;
+ const custAddress = document.getElementById('custAddress').value;
 
-        if (!custName || !custPhone || !custEmail || !eventDate || !eventTime || !eventPlace || !custAddress) {
-            alert("กรุณากรอกข้อมูลให้ครบถ้วน / Please fill in all required fields.");
-            return;
-        }
+ if (!custName || !custPhone || !custEmail || !eventDate || !eventTime || !eventPlace || !custAddress) {
+ alert(" / Please fill in all required fields.");
+ return;
+ }
 
-        let menuSetStr = cart.map(item => {
-            let line = `${item.qty}x ${item.name_th} (${item.name_en})`;
-            if (item.options && item.options.length > 0) {
-                line += ` [ ${item.options.join(', ')} ]`;
-            }
-            return line;
-        }).join('\n');
-        
-        const allergyEls = document.querySelectorAll('input[name="allergy"]:checked');
-        const allergy = Array.from(allergyEls).map(el => el.value);
-        const allergyDetail = document.getElementById('allergy-detail').value;
+ let menuSetStr = cart.map(item => {
+ let line = `${item.qty}x ${item.name_th} (${item.name_en})`;
+ if (item.options && item.options.length > 0) {
+ line += ` [ ${item.options.join(', ')} ]`;
+ }
+ return line;
+ }).join('\n');
+ 
+ const allergyEls = document.querySelectorAll('input[name="allergy"]:checked');
+ const allergy = Array.from(allergyEls).map(el => el.value);
+ const allergyDetail = document.getElementById('allergy-detail').value;
 
-        const btn = document.getElementById('btn-submit');
-        const originalText = btn.innerText;
-        btn.innerText = "กำลังประมวลผล... / Processing...";
-        btn.disabled = true;
+ const btn = document.getElementById('btn-submit');
+ const originalText = btn.innerText;
+ btn.innerText = " ... / Processing...";
+ btn.disabled = true;
 
-        try {
-            const response = await fetch('/api/create-checkout-session', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    custName, custPhone, custEmail, eventDate, eventTime, eventPlace, custAddress,
-                    menuSet: menuSetStr, 
-                    allergy, allergyDetail,
-                    paymentMethod: selectedPaymentMethod,
-                    totalAmount: finalAmountToPay,
-                    totalSets: totalItemsCount,
-                    category: 'Mixed Cart'
-                })
-            });
+ try {
+ const response = await fetch('/api/create-checkout-session', {
+ method: 'POST',
+ headers: { 'Content-Type': 'application/json' },
+ body: JSON.stringify({
+ custName, custPhone, custEmail, eventDate, eventTime, eventPlace, custAddress,
+ menuSet: menuSetStr, 
+ allergy, allergyDetail,
+ paymentMethod: selectedPaymentMethod,
+ totalAmount: finalAmountToPay,
+ totalSets: totalItemsCount,
+ category: 'Mixed Cart'
+ })
+ });
 
-            const result = await response.json();
+ const result = await response.json;
 
-            if (result.url) {
-                clearCart();
-                window.location.href = result.url;
-            } else if (result.success) {
-                clearCart();
-                window.location.href = `/success.html?method=${result.method}&id=${result.bookingId}`;
-            } else {
-                alert('เกิดข้อผิดพลาด / Error: ' + (result.error || 'Unknown error.'));
-                btn.innerText = originalText;
-                btn.disabled = false;
-            }
-        } catch (error) {
-            console.error('Error submitting booking:', error);
-            alert('เกิดข้อผิดพลาดในการเชื่อมต่อ / Connection error');
-            btn.innerText = originalText;
-            btn.disabled = false;
-        }
-    }
+ if (result.url) {
+ clearCart;
+ window.location.href = result.url;
+ } else if (result.success) {
+ clearCart;
+ window.location.href = `/success.html?method=${result.method}&id=${result.bookingId}`;
+ } else {
+ alert(' / Error: ' + (result.error || 'Unknown error.'));
+ btn.innerText = originalText;
+ btn.disabled = false;
+ }
+ } catch (error) {
+ console.error('Error submitting booking:', error);
+ alert(' / Connection error');
+ btn.innerText = originalText;
+ btn.disabled = false;
+ }
+ }
 
-    function changeLang(lang, btn) {
-        document.documentElement.lang = lang;
-        if (btn) { document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); }
-        const t = {
-            th: { 
-                connect: "ติดต่อเรา", booking: "ข้อมูลการสั่งจอง", name: "ชื่อ-นามสกุล", phone: "เบอร์ติดต่อ", date: "วันที่จัดส่ง / Delivery Date", time: "เวลาจัดส่ง / Delivery Time",
-                venue: "สถานที่จัดงาน", address: "ที่อยู่จัดส่ง", payment: "วิธีชำระเงิน", submit: "ยืนยันการสั่งจอง",
-                allergy: "ข้อมูลการแพ้อาหาร", peanuts: "ถั่ว", milk: "นม", seafood: "อาหารทะเล", eggs: "ไข่", msg: "ผงชูรส", fishsauce: "น้ำปลา", knorr: "คนอร์",
-                other: "อื่นๆ ระบุ",
-                d_title: "เงื่อนไขการชำระเงิน:",
-                d_desc: "ระบบจะคำนวณยอดชำระเต็มจำนวนสำหรับชุดอาหารกล่อง และยอดมัดจำ 50% สำหรับเมนูจัดเลี้ยงโดยอัตโนมัติ"
-            },
-            en: { 
-                connect: "Connect With Us", booking: "Booking Details", name: "Contact Name", phone: "Phone Number", date: "Delivery Date", time: "Delivery Time", 
-                venue: "Venue Name", address: "Full Address", payment: "Payment Method", submit: "Confirm Booking",
-                allergy: "Food Allergy", peanuts: "Peanuts", milk: "Dairy", seafood: "Seafood", eggs: "Eggs", msg: "MSG", fishsauce: "Fish Sauce", knorr: "Bouillon",
-                other: "Others",
-                d_title: "Payment Terms:",
-                d_desc: "The system automatically calculates full payment for delivery sets and a 50% deposit for catering menus."
-            }
-        }[lang];
+ function changeLang(lang, btn) {
+ document.documentElement.lang = lang;
+ if (btn) { document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); }
+ const t = {
+ th: { 
+ connect: " ", booking: " ", name: " - ", phone: " ", date: " / Delivery Date", time: " / Delivery Time",
+ venue: " ", address: " ", payment: " ", submit: " ",
+ allergy: " ", peanuts: " ", milk: " ", seafood: " ", eggs: " ", msg: " ", fishsauce: " ", knorr: " ",
+ other: " ",
+ d_title: " :",
+ d_desc: " 50% "
+ },
+ en: { 
+ connect: "Connect With Us", booking: "Booking Details", name: "Contact Name", phone: "Phone Number", date: "Delivery Date", time: "Delivery Time", 
+ venue: "Venue Name", address: "Full Address", payment: "Payment Method", submit: "Confirm Booking",
+ allergy: "Food Allergy", peanuts: "Peanuts", milk: "Dairy", seafood: "Seafood", eggs: "Eggs", msg: "MSG", fishsauce: "Fish Sauce", knorr: "Bouillon",
+ other: "Others",
+ d_title: "Payment Terms:",
+ d_desc: "The system automatically calculates full payment for delivery sets and a 50% deposit for catering menus."
+ }
+ }[lang];
 
-        document.getElementById('lbl-cart-title').innerText = lang === 'th' ? 'ตะกร้าสินค้า / Your Cart' : 'Your Cart';
-        document.getElementById('lbl-total-classic').innerText = lang === 'th' ? 'ยอดเต็มจำนวน (กล่อง/ของหวาน):' : 'Full Payment (Boxes/Desserts):';
-        document.getElementById('lbl-total-catering-full').innerText = lang === 'th' ? 'ยอดเต็ม 100% (จัดเลี้ยง):' : '100% Full Amount (Catering):';
-        document.getElementById('lbl-total-catering').innerText = lang === 'th' ? 'ยอดมัดจำ 50% (จัดเลี้ยง):' : '50% Deposit (Catering):';
-        document.getElementById('lbl-amount-to-pay').innerText = lang === 'th' ? 'ยอดชำระเบื้องต้น / Amount to Pay Now:' : 'Amount to Pay Now:';
-        
-        if(document.getElementById('t-catering-pay')) document.getElementById('t-catering-pay').innerText = lang === 'th' ? 'เลือกรูปแบบการชำระเงิน (จัดเลี้ยง) / Catering Payment Option' : 'Catering Payment Option';
-        if(document.getElementById('opt-deposit-text')) document.getElementById('opt-deposit-text').innerText = lang === 'th' ? 'ชำระมัดจำ 50% / Pay 50% Deposit' : 'Pay 50% Deposit';
-        if(document.getElementById('opt-full-text')) document.getElementById('opt-full-text').innerText = lang === 'th' ? 'ชำระเต็มจำนวน 100% / Pay 100% Full Amount' : 'Pay 100% Full Amount';
-        
-        document.getElementById('t-connect').innerText = t.connect;
-        document.getElementById('t-booking').innerText = t.booking;
-        document.getElementById('l-name').innerText = t.name;
-        document.getElementById('l-phone').innerText = t.phone;
-        document.getElementById('l-date').innerText = t.date;
-        document.getElementById('l-time').innerText = t.time;
-        document.getElementById('l-venue').innerText = t.venue;
-        document.getElementById('l-address').innerText = t.address;
-        document.getElementById('t-payment').innerText = t.payment;
-        document.getElementById('btn-submit').innerText = t.submit;
-        document.getElementById('d-title').innerText = t.d_title;
-        document.getElementById('d-desc').innerText = t.d_desc;
-        document.getElementById('l-allergy').innerText = t.allergy;
-        document.getElementById('opt-peanuts').innerText = t.peanuts;
-        document.getElementById('opt-milk').innerText = t.milk;
-        document.getElementById('opt-seafood').innerText = t.seafood;
-        document.getElementById('opt-eggs').innerText = t.eggs;
-        if(document.getElementById('opt-msg')) document.getElementById('opt-msg').innerText = t.msg;
-        if(document.getElementById('opt-fishsauce')) document.getElementById('opt-fishsauce').innerText = t.fishsauce;
-        if(document.getElementById('opt-knorr')) document.getElementById('opt-knorr').innerText = t.knorr;
-        document.getElementById('allergy-detail').placeholder = t.other;
-        
-        renderCartSummary();
-    }
+ document.getElementById('lbl-cart-title').innerText = lang === 'th' ? ' / Your Cart' : 'Your Cart';
+ document.getElementById('lbl-total-classic').innerText = lang === 'th' ? ' ( /):' : 'Full Payment (Boxes/Desserts):';
+ document.getElementById('lbl-total-catering-full').innerText = lang === 'th' ? ' 100% :' : '100% Full Amount (Catering):';
+ document.getElementById('lbl-total-catering').innerText = lang === 'th' ? ' 50% :' : '50% Deposit (Catering):';
+ document.getElementById('lbl-amount-to-pay').innerText = lang === 'th' ? ' / Amount to Pay Now:' : 'Amount to Pay Now:';
+ 
+ if(document.getElementById('t-catering-pay')) document.getElementById('t-catering-pay').innerText = lang === 'th' ? ' / Catering Payment Option' : 'Catering Payment Option';
+ if(document.getElementById('opt-deposit-text')) document.getElementById('opt-deposit-text').innerText = lang === 'th' ? ' 50% / Pay 50% Deposit' : 'Pay 50% Deposit';
+ if(document.getElementById('opt-full-text')) document.getElementById('opt-full-text').innerText = lang === 'th' ? ' 100% / Pay 100% Full Amount' : 'Pay 100% Full Amount';
+ 
+ document.getElementById('t-connect').innerText = t.connect;
+ document.getElementById('t-booking').innerText = t.booking;
+ document.getElementById('l-name').innerText = t.name;
+ document.getElementById('l-phone').innerText = t.phone;
+ document.getElementById('l-date').innerText = t.date;
+ document.getElementById('l-time').innerText = t.time;
+ document.getElementById('l-venue').innerText = t.venue;
+ document.getElementById('l-address').innerText = t.address;
+ document.getElementById('t-payment').innerText = t.payment;
+ document.getElementById('btn-submit').innerText = t.submit;
+ document.getElementById('d-title').innerText = t.d_title;
+ document.getElementById('d-desc').innerText = t.d_desc;
+ document.getElementById('l-allergy').innerText = t.allergy;
+ document.getElementById('opt-peanuts').innerText = t.peanuts;
+ document.getElementById('opt-milk').innerText = t.milk;
+ document.getElementById('opt-seafood').innerText = t.seafood;
+ document.getElementById('opt-eggs').innerText = t.eggs;
+ if(document.getElementById('opt-msg')) document.getElementById('opt-msg').innerText = t.msg;
+ if(document.getElementById('opt-fishsauce')) document.getElementById('opt-fishsauce').innerText = t.fishsauce;
+ if(document.getElementById('opt-knorr')) document.getElementById('opt-knorr').innerText = t.knorr;
+ document.getElementById('allergy-detail').placeholder = t.other;
+ 
+ renderCartSummary;
+ }
 
-    // Initialize
-    document.addEventListener("DOMContentLoaded", () => { 
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.get('set')) {
-            alert('⚠️ ตรวจพบว่าเบราว์เซอร์ของคุณจำโค้ดเก่าของหน้า Delivery/Desserts เอาไว้!\n(เพราะมี ?set=... ติดมาใน URL)\n\nรบกวนกลับไปที่หน้า Delivery แล้วกดปุ่ม Ctrl + F5 (หรือเคลียร์แคช) ก่อนกดสั่งซื้ออีกครั้งครับ');
-            window.location.href = 'delivery.html';
-            return;
-        }
-        
-        if (window.location.protocol === 'file:') {
-            alert('⚠️ คำเตือน: คุณกำลังเปิดไฟล์เว็บจากเครื่องโดยตรง (file://)\nระบบตะกร้าสินค้าจะไม่ทำงานข้ามหน้าต่างกันเนื่องจากระบบความปลอดภัยของ Google Chrome\n\nกรุณาทดสอบบนเว็บไซต์จริง หรือรันผ่าน Local Web Server ครับ!');
-        }
+ Initialize
+ document.addEventListener("DOMContentLoaded", => { 
+ const urlParams = new URLSearchParams(window.location.search);
+ if (urlParams.get('set')) {
+ alert('⚠️ Delivery/Desserts!\n( ?set=... URL)\n\n DeliveryCtrl + F5 ');
+ window.location.href = 'delivery.html';
+ return;
+ }
+ 
+ if (window.location.protocol === 'file:') {
+ alert('⚠️ : (file://)\n Google Chrome\n\n Local Web Server!');
+ }
 
-        renderCartSummary(); 
-    });
+ renderCartSummary; 
+ });
 </script>
-    <script src="mobile-menu.js"></script>
-
+ <script src="mobile-menu.js"></script>
 
 
 
@@ -640,71 +635,69 @@
 
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date;
+(function{
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
 s1.async=true;
 s1.src='https://embed.tawk.to/6a3fb7427e16581d479c0473/1js4e7nkp';
 s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
-})();
+});
 </script>
 <!--End of Tawk.to Script-->
 
-
 <!-- Messenger and LINE Floating Buttons -->
 <div style="position: fixed; bottom: 25px; left: 25px; display: flex; flex-direction: column; gap: 15px; z-index: 9999;">
-    <!-- Facebook Messenger -->
-    <a href="https://m.me/61589177574118" target="_blank" class="chat-float fb-float">
-        <i class="fab fa-facebook-messenger"></i>
-    </a>
-    <!-- LINE -->
-    <a href="https://line.me/ti/p/y_Whr-5wc3" target="_blank" class="chat-float line-float">
-        <i class="fab fa-line"></i>
-    </a>
+ <!-- Facebook Messenger -->
+ <a href="https://m.me/61589177574118" target="_blank" class="chat-float fb-float">
+ <i class="fab fa-facebook-messenger"></i>
+ </a>
+ <!-- LINE -->
+ <a href="https://line.me/ti/p/y_Whr-5wc3" target="_blank" class="chat-float line-float">
+ <i class="fab fa-line"></i>
+ </a>
 </div>
 <style>
 .chat-float {
-    color: #FFF;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 35px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    transition: all 0.3s ease;
-    text-decoration: none;
+ color: #FFF;
+ border-radius: 50%;
+ width: 60px;
+ height: 60px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ font-size: 35px;
+ box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+ transition: all 0.3s ease;
+ text-decoration: none;
 }
 .fb-float {
-    background-color: #0084FF;
+ background-color: #0084FF;
 }
 .fb-float:hover {
-    background-color: #0073E6;
-    transform: scale(1.1);
-    color: white;
+ background-color: #0073E6;
+ transform: scale(1.1);
+ color: white;
 }
 .line-float {
-    background-color: #00C300;
+ background-color: #00C300;
 }
 .line-float:hover {
-    background-color: #00A000;
-    transform: scale(1.1);
-    color: white;
+ background-color: #00A000;
+ transform: scale(1.1);
+ color: white;
 }
 @media (max-width: 768px) {
-    .chat-float {
-        width: 55px;
-        height: 55px;
-        font-size: 30px;
-    }
+ .chat-float {
+ width: 55px;
+ height: 55px;
+ font-size: 30px;
+ }
 }
 </style>
-    <script src="js/cart_v2.js"></script>
+ <script src="js/cart_v2.js"></script>
 </body>
 </html>
-
 
 

@@ -1,733 +1,722 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex,nofollow">
-  <title>Zab Siam AI Team Board</title>
-  <style>
-    :root {
-      --ink: #191b18;
-      --muted: #6f776d;
-      --paper: #fbfaf4;
-      --panel: #ffffff;
-      --line: #dedbd0;
-      --green: #2f6b46;
-      --green-dark: #163323;
-      --gold: #d99b35;
-      --warn: #fff1bf;
-      --danger: #b04436;
-      --shadow: 0 18px 50px rgba(24, 28, 22, .10);
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Zab Siam AI Team Board</title>
+<style>
+ :root {
+ --ink: #191b18;
+ --muted: #6f776d;
+ --paper: #fbfaf4;
+ --panel: #ffffff;
+ --line: #dedbd0;
+ --green: #2f6b46;
+ --green-dark: #163323;
+ --gold: #d99b35;
+ --warn: #fff1bf;
+ --danger: #b04436;
+ --shadow: 0 18px 50px rgba(24, 28, 22, .10);
+ }
 
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, Tahoma, sans-serif;
-      color: var(--ink);
-      background: linear-gradient(180deg, #f6f4ec 0%, #eee9dc 100%);
-    }
-    button, input, textarea, select { font: inherit; }
-    a { color: inherit; }
+ * { box-sizing: border-box; }
+ body {
+ margin: 0;
+ font-family: Arial, Tahoma, sans-serif;
+ color: var(--ink);
+ background: linear-gradient(180deg, #f6f4ec 0%, #eee9dc 100%);
+ }
+ button, input, textarea, select { font: inherit; }
+ a { color: inherit; }
 
-    .shell {
-      min-height: 100vh;
-      padding: 24px;
-      display: grid;
-      grid-template-columns: 380px minmax(0, 1fr);
-      gap: 20px;
-    }
+ .shell {
+ min-height: 100vh;
+ padding: 24px;
+ display: grid;
+ grid-template-columns: 380px minmax(0, 1fr);
+ gap: 20px;
+ }
 
-    .panel {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
+ .panel {
+ background: var(--panel);
+ border: 1px solid var(--line);
+ border-radius: 10px;
+ box-shadow: var(--shadow);
+ overflow: hidden;
+ }
 
-    .sidebar {
-      display: flex;
-      flex-direction: column;
-      align-self: start;
-      position: sticky;
-      top: 24px;
-    }
+ .sidebar {
+ display: flex;
+ flex-direction: column;
+ align-self: start;
+ position: sticky;
+ top: 24px;
+ }
 
-    .brand {
-      padding: 22px;
-      color: #fff;
-      background: var(--green-dark);
-    }
-    .brand h1 {
-      margin: 0 0 6px;
-      font-size: 26px;
-      line-height: 1.15;
-    }
-    .brand p {
-      margin: 0;
-      color: #d8e4d6;
-    }
+ .brand {
+ padding: 22px;
+ color: #fff;
+ background: var(--green-dark);
+ }
+ .brand h1 {
+ margin: 0 0 6px;
+ font-size: 26px;
+ line-height: 1.15;
+ }
+ .brand p {
+ margin: 0;
+ color: #d8e4d6;
+ }
 
-    .form {
-      padding: 18px;
-      display: grid;
-      gap: 12px;
-    }
-    label {
-      display: grid;
-      gap: 6px;
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 700;
-    }
-    input, textarea, select {
-      width: 100%;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      min-height: 42px;
-      padding: 10px 12px;
-      color: var(--ink);
-      background: #fff;
-    }
-    textarea {
-      min-height: 96px;
-      resize: vertical;
-    }
+ .form {
+ padding: 18px;
+ display: grid;
+ gap: 12px;
+ }
+ label {
+ display: grid;
+ gap: 6px;
+ color: var(--muted);
+ font-size: 14px;
+ font-weight: 700;
+ }
+ input, textarea, select {
+ width: 100%;
+ border: 1px solid var(--line);
+ border-radius: 8px;
+ min-height: 42px;
+ padding: 10px 12px;
+ color: var(--ink);
+ background: #fff;
+ }
+ textarea {
+ min-height: 96px;
+ resize: vertical;
+ }
 
-    .row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
+ .row {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 10px;
+ }
 
-    .button {
-      min-height: 44px;
-      border: 0;
-      border-radius: 8px;
-      padding: 10px 14px;
-      color: #fff;
-      background: var(--green);
-      font-weight: 800;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-    .button.secondary {
-      color: var(--green-dark);
-      background: #fff;
-      border: 1px solid var(--line);
-    }
-    .button.gold { background: var(--gold); }
-    .button.danger { background: var(--danger); }
-    .button:disabled {
-      opacity: .55;
-      cursor: not-allowed;
-    }
+ .button {
+ min-height: 44px;
+ border: 0;
+ border-radius: 8px;
+ padding: 10px 14px;
+ color: #fff;
+ background: var(--green);
+ font-weight: 800;
+ cursor: pointer;
+ text-decoration: none;
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ gap: 8px;
+ }
+ .button.secondary {
+ color: var(--green-dark);
+ background: #fff;
+ border: 1px solid var(--line);
+ }
+ .button.gold { background: var(--gold); }
+ .button.danger { background: var(--danger); }
+ .button:disabled {
+ opacity: .55;
+ cursor: not-allowed;
+ }
 
-    .main {
-      min-width: 0;
-      display: grid;
-      gap: 18px;
-      align-content: start;
-    }
+ .main {
+ min-width: 0;
+ display: grid;
+ gap: 18px;
+ align-content: start;
+ }
 
-    .toolbar {
-      padding: 16px 18px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-    .toolbar h2 {
-      margin: 0;
-      font-size: 24px;
-    }
-    .toolbar p {
-      margin: 4px 0 0;
-      color: var(--muted);
-    }
-    .toolbar-actions {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
+ .toolbar {
+ padding: 16px 18px;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ gap: 14px;
+ flex-wrap: wrap;
+ }
+ .toolbar h2 {
+ margin: 0;
+ font-size: 24px;
+ }
+ .toolbar p {
+ margin: 4px 0 0;
+ color: var(--muted);
+ }
+ .toolbar-actions {
+ display: flex;
+ gap: 10px;
+ flex-wrap: wrap;
+ }
 
-    .notice {
-      padding: 12px 18px;
-      border-top: 1px solid var(--line);
-      color: #5e4c1c;
-      background: var(--warn);
-      display: none;
-    }
-    .notice.show { display: block; }
+ .notice {
+ padding: 12px 18px;
+ border-top: 1px solid var(--line);
+ color: #5e4c1c;
+ background: var(--warn);
+ display: none;
+ }
+ .notice.show { display: block; }
 
-    .filters {
-      padding: 14px 18px;
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 10px;
-      border-top: 1px solid var(--line);
-      background: #fbfaf4;
-    }
+ .filters {
+ padding: 14px 18px;
+ display: grid;
+ grid-template-columns: repeat(4, minmax(0, 1fr));
+ gap: 10px;
+ border-top: 1px solid var(--line);
+ background: #fbfaf4;
+ }
 
-    .board {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-    }
-    .lane {
-      background: rgba(255,255,255,.62);
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      min-height: 260px;
-      overflow: hidden;
-    }
-    .lane h3 {
-      margin: 0;
-      padding: 14px 16px;
-      border-bottom: 1px solid var(--line);
-      background: #f4f0e6;
-      font-size: 18px;
-    }
-    .lane-list {
-      padding: 12px;
-      display: grid;
-      gap: 12px;
-    }
+ .board {
+ display: grid;
+ grid-template-columns: repeat(3, minmax(0, 1fr));
+ gap: 16px;
+ }
+ .lane {
+ background: rgba(255,255,255,.62);
+ border: 1px solid var(--line);
+ border-radius: 10px;
+ min-height: 260px;
+ overflow: hidden;
+ }
+ .lane h3 {
+ margin: 0;
+ padding: 14px 16px;
+ border-bottom: 1px solid var(--line);
+ background: #f4f0e6;
+ font-size: 18px;
+ }
+ .lane-list {
+ padding: 12px;
+ display: grid;
+ gap: 12px;
+ }
 
-    .task {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-left: 5px solid var(--gold);
-      border-radius: 8px;
-      padding: 14px;
-      display: grid;
-      gap: 10px;
-    }
-    .task.high { border-left-color: #c0392b; }
-    .task.normal { border-left-color: var(--gold); }
-    .task.low { border-left-color: var(--green); }
-    .task-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-    }
-    .task h4 {
-      margin: 0;
-      font-size: 17px;
-      line-height: 1.3;
-    }
-    .tag {
-      border-radius: 999px;
-      padding: 4px 8px;
-      color: #fff;
-      background: var(--green);
-      font-size: 12px;
-      font-weight: 800;
-      white-space: nowrap;
-      align-self: start;
-    }
-    .meta, .note {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.45;
-    }
-    .note {
-      color: #3f463d;
-      white-space: pre-wrap;
-    }
-    .task-actions {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    .task-actions .button {
-      min-height: 36px;
-      padding: 8px 10px;
-      font-size: 13px;
-    }
+ .task {
+ background: #fff;
+ border: 1px solid var(--line);
+ border-left: 5px solid var(--gold);
+ border-radius: 8px;
+ padding: 14px;
+ display: grid;
+ gap: 10px;
+ }
+ .task.high { border-left-color: #c0392b; }
+ .task.normal { border-left-color: var(--gold); }
+ .task.low { border-left-color: var(--green); }
+ .task-head {
+ display: flex;
+ justify-content: space-between;
+ gap: 10px;
+ }
+ .task h4 {
+ margin: 0;
+ font-size: 17px;
+ line-height: 1.3;
+ }
+ .tag {
+ border-radius: 999px;
+ padding: 4px 8px;
+ color: #fff;
+ background: var(--green);
+ font-size: 12px;
+ font-weight: 800;
+ white-space: nowrap;
+ align-self: start;
+ }
+ .meta, .note {
+ color: var(--muted);
+ font-size: 13px;
+ line-height: 1.45;
+ }
+ .note {
+ color: #3f463d;
+ white-space: pre-wrap;
+ }
+ .task-actions {
+ display: flex;
+ gap: 8px;
+ flex-wrap: wrap;
+ }
+ .task-actions .button {
+ min-height: 36px;
+ padding: 8px 10px;
+ font-size: 13px;
+ }
 
-    .empty {
-      color: var(--muted);
-      padding: 18px;
-      text-align: center;
-      border: 1px dashed var(--line);
-      border-radius: 8px;
-      background: rgba(255,255,255,.7);
-    }
+ .empty {
+ color: var(--muted);
+ padding: 18px;
+ text-align: center;
+ border: 1px dashed var(--line);
+ border-radius: 8px;
+ background: rgba(255,255,255,.7);
+ }
 
-    .login {
-      position: fixed;
-      inset: 0;
-      z-index: 20;
-      display: grid;
-      place-items: center;
-      padding: 20px;
-      background: rgba(22, 29, 22, .72);
-    }
-    .login-card {
-      width: min(420px, 100%);
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      padding: 24px;
-      display: grid;
-      gap: 14px;
-    }
-    .login-card h2 {
-      margin: 0;
-      font-size: 24px;
-    }
-    .login-card p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.5;
-    }
+ .login {
+ position: fixed;
+ inset: 0;
+ z-index: 20;
+ display: grid;
+ place-items: center;
+ padding: 20px;
+ background: rgba(22, 29, 22, .72);
+ }
+ .login-card {
+ width: min(420px, 100%);
+ background: #fff;
+ border-radius: 12px;
+ box-shadow: var(--shadow);
+ padding: 24px;
+ display: grid;
+ gap: 14px;
+ }
+ .login-card h2 {
+ margin: 0;
+ font-size: 24px;
+ }
+ .login-card p {
+ margin: 0;
+ color: var(--muted);
+ line-height: 1.5;
+ }
 
-    @media (max-width: 980px) {
-      .shell {
-        grid-template-columns: 1fr;
-        padding: 14px;
-      }
-      .sidebar {
-        position: static;
-      }
-      .board {
-        grid-template-columns: 1fr;
-      }
-      .filters {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
+ @media (max-width: 980px) {
+ .shell {
+ grid-template-columns: 1fr;
+ padding: 14px;
+ }
+ .sidebar {
+ position: static;
+ }
+ .board {
+ grid-template-columns: 1fr;
+ }
+ .filters {
+ grid-template-columns: 1fr 1fr;
+ }
+ }
 
-    @media (max-width: 560px) {
-      .row, .filters {
-        grid-template-columns: 1fr;
-      }
-      .toolbar-actions, .button {
-        width: 100%;
-      }
-      .toolbar-actions {
-        display: grid;
-      }
-    }
-  </style>
+ @media (max-width: 560px) {
+ .row, .filters {
+ grid-template-columns: 1fr;
+ }
+ .toolbar-actions, .button {
+ width: 100%;
+ }
+ .toolbar-actions {
+ display: grid;
+ }
+ }
+</style>
 </head>
 <body>
-  <div class="login" id="loginPanel">
-    <form class="login-card" id="loginForm">
-      <h2>Zab Siam AI Team</h2>
-      <p>ใส่รหัสพนักงานเพื่อเปิดกระดานสั่งงานกลาง ระบบซิงก์ผ่านเว็บ zabsiam.com ไม่ต้องเชื่อมมือถือเข้ากับคอมโดยตรง</p>
-      <label>
-        รหัสพนักงาน
-        <input id="passwordInput" type="password" autocomplete="current-password" required>
-      </label>
-      <button class="button" type="submit">เปิดใช้งาน</button>
-      <p id="loginMessage"></p>
-    </form>
-  </div>
+<div class="login" id="loginPanel">
+ <form class="login-card" id="loginForm">
+ <h2>Zab Siam AI Team</h2>
+ <p> zabsiam.com</p>
+ <label>
+ <input id="passwordInput" type="password" autocomplete="current-password" required>
+ </label>
+ <button class="button" type="submit"> </button>
+ <p id="loginMessage"></p>
+ </form>
+</div>
 
-  <div class="shell">
-    <aside class="panel sidebar">
-      <div class="brand">
-        <h1>Zab Siam</h1>
-        <p>AI Team Command Board</p>
-      </div>
-      <form class="form" id="taskForm">
-        <label>
-          ส่งให้ทีม
-          <select id="roleInput">
-            <option value="auto">AUTO (ให้ระบบเลือกทีมให้)</option>
-            <option>Personal Secretary AI</option>
-            <option>CEO/Manager AI</option>
-            <option>Sales AI</option>
-            <option>Customer Support AI</option>
-            <option>Operations AI</option>
-            <option>Kitchen AI</option>
-            <option>Stock/Inventory AI</option>
-            <option>Finance/Admin AI</option>
-            <option>Marketing & Research AI</option>
-          </select>
-        </label>
-        <label>
-          หัวข้องาน
-          <input id="titleInput" type="text" placeholder="เช่น เช็คอีเมล Mission Kitchen" required>
-        </label>
-        <div class="row">
-          <label>
-            ความด่วน
-            <select id="priorityInput">
-              <option value="normal">ปกติ</option>
-              <option value="high">ด่วน</option>
-              <option value="low">รอได้</option>
-            </select>
-          </label>
-          <label>
-            เครื่องที่สั่ง
-            <input id="deviceInput" type="text" placeholder="มือถือ / คอมร้าน">
-          </label>
-        </div>
-        <label>
-          รายละเอียด
-          <textarea id="noteInput" placeholder="รายละเอียดงาน, ลิงก์, ชื่อลูกค้า, หรือสิ่งที่ต้องเช็ค"></textarea>
-        </label>
-        <button class="button" id="addTaskButton" type="submit">เพิ่มงานให้ทีม AI</button>
-      </form>
-    </aside>
+<div class="shell">
+ <aside class="panel sidebar">
+ <div class="brand">
+ <h1>Zab Siam</h1>
+ <p>AI Team Command Board</p>
+ </div>
+ <form class="form" id="taskForm">
+ <label>
+ <select id="roleInput">
+ <option value="auto">AUTO </option>
+ <option>Personal Secretary AI</option>
+ <option>CEO/Manager AI</option>
+ <option>Sales AI</option>
+ <option>Customer Support AI</option>
+ <option>Operations AI</option>
+ <option>Kitchen AI</option>
+ <option>Stock/Inventory AI</option>
+ <option>Finance/Admin AI</option>
+ <option>Marketing & Research AI</option>
+ </select>
+ </label>
+ <label>
+ <input id="titleInput" type="text" placeholder=" Mission Kitchen" required>
+ </label>
+ <div class="row">
+ <label>
+ <select id="priorityInput">
+ <option value="normal"> </option>
+ <option value="high"> </option>
+ <option value="low"> </option>
+ </select>
+ </label>
+ <label>
+ <input id="deviceInput" type="text" placeholder=" / ">
+ </label>
+ </div>
+ <label>
+ <textarea id="noteInput" placeholder=" , , , "></textarea>
+ </label>
+ <button class="button" id="addTaskButton" type="submit"> AI</button>
+ </form>
+ </aside>
 
-    <main class="main">
-      <section class="panel">
-        <div class="toolbar">
-          <div>
-            <h2>กระดานสั่งงานกลาง</h2>
-            <p id="syncStatus">ยังไม่ได้ซิงก์</p>
-          </div>
-          <div class="toolbar-actions">
-            <button class="button secondary" id="dailyBriefBoardBtn" type="button" style="border-left: 4px solid var(--gold);">Daily Brief (สรุปงาน)</button>
-            <a class="button secondary" href="/ai-control-room.html">AI Control Room</a>
-            <a class="button secondary" href="/admin/pos.html">POS / Stock</a>
-            <button class="button gold" id="refreshButton" type="button">รีเฟรช</button>
-            <button class="button danger" id="logoutButton" type="button">ออก</button>
-          </div>
-        </div>
-        <div class="notice" id="notice"></div>
-        <div class="filters">
-          <label>
-            ทีม
-            <select id="roleFilter">
-              <option value="all">ทุกทีม</option>
-            </select>
-          </label>
-          <label>
-            สถานะ
-            <select id="statusFilter">
-              <option value="all">ทุกสถานะ</option>
-              <option value="todo">รอทำ</option>
-              <option value="doing">กำลังทำ</option>
-              <option value="done">เสร็จแล้ว</option>
-            </select>
-          </label>
-          <label>
-            ความด่วน
-            <select id="priorityFilter">
-              <option value="all">ทุกระดับ</option>
-              <option value="high">ด่วน</option>
-              <option value="normal">ปกติ</option>
-              <option value="low">รอได้</option>
-            </select>
-          </label>
-          <label>
-            ค้นหา
-            <input id="searchInput" type="search" placeholder="ค้นหางาน">
-          </label>
-        </div>
-      </section>
+ <main class="main">
+ <section class="panel">
+ <div class="toolbar">
+ <div>
+ <h2> </h2>
+ <p id="syncStatus"> </p>
+ </div>
+ <div class="toolbar-actions">
+ <button class="button secondary" id="dailyBriefBoardBtn" type="button" style="border-left: 4px solid var(--gold);">Daily Brief </button>
+ <a class="button secondary" href="/ai-control-room.html">AI Control Room</a>
+ <a class="button secondary" href="/admin/pos.html">POSStock</a>
+ <button class="button gold" id="refreshButton" type="button"> </button>
+ <button class="button danger" id="logoutButton" type="button"> </button>
+ </div>
+ </div>
+ <div class="notice" id="notice"></div>
+ <div class="filters">
+ <label>
+ <select id="roleFilter">
+ <option value="all"> </option>
+ </select>
+ </label>
+ <label>
+ <select id="statusFilter">
+ <option value="all"> </option>
+ <option value="todo"> </option>
+ <option value="doing"> </option>
+ <option value="done"> </option>
+ </select>
+ </label>
+ <label>
+ <select id="priorityFilter">
+ <option value="all"> </option>
+ <option value="high"> </option>
+ <option value="normal"> </option>
+ <option value="low"> </option>
+ </select>
+ </label>
+ <label>
+ <input id="searchInput" type="search" placeholder=" ">
+ </label>
+ </div>
+ </section>
 
-      <section class="board" id="board"></section>
-    </main>
-  </div>
+ <section class="board" id="board"></section>
+ </main>
+</div>
 
-  <script>
-    const API_URL = "/api/ai-team-tasks";
-    const passwordKey = "zabsiam-ai-board-pass";
-    const roles = [
-      "Personal Secretary AI",
-      "CEO/Manager AI",
-      "Sales AI",
-      "Customer Support AI",
-      "Operations AI",
-      "Kitchen AI",
-      "Stock/Inventory AI",
-      "Finance/Admin AI",
-      "Marketing & Research AI"
-    ];
-    const lanes = [
-      { id: "todo", title: "รอทำ" },
-      { id: "doing", title: "กำลังทำ" },
-      { id: "done", title: "เสร็จแล้ว" }
-    ];
-    const priorityLabels = { high: "ด่วน", normal: "ปกติ", low: "รอได้" };
+<script>
+ const API_URL = "/api/ai-team-tasks";
+ const passwordKey = "zabsiam-ai-board-pass";
+ const roles = [
+ "Personal Secretary AI",
+ "CEO/Manager AI",
+ "Sales AI",
+ "Customer Support AI",
+ "Operations AI",
+ "Kitchen AI",
+ "Stock/Inventory AI",
+ "Finance/Admin AI",
+ "Marketing & Research AI"
+ ];
+ const lanes = [
+ { id: "todo", title: " " },
+ { id: "doing", title: " " },
+ { id: "done", title: " " }
+ ];
+ const priorityLabels = { high: " ", normal: " ", low: " " };
 
-    let password = sessionStorage.getItem(passwordKey) || "";
-    let tasks = [];
+ let password = sessionStorage.getItem(passwordKey) || "";
+ let tasks = [];
 
-    const loginPanel = document.getElementById("loginPanel");
-    const loginForm = document.getElementById("loginForm");
-    const loginMessage = document.getElementById("loginMessage");
-    const passwordInput = document.getElementById("passwordInput");
-    const taskForm = document.getElementById("taskForm");
-    const roleInput = document.getElementById("roleInput");
-    const titleInput = document.getElementById("titleInput");
-    const priorityInput = document.getElementById("priorityInput");
-    const deviceInput = document.getElementById("deviceInput");
-    const noteInput = document.getElementById("noteInput");
-    const board = document.getElementById("board");
-    const notice = document.getElementById("notice");
-    const syncStatus = document.getElementById("syncStatus");
-    const refreshButton = document.getElementById("refreshButton");
-    const logoutButton = document.getElementById("logoutButton");
-    const roleFilter = document.getElementById("roleFilter");
-    const statusFilter = document.getElementById("statusFilter");
-    const priorityFilter = document.getElementById("priorityFilter");
-    const searchInput = document.getElementById("searchInput");
+ const loginPanel = document.getElementById("loginPanel");
+ const loginForm = document.getElementById("loginForm");
+ const loginMessage = document.getElementById("loginMessage");
+ const passwordInput = document.getElementById("passwordInput");
+ const taskForm = document.getElementById("taskForm");
+ const roleInput = document.getElementById("roleInput");
+ const titleInput = document.getElementById("titleInput");
+ const priorityInput = document.getElementById("priorityInput");
+ const deviceInput = document.getElementById("deviceInput");
+ const noteInput = document.getElementById("noteInput");
+ const board = document.getElementById("board");
+ const notice = document.getElementById("notice");
+ const syncStatus = document.getElementById("syncStatus");
+ const refreshButton = document.getElementById("refreshButton");
+ const logoutButton = document.getElementById("logoutButton");
+ const roleFilter = document.getElementById("roleFilter");
+ const statusFilter = document.getElementById("statusFilter");
+ const priorityFilter = document.getElementById("priorityFilter");
+ const searchInput = document.getElementById("searchInput");
 
-    roles.forEach(role => {
-      const option = document.createElement("option");
-      option.value = role;
-      option.textContent = role;
-      roleFilter.appendChild(option);
-    });
+ roles.forEach(role => {
+ const option = document.createElement("option");
+ option.value = role;
+ option.textContent = role;
+ roleFilter.appendChild(option);
+ });
 
-    function headers() {
-      return {
-        "Content-Type": "application/json",
-        "x-zabsiam-admin-pass": password
-      };
-    }
+ function headers {
+ return {
+ "Content-Type": "application/json",
+ "x-zabsiam-admin-pass": password
+ };
+ }
 
-    function showNotice(message) {
-      notice.textContent = message;
-      notice.classList.toggle("show", Boolean(message));
-    }
+ function showNotice(message) {
+ notice.textContent = message;
+ notice.classList.toggle("show", Boolean(message));
+ }
 
-    function formatTime(value) {
-      if (!value) return "";
-      return new Intl.DateTimeFormat("en-GB", {
-        dateStyle: "short",
-        timeStyle: "short",
-        timeZone: "Europe/London"
-      }).format(new Date(value));
-    }
+ function formatTime(value) {
+ if (!value) return "";
+ return new Intl.DateTimeFormat("en-GB", {
+ dateStyle: "short",
+ timeStyle: "short",
+ timeZone: "Europe/London"
+ }).format(new Date(value));
+ }
 
-    function filteredTasks() {
-      const roleValue = roleFilter.value;
-      const statusValue = statusFilter.value;
-      const priorityValue = priorityFilter.value;
-      const query = searchInput.value.trim().toLowerCase();
+ function filteredTasks {
+ const roleValue = roleFilter.value;
+ const statusValue = statusFilter.value;
+ const priorityValue = priorityFilter.value;
+ const query = searchInput.value.trim.toLowerCase;
 
-      return tasks.filter(task => {
-        const roleMatch = roleValue === "all" || task.role === roleValue;
-        const statusMatch = statusValue === "all" || task.status === statusValue;
-        const priorityMatch = priorityValue === "all" || task.priority === priorityValue;
-        const text = `${task.title || ""} ${task.role || ""} ${task.note || ""}`.toLowerCase();
-        const searchMatch = !query || text.includes(query);
-        return roleMatch && statusMatch && priorityMatch && searchMatch;
-      });
-    }
+ return tasks.filter(task => {
+ const roleMatch = roleValue === "all" || task.role === roleValue;
+ const statusMatch = statusValue === "all" || task.status === statusValue;
+ const priorityMatch = priorityValue === "all" || task.priority === priorityValue;
+ const text = `${task.title || ""} ${task.role || ""} ${task.note || ""}`.toLowerCase;
+ const searchMatch = !query || text.includes(query);
+ return roleMatch && statusMatch && priorityMatch && searchMatch;
+ });
+ }
 
-    function render() {
-      const visibleTasks = filteredTasks();
-      board.innerHTML = "";
+ function render {
+ const visibleTasks = filteredTasks;
+ board.innerHTML = "";
 
-      lanes.forEach(lane => {
-        const laneElement = document.createElement("article");
-        laneElement.className = "lane";
-        laneElement.innerHTML = `<h3>${lane.title}</h3>`;
+ lanes.forEach(lane => {
+ const laneElement = document.createElement("article");
+ laneElement.className = "lane";
+ laneElement.innerHTML = `<h3>${lane.title}</h3>`;
 
-        const list = document.createElement("div");
-        list.className = "lane-list";
-        const laneTasks = visibleTasks.filter(task => (task.status || "todo") === lane.id);
+ const list = document.createElement("div");
+ list.className = "lane-list";
+ const laneTasks = visibleTasks.filter(task => (task.status || "todo") === lane.id);
 
-        if (!laneTasks.length) {
-          const empty = document.createElement("div");
-          empty.className = "empty";
-          empty.textContent = "ยังไม่มีงาน";
-          list.appendChild(empty);
-        }
+ if (!laneTasks.length) {
+ const empty = document.createElement("div");
+ empty.className = "empty";
+ empty.textContent = " ";
+ list.appendChild(empty);
+ }
 
-        laneTasks.forEach(task => {
-          const card = document.createElement("div");
-          card.className = `task ${task.priority || "normal"}`;
-          card.innerHTML = `
-            <div class="task-head">
-              <h4>${escapeHtml(task.title || "")}</h4>
-              <span class="tag">${escapeHtml(priorityLabels[task.priority] || task.priority || "ปกติ")}</span>
-            </div>
-            <div class="meta">${escapeHtml(task.role || "")} · ${formatTime(task.updatedAt || task.createdAt)}</div>
-            ${task.sourceDevice ? `<div class="meta">สั่งจาก: ${escapeHtml(task.sourceDevice)}</div>` : ""}
-            ${task.note ? `<div class="note">${escapeHtml(task.note)}</div>` : ""}
-          `;
+ laneTasks.forEach(task => {
+ const card = document.createElement("div");
+ card.className = `task ${task.priority || "normal"}`;
+ card.innerHTML = `
+ <div class="task-head">
+ <h4>${escapeHtml(task.title || "")}</h4>
+ <span class="tag">${escapeHtml(priorityLabels[task.priority] || task.priority || " ")}</span>
+ </div>
+ <div class="meta">${escapeHtml(task.role || "")} · ${formatTime(task.updatedAt || task.createdAt)}</div>
+ ${task.sourceDevice ? `<div class="meta"> : ${escapeHtml(task.sourceDevice)}</div>` : ""}
+ ${task.note ? `<div class="note">${escapeHtml(task.note)}</div>` : ""}
+ `;
 
-          const actions = document.createElement("div");
-          actions.className = "task-actions";
+ const actions = document.createElement("div");
+ actions.className = "task-actions";
 
-          if (task.status !== "todo") actions.appendChild(actionButton("รอทำ", () => updateTask(task.id, { status: "todo" }), "secondary"));
-          if (task.status !== "doing") actions.appendChild(actionButton("กำลังทำ", () => updateTask(task.id, { status: "doing" }), "gold"));
-          if (task.status !== "done") actions.appendChild(actionButton("เสร็จ", () => updateTask(task.id, { status: "done" })));
-          actions.appendChild(actionButton("ลบ", () => deleteTask(task.id), "danger"));
+ if (task.status !== "todo") actions.appendChild(actionButton(" ", => updateTask(task.id, { status: "todo" }), "secondary"));
+ if (task.status !== "doing") actions.appendChild(actionButton(" ", => updateTask(task.id, { status: "doing" }), "gold"));
+ if (task.status !== "done") actions.appendChild(actionButton(" ", => updateTask(task.id, { status: "done" })));
+ actions.appendChild(actionButton(" ", => deleteTask(task.id), "danger"));
 
-          card.appendChild(actions);
-          list.appendChild(card);
-        });
+ card.appendChild(actions);
+ list.appendChild(card);
+ });
 
-        laneElement.appendChild(list);
-        board.appendChild(laneElement);
-      });
-    }
+ laneElement.appendChild(list);
+ board.appendChild(laneElement);
+ });
+ }
 
-    function actionButton(label, onClick, style = "") {
-      const button = document.createElement("button");
-      button.type = "button";
-      button.className = `button ${style}`.trim();
-      button.textContent = label;
-      button.addEventListener("click", onClick);
-      return button;
-    }
+ function actionButton(label, onClick, style = "") {
+ const button = document.createElement("button");
+ button.type = "button";
+ button.className = `button ${style}`.trim;
+ button.textContent = label;
+ button.addEventListener("click", onClick);
+ return button;
+ }
 
-    function escapeHtml(value) {
-      return String(value)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-    }
+ function escapeHtml(value) {
+ return String(value)
+ .replace(/&/g, "&amp;")
+ .replace(/</g, "&lt;")
+ .replace(/>/g, "&gt;")
+ .replace(/"/g, "&quot;")
+ .replace(/'/g, "&#039;");
+ }
 
-    async function loadTasks({ quiet = false } = {}) {
-      if (!password) return;
+ async function loadTasks({ quiet = false } = {}) {
+ if (!password) return;
 
-      try {
-        const response = await fetch(API_URL, { headers: headers(), cache: "no-store" });
-        if (response.status === 401) {
-          sessionStorage.removeItem(passwordKey);
-          password = "";
-          loginPanel.style.display = "grid";
-          loginMessage.textContent = "รหัสไม่ถูกต้อง";
-          return;
-        }
-        if (!response.ok) throw new Error(`API ${response.status}`);
-        const data = await response.json();
-        tasks = Array.isArray(data.tasks) ? data.tasks : [];
-        loginPanel.style.display = "none";
-        syncStatus.textContent = `ซิงก์ล่าสุด ${formatTime(new Date().toISOString())} · ${tasks.length} งาน`;
-        showNotice("");
-        render();
-      } catch (error) {
-        if (!quiet) {
-          showNotice("ยังซิงก์ไม่ได้: ให้เปิดผ่าน https://zabsiam.com/ai-team-board.html และตรวจว่าอินเทอร์เน็ตใช้งานได้ มือถือไม่ต้องเชื่อมต่อกับคอมโดยตรง");
-        }
-        render();
-      }
-    }
+ try {
+ const response = await fetch(API_URL, { headers: headers, cache: "no-store" });
+ if (response.status === 401) {
+ sessionStorage.removeItem(passwordKey);
+ password = "";
+ loginPanel.style.display = "grid";
+ loginMessage.textContent = " ";
+ return;
+ }
+ if (!response.ok) throw new Error(`API ${response.status}`);
+ const data = await response.json;
+ tasks = Array.isArray(data.tasks) ? data.tasks : [];
+ loginPanel.style.display = "none";
+ syncStatus.textContent = ` ${formatTime(new Date.toISOString)} · ${tasks.length} `;
+ showNotice("");
+ render;
+ } catch (error) {
+ if (!quiet) {
+ showNotice(" : https://zabsiam.com/ai-team-board.html");
+ }
+ render;
+ }
+ }
 
-    async function createTask(payload) {
-      const response = await fetch(API_URL, {
-        method: "POST",
-        headers: headers(),
-        body: JSON.stringify(payload)
-      });
-      if (!response.ok) throw new Error(`Create failed ${response.status}`);
-      const data = await response.json();
-      tasks = data.tasks || tasks;
-      render();
-    }
+ async function createTask(payload) {
+ const response = await fetch(API_URL, {
+ method: "POST",
+ headers: headers,
+ body: JSON.stringify(payload)
+ });
+ if (!response.ok) throw new Error(`Create failed ${response.status}`);
+ const data = await response.json;
+ tasks = data.tasks || tasks;
+ render;
+ }
 
-    async function updateTask(id, payload) {
-      const response = await fetch(`${API_URL}/${encodeURIComponent(id)}`, {
-        method: "PATCH",
-        headers: headers(),
-        body: JSON.stringify(payload)
-      });
-      if (!response.ok) throw new Error(`Update failed ${response.status}`);
-      const data = await response.json();
-      tasks = data.tasks || tasks;
-      render();
-      await loadTasks({ quiet: true });
-    }
+ async function updateTask(id, payload) {
+ const response = await fetch(`${API_URL}/${encodeURIComponent(id)}`, {
+ method: "PATCH",
+ headers: headers,
+ body: JSON.stringify(payload)
+ });
+ if (!response.ok) throw new Error(`Update failed ${response.status}`);
+ const data = await response.json;
+ tasks = data.tasks || tasks;
+ render;
+ await loadTasks({ quiet: true });
+ }
 
-    async function deleteTask(id) {
-      if (!confirm("ลบงานนี้ออกจากกระดาน?")) return;
-      const response = await fetch(`${API_URL}/${encodeURIComponent(id)}`, {
-        method: "DELETE",
-        headers: headers()
-      });
-      if (!response.ok) throw new Error(`Delete failed ${response.status}`);
-      const data = await response.json();
-      tasks = data.tasks || [];
-      render();
-    }
+ async function deleteTask(id) {
+ if (!confirm(" ?")) return;
+ const response = await fetch(`${API_URL}/${encodeURIComponent(id)}`, {
+ method: "DELETE",
+ headers: headers
+ });
+ if (!response.ok) throw new Error(`Delete failed ${response.status}`);
+ const data = await response.json;
+ tasks = data.tasks || [];
+ render;
+ }
 
-    loginForm.addEventListener("submit", async event => {
-      event.preventDefault();
-      password = passwordInput.value.trim();
-      sessionStorage.setItem(passwordKey, password);
-      loginMessage.textContent = "กำลังเชื่อมต่อ...";
-      await loadTasks();
-    });
+ loginForm.addEventListener("submit", async event => {
+ event.preventDefault;
+ password = passwordInput.value.trim;
+ sessionStorage.setItem(passwordKey, password);
+ loginMessage.textContent = " ...";
+ await loadTasks;
+ });
 
-    taskForm.addEventListener("submit", async event => {
-      event.preventDefault();
-      const fullText = (titleInput.value + " " + noteInput.value).toLowerCase();
-      let assignedRole = roleInput.value;
-      
-      if (assignedRole === "auto") {
-        if (fullText.match(/ลูกค้า|ออเดอร์|รับออเดอร์|ปิดการขาย/)) assignedRole = "Sales AI";
-        else if (fullText.match(/เฟสบุ๊ค|โพสต์|โปรโมท|โปรโมชัน|วิเคราะห์|คู่แข่ง/)) assignedRole = "Marketing & Research AI";
-        else if (fullText.match(/ร้องเรียน|ปัญหา|ช่วยด้วย|ซัพพอร์ต/)) assignedRole = "Customer Support AI";
-        else if (fullText.match(/ครัว|ทำอาหาร|เตรียมของ|prep/)) assignedRole = "Kitchen AI";
-        else if (fullText.match(/สต็อก|เช็กของ|วัตถุดิบ|ใกล้หมด/)) assignedRole = "Stock/Inventory AI";
-        else if (fullText.match(/เงิน|ยอดขาย|กำไร|ใบเสนอราคา|ต้นทุน/)) assignedRole = "Finance/Admin AI";
-        else if (fullText.match(/จัดระบบ|ตารางงาน|คิว|ส่งของ/)) assignedRole = "Operations AI";
-        else if (fullText.match(/ภาพรวม|ผู้จัดการ|ปัญหาของร้าน|ยอด/)) assignedRole = "CEO/Manager AI";
-        else assignedRole = "Personal Secretary AI";
-      }
+ taskForm.addEventListener("submit", async event => {
+ event.preventDefault;
+ const fullText = (titleInput.value + " " + noteInput.value).toLowerCase;
+ let assignedRole = roleInput.value;
+ 
+ if (assignedRole === "auto") {
+ if (fullText.match(/ | | | /)) assignedRole = "Sales AI";
+ else if (fullText.match(/ | | | | | /)) assignedRole = "Marketing & Research AI";
+ else if (fullText.match(/ | | | /)) assignedRole = "Customer Support AI";
+ else if (fullText.match(/ | | |prep/)) assignedRole = "Kitchen AI";
+ else if (fullText.match(/ | | | /)) assignedRole = "Stock/Inventory AI";
+ else if (fullText.match(/ | | | | /)) assignedRole = "Finance/Admin AI";
+ else if (fullText.match(/ | | | /)) assignedRole = "Operations AI";
+ else if (fullText.match(/ | | | /)) assignedRole = "CEO/Manager AI";
+ else assignedRole = "Personal Secretary AI";
+ }
 
-      const payload = {
-        role: assignedRole,
-        title: titleInput.value,
-        priority: priorityInput.value,
-        sourceDevice: deviceInput.value,
-        note: noteInput.value
-      };
+ const payload = {
+ role: assignedRole,
+ title: titleInput.value,
+ priority: priorityInput.value,
+ sourceDevice: deviceInput.value,
+ note: noteInput.value
+ };
 
-      try {
-        document.getElementById("addTaskButton").disabled = true;
-        await createTask(payload);
-        titleInput.value = "";
-        noteInput.value = "";
-        showNotice("");
-      } catch (error) {
-        showNotice("เพิ่มงานไม่สำเร็จ กรุณาเช็คว่าเปิดผ่าน https://zabsiam.com/ai-team-board.html อินเทอร์เน็ตใช้งานได้ และรหัสถูกต้อง");
-      } finally {
-        document.getElementById("addTaskButton").disabled = false;
-      }
-    });
+ try {
+ document.getElementById("addTaskButton").disabled = true;
+ await createTask(payload);
+ titleInput.value = "";
+ noteInput.value = "";
+ showNotice("");
+ } catch (error) {
+ showNotice(" https://zabsiam.com/ai-team-board.html");
+ } finally {
+ document.getElementById("addTaskButton").disabled = false;
+ }
+ });
 
-    refreshButton.addEventListener("click", () => loadTasks());
-    
-    document.getElementById("dailyBriefBoardBtn").addEventListener("click", () => {
-      const todoTasks = tasks.filter(t => t.status !== "done");
-      let brief = "นี่คือ Daily Brief สรุปงานค้างทั้งหมด:\n\n";
-      if (todoTasks.length === 0) {
-        brief += "ไม่มีงานค้าง เยี่ยมมาก!\n";
-      } else {
-        todoTasks.forEach((t, i) => {
-          brief += `${i+1}. [${t.role}] ${t.title} (${priorityLabels[t.priority] || t.priority})\n`;
-        });
-      }
-      alert(brief);
-    });
-    logoutButton.addEventListener("click", () => {
-      sessionStorage.removeItem(passwordKey);
-      password = "";
-      loginPanel.style.display = "grid";
-    });
-    [roleFilter, statusFilter, priorityFilter, searchInput].forEach(input => {
-      input.addEventListener("input", render);
-    });
+ refreshButton.addEventListener("click", => loadTasks);
+ 
+ document.getElementById("dailyBriefBoardBtn").addEventListener("click", => {
+ const todoTasks = tasks.filter(t => t.status !== "done");
+ let brief = " Daily Brief:\n\n";
+ if (todoTasks.length === 0) {
+ brief += " !\n";
+ } else {
+ todoTasks.forEach((t, i) => {
+ brief += `${i+1}. [${t.role}] ${t.title} (${priorityLabels[t.priority] || t.priority})\n`;
+ });
+ }
+ alert(brief);
+ });
+ logoutButton.addEventListener("click", => {
+ sessionStorage.removeItem(passwordKey);
+ password = "";
+ loginPanel.style.display = "grid";
+ });
+ [roleFilter, statusFilter, priorityFilter, searchInput].forEach(input => {
+ input.addEventListener("input", render);
+ });
 
-    if (password) {
-      loadTasks();
-    }
-    render();
-    setInterval(() => loadTasks({ quiet: true }), 10000);
-  </script>
+ if (password) {
+ loadTasks;
+ }
+ render;
+ setInterval( => loadTasks({ quiet: true }), 10000);
+</script>
 </body>
 </html>
-
 

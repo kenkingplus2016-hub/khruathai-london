@@ -1,1284 +1,1282 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="robots" content="noindex,nofollow">
-  <title>Zab Siam Food Safety</title>
-  <style>
-    :root {
-      --green: #00720c;
-      --green-dark: #005b08;
-      --green-soft: #d9f7df;
-      --ink: #161616;
-      --muted: #6d756d;
-      --line: #d9ddd7;
-      --paper: #f5f6f3;
-      --card: #ffffff;
-      --red: #d71919;
-      --amber: #ffb000;
-      --cyan: #14a3c7;
-      --purple: #7a2dbb;
-      --shadow: 0 12px 28px rgba(0, 0, 0, .14);
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Zab Siam Food Safety</title>
+<style>
+ :root {
+ --green: #00720c;
+ --green-dark: #005b08;
+ --green-soft: #d9f7df;
+ --ink: #161616;
+ --muted: #6d756d;
+ --line: #d9ddd7;
+ --paper: #f5f6f3;
+ --card: #ffffff;
+ --red: #d71919;
+ --amber: #ffb000;
+ --cyan: #14a3c7;
+ --purple: #7a2dbb;
+ --shadow: 0 12px 28px rgba(0, 0, 0, .14);
+ }
 
-    * { box-sizing: border-box; }
-    html, body { min-height: 100%; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: #0f0f0f;
-      font-family: Arial, Tahoma, sans-serif;
-    }
-    button, input, select, textarea { font: inherit; }
-    button { cursor: pointer; }
+ * { box-sizing: border-box; }
+ html, body { min-height: 100%; }
+ body {
+ margin: 0;
+ color: var(--ink);
+ background: #0f0f0f;
+ font-family: Arial, Tahoma, sans-serif;
+ }
+ button, input, select, textarea { font: inherit; }
+ button { cursor: pointer; }
 
-    .login {
-      position: fixed;
-      inset: 0;
-      z-index: 30;
-      display: grid;
-      place-items: center;
-      padding: 20px;
-      background: rgba(0, 0, 0, .72);
-    }
-    .login-card {
-      width: min(420px, 100%);
-      background: #fff;
-      border-radius: 18px;
-      padding: 22px;
-      display: grid;
-      gap: 12px;
-      box-shadow: var(--shadow);
-    }
-    .login-card h1 { margin: 0; font-size: 25px; }
-    .login-card p { margin: 0; color: var(--muted); line-height: 1.45; }
+ .login {
+ position: fixed;
+ inset: 0;
+ z-index: 30;
+ display: grid;
+ place-items: center;
+ padding: 20px;
+ background: rgba(0, 0, 0, .72);
+ }
+ .login-card {
+ width: min(420px, 100%);
+ background: #fff;
+ border-radius: 18px;
+ padding: 22px;
+ display: grid;
+ gap: 12px;
+ box-shadow: var(--shadow);
+ }
+ .login-card h1 { margin: 0; font-size: 25px; }
+ .login-card p { margin: 0; color: var(--muted); line-height: 1.45; }
 
-    .phone {
-      width: min(430px, 100%);
-      min-height: 100vh;
-      margin: 0 auto;
-      background: var(--paper);
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      overflow: hidden;
-    }
-    .top {
-      color: #fff;
-      background: var(--green-dark);
-      padding: max(14px, env(safe-area-inset-top)) 14px 12px;
-      position: sticky;
-      top: 0;
-      z-index: 8;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, .18);
-    }
-    .site-pill {
-      min-height: 36px;
-      border: 1px solid rgba(255,255,255,.28);
-      border-radius: 9px;
-      padding: 8px 12px;
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      background: rgba(255,255,255,.09);
-      font-weight: 800;
-      margin-bottom: 8px;
-    }
-    .shield {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: #064d13;
-      display: grid;
-      place-items: center;
-      font-size: 12px;
-    }
-    .navline {
-      min-height: 42px;
-      display: grid;
-      grid-template-columns: 42px minmax(0, 1fr) 42px;
-      align-items: center;
-      gap: 8px;
-    }
-    .back, .gear {
-      width: 38px;
-      height: 38px;
-      border: 0;
-      border-radius: 10px;
-      color: #fff;
-      background: transparent;
-      font-size: 26px;
-    }
-    .screen-title {
-      text-align: center;
-      font-weight: 900;
-    }
-    .subtitle {
-      margin-top: -7px;
-      text-align: center;
-      color: rgba(255,255,255,.78);
-      font-size: 13px;
-    }
+ .phone {
+ width: min(430px, 100%);
+ min-height: 100vh;
+ margin: 0 auto;
+ background: var(--paper);
+ display: flex;
+ flex-direction: column;
+ position: relative;
+ overflow: hidden;
+ }
+ .top {
+ color: #fff;
+ background: var(--green-dark);
+ padding: max(14px, env(safe-area-inset-top)) 14px 12px;
+ position: sticky;
+ top: 0;
+ z-index: 8;
+ box-shadow: 0 4px 14px rgba(0, 0, 0, .18);
+ }
+ .site-pill {
+ min-height: 36px;
+ border: 1px solid rgba(255,255,255,.28);
+ border-radius: 9px;
+ padding: 8px 12px;
+ display: flex;
+ align-items: center;
+ gap: 9px;
+ background: rgba(255,255,255,.09);
+ font-weight: 800;
+ margin-bottom: 8px;
+ }
+ .shield {
+ width: 20px;
+ height: 20px;
+ border-radius: 50%;
+ background: #064d13;
+ display: grid;
+ place-items: center;
+ font-size: 12px;
+ }
+ .navline {
+ min-height: 42px;
+ display: grid;
+ grid-template-columns: 42px minmax(0, 1fr) 42px;
+ align-items: center;
+ gap: 8px;
+ }
+ .back, .gear {
+ width: 38px;
+ height: 38px;
+ border: 0;
+ border-radius: 10px;
+ color: #fff;
+ background: transparent;
+ font-size: 26px;
+ }
+ .screen-title {
+ text-align: center;
+ font-weight: 900;
+ }
+ .subtitle {
+ margin-top: -7px;
+ text-align: center;
+ color: rgba(255,255,255,.78);
+ font-size: 13px;
+ }
 
-    .content {
-      flex: 1;
-      overflow: auto;
-      padding: 16px 12px 92px;
-    }
-    .home-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-    }
-    .tile {
-      min-height: 132px;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: linear-gradient(180deg, #fff, #f4f4f2);
-      box-shadow: 0 7px 16px rgba(0,0,0,.12);
-      display: grid;
-      place-items: center;
-      gap: 8px;
-      padding: 16px 10px;
-      text-align: center;
-      font-weight: 900;
-    }
-    .tile-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      font-size: 22px;
-      font-weight: 900;
-      background: #f4f4f4;
-      box-shadow: 0 7px 15px rgba(0,0,0,.12);
-    }
-    .orange { color: #db5a00; }
-    .blue { color: #0094c6; }
-    .teal { color: #00a8a8; }
-    .red { color: var(--red); }
-    .gold { color: var(--amber); }
-    .purple { color: var(--purple); }
-    .green { color: var(--green); }
+ .content {
+ flex: 1;
+ overflow: auto;
+ padding: 16px 12px 92px;
+ }
+ .home-grid {
+ display: grid;
+ grid-template-columns: repeat(2, minmax(0, 1fr));
+ gap: 14px;
+ }
+ .tile {
+ min-height: 132px;
+ border: 1px solid var(--line);
+ border-radius: 18px;
+ background: linear-gradient(180deg, #fff, #f4f4f2);
+ box-shadow: 0 7px 16px rgba(0,0,0,.12);
+ display: grid;
+ place-items: center;
+ gap: 8px;
+ padding: 16px 10px;
+ text-align: center;
+ font-weight: 900;
+ }
+ .tile-icon {
+ width: 48px;
+ height: 48px;
+ border-radius: 50%;
+ display: grid;
+ place-items: center;
+ font-size: 22px;
+ font-weight: 900;
+ background: #f4f4f4;
+ box-shadow: 0 7px 15px rgba(0,0,0,.12);
+ }
+ .orange { color: #db5a00; }
+ .blue { color: #0094c6; }
+ .teal { color: #00a8a8; }
+ .red { color: var(--red); }
+ .gold { color: var(--amber); }
+ .purple { color: var(--purple); }
+ .green { color: var(--green); }
 
-    .staff-select {
-      width: 100%;
-      min-height: 50px;
-      border: 2px solid var(--green);
-      border-radius: 11px;
-      background: #fff;
-      padding: 10px 14px;
-      margin-bottom: 12px;
-      font-weight: 800;
-    }
-    .card {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 17px;
-      padding: 18px;
-      margin-bottom: 14px;
-      box-shadow: 0 7px 18px rgba(0,0,0,.11);
-    }
-    .card h3 {
-      margin: 0 0 12px;
-      font-size: 16px;
-    }
-    label {
-      display: grid;
-      gap: 7px;
-      margin-bottom: 12px;
-      color: var(--ink);
-      font-size: 14px;
-      font-weight: 800;
-    }
-    input, select, textarea {
-      width: 100%;
-      border: 1px solid #ccd1ca;
-      border-radius: 11px;
-      min-height: 48px;
-      padding: 11px 13px;
-      background: #fff;
-      color: var(--ink);
-    }
-    textarea { min-height: 92px; resize: vertical; }
+ .staff-select {
+ width: 100%;
+ min-height: 50px;
+ border: 2px solid var(--green);
+ border-radius: 11px;
+ background: #fff;
+ padding: 10px 14px;
+ margin-bottom: 12px;
+ font-weight: 800;
+ }
+ .card {
+ background: #fff;
+ border: 1px solid var(--line);
+ border-radius: 17px;
+ padding: 18px;
+ margin-bottom: 14px;
+ box-shadow: 0 7px 18px rgba(0,0,0,.11);
+ }
+ .card h3 {
+ margin: 0 0 12px;
+ font-size: 16px;
+ }
+ label {
+ display: grid;
+ gap: 7px;
+ margin-bottom: 12px;
+ color: var(--ink);
+ font-size: 14px;
+ font-weight: 800;
+ }
+ input, select, textarea {
+ width: 100%;
+ border: 1px solid #ccd1ca;
+ border-radius: 11px;
+ min-height: 48px;
+ padding: 11px 13px;
+ background: #fff;
+ color: var(--ink);
+ }
+ textarea { min-height: 92px; resize: vertical; }
 
-    .segments {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-    }
-    .segment {
-      min-height: 46px;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      background: #fff;
-      font-weight: 900;
-    }
-    .segment.active {
-      color: #fff;
-      background: var(--green);
-      border-color: var(--green);
-    }
+ .segments {
+ display: grid;
+ grid-template-columns: repeat(3, minmax(0, 1fr));
+ gap: 12px;
+ }
+ .segment {
+ min-height: 46px;
+ border: 1px solid var(--line);
+ border-radius: 10px;
+ background: #fff;
+ font-weight: 900;
+ }
+ .segment.active {
+ color: #fff;
+ background: var(--green);
+ border-color: var(--green);
+ }
 
-    .temp-control {
-      border: 1px solid #cfd4cf;
-      border-radius: 12px;
-      min-height: 66px;
-      display: grid;
-      grid-template-columns: 58px 1fr 58px;
-      align-items: center;
-      text-align: center;
-      margin-bottom: 12px;
-    }
-    .temp-control button {
-      border: 0;
-      background: transparent;
-      color: var(--green);
-      font-size: 30px;
-      font-weight: 500;
-    }
-    .temp-value {
-      font-size: 32px;
-      font-weight: 900;
-    }
-    .temp-value span {
-      font-size: 18px;
-      color: #3d463d;
-      margin-left: 4px;
-    }
-    .range-track {
-      height: 28px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, #76d7ef, #ffd052 48%, #ff9900 68%, #ff2020);
-      position: relative;
-      margin: 6px 4px 8px;
-    }
-    .range-dot {
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background: #fff;
-      border: 6px solid var(--green);
-      position: absolute;
-      top: 2px;
-      left: 50%;
-      transform: translateX(-50%);
-      box-shadow: 0 2px 8px rgba(0,0,0,.25);
-    }
-    .range-labels {
-      display: flex;
-      justify-content: space-between;
-      color: #3e443d;
-      font-size: 12px;
-      margin: 0 4px 20px;
-    }
-    .safe-text {
-      color: #4a5248;
-      font-size: 13px;
-    }
+ .temp-control {
+ border: 1px solid #cfd4cf;
+ border-radius: 12px;
+ min-height: 66px;
+ display: grid;
+ grid-template-columns: 58px 1fr 58px;
+ align-items: center;
+ text-align: center;
+ margin-bottom: 12px;
+ }
+ .temp-control button {
+ border: 0;
+ background: transparent;
+ color: var(--green);
+ font-size: 30px;
+ font-weight: 500;
+ }
+ .temp-value {
+ font-size: 32px;
+ font-weight: 900;
+ }
+ .temp-value span {
+ font-size: 18px;
+ color: #3d463d;
+ margin-left: 4px;
+ }
+ .range-track {
+ height: 28px;
+ border-radius: 999px;
+ background: linear-gradient(90deg, #76d7ef, #ffd052 48%, #ff9900 68%, #ff2020);
+ position: relative;
+ margin: 6px 4px 8px;
+ }
+ .range-dot {
+ width: 24px;
+ height: 24px;
+ border-radius: 50%;
+ background: #fff;
+ border: 6px solid var(--green);
+ position: absolute;
+ top: 2px;
+ left: 50%;
+ transform: translateX(-50%);
+ box-shadow: 0 2px 8px rgba(0,0,0,.25);
+ }
+ .range-labels {
+ display: flex;
+ justify-content: space-between;
+ color: #3e443d;
+ font-size: 12px;
+ margin: 0 4px 20px;
+ }
+ .safe-text {
+ color: #4a5248;
+ font-size: 13px;
+ }
 
-    .check-row {
-      display: grid;
-      grid-template-columns: 32px minmax(0, 1fr);
-      gap: 10px;
-      align-items: center;
-      min-height: 50px;
-      border-bottom: 1px solid #eef0ed;
-      font-size: 16px;
-    }
-    .checkbox {
-      width: 24px;
-      height: 24px;
-      border: 2px solid #cfd4cf;
-      border-radius: 6px;
-      display: grid;
-      place-items: center;
-      color: #fff;
-      font-weight: 900;
-    }
-    .check-row.done .checkbox {
-      border-color: var(--green);
-      background: var(--green);
-    }
-    .check-row.done .check-label {
-      color: #666;
-      text-decoration: line-through;
-    }
-    .progress-card {
-      padding: 14px 18px;
-    }
-    .progress-line {
-      height: 8px;
-      border-radius: 999px;
-      background: #e4e8e2;
-      overflow: hidden;
-      margin-top: 10px;
-    }
-    .progress-fill {
-      height: 100%;
-      width: 0;
-      background: var(--green);
-      border-radius: inherit;
-      transition: width .2s ease;
-    }
+ .check-row {
+ display: grid;
+ grid-template-columns: 32px minmax(0, 1fr);
+ gap: 10px;
+ align-items: center;
+ min-height: 50px;
+ border-bottom: 1px solid #eef0ed;
+ font-size: 16px;
+ }
+ .checkbox {
+ width: 24px;
+ height: 24px;
+ border: 2px solid #cfd4cf;
+ border-radius: 6px;
+ display: grid;
+ place-items: center;
+ color: #fff;
+ font-weight: 900;
+ }
+ .check-row.done .checkbox {
+ border-color: var(--green);
+ background: var(--green);
+ }
+ .check-row.done .check-label {
+ color: #666;
+ text-decoration: line-through;
+ }
+ .progress-card {
+ padding: 14px 18px;
+ }
+ .progress-line {
+ height: 8px;
+ border-radius: 999px;
+ background: #e4e8e2;
+ overflow: hidden;
+ margin-top: 10px;
+ }
+ .progress-fill {
+ height: 100%;
+ width: 0;
+ background: var(--green);
+ border-radius: inherit;
+ transition: width .2s ease;
+ }
 
-    .equipment-grid, .allergen-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-    }
-    .equipment, .allergen {
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      min-height: 108px;
-      padding: 12px;
-      background: #fff;
-      text-align: center;
-      display: grid;
-      place-items: center;
-      gap: 5px;
-    }
-    .equipment.active, .allergen.active {
-      border: 2px solid var(--green);
-      background: var(--green-soft);
-    }
-    .equipment strong, .allergen strong { display: block; }
-    .equipment small, .allergen small { color: var(--muted); }
+ .equipment-grid, .allergen-grid {
+ display: grid;
+ grid-template-columns: repeat(2, minmax(0, 1fr));
+ gap: 12px;
+ }
+ .equipment, .allergen {
+ border: 1px solid var(--line);
+ border-radius: 14px;
+ min-height: 108px;
+ padding: 12px;
+ background: #fff;
+ text-align: center;
+ display: grid;
+ place-items: center;
+ gap: 5px;
+ }
+ .equipment.active, .allergen.active {
+ border: 2px solid var(--green);
+ background: var(--green-soft);
+ }
+ .equipment strong, .allergen strong { display: block; }
+ .equipment small, .allergen small { color: var(--muted); }
 
-    .process-guidance {
-      display: grid;
-      gap: 10px;
-      padding: 14px;
-      border: 1px solid #cfe2cf;
-      border-radius: 14px;
-      background: var(--green-soft);
-      margin-top: 12px;
-    }
-    .process-guidance h4 {
-      margin: 0;
-      font-size: 15px;
-    }
-    .process-guidance ul {
-      margin: 0;
-      padding-left: 18px;
-      color: #243024;
-      line-height: 1.45;
-      font-size: 13px;
-    }
+ .process-guidance {
+ display: grid;
+ gap: 10px;
+ padding: 14px;
+ border: 1px solid #cfe2cf;
+ border-radius: 14px;
+ background: var(--green-soft);
+ margin-top: 12px;
+ }
+ .process-guidance h4 {
+ margin: 0;
+ font-size: 15px;
+ }
+ .process-guidance ul {
+ margin: 0;
+ padding-left: 18px;
+ color: #243024;
+ line-height: 1.45;
+ font-size: 13px;
+ }
 
-    .record-card, .action-card {
-      background: #fff;
-      border-radius: 14px;
-      padding: 14px;
-      margin-bottom: 12px;
-      box-shadow: 0 6px 16px rgba(0,0,0,.10);
-    }
-    .record-card h4, .action-card h4 {
-      margin: 0 0 7px;
-      font-size: 16px;
-    }
-    .meta {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.45;
-    }
-    .badge {
-      display: inline-flex;
-      border-radius: 7px;
-      padding: 5px 8px;
-      color: #fff;
-      background: var(--green);
-      font-size: 12px;
-      font-weight: 900;
-      margin-bottom: 7px;
-    }
-    .badge.risk, .badge.issue, .badge.high { background: var(--red); }
-    .badge.medium, .badge.pending { background: var(--amber); color: #2b2108; }
+ .record-card, .action-card {
+ background: #fff;
+ border-radius: 14px;
+ padding: 14px;
+ margin-bottom: 12px;
+ box-shadow: 0 6px 16px rgba(0,0,0,.10);
+ }
+ .record-card h4, .action-card h4 {
+ margin: 0 0 7px;
+ font-size: 16px;
+ }
+ .meta {
+ color: var(--muted);
+ font-size: 13px;
+ line-height: 1.45;
+ }
+ .badge {
+ display: inline-flex;
+ border-radius: 7px;
+ padding: 5px 8px;
+ color: #fff;
+ background: var(--green);
+ font-size: 12px;
+ font-weight: 900;
+ margin-bottom: 7px;
+ }
+ .badge.risk, .badge.issue, .badge.high { background: var(--red); }
+ .badge.medium, .badge.pending { background: var(--amber); color: #2b2108; }
 
-    .bottom-save {
-      position: fixed;
-      left: 50%;
-      bottom: max(12px, env(safe-area-inset-bottom));
-      transform: translateX(-50%);
-      width: min(390px, calc(100% - 28px));
-      min-height: 54px;
-      border: 0;
-      border-radius: 12px;
-      background: #00920f;
-      color: #fff;
-      font-size: 17px;
-      font-weight: 900;
-      box-shadow: 0 8px 20px rgba(0,0,0,.25);
-      z-index: 10;
-      display: none;
-    }
-    .bottom-save.show { display: block; }
-    .notice {
-      position: fixed;
-      left: 50%;
-      bottom: 78px;
-      transform: translateX(-50%);
-      width: min(390px, calc(100% - 28px));
-      padding: 12px;
-      border-radius: 10px;
-      color: #fff;
-      background: rgba(0,0,0,.82);
-      z-index: 14;
-      display: none;
-      text-align: center;
-      font-weight: 800;
-    }
-    .notice.show { display: block; }
+ .bottom-save {
+ position: fixed;
+ left: 50%;
+ bottom: max(12px, env(safe-area-inset-bottom));
+ transform: translateX(-50%);
+ width: min(390px, calc(100% - 28px));
+ min-height: 54px;
+ border: 0;
+ border-radius: 12px;
+ background: #00920f;
+ color: #fff;
+ font-size: 17px;
+ font-weight: 900;
+ box-shadow: 0 8px 20px rgba(0,0,0,.25);
+ z-index: 10;
+ display: none;
+ }
+ .bottom-save.show { display: block; }
+ .notice {
+ position: fixed;
+ left: 50%;
+ bottom: 78px;
+ transform: translateX(-50%);
+ width: min(390px, calc(100% - 28px));
+ padding: 12px;
+ border-radius: 10px;
+ color: #fff;
+ background: rgba(0,0,0,.82);
+ z-index: 14;
+ display: none;
+ text-align: center;
+ font-weight: 800;
+ }
+ .notice.show { display: block; }
 
-    @media (min-width: 760px) {
-      body { background: #dfe2dc; }
-      .phone {
-        min-height: calc(100vh - 32px);
-        margin: 16px auto;
-        border-radius: 28px;
-        box-shadow: 0 22px 60px rgba(0,0,0,.28);
-      }
-      .bottom-save { bottom: 28px; }
-    }
-  </style>
+ @media (min-width: 760px) {
+ body { background: #dfe2dc; }
+ .phone {
+ min-height: calc(100vh - 32px);
+ margin: 16px auto;
+ border-radius: 28px;
+ box-shadow: 0 22px 60px rgba(0,0,0,.28);
+ }
+ .bottom-save { bottom: 28px; }
+ }
+</style>
 </head>
 <body>
-  <div class="login" id="loginPanel">
-    <form class="login-card" id="loginForm">
-      <h1>Zab Siam Food Safety</h1>
-      <p>ใส่รหัสพนักงานเพื่อเปิดระบบบันทึก food safety สำหรับครัว ร้าน และทีมงาน</p>
-      <label>
-        รหัสพนักงาน
-        <input id="passwordInput" type="password" autocomplete="current-password" required>
-      </label>
-      <button class="bottom-action button-login" type="submit">เปิดระบบ</button>
-      <p id="loginMessage"></p>
-    </form>
-  </div>
+<div class="login" id="loginPanel">
+ <form class="login-card" id="loginForm">
+ <h1>Zab Siam Food Safety</h1>
+ <p> food safety</p>
+ <label>
+ <input id="passwordInput" type="password" autocomplete="current-password" required>
+ </label>
+ <button class="bottom-action button-login" type="submit"> </button>
+ <p id="loginMessage"></p>
+ </form>
+</div>
 
-  <div class="phone">
-    <header class="top">
-      <div class="site-pill"><span class="shield">✓</span><span>Zab Siam</span></div>
-      <div class="navline">
-        <button class="back" id="backButton" type="button">‹</button>
-        <div>
-          <div class="screen-title" id="screenTitle">Food Safety</div>
-          <div class="subtitle" id="screenSubtitle">Compliance Confidence</div>
-        </div>
-        <button class="gear" id="recordsShortcut" type="button">□</button>
-      </div>
-    </header>
+<div class="phone">
+ <header class="top">
+ <div class="site-pill"><span class="shield">✓</span><span>Zab Siam</span></div>
+ <div class="navline">
+ <button class="back" id="backButton" type="button">‹</button>
+ <div>
+ <div class="screen-title" id="screenTitle">Food Safety</div>
+ <div class="subtitle" id="screenSubtitle">Compliance Confidence</div>
+ </div>
+ <button class="gear" id="recordsShortcut" type="button">□</button>
+ </div>
+ </header>
 
-    <main class="content" id="app"></main>
-  </div>
+ <main class="content" id="app"></main>
+</div>
 
-  <button class="bottom-save" id="saveButton" type="button">Save Record</button>
-  <div class="notice" id="notice"></div>
+<button class="bottom-save" id="saveButton" type="button">Save Record</button>
+<div class="notice" id="notice"></div>
 
-  <script>
-    const foodApi = "/api/food-safety-records";
-    const tempApi = "/api/temperature-checks";
-    const passwordKey = "zabsiam-food-safety-pass";
-    let password = sessionStorage.getItem(passwordKey) || "";
-    let screen = "home";
-    let staff = "Chef";
-    let selectedCategory = "Cook";
-    let temperature = 75;
-    let selectedEquipment = "Main Fridge";
-    let selectedHaccpProcess = "Pork neck marinade and cooking";
-    let selectedAllergens = [];
-    let checklistState = {};
-    let foodRecords = [];
-    let tempRecords = [];
+<script>
+ const foodApi = "/api/food-safety-records";
+ const tempApi = "/api/temperature-checks";
+ const passwordKey = "zabsiam-food-safety-pass";
+ let password = sessionStorage.getItem(passwordKey) || "";
+ let screen = "home";
+ let staff = "Chef";
+ let selectedCategory = "Cook";
+ let temperature = 75;
+ let selectedEquipment = "Main Fridge";
+ let selectedHaccpProcess = "Pork neck marinade and cooking";
+ let selectedAllergens = [];
+ let checklistState = {};
+ let foodRecords = [];
+ let tempRecords = [];
 
-    const app = document.getElementById("app");
-    const saveButton = document.getElementById("saveButton");
-    const notice = document.getElementById("notice");
-    const loginPanel = document.getElementById("loginPanel");
-    const loginForm = document.getElementById("loginForm");
-    const loginMessage = document.getElementById("loginMessage");
-    const screenTitle = document.getElementById("screenTitle");
-    const screenSubtitle = document.getElementById("screenSubtitle");
-    const backButton = document.getElementById("backButton");
+ const app = document.getElementById("app");
+ const saveButton = document.getElementById("saveButton");
+ const notice = document.getElementById("notice");
+ const loginPanel = document.getElementById("loginPanel");
+ const loginForm = document.getElementById("loginForm");
+ const loginMessage = document.getElementById("loginMessage");
+ const screenTitle = document.getElementById("screenTitle");
+ const screenSubtitle = document.getElementById("screenSubtitle");
+ const backButton = document.getElementById("backButton");
 
-    const tiles = [
-      { id: "cooking", title: "Cooking", icon: "C", color: "orange" },
-      { id: "cooling", title: "Cooling", icon: "F", color: "blue" },
-      { id: "cold", title: "Cold", icon: "T", color: "teal" },
-      { id: "delivery", title: "Delivery", icon: "D", color: "teal" },
-      { id: "menu", title: "Menu", icon: "M", color: "ink" },
-      { id: "allergen", title: "Allergen", icon: "A", color: "red" },
-      { id: "opening", title: "Opening", icon: "O", color: "gold" },
-      { id: "closing", title: "Closing", icon: "C", color: "purple" },
-      { id: "cleaning", title: "Cleaning", icon: "H", color: "teal" },
-      { id: "actions", title: "Actions", icon: "+", color: "teal" },
-      { id: "records", title: "Records", icon: "R", color: "green" },
-      { id: "calibration", title: "Probe", icon: "P", color: "blue" },
-      { id: "haccp", title: "HACCP", icon: "H", color: "green" },
-      { id: "pest", title: "Pest", icon: "P", color: "red" },
-      { id: "gas-safety", title: "Gas Safety", icon: "G", color: "orange" },
-      { id: "training", title: "Training", icon: "T", color: "purple" },
-      { id: "ai-tools", title: "AI Tools", icon: "AI", color: "blue" },
-      { id: "settings", title: "Settings", icon: "S", color: "gold" }
-    ];
+ const tiles = [
+ { id: "cooking", title: "Cooking", icon: "C", color: "orange" },
+ { id: "cooling", title: "Cooling", icon: "F", color: "blue" },
+ { id: "cold", title: "Cold", icon: "T", color: "teal" },
+ { id: "delivery", title: "Delivery", icon: "D", color: "teal" },
+ { id: "menu", title: "Menu", icon: "M", color: "ink" },
+ { id: "allergen", title: "Allergen", icon: "A", color: "red" },
+ { id: "opening", title: "Opening", icon: "O", color: "gold" },
+ { id: "closing", title: "Closing", icon: "C", color: "purple" },
+ { id: "cleaning", title: "Cleaning", icon: "H", color: "teal" },
+ { id: "actions", title: "Actions", icon: "+", color: "teal" },
+ { id: "records", title: "Records", icon: "R", color: "green" },
+ { id: "calibration", title: "Probe", icon: "P", color: "blue" },
+ { id: "haccp", title: "HACCP", icon: "H", color: "green" },
+ { id: "pest", title: "Pest", icon: "P", color: "red" },
+ { id: "gas-safety", title: "Gas Safety", icon: "G", color: "orange" },
+ { id: "training", title: "Training", icon: "T", color: "purple" },
+ { id: "ai-tools", title: "AI Tools", icon: "AI", color: "blue" },
+ { id: "settings", title: "Settings", icon: "S", color: "gold" }
+ ];
 
-    const checklists = {
-      opening: ["Check and log cold storage", "Handwash stocked", "Contact surfaces sanitised", "High food risk dated", "Allergen info available", "No pest signs", "Staff fit and well", "All equipment working", "Check battery in food probe"],
-      closing: ["Food cooled safely", "Fridges closed and logged", "Waste removed", "Surfaces cleaned", "Floors cleaned", "Probe cleaned", "Pest check completed", "Doors locked"],
-      cleaning: ["Prep table sanitised", "Hand wash sink cleaned", "Chopping boards cleaned", "Knives cleaned", "Fridge handles cleaned", "Bins cleaned", "Floor mopped"],
-      calibration: ["Ice water test prepared", "Probe reads 0°C ±1°C", "Boiling water check completed", "Probe cleaned after test", "Defect reported if out of range"],
-      haccp: [
-        "Food process / menu item identified",
-        "Pork neck marinade and cooking controls checked",
-        "Hot holding during market transport checked",
-        "Salmon Pla cold storage and service controls checked",
-        "Duck Larb preparation controls checked",
-        "Mango Sticky Rice preparation and storage controls checked",
-        "Leftover food after market close decision recorded",
-        "Hazards checked: biological, chemical, physical, allergen",
-        "Critical control point confirmed",
-        "Critical limit written down",
-        "Monitoring method confirmed",
-        "Corrective action written down",
-        "Record evidence saved",
-        "SFBB / HACCP diary updated",
-        "Manager review completed"
-      ],
-      pest: ["No pest activity seen", "Bait station / trap checked", "Doors and gaps checked", "Waste area checked", "Inspection note recorded", "Contractor issue followed up"],
-      "gas-safety": [
-        "Equipment identified and listed",
-        "Appliance number or equipment details recorded",
-        "Gas hose condition checked",
-        "Regulator condition checked",
-        "Gas valve condition checked",
-        "Leak test completed",
-        "Ventilation checked",
-        "Inspection date recorded",
-        "Qualified engineer name recorded",
-        "Engineer registration number recorded",
-        "Next inspection due date recorded"
-      ],
-      training: ["Staff training record updated", "Food hygiene topic covered", "Allergen briefing completed", "Temperature procedure explained", "Cleaning procedure explained", "Staff question answered"],
-      settings: ["Home screen features reviewed", "Equipment list checked", "Custom safe limits checked", "Staff list checked", "Record device checked"]
-    };
+ const checklists = {
+ opening: ["Check and log cold storage", "Handwash stocked", "Contact surfaces sanitised", "High food risk dated", "Allergen info available", "No pest signs", "Staff fit and well", "All equipment working", "Check battery in food probe"],
+ closing: ["Food cooled safely", "Fridges closed and logged", "Waste removed", "Surfaces cleaned", "Floors cleaned", "Probe cleaned", "Pest check completed", "Doors locked"],
+ cleaning: ["Prep table sanitised", "Hand wash sink cleaned", "Chopping boards cleaned", "Knives cleaned", "Fridge handles cleaned", "Bins cleaned", "Floor mopped"],
+ calibration: ["Ice water test prepared", "Probe reads 0°C ±1°C", "Boiling water check completed", "Probe cleaned after test", "Defect reported if out of range"],
+ haccp: [
+ "Food processmenu item identified",
+ "Pork neck marinade and cooking controls checked",
+ "Hot holding during market transport checked",
+ "Salmon Pla cold storage and service controls checked",
+ "Duck Larb preparation controls checked",
+ "Mango Sticky Rice preparation and storage controls checked",
+ "Leftover food after market close decision recorded",
+ "Hazards checked: biological, chemical, physical, allergen",
+ "Critical control point confirmed",
+ "Critical limit written down",
+ "Monitoring method confirmed",
+ "Corrective action written down",
+ "Record evidence saved",
+ "SFBBHACCP diary updated",
+ "Manager review completed"
+ ],
+ pest: ["No pest activity seen", "Bait stationtrap checked", "Doors and gaps checked", "Waste area checked", "Inspection note recorded", "Contractor issue followed up"],
+ "gas-safety": [
+ "Equipment identified and listed",
+ "Appliance number or equipment details recorded",
+ "Gas hose condition checked",
+ "Regulator condition checked",
+ "Gas valve condition checked",
+ "Leak test completed",
+ "Ventilation checked",
+ "Inspection date recorded",
+ "Qualified engineer name recorded",
+ "Engineer registration number recorded",
+ "Next inspection due date recorded"
+ ],
+ training: ["Staff training record updated", "Food hygiene topic covered", "Allergen briefing completed", "Temperature procedure explained", "Cleaning procedure explained", "Staff question answered"],
+ settings: ["Home screen features reviewed", "Equipment list checked", "Custom safe limits checked", "Staff list checked", "Record device checked"]
+ };
 
-    const allergens = ["Celery", "Gluten", "Crustaceans", "Eggs", "Fish", "Lupin", "Milk", "Molluscs", "Mustard", "Nuts", "Peanuts", "Sesame", "Soya", "Sulphites"];
-    const haccpProcesses = [
-      "Pork neck marinade and cooking",
-      "Hot holding during market transport",
-      "Salmon Pla storage and service",
-      "Duck Larb preparation",
-      "Mango Sticky Rice preparation and storage",
-      "Leftover food after market close",
-      "Cooking rice",
-      "Cooling cooked rice",
-      "Cooling cooked meat",
-      "Reheating cooked food",
-      "Hot holding food",
-      "Cold holding / fridge storage",
-      "Frozen storage",
-      "Goods in chilled delivery",
-      "Raw meat preparation",
-      "Ready-to-eat salad preparation",
-      "Allergen order preparation",
-      "Cleaning and sanitising food contact surfaces"
-    ];
-    const haccpProcessGuidance = {
-      "Pork neck marinade and cooking": {
-        hazard: "Raw pork, marinade cross contamination, undercooking",
-        ccp: "Cook pork neck to safe core temperature before slicing or holding",
-        limit: "Core temperature 75C or above; raw marinade must not touch cooked pork",
-        checks: [
-          "Keep raw pork covered, labelled and chilled until cooking",
-          "Use separate utensils/board for raw pork and cooked pork",
-          "Record core temperature with cleaned probe",
-          "Discard or fully boil any marinade that touched raw pork"
-        ]
-      },
-      "Hot holding during market transport": {
-        hazard: "Cooked food dropping into danger zone during transport/service",
-        ccp: "Keep hot food hot from kitchen to market and during service",
-        limit: "Hot holding 63C or above; if below limit, reheat to 75C or discard if unsafe",
-        checks: [
-          "Preheat hot box/insulated carrier before loading",
-          "Record temperature before leaving kitchen",
-          "Record arrival temperature at market",
-          "Check serving temperature during market service"
-        ]
-      },
-      "Salmon Pla storage and service": {
-        hazard: "Ready-to-eat fish, allergen fish, time/temperature abuse",
-        ccp: "Keep salmon chilled and protected from cross contamination",
-        limit: "Keep at 0-5C target and below 8C legal maximum; serve with clean utensils",
-        checks: [
-          "Store salmon covered in clean chilled container",
-          "Keep separate from raw meat and allergen orders",
-          "Record cold temperature before service",
-          "Discard if left out too long or temperature cannot be verified"
-        ]
-      },
-      "Duck Larb preparation": {
-        hazard: "Cooked duck cooling, reheating, allergen/cross contamination",
-        ccp: "Cook/reheat duck safely and mix with clean ready-to-eat ingredients",
-        limit: "Cook/reheat to 75C or above; hold cold below 8C or hot above 63C as used",
-        checks: [
-          "Record duck cook/reheat temperature",
-          "Cool cooked duck quickly if served cold",
-          "Use clean bowl, spoon and gloves for ready-to-eat mixing",
-          "Label allergens and spicy level clearly"
-        ]
-      },
-      "Mango Sticky Rice preparation and storage": {
-        hazard: "Cooked rice, coconut milk, allergen/cross contamination",
-        ccp: "Control cooked sticky rice and coconut milk storage time/temperature",
-        limit: "Keep chilled below 8C unless under controlled short service time; discard unsafe leftovers",
-        checks: [
-          "Record cooked sticky rice batch time",
-          "Keep coconut milk covered and chilled",
-          "Use clean utensils for mango and rice assembly",
-          "Label contains coconut and any sesame/topping allergens if used"
-        ]
-      },
-      "Leftover food after market close": {
-        hazard: "Unsafe reuse of food after transport/service",
-        ccp: "Decide keep or discard based on time, temperature and contamination risk",
-        limit: "Discard high-risk food if temperature/time records are missing or unsafe",
-        checks: [
-          "Record market close time and food temperature",
-          "Discard food exposed to customers, contamination or unknown temperature",
-          "Rapidly chill only food that has stayed under safe control",
-          "Label kept food with date/time and use-by decision"
-        ]
-      }
-    };
-    const equipment = [
-      { name: "Main Fridge", type: "Fridge" },
-      { name: "Prep Fridge", type: "Fridge" },
-      { name: "Walk-in Freezer", type: "Freezer" },
-      { name: "Raw Meat", type: "Fridge" }
-    ];
+ const allergens = ["Celery", "Gluten", "Crustaceans", "Eggs", "Fish", "Lupin", "Milk", "Molluscs", "Mustard", "Nuts", "Peanuts", "Sesame", "Soya", "Sulphites"];
+ const haccpProcesses = [
+ "Pork neck marinade and cooking",
+ "Hot holding during market transport",
+ "Salmon Pla storage and service",
+ "Duck Larb preparation",
+ "Mango Sticky Rice preparation and storage",
+ "Leftover food after market close",
+ "Cooking rice",
+ "Cooling cooked rice",
+ "Cooling cooked meat",
+ "Reheating cooked food",
+ "Hot holding food",
+ "Cold holdingfridge storage",
+ "Frozen storage",
+ "Goods in chilled delivery",
+ "Raw meat preparation",
+ "Ready-to-eat salad preparation",
+ "Allergen order preparation",
+ "Cleaning and sanitising food contact surfaces"
+ ];
+ const haccpProcessGuidance = {
+ "Pork neck marinade and cooking": {
+ hazard: "Raw pork, marinade cross contamination, undercooking",
+ ccp: "Cook pork neck to safe core temperature before slicing or holding",
+ limit: "Core temperature 75C or above; raw marinade must not touch cooked pork",
+ checks: [
+ "Keep raw pork covered, labelled and chilled until cooking",
+ "Use separate utensils/board for raw pork and cooked pork",
+ "Record core temperature with cleaned probe",
+ "Discard or fully boil any marinade that touched raw pork"
+ ]
+ },
+ "Hot holding during market transport": {
+ hazard: "Cooked food dropping into danger zone during transport/service",
+ ccp: "Keep hot food hot from kitchen to market and during service",
+ limit: "Hot holding 63C or above; if below limit, reheat to 75C or discard if unsafe",
+ checks: [
+ "Preheat hot box/insulated carrier before loading",
+ "Record temperature before leaving kitchen",
+ "Record arrival temperature at market",
+ "Check serving temperature during market service"
+ ]
+ },
+ "Salmon Pla storage and service": {
+ hazard: "Ready-to-eat fish, allergen fish, time/temperature abuse",
+ ccp: "Keep salmon chilled and protected from cross contamination",
+ limit: "Keep at 0-5C target and below 8C legal maximum; serve with clean utensils",
+ checks: [
+ "Store salmon covered in clean chilled container",
+ "Keep separate from raw meat and allergen orders",
+ "Record cold temperature before service",
+ "Discard if left out too long or temperature cannot be verified"
+ ]
+ },
+ "Duck Larb preparation": {
+ hazard: "Cooked duck cooling, reheating, allergen/cross contamination",
+ ccp: "Cook/reheat duck safely and mix with clean ready-to-eat ingredients",
+ limit: "Cook/reheat to 75C or above; hold cold below 8C or hot above 63C as used",
+ checks: [
+ "Record duck cook/reheat temperature",
+ "Cool cooked duck quickly if served cold",
+ "Use clean bowl, spoon and gloves for ready-to-eat mixing",
+ "Label allergens and spicy level clearly"
+ ]
+ },
+ "Mango Sticky Rice preparation and storage": {
+ hazard: "Cooked rice, coconut milk, allergen/cross contamination",
+ ccp: "Control cooked sticky rice and coconut milk storage time/temperature",
+ limit: "Keep chilled below 8C unless under controlled short service time; discard unsafe leftovers",
+ checks: [
+ "Record cooked sticky rice batch time",
+ "Keep coconut milk covered and chilled",
+ "Use clean utensils for mango and rice assembly",
+ "Label contains coconut and any sesame/topping allergens if used"
+ ]
+ },
+ "Leftover food after market close": {
+ hazard: "Unsafe reuse of food after transport/service",
+ ccp: "Decide keep or discard based on time, temperature and contamination risk",
+ limit: "Discard high-risk food if temperature/time records are missing or unsafe",
+ checks: [
+ "Record market close time and food temperature",
+ "Discard food exposed to customers, contamination or unknown temperature",
+ "Rapidly chill only food that has stayed under safe control",
+ "Label kept food with date/time and use-by decision"
+ ]
+ }
+ };
+ const equipment = [
+ { name: "Main Fridge", type: "Fridge" },
+ { name: "Prep Fridge", type: "Fridge" },
+ { name: "Walk-in Freezer", type: "Freezer" },
+ { name: "Raw Meat", type: "Fridge" }
+ ];
 
-    function headers() {
-      return { "Content-Type": "application/json", "x-zabsiam-admin-pass": password };
-    }
+ function headers {
+ return { "Content-Type": "application/json", "x-zabsiam-admin-pass": password };
+ }
 
-    function escapeHtml(value) {
-      return String(value || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
-    }
+ function escapeHtml(value) {
+ return String(value || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+ }
 
-    function showNotice(message) {
-      notice.textContent = message;
-      notice.classList.add("show");
-      clearTimeout(showNotice.timer);
-      showNotice.timer = setTimeout(() => notice.classList.remove("show"), 2600);
-    }
+ function showNotice(message) {
+ notice.textContent = message;
+ notice.classList.add("show");
+ clearTimeout(showNotice.timer);
+ showNotice.timer = setTimeout( => notice.classList.remove("show"), 2600);
+ }
 
-    function formatTime(value) {
-      return new Intl.DateTimeFormat("en-GB", { dateStyle: "medium", timeStyle: "short", timeZone: "Europe/London" }).format(new Date(value));
-    }
+ function formatTime(value) {
+ return new Intl.DateTimeFormat("en-GB", { dateStyle: "medium", timeStyle: "short", timeZone: "Europe/London" }).format(new Date(value));
+ }
 
-    function setScreen(next) {
-      screen = next;
-      render();
-    }
+ function setScreen(next) {
+ screen = next;
+ render;
+ }
 
-    function staffSelect() {
-      return `
-        <select class="staff-select" id="staffSelect">
-          ${["Chef", "Kitchen Porter", "Manager", "Front Staff", "Owner"].map(name => `<option${name === staff ? " selected" : ""}>${name}</option>`).join("")}
-        </select>
-      `;
-    }
+ function staffSelect {
+ return `
+ <select class="staff-select" id="staffSelect">
+ ${["Chef", "Kitchen Porter", "Manager", "Front Staff", "Owner"].map(name => `<option${name === staff ? " selected" : ""}>${name}</option>`).join("")}
+ </select>
+ `;
+ }
 
-    function render() {
-      backButton.style.visibility = screen === "home" ? "hidden" : "visible";
-      saveButton.classList.toggle("show", screen !== "home" && screen !== "records");
-      const tile = tiles.find(item => item.id === screen);
-      screenTitle.textContent = screen === "home" ? "Food Safety" : tile?.title || "Food Safety";
-      screenSubtitle.textContent = screen === "home" ? "Compliance Confidence" : "";
+ function render {
+ backButton.style.visibility = screen === "home" ? "hidden" : "visible";
+ saveButton.classList.toggle("show", screen !== "home" && screen !== "records");
+ const tile = tiles.find(item => item.id === screen);
+ screenTitle.textContent = screen === "home" ? "Food Safety" : tile?.title || "Food Safety";
+ screenSubtitle.textContent = screen === "home" ? "Compliance Confidence" : "";
 
-      if (screen === "home") renderHome();
-      else if (["cooking", "cooling"].includes(screen)) renderCooking();
-      else if (screen === "cold") renderCold();
-      else if (screen === "delivery") renderDelivery();
-      else if (screen === "haccp") renderHaccp();
-      else if (screen === "gas-safety") renderGasSafety();
-      else if (["opening", "closing", "cleaning", "calibration", "pest", "training", "settings"].includes(screen)) renderChecklist(screen);
-      else if (screen === "allergen") renderAllergen();
-      else if (screen === "menu") renderMenu();
-      else if (screen === "actions") renderActions();
-      else if (screen === "ai-tools") renderAiTools();
-      else if (screen === "records") renderRecords();
-    }
+ if (screen === "home") renderHome;
+ else if (["cooking", "cooling"].includes(screen)) renderCooking;
+ else if (screen === "cold") renderCold;
+ else if (screen === "delivery") renderDelivery;
+ else if (screen === "haccp") renderHaccp;
+ else if (screen === "gas-safety") renderGasSafety;
+ else if (["opening", "closing", "cleaning", "calibration", "pest", "training", "settings"].includes(screen)) renderChecklist(screen);
+ else if (screen === "allergen") renderAllergen;
+ else if (screen === "menu") renderMenu;
+ else if (screen === "actions") renderActions;
+ else if (screen === "ai-tools") renderAiTools;
+ else if (screen === "records") renderRecords;
+ }
 
-    function renderHome() {
-      app.innerHTML = `<div class="home-grid">${tiles.map(tile => `
-        <button class="tile" type="button" data-screen="${tile.id}">
-          <span class="tile-icon ${tile.color}">${tile.icon}</span>
-          <span>${tile.title}</span>
-        </button>`).join("")}</div>`;
-    }
+ function renderHome {
+ app.innerHTML = `<div class="home-grid">${tiles.map(tile => `
+ <button class="tile" type="button" data-screen="${tile.id}">
+ <span class="tile-icon ${tile.color}">${tile.icon}</span>
+ <span>${tile.title}</span>
+ </button>`).join("")}</div>`;
+ }
 
-    function renderCooking() {
-      const safe = screen === "cooking" ? "Safe minimum: 75°C" : "Cooling record: log start/end temperature and time";
-      app.innerHTML = `
-        ${staffSelect()}
-        <section class="card">
-          <label>Food Name<input id="foodName" value="${screen === "cooking" ? "Grilled Pork Neck" : "Cooked Rice"}"></label>
-        </section>
-        <section class="card">
-          <h3>Category</h3>
-          <div class="segments">${["Cook", "Reheat", "Holding"].map(item => `<button class="segment${selectedCategory === item ? " active" : ""}" data-category="${item}" type="button">${item}</button>`).join("")}</div>
-        </section>
-        ${temperatureCard(safe, 0, 100)}
-        <section class="card"><textarea id="notes" placeholder="Additional notes"></textarea></section>
-      `;
-      bindCommonInputs();
-    }
+ function renderCooking {
+ const safe = screen === "cooking" ? "Safe minimum: 75°C" : "Cooling record: log start/end temperature and time";
+ app.innerHTML = `
+ ${staffSelect}
+ <section class="card">
+ <label>Food Name<input id="foodName" value="${screen === "cooking" ? "Grilled Pork Neck" : "Cooked Rice"}"></label>
+ </section>
+ <section class="card">
+ <h3>Category</h3>
+ <div class="segments">${["Cook", "Reheat", "Holding"].map(item => `<button class="segment${selectedCategory === item ? " active" : ""}" data-category="${item}" type="button">${item}</button>`).join("")}</div>
+ </section>
+ ${temperatureCard(safe, 0, 100)}
+ <section class="card"><textarea id="notes" placeholder="Additional notes"></textarea></section>
+ `;
+ bindCommonInputs;
+ }
 
-    function renderCold() {
-      app.innerHTML = `
-        ${staffSelect()}
-        <section class="card">
-          <div class="equipment-grid">${equipment.map(item => `
-            <button class="equipment${selectedEquipment === item.name ? " active" : ""}" data-equipment="${item.name}" type="button">
-              <span class="tile-icon teal">T</span>
-              <strong>${item.name}</strong>
-              <small>${item.type}</small>
-            </button>`).join("")}</div>
-        </section>
-        <section class="card">
-          <p class="safe-text">Recording for: <strong class="green">${selectedEquipment}</strong></p>
-          ${temperatureCard("Safe limit: chilled ≤ 5°C, frozen target ≤ -18°C", -25, 50, false)}
-          <textarea id="notes" placeholder="Additional notes"></textarea>
-        </section>
-      `;
-      bindCommonInputs();
-    }
+ function renderCold {
+ app.innerHTML = `
+ ${staffSelect}
+ <section class="card">
+ <div class="equipment-grid">${equipment.map(item => `
+ <button class="equipment${selectedEquipment === item.name ? " active" : ""}" data-equipment="${item.name}" type="button">
+ <span class="tile-icon teal">T</span>
+ <strong>${item.name}</strong>
+ <small>${item.type}</small>
+ </button>`).join("")}</div>
+ </section>
+ <section class="card">
+ <p class="safe-text">Recording for: <strong class="green">${selectedEquipment}</strong></p>
+ ${temperatureCard("Safe limit: chilled ≤ 5°C, frozen target ≤ -18°C", -25, 50, false)}
+ <textarea id="notes" placeholder="Additional notes"></textarea>
+ </section>
+ `;
+ bindCommonInputs;
+ }
 
-    function renderDelivery() {
-      app.innerHTML = `
-        ${staffSelect()}
-        <section class="card">
-          <h3>Goods In</h3>
-          ${["Frozen", "Fresh", "Dairy", "Ambient"].map(item => checklistLine(`delivery-${item}`, item)).join("")}
-        </section>
-        ${temperatureCard("Safe limit chilled delivery: ≤ 5°C", -5, 15)}
-        <section class="card">
-          <label>Supplier<input id="supplier" placeholder="Supplier name"></label>
-          <textarea id="notes" placeholder="Delivery notes / damaged packaging / rejected items"></textarea>
-        </section>
-      `;
-      bindCommonInputs();
-    }
+ function renderDelivery {
+ app.innerHTML = `
+ ${staffSelect}
+ <section class="card">
+ <h3>Goods In</h3>
+ ${["Frozen", "Fresh", "Dairy", "Ambient"].map(item => checklistLine(`delivery-${item}`, item)).join("")}
+ </section>
+ ${temperatureCard("Safe limit chilled delivery: ≤ 5°C", -5, 15)}
+ <section class="card">
+ <label>Supplier<input id="supplier" placeholder="Supplier name"></label>
+ <textarea id="notes" placeholder="Delivery notesdamaged packagingrejected items"></textarea>
+ </section>
+ `;
+ bindCommonInputs;
+ }
 
-    function renderChecklist(kind) {
-      const items = checklists[kind];
-      const done = items.filter(item => checklistState[`${kind}-${item}`]).length;
-      app.innerHTML = `
-        ${staffSelect()}
-        <section class="card progress-card">
-          <strong>${done} of ${items.length} checks completed</strong>
-          <div class="progress-line"><div class="progress-fill" style="width:${(done / items.length) * 100}%"></div></div>
-        </section>
-        <section class="card">
-          <h3>${screenTitle.textContent} Checklist</h3>
-          ${items.map(item => checklistLine(`${kind}-${item}`, item)).join("")}
-        </section>
-        <section class="card"><textarea id="notes" placeholder="Additional notes"></textarea></section>
-      `;
-      bindCommonInputs();
-    }
+ function renderChecklist(kind) {
+ const items = checklists[kind];
+ const done = items.filter(item => checklistState[`${kind}-${item}`]).length;
+ app.innerHTML = `
+ ${staffSelect}
+ <section class="card progress-card">
+ <strong>${done} of ${items.length} checks completed</strong>
+ <div class="progress-line"><div class="progress-fill" style="width:${(doneitems.length) * 100}%"></div></div>
+ </section>
+ <section class="card">
+ <h3>${screenTitle.textContent} Checklist</h3>
+ ${items.map(item => checklistLine(`${kind}-${item}`, item)).join("")}
+ </section>
+ <section class="card"><textarea id="notes" placeholder="Additional notes"></textarea></section>
+ `;
+ bindCommonInputs;
+ }
 
-    function renderGasSafety() {
-      const items = checklists["gas-safety"];
-      const done = items.filter(item => checklistState[`gas-safety-${item}`]).length;
-      const today = new Date().toISOString().slice(0, 10);
-      app.innerHTML = `
-        ${staffSelect()}
-        <section class="card progress-card">
-          <strong>${done} of ${items.length} gas safety checks completed</strong>
-          <div class="progress-line"><div class="progress-fill" style="width:${(done / items.length) * 100}%"></div></div>
-        </section>
-        <section class="card">
-          <h3>Gas & Equipment Inspection</h3>
-          <label>Equipment checked
-            <select id="gasEquipment">
-              <option>Gas grill</option>
-              <option>Gas burner</option>
-              <option>Gas stove</option>
-              <option>Portable LPG appliance</option>
-              <option>Hot holding equipment</option>
-              <option>Other equipment</option>
-            </select>
-          </label>
-          <label>Appliance number / equipment details
-            <input id="gasEquipmentDetails" placeholder="e.g. Grill 01 / serial number / location">
-          </label>
-          <label>Gas hose, regulator and valve condition
-            <select id="gasCondition">
-              <option>Good condition</option>
-              <option>Needs cleaning / minor attention</option>
-              <option>Damaged - do not use</option>
-              <option>Engineer review required</option>
-            </select>
-          </label>
-          <label>Leak test result
-            <select id="leakTest">
-              <option>No leak detected</option>
-              <option>Leak suspected - appliance isolated</option>
-              <option>Leak confirmed - do not use</option>
-              <option>Not tested - engineer required</option>
-            </select>
-          </label>
-          <label>Ventilation
-            <select id="ventilation">
-              <option>Ventilation clear and working</option>
-              <option>Ventilation partly blocked - cleaned</option>
-              <option>Ventilation inadequate - stop use</option>
-              <option>Engineer review required</option>
-            </select>
-          </label>
-        </section>
-        <section class="card">
-          <h3>Inspection Details</h3>
-          <label>Inspection date<input id="inspectionDate" type="date" value="${today}"></label>
-          <label>Qualified engineer name<input id="engineerName" placeholder="Engineer name"></label>
-          <label>Engineer registration number<input id="engineerNumber" placeholder="Gas Safe / registration number"></label>
-          <label>Next inspection due date<input id="nextInspectionDate" type="date"></label>
-        </section>
-        <section class="card">
-          <h3>Checklist</h3>
-          ${items.map(item => checklistLine(`gas-safety-${item}`, item)).join("")}
-        </section>
-        <section class="card"><textarea id="notes" placeholder="Additional gas safety notes / action taken"></textarea></section>
-      `;
-      bindCommonInputs();
-    }
+ function renderGasSafety {
+ const items = checklists["gas-safety"];
+ const done = items.filter(item => checklistState[`gas-safety-${item}`]).length;
+ const today = new Date.toISOString.slice(0, 10);
+ app.innerHTML = `
+ ${staffSelect}
+ <section class="card progress-card">
+ <strong>${done} of ${items.length} gas safety checks completed</strong>
+ <div class="progress-line"><div class="progress-fill" style="width:${(doneitems.length) * 100}%"></div></div>
+ </section>
+ <section class="card">
+ <h3>Gas & Equipment Inspection</h3>
+ <label>Equipment checked
+ <select id="gasEquipment">
+ <option>Gas grill</option>
+ <option>Gas burner</option>
+ <option>Gas stove</option>
+ <option>Portable LPG appliance</option>
+ <option>Hot holding equipment</option>
+ <option>Other equipment</option>
+ </select>
+ </label>
+ <label>Appliance numberequipment details
+ <input id="gasEquipmentDetails" placeholder="e.g. Grill 01 / serial numberlocation">
+ </label>
+ <label>Gas hose, regulator and valve condition
+ <select id="gasCondition">
+ <option>Good condition</option>
+ <option>Needs cleaningminor attention</option>
+ <option>Damaged - do not use</option>
+ <option>Engineer review required</option>
+ </select>
+ </label>
+ <label>Leak test result
+ <select id="leakTest">
+ <option>No leak detected</option>
+ <option>Leak suspected - appliance isolated</option>
+ <option>Leak confirmed - do not use</option>
+ <option>Not tested - engineer required</option>
+ </select>
+ </label>
+ <label>Ventilation
+ <select id="ventilation">
+ <option>Ventilation clear and working</option>
+ <option>Ventilation partly blocked - cleaned</option>
+ <option>Ventilation inadequate - stop use</option>
+ <option>Engineer review required</option>
+ </select>
+ </label>
+ </section>
+ <section class="card">
+ <h3>Inspection Details</h3>
+ <label>Inspection date<input id="inspectionDate" type="date" value="${today}"></label>
+ <label>Qualified engineer name<input id="engineerName" placeholder="Engineer name"></label>
+ <label>Engineer registration number<input id="engineerNumber" placeholder="Gas Saferegistration number"></label>
+ <label>Next inspection due date<input id="nextInspectionDate" type="date"></label>
+ </section>
+ <section class="card">
+ <h3>Checklist</h3>
+ ${items.map(item => checklistLine(`gas-safety-${item}`, item)).join("")}
+ </section>
+ <section class="card"><textarea id="notes" placeholder="Additional gas safety notesaction taken"></textarea></section>
+ `;
+ bindCommonInputs;
+ }
 
-    function renderHaccp() {
-      const items = checklists.haccp;
-      const done = items.filter(item => checklistState[`haccp-${item}`]).length;
-      const guidance = haccpProcessGuidance[selectedHaccpProcess];
-      app.innerHTML = `
-        ${staffSelect()}
-        <section class="card progress-card">
-          <strong>${done} of ${items.length} HACCP checks completed</strong>
-          <div class="progress-line"><div class="progress-fill" style="width:${(done / items.length) * 100}%"></div></div>
-        </section>
-        <section class="card">
-          <h3>HACCP Checklist</h3>
-          ${items.map(item => checklistLine(`haccp-${item}`, item)).join("")}
-        </section>
-        <section class="card">
-          <h3>HACCP Record</h3>
-          <h3 style="font-size:15px;margin-top:0">Process / Menu item</h3>
-          <div class="allergen-grid">
-            ${haccpProcesses.map(item => `
-              <button class="allergen${selectedHaccpProcess === item ? " active" : ""}" data-haccp-process="${escapeHtml(item)}" type="button">
-                <span class="tile-icon green">H</span>
-                <strong>${escapeHtml(item)}</strong>
-              </button>`).join("")}
-          </div>
-          ${guidance ? `
-            <div class="process-guidance">
-              <h4>${escapeHtml(selectedHaccpProcess)} controls</h4>
-              <ul>
-                <li><strong>Main hazard:</strong> ${escapeHtml(guidance.hazard)}</li>
-                <li><strong>Critical control point:</strong> ${escapeHtml(guidance.ccp)}</li>
-                <li><strong>Critical limit:</strong> ${escapeHtml(guidance.limit)}</li>
-                ${guidance.checks.map(check => `<li>${escapeHtml(check)}</li>`).join("")}
-              </ul>
-            </div>` : ""}
-        </section>
-        <section class="card">
-          <h3>HACCP Controls</h3>
-          <label>Main hazard
-            <select id="haccpHazard">
-              <option>Biological hazard</option>
-              <option>Chemical hazard</option>
-              <option>Physical hazard</option>
-              <option>Allergen hazard</option>
-              <option>Temperature control hazard</option>
-            </select>
-          </label>
-          <label>Critical control point
-            <select id="haccpCcp">
-              <option>Cook core temperature</option>
-              <option>Reheat core temperature</option>
-              <option>Hot holding temperature</option>
-              <option>Cooling time and temperature</option>
-              <option>Fridge / cold storage temperature</option>
-              <option>Freezer temperature</option>
-              <option>Delivery acceptance temperature</option>
-              <option>Prevent raw and ready-to-eat cross contamination</option>
-              <option>Allergen cross-contact control</option>
-              <option>Cleaning chemical contact time</option>
-            </select>
-          </label>
-          <label>Critical limit
-            <select id="haccpLimit">
-              <option>Cook to 75°C or above</option>
-              <option>Reheat to 75°C or above</option>
-              <option>Hot hold at 63°C or above</option>
-              <option>Chilled food target 0-5°C</option>
-              <option>Chilled food must be below 8°C</option>
-              <option>Frozen food target -18°C or below</option>
-              <option>Cool food as quickly as possible and refrigerate within safe time</option>
-              <option>No contact between raw and ready-to-eat food</option>
-              <option>Allergen order prepared with clean utensils and verified label</option>
-              <option>Sanitiser used at correct dilution and contact time</option>
-            </select>
-          </label>
-          <label>Monitoring method
-            <select id="haccpMonitor">
-              <option>Check with cleaned food probe and record temperature</option>
-              <option>Check fridge display and record temperature</option>
-              <option>Check freezer display and record temperature</option>
-              <option>Check delivery temperature on arrival</option>
-              <option>Use timer and record cooling start/end time</option>
-              <option>Visual check for separation of raw and ready-to-eat food</option>
-              <option>Check allergen ticket, label, utensils and staff confirmation</option>
-              <option>Check cleaning schedule and sanitiser contact time</option>
-              <option>Manager review at end of shift</option>
-            </select>
-          </label>
-          <label>Corrective action
-            <select id="haccpAction">
-              <option>Continue cooking until safe temperature is reached</option>
-              <option>Reheat again until safe temperature is reached</option>
-              <option>Move food to working fridge and recheck temperature</option>
-              <option>Discard unsafe food</option>
-              <option>Reject delivery and inform supplier</option>
-              <option>Separate affected food and clean/sanitise area</option>
-              <option>Remake allergen order using clean equipment</option>
-              <option>Retrain staff and record training note</option>
-              <option>Report equipment fault to manager</option>
-            </select>
-          </label>
-          <textarea id="notes" placeholder="Additional HACCP notes"></textarea>
-        </section>
-      `;
-      bindCommonInputs();
-    }
+ function renderHaccp {
+ const items = checklists.haccp;
+ const done = items.filter(item => checklistState[`haccp-${item}`]).length;
+ const guidance = haccpProcessGuidance[selectedHaccpProcess];
+ app.innerHTML = `
+ ${staffSelect}
+ <section class="card progress-card">
+ <strong>${done} of ${items.length} HACCP checks completed</strong>
+ <div class="progress-line"><div class="progress-fill" style="width:${(doneitems.length) * 100}%"></div></div>
+ </section>
+ <section class="card">
+ <h3>HACCP Checklist</h3>
+ ${items.map(item => checklistLine(`haccp-${item}`, item)).join("")}
+ </section>
+ <section class="card">
+ <h3>HACCP Record</h3>
+ <h3 style="font-size:15px;margin-top:0">ProcessMenu item</h3>
+ <div class="allergen-grid">
+ ${haccpProcesses.map(item => `
+ <button class="allergen${selectedHaccpProcess === item ? " active" : ""}" data-haccp-process="${escapeHtml(item)}" type="button">
+ <span class="tile-icon green">H</span>
+ <strong>${escapeHtml(item)}</strong>
+ </button>`).join("")}
+ </div>
+ ${guidance ? `
+ <div class="process-guidance">
+ <h4>${escapeHtml(selectedHaccpProcess)} controls</h4>
+ <ul>
+ <li><strong>Main hazard:</strong> ${escapeHtml(guidance.hazard)}</li>
+ <li><strong>Critical control point:</strong> ${escapeHtml(guidance.ccp)}</li>
+ <li><strong>Critical limit:</strong> ${escapeHtml(guidance.limit)}</li>
+ ${guidance.checks.map(check => `<li>${escapeHtml(check)}</li>`).join("")}
+ </ul>
+ </div>` : ""}
+ </section>
+ <section class="card">
+ <h3>HACCP Controls</h3>
+ <label>Main hazard
+ <select id="haccpHazard">
+ <option>Biological hazard</option>
+ <option>Chemical hazard</option>
+ <option>Physical hazard</option>
+ <option>Allergen hazard</option>
+ <option>Temperature control hazard</option>
+ </select>
+ </label>
+ <label>Critical control point
+ <select id="haccpCcp">
+ <option>Cook core temperature</option>
+ <option>Reheat core temperature</option>
+ <option>Hot holding temperature</option>
+ <option>Cooling time and temperature</option>
+ <option>Fridgecold storage temperature</option>
+ <option>Freezer temperature</option>
+ <option>Delivery acceptance temperature</option>
+ <option>Prevent raw and ready-to-eat cross contamination</option>
+ <option>Allergen cross-contact control</option>
+ <option>Cleaning chemical contact time</option>
+ </select>
+ </label>
+ <label>Critical limit
+ <select id="haccpLimit">
+ <option>Cook to 75°C or above</option>
+ <option>Reheat to 75°C or above</option>
+ <option>Hot hold at 63°C or above</option>
+ <option>Chilled food target 0-5°C</option>
+ <option>Chilled food must be below 8°C</option>
+ <option>Frozen food target -18°C or below</option>
+ <option>Cool food as quickly as possible and refrigerate within safe time</option>
+ <option>No contact between raw and ready-to-eat food</option>
+ <option>Allergen order prepared with clean utensils and verified label</option>
+ <option>Sanitiser used at correct dilution and contact time</option>
+ </select>
+ </label>
+ <label>Monitoring method
+ <select id="haccpMonitor">
+ <option>Check with cleaned food probe and record temperature</option>
+ <option>Check fridge display and record temperature</option>
+ <option>Check freezer display and record temperature</option>
+ <option>Check delivery temperature on arrival</option>
+ <option>Use timer and record cooling start/end time</option>
+ <option>Visual check for separation of raw and ready-to-eat food</option>
+ <option>Check allergen ticket, label, utensils and staff confirmation</option>
+ <option>Check cleaning schedule and sanitiser contact time</option>
+ <option>Manager review at end of shift</option>
+ </select>
+ </label>
+ <label>Corrective action
+ <select id="haccpAction">
+ <option>Continue cooking until safe temperature is reached</option>
+ <option>Reheat again until safe temperature is reached</option>
+ <option>Move food to working fridge and recheck temperature</option>
+ <option>Discard unsafe food</option>
+ <option>Reject delivery and inform supplier</option>
+ <option>Separate affected food and clean/sanitise area</option>
+ <option>Remake allergen order using clean equipment</option>
+ <option>Retrain staff and record training note</option>
+ <option>Report equipment fault to manager</option>
+ </select>
+ </label>
+ <textarea id="notes" placeholder="Additional HACCP notes"></textarea>
+ </section>
+ `;
+ bindCommonInputs;
+ }
 
-    function renderAllergen() {
-      app.innerHTML = `
-        ${staffSelect()}
-        <section class="card">
-          <label>Select Menu Item<input id="menuItem" list="menuItems" placeholder="Search menu item" value="Mango Sticky Rice"></label>
-          <datalist id="menuItems">
-            <option value="Mango Sticky Rice"><option value="Grilled Pork Neck"><option value="Nam Tok Pork Neck"><option value="Duck Larb"><option value="Salmon Pla">
-          </datalist>
-        </section>
-        <section class="card">
-          <h3>Allergens for selected item</h3>
-          <p class="safe-text">Select all allergens that apply to this menu item.</p>
-          <div class="allergen-grid">${allergens.map(item => `
-            <button class="allergen${selectedAllergens.includes(item) ? " active" : ""}" data-allergen="${item}" type="button">
-              <span class="tile-icon gold">${item[0]}</span>
-              <strong>${item}</strong>
-            </button>`).join("")}</div>
-        </section>
-        <section class="card">
-          <h3>Printable allergen note</h3>
-          <p class="safe-text">Use Records > Export to PDF, or press the print button below after saving allergen info.</p>
-          <button class="segment active" type="button" onclick="window.print()">Print Allergen PDF</button>
-          <textarea id="notes" placeholder="Customer or staff allergen note"></textarea>
-        </section>
-      `;
-      bindCommonInputs();
-    }
+ function renderAllergen {
+ app.innerHTML = `
+ ${staffSelect}
+ <section class="card">
+ <label>Select Menu Item<input id="menuItem" list="menuItems" placeholder="Search menu item" value="Mango Sticky Rice"></label>
+ <datalist id="menuItems">
+ <option value="Mango Sticky Rice"><option value="Grilled Pork Neck"><option value="Nam Tok Pork Neck"><option value="Duck Larb"><option value="Salmon Pla">
+ </datalist>
+ </section>
+ <section class="card">
+ <h3>Allergens for selected item</h3>
+ <p class="safe-text">Select all allergens that apply to this menu item.</p>
+ <div class="allergen-grid">${allergens.map(item => `
+ <button class="allergen${selectedAllergens.includes(item) ? " active" : ""}" data-allergen="${item}" type="button">
+ <span class="tile-icon gold">${item[0]}</span>
+ <strong>${item}</strong>
+ </button>`).join("")}</div>
+ </section>
+ <section class="card">
+ <h3>Printable allergen note</h3>
+ <p class="safe-text">Use Records > Export to PDF, or press the print button below after saving allergen info.</p>
+ <button class="segment active" type="button" onclick="window.print">Print Allergen PDF</button>
+ <textarea id="notes" placeholder="Customer or staff allergen note"></textarea>
+ </section>
+ `;
+ bindCommonInputs;
+ }
 
-    function renderMenu() {
-      app.innerHTML = `
-        ${staffSelect()}
-        <section class="card">
-          <h3>Menu Safety Note</h3>
-          <label>Menu Item<input id="menuSafetyItem" value="Mango Sticky Rice"></label>
-          <label>Food safety note<textarea id="notes" placeholder="Shelf life, storage, reheating, allergen cross-contact, label note"></textarea></label>
-        </section>
-      `;
-      bindCommonInputs();
-    }
+ function renderMenu {
+ app.innerHTML = `
+ ${staffSelect}
+ <section class="card">
+ <h3>Menu Safety Note</h3>
+ <label>Menu Item<input id="menuSafetyItem" value="Mango Sticky Rice"></label>
+ <label>Food safety note<textarea id="notes" placeholder="Shelf life, storage, reheating, allergen cross-contact, label note"></textarea></label>
+ </section>
+ `;
+ bindCommonInputs;
+ }
 
-    function renderAiTools() {
-      app.innerHTML = `
-        ${staffSelect()}
-        <section class="card">
-          <h3>AI Food Safety Support</h3>
-          <label>Tool type
-            <select id="aiToolType">
-              <option>AI food safety support</option>
-              <option>AI cleaning card generator</option>
-              <option>AI hospitality risk assessment</option>
-              <option>Safe system of work generation</option>
-            </select>
-          </label>
-          <label>Topic<input id="aiTopic" placeholder="e.g. raw meat prep / fridge failure / cleaning card"></label>
-          <label>Generated note<textarea id="notes" placeholder="Write or paste AI guidance here, then save as an audit-ready record"></textarea></label>
-        </section>
-        <section class="card">
-          <h3>Quick templates</h3>
-          <button class="segment active" type="button" data-template="cleaning">Cleaning Card</button>
-          <button class="segment" type="button" data-template="risk">Risk Assessment</button>
-          <button class="segment" type="button" data-template="ssow">Safe System</button>
-        </section>
-      `;
-      bindCommonInputs();
-    }
+ function renderAiTools {
+ app.innerHTML = `
+ ${staffSelect}
+ <section class="card">
+ <h3>AI Food Safety Support</h3>
+ <label>Tool type
+ <select id="aiToolType">
+ <option>AI food safety support</option>
+ <option>AI cleaning card generator</option>
+ <option>AI hospitality risk assessment</option>
+ <option>Safe system of work generation</option>
+ </select>
+ </label>
+ <label>Topic<input id="aiTopic" placeholder="e.g. raw meat prepfridge failurecleaning card"></label>
+ <label>Generated note<textarea id="notes" placeholder="Write or paste AI guidance here, then save as an audit-ready record"></textarea></label>
+ </section>
+ <section class="card">
+ <h3>Quick templates</h3>
+ <button class="segment active" type="button" data-template="cleaning">Cleaning Card</button>
+ <button class="segment" type="button" data-template="risk">Risk Assessment</button>
+ <button class="segment" type="button" data-template="ssow">Safe System</button>
+ </section>
+ `;
+ bindCommonInputs;
+ }
 
-    function renderActions() {
-      const risky = [...foodRecords.filter(r => r.status === "issue" || r.risk === "high"), ...tempRecords.filter(r => r.status === "fail" || r.status === "warning")].slice(0, 8);
-      app.innerHTML = `
-        ${staffSelect()}
-        <section class="card">
-          <label>New Action Title<input id="actionTitle" placeholder="e.g. Fridge temperature high"></label>
-          <label>Corrective Action<textarea id="notes" placeholder="What happened, what was fixed, who checked it"></textarea></label>
-        </section>
-        ${risky.length ? risky.map(record => `<div class="action-card"><span class="badge risk">RISK</span><h4>${escapeHtml(record.title || record.item || record.area)}</h4><div class="meta">${escapeHtml(record.correctiveAction || record.guidance || record.details || "")}</div><div class="meta">${formatTime(record.createdAt)}</div></div>`).join("") : `<div class="card"><p class="safe-text">No open risk records.</p></div>`}
-      `;
-      bindCommonInputs();
-    }
+ function renderActions {
+ const risky = [...foodRecords.filter(r => r.status === "issue" || r.risk === "high"), ...tempRecords.filter(r => r.status === "fail" || r.status === "warning")].slice(0, 8);
+ app.innerHTML = `
+ ${staffSelect}
+ <section class="card">
+ <label>New Action Title<input id="actionTitle" placeholder="e.g. Fridge temperature high"></label>
+ <label>Corrective Action<textarea id="notes" placeholder="What happened, what was fixed, who checked it"></textarea></label>
+ </section>
+ ${risky.length ? risky.map(record => `<div class="action-card"><span class="badge risk">RISK</span><h4>${escapeHtml(record.title || record.item || record.area)}</h4><div class="meta">${escapeHtml(record.correctiveAction || record.guidance || record.details || "")}</div><div class="meta">${formatTime(record.createdAt)}</div></div>`).join("") : `<div class="card"><p class="safe-text">No open risk records.</p></div>`}
+ `;
+ bindCommonInputs;
+ }
 
-    function renderRecords() {
-      const total = foodRecords.length + tempRecords.length;
-      const rows = [
-        ...foodRecords.map(record => ({ type: record.module, title: record.title, detail: record.details, status: record.status, createdAt: record.createdAt })),
-        ...tempRecords.map(record => ({ type: record.type, title: `${record.item} ${record.temperature}°C`, detail: record.guidance, status: record.status, createdAt: record.createdAt }))
-      ].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).slice(0, 30);
-      app.innerHTML = `
-        <section class="card" style="text-align:center">
-          <span class="tile-icon green" style="margin:0 auto 10px">R</span>
-          <p>Total Records</p>
-          <div class="temp-value">${total}</div>
-          <p class="safe-text">Retention: 90 days</p>
-        </section>
-        <section class="card">
-          <h3>Export Records</h3>
-          <button class="segment active" type="button" onclick="window.print()">Export to PDF</button>
-        </section>
-        ${rows.map(record => `<div class="record-card"><span class="badge ${record.status}">${escapeHtml(record.type)}</span><h4>${escapeHtml(record.title)}</h4><div class="meta">${escapeHtml(record.detail)}</div><div class="meta">${formatTime(record.createdAt)}</div></div>`).join("") || `<div class="card"><p class="safe-text">No records yet.</p></div>`}
-      `;
-    }
+ function renderRecords {
+ const total = foodRecords.length + tempRecords.length;
+ const rows = [
+ ...foodRecords.map(record => ({ type: record.module, title: record.title, detail: record.details, status: record.status, createdAt: record.createdAt })),
+ ...tempRecords.map(record => ({ type: record.type, title: `${record.item} ${record.temperature}°C`, detail: record.guidance, status: record.status, createdAt: record.createdAt }))
+ ].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).slice(0, 30);
+ app.innerHTML = `
+ <section class="card" style="text-align:center">
+ <span class="tile-icon green" style="margin:0 auto 10px">R</span>
+ <p>Total Records</p>
+ <div class="temp-value">${total}</div>
+ <p class="safe-text">Retention: 90 days</p>
+ </section>
+ <section class="card">
+ <h3>Export Records</h3>
+ <button class="segment active" type="button" onclick="window.print">Export to PDF</button>
+ </section>
+ ${rows.map(record => `<div class="record-card"><span class="badge ${record.status}">${escapeHtml(record.type)}</span><h4>${escapeHtml(record.title)}</h4><div class="meta">${escapeHtml(record.detail)}</div><div class="meta">${formatTime(record.createdAt)}</div></div>`).join("") || `<div class="card"><p class="safe-text">No records yet.</p></div>`}
+ `;
+ }
 
-    function temperatureCard(safeText, min, max, wrap = true) {
-      const pct = Math.max(0, Math.min(100, ((temperature - min) / (max - min)) * 100));
-      const html = `
-        <h3>Temperature</h3>
-        <div class="temp-control">
-          <button type="button" data-temp="-1">−</button>
-          <div class="temp-value">${temperature.toFixed(1)} <span>°C</span></div>
-          <button type="button" data-temp="1">+</button>
-        </div>
-        <div class="range-track"><div class="range-dot" style="left:${pct}%"></div></div>
-        <div class="range-labels"><span>${min}°</span><span>${max}°</span></div>
-        <p class="safe-text">${safeText}</p>`;
-      return wrap ? `<section class="card">${html}</section>` : html;
-    }
+ function temperatureCard(safeText, min, max, wrap = true) {
+ const pct = Math.max(0, Math.min(100, ((temperature - min) / (max - min)) * 100));
+ const html = `
+ <h3>Temperature</h3>
+ <div class="temp-control">
+ <button type="button" data-temp="-1">−</button>
+ <div class="temp-value">${temperature.toFixed(1)} <span>°C</span></div>
+ <button type="button" data-temp="1">+</button>
+ </div>
+ <div class="range-track"><div class="range-dot" style="left:${pct}%"></div></div>
+ <div class="range-labels"><span>${min}°</span><span>${max}°</span></div>
+ <p class="safe-text">${safeText}</p>`;
+ return wrap ? `<section class="card">${html}</section>` : html;
+ }
 
-    function checklistLine(key, label) {
-      return `<button class="check-row${checklistState[key] ? " done" : ""}" data-check="${escapeHtml(key)}" type="button"><span class="checkbox">${checklistState[key] ? "✓" : ""}</span><span class="check-label">${escapeHtml(label)}</span></button>`;
-    }
+ function checklistLine(key, label) {
+ return `<button class="check-row${checklistState[key] ? " done" : ""}" data-check="${escapeHtml(key)}" type="button"><span class="checkbox">${checklistState[key] ? "✓" : ""}</span><span class="check-label">${escapeHtml(label)}</span></button>`;
+ }
 
-    function bindCommonInputs() {
-      const staffSelectEl = document.getElementById("staffSelect");
-      if (staffSelectEl) staffSelectEl.addEventListener("change", event => staff = event.target.value);
-    }
+ function bindCommonInputs {
+ const staffSelectEl = document.getElementById("staffSelect");
+ if (staffSelectEl) staffSelectEl.addEventListener("change", event => staff = event.target.value);
+ }
 
-    async function api(method, url, body) {
-      const response = await fetch(url, {
-        method,
-        headers: headers(),
-        cache: "no-store",
-        body: body ? JSON.stringify(body) : undefined
-      });
-      if (response.status === 401) {
-        sessionStorage.removeItem(passwordKey);
-        password = "";
-        loginPanel.style.display = "grid";
-        throw new Error("Unauthorized");
-      }
-      if (!response.ok) throw new Error(`API ${response.status}`);
-      return response.json();
-    }
+ async function api(method, url, body) {
+ const response = await fetch(url, {
+ method,
+ headers: headers,
+ cache: "no-store",
+ body: body ? JSON.stringify(body) : undefined
+ });
+ if (response.status === 401) {
+ sessionStorage.removeItem(passwordKey);
+ password = "";
+ loginPanel.style.display = "grid";
+ throw new Error("Unauthorized");
+ }
+ if (!response.ok) throw new Error(`API ${response.status}`);
+ return response.json;
+ }
 
-    async function loadData() {
-      if (!password) return;
-      try {
-        const [food, temp] = await Promise.all([
-          api("GET", foodApi),
-          api("GET", tempApi)
-        ]);
-        foodRecords = food.records || [];
-        tempRecords = temp.checks || [];
-        loginPanel.style.display = "none";
-      } catch (error) {
-        showNotice("เชื่อมต่อไม่ได้ ตรวจรหัสหรืออินเทอร์เน็ต");
-      }
-    }
+ async function loadData {
+ if (!password) return;
+ try {
+ const [food, temp] = await Promise.all([
+ api("GET", foodApi),
+ api("GET", tempApi)
+ ]);
+ foodRecords = food.records || [];
+ tempRecords = temp.checks || [];
+ loginPanel.style.display = "none";
+ } catch (error) {
+ showNotice(" ");
+ }
+ }
 
-    async function saveCurrent() {
-      try {
-        const notes = document.getElementById("notes")?.value || "";
-        if (["cooking", "cooling"].includes(screen)) {
-          const foodName = document.getElementById("foodName")?.value || "Food item";
-          const type = selectedCategory === "Reheat" ? "reheated" : selectedCategory === "Holding" ? "hot-holding" : "cooked";
-          await api("POST", tempApi, { type, area: selectedCategory, item: foodName, temperature, checkedBy: staff, note: notes });
-          await api("POST", foodApi, { module: "temperature", title: `${screenTitle.textContent}: ${foodName}`, category: selectedCategory, status: "done", risk: temperature < 75 && type !== "hot-holding" ? "high" : "low", completedBy: staff, details: `${temperature.toFixed(1)}°C. ${notes}` });
-        } else if (screen === "cold") {
-          const type = selectedEquipment.toLowerCase().includes("freezer") ? "frozen" : "chilled";
-          await api("POST", tempApi, { type, area: selectedEquipment, item: selectedEquipment, temperature, checkedBy: staff, note: notes });
-        } else if (screen === "delivery") {
-          const supplier = document.getElementById("supplier")?.value || "Supplier";
-          await api("POST", tempApi, { type: "delivery", area: "Goods In", item: supplier, temperature, checkedBy: staff, note: notes });
-          await api("POST", foodApi, { module: "delivery-stock", title: `Goods In: ${supplier}`, category: "Delivery temperature recording", status: "done", risk: temperature > 5 ? "medium" : "low", completedBy: staff, details: notes });
-        } else if (screen === "gas-safety") {
-          const items = checklists["gas-safety"];
-          const done = items.filter(item => checklistState[`gas-safety-${item}`]);
-          const details = [
-            `Equipment checked: ${document.getElementById("gasEquipment")?.value || "Not specified"}`,
-            `Appliance number / details: ${document.getElementById("gasEquipmentDetails")?.value || "Not specified"}`,
-            `Hose / regulator / valve: ${document.getElementById("gasCondition")?.value || "Not specified"}`,
-            `Leak test: ${document.getElementById("leakTest")?.value || "Not specified"}`,
-            `Ventilation: ${document.getElementById("ventilation")?.value || "Not specified"}`,
-            `Inspection date: ${document.getElementById("inspectionDate")?.value || "Not specified"}`,
-            `Engineer: ${document.getElementById("engineerName")?.value || "Not specified"}`,
-            `Engineer registration: ${document.getElementById("engineerNumber")?.value || "Not specified"}`,
-            `Next inspection due: ${document.getElementById("nextInspectionDate")?.value || "Not specified"}`,
-            `${done.length} of ${items.length} checks completed.`,
-            notes
-          ].filter(Boolean).join("\n");
-          const risky = ["Damaged", "Leak suspected", "Leak confirmed", "inadequate", "required"].some(word => details.toLowerCase().includes(word.toLowerCase()));
-          await api("POST", foodApi, {
-            module: "gas-safety",
-            title: `Gas Safety: ${document.getElementById("gasEquipment")?.value || "Equipment inspection"}`,
-            category: "Gas and equipment safety inspection",
-            status: done.length === items.length ? "done" : "pending",
-            risk: risky || done.length < items.length ? "high" : "low",
-            completedBy: staff,
-            details,
-            correctiveAction: risky ? "Do not use affected gas equipment until checked and cleared by a qualified engineer." : ""
-          });
-        } else if (["opening", "closing", "cleaning", "calibration", "haccp", "pest", "training", "settings"].includes(screen)) {
-          const items = checklists[screen];
-          const done = items.filter(item => checklistState[`${screen}-${item}`]);
-          const moduleMap = {
-            calibration: "temperature",
-            cleaning: "cleaning",
-            haccp: "haccp",
-            pest: "pest-control",
-            training: "training",
-            settings: "customisation",
-            opening: "daily-checks",
-            closing: "daily-checks"
-          };
-          const haccpDetails = screen === "haccp" ? [
-            `Process: ${selectedHaccpProcess || "Not specified"}`,
-            `Hazard: ${document.getElementById("haccpHazard")?.value || "Not specified"}`,
-            `CCP: ${document.getElementById("haccpCcp")?.value || "Not specified"}`,
-            `Critical limit: ${document.getElementById("haccpLimit")?.value || "Not specified"}`,
-            `Monitoring: ${document.getElementById("haccpMonitor")?.value || "Not specified"}`,
-            `Corrective action: ${document.getElementById("haccpAction")?.value || "Not specified"}`
-          ].join("\\n") : "";
-          await api("POST", foodApi, {
-            module: moduleMap[screen] || screen,
-            title: screen === "haccp" ? `HACCP: ${selectedHaccpProcess || "Process check"}` : `${screenTitle.textContent} checks`,
-            category: screenTitle.textContent,
-            status: done.length === items.length ? "done" : "pending",
-            risk: done.length === items.length ? "low" : "medium",
-            completedBy: staff,
-            details: `${done.length} of ${items.length} completed. ${haccpDetails} ${notes}`.trim(),
-            correctiveAction: screen === "haccp" ? (document.getElementById("haccpAction")?.value || "") : ""
-          });
-        } else if (screen === "allergen") {
-          const item = document.getElementById("menuItem")?.value || "Menu item";
-          await api("POST", foodApi, { module: "allergen", title: `Allergens: ${item}`, category: "14 allergen tracking", status: "done", risk: selectedAllergens.length ? "medium" : "low", completedBy: staff, details: selectedAllergens.join(", ") || "No allergens selected" });
-        } else if (screen === "menu") {
-          const item = document.getElementById("menuSafetyItem")?.value || "Menu item";
-          await api("POST", foodApi, { module: "allergen", title: `Menu note: ${item}`, category: "Menu item allergen database", status: "done", risk: "low", completedBy: staff, details: notes });
-        } else if (screen === "actions") {
-          const title = document.getElementById("actionTitle")?.value || "Corrective action";
-          await api("POST", foodApi, { module: "corrective-actions", title, category: "Corrective actions log", status: "issue", risk: "high", completedBy: staff, correctiveAction: notes, details: notes });
-        } else if (screen === "ai-tools") {
-          const toolType = document.getElementById("aiToolType")?.value || "AI food safety support";
-          const topic = document.getElementById("aiTopic")?.value || "AI food safety note";
-          await api("POST", foodApi, { module: "smart-ai", title: `${toolType}: ${topic}`, category: toolType, status: "done", risk: "low", completedBy: staff, details: notes });
-        }
-        await loadData();
-        showNotice("Saved");
-        if (screen !== "records") setScreen("records");
-      } catch (error) {
-        showNotice("Save failed");
-      }
-    }
+ async function saveCurrent {
+ try {
+ const notes = document.getElementById("notes")?.value || "";
+ if (["cooking", "cooling"].includes(screen)) {
+ const foodName = document.getElementById("foodName")?.value || "Food item";
+ const type = selectedCategory === "Reheat" ? "reheated" : selectedCategory === "Holding" ? "hot-holding" : "cooked";
+ await api("POST", tempApi, { type, area: selectedCategory, item: foodName, temperature, checkedBy: staff, note: notes });
+ await api("POST", foodApi, { module: "temperature", title: `${screenTitle.textContent}: ${foodName}`, category: selectedCategory, status: "done", risk: temperature < 75 && type !== "hot-holding" ? "high" : "low", completedBy: staff, details: `${temperature.toFixed(1)}°C. ${notes}` });
+ } else if (screen === "cold") {
+ const type = selectedEquipment.toLowerCase.includes("freezer") ? "frozen" : "chilled";
+ await api("POST", tempApi, { type, area: selectedEquipment, item: selectedEquipment, temperature, checkedBy: staff, note: notes });
+ } else if (screen === "delivery") {
+ const supplier = document.getElementById("supplier")?.value || "Supplier";
+ await api("POST", tempApi, { type: "delivery", area: "Goods In", item: supplier, temperature, checkedBy: staff, note: notes });
+ await api("POST", foodApi, { module: "delivery-stock", title: `Goods In: ${supplier}`, category: "Delivery temperature recording", status: "done", risk: temperature > 5 ? "medium" : "low", completedBy: staff, details: notes });
+ } else if (screen === "gas-safety") {
+ const items = checklists["gas-safety"];
+ const done = items.filter(item => checklistState[`gas-safety-${item}`]);
+ const details = [
+ `Equipment checked: ${document.getElementById("gasEquipment")?.value || "Not specified"}`,
+ `Appliance numberdetails: ${document.getElementById("gasEquipmentDetails")?.value || "Not specified"}`,
+ `Hoseregulatorvalve: ${document.getElementById("gasCondition")?.value || "Not specified"}`,
+ `Leak test: ${document.getElementById("leakTest")?.value || "Not specified"}`,
+ `Ventilation: ${document.getElementById("ventilation")?.value || "Not specified"}`,
+ `Inspection date: ${document.getElementById("inspectionDate")?.value || "Not specified"}`,
+ `Engineer: ${document.getElementById("engineerName")?.value || "Not specified"}`,
+ `Engineer registration: ${document.getElementById("engineerNumber")?.value || "Not specified"}`,
+ `Next inspection due: ${document.getElementById("nextInspectionDate")?.value || "Not specified"}`,
+ `${done.length} of ${items.length} checks completed.`,
+ notes
+ ].filter(Boolean).join("\n");
+ const risky = ["Damaged", "Leak suspected", "Leak confirmed", "inadequate", "required"].some(word => details.toLowerCase.includes(word.toLowerCase));
+ await api("POST", foodApi, {
+ module: "gas-safety",
+ title: `Gas Safety: ${document.getElementById("gasEquipment")?.value || "Equipment inspection"}`,
+ category: "Gas and equipment safety inspection",
+ status: done.length === items.length ? "done" : "pending",
+ risk: risky || done.length < items.length ? "high" : "low",
+ completedBy: staff,
+ details,
+ correctiveAction: risky ? "Do not use affected gas equipment until checked and cleared by a qualified engineer." : ""
+ });
+ } else if (["opening", "closing", "cleaning", "calibration", "haccp", "pest", "training", "settings"].includes(screen)) {
+ const items = checklists[screen];
+ const done = items.filter(item => checklistState[`${screen}-${item}`]);
+ const moduleMap = {
+ calibration: "temperature",
+ cleaning: "cleaning",
+ haccp: "haccp",
+ pest: "pest-control",
+ training: "training",
+ settings: "customisation",
+ opening: "daily-checks",
+ closing: "daily-checks"
+ };
+ const haccpDetails = screen === "haccp" ? [
+ `Process: ${selectedHaccpProcess || "Not specified"}`,
+ `Hazard: ${document.getElementById("haccpHazard")?.value || "Not specified"}`,
+ `CCP: ${document.getElementById("haccpCcp")?.value || "Not specified"}`,
+ `Critical limit: ${document.getElementById("haccpLimit")?.value || "Not specified"}`,
+ `Monitoring: ${document.getElementById("haccpMonitor")?.value || "Not specified"}`,
+ `Corrective action: ${document.getElementById("haccpAction")?.value || "Not specified"}`
+ ].join("\\n") : "";
+ await api("POST", foodApi, {
+ module: moduleMap[screen] || screen,
+ title: screen === "haccp" ? `HACCP: ${selectedHaccpProcess || "Process check"}` : `${screenTitle.textContent} checks`,
+ category: screenTitle.textContent,
+ status: done.length === items.length ? "done" : "pending",
+ risk: done.length === items.length ? "low" : "medium",
+ completedBy: staff,
+ details: `${done.length} of ${items.length} completed. ${haccpDetails} ${notes}`.trim,
+ correctiveAction: screen === "haccp" ? (document.getElementById("haccpAction")?.value || "") : ""
+ });
+ } else if (screen === "allergen") {
+ const item = document.getElementById("menuItem")?.value || "Menu item";
+ await api("POST", foodApi, { module: "allergen", title: `Allergens: ${item}`, category: "14 allergen tracking", status: "done", risk: selectedAllergens.length ? "medium" : "low", completedBy: staff, details: selectedAllergens.join(", ") || "No allergens selected" });
+ } else if (screen === "menu") {
+ const item = document.getElementById("menuSafetyItem")?.value || "Menu item";
+ await api("POST", foodApi, { module: "allergen", title: `Menu note: ${item}`, category: "Menu item allergen database", status: "done", risk: "low", completedBy: staff, details: notes });
+ } else if (screen === "actions") {
+ const title = document.getElementById("actionTitle")?.value || "Corrective action";
+ await api("POST", foodApi, { module: "corrective-actions", title, category: "Corrective actions log", status: "issue", risk: "high", completedBy: staff, correctiveAction: notes, details: notes });
+ } else if (screen === "ai-tools") {
+ const toolType = document.getElementById("aiToolType")?.value || "AI food safety support";
+ const topic = document.getElementById("aiTopic")?.value || "AI food safety note";
+ await api("POST", foodApi, { module: "smart-ai", title: `${toolType}: ${topic}`, category: toolType, status: "done", risk: "low", completedBy: staff, details: notes });
+ }
+ await loadData;
+ showNotice("Saved");
+ if (screen !== "records") setScreen("records");
+ } catch (error) {
+ showNotice("Save failed");
+ }
+ }
 
-    loginForm.addEventListener("submit", async event => {
-      event.preventDefault();
-      password = document.getElementById("passwordInput").value.trim();
-      sessionStorage.setItem(passwordKey, password);
-      loginMessage.textContent = "กำลังเชื่อมต่อ...";
-      await loadData();
-      render();
-    });
+ loginForm.addEventListener("submit", async event => {
+ event.preventDefault;
+ password = document.getElementById("passwordInput").value.trim;
+ sessionStorage.setItem(passwordKey, password);
+ loginMessage.textContent = " ...";
+ await loadData;
+ render;
+ });
 
-    app.addEventListener("click", event => {
-      const tile = event.target.closest("[data-screen]");
-      if (tile) setScreen(tile.dataset.screen);
-      const category = event.target.closest("[data-category]");
-      if (category) {
-        selectedCategory = category.dataset.category;
-        render();
-      }
-      const tempButton = event.target.closest("[data-temp]");
-      if (tempButton) {
-        temperature += Number(tempButton.dataset.temp);
-        render();
-      }
-      const equipmentButton = event.target.closest("[data-equipment]");
-      if (equipmentButton) {
-        selectedEquipment = equipmentButton.dataset.equipment;
-        temperature = selectedEquipment.toLowerCase().includes("freezer") ? -18 : 4;
-        render();
-      }
-      const check = event.target.closest("[data-check]");
-      if (check) {
-        checklistState[check.dataset.check] = !checklistState[check.dataset.check];
-        render();
-      }
-      const allergen = event.target.closest("[data-allergen]");
-      if (allergen) {
-        const value = allergen.dataset.allergen;
-        selectedAllergens = selectedAllergens.includes(value) ? selectedAllergens.filter(item => item !== value) : [...selectedAllergens, value];
-        render();
-      }
-      const haccpProcess = event.target.closest("[data-haccp-process]");
-      if (haccpProcess) {
-        selectedHaccpProcess = haccpProcess.dataset.haccpProcess;
-        render();
-      }
-      const template = event.target.closest("[data-template]");
-      if (template) {
-        const notes = document.getElementById("notes");
-        const topic = document.getElementById("aiTopic")?.value || "kitchen task";
-        const text = {
-          cleaning: `Cleaning card for ${topic}: area, chemical, method, contact time, frequency, responsible staff, verification.`,
-          risk: `Risk assessment for ${topic}: hazard, who may be harmed, existing controls, further action, responsible person, review date.`,
-          ssow: `Safe system of work for ${topic}: preparation, PPE, safe steps, food safety controls, cleaning, corrective action.`
-        }[template.dataset.template];
-        if (notes) notes.value = text;
-      }
-    });
+ app.addEventListener("click", event => {
+ const tile = event.target.closest("[data-screen]");
+ if (tile) setScreen(tile.dataset.screen);
+ const category = event.target.closest("[data-category]");
+ if (category) {
+ selectedCategory = category.dataset.category;
+ render;
+ }
+ const tempButton = event.target.closest("[data-temp]");
+ if (tempButton) {
+ temperature += Number(tempButton.dataset.temp);
+ render;
+ }
+ const equipmentButton = event.target.closest("[data-equipment]");
+ if (equipmentButton) {
+ selectedEquipment = equipmentButton.dataset.equipment;
+ temperature = selectedEquipment.toLowerCase.includes("freezer") ? -18 : 4;
+ render;
+ }
+ const check = event.target.closest("[data-check]");
+ if (check) {
+ checklistState[check.dataset.check] = !checklistState[check.dataset.check];
+ render;
+ }
+ const allergen = event.target.closest("[data-allergen]");
+ if (allergen) {
+ const value = allergen.dataset.allergen;
+ selectedAllergens = selectedAllergens.includes(value) ? selectedAllergens.filter(item => item !== value) : [...selectedAllergens, value];
+ render;
+ }
+ const haccpProcess = event.target.closest("[data-haccp-process]");
+ if (haccpProcess) {
+ selectedHaccpProcess = haccpProcess.dataset.haccpProcess;
+ render;
+ }
+ const template = event.target.closest("[data-template]");
+ if (template) {
+ const notes = document.getElementById("notes");
+ const topic = document.getElementById("aiTopic")?.value || "kitchen task";
+ const text = {
+ cleaning: `Cleaning card for ${topic}: area, chemical, method, contact time, frequency, responsible staff, verification.`,
+ risk: `Risk assessment for ${topic}: hazard, who may be harmed, existing controls, further action, responsible person, review date.`,
+ ssow: `Safe system of work for ${topic}: preparation, PPE, safe steps, food safety controls, cleaning, corrective action.`
+ }[template.dataset.template];
+ if (notes) notes.value = text;
+ }
+ });
 
-    saveButton.addEventListener("click", saveCurrent);
-    backButton.addEventListener("click", () => setScreen("home"));
-    document.getElementById("recordsShortcut").addEventListener("click", () => setScreen("records"));
+ saveButton.addEventListener("click", saveCurrent);
+ backButton.addEventListener("click", => setScreen("home"));
+ document.getElementById("recordsShortcut").addEventListener("click", => setScreen("records"));
 
-    if (password) loadData().then(render);
-    render();
-  </script>
+ if (password) loadData.then(render);
+ render;
+</script>
 </body>
 </html>
-

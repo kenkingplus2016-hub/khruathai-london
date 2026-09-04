@@ -1,488 +1,353 @@
 <!doctype html>
 <html lang="th">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex,nofollow">
-  <title>Zab Siam AI Team</title>
-  <style>
-    :root {
-      --dark: #17251d;
-      --green: #2f6b4f;
-      --gold: #bd8a2f;
-      --paper: #fffdf7;
-      --soft: #f5f1e8;
-      --line: #dfe4da;
-      --ink: #20231f;
-      --muted: #687064;
-      --white: #fff;
-      --shadow: 0 16px 42px rgba(27, 38, 29, .13);
-    }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Zab Siam AI Team</title>
+<style>
+ :root {
+ --dark: #17251d;
+ --green: #2f6b4f;
+ --gold: #bd8a2f;
+ --paper: #fffdf7;
+ --soft: #f5f1e8;
+ --line: #dfe4da;
+ --ink: #20231f;
+ --muted: #687064;
+ --white: #fff;
+ --shadow: 0 16px 42px rgba(27, 38, 29, .13);
+ }
 
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: linear-gradient(135deg, #fffdf7, #f4f0e7 48%, #edf4f1);
-      font-family: "Segoe UI", Tahoma, sans-serif;
-      line-height: 1.5;
-    }
+ * { box-sizing: border-box; }
+ body {
+ margin: 0;
+ color: var(--ink);
+ background: linear-gradient(135deg, #fffdf7, #f4f0e7 48%, #edf4f1);
+ font-family: "Segoe UI", Tahoma, sans-serif;
+ line-height: 1.5;
+ }
 
-    button, textarea, input { font: inherit; }
-    .app { min-height: 100vh; display: grid; grid-template-columns: 292px minmax(0, 1fr); }
-    aside { background: var(--dark); color: var(--white); padding: 24px 18px; position: sticky; top: 0; height: 100vh; overflow: auto; }
-    .brand { padding: 0 6px 18px; border-bottom: 1px solid rgba(255,255,255,.16); margin-bottom: 18px; }
-    .brand h1 { margin: 0; font-size: 24px; letter-spacing: 0; }
-    .brand p { margin: 7px 0 0; color: rgba(255,255,255,.72); }
-    .role-list { display: grid; gap: 8px; }
-    .role-btn { width: 100%; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.06); color: #fff; min-height: 48px; border-radius: 8px; padding: 10px 12px; display: grid; grid-template-columns: 30px minmax(0, 1fr); align-items: center; gap: 10px; cursor: pointer; text-align: left; }
-    .role-btn.active, .role-btn:hover { background: var(--green); border-color: rgba(255,255,255,.3); }
-    .role-icon { width: 30px; height: 30px; border-radius: 8px; background: rgba(255,255,255,.13); display: grid; place-items: center; font-weight: 800; color: #ffe4a8; }
-    .role-name { font-size: 15px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+ button, textarea, input { font: inherit; }
+ .app { min-height: 100vh; display: grid; grid-template-columns: 292px minmax(0, 1fr); }
+ aside { background: var(--dark); color: var(--white); padding: 24px 18px; position: sticky; top: 0; height: 100vh; overflow: auto; }
+ .brand { padding: 0 6px 18px; border-bottom: 1px solid rgba(255,255,255,.16); margin-bottom: 18px; }
+ .brand h1 { margin: 0; font-size: 24px; letter-spacing: 0; }
+ .brand p { margin: 7px 0 0; color: rgba(255,255,255,.72); }
+ .role-list { display: grid; gap: 8px; }
+ .role-btn { width: 100%; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.06); color: #fff; min-height: 48px; border-radius: 8px; padding: 10px 12px; display: grid; grid-template-columns: 30px minmax(0, 1fr); align-items: center; gap: 10px; cursor: pointer; text-align: left; }
+ .role-btn.active, .role-btn:hover { background: var(--green); border-color: rgba(255,255,255,.3); }
+ .role-icon { width: 30px; height: 30px; border-radius: 8px; background: rgba(255,255,255,.13); display: grid; place-items: center; font-weight: 800; color: #ffe4a8; }
+ .role-name { font-size: 15px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-    main { padding: 28px; }
-    .topbar { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; margin-bottom: 20px; flex-wrap: wrap; }
-    h2 { margin: 0; font-size: clamp(28px, 3vw, 40px); letter-spacing: 0; }
-    .summary { margin: 6px 0 0; color: var(--muted); max-width: 760px; }
-    .actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
-    .button { border: 0; border-radius: 8px; min-height: 42px; padding: 10px 14px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; color: #fff; background: var(--green); text-decoration: none; }
-    .button.secondary { color: #224c39; background: #fff; border: 1px solid var(--line); }
-    .button.gold { background: var(--gold); }
-    .button:hover { filter: brightness(.96); }
+ main { padding: 28px; }
+ .topbar { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; margin-bottom: 20px; flex-wrap: wrap; }
+ h2 { margin: 0; font-size: clamp(28px, 3vw, 40px); letter-spacing: 0; }
+ .summary { margin: 6px 0 0; color: var(--muted); max-width: 760px; }
+ .actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+ .button { border: 0; border-radius: 8px; min-height: 42px; padding: 10px 14px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; color: #fff; background: var(--green); text-decoration: none; }
+ .button.secondary { color: #224c39; background: #fff; border: 1px solid var(--line); }
+ .button.gold { background: var(--gold); }
+ .button:hover { filter: brightness(.96); }
 
-    .grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(320px, .75fr); gap: 18px; align-items: start; }
-    .panel { background: rgba(255,255,255,.88); border: 1px solid var(--line); border-radius: 8px; box-shadow: var(--shadow); overflow: hidden; }
-    .panel-head { min-height: 58px; padding: 14px 16px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 12px; background: var(--paper); }
-    .panel-head h3 { margin: 0; font-size: 17px; }
-    textarea { width: 100%; border: 0; outline: 0; resize: vertical; min-height: 430px; padding: 18px; background: #fffefb; color: var(--ink); font-family: Consolas, "Courier New", monospace; font-size: 14px; line-height: 1.55; }
-    .side { display: grid; gap: 18px; }
-    .info { padding: 16px; }
-    .info ul { margin: 0; padding-left: 20px; }
-    .info li { margin: 6px 0; }
-    .quick { display: grid; gap: 10px; padding: 16px; }
-    .quick button { border: 1px solid var(--line); border-left: 5px solid var(--gold); background: #fff; border-radius: 8px; padding: 12px; text-align: left; cursor: pointer; }
-    .quick button:hover { background: #fff8eb; }
-    .quick strong { display: block; margin-bottom: 3px; }
-    .quick span { font-size: 13px; color: var(--muted); }
-    .quick-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; align-items: stretch; }
-    .quick-row .quick-open { border-left-width: 1px; background: var(--green); color: #fff; font-weight: 700; white-space: nowrap; }
-    .task-box { min-height: 190px; border-top: 1px solid var(--line); }
-    .status { color: #224c39; font-size: 14px; min-height: 21px; font-weight: 700; }
-    .helper { margin: 0; color: var(--muted); font-size: 13px; }
-    .manual-copy { display: none; padding: 12px 16px; background: #fff8dc; border-top: 1px solid #e5d48a; color: #5b4b16; font-weight: 650; }
-    .manual-copy.show { display: block; }
+ .grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(320px, .75fr); gap: 18px; align-items: start; }
+ .panel { background: rgba(255,255,255,.88); border: 1px solid var(--line); border-radius: 8px; box-shadow: var(--shadow); overflow: hidden; }
+ .panel-head { min-height: 58px; padding: 14px 16px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 12px; background: var(--paper); }
+ .panel-head h3 { margin: 0; font-size: 17px; }
+ textarea { width: 100%; border: 0; outline: 0; resize: vertical; min-height: 430px; padding: 18px; background: #fffefb; color: var(--ink); font-family: Consolas, "Courier New", monospace; font-size: 14px; line-height: 1.55; }
+ .side { display: grid; gap: 18px; }
+ .info { padding: 16px; }
+ .info ul { margin: 0; padding-left: 20px; }
+ .info li { margin: 6px 0; }
+ .quick { display: grid; gap: 10px; padding: 16px; }
+ .quick button { border: 1px solid var(--line); border-left: 5px solid var(--gold); background: #fff; border-radius: 8px; padding: 12px; text-align: left; cursor: pointer; }
+ .quick button:hover { background: #fff8eb; }
+ .quick strong { display: block; margin-bottom: 3px; }
+ .quick span { font-size: 13px; color: var(--muted); }
+ .quick-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; align-items: stretch; }
+ .quick-row .quick-open { border-left-width: 1px; background: var(--green); color: #fff; font-weight: 700; white-space: nowrap; }
+ .task-box { min-height: 190px; border-top: 1px solid var(--line); }
+ .status { color: #224c39; font-size: 14px; min-height: 21px; font-weight: 700; }
+ .helper { margin: 0; color: var(--muted); font-size: 13px; }
+ .manual-copy { display: none; padding: 12px 16px; background: #fff8dc; border-top: 1px solid #e5d48a; color: #5b4b16; font-weight: 650; }
+ .manual-copy.show { display: block; }
 
-    @media (max-width: 920px) {
-      .app { grid-template-columns: 1fr; }
-      aside { position: relative; height: auto; }
-      .role-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .grid { grid-template-columns: 1fr; }
-    }
+ @media (max-width: 920px) {
+ .app { grid-template-columns: 1fr; }
+ aside { position: relative; height: auto; }
+ .role-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+ .grid { grid-template-columns: 1fr; }
+ }
 
-    @media (max-width: 560px) {
-      main { padding: 18px; }
-      .role-list { grid-template-columns: 1fr; }
-      .button { width: 100%; }
-    }
-  </style>
+ @media (max-width: 560px) {
+ main { padding: 18px; }
+ .role-list { grid-template-columns: 1fr; }
+ .button { width: 100%; }
+ }
+</style>
 </head>
 <body>
 <div class="app">
-  <aside>
-    <div class="brand">
-      <h1>Zab Siam</h1>
-      <p>AI Team Control Room</p>
-    </div>
-    <nav class="role-list" id="roleList" aria-label="AI team roles"></nav>
-  </aside>
+<aside>
+ <div class="brand">
+ <h1>Zab Siam</h1>
+ <p>AI Team Control Room</p>
+ </div>
+ <nav class="role-list" id="roleList" aria-label="AI team roles"></nav>
+</aside>
 
-  <main>
-    <section class="topbar">
-      <div>
-        <h2 id="roleTitle"></h2>
-        <p class="summary" id="roleSummary"></p>
-      </div>
-      <div class="actions">
-        <button class="button" id="copyPrompt" type="button">คัดลอก Prompt</button>
-        <button class="button secondary" id="selectPrompt" type="button">เลือก Prompt</button>
-        <button class="button gold" id="openPrompt" type="button">เปิด AI นี้ใน ChatGPT</button>
-      </div>
-    </section>
+<main>
+ <section class="topbar">
+ <div>
+ <h2 id="roleTitle"></h2>
+ <p class="summary" id="roleSummary"></p>
+ </div>
+ <div class="actions">
+ <button class="button" id="copyPrompt" type="button"> Prompt</button>
+ <button class="button secondary" id="selectPrompt" type="button"> Prompt</button>
+ <button class="button gold" id="openPrompt" type="button"> AIChatGPT</button>
+ </div>
+ </section>
 
-    <section class="grid">
-      <div class="panel">
-        <div class="panel-head">
-          <div>
-            <h3>Prompt พร้อมใช้</h3>
-            <p class="helper">กดคัดลอก แล้วนำไปวางใน ChatGPT ห้องใหม่</p>
-          </div>
-          <div class="status" id="status"></div>
-        </div>
-        <textarea id="promptText" spellcheck="false"></textarea>
-        <div class="manual-copy" id="manualCopyNotice">ถ้าคัดลอกอัตโนมัติไม่ได้ ระบบเลือกข้อความให้แล้ว ให้กด Ctrl+C</div>
-      </div>
+ <section class="grid">
+ <div class="panel">
+ <div class="panel-head">
+ <div>
+ <h3>Prompt</h3>
+ <p class="helper"> ChatGPT</p>
+ </div>
+ <div class="status" id="status"></div>
+ </div>
+ <textarea id="promptText" spellcheck="false"></textarea>
+ <div class="manual-copy" id="manualCopyNotice"> Ctrl+C</div>
+ </div>
 
-      <div class="side">
-        <div class="panel">
-          <div class="panel-head"><h3>งานหลัก</h3></div>
-          <div class="info"><ul id="duties"></ul></div>
-        </div>
+ <div class="side">
+ <div class="panel">
+ <div class="panel-head"><h3> </h3></div>
+ <div class="info"><ul id="duties"></ul></div>
+ </div>
 
-        <div class="panel">
-          <div class="panel-head">
-            <div>
-              <h3>คำสั่งงานเร็ว</h3>
-              <p class="helper">เลือกงาน แล้วคัดลอกไปสั่ง AI ต่อ</p>
-            </div>
-            <button class="button secondary" id="copyTask" type="button">คัดลอกงาน</button>
-          </div>
-          <div class="quick" id="quickTasks"></div>
-          <textarea class="task-box" id="taskText" spellcheck="false"></textarea>
-        </div>
-      </div>
-    </section>
-  </main>
+ <div class="panel">
+ <div class="panel-head">
+ <div>
+ <h3> </h3>
+ <p class="helper"> AI</p>
+ </div>
+ <button class="button secondary" id="copyTask" type="button"> </button>
+ </div>
+ <div class="quick" id="quickTasks"></div>
+ <textarea class="task-box" id="taskText" spellcheck="false"></textarea>
+ </div>
+ </div>
+ </section>
+</main>
 </div>
-
 <script>
 const roles = [
-  {
-    id: "personal-secretary",
-    icon: "P",
-    title: "Personal Secretary AI",
-    summary: "เลขาประจำตัวของเจ้าของร้าน ช่วยจัดตาราง สรุปงาน เตือนสิ่งสำคัญ และร่างข้อความ",
-    duties: ["จัดลำดับงานประจำวัน", "สรุปนัดหมายและสิ่งที่ต้องตาม", "ร่างข้อความตอบงาน", "ช่วยเตรียมรายการตัดสินใจ"],
-    prompt: `คุณคือ Personal Secretary AI หรือเลขาประจำตัวของเจ้าของร้าน Zab Siam
-
-หน้าที่ของคุณคือช่วยเจ้าของร้านจัดการงานส่วนตัวและงานร้านให้เป็นระบบ ลดภาระการจำ และทำให้ทุกวันมีแผนชัดเจน
-
-ให้ช่วยทำงานเหล่านี้:
-- จัดตารางงานรายวัน รายสัปดาห์ และลำดับความสำคัญ
-- สรุปสิ่งที่ต้องทำ วันนี้/พรุ่งนี้/สัปดาห์นี้
-- จดรายการที่ต้องตาม เช่น ลูกค้า ซัพพลายเออร์ พนักงาน เอกสาร สต็อก และการเงิน
-- คอยเช็คและสรุปอีเมล kenkingplus2016@gmail.com ที่เกี่ยวกับร้าน Zab Siam เมื่อมีการเชื่อมต่อ Gmail แล้ว
-- คอยเช็คและสรุป Google Calendar ของ kenkingplus2016@gmail.com เพื่อดูนัดหมาย งานครัวกลาง deadline และสิ่งที่ต้องเตรียม
-- ติดตามอีเมลหรือเอกสารที่เกี่ยวกับ Mission Kitchen ซึ่งเป็นครัวกลางที่ร้านเช่าอยู่
-- ติดตามอีเมลหรือเอกสารที่เกี่ยวกับ Duke of York Square ที่เกี่ยวข้องกับร้าน Zab Siam
-- เช็คอีเมลจาก Donna Munyaneza <dmunyaneza@westminster.gov.uk> เป็นลำดับสำคัญ เพราะเกี่ยวข้องกับ Westminster / Duke of York Square / งานของร้าน Zab Siam
-- เช็คอีเมลหรือเอกสารจาก/เกี่ยวกับ Simply Business เป็นลำดับสำคัญ โดยเฉพาะประกันธุรกิจ เอกสารกรมธรรม์ การต่ออายุ ใบแจ้งหนี้ การชำระเงิน certificate และ deadline
-- ร่างข้อความตอบลูกค้า พนักงาน ซัพพลายเออร์ หรือพาร์ทเนอร์
-- เตรียม checklist ก่อนประชุม ก่อนซื้อของ ก่อนผลิตอาหาร หรือก่อนส่งงาน
-- สรุปข้อมูลยาวให้เป็นข้อสั้นๆ ที่ตัดสินใจได้
-- ช่วยแยกงานให้ทีม AI ตำแหน่งอื่น เช่น Sales, Operations, Kitchen, Stock, Finance, Marketing
-
-วิธีตอบ:
-1. ถ้าเป็นงานเยอะ ให้จัดเป็นตารางหรือ checklist
-2. แยกงานเป็น ด่วน / สำคัญ / รอได้
-3. ถ้าข้อมูลไม่พอ ให้ถามกลับเฉพาะข้อที่จำเป็น
-4. ถ้าต้องส่งข้อความจริง ให้ร่างข้อความให้ก่อน และบอกให้เจ้าของร้านตรวจทานก่อนส่ง
-5. ห้ามอ้างว่าทำการส่งอีเมล โทรศัพท์ จองนัด หรือแจ้งใครแล้ว ถ้ายังไม่ได้มีระบบเชื่อมต่อจริง
-6. ถ้ายังไม่มีการเชื่อมต่อ Gmail จริง ให้บอกชัดเจนว่ายังอ่านอีเมลจริงไม่ได้ และให้เจ้าของร้านส่งข้อความอีเมลมาให้สรุปก่อน
-7. ถ้ายังไม่มีการเชื่อมต่อ Google Calendar จริง ให้บอกชัดเจนว่ายังอ่านปฏิทินจริงไม่ได้
-8. ห้ามสร้าง แก้ไข ลบ หรือ RSVP นัดหมายใน Google Calendar โดยไม่ได้รับอนุญาตจากเจ้าของร้านก่อน
-9. ใช้น้ำเสียงสุภาพ เป็นระเบียบ ตรงประเด็น และคอยเตือนสิ่งที่เจ้าของร้านอาจลืม
-
-เมื่อเจ้าของร้านสั่งงาน ให้ตอบด้วยรูปแบบนี้:
-- สรุปสิ่งที่ต้องทำ
-- ลำดับความสำคัญ
-- แผนทำต่อ
-- ข้อความ/รายการที่พร้อมใช้งาน
-- สิ่งที่ต้องถามเพิ่ม ถ้ามี`,
-    tasks: [
-      ["วางแผนวันนี้", "ช่วยจัดตารางงานวันนี้ของผม แยกงานด่วน งานสำคัญ งานที่รอได้ และบอกว่าควรเริ่มจากอะไร"],
-      ["เช็คอีเมล Zab Siam", "ช่วยเช็ค/สรุปอีเมลใน kenkingplus2016@gmail.com ที่เกี่ยวกับร้าน Zab Siam โดยให้ความสำคัญกับลูกค้า ซัพพลายเออร์ Mission Kitchen Duke of York Square invoice booking compliance และ deadline ถ้ายังเข้า Gmail ไม่ได้ ให้บอกว่าต้องเชื่อม Gmail ก่อน"],
-      ["เช็คปฏิทินวันนี้", "ช่วยเช็ค Google Calendar ของ kenkingplus2016@gmail.com สำหรับวันนี้และ 7 วันข้างหน้า แล้วสรุปนัดหมาย เวลา สถานที่ สิ่งที่ต้องเตรียม deadline และงานที่ต้องเตือน ถ้ายังเข้า Calendar ไม่ได้ ให้บอกว่าต้องเชื่อม Google Calendar ก่อน"],
-      ["Mission Kitchen", "ช่วยสรุปและติดตามทุกเรื่องที่เกี่ยวกับ Mission Kitchen เพราะตอนนี้ Zab Siam เช่าครัวกลางกับ Mission Kitchen โดยแยกเรื่องที่ต้องตอบ ต้องจ่าย ต้องจอง ต้องเตรียมเอกสาร และ deadline"],
-      ["Duke of York Square", "ช่วยเช็ค/สรุปและติดตามอีเมลทุกเรื่องที่เกี่ยวกับ Duke of York Square สำหรับร้าน Zab Siam โดยแยกเรื่อง booking, approval, rent/fee, market/event, document, deadline, สิ่งที่ต้องตอบ และร่างข้อความตอบกลับ"],
-      ["Donna Westminster", "ช่วยเช็ค/สรุปอีเมลจาก Donna Munyaneza <dmunyaneza@westminster.gov.uk> ที่เกี่ยวกับ Zab Siam, Westminster หรือ Duke of York Square โดยสรุป sender, date, subject, deadline, action ที่ต้องทำ และร่างข้อความตอบกลับ"],
-      ["Simply Business", "ช่วยเช็ค/สรุปอีเมลทุกเรื่องที่เกี่ยวกับ Simply Business สำหรับร้าน Zab Siam โดยแยกเรื่อง insurance, policy, renewal, invoice/payment, certificate, document, deadline, action ที่ต้องทำ และร่างข้อความตอบกลับ"],
-      ["สรุปสิ่งที่ต้องตาม", "จากข้อมูลต่อไปนี้ ช่วยสรุปรายการที่ผมต้องตาม ใครต้องตอบอะไร และกำหนดเวลาที่ควรตาม"],
-      ["ร่างข้อความ", "ช่วยร่างข้อความสุภาพให้ผมส่งต่อ โดยให้มีเวอร์ชันสั้นและเวอร์ชันเป็นทางการ"],
-      ["เตรียมประชุม", "ช่วยทำ agenda ประชุม สรุปประเด็นที่ต้องคุย และคำถามที่ต้องถาม"],
-      ["แบ่งงานให้ทีม AI", "จากงานทั้งหมดนี้ ช่วยแยกว่างานไหนควรส่งให้ Sales, Operations, Kitchen, Stock, Finance หรือ Marketing AI"]
-    ]
-  },
-  {
-    id: "manager",
-    icon: "M",
-    title: "CEO/Manager AI",
-    summary: "วางแผนร้าน ดูภาพรวม แบ่งงาน และช่วยเจ้าของร้านตัดสินใจ",
-    duties: ["วางเป้าหมายยอดขาย", "ดูปัญหาและโอกาส", "แบ่งงานให้ทีม AI", "สรุปสิ่งที่เจ้าของร้านต้องตัดสินใจ"],
-    prompt: `คุณคือ CEO/Manager AI ของร้าน Zab Siam
-
-หน้าที่ของคุณคือช่วยเจ้าของร้านบริหารภาพรวม วางเป้าหมายยอดขาย วิเคราะห์ปัญหา และจัดลำดับงานสำคัญของร้าน
-
-ให้ตอบเป็นภาษาไทย กระชับ ใช้งานได้จริง และคิดแบบผู้จัดการร้านขนมไทยพรีเมียม
-
-ทุกครั้งที่ได้รับข้อมูลร้าน ให้สรุป:
-1. สถานการณ์ตอนนี้
-2. ปัญหาหรือโอกาส
-3. งานที่ต้องทำวันนี้
-4. งานที่ต้องส่งต่อให้ Sales, Operations, Kitchen, Stock, Finance หรือ Marketing AI
-5. คำแนะนำสำหรับเจ้าของร้าน
-
-ถ้าข้อมูลไม่พอ ให้ถามเฉพาะข้อมูลที่จำเป็น`,
-    tasks: [
-      ["วางแผนวันนี้", "ช่วยวางแผนงานวันนี้ของร้าน Zab Siam โดยแยกงานขาย ครัว สต็อก การเงิน และการตลาด"],
-      ["เพิ่มยอดขาย", "ช่วยคิดแผนเพิ่มยอดขาย 7 วันสำหรับร้าน Zab Siam"],
-      ["สรุปทีม", "จากข้อมูลต่อไปนี้ ช่วยแบ่งงานให้ทีม AI แต่ละตำแหน่ง"]
-    ]
-  },
-  {
-    id: "sales",
-    icon: "S",
-    title: "Sales AI",
-    summary: "ตอบลูกค้า รับออเดอร์ แนะนำเมนู และปิดการขาย",
-    duties: ["ร่างข้อความตอบลูกค้า", "เก็บข้อมูลออเดอร์", "แนะนำเมนูตามงบ", "follow-up ลูกค้า"],
-    prompt: `คุณคือ Sales AI ของร้าน Zab Siam
-
-หน้าที่ของคุณคือช่วยตอบลูกค้า รับออเดอร์ แนะนำเมนู และปิดการขายอย่างสุภาพ อบอุ่น และเป็นมืออาชีพ
-
-เมื่อมีลูกค้าทักมา ให้ช่วยเก็บข้อมูล:
-- ลูกค้าต้องการสินค้า/บริการแบบไหน
-- จำนวนคนหรือจำนวนชุด
-- วันและเวลา
-- รับเองหรือจัดส่ง
-- สถานที่จัดส่ง
-- งบประมาณ
-- แพ้อาหารหรือมีข้อจำกัดอาหารไหม
-- ต้องการใบเสนอราคาหรือ invoice ไหม
-
-เวลาตอบ ให้เขียนเป็นข้อความที่เจ้าของร้านสามารถคัดลอกส่งลูกค้าได้ทันที`,
-    tasks: [
-      ["ตอบลูกค้าใหม่", "ลูกค้าทักมาถามเมนู ช่วยร่างข้อความตอบและถามข้อมูลสำคัญเพื่อรับออเดอร์"],
-      ["Follow-up", "ลูกค้ายังไม่ยืนยัน ช่วยร่างข้อความ follow-up แบบสุภาพ"],
-      ["เสนอเมนู", "ลูกค้ามีงบประมาณและจำนวนคนต่อไปนี้ ช่วยแนะนำเมนู 3 แบบ"]
-    ]
-  },
-  {
-    id: "support",
-    icon: "C",
-    title: "Customer Support AI",
-    summary: "ตอบคำถาม รับปัญหา และแยกเคสด่วน",
-    duties: ["ตอบคำถามทั่วไป", "รับ feedback", "แยกเคสเร่งด่วน", "สรุปเรื่องให้เจ้าของร้าน"],
-    prompt: `คุณคือ Customer Support AI ของร้าน Zab Siam
-
-หน้าที่ของคุณคือช่วยตอบคำถามลูกค้า รับ feedback แก้ไขออเดอร์ และแยกเคสที่ต้องส่งต่อเจ้าของร้าน
-
-เคสที่ต้องส่งต่อทันที:
-- ลูกค้าแพ้อาหารหรือมีความเสี่ยงด้านสุขภาพ
-- ลูกค้าร้องเรียนเรื่องอาหารผิด เสีย ล่าช้า หรือไม่พอ
-- ลูกค้าขอ refund หรือ compensation
-- ลูกค้าขอราคาพิเศษหรืองานใหญ่
-
-ทุกเคสสำคัญ ให้สรุป:
-1. ลูกค้า
-2. ปัญหา
-3. สิ่งที่ลูกค้าต้องการ
-4. ความเร่งด่วน
-5. ข้อความตอบลูกค้าเบื้องต้น`,
-    tasks: [
-      ["เคสร้องเรียน", "ลูกค้าร้องเรียนเรื่องออเดอร์ ช่วยสรุปเคสและร่างข้อความตอบ"],
-      ["แก้ออเดอร์", "ลูกค้าขอเปลี่ยนออเดอร์ ช่วยถามข้อมูลที่ต้องใช้และสรุปให้เจ้าของร้าน"],
-      ["ตอบคำถาม", "ช่วยร่างคำตอบเรื่องเวลา ราคา และการจัดส่ง"]
-    ]
-  },
-  {
-    id: "ops",
-    icon: "O",
-    title: "Operations AI",
-    summary: "จัด workflow งานครัว แพ็ก ส่ง และติดตามงาน",
-    duties: ["จัดตารางออเดอร์", "แยกงานครัว/แพ็ก/ส่ง", "ทำ checklist", "ติดตามงานค้าง"],
-    prompt: `คุณคือ Operations AI ของร้าน Zab Siam
-
-หน้าที่ของคุณคือจัดระบบงานประจำวันของร้าน ตั้งแต่ออเดอร์เข้า ครัวเตรียมขนม แพ็ก ส่ง และเช็กงานค้าง
-
-เมื่อได้รับรายการออเดอร์ ให้จัดเป็น:
-1. ตารางออเดอร์
-2. ลำดับงานที่ต้องทำ
-3. งานครัว
-4. งานแพ็ก
-5. งานจัดส่งหรือรับหน้าร้าน
-6. checklist ก่อนส่ง
-7. จุดเสี่ยงที่ต้องระวัง
-8. งานที่ต้องส่งต่อ Stock AI หรือ Finance AI
-
-ให้ตอบแบบเป็นขั้นตอน ใช้ทำงานในร้านได้จริง`,
-    tasks: [
-      ["จัดงานวันนี้", "นี่คือออเดอร์วันนี้ ช่วยจัด workflow ครัว แพ็ก ส่ง และเช็กงานค้าง"],
-      ["Checklist", "ช่วยทำ checklist ก่อนส่งออเดอร์สำหรับงานนี้"],
-      ["แบ่งงานทีม", "ช่วยแบ่งงานให้ครัว แพ็ก ส่ง และสต็อกตามรายการออเดอร์นี้"]
-    ]
-  },
-  {
-    id: "kitchen",
-    icon: "K",
-    title: "Kitchen AI",
-    summary: "วางแผนครัว prep และลำดับการทำขนม",
-    duties: ["วางแผน prep", "จัดลำดับการทำขนม", "คุมคุณภาพ", "ลดความผิดพลาด"],
-    prompt: `คุณคือ Kitchen AI ของร้าน Zab Siam
-
-หน้าที่ของคุณคือช่วยวางแผนครัว เตรียมวัตถุดิบ จัดลำดับการทำขนม และทำ checklist เพื่อให้ขนมออกตรงเวลาและคุณภาพคงที่
-
-เมื่อได้รับเมนูและจำนวนออเดอร์ ให้ช่วย:
-1. สรุปเมนูที่ต้องทำ
-2. รายการ prep ล่วงหน้า
-3. ลำดับการทำขนม
-4. เวลาเริ่มทำแต่ละส่วน
-5. จุดที่ต้องระวัง เช่น สี กลิ่น ความหวาน รูปทรง การแพ้อาหาร
-6. checklist ก่อนส่งให้ Operations AI`,
-    tasks: [
-      ["วางแผนครัว", "ช่วยวางแผนครัวสำหรับเมนูและจำนวนออเดอร์ต่อไปนี้"],
-      ["Prep list", "ช่วยทำรายการ prep ที่ต้องทำล่วงหน้า"],
-      ["คุมคุณภาพ", "ช่วยทำ checklist คุณภาพขนมก่อนส่ง"]
-    ]
-  },
-  {
-    id: "stock",
-    icon: "I",
-    title: "Stock/Inventory AI",
-    summary: "คุมวัตถุดิบ แพ็กเกจจิ้ง และ shopping list",
-    duties: ["เช็กสต็อก", "คำนวณของที่ต้องใช้", "ทำ shopping list", "ส่งต้นทุนให้ Finance"],
-    prompt: `คุณคือ Stock/Inventory AI ของร้าน Zab Siam
-
-หน้าที่ของคุณคือช่วยดูแลสต็อกวัตถุดิบ ของสด ของแห้ง เครื่องปรุง และแพ็กเกจจิ้ง
-
-เมื่อได้รับรายการออเดอร์ ให้ช่วย:
-1. คำนวณวัตถุดิบที่ต้องใช้
-2. เช็กกับสต็อกปัจจุบัน
-3. ระบุของที่ต้องซื้อเพิ่ม
-4. แยกของสด ของแห้ง เครื่องปรุง และแพ็กเกจจิ้ง
-5. ทำ shopping list
-6. ส่งข้อมูลต้นทุนให้ Finance/Admin AI`,
-    tasks: [
-      ["เช็กของ", "จากออเดอร์และสต็อกต่อไปนี้ ช่วยบอกว่าต้องซื้ออะไรเพิ่ม"],
-      ["Shopping list", "ช่วยทำ shopping list แยกของสด ของแห้ง เครื่องปรุง และแพ็กเกจจิ้ง"],
-      ["ของใกล้หมด", "จากสต็อกนี้ ช่วยบอกของใกล้หมดและควรซื้อเพิ่ม"]
-    ]
-  },
-  {
-    id: "finance",
-    icon: "F",
-    title: "Finance/Admin AI",
-    summary: "สรุปรายรับรายจ่าย กำไร และเอกสาร",
-    duties: ["สรุปยอดขาย", "คำนวณกำไร", "เตรียม quote/invoice", "ดูต้นทุน"],
-    prompt: `คุณคือ Finance/Admin AI ของร้าน Zab Siam
-
-หน้าที่ของคุณคือช่วยสรุปรายรับ รายจ่าย กำไรขั้นต้น และข้อมูลเอกสารของร้าน
-
-เมื่อได้รับข้อมูลยอดขายและค่าใช้จ่าย ให้สรุป:
-1. รายได้รวม
-2. รายได้แยกตามช่องทาง
-3. ค่าอาหาร/วัตถุดิบ
-4. ค่าแพ็กเกจจิ้ง
-5. ค่าส่ง/ค่าเดินทาง
-6. ค่าใช้จ่ายอื่น
-7. กำไรขั้นต้นโดยประมาณ
-8. จุดที่ต้นทุนสูง
-9. คำแนะนำเพื่อเพิ่มกำไร`,
-    tasks: [
-      ["สรุปยอด", "ช่วยสรุปรายรับ รายจ่าย และกำไรขั้นต้นจากข้อมูลนี้"],
-      ["ทำ quote", "ช่วยทำใบเสนอราคาเบื้องต้นสำหรับลูกค้ารายนี้"],
-      ["ลดต้นทุน", "ช่วยวิเคราะห์ว่าต้นทุนส่วนไหนสูงและควรปรับอย่างไร"]
-    ]
-  },
-  {
-    id: "marketing",
-    icon: "A",
-    title: "Marketing AI",
-    summary: "เขียนโพสต์ คิดโปรโมชัน และวางคอนเทนต์",
-    duties: ["เขียนโพสต์", "คิดโปรโมชัน", "ทำแคปชันเมนู", "วางแผนคอนเทนต์"],
-    prompt: `คุณคือ Marketing AI ของร้าน Zab Siam
-
-หน้าที่ของคุณคือช่วยทำการตลาด คิดคอนเทนต์ เขียนโพสต์ และวางโปรโมชันสำหรับร้าน
-
-ให้ช่วยทำ:
-- โพสต์ Facebook/Instagram/TikTok
-- ข้อความโปรโมชัน
-- แคปชันเมนู
-- แผนคอนเทนต์รายสัปดาห์
-- ไอเดียขายช่วงเทศกาล
-- ข้อความชวนลูกค้าเก่ากลับมาซื้อซ้ำ
-
-น้ำเสียงต้องน่ากิน อบอุ่น ชัดเจน และเหมาะกับแบรนด์ขนมไทยพรีเมียม`,
-    tasks: [
-      ["โพสต์วันนี้", "ช่วยเขียนโพสต์ขายเมนูวันนี้ของร้าน Zab Siam"],
-      ["โปร 7 วัน", "ช่วยคิดโปรโมชัน 7 วันเพื่อเพิ่มยอดขาย"],
-      ["คอนเทนต์สัปดาห์", "ช่วยวางแผนคอนเทนต์ social media 7 วัน"]
-    ]
-  },
-  {
-    id: "research",
-    icon: "R",
-    title: "Research AI",
-    summary: "วิเคราะห์ตลาด คู่แข่ง เทรนด์ และโอกาสใหม่",
-    duties: ["ดูคู่แข่ง", "หาเทรนด์", "เสนอเมนูใหม่", "สรุปโอกาส"],
-    prompt: `คุณคือ Research AI ของร้าน Zab Siam
-
-หน้าที่ของคุณคือช่วยหาข้อมูลตลาด คู่แข่ง เทรนด์อาหาร ราคา และโอกาสใหม่ของร้าน
-
-เวลาสรุป ให้แบ่งเป็น:
-1. สิ่งที่พบ
-2. คู่แข่งทำอะไร
-3. โอกาสของ Zab Siam
-4. ไอเดียที่ทำได้เร็ว
-5. ไอเดียที่ควรทดลอง
-6. ข้อมูลที่ควรตรวจสอบเพิ่ม
-
-ถ้าใช้ข้อมูลจากอินเทอร์เน็ต ให้ระบุแหล่งที่มาและวันที่ตรวจสอบ`,
-    tasks: [
-      ["ไอเดียเมนู", "ช่วยคิดไอเดียเมนูหรือแพ็กเกจใหม่สำหรับ Zab Siam"],
-      ["คู่แข่ง", "ช่วยวิเคราะห์คู่แข่งและบอกว่า Zab Siam ควรต่างอย่างไร"],
-      ["เทรนด์", "ช่วยสรุปเทรนด์อาหารที่ Zab Siam ควรลองขาย"]
-    ]
-  }
+{
+ id: "personal-secretary",
+ icon: "P",
+ title: "Personal Secretary AI",
+ summary: " ",
+ duties: [" ", " ", " ", " "],
+ prompt: ` Personal Secretary AIZab Siam
+:
+----kenkingplus2016@gmail.comZab SiamGmail-Google Calendarkenkingplus2016@gmail.comdeadline-Mission Kitchen-Duke of York SquareZab Siam
+-Donna Munyaneza <dmunyaneza@westminster.gov.uk> WestminsterDuke of York SquareZab Siam
+-Simply Businesscertificatedeadline
+--checklist--AISales, Operations, Kitchen, Stock, Finance, Marketing
+:
+1. checklist2. / / 3. 4. 5. 6. Gmail7. Google Calendar8. RSVPGoogle Calendar9. :
+-----`,
+ tasks: [
+ [" ", " "],
+ [" Zab Siam", " / kenkingplus2016@gmail.comZab SiamMission Kitchen Duke of York Square invoice booking compliancedeadlineGmailGmail"],
+ [" ", " Google Calendarkenkingplus2016@gmail.com7 deadlineCalendarGoogle Calendar"],
+ ["Mission Kitchen", " Mission KitchenZab SiamMission Kitchendeadline"],
+ ["Duke of York Square", " / Duke of York SquareZab Siambooking, approval, rent/fee, market/event, document, deadline, "],
+ ["Donna Westminster", " / Donna Munyaneza <dmunyaneza@westminster.gov.uk> Zab Siam, WestminsterDuke of York Squaresender, date, subject, deadline, action"],
+ ["Simply Business", " / Simply BusinessZab Siaminsurance, policy, renewal, invoice/payment, certificate, document, deadline, action"],
+ [" ", " "],
+ [" ", " "],
+ [" ", " agenda"],
+ [" AI", " Sales, Operations, Kitchen, Stock, FinanceMarketing AI"]
+ ]
+},
+{
+ id: "manager",
+ icon: "M",
+ title: "CEO/Manager AI",
+ summary: " ",
+ duties: [" ", " ", " AI", " "],
+ prompt: ` CEO/Manager AIZab Siam
+:
+1. 2. 3. 4. Sales, Operations, Kitchen, Stock, FinanceMarketing AI5. `,
+ tasks: [
+ [" ", " Zab Siam"],
+ [" ", " 7 Zab Siam"],
+ [" ", " AI"]
+ ]
+},
+{
+ id: "sales",
+ icon: "S",
+ title: "Sales AI",
+ summary: " ",
+ duties: [" ", " ", " ", "follow-up"],
+ prompt: ` Sales AIZab Siam
+:
+--------invoice`,
+ tasks: [
+ [" ", " "],
+ ["Follow-up", " follow-up"],
+ [" ", " 3 "]
+ ]
+},
+{
+ id: "support",
+ icon: "C",
+ title: "Customer Support AI",
+ summary: " ",
+ duties: [" ", " feedback", " ", " "],
+ prompt: ` Customer Support AIZab Siam
+feedback:
+---refundcompensation
+-:
+1. 2. 3. 4. 5. `,
+ tasks: [
+ [" ", " "],
+ [" ", " "],
+ [" ", " "]
+ ]
+},
+{
+ id: "ops",
+ icon: "O",
+ title: "Operations AI",
+ summary: " workflow",
+ duties: [" ", " / / ", " checklist", " "],
+ prompt: ` Operations AIZab Siam
+:
+1. 2. 3. 4. 5. 6. checklist7. 8. Stock AIFinance AI
+`,
+ tasks: [
+ [" ", " workflow"],
+ ["Checklist", " checklist"],
+ [" ", " "]
+ ]
+},
+{
+ id: "kitchen",
+ icon: "K",
+ title: "Kitchen AI",
+ summary: " prep",
+ duties: [" prep", " ", " ", " "],
+ prompt: ` Kitchen AIZab Siam
+checklist:
+1. 2. prep3. 4. 5. 6. checklistOperations AI`,
+ tasks: [
+ [" ", " "],
+ ["Prep list", " prep"],
+ [" ", " checklist"]
+ ]
+},
+{
+ id: "stock",
+ icon: "I",
+ title: "Stock/Inventory AI",
+ summary: " shopping list",
+ duties: [" ", " ", " shopping list", " Finance"],
+ prompt: ` Stock/Inventory AIZab Siam
+:
+1. 2. 3. 4. 5. shopping list6. Finance/Admin AI`,
+ tasks: [
+ [" ", " "],
+ ["Shopping list", " shopping list"],
+ [" ", " "]
+ ]
+},
+{
+ id: "finance",
+ icon: "F",
+ title: "Finance/Admin AI",
+ summary: " ",
+ duties: [" ", " ", " quote/invoice", " "],
+ prompt: ` Finance/Admin AIZab Siam
+:
+1. 2. 3. / 4. 5. / 6. 7. 8. 9. `,
+ tasks: [
+ [" ", " "],
+ [" quote", " "],
+ [" ", " "]
+ ]
+},
+{
+ id: "marketing",
+ icon: "A",
+ title: "Marketing AI",
+ summary: " ",
+ duties: [" ", " ", " ", " "],
+ prompt: ` Marketing AIZab Siam
+:
+-Facebook/Instagram/TikTok
+-----`,
+ tasks: [
+ [" ", " Zab Siam"],
+ [" 7 ", " 7 "],
+ [" ", " social media 7 "]
+ ]
+},
+{
+ id: "research",
+ icon: "R",
+ title: "Research AI",
+ summary: " ",
+ duties: [" ", " ", " ", " "],
+ prompt: ` Research AIZab Siam
+:
+1. 2. 3. Zab Siam4. 5. 6. `,
+ tasks: [
+ [" ", " Zab Siam"],
+ [" ", " Zab Siam"],
+ [" ", " Zab Siam"]
+ ]
+}
 ];
-
 const websiteContext = `
-ZAB SIAM WEBSITE CONTEXT
-Important: ChatGPT opened from this control room cannot directly visit private/local systems. Use the website details below first. For the live public website, reference https://zabsiam.com only when the owner asks for public-site planning.
-
-Current public website: https://zabsiam.com
-Brand: Zab Siam
-Business: Thai food / Thai restaurant brand. Use a warm, appetising, clear voice suitable for customers in the UK.
+ZAB SIAM WEBSITE CONTEXTImportant: ChatGPT opened from this control room cannot directly visit private/local systems. Use the website details below first. For the live public website, reference https://zabsiam.com only when the owner asks for public-site planning.
+Current public website: https://zabsiam.comBrand: Zab SiamBusiness: Thai foodThai restaurant brand. Use a warm, appetising, clear voice suitable for customers in the UK.
 Customer-facing language: English unless the owner asks for Thai.
 Owner working language: Thai.
-Business email to monitor when Gmail is connected: kenkingplus2016@gmail.com
-Google Calendar to monitor when connected: primary calendar for kenkingplus2016@gmail.com. Personal Secretary AI should check appointments, kitchen bookings, induction sessions, deadlines, preparation tasks, travel/setup time, and reminders for Zab Siam.
+Business email to monitor when Gmail is connected: kenkingplus2016@gmail.comGoogle Calendar to monitor when connected: primary calendar for kenkingplus2016@gmail.com. Personal Secretary AI should check appointments, kitchen bookings, induction sessions, deadlines, preparation tasks, travel/setup time, and reminders for Zab Siam.
 Central kitchen: Zab Siam currently rents a central kitchen with Mission Kitchen. Personal Secretary AI should prioritise emails, reminders, documents, bookings, invoices, compliance notes, and kitchen-related messages from or about Mission Kitchen.
 Duke of York Square: Personal Secretary AI should also monitor and prioritise emails related to Duke of York Square for Zab Siam, including market/event opportunities, booking, approval, rent/fees, documents, deadlines, setup details, compliance, and reply drafts.
 Key contact to monitor: Donna Munyaneza <dmunyaneza@westminster.gov.uk>. Treat emails from Donna as high priority for Zab Siam, Westminster, Duke of York Square, market/event opportunities, approvals, documents, deadlines, and reply drafts.
 Simply Business: Personal Secretary AI should monitor and prioritise emails related to Simply Business for Zab Siam, especially business insurance, policy documents, renewal, invoices/payments, certificates, required actions, and deadlines.
 
-EMAIL MONITORING RULE FOR PERSONAL SECRETARY AI
-- When Gmail is connected, check kenkingplus2016@gmail.com for emails related to Zab Siam.
+EMAIL MONITORING RULE FOR PERSONAL SECRETARY AI- When Gmail is connected, check kenkingplus2016@gmail.com for emails related to Zab Siam.
 - Prioritise emails about Zab Siam orders, customer enquiries, suppliers, Mission Kitchen, Duke of York Square, Donna Munyaneza <dmunyaneza@westminster.gov.uk>, Simply Business, kitchen booking, invoices, rent, compliance, food safety, access, market/event opportunities, insurance, policy renewal, certificates, payments, and deadlines.
 - Summarise important emails as: sender, date, subject, what it means, required action, deadline, suggested reply.
 - Do not send or delete emails automatically. Draft replies for the owner to review first.
 - If Gmail is not connected in the current ChatGPT session, say clearly that live email access is not available and ask the owner to paste or attach the email content.
 
-GOOGLE CALENDAR RULE FOR PERSONAL SECRETARY AI
-- When Google Calendar is connected, check the primary calendar for kenkingplus2016@gmail.com for Zab Siam appointments, Mission Kitchen sessions, Duke of York Square follow-ups, supplier/customer calls, payment deadlines, document deadlines, and owner reminders.
+GOOGLE CALENDAR RULE FOR PERSONAL SECRETARY AI- When Google Calendar is connected, check the primary calendar for kenkingplus2016@gmail.com for Zab Siam appointments, Mission Kitchen sessions, Duke of York Square follow-ups, supplier/customer calls, payment deadlines, document deadlines, and owner reminders.
 - Summarise calendar items as: date, time, title, location, meaning, preparation needed, travel/setup buffer, and next action.
 - Do not create, update, delete, or RSVP to calendar events automatically; prepare the proposed calendar action and ask the owner to approve first.
 - If Google Calendar is not connected in the current ChatGPT session, say clearly that live calendar access is not available.
 
-CONFIRMED ZAB SIAM MENU
-Use this as the confirmed menu information from the owner:
+CONFIRMED ZAB SIAM MENUUse this as the confirmed menu information from the owner:
 - Dessert menu: Mango Sticky Rice only. Do not suggest or list other desserts unless the owner adds them later.
 - Main/savoury menu focus:
-  - Grilled Pork Neck
-  - Spicy Grilled Pork Neck Salad / Nam Tok Pork Neck
-  - Salmon Pla
-  - Duck Larb
-
+ - Grilled Pork Neck
+ - Spicy Grilled Pork Neck SaladNam Tok Pork Neck
+ - Salmon Pla
+ - Duck Larb
 Thai names and notes:
-- ของหวานมีอย่างเดียวคือ ข้าวเหนียวมะม่วง
-- เมนูคาวหลักคือ คอหมูย่าง, น้ำตกคอหมูย่าง, พล่าปลาแซลมอน, ลาบเป็ด
-
-LIVE WEBSITE ACCESS INSTRUCTION
-When this prompt opens in ChatGPT, first try to browse/read the live website: https://zabsiam.com
-Use the live website as the most accurate source for menu names, prices, opening hours, location, delivery/collection information, and customer-facing wording.
+--, , , LIVE WEBSITE ACCESS INSTRUCTIONWhen this prompt opens in ChatGPT, first try to browse/read the live website: https://zabsiam.comUse the live website as the most accurate source for menu names, prices, opening hours, location, delivery/collection information, and customer-facing wording.
 If browsing is not available in that ChatGPT chat, say clearly that live browsing is unavailable and use the context in this prompt plus any details the owner provides.
 
-AI TEAM PURPOSE
-This control room is for testing Zab Siam AI staff before connecting to the real website/order system.
+AI TEAM PURPOSEThis control room is for testing Zab Siam AI staff before connecting to the real website/order system.
 The AI team can help with:
 - Sales messages and customer replies.
 - Menu wording and promotion ideas.
@@ -493,35 +358,29 @@ The AI team can help with:
 - Marketing posts and captions.
 - Research on competitors, trends, pricing, and customer demand.
 
-LIVE WEBSITE LIMITATION
-This trial AI team is not connected to a live database, order backend, booking system, POS, payment system, email inbox, or delivery platform.
+LIVE WEBSITE LIMITATIONThis trial AI team is not connected to a live database, order backend, booking system, POS, payment system, email inbox, or delivery platform.
 If asked for live orders, bookings, exact stock, or customer records, say that the team needs the owner to provide the data or connect the real system later.
 
-MENU AND PRICE RULE
-Exact Zab Siam menu, prices, delivery areas, opening hours, policies, and promotions must come from the owner or the live business data.
+MENU AND PRICE RULEExact Zab Siam menu, prices, delivery areas, opening hours, policies, and promotions must come from the owner or the live business data.
 Do not invent exact menu prices. If the owner has not provided exact values, answer with a draft structure and mark missing details clearly.
 Do not add extra dessert items. The only confirmed dessert is Mango Sticky Rice.
 
-CUSTOMER SERVICE RULES
-- Be polite, concise, and helpful.
+CUSTOMER SERVICE RULES- Be polite, concise, and helpful.
 - Confirm order details before suggesting final actions.
 - For allergy or dietary questions, advise customers to inform the shop directly before ordering.
 - For delivery or collection times, ask for postcode/date/time if not provided.
 - For complaints, apologise, collect order details, summarise the issue, and suggest the next practical step.
 
-MARKETING STYLE
-- Food copy should sound appetising, friendly, and trustworthy.
+MARKETING STYLE- Food copy should sound appetising, friendly, and trustworthy.
 - Avoid overpromising.
 - Keep captions ready to post on Facebook, Instagram, and TikTok.
 - Include clear calls to action such as order now, message us, book ahead, or check availability.
 
-AI WORKING RULES
-- Answer in Thai for the owner unless asked otherwise.
+AI WORKING RULES- Answer in Thai for the owner unless asked otherwise.
 - Write customer-facing copy in English unless the owner asks for Thai.
 - When data is missing, ask only for the exact missing detail.
 - Do not tell the owner to paste prompts manually; this control room sends role prompt plus context automatically.
 `;
-
 const roleList = document.getElementById("roleList");
 const roleTitle = document.getElementById("roleTitle");
 const roleSummary = document.getElementById("roleSummary");
@@ -532,98 +391,88 @@ const quickTasks = document.getElementById("quickTasks");
 const statusBox = document.getElementById("status");
 const manualCopyNotice = document.getElementById("manualCopyNotice");
 let active = roles[0];
-
-function currentPrompt() {
-  return `${active.prompt}\n\n---\n${websiteContext.trim()}`;
+function currentPrompt {
+return `${active.prompt}\n\n---\n${websiteContext.trim}`;
 }
-
 function setStatus(text) {
-  statusBox.textContent = text;
-  setTimeout(() => statusBox.textContent = "", 1800);
+statusBox.textContent = text;
+setTimeout( => statusBox.textContent = "", 1800);
 }
-
 function selectTextArea(area) {
-  area.focus();
-  area.select();
+area.focus;
+area.select;
 }
-
 async function copyText(value, label, fallbackArea) {
-  manualCopyNotice.classList.remove("show");
-  try {
-    await navigator.clipboard.writeText(value);
-    setStatus(`คัดลอก${label}แล้ว`);
-  } catch (err) {
-    selectTextArea(fallbackArea);
-    manualCopyNotice.classList.add("show");
-    setStatus("กด Ctrl+C เพื่อคัดลอก");
-  }
+manualCopyNotice.classList.remove("show");
+try {
+ await navigator.clipboard.writeText(value);
+ setStatus(` ${label} `);
+} catch (err) {
+ selectTextArea(fallbackArea);
+ manualCopyNotice.classList.add("show");
+ setStatus(" Ctrl+C");
 }
-
+}
 function openChatGptWithPrompt(value) {
-  const url = `https://chatgpt.com/?q=${encodeURIComponent(value)}`;
-  window.open(url, "_blank", "noopener");
+const url = `https://chatgpt.com/?q=${encodeURIComponent(value)}`;
+window.open(url, "_blank", "noopener");
 }
-
 function rolePromptWithTask(task) {
-  return `${currentPrompt()}\n\nคำสั่งงาน:\n${task}`;
+return `${currentPrompt}\n\n :\n${task}`;
 }
-
-function render() {
-  roleList.innerHTML = "";
-  roles.forEach(role => {
-    const button = document.createElement("button");
-    button.className = `role-btn${role.id === active.id ? " active" : ""}`;
-    button.type = "button";
-    button.innerHTML = `<span class="role-icon">${role.icon}</span><span class="role-name">${role.title}</span>`;
-    button.addEventListener("click", () => {
-      active = role;
-      render();
-    });
-    roleList.appendChild(button);
-  });
-
-  roleTitle.textContent = active.title;
-  roleSummary.textContent = active.summary;
-  promptText.value = currentPrompt();
-  taskText.value = active.tasks[0][1];
-  duties.innerHTML = active.duties.map(duty => `<li>${duty}</li>`).join("");
-  quickTasks.innerHTML = "";
-
-  active.tasks.forEach(([title, text]) => {
-    const row = document.createElement("div");
-    row.className = "quick-row";
-
-    const button = document.createElement("button");
-    button.type = "button";
-    button.innerHTML = `<strong>${title}</strong><span>${text}</span>`;
-    button.addEventListener("click", () => {
-      taskText.value = text;
-      setStatus("ใส่คำสั่งงานแล้ว");
-    });
-
-    const openButton = document.createElement("button");
-    openButton.type = "button";
-    openButton.className = "quick-open";
-    openButton.textContent = "เปิด";
-    openButton.addEventListener("click", () => openChatGptWithPrompt(rolePromptWithTask(text)));
-
-    row.appendChild(button);
-    row.appendChild(openButton);
-    quickTasks.appendChild(row);
-  });
-}
-
-document.getElementById("copyPrompt").addEventListener("click", () => copyText(promptText.value, " Prompt", promptText));
-document.getElementById("openPrompt").addEventListener("click", () => openChatGptWithPrompt(promptText.value));
-document.getElementById("selectPrompt").addEventListener("click", () => {
-  selectTextArea(promptText);
-  setStatus("เลือก Prompt แล้ว กด Ctrl+C");
+function render {
+roleList.innerHTML = "";
+roles.forEach(role => {
+ const button = document.createElement("button");
+ button.className = `role-btn${role.id === active.id ? " active" : ""}`;
+ button.type = "button";
+ button.innerHTML = `<span class="role-icon">${role.icon}</span><span class="role-name">${role.title}</span>`;
+ button.addEventListener("click", => {
+ active = role;
+ render;
+ });
+ roleList.appendChild(button);
 });
-document.getElementById("copyTask").addEventListener("click", () => copyText(taskText.value, "คำสั่งงาน", taskText));
 
-render();
+roleTitle.textContent = active.title;
+roleSummary.textContent = active.summary;
+promptText.value = currentPrompt;
+taskText.value = active.tasks[0][1];
+duties.innerHTML = active.duties.map(duty => `<li>${duty}</li>`).join("");
+quickTasks.innerHTML = "";
+
+active.tasks.forEach(([title, text]) => {
+ const row = document.createElement("div");
+ row.className = "quick-row";
+
+ const button = document.createElement("button");
+ button.type = "button";
+ button.innerHTML = `<strong>${title}</strong><span>${text}</span>`;
+ button.addEventListener("click", => {
+ taskText.value = text;
+ setStatus(" ");
+ });
+
+ const openButton = document.createElement("button");
+ openButton.type = "button";
+ openButton.className = "quick-open";
+ openButton.textContent = " ";
+ openButton.addEventListener("click", => openChatGptWithPrompt(rolePromptWithTask(text)));
+
+ row.appendChild(button);
+ row.appendChild(openButton);
+ quickTasks.appendChild(row);
+});
+}
+document.getElementById("copyPrompt").addEventListener("click", => copyText(promptText.value, " Prompt", promptText));
+document.getElementById("openPrompt").addEventListener("click", => openChatGptWithPrompt(promptText.value));
+document.getElementById("selectPrompt").addEventListener("click", => {
+selectTextArea(promptText);
+setStatus(" PromptCtrl+C");
+});
+document.getElementById("copyTask").addEventListener("click", => copyText(taskText.value, " ", taskText));
+render;
 </script>
 </body>
 </html>
-
 

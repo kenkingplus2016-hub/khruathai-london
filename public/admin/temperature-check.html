@@ -1,589 +1,577 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex,nofollow">
-  <title>Zab Siam Temperature Check</title>
-  <style>
-    :root {
-      --ink: #20231f;
-      --muted: #657064;
-      --paper: #fbfaf4;
-      --panel: #ffffff;
-      --line: #ddd8ca;
-      --green: #2f6b46;
-      --dark: #13251a;
-      --gold: #d99b35;
-      --red: #b84434;
-      --amber: #d99b35;
-      --blue: #d9e9f7;
-      --shadow: 0 16px 42px rgba(26, 32, 24, .12);
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Zab Siam Temperature Check</title>
+<style>
+ :root {
+ --ink: #20231f;
+ --muted: #657064;
+ --paper: #fbfaf4;
+ --panel: #ffffff;
+ --line: #ddd8ca;
+ --green: #2f6b46;
+ --dark: #13251a;
+ --gold: #d99b35;
+ --red: #b84434;
+ --amber: #d99b35;
+ --blue: #d9e9f7;
+ --shadow: 0 16px 42px rgba(26, 32, 24, .12);
+ }
 
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, Tahoma, sans-serif;
-      color: var(--ink);
-      background: linear-gradient(180deg, #f7f3e9, #ebe6d8);
-    }
-    button, input, select, textarea { font: inherit; }
-    a { color: inherit; }
+ * { box-sizing: border-box; }
+ body {
+ margin: 0;
+ font-family: Arial, Tahoma, sans-serif;
+ color: var(--ink);
+ background: linear-gradient(180deg, #f7f3e9, #ebe6d8);
+ }
+ button, input, select, textarea { font: inherit; }
+ a { color: inherit; }
 
-    .login {
-      position: fixed;
-      inset: 0;
-      z-index: 10;
-      display: grid;
-      place-items: center;
-      padding: 18px;
-      background: rgba(13, 24, 17, .72);
-    }
-    .login-card, .panel {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      box-shadow: var(--shadow);
-    }
-    .login-card {
-      width: min(420px, 100%);
-      padding: 22px;
-      display: grid;
-      gap: 12px;
-    }
-    .login-card h1 { margin: 0; font-size: 24px; }
-    .login-card p { margin: 0; color: var(--muted); line-height: 1.45; }
+ .login {
+ position: fixed;
+ inset: 0;
+ z-index: 10;
+ display: grid;
+ place-items: center;
+ padding: 18px;
+ background: rgba(13, 24, 17, .72);
+ }
+ .login-card, .panel {
+ background: var(--panel);
+ border: 1px solid var(--line);
+ border-radius: 10px;
+ box-shadow: var(--shadow);
+ }
+ .login-card {
+ width: min(420px, 100%);
+ padding: 22px;
+ display: grid;
+ gap: 12px;
+ }
+ .login-card h1 { margin: 0; font-size: 24px; }
+ .login-card p { margin: 0; color: var(--muted); line-height: 1.45; }
 
-    .shell {
-      min-height: 100vh;
-      padding: 20px;
-      display: grid;
-      grid-template-columns: 390px minmax(0, 1fr);
-      gap: 18px;
-    }
-    .brand {
-      color: #fff;
-      background: var(--dark);
-      border-radius: 10px;
-      padding: 18px;
-      margin-bottom: 14px;
-    }
-    .brand h1 { margin: 0 0 5px; font-size: 26px; }
-    .brand p { margin: 0; color: rgba(255,255,255,.74); }
+ .shell {
+ min-height: 100vh;
+ padding: 20px;
+ display: grid;
+ grid-template-columns: 390px minmax(0, 1fr);
+ gap: 18px;
+ }
+ .brand {
+ color: #fff;
+ background: var(--dark);
+ border-radius: 10px;
+ padding: 18px;
+ margin-bottom: 14px;
+ }
+ .brand h1 { margin: 0 0 5px; font-size: 26px; }
+ .brand p { margin: 0; color: rgba(255,255,255,.74); }
 
-    .panel { overflow: hidden; }
-    .panel-head {
-      padding: 14px 16px;
-      border-bottom: 1px solid var(--line);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      background: var(--paper);
-    }
-    .panel-head h2, .panel-head h3 { margin: 0; }
-    .panel-head h2 { font-size: 24px; }
-    .panel-head h3 { font-size: 18px; }
-    .helper { margin: 3px 0 0; color: var(--muted); font-size: 13px; }
+ .panel { overflow: hidden; }
+ .panel-head {
+ padding: 14px 16px;
+ border-bottom: 1px solid var(--line);
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ gap: 12px;
+ background: var(--paper);
+ }
+ .panel-head h2, .panel-head h3 { margin: 0; }
+ .panel-head h2 { font-size: 24px; }
+ .panel-head h3 { font-size: 18px; }
+ .helper { margin: 3px 0 0; color: var(--muted); font-size: 13px; }
 
-    form, .content { padding: 16px; }
-    form { display: grid; gap: 12px; }
-    label { display: grid; gap: 6px; color: var(--muted); font-size: 14px; font-weight: 800; }
-    input, select, textarea {
-      width: 100%;
-      min-height: 42px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 10px 12px;
-      background: #fff;
-      color: var(--ink);
-    }
-    textarea { min-height: 84px; resize: vertical; }
-    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .button {
-      min-height: 42px;
-      border: 0;
-      border-radius: 8px;
-      padding: 10px 14px;
-      color: #fff;
-      background: var(--green);
-      font-weight: 800;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-    .button.secondary {
-      color: var(--dark);
-      background: #fff;
-      border: 1px solid var(--line);
-    }
-    .button.gold { background: var(--gold); }
-    .button.danger { background: var(--red); }
+ form, .content { padding: 16px; }
+ form { display: grid; gap: 12px; }
+ label { display: grid; gap: 6px; color: var(--muted); font-size: 14px; font-weight: 800; }
+ input, select, textarea {
+ width: 100%;
+ min-height: 42px;
+ border: 1px solid var(--line);
+ border-radius: 8px;
+ padding: 10px 12px;
+ background: #fff;
+ color: var(--ink);
+ }
+ textarea { min-height: 84px; resize: vertical; }
+ .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+ .button {
+ min-height: 42px;
+ border: 0;
+ border-radius: 8px;
+ padding: 10px 14px;
+ color: #fff;
+ background: var(--green);
+ font-weight: 800;
+ cursor: pointer;
+ text-decoration: none;
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ gap: 8px;
+ }
+ .button.secondary {
+ color: var(--dark);
+ background: #fff;
+ border: 1px solid var(--line);
+ }
+ .button.gold { background: var(--gold); }
+ .button.danger { background: var(--red); }
 
-    .main { display: grid; gap: 16px; align-content: start; }
-    .summary-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 12px;
-      padding: 16px;
-    }
-    .metric {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 13px;
-      background: #fff;
-    }
-    .metric span { display: block; color: var(--muted); font-size: 13px; }
-    .metric strong { display: block; margin-top: 5px; font-size: 24px; }
+ .main { display: grid; gap: 16px; align-content: start; }
+ .summary-grid {
+ display: grid;
+ grid-template-columns: repeat(4, minmax(0, 1fr));
+ gap: 12px;
+ padding: 16px;
+ }
+ .metric {
+ border: 1px solid var(--line);
+ border-radius: 8px;
+ padding: 13px;
+ background: #fff;
+ }
+ .metric span { display: block; color: var(--muted); font-size: 13px; }
+ .metric strong { display: block; margin-top: 5px; font-size: 24px; }
 
-    .notice {
-      display: none;
-      padding: 12px 16px;
-      border-top: 1px solid var(--line);
-      color: #5c4918;
-      background: #fff0bd;
-    }
-    .notice.show { display: block; }
+ .notice {
+ display: none;
+ padding: 12px 16px;
+ border-top: 1px solid var(--line);
+ color: #5c4918;
+ background: #fff0bd;
+ }
+ .notice.show { display: block; }
 
-    .filters {
-      padding: 14px 16px;
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 10px;
-      border-top: 1px solid var(--line);
-    }
+ .filters {
+ padding: 14px 16px;
+ display: grid;
+ grid-template-columns: repeat(4, minmax(0, 1fr));
+ gap: 10px;
+ border-top: 1px solid var(--line);
+ }
 
-    .table-wrap { overflow: auto; }
-    table { width: 100%; min-width: 920px; border-collapse: collapse; }
-    th, td {
-      border-bottom: 1px solid var(--line);
-      padding: 10px 12px;
-      text-align: left;
-      vertical-align: top;
-      font-size: 14px;
-    }
-    th { color: var(--muted); background: #f7f4ec; font-size: 12px; text-transform: uppercase; }
-    .status {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 76px;
-      border-radius: 999px;
-      padding: 5px 9px;
-      color: #fff;
-      font-size: 12px;
-      font-weight: 800;
-    }
-    .status.pass { background: var(--green); }
-    .status.warning { background: var(--amber); color: #2d2109; }
-    .status.fail { background: var(--red); }
-    .temp { font-weight: 900; font-size: 18px; }
-    .actions { display: flex; gap: 8px; flex-wrap: wrap; }
-    .actions .button { min-height: 34px; padding: 7px 10px; font-size: 12px; }
+ .table-wrap { overflow: auto; }
+ table { width: 100%; min-width: 920px; border-collapse: collapse; }
+ th, td {
+ border-bottom: 1px solid var(--line);
+ padding: 10px 12px;
+ text-align: left;
+ vertical-align: top;
+ font-size: 14px;
+ }
+ th { color: var(--muted); background: #f7f4ec; font-size: 12px; text-transform: uppercase; }
+ .status {
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ min-width: 76px;
+ border-radius: 999px;
+ padding: 5px 9px;
+ color: #fff;
+ font-size: 12px;
+ font-weight: 800;
+ }
+ .status.pass { background: var(--green); }
+ .status.warning { background: var(--amber); color: #2d2109; }
+ .status.fail { background: var(--red); }
+ .temp { font-weight: 900; font-size: 18px; }
+ .actions { display: flex; gap: 8px; flex-wrap: wrap; }
+ .actions .button { min-height: 34px; padding: 7px 10px; font-size: 12px; }
 
-    .guide {
-      display: grid;
-      gap: 8px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.45;
-    }
-    .guide strong { color: var(--ink); }
+ .guide {
+ display: grid;
+ gap: 8px;
+ color: var(--muted);
+ font-size: 13px;
+ line-height: 1.45;
+ }
+ .guide strong { color: var(--ink); }
 
-    @media (max-width: 980px) {
-      .shell { grid-template-columns: 1fr; padding: 12px; }
-      .summary-grid { grid-template-columns: 1fr 1fr; }
-      .filters { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 560px) {
-      .row, .summary-grid, .filters { grid-template-columns: 1fr; }
-      .panel-head { align-items: stretch; flex-direction: column; }
-      .button { width: 100%; }
-    }
-  </style>
+ @media (max-width: 980px) {
+ .shell { grid-template-columns: 1fr; padding: 12px; }
+ .summary-grid { grid-template-columns: 1fr 1fr; }
+ .filters { grid-template-columns: 1fr 1fr; }
+ }
+ @media (max-width: 560px) {
+ .row, .summary-grid, .filters { grid-template-columns: 1fr; }
+ .panel-head { align-items: stretch; flex-direction: column; }
+ .button { width: 100%; }
+ }
+</style>
 </head>
 <body>
-  <div class="login" id="loginPanel">
-    <form class="login-card" id="loginForm">
-      <h1>Temperature Check</h1>
-      <p>ใส่รหัสพนักงานเพื่อบันทึกอุณหภูมิอาหารและอุปกรณ์ ระบบนี้เป็นข้อมูลภายในร้าน ลูกค้าไม่เห็น</p>
-      <label>
-        รหัสพนักงาน
-        <input id="passwordInput" type="password" autocomplete="current-password" required>
-      </label>
-      <button class="button" type="submit">เปิดระบบ</button>
-      <p id="loginMessage"></p>
-    </form>
-  </div>
+<div class="login" id="loginPanel">
+ <form class="login-card" id="loginForm">
+ <h1>Temperature Check</h1>
+ <p> </p>
+ <label>
+ <input id="passwordInput" type="password" autocomplete="current-password" required>
+ </label>
+ <button class="button" type="submit"> </button>
+ <p id="loginMessage"></p>
+ </form>
+</div>
 
-  <div class="shell">
-    <aside>
-      <div class="brand">
-        <h1>Zab Siam</h1>
-        <p>Food Temperature Check</p>
-      </div>
+<div class="shell">
+ <aside>
+ <div class="brand">
+ <h1>Zab Siam</h1>
+ <p>Food Temperature Check</p>
+ </div>
 
-      <section class="panel">
-        <div class="panel-head">
-          <div>
-            <h3>บันทึกอุณหภูมิ</h3>
-            <p class="helper">ใช้มือถือกรอกระหว่างงานครัวได้</p>
-          </div>
-        </div>
-        <form id="checkForm">
-          <label>
-            ประเภทการตรวจ
-            <select id="typeInput" required>
-              <option value="chilled">Chilled storage / ตู้เย็น</option>
-              <option value="frozen">Frozen storage / ตู้แช่แข็ง</option>
-              <option value="hot-holding">Hot holding / อาหารร้อน</option>
-              <option value="cooked">Cooked food / อาหารปรุงสุก</option>
-              <option value="reheated">Reheated food / อุ่นซ้ำ</option>
-              <option value="delivery">Delivery received / รับสินค้า</option>
-              <option value="other">Other / อื่น ๆ</option>
-            </select>
-          </label>
-          <div class="row">
-            <label>
-              จุดตรวจ
-              <input id="areaInput" list="areaOptions" placeholder="เช่น Fridge 1" required>
-            </label>
-            <label>
-              อุณหภูมิ °C
-              <input id="temperatureInput" type="number" step="0.1" placeholder="เช่น 4.2" required>
-            </label>
-          </div>
-          <datalist id="areaOptions">
-            <option value="Fridge 1">
-            <option value="Fridge 2">
-            <option value="Freezer">
-            <option value="Hot Holding">
-            <option value="Delivery">
-            <option value="Cooked Food">
-          </datalist>
-          <label>
-            อาหาร / อุปกรณ์
-            <input id="itemInput" list="itemOptions" placeholder="เช่น Mango sticky rice / Pork neck" required>
-          </label>
-          <datalist id="itemOptions">
-            <option value="Mango Sticky Rice">
-            <option value="Grilled Pork Neck">
-            <option value="Nam Tok Pork Neck">
-            <option value="Duck Larb">
-            <option value="Salmon Pla">
-            <option value="Cooked Rice">
-          </datalist>
-          <div class="row">
-            <label>
-              ผู้ตรวจ
-              <input id="checkedByInput" placeholder="ชื่อพนักงาน">
-            </label>
-            <label>
-              Action ถ้าไม่ผ่าน
-              <input id="correctiveActionInput" placeholder="เช่น ย้ายตู้ / ทิ้ง / ตรวจซ้ำ">
-            </label>
-          </div>
-          <label>
-            หมายเหตุ
-            <textarea id="noteInput" placeholder="รายละเอียดเพิ่มเติม"></textarea>
-          </label>
-          <button class="button" id="saveButton" type="submit">บันทึกอุณหภูมิ</button>
-        </form>
-      </section>
+ <section class="panel">
+ <div class="panel-head">
+ <div>
+ <h3> </h3>
+ <p class="helper"> </p>
+ </div>
+ </div>
+ <form id="checkForm">
+ <label>
+ <select id="typeInput" required>
+ <option value="chilled">Chilled storage</option>
+ <option value="frozen">Frozen storage</option>
+ <option value="hot-holding">Hot holding</option>
+ <option value="cooked">Cooked food</option>
+ <option value="reheated">Reheated food</option>
+ <option value="delivery">Delivery received</option>
+ <option value="other">Other</option>
+ </select>
+ </label>
+ <div class="row">
+ <label>
+ <input id="areaInput" list="areaOptions" placeholder=" Fridge 1" required>
+ </label>
+ <label>
+ °C
+ <input id="temperatureInput" type="number" step="0.1" placeholder=" 4.2" required>
+ </label>
+ </div>
+ <datalist id="areaOptions">
+ <option value="Fridge 1">
+ <option value="Fridge 2">
+ <option value="Freezer">
+ <option value="Hot Holding">
+ <option value="Delivery">
+ <option value="Cooked Food">
+ </datalist>
+ <label>
+ <input id="itemInput" list="itemOptions" placeholder=" Mango sticky ricePork neck" required>
+ </label>
+ <datalist id="itemOptions">
+ <option value="Mango Sticky Rice">
+ <option value="Grilled Pork Neck">
+ <option value="Nam Tok Pork Neck">
+ <option value="Duck Larb">
+ <option value="Salmon Pla">
+ <option value="Cooked Rice">
+ </datalist>
+ <div class="row">
+ <label>
+ <input id="checkedByInput" placeholder=" ">
+ </label>
+ <label>
+ Action<input id="correctiveActionInput" placeholder=" / / ">
+ </label>
+ </div>
+ <label>
+ <textarea id="noteInput" placeholder=" "></textarea>
+ </label>
+ <button class="button" id="saveButton" type="submit"> </button>
+ </form>
+ </section>
 
-      <section class="panel" style="margin-top:14px">
-        <div class="panel-head"><h3>เกณฑ์ตรวจเร็ว</h3></div>
-        <div class="content guide">
-          <div><strong>Chilled:</strong> เป้าหมาย 0-5°C, ต้องต่ำกว่า 8°C</div>
-          <div><strong>Frozen:</strong> เป้าหมาย -18°C หรือต่ำกว่า</div>
-          <div><strong>Hot holding:</strong> 63°C ขึ้นไป</div>
-          <div><strong>Cooked/Reheated:</strong> 75°C ขึ้นไป หรือ 70°C นาน 2 นาทีตาม procedure</div>
-        </div>
-      </section>
-    </aside>
+ <section class="panel" style="margin-top:14px">
+ <div class="panel-head"><h3> </h3></div>
+ <div class="content guide">
+ <div><strong>Chilled:</strong> 0-5°C, 8°C</div>
+ <div><strong>Frozen:</strong> -18°C</div>
+ <div><strong>Hot holding:</strong> 63°C</div>
+ <div><strong>Cooked/Reheated:</strong> 75°C70°C2 procedure</div>
+ </div>
+ </section>
+ </aside>
 
-    <main class="main">
-      <section class="panel">
-        <div class="panel-head">
-          <div>
-            <h2>Temperature Log</h2>
-            <p class="helper" id="syncStatus">ยังไม่ได้ซิงก์</p>
-          </div>
-          <div class="actions">
-            <a class="button secondary" href="/admin/pos.html">POS / Stock</a>
-            <a class="button secondary" href="/admin/food-safety.html">Food Safety</a>
-            <a class="button secondary" href="/ai-team-board.html">AI Team</a>
-            <button class="button gold" id="refreshButton" type="button">รีเฟรช</button>
-            <button class="button danger" id="logoutButton" type="button">ออก</button>
-          </div>
-        </div>
-        <div class="notice" id="notice"></div>
-        <div class="summary-grid">
-          <div class="metric"><span>วันนี้ทั้งหมด</span><strong id="todayTotal">0</strong></div>
-          <div class="metric"><span>ผ่าน</span><strong id="passTotal">0</strong></div>
-          <div class="metric"><span>เตือน</span><strong id="warningTotal">0</strong></div>
-          <div class="metric"><span>ไม่ผ่าน</span><strong id="failTotal">0</strong></div>
-        </div>
-        <div class="filters">
-          <label>
-            ประเภท
-            <select id="typeFilter">
-              <option value="all">ทุกประเภท</option>
-              <option value="chilled">Chilled</option>
-              <option value="frozen">Frozen</option>
-              <option value="hot-holding">Hot holding</option>
-              <option value="cooked">Cooked</option>
-              <option value="reheated">Reheated</option>
-              <option value="delivery">Delivery</option>
-              <option value="other">Other</option>
-            </select>
-          </label>
-          <label>
-            สถานะ
-            <select id="statusFilter">
-              <option value="all">ทุกสถานะ</option>
-              <option value="pass">ผ่าน</option>
-              <option value="warning">เตือน</option>
-              <option value="fail">ไม่ผ่าน</option>
-            </select>
-          </label>
-          <label>
-            วัน
-            <input id="dateFilter" type="date">
-          </label>
-          <label>
-            ค้นหา
-            <input id="searchInput" type="search" placeholder="ค้นหาอาหาร/จุดตรวจ">
-          </label>
-        </div>
-      </section>
+ <main class="main">
+ <section class="panel">
+ <div class="panel-head">
+ <div>
+ <h2>Temperature Log</h2>
+ <p class="helper" id="syncStatus"> </p>
+ </div>
+ <div class="actions">
+ <a class="button secondary" href="/admin/pos.html">POSStock</a>
+ <a class="button secondary" href="/admin/food-safety.html">Food Safety</a>
+ <a class="button secondary" href="/ai-team-board.html">AI Team</a>
+ <button class="button gold" id="refreshButton" type="button"> </button>
+ <button class="button danger" id="logoutButton" type="button"> </button>
+ </div>
+ </div>
+ <div class="notice" id="notice"></div>
+ <div class="summary-grid">
+ <div class="metric"><span> </span><strong id="todayTotal">0</strong></div>
+ <div class="metric"><span> </span><strong id="passTotal">0</strong></div>
+ <div class="metric"><span> </span><strong id="warningTotal">0</strong></div>
+ <div class="metric"><span> </span><strong id="failTotal">0</strong></div>
+ </div>
+ <div class="filters">
+ <label>
+ <select id="typeFilter">
+ <option value="all"> </option>
+ <option value="chilled">Chilled</option>
+ <option value="frozen">Frozen</option>
+ <option value="hot-holding">Hot holding</option>
+ <option value="cooked">Cooked</option>
+ <option value="reheated">Reheated</option>
+ <option value="delivery">Delivery</option>
+ <option value="other">Other</option>
+ </select>
+ </label>
+ <label>
+ <select id="statusFilter">
+ <option value="all"> </option>
+ <option value="pass"> </option>
+ <option value="warning"> </option>
+ <option value="fail"> </option>
+ </select>
+ </label>
+ <label>
+ <input id="dateFilter" type="date">
+ </label>
+ <label>
+ <input id="searchInput" type="search" placeholder=" / ">
+ </label>
+ </div>
+ </section>
 
-      <section class="panel">
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>เวลา</th>
-                <th>ประเภท</th>
-                <th>จุดตรวจ</th>
-                <th>อาหาร/อุปกรณ์</th>
-                <th>°C</th>
-                <th>สถานะ</th>
-                <th>คำแนะนำ</th>
-                <th>ผู้ตรวจ</th>
-                <th>Action</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody id="logBody"></tbody>
-          </table>
-        </div>
-      </section>
-    </main>
-  </div>
+ <section class="panel">
+ <div class="table-wrap">
+ <table>
+ <thead>
+ <tr>
+ <th> </th>
+ <th> </th>
+ <th> </th>
+ <th> / </th>
+ <th>°C</th>
+ <th> </th>
+ <th> </th>
+ <th> </th>
+ <th>Action</th>
+ <th></th>
+ </tr>
+ </thead>
+ <tbody id="logBody"></tbody>
+ </table>
+ </div>
+ </section>
+ </main>
+</div>
 
-  <script>
-    const API_URL = "/api/temperature-checks";
-    const passwordKey = "zabsiam-temp-check-pass";
-    let password = sessionStorage.getItem(passwordKey) || "";
-    let checks = [];
+<script>
+ const API_URL = "/api/temperature-checks";
+ const passwordKey = "zabsiam-temp-check-pass";
+ let password = sessionStorage.getItem(passwordKey) || "";
+ let checks = [];
 
-    const loginPanel = document.getElementById("loginPanel");
-    const loginForm = document.getElementById("loginForm");
-    const loginMessage = document.getElementById("loginMessage");
-    const passwordInput = document.getElementById("passwordInput");
-    const checkForm = document.getElementById("checkForm");
-    const saveButton = document.getElementById("saveButton");
-    const syncStatus = document.getElementById("syncStatus");
-    const notice = document.getElementById("notice");
-    const logBody = document.getElementById("logBody");
-    const filters = ["typeFilter", "statusFilter", "dateFilter", "searchInput"].map(id => document.getElementById(id));
+ const loginPanel = document.getElementById("loginPanel");
+ const loginForm = document.getElementById("loginForm");
+ const loginMessage = document.getElementById("loginMessage");
+ const passwordInput = document.getElementById("passwordInput");
+ const checkForm = document.getElementById("checkForm");
+ const saveButton = document.getElementById("saveButton");
+ const syncStatus = document.getElementById("syncStatus");
+ const notice = document.getElementById("notice");
+ const logBody = document.getElementById("logBody");
+ const filters = ["typeFilter", "statusFilter", "dateFilter", "searchInput"].map(id => document.getElementById(id));
 
-    function headers() {
-      return {
-        "Content-Type": "application/json",
-        "x-zabsiam-admin-pass": password
-      };
-    }
+ function headers {
+ return {
+ "Content-Type": "application/json",
+ "x-zabsiam-admin-pass": password
+ };
+ }
 
-    function showNotice(message) {
-      notice.textContent = message;
-      notice.classList.toggle("show", Boolean(message));
-    }
+ function showNotice(message) {
+ notice.textContent = message;
+ notice.classList.toggle("show", Boolean(message));
+ }
 
-    function formatTime(value) {
-      return new Intl.DateTimeFormat("en-GB", {
-        dateStyle: "short",
-        timeStyle: "short",
-        timeZone: "Europe/London"
-      }).format(new Date(value));
-    }
+ function formatTime(value) {
+ return new Intl.DateTimeFormat("en-GB", {
+ dateStyle: "short",
+ timeStyle: "short",
+ timeZone: "Europe/London"
+ }).format(new Date(value));
+ }
 
-    function isoDate(value) {
-      return new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/London" }).format(new Date(value));
-    }
+ function isoDate(value) {
+ return new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/London" }).format(new Date(value));
+ }
 
-    function escapeHtml(value) {
-      return String(value || "")
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-    }
+ function escapeHtml(value) {
+ return String(value || "")
+ .replace(/&/g, "&amp;")
+ .replace(/</g, "&lt;")
+ .replace(/>/g, "&gt;")
+ .replace(/"/g, "&quot;")
+ .replace(/'/g, "&#039;");
+ }
 
-    function filteredChecks() {
-      const typeValue = document.getElementById("typeFilter").value;
-      const statusValue = document.getElementById("statusFilter").value;
-      const dateValue = document.getElementById("dateFilter").value;
-      const query = document.getElementById("searchInput").value.trim().toLowerCase();
+ function filteredChecks {
+ const typeValue = document.getElementById("typeFilter").value;
+ const statusValue = document.getElementById("statusFilter").value;
+ const dateValue = document.getElementById("dateFilter").value;
+ const query = document.getElementById("searchInput").value.trim.toLowerCase;
 
-      return checks.filter(check => {
-        const typeMatch = typeValue === "all" || check.type === typeValue;
-        const statusMatch = statusValue === "all" || check.status === statusValue;
-        const dateMatch = !dateValue || isoDate(check.createdAt) === dateValue;
-        const text = `${check.area} ${check.item} ${check.checkedBy} ${check.note}`.toLowerCase();
-        const searchMatch = !query || text.includes(query);
-        return typeMatch && statusMatch && dateMatch && searchMatch;
-      });
-    }
+ return checks.filter(check => {
+ const typeMatch = typeValue === "all" || check.type === typeValue;
+ const statusMatch = statusValue === "all" || check.status === statusValue;
+ const dateMatch = !dateValue || isoDate(check.createdAt) === dateValue;
+ const text = `${check.area} ${check.item} ${check.checkedBy} ${check.note}`.toLowerCase;
+ const searchMatch = !query || text.includes(query);
+ return typeMatch && statusMatch && dateMatch && searchMatch;
+ });
+ }
 
-    function renderSummary() {
-      const today = isoDate(new Date().toISOString());
-      const todayChecks = checks.filter(check => isoDate(check.createdAt) === today);
-      document.getElementById("todayTotal").textContent = todayChecks.length;
-      document.getElementById("passTotal").textContent = todayChecks.filter(check => check.status === "pass").length;
-      document.getElementById("warningTotal").textContent = todayChecks.filter(check => check.status === "warning").length;
-      document.getElementById("failTotal").textContent = todayChecks.filter(check => check.status === "fail").length;
-    }
+ function renderSummary {
+ const today = isoDate(new Date.toISOString);
+ const todayChecks = checks.filter(check => isoDate(check.createdAt) === today);
+ document.getElementById("todayTotal").textContent = todayChecks.length;
+ document.getElementById("passTotal").textContent = todayChecks.filter(check => check.status === "pass").length;
+ document.getElementById("warningTotal").textContent = todayChecks.filter(check => check.status === "warning").length;
+ document.getElementById("failTotal").textContent = todayChecks.filter(check => check.status === "fail").length;
+ }
 
-    function render() {
-      renderSummary();
-      const visible = filteredChecks();
+ function render {
+ renderSummary;
+ const visible = filteredChecks;
 
-      if (!visible.length) {
-        logBody.innerHTML = `<tr><td colspan="10">ยังไม่มีรายการ</td></tr>`;
-        return;
-      }
+ if (!visible.length) {
+ logBody.innerHTML = `<tr><td colspan="10"> </td></tr>`;
+ return;
+ }
 
-      logBody.innerHTML = visible.map(check => `
-        <tr>
-          <td>${formatTime(check.createdAt)}</td>
-          <td>${escapeHtml(check.type)}</td>
-          <td>${escapeHtml(check.area)}</td>
-          <td>${escapeHtml(check.item)}</td>
-          <td class="temp">${Number(check.temperature).toFixed(1)}°C</td>
-          <td><span class="status ${escapeHtml(check.status)}">${escapeHtml(check.label)}</span></td>
-          <td>${escapeHtml(check.guidance)}</td>
-          <td>${escapeHtml(check.checkedBy)}</td>
-          <td>${escapeHtml(check.correctiveAction)}</td>
-          <td><button class="button danger" type="button" data-delete="${escapeHtml(check.id)}">ลบ</button></td>
-        </tr>
-      `).join("");
-    }
+ logBody.innerHTML = visible.map(check => `
+ <tr>
+ <td>${formatTime(check.createdAt)}</td>
+ <td>${escapeHtml(check.type)}</td>
+ <td>${escapeHtml(check.area)}</td>
+ <td>${escapeHtml(check.item)}</td>
+ <td class="temp">${Number(check.temperature).toFixed(1)}°C</td>
+ <td><span class="status ${escapeHtml(check.status)}">${escapeHtml(check.label)}</span></td>
+ <td>${escapeHtml(check.guidance)}</td>
+ <td>${escapeHtml(check.checkedBy)}</td>
+ <td>${escapeHtml(check.correctiveAction)}</td>
+ <td><button class="button danger" type="button" data-delete="${escapeHtml(check.id)}"> </button></td>
+ </tr>
+ `).join("");
+ }
 
-    async function loadChecks({ quiet = false } = {}) {
-      if (!password) return;
-      try {
-        const response = await fetch(API_URL, { headers: headers(), cache: "no-store" });
-        if (response.status === 401) {
-          sessionStorage.removeItem(passwordKey);
-          password = "";
-          loginPanel.style.display = "grid";
-          loginMessage.textContent = "รหัสไม่ถูกต้อง";
-          return;
-        }
-        if (!response.ok) throw new Error(`API ${response.status}`);
-        const data = await response.json();
-        checks = Array.isArray(data.checks) ? data.checks : [];
-        loginPanel.style.display = "none";
-        syncStatus.textContent = `ซิงก์ล่าสุด ${formatTime(new Date().toISOString())} · ${checks.length} รายการ`;
-        showNotice("");
-        render();
-      } catch (error) {
-        if (!quiet) showNotice("ยังซิงก์ไม่ได้ ให้เปิดผ่าน https://zabsiam.com/admin/temperature-check.html และตรวจอินเทอร์เน็ต");
-        render();
-      }
-    }
+ async function loadChecks({ quiet = false } = {}) {
+ if (!password) return;
+ try {
+ const response = await fetch(API_URL, { headers: headers, cache: "no-store" });
+ if (response.status === 401) {
+ sessionStorage.removeItem(passwordKey);
+ password = "";
+ loginPanel.style.display = "grid";
+ loginMessage.textContent = " ";
+ return;
+ }
+ if (!response.ok) throw new Error(`API ${response.status}`);
+ const data = await response.json;
+ checks = Array.isArray(data.checks) ? data.checks : [];
+ loginPanel.style.display = "none";
+ syncStatus.textContent = ` ${formatTime(new Date.toISOString)} · ${checks.length} `;
+ showNotice("");
+ render;
+ } catch (error) {
+ if (!quiet) showNotice(" https://zabsiam.com/admin/temperature-check.html");
+ render;
+ }
+ }
 
-    async function saveCheck(payload) {
-      const response = await fetch(API_URL, {
-        method: "POST",
-        headers: headers(),
-        body: JSON.stringify(payload)
-      });
-      if (!response.ok) throw new Error(`Save failed ${response.status}`);
-      const data = await response.json();
-      checks = data.checks || checks;
-      render();
-    }
+ async function saveCheck(payload) {
+ const response = await fetch(API_URL, {
+ method: "POST",
+ headers: headers,
+ body: JSON.stringify(payload)
+ });
+ if (!response.ok) throw new Error(`Save failed ${response.status}`);
+ const data = await response.json;
+ checks = data.checks || checks;
+ render;
+ }
 
-    async function deleteCheck(id) {
-      if (!confirm("ลบรายการอุณหภูมินี้?")) return;
-      const response = await fetch(`${API_URL}/${encodeURIComponent(id)}`, {
-        method: "DELETE",
-        headers: headers()
-      });
-      if (!response.ok) throw new Error(`Delete failed ${response.status}`);
-      const data = await response.json();
-      checks = data.checks || [];
-      render();
-    }
+ async function deleteCheck(id) {
+ if (!confirm(" ?")) return;
+ const response = await fetch(`${API_URL}/${encodeURIComponent(id)}`, {
+ method: "DELETE",
+ headers: headers
+ });
+ if (!response.ok) throw new Error(`Delete failed ${response.status}`);
+ const data = await response.json;
+ checks = data.checks || [];
+ render;
+ }
 
-    loginForm.addEventListener("submit", async event => {
-      event.preventDefault();
-      password = passwordInput.value.trim();
-      sessionStorage.setItem(passwordKey, password);
-      loginMessage.textContent = "กำลังเชื่อมต่อ...";
-      await loadChecks();
-    });
+ loginForm.addEventListener("submit", async event => {
+ event.preventDefault;
+ password = passwordInput.value.trim;
+ sessionStorage.setItem(passwordKey, password);
+ loginMessage.textContent = " ...";
+ await loadChecks;
+ });
 
-    checkForm.addEventListener("submit", async event => {
-      event.preventDefault();
-      const payload = {
-        type: document.getElementById("typeInput").value,
-        area: document.getElementById("areaInput").value,
-        item: document.getElementById("itemInput").value,
-        temperature: document.getElementById("temperatureInput").value,
-        checkedBy: document.getElementById("checkedByInput").value,
-        correctiveAction: document.getElementById("correctiveActionInput").value,
-        note: document.getElementById("noteInput").value
-      };
+ checkForm.addEventListener("submit", async event => {
+ event.preventDefault;
+ const payload = {
+ type: document.getElementById("typeInput").value,
+ area: document.getElementById("areaInput").value,
+ item: document.getElementById("itemInput").value,
+ temperature: document.getElementById("temperatureInput").value,
+ checkedBy: document.getElementById("checkedByInput").value,
+ correctiveAction: document.getElementById("correctiveActionInput").value,
+ note: document.getElementById("noteInput").value
+ };
 
-      try {
-        saveButton.disabled = true;
-        await saveCheck(payload);
-        document.getElementById("temperatureInput").value = "";
-        document.getElementById("correctiveActionInput").value = "";
-        document.getElementById("noteInput").value = "";
-        showNotice("");
-      } catch (error) {
-        showNotice("บันทึกไม่สำเร็จ กรุณาตรวจรหัสและอินเทอร์เน็ต");
-      } finally {
-        saveButton.disabled = false;
-      }
-    });
+ try {
+ saveButton.disabled = true;
+ await saveCheck(payload);
+ document.getElementById("temperatureInput").value = "";
+ document.getElementById("correctiveActionInput").value = "";
+ document.getElementById("noteInput").value = "";
+ showNotice("");
+ } catch (error) {
+ showNotice(" ");
+ } finally {
+ saveButton.disabled = false;
+ }
+ });
 
-    logBody.addEventListener("click", event => {
-      const id = event.target.dataset.delete;
-      if (id) deleteCheck(id);
-    });
-    document.getElementById("refreshButton").addEventListener("click", () => loadChecks());
-    document.getElementById("logoutButton").addEventListener("click", () => {
-      sessionStorage.removeItem(passwordKey);
-      password = "";
-      loginPanel.style.display = "grid";
-    });
-    filters.forEach(input => input.addEventListener("input", render));
+ logBody.addEventListener("click", event => {
+ const id = event.target.dataset.delete;
+ if (id) deleteCheck(id);
+ });
+ document.getElementById("refreshButton").addEventListener("click", => loadChecks);
+ document.getElementById("logoutButton").addEventListener("click", => {
+ sessionStorage.removeItem(passwordKey);
+ password = "";
+ loginPanel.style.display = "grid";
+ });
+ filters.forEach(input => input.addEventListener("input", render));
 
-    if (password) loadChecks();
-    render();
-    setInterval(() => loadChecks({ quiet: true }), 15000);
-  </script>
+ if (password) loadChecks;
+ render;
+ setInterval( => loadChecks({ quiet: true }), 15000);
+</script>
 </body>
 </html>
-
